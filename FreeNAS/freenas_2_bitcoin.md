@@ -273,7 +273,7 @@ Once "blocks" equals "headers", bitcoin is fully synced!
 Note: Do not run `pkg update && upgrade` unless you are ready to recompile bitcoind. For example, boost libraries recently updated to a newer version, and bitcoind could no longer find an older named boost library reference. As a result, I had to recompile bitcoind with the new boost libraries installed before it worked again.
 ```
 # iocage console bitcoin_node
-# pkg update && upgrade
+# pkg update && pkg upgrade
 # cd ~
 # bitcoin-cli stop
 # wget https://github.com/bitcoin/bitcoin/archive/v0.17.1.tar.gz
