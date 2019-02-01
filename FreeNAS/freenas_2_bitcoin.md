@@ -19,7 +19,7 @@ You should see your bitcoin jail listed. Lets switch our console from our base s
 You're in! Lets start installing stuff!
 
 ```
-# pkg install autoconf automake boost-libs git gmake libevent libtool libzmq4 openssl pkgconf wget nano
+# pkg install autoconf automake boost-libs git gmake libevent libtool libzmq4 openssl pkgconf wget nano python3
 ```
 
 Go to https://github.com/bitcoin/bitcoin/releases, find the tar.gz release we want to install. The latest release is 0.17.1 at https://github.com/bitcoin/bitcoin/archive/v0.17.1.tar.gz . Copy the link.
