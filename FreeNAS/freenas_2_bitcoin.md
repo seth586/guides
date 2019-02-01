@@ -253,3 +253,14 @@ daemon=1
 txindex=1
 ```
 Save, and exit.
+
+Go to your FreeNAS web UI, and reboot the jail. SSH back into your freenas and switch consoles to your bitcoin jail.
+
+You can check running processes by typing:
+```
+# ps aux
+```
+If everything was set up correctly, bitcoin should be running! At this point, bitcoin will start downloading the blockchain. This can take a long time. Check bitcoin's initial block download progress by running the following command:
+```
+# bitcoin-cli getblockchaininfo
+```
