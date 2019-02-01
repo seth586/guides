@@ -1,4 +1,4 @@
-**[Intro]** - [Jail Creation(freenas_1_jail_creation.md)] - [Bitcoin] - [Tor] - 
+**[Intro]** - [ [Jail Creation](freenas_1_jail_creation.md) ] - [Bitcoin] - [Tor] - 
 
 ### Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
