@@ -9,3 +9,5 @@ Think of jails as more efficient virtual machines (VMs). You could just install 
 FreeNAS 11.2 uses iocage to manage jails. Previous versions used warden, which is now considered deprecated. To create a jail, log in to your FreeNAS user interface, and select Jails on the left hand menu. Click the ‘ADD’ button on the top right, and select 'advanced jail creation'.
 
 ![FreeNAS_Jail](images/jail_create.png)  
+
+Give the jail a name, such as `bitcoin`. Select `DHCP Autoconfigure IPv4` and select `Auto-start` as shown. Click `SAVE`.
