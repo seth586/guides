@@ -265,6 +265,8 @@ If everything was set up correctly, bitcoin should be running! At this point, bi
 ```
 # bitcoin-cli getblockchaininfo
 ```
+Once "blocks" equals "headers", bitcoin is fully synced!
+
 ### How to update Bitcoin Core
 Note: Do not run `pkg update && upgrade` unless you are ready to recompile bitcoind. For example, boost libraries recently updated to a newer version, and bitcoind could no longer find an older named boost library reference. As a result, I had to recompile bitcoind with the new boost libraries installed before it worked again.
 ```
