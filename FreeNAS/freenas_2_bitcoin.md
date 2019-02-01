@@ -16,7 +16,7 @@ You should see your bitcoin jail listed. Lets switch our console from our base s
 # iocage console bitcoin
 ```
 
-You're in! Lets start installing stuff!
+You're in! Lets start installing stuff! (answer proceed questions with `y`)
 
 ```
 # pkg install autoconf automake boost-libs git gmake libevent libtool libzmq4 openssl pkgconf wget nano python3
