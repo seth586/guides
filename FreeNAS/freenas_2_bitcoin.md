@@ -98,7 +98,7 @@ load_rc_config ${name}
 
 : ${bitcoind_user:="bitcoin"}
 : ${bitcoind_group:="bitcoin"}
-: ${bitcoind_data_dir:="/var/db/bitcoin"}
+: ${bitcoind_data_dir:="/root/.bitcoin"}
 : ${bitcoind_config_file:="/root/.bitcoin/bitcoin.conf"}
 : ${bitcoindlimits_args:="-e -U ${bitcoind_user}"}
 
@@ -230,4 +230,23 @@ Save the file by pressing CTRL+O, then ENTER. To exit nano, press, CTRL+X
 Lets make the startup script executable:
 ```
 # chmod +x /etc/rc.d/bitcoind
+```
+Lets enable our startup script in /etc/rc.conf
+```
+# nano /etc/rc.conf
+```
+Add the following line:
+```
+bitcoind_enable=yes
+```
+Save (CTRL+O), ENTER, then exit (CTRL+X)
+
+Lets make bitcoin's [configuration file](https://jlopp.github.io/bitcoin-core-config-generator/):
+```
+nano /root/.bitcoin/bitcoin.conf
+```
+Add the following lines:
+```
+server=1
+txindex=1
 ```
