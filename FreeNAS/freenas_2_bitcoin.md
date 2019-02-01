@@ -21,6 +21,7 @@ You should see your bitcoin jail listed. Lets switch our console from our base s
 You're in! Lets start installing stuff! (answer proceed questions with `y`)
 
 ```
+# pkg update && pkg upgrade -y
 # pkg install autoconf automake boost-libs git gmake libevent libtool libzmq4 openssl pkgconf wget nano python3
 ```
 
@@ -273,7 +274,7 @@ Once "blocks" equals "headers", bitcoin is fully synced!
 Note: Do not run `pkg update && upgrade` unless you are ready to recompile bitcoind. For example, boost libraries recently updated to a newer version, and bitcoind could no longer find an older named boost library reference. As a result, I had to recompile bitcoind with the new boost libraries installed before it worked again.
 ```
 # iocage console bitcoin_node
-# pkg update && pkg upgrade
+# pkg update && pkg upgrade -y
 # cd ~
 # bitcoin-cli stop
 # wget https://github.com/bitcoin/bitcoin/archive/v0.17.1.tar.gz
