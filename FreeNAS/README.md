@@ -15,7 +15,7 @@ So, at this point we can assume that you built your home server. Hopefully you w
 
 I am assuming you know your way around your router. My example router is a Linksys WRT1900ACv1 running OpenWRT. Your router configuration user interface may be different than explained here.
 
-Lets also assume that you installed FreeNAS on your home server, navigated the FreeNAS forums, read the [FreeNAS documentation](https://www.ixsystems.com/documentation/freenas/), and set up a ZFS volume. Make sure you set up your SMART test and scrub schedule and email alerts!
+Lets also assume that you installed FreeNAS on your home server (Version 11.2), navigated the FreeNAS forums, read the [FreeNAS documentation](https://www.ixsystems.com/documentation/freenas/), and set up a ZFS volume. Make sure you set up your SMART test and scrub schedule and email alerts!
 
 ### Goal
 By the end of this guide, we will have bitcoin core compiled, serving connections over IP and tor. We will have ncurses2 terminal user interface to monitor our bitcoin node. We will install electrum-personal-server, so we can use a hardware wallet to cold store our bitcoin savings, verified with our own node. We will have lightning lab's lnd implementation to onbard the lightning network, and we will use Ride The Lightning web user interface to manage our lnd server, as well as install the joule browser extension and connect it to our lnd server.
