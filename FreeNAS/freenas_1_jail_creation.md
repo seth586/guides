@@ -17,3 +17,4 @@ It would be a good idea to log into your router and give your bitcoin jail a sta
 ![FreeNAS_Jail_Port_Forward](images/jail_port_forward.png)
 
 *Your router's firmware may look different. This is how it looks on OpenWRT.*
+
