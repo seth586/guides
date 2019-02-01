@@ -249,5 +249,7 @@ nano /root/.bitcoin/bitcoin.conf
 Add the following lines:
 ```
 server=1
+daemon=1
 txindex=1
 ```
+Save, and exit.
