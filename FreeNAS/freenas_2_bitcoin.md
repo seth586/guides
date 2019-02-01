@@ -67,7 +67,7 @@ Copy the script below and paste the following startup script to nano by right cl
 # bitcoind_user (str)		Set to "bitcoin" by default.
 # bitcoind_group (str)		Set to "bitcoin" by default.
 # bitcoind_conf (str)		Set to "%%PREFIX%%/etc/bitcoind.conf" by default.
-# bitcoind_data_dir (str)	Set to "/var/db/bitcoin" by default.
+# bitcoind_data_dir (str)	Set to "/root/.bitcoin" by default.
 # bitcoindlimits_enable (bool)	Set to "NO" by default.
 #				Set it to "YES" to enable bitcoindlimits
 # bitcoindlimits_args		Set to "-e -U ${bitcoind_user}" by default
