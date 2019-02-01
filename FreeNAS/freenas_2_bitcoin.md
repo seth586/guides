@@ -244,7 +244,8 @@ Save (CTRL+O), ENTER, then exit (CTRL+X)
 
 Lets make bitcoin's [configuration file](https://jlopp.github.io/bitcoin-core-config-generator/):
 ```
-nano /root/.bitcoin/bitcoin.conf
+#  mkdir ~/.bitcoin
+# nano ~/.bitcoin/bitcoin.conf
 ```
 Add the following lines:
 ```
