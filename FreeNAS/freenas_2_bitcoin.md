@@ -264,4 +264,22 @@ If everything was set up correctly, bitcoin should be running! At this point, bi
 ```
 # bitcoin-cli getblockchaininfo
 ```
-### Bitcoin Core Update
+### How to update Bitcoin Core
+Note: Do not run `pkg update && upgrade` unless you are ready to recompile bitcoind. For example, boost libraries recently updated to a newer version, and bitcoind could no longer find an older named boost library reference. As a result, I had to recompile bitcoind with the new boost libraries installed before it worked again.
+```
+# iocage console bitcoin_node
+# pkg update && upgrade
+# cd ~
+# bitcoin-cli stop
+# wget https://github.com/bitcoin/bitcoin/archive/v0.17.1.tar.gz
+# tar xzvf v0.17.1.tar.gz
+# cd /.bitcoin-0.17.1
+# sh 
+# ./contrib/install_db4.sh `pwd`
+# export BDB_PREFIX='/root/bitcoin-0.17.1/db4'
+# ./autogen.sh
+# ./configure MAKE=gmake BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --without-gui --without-miniupnpc
+# gmake check
+# gmake install
+# tcsh
+
