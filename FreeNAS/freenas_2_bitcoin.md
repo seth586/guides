@@ -264,3 +264,4 @@ If everything was set up correctly, bitcoin should be running! At this point, bi
 ```
 # bitcoin-cli getblockchaininfo
 ```
+### Bitcoin Core Update
