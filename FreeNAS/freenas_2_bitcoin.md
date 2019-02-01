@@ -4,6 +4,8 @@
 
 ### Bitcoin Core Install
 
+Note: We are going to compile bitcoin from source. There is a much easier way to install bitcoin (`pkg`), however the current repository build does not include zeromq support, which is required for lnd!
+
 Secure Socket Shell into your bitcoin jail. SSH is a way to manage your server remotely over a network. When you don’t plug in a monitor & keyboard directly into the server, it’s called a ‘headless’ server. The most popular SSH client is called [PuTTY, download it here](https://www.putty.org/). Connect to your FreeNAS’ IP address, and log in with your root credentials.
 
 ```
