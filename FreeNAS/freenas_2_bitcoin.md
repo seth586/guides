@@ -42,6 +42,7 @@ You can see our downloaded file, `v0.17.1.tar.gz` and the unpacked directory `bi
 # ./configure MAKE=gmake BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --without-gui --without-miniupnpc
 # gmake check
 # gmake install
+# tcsh
 ```
 This process may take a while. Once its done and installed, we need to add a rc.d script to automatically start the bitcoin daemon on start. Read more about FreeBSD rc.d scripting [here](https://www.freebsd.org/doc/en_US.ISO8859-1/articles/rc-scripting/index.html).
 
