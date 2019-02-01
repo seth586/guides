@@ -97,8 +97,8 @@ extra_commands="configtest"
 
 load_rc_config ${name}
 
-: ${bitcoind_user:="bitcoin"}
-: ${bitcoind_group:="bitcoin"}
+: ${bitcoind_user:="root"}
+: ${bitcoind_group:="wheel"}
 : ${bitcoind_data_dir:="/root/.bitcoin"}
 : ${bitcoind_config_file:="/root/.bitcoin/bitcoin.conf"}
 : ${bitcoindlimits_args:="-e -U ${bitcoind_user}"}
