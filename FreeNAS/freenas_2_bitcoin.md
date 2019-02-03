@@ -282,14 +282,16 @@ Save (CTRL+O), ENTER, then exit (CTRL+X)
 
 Lets make bitcoin's [configuration file](https://jlopp.github.io/bitcoin-core-config-generator/):
 ```
-#  mkdir ~/.bitcoin
-# nano ~/.bitcoin/bitcoin.conf
+#  mkdir /home/bitcoin/.bitcoin
+# nano /home/bitcoin/.bitcoin/bitcoin.conf
 ```
 Add the following lines:
 ```
 server=1
 daemon=1
 txindex=1
+zmqpubrawblock=tcp://127.0.0.1:28332
+zmqpubrawtx=tcp://127.0.0.1:28333
 ```
 Save, and exit.
 
@@ -301,17 +303,21 @@ You can check running processes by typing:
 ```
 If everything was set up correctly, bitcoin should be running! At this point, bitcoin will start downloading the blockchain. This can take a long time. Check bitcoin's initial block download progress by running the following command:
 ```
+# su bitcoin
 # bitcoin-cli getblockchaininfo
+# exit
 ```
 Once "blocks" equals "headers", bitcoin is fully synced!
 
 ### How to update Bitcoin Core
 Note: Do not run `pkg update && upgrade` unless you are ready to recompile bitcoind. For example, boost libraries recently updated to a newer version, and bitcoind could no longer find an older named boost library reference. As a result, I had to recompile bitcoind with the new boost libraries installed before it worked again.
 ```
-# iocage console bitcoin_node
+# iocage console bitcoin
 # pkg update && pkg upgrade -y
 # cd ~
+# su bitcoin
 # bitcoin-cli stop
+# exit
 # wget https://github.com/bitcoin/bitcoin/archive/v0.17.1.tar.gz
 # tar xzvf v0.17.1.tar.gz
 # cd /.bitcoin-0.17.1
