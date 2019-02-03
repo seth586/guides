@@ -11,11 +11,14 @@ Lets install!
 root@bitcoin:~ # pkg install tor
 root@bitcoin:~ # nano /usr/local/etc/tor/torrc
 ```
-Uncomment (remove the #) and add the following lines:
+Uncomment (remove the #) from the following lines:
 ```
 DataDirectory /var/db/tor
 ControlPort 9051
 CookieAuthentication 1
+```
+Add the following lines:
+```
 CookieAuthFileGroupReadable 1
 CacheDirectoryGroupReadable 1
 ```
