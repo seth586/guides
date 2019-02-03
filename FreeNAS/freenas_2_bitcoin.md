@@ -21,7 +21,7 @@ You should see your bitcoin jail listed. Lets switch our console from our base s
 You're in! Lets create our bitcoin user/group:
 
 ```
-root@btc:/home # adduser
+root@bitcoin:~ # adduser
 Username: bitcoin
 Full name:
 Uid (Leave empty for default):
