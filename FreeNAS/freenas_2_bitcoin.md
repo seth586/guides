@@ -311,11 +311,10 @@ Note: Do not run `pkg update && upgrade` unless you are ready to recompile bitco
 # iocage console bitcoin
 # pkg update && pkg upgrade -y
 # cd ~
-# su bitcoin
-# bitcoin-cli stop
-# exit
+# service bitcoind stop
 # wget https://github.com/bitcoin/bitcoin/archive/v0.17.1.tar.gz
 # tar xzvf v0.17.1.tar.gz
+# rm *.gz
 # cd /.bitcoin-0.17.1
 # sh 
 # ./contrib/install_db4.sh `pwd`
