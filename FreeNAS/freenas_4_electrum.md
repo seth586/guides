@@ -43,27 +43,31 @@ You 24 word seed can generate all 3, so it might be best to put all 3 in your co
 wallet_legacy = xpub.....
 wallet_segwit = ypub....
 wallet_bech32 = zpub...
-Under [bitcoin-rpc], change `datadir = /home/bitcoin/.bitcoin/`
+Under `[bitcoin-rpc]`, change `datadir = /home/bitcoin/.bitcoin/`
 
 Under `[electrum-serever]`, change host to `0.0.0.0` to allow remote connections. Change ip_whitelist to your home network subnet, for example, my router assigns IP adresses as `192.168.84.XXX`, so I typed in `192.168.84.0/24` to limit connections from this range. Save and exit nano.
 
 Install
-`
+```
 # pip-3.6 install .
-`
+```
 First start
-
+```
 # /usr/local/bin/electrum-personal-server /usr/local/electrum-personal-server-eps-v0.1.6/config.cfg
+```
 It will import addresses from each master public key. When complete, electrum-personal-server will exit. Next, if you have transaction history, look up the block height of your oldest transaction. Then, lets scan the blockchain for those historical transactions:
-
+```
 # /usr/local/bin/electrum-personal-server-rescan /usr/local/electrum-personal-server-eps-v0.1.6/config.cfg
+```
 Lets run it!
-
+```
 # /usr/local/bin/electrum-personal-server /usr/local/electrum-personal-server-eps-v0.1.6/config.cfg
+```
 Startup Script
 Terminating your SSH will also terminate electrum-personal-server, so lets close it with Ctrl+C, then daemon-zie the process with a rc.d startup script:
-
+```
 # nano /etc/rc.d/electrumpersonalserver
+```
 Copy the following startup script to nano, (follow link to pastebin) then save and exit.
 
 https://pastebin.com/HSFXAbLd
