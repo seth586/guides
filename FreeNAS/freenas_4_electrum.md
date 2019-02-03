@@ -72,25 +72,31 @@ Copy the following startup script to nano, (follow link to pastebin) then save a
 
 https://pastebin.com/HSFXAbLd
 Lets enable our startup script:
-
+```
 # nano /etc/rc.conf
+```
 Add the following line, then save and exit.
-
+```
 electrumpersonalserver_enable=YES
+```
 You should now be able to start and stop electrumpersonalserver as a service.
-
+```
 # service electrumpersonalserver start
+```
 You can run ps auxww in the command line to verify that it is running.
-
+```
 # service electrumpersonalserver stop
+```
 Again, verify that it sucessfully stops with ps auxww . Go ahead and reboot your jail, and check that it is running!
 
 Logging
 The startup script uses daemon(8) to run the process in the background and forward all console messages to a log file. We don’t want that log file to grow too large, thankfully FreeBSD has a utility called newsyslog(8), configured by newsyslog.conf
-
+```
 # nano /etc/newsyslog.conf
+```
 Add the following line, then save and exit:
-
+```
 /var/log/electrumpersonalserver.log     600  1     100  *     JN
+```
 Electrum Client
 Now boot up your electrum client, goto Tools>Network>Server, point it at your jail’s ip:50002, it should work!
