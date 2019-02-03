@@ -59,7 +59,9 @@ Under `[electrum-serever]`, change `host= 0.0.0.0` to allow remote connections. 
 ```
 bitcoin@bitcoin:~/electrum-personal-server % cd electrum-personal-server-eps-v0.1.6
 bitcoin@bitcoin:~/electrum-personal-server/electrum-personal-server-eps-v0.1.6 % pip-3.6 install --user .
-bitcoin@bitcoin:~/electrum-personal-server/electrum-personal-server-eps-v0.1.6 % cd ~
+bitcoin@bitcoin:~/electrum-personal-server/electrum-personal-server-eps-v0.1.6 % cd ..
+bitcoin@bitcoin:~/electrum-personal-server/ % rm -r electrum-personal-server-eps-v0.1.6
+bitcoin@bitcoin:~/electrum-personal-server/ % cd ~
 bitcoin@bitcoin:~ %
 ```
 ## First start
