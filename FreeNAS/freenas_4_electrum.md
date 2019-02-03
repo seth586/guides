@@ -31,8 +31,8 @@ bitcoin@bitcoin:~/electrum-personal-server % rm eps-v0.1.6.tar.gz
 ```
 Lets edit our configuration file:
 ```
-# cp electrum-personal-server-eps-v0.1.6/config.cfg_sample config.cfg
-# nano config.cfg
+bitcoin@bitcoin:~/electrum-personal-server % cp electrum-personal-server-eps-v0.1.6/config.cfg_sample config.cfg
+bitcoin@bitcoin:~/electrum-personal-server % nano config.cfg
 ```
 Now we need to add our hardware wallet’s master public keys xpub /ypub/zpub).
 
@@ -45,14 +45,15 @@ zpub is for P2WPKH, (bech32 native segwit), which start with bc1
 You can find it under Electrum’s menu Wallet>Information.
 
 You 24 word seed can generate all 3, so it might be best to put all 3 in your config.cfg file under [master-public-keys]
-
+```
 [master-public-keys]
 wallet_legacy = xpub.....
 wallet_segwit = ypub....
 wallet_bech32 = zpub...
+```
 Under `[bitcoin-rpc]`, change `datadir = /home/bitcoin/.bitcoin/`
 
-Under `[electrum-serever]`, change host to `0.0.0.0` to allow remote connections. Change ip_whitelist to your home network subnet, for example, my router assigns IP adresses as `192.168.84.XXX`, so I typed in `192.168.84.0/24` to limit connections from this range. Save and exit nano.
+Under `[electrum-serever]`, change `host= 0.0.0.0` to allow remote connections. Change ip_whitelist to your home network subnet, for example, my router assigns IP adresses as `192.168.84.XXX`, so I typed in `192.168.84.0/24` to limit connections to this range. Save and exit nano.
 
 Install:
 ```
