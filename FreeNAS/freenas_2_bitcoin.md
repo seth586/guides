@@ -287,7 +287,6 @@ Lets make bitcoin's [configuration file](https://jlopp.github.io/bitcoin-core-co
 Add the following lines:
 ```
 server=1
-daemon=1
 txindex=1
 zmqpubrawblock=tcp://127.0.0.1:28332
 zmqpubrawtx=tcp://127.0.0.1:28333
