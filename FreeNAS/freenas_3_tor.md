@@ -3,3 +3,47 @@
 ### Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
 ### Install Tor
+
+Tor is an anonymous communication protocol. It bounces encrypted data between relays to help with being anonymous. It is also slower than TCP/IP. By serving TOR connections, you help other nodes that require the privacy. 
+
+Lets install!
+```
+root@bitcoin:~ # pkg install tor
+root@bitcoin:~ # nano /usr/local/etc/tor/torrc
+```
+Uncomment (remove the #) and add the following lines:
+```
+DataDirectory /var/db/tor
+ControlPort 9051
+CookieAuthentication 1
+CookieAuthFileGroupReadable 1
+CacheDirectoryGroupReadable 1
+```
+Save (CTRL+O, ENTER), then exit (CTRL+X)
+
+Add user `bitcoin` to the` _tor` group so that bitcoin can read the cookie authentication file in `/var/db/tor`:
+```
+root@bitcoin:~ # pw usermod bitcoin -G _tor
+```
+Stop bitcoin service:
+```
+root@bitcoin:~ # su bitcoin
+bitcoin@bitcoin:~ # bitcoin-cli stop
+bitcoin@bitcoin:~ # exit
+root@bitcoin:~ #
+```
+Start tor:
+```
+root@bitcoin:~ # service tor start
+```
+Wait a few seconds, then start bitcoind:
+```
+root@bitcoin:~ # service bitcoind start
+```
+Bitcoin should automatically detect tor and connect. Verify by running bitcoin-cli:
+```
+root@bitcoin:~ # su bitcoin
+bitcoin@bitcoin:~ # bitcoin-cli getnetworkinfo
+
+```
+You should see a .onion address listed, verify it works by copy/pasting the .onion address into [bitnodes](https://bitnodes.earn.com) (It may take a while)
