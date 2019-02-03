@@ -4,7 +4,7 @@
 
 ### Install Tor
 
-Tor is an anonymous communication protocol. It bounces encrypted data between relays to help with being anonymous. It is also slower than TCP/IP. By serving TOR connections, you help other nodes that require the privacy. 
+Tor is a communications protocol that anonymizes communications by bouncing encrypted data between relays. It is also slower than TCP/IP. By serving TOR connections, you help other nodes that require the privacy. If you want to run your node over tor only, you can add `/home/bitcoin/.bitcoin/bitcoin.conf` with the line `onlynet=onion`.
 
 Lets install!
 ```
