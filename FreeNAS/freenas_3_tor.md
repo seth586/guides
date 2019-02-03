@@ -24,7 +24,7 @@ CacheDirectoryGroupReadable 1
 ```
 Save (CTRL+O, ENTER), then exit (CTRL+X)
 
-Enable autostart by editing `/etc/rc.conf` to `tor_enable="YES"`
+Enable autostart by adding `tor_enable="YES"` to `/etc/rc.conf`.
 ```
 root@bitcoin:~ # nano /etc/rc.conf
 tor_enable="YES"
