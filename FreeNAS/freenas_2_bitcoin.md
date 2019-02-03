@@ -241,7 +241,7 @@ Lets enable our startup script in /etc/rc.conf
 ```
 Add the following line:
 ```
-bitcoind_enable=yes
+bitcoind_enable="YES"
 ```
 Save (CTRL+O), ENTER, then exit (CTRL+X)
 
