@@ -90,8 +90,8 @@ Copy the following startup script to nano, then save and exit.
 name=electrumpersonalserver
 rcvar=electrumpersonalserver_enable
  
-command="/usr/local/bin/electrum-personal-server"
-command_args="/usr/local/electrum-personal-server-eps-v0.1.6/config.cfg"
+command="/home/bitcoin/.local/bin/electrum-personal-server"
+command_args="/home/bitcoin/electrum-personal-server/config.cfg"
 logfile="/var/log/${name}.log"
 pidfile="/var/run/${name}.pid"
 sig_stop=-KILL
@@ -99,10 +99,11 @@ sig_stop=-KILL
 start_cmd="${name}_start"
 stop_cmd="${name}_stop"
 status_cmd="${name}_status"
+eps_user="bitcoin" 
  
 electrumpersonalserver_start()
 {
-        /usr/sbin/daemon -o ${logfile} -p ${pidfile} ${command} $command_args
+        /usr/sbin/daemon -u ${eps_user} -o ${logfile} -p ${pidfile} ${command} $command_args
         if [ $? -ne 0 ]; then
                 echo "Error starting ${name}."
                 exit 1
