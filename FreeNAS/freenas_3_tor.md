@@ -58,3 +58,5 @@ bitcoin@bitcoin:~ % exit
 root@bitcoin:~ #
 ```
 You should see a .onion address listed, verify it works by copy/pasting the .onion address into [bitnodes](https://bitnodes.earn.com) (It may take a while)
+
+Next: [ [Electrum](freenas_4_electrum.md) ]
