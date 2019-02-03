@@ -2,6 +2,11 @@
 
 ### Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
+### Why Tor?
+Goto https://bitnodes.earn.com/dashboard/, and sort by onion protocol. How many nodes do you see? 200 as of writing. This is a tragedy. Every bitcoin node should be serving tor connections, there is no reason not to! Without tor, you are telling your internet service provider, "This home has bitcoins'!
+
+Because of this, nodes that exclusively run on tor have a hard time keeping sync with the network. Lets change that.
+
 ### Install Tor
 
 Tor is a communications protocol that anonymizes communications by bouncing encrypted data between relays. It is also slower than TCP/IP. By serving TOR connections, you help other nodes that require the privacy. If you want to run your node over tor only, you can add `/home/bitcoin/.bitcoin/bitcoin.conf` with the line `onlynet=onion`.
