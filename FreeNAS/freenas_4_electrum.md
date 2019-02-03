@@ -94,8 +94,8 @@ rcvar=electrumpersonalserver_enable
  
 command="/home/bitcoin/.local/bin/electrum-personal-server"
 command_args="/home/bitcoin/electrum-personal-server/config.cfg"
-logfile="/var/log/${name}.log"
-pidfile="/var/run/${name}.pid"
+logfile="/home/bitcoin/electrum-personal-server/${name}.log"
+pidfile="/home/bitcoin/electrum-personal-server/${name}.pid"
 sig_stop=-KILL
  
 start_cmd="${name}_start"
@@ -161,7 +161,7 @@ The startup script uses daemon(8) to run the process in the background and forwa
 ```
 Add the following line, then save and exit:
 ```
-/var/log/electrumpersonalserver.log     600  1     100  *     JN
+/home/bitcoin/electrum-personal-server/electrumpersonalserver.log     600  1     100  *     JN
 ```
 ## Electrum Client
 Now boot up your electrum client, goto Tools>Network>Server, point it at your jail’s ip:50002, it should work!
