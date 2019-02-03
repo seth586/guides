@@ -5,7 +5,6 @@
 ### Install Electrum-Personal-Server
 Electrum Personal Server is a lightweight electrum server to serve an electrum client wallet. The client wallets are compatible with hardware wallets like the ledger nano. So ditch your ledger live wallet software, and let use our own node to verify and broadcast our transactions!
 
-## Download & Configuration
 SSH into your freenas box, and switch to your bitcoin_node console as root:
 ```
 # iocage console bitcoin_node
@@ -55,14 +54,15 @@ Under `[bitcoin-rpc]`, change `datadir = /home/bitcoin/.bitcoin/`
 
 Under `[electrum-serever]`, change `host= 0.0.0.0` to allow remote connections. Change ip_whitelist to your home network subnet, for example, my router assigns IP adresses as `192.168.84.XXX`, so I typed in `192.168.84.0/24` to limit connections to this range. Save and exit nano.
 
-Install: (Note: ignore the suggestion to upgrade pip)
+## Install: 
+(Note: ignore the suggestion to upgrade pip)
 ```
 bitcoin@bitcoin:~/electrum-personal-server % cd electrum-personal-server-eps-v0.1.6
 bitcoin@bitcoin:~/electrum-personal-server/electrum-personal-server-eps-v0.1.6 % pip-3.6 install --user .
 bitcoin@bitcoin:~/electrum-personal-server/electrum-personal-server-eps-v0.1.6 % cd ~
 bitcoin@bitcoin:~ %
 ```
-First start
+## First start
 ```
 bitcoin@bitcoin:~ % /home/bitcoin/.local/bin/electrum-personal-server /home/bitcoin/electrum-personal-server/config.cfg
 ```
@@ -74,7 +74,7 @@ Lets run it!
 ```
 bitcoin@bitcoin:~ % /home/bitcoin/.local/bin/electrum-personal-server /home/bitcoin/electrum-personal-server/config.cfg
 ```
-Startup Script
+## Startup Script
 Terminating your SSH will also terminate electrum-personal-server, so lets close it with Ctrl+C, then daemon-zie the process with a rc.d startup script:
 ```
 bitcoin@bitcoin:~ % exit
@@ -147,7 +147,7 @@ You can run `ps aux` in the command line to verify that it is running.
 ```
 Again, verify that it sucessfully stops with `ps aux` . Go ahead and reboot your jail, and check that it is running!
 
-Logging
+## Logging
 The startup script uses daemon(8) to run the process in the background and forward all console messages to a log file. We don’t want that log file to grow too large, thankfully FreeBSD has a utility called newsyslog(8), configured by newsyslog.conf
 ```
 # nano /etc/newsyslog.conf
@@ -158,3 +158,4 @@ Add the following line, then save and exit:
 ```
 Electrum Client
 Now boot up your electrum client, goto Tools>Network>Server, point it at your jail’s ip:50002, it should work!
+Next: [ [lnd](freenas_5_lnd.md) ]
