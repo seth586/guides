@@ -67,8 +67,8 @@ Copy the script below and paste the following startup script to nano by right cl
 # Add the following lines to /etc/rc.conf to enable :
 # bitcoind_enable (bool):	Set to "NO" by default.
 #				Set it to "YES" to enable bitcoind
-# bitcoind_user (str)		Set to "root" by default.
-# bitcoind_group (str)		Set to "wheel" by default.
+# bitcoind_user (str)		Set to "bitcoin" by default.
+# bitcoind_group (str)		Set to "bitcoin" by default.
 # bitcoind_conf (str)		Set to "/home/bitcoin/.bitcoin/bitcoin.conf" by default.
 # bitcoind_data_dir (str)	Set to "/home/bitcoin/.bitcoin" by default.
 # bitcoindlimits_enable (bool)	Set to "NO" by default.
