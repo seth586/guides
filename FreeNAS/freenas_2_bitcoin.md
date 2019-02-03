@@ -69,8 +69,8 @@ Copy the script below and paste the following startup script to nano by right cl
 #				Set it to "YES" to enable bitcoind
 # bitcoind_user (str)		Set to "root" by default.
 # bitcoind_group (str)		Set to "wheel" by default.
-# bitcoind_conf (str)		Set to "/root/.bitcoin/bitcoin.conf" by default.
-# bitcoind_data_dir (str)	Set to "/root/.bitcoin" by default.
+# bitcoind_conf (str)		Set to "/home/bitcoin/.bitcoin/bitcoin.conf" by default.
+# bitcoind_data_dir (str)	Set to "/home/bitcoin/.bitcoin" by default.
 # bitcoindlimits_enable (bool)	Set to "NO" by default.
 #				Set it to "YES" to enable bitcoindlimits
 # bitcoindlimits_args		Set to "-e -U ${bitcoind_user}" by default
@@ -100,10 +100,10 @@ extra_commands="configtest"
 
 load_rc_config ${name}
 
-: ${bitcoind_user:="root"}
-: ${bitcoind_group:="wheel"}
-: ${bitcoind_data_dir:="/root/.bitcoin"}
-: ${bitcoind_config_file:="/root/.bitcoin/bitcoin.conf"}
+: ${bitcoind_user:="bitcoin"}
+: ${bitcoind_group:="bitcoin"}
+: ${bitcoind_data_dir:="/home/bitcoin/.bitcoin"}
+: ${bitcoind_config_file:="/home/bitcoin/.bitcoin/bitcoin.conf"}
 : ${bitcoindlimits_args:="-e -U ${bitcoind_user}"}
 
 # set up dependant variables
