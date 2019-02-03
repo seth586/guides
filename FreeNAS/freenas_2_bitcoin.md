@@ -126,7 +126,7 @@ stop_cmd="bitcoind_stop"
 stop_postcmd="bitcoind_wait"
 command="/usr/local/bin/bitcoind"
 daemon_command="/usr/sbin/daemon"
-#pidfile="/var/run/${name}.pid"
+pidfile="/var/run/${name}.pid"
 extra_commands="configtest"
 
 
