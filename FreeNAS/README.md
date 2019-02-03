@@ -23,4 +23,8 @@ By the end of this guide, we will have bitcoin core compiled, serving connection
 ### Recommendations
 Use a password manager to keep track of all the passwords required to run FreeNAS and your software. It's good cypherpunk habit to use unique strong passwords with 3rd parties, too. KeePassDX is an encrypted open source password manager that runs on android. It can generate strong passwords for you. 
 
+### Shout outs
+Special thanks to the Stadicus raspberri pi guide for inspiring this freebsd guide, check it out here:
+https://github.com/Stadicus/guides/blob/master/raspibolt/README.md
+
 Next: [ [Jail Creation](freenas_1_jail_creation.md) ]
