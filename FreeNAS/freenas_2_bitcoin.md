@@ -66,6 +66,7 @@ Go to https://github.com/bitcoin/bitcoin/releases, find the tar.gz release we wa
 # cd ~
 # wget https://github.com/bitcoin/bitcoin/archive/v0.17.1.tar.gz
 # tar xzvf v0.17.1.tar.gz
+# rm v0.17.1.tar.gz
 ```
 
 To see what is in the current directory, type `ls`
@@ -81,6 +82,7 @@ You can see our downloaded file, `v0.17.1.tar.gz` and the unpacked directory `bi
 # gmake check
 # gmake install
 # csh
+# rm -r bitcoin-0.17.1
 ```
 This process may take a while. Once its done and installed, we need to add a rc.d script to automatically start the bitcoin daemon on start. Read more about FreeBSD rc.d scripting [here](https://www.freebsd.org/doc/en_US.ISO8859-1/articles/rc-scripting/index.html).
 
@@ -269,7 +271,7 @@ Lets make the startup script executable:
 ```
 # chmod +x /etc/rc.d/bitcoind
 ```
-Lets enable our startup script in /etc/rc.conf
+Lets enable our startup script in `/etc/rc.conf`
 ```
 # nano /etc/rc.conf
 ```
@@ -315,7 +317,7 @@ Note: Do not run `pkg update && upgrade` unless you are ready to recompile bitco
 # wget https://github.com/bitcoin/bitcoin/archive/v0.17.1.tar.gz
 # tar xzvf v0.17.1.tar.gz
 # rm *.gz
-# cd /.bitcoin-0.17.1
+# cd /bitcoin-0.17.1
 # sh 
 # ./contrib/install_db4.sh `pwd`
 # export BDB_PREFIX='/root/bitcoin-0.17.1/db4'
@@ -324,6 +326,7 @@ Note: Do not run `pkg update && upgrade` unless you are ready to recompile bitco
 # gmake check
 # gmake install
 # tcsh
+rm -r bitcoin-0.17.1
 # service bitcoind start
 ```
 Next: [ [Install Tor](freenas_3_tor.md) ]
