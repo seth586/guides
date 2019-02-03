@@ -4,7 +4,7 @@
 
 ### Intro
 
-I have been running a FreeNAS server for a few years now, and have come to appreciate what it offers as a personal home server. It runs plex, medusa, and transmission for media consumption & transcoding, aggregation, and downloading. It runs a VPN so I can have access to my local area network on the road. It runs my own cloud service on nextcloud, which in addition to hosting my files, also syncs my calendar and contacts between devices. I can run a rooted android phone with LineageOS and NO google. It's a cypherpunk device. 
+I have been running a FreeNAS server for a few years now, and have come to appreciate what it offers as a personal home server. It is infamous for media streaming & aggregation, and file hosting. It's a cypherpunk platform. 
 
 FreeNAS is special because of the hard drive redundancy features. While I appreciate all the raspberri pi documentation out there for bitcoin and lightning, the problem is the hard drive on these setups. Lightning especially needs to be online at all times, and were running hardware that is 1 spinning platter away from catastrophic failure. FreeNAS utilizes the ZFS file system, which not only adds redundancy, but hashes data on your drives to detect and fix errors, such as bitrot. If you follow the FreeNAS documentation, you will be set up to automatically run SMART tests on your hard drives, scrub data to verify & fix data integrity, and receive email alerts if a drive begins failing on you, allowing you to insert a new drive and resliver without any downtime. Add a battery backup, and you are running an enterprise grade environment at home!
 
