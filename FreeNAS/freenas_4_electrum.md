@@ -2,6 +2,9 @@
 
 ### Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
+
+#### 🚧🚧🚧THIS SECTION IS STILL UNDER CONSTRUCTION, DO NOT USE!🚧🚧🚧
+
 If you aren't already there, SSH into your freenas box, and switch to your bitcoin_node console as root:
 ```
 # iocage console bitcoin_node
