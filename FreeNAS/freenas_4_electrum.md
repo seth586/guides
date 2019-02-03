@@ -130,6 +130,10 @@ electrumpersonalserver_status()
 load_rc_config $name
 run_rc_command "$1"
 ```
+Make the startup script executable:
+```
+chmod +x /etc/rc.d/electrumpersonalserver
+```
 Lets enable our startup script:
 ```
 # nano /etc/rc.conf
