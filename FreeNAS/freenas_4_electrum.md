@@ -6,25 +6,32 @@
 Electrum Personal Server is a lightweight electrum server to serve an electrum client wallet. The client wallets are compatible with hardware wallets like the ledger nano. So ditch your ledger live wallet software, and let use our own node to verify and broadcast our transactions!
 
 ## Download & Configuration
-SSH into your freenas box, and switch to your bitcoin_node console:
+SSH into your freenas box, and switch to your bitcoin_node console as root:
 ```
 # iocage console bitcoin_node
+root@bitcoin:~ #
 ```
-Electrum-personal-server is on github, check for the latest release at https://github.com/chris-belcher/electrum-personal-server/releases .
-```
-# cd /usr/local
-# wget https://github.com/chris-belcher/electrum-personal-server/archive/eps-v0.1.6.tar.gz
-# tar xzvf eps-v0.1.6.tar.gz
-# rm eps-v0.1.6.tar.gz
-```
-Lets make sure that we have the dependencies already installed.
+Lets make sure that we have python3 and pip installed:
 ```
 # pkg install py36-pip python3
 ```
+Switch to a bitcoin user session and make an electrum folder.
+```
+root@bitcoin:~ # su bitcoin
+bitcoin@bitcoin:~ % mkdir /home/bitcoin/electrum-personal-server
+bitcoin@bitcoin:~ % cd /home/bitcoin/electrum-personal-server
+bitcoin@bitcoin:~/electrum-personal-server %
+```
+
+Electrum-personal-server is on github, check for the latest release at https://github.com/chris-belcher/electrum-personal-server/releases .
+```
+bitcoin@bitcoin:~/electrum-personal-server % wget https://github.com/chris-belcher/electrum-personal-server/archive/eps-v0.1.6.tar.gz
+bitcoin@bitcoin:~/electrum-personal-server % tar xzvf eps-v0.1.6.tar.gz
+bitcoin@bitcoin:~/electrum-personal-server % rm eps-v0.1.6.tar.gz
+```
 Lets edit our configuration file:
 ```
-# cd electrum-personal-server-eps-v0.1.6
-# cp config.cfg_sample config.cfg
+# cp electrum-personal-server-eps-v0.1.6/config.cfg_sample config.cfg
 # nano config.cfg
 ```
 Now we need to add our hardware wallet’s master public keys xpub /ypub/zpub).
@@ -47,9 +54,9 @@ Under `[bitcoin-rpc]`, change `datadir = /home/bitcoin/.bitcoin/`
 
 Under `[electrum-serever]`, change host to `0.0.0.0` to allow remote connections. Change ip_whitelist to your home network subnet, for example, my router assigns IP adresses as `192.168.84.XXX`, so I typed in `192.168.84.0/24` to limit connections from this range. Save and exit nano.
 
-Install
+Install:
 ```
-# pip-3.6 install .
+# pip-3.6 install --user .
 ```
 First start
 ```
