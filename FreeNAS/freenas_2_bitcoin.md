@@ -18,7 +18,7 @@ You should see your bitcoin jail listed. Lets switch our console from our base s
 # iocage console bitcoin
 ```
 
-You're in! Lets create our bitcoin user/group:
+You're in! Lets create our bitcoin user/group. Press ENTER to leave blank:
 
 ```
 root@bitcoin:~ # adduser
