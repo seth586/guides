@@ -301,9 +301,7 @@ You can check running processes by typing:
 ```
 If everything was set up correctly, bitcoin should be running! At this point, bitcoin will start downloading the blockchain. This can take a long time. Check bitcoin's initial block download progress by running the following command:
 ```
-# su bitcoin
-# bitcoin-cli getblockchaininfo
-# exit
+# bitcoin-cli -datadir=/home/bitcoin/.bitcoin getblockchaininfo
 ```
 Once "blocks" equals "headers", bitcoin is fully synced!
 
