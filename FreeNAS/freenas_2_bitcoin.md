@@ -324,5 +324,6 @@ Note: Do not run `pkg update && upgrade` unless you are ready to recompile bitco
 # gmake check
 # gmake install
 # tcsh
+# service bitcoind start
 ```
 Next: [ [Install Tor](freenas_3_tor.md) ]
