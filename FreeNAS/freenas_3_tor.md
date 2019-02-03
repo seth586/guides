@@ -3,7 +3,7 @@
 ### Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
 ### Why Tor?
-Goto https://bitnodes.earn.com/dashboard/, or http://nodes.bitcoin-russia.ru and sort by onion protocol. How many nodes do you see? 200-500 as of writing. This is a tragedy. Every bitcoin node should be serving tor connections, there is no reason not to! Without tor or a vpn service provider, we are publicly proclaiming "This home has bitcoins'!
+Goto https://bitnodes.earn.com/dashboard/, or http://nodes.bitcoin-russia.ru and sort by onion protocol. How many nodes do you see? 200-500 as of writing. This is a tragedy. Every bitcoin node should be serving tor connections, there is no reason not to! Without tor, we are publicly proclaiming to our ISP and VPN providers "This home has bitcoins'!
 
 Because of this, nodes that exclusively run on tor have a hard time keeping sync with the network. Lets change that.
 
