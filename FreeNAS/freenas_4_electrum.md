@@ -29,12 +29,12 @@ bitcoin@bitcoin:~/electrum-personal-server % wget https://github.com/chris-belch
 bitcoin@bitcoin:~/electrum-personal-server % tar xzvf eps-v0.1.6.tar.gz
 bitcoin@bitcoin:~/electrum-personal-server % rm eps-v0.1.6.tar.gz
 ```
-Lets edit our configuration file:
+### Configuration file:
 ```
 bitcoin@bitcoin:~/electrum-personal-server % cp electrum-personal-server-eps-v0.1.6/config.cfg_sample config.cfg
 bitcoin@bitcoin:~/electrum-personal-server % nano config.cfg
 ```
-Now we need to add our hardware wallet’s master public keys xpub /ypub/zpub).
+Now we need to add our hardware wallet’s master public keys xpub/ypub/zpub).
 
 xpub is for P2PKH (legacy) addresses, which start with a 1
 
@@ -44,7 +44,7 @@ zpub is for P2WPKH, (bech32 native segwit), which start with bc1
 
 You can find it under Electrum’s menu Wallet>Information.
 
-You 24 word seed can generate all 3, so it might be best to put all 3 in your config.cfg file under [master-public-keys]
+You 24 word seed can generate all 3, so it might be best to put all 3 in your config.cfg file under `[master-public-keys]`
 ```
 [master-public-keys]
 wallet_legacy = xpub.....
