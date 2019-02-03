@@ -161,6 +161,7 @@ Add the following line, then save and exit:
 ```
 /var/log/electrumpersonalserver.log     600  1     100  *     JN
 ```
-Electrum Client
+## Electrum Client
 Now boot up your electrum client, goto Tools>Network>Server, point it at your jail’s ip:50002, it should work!
+
 Next: [ [lnd](freenas_5_lnd.md) ]
