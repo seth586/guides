@@ -18,7 +18,42 @@ You should see your bitcoin jail listed. Lets switch our console from our base s
 # iocage console bitcoin
 ```
 
-You're in! Lets start installing stuff! (answer proceed questions with `y`)
+You're in! Lets create our bitcoin user/group:
+
+```
+root@btc:/home # adduser
+Username: bitcoin
+Full name:
+Uid (Leave empty for default):
+Login group [bitcoin]:
+Login group is bitcoin. Invite bitcoind into other groups? []:
+Login class [default]:
+Shell (sh csh tcsh git-shell nologin) [sh]: csh
+Home directory [/home/bitcoin]:
+Home directory permissions (Leave empty for default):
+Use password-based authentication? [yes]:
+Use an empty password? (yes/no) [no]:
+Use a random password? (yes/no) [no]: yes
+Lock out the account after creation? [no]:
+Username   : bitcoin
+Password   : <random>
+Full Name  :
+Uid        : 1001
+Class      :
+Groups     : bitcoind
+Home       : /home/bitcoin
+Home Mode  :
+Shell      : /bin/csh
+Locked     : no
+OK? (yes/no): yes
+adduser: INFO: Successfully added (bitcoind) to the user database.
+adduser: INFO: Password for (bitcoind) is: 123GVLZXYABC
+Add another user? (yes/no): no
+Goodbye!
+#
+```
+
+Lets start installing stuff! (answer proceed questions with `y`)
 
 ```
 # pkg update && pkg upgrade -y
