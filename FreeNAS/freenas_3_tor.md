@@ -24,6 +24,13 @@ CacheDirectoryGroupReadable 1
 ```
 Save (CTRL+O, ENTER), then exit (CTRL+X)
 
+Enable autostart by editing `/etc/rc.conf` to `tor_enable="YES"`
+```
+root@bitcoin:~ # nano /etc/rc.conf
+tor_enable="YES"
+```
+Save (Ctrl+O,ENTER) and exit (CTRL+X)
+
 Add user `bitcoin` to the` _tor` group so that bitcoin can read the cookie authentication file in `/var/db/tor`:
 ```
 root@bitcoin:~ # pw usermod bitcoin -G _tor
