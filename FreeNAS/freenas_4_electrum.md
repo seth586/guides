@@ -57,7 +57,7 @@ Under `[electrum-serever]`, change `host= 0.0.0.0` to allow remote connections. 
 
 Install:
 ```
-# pip-3.6 install --user .
+bitcoin@btc:~/electrum-personal-server % pip-3.6 install --user .
 ```
 First start
 ```
