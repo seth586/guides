@@ -11,7 +11,7 @@ root@bitcoin:~ #
 ### Prerequisites
 Make sure that bitcoind is fully synced before running electrum-personal-server:
 ```
-# bitcoin-cli getblockchaininfo
+# bitcoin-cli -datadir=/home/bitcoin/.bitcoin getblockchaininfo
 ```
 
 ### Install Electrum-Personal-Server
