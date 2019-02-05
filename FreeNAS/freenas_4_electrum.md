@@ -92,7 +92,7 @@ Now boot up your electrum client, goto Tools>Network>Server, point it at your ja
 Terminating your SSH will also terminate electrum-personal-server, so lets close it with Ctrl+C, then daemon-zie the process with a rc.d startup script:
 ```
 bitcoin@bitcoin:~ % exit
-root@bitcoin:~ # nano /etc/rc.d/electrumpersonalserver
+root@bitcoin:~ # nano /usr/local/etc/rc.d/electrumpersonalserver
 ```
 Copy the following startup script to nano, then save and exit.
 ```
@@ -145,7 +145,7 @@ run_rc_command "$1"
 ```
 Make the startup script executable:
 ```
-chmod +x /etc/rc.d/electrumpersonalserver
+chmod +x /usr/local/etc/rc.d/electrumpersonalserver
 ```
 Lets enable our startup script:
 ```
