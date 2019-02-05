@@ -106,7 +106,6 @@ rcvar=electrumpersonalserver_enable
  
 command="/home/bitcoin/.local/bin/electrum-personal-server"
 command_args="/home/bitcoin/electrum-personal-server/config.cfg"
-logfile="/home/bitcoin/electrum-personal-server/${name}.log"
 pidfile="/home/bitcoin/electrum-personal-server/${name}.pid"
 sig_stop=-KILL
  
@@ -117,7 +116,7 @@ eps_user="bitcoin"
  
 electrumpersonalserver_start()
 {
-        /usr/sbin/daemon -u ${eps_user} -o ${logfile} -p ${pidfile} ${command} $command_args
+        su -u 'bitcoin /usr/sbin/daemon -f -u ${eps_user} -p ${pidfile} ${command} $command_args'
         if [ $? -ne 0 ]; then
                 echo "Error starting ${name}."
                 exit 1
