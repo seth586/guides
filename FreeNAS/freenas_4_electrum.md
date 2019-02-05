@@ -78,7 +78,7 @@ bitcoin@bitcoin:~ %
 ```
 bitcoin@bitcoin:~ % /home/bitcoin/.local/bin/electrum-personal-server /home/bitcoin/electrum-personal-server/config.cfg
 ```
-It will import addresses from each master public key. When complete, electrum-personal-server will exit. Next, if you have transaction history, look up the block height of your oldest transaction. Then, lets scan the blockchain for those historical transactions:
+It will import addresses from each master public key. When complete, electrum-personal-server will exit. Next, if you have transaction history, look up the block height of your oldest transaction, or just start from 1. Then, lets scan the blockchain for those historical transactions:
 ```
 bitcoin@bitcoin:~ % /home/bitcoin/.local/bin/electrum-personal-server-rescan /home/bitcoin/electrum-personal-server/config.cfg
 ```
@@ -86,6 +86,8 @@ Lets run it!
 ```
 bitcoin@bitcoin:~ % /home/bitcoin/.local/bin/electrum-personal-server /home/bitcoin/electrum-personal-server/config.cfg
 ```
+Now boot up your electrum client, goto Tools>Network>Server, point it at your jail’s ip:50002, it should work!
+
 ## Startup Script
 Terminating your SSH will also terminate electrum-personal-server, so lets close it with Ctrl+C, then daemon-zie the process with a rc.d startup script:
 ```
@@ -173,7 +175,5 @@ Add the following line, then save and exit:
 ```
 /home/bitcoin/electrum-personal-server/electrumpersonalserver.log     600  1     100  *     JN
 ```
-## Electrum Client
-Now boot up your electrum client, goto Tools>Network>Server, point it at your jail’s ip:50002, it should work!
 
 Next: [ [lnd](freenas_5_lnd.md) ]
