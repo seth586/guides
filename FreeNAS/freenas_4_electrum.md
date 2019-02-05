@@ -116,7 +116,7 @@ eps_user="bitcoin"
  
 electrumpersonalserver_start()
 {
-        su -u 'bitcoin /usr/sbin/daemon -f -u ${eps_user} -p ${pidfile} ${command} $command_args'
+        su - bitcoin -c '/usr/sbin/daemon -f -p ${pidfile} ${command} $command_args'
         if [ $? -ne 0 ]; then
                 echo "Error starting ${name}."
                 exit 1
