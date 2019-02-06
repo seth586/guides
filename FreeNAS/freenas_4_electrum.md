@@ -108,7 +108,7 @@ status_cmd="${name}_status"
  
 electrumpersonalserver_start()
 {
-        /usr/sbin/daemon -o ${logfile} -p ${pidfile} ${command} $command_args
+        /usr/sbin/daemon -f -p ${pidfile} ${command} $command_args
         if [ $? -ne 0 ]; then
                 echo "Error starting ${name}."
                 exit 1
@@ -156,15 +156,5 @@ You can run `ps aux` in the command line to verify that it is running.
 # service electrumpersonalserver stop
 ```
 Again, verify that it sucessfully stops with `ps aux` . Go ahead and reboot your jail, and check that it is running!
-
-## Logging
-The startup script uses daemon(8) to run the process in the background and forward all console messages to a log file. We don’t want that log file to grow too large, thankfully FreeBSD has a utility called newsyslog(8), configured by newsyslog.conf
-```
-# nano /etc/newsyslog.conf
-```
-Add the following line, then save and exit:
-```
-/home/bitcoin/electrum-personal-server/electrumpersonalserver.log     600  1     100  *     JN
-```
 
 Next: [ [lnd](freenas_5_lnd.md) ]
