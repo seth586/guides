@@ -5,10 +5,10 @@
 
 #### 🚧🚧🚧THIS SECTION IS STILL UNDER CONSTRUCTION, DO NOT USE!🚧🚧🚧
 
-If you aren't already there, SSH into your freenas box, and switch to your bitcoin_node console as root:
+If you aren't already there, SSH into your freenas box, and switch to your bitcoin console as root:
 ```
-# iocage console bitcoin_node
-root@bitcoin:~ #
+# iocage console bitcoin
+#
 ```
 
 ### Prerequisites
@@ -24,24 +24,19 @@ Lets make sure that we have python3 and pip installed:
 ```
 # pkg install py36-pip python3
 ```
-Switch to a bitcoin user session and make an electrum folder.
-```
-root@bitcoin:~ # su bitcoin
-bitcoin@bitcoin:~ % mkdir /home/bitcoin/electrum-personal-server
-bitcoin@bitcoin:~ % cd /home/bitcoin/electrum-personal-server
-bitcoin@bitcoin:~/electrum-personal-server %
-```
-
 Electrum-personal-server is on github, check for the latest release at https://github.com/chris-belcher/electrum-personal-server/releases .
 ```
-bitcoin@bitcoin:~/electrum-personal-server % wget https://github.com/chris-belcher/electrum-personal-server/archive/eps-v0.1.6.tar.gz
-bitcoin@bitcoin:~/electrum-personal-server % tar xzvf eps-v0.1.6.tar.gz
-bitcoin@bitcoin:~/electrum-personal-server % rm eps-v0.1.6.tar.gz
+# cd ~
+# mkdir /electrum
+# cd /electrum
+# wget https://github.com/chris-belcher/electrum-personal-server/archive/eps-v0.1.6.tar.gz
+# tar xzvf eps-v0.1.6.tar.gz
+# rm eps-v0.1.6.tar.gz
 ```
 ### Configuration file:
 ```
-bitcoin@bitcoin:~/electrum-personal-server % cp electrum-personal-server-eps-v0.1.6/config.cfg_sample config.cfg
-bitcoin@bitcoin:~/electrum-personal-server % nano config.cfg
+cp electrum-personal-server-eps-v0.1.6/config.cfg_sample config.cfg
+nano config.cfg
 ```
 Now we need to add our hardware wallet’s master public keys xpub/ypub/zpub).
 
@@ -67,32 +62,29 @@ Under `[electrum-serever]`, change `host= 0.0.0.0` to allow remote connections. 
 ## Install: 
 (Note: ignore the suggestion to upgrade pip)
 ```
-bitcoin@bitcoin:~/electrum-personal-server % cd electrum-personal-server-eps-v0.1.6
-bitcoin@bitcoin:~/electrum-personal-server/electrum-personal-server-eps-v0.1.6 % pip-3.6 install --user .
-bitcoin@bitcoin:~/electrum-personal-server/electrum-personal-server-eps-v0.1.6 % cd ..
-bitcoin@bitcoin:~/electrum-personal-server/ % rm -r electrum-personal-server-eps-v0.1.6
-bitcoin@bitcoin:~/electrum-personal-server/ % cd ~
-bitcoin@bitcoin:~ %
+# cd electrum-personal-server-eps-v0.1.6
+# pip-3.6 install .
+# cd ..
+# rm -r electrum-personal-server-eps-v0.1.6
 ```
 ## First start
 ```
-bitcoin@bitcoin:~ % /home/bitcoin/.local/bin/electrum-personal-server /home/bitcoin/electrum-personal-server/config.cfg
+# /usr/local/bin/electrum-personal-server ~/electrum/config.cfg
 ```
 It will import addresses from each master public key. When complete, electrum-personal-server will exit. Next, if you have transaction history, look up the block height of your oldest transaction, or just start from 1. Then, lets scan the blockchain for those historical transactions:
 ```
-bitcoin@bitcoin:~ % /home/bitcoin/.local/bin/electrum-personal-server-rescan /home/bitcoin/electrum-personal-server/config.cfg
+# /usr/local/bin/electrum-personal-server-rescan ~/electrum/config.cfg
 ```
 Lets run it!
 ```
-bitcoin@bitcoin:~ % /home/bitcoin/.local/bin/electrum-personal-server /home/bitcoin/electrum-personal-server/config.cfg
+# /usr/local/bin/electrum-personal-server ~/electrum/config.cfg
 ```
 Now boot up your electrum client, goto Tools>Network>Server, point it at your jail’s ip:50002, it should work!
 
 ## Startup Script
 Terminating your SSH will also terminate electrum-personal-server, so lets close it with Ctrl+C, then daemon-zie the process with a rc.d startup script:
 ```
-bitcoin@bitcoin:~ % exit
-root@bitcoin:~ # nano /usr/local/etc/rc.d/electrumpersonalserver
+# nano /usr/local/etc/rc.d/electrumpersonalserver
 ```
 Copy the following startup script to nano, then save and exit.
 ```
@@ -104,19 +96,19 @@ Copy the following startup script to nano, then save and exit.
 name=electrumpersonalserver
 rcvar=electrumpersonalserver_enable
  
-command="/home/bitcoin/.local/bin/electrum-personal-server"
-command_args="/home/bitcoin/electrum-personal-server/config.cfg"
-pidfile="/home/bitcoin/electrum-personal-server/${name}.pid"
+command="/usr/local/bin/electrum-personal-server"
+command_args="/usr/local/electrum-personal-server-eps-v0.1.6/config.cfg"
+logfile="/var/log/${name}.log"
+pidfile="/var/run/${name}.pid"
 sig_stop=-KILL
  
 start_cmd="${name}_start"
 stop_cmd="${name}_stop"
 status_cmd="${name}_status"
-eps_user="bitcoin" 
  
 electrumpersonalserver_start()
 {
-        su - bitcoin -c '/usr/sbin/daemon -f -p ${pidfile} ${command} $command_args'
+        /usr/sbin/daemon -o ${logfile} -p ${pidfile} ${command} $command_args
         if [ $? -ne 0 ]; then
                 echo "Error starting ${name}."
                 exit 1
