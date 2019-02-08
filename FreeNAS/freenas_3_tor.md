@@ -3,9 +3,11 @@
 ### Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
 ### Why Tor?
-Goto https://bitnodes.earn.com/dashboard/, or http://nodes.bitcoin-russia.ru and sort by onion protocol. How many nodes do you see? 200-500 as of writing. This is a tragedy. Every bitcoin node should be serving tor connections, there is no reason not to! Tor gives usersd the ability to use the bitcoin network without doxxing their IP address. WHile this may not be important in jurisdictions where bitcoin is legal, you would certainly want a tor connection should you need the privacy!
+Goto https://bitnodes.earn.com/dashboard/, or http://nodes.bitcoin-russia.ru and sort by onion protocol. How many nodes do you see? 200-500 as of writing. This is a tragedy. Because of this, nodes that exclusively run on tor have a hard time keeping sync with the network. Lets change that. 
 
-Because of this, nodes that exclusively run on tor have a hard time keeping sync with the network. Lets change that. The goal of this tor installation is to connect to the bitcoin network via IP and tor, acting as a bridge between 'clearnet' and 'onion'.
+The goal of this tor installation is to connect to the bitcoin network via IP and tor, acting as a bridge between 'clearnet' and 'onion'.
+
+Every bitcoin node should be serving tor connections, there is no reason not to! Tor gives users the ability to use the bitcoin network without doxxing their IP address. This may not be important in jurisdictions where bitcoin is legal, however you would certainly want a tor connection should you need the privacy!
 
 ### Install Tor
 
