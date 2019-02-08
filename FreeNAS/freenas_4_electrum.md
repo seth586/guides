@@ -69,7 +69,7 @@ Under `[electrum-serever]`, change `host= 0.0.0.0` to allow remote connections. 
 ```
 ## First start
 ```
-# /usr/local/bin/electrum-personal-server ~/electrum/config.cfg
+# /usr/local/bin/electrum-personal-server /electrum/config.cfg
 ```
 It will import addresses from each master public key. When complete, electrum-personal-server will exit. Next, if you have transaction history, look up the block height of your oldest transaction, or just start from 1. Then, lets scan the blockchain for those historical transactions:
 ```
