@@ -12,7 +12,7 @@ FreeNAS 11.2 uses iocage to manage jails. Previous versions used warden, which i
 
 Give the jail a name, such as `bitcoin`. Select release `11.2-RELEASE`, select `DHCP Autoconfigure IPv4` and select `Auto-start` as shown. Click `SAVE`.
 
-It would be a good idea to log into your router and give your bitcoin jail a static IP address. Also forward port 8333 from your WAN to your jail's LAN IP address. For example, my internal IP address assigned to my bitcoin jail is 192.168.84.208
+It would be a good idea to log into your router and give your bitcoin jail a static IP address. Also forward port 8333 from your WAN to your jail's LAN IP address. For example, my internal IP address assigned to my bitcoin jail is 192.168.84.123
 
 ![FreeNAS_Jail_Port_Forward](images/jail_port_forward.png)
 
