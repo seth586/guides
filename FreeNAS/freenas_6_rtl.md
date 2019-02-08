@@ -12,7 +12,9 @@ Find the latest release [here](https://github.com/ShahanaFarooqui/RTL/releases).
 If not already there, SSH into your freenas box and switch to your bitcoin jail.
 
 ```
-# su bitcoin
-bitcoin@bitcoin:~ % cd ~
-bitcoin@bitcoin:~ % wget https://github.com/ShahanaFarooqui/RTL/archive/v0.1.14-alpha.tar.gz
+# pkg install node npm python
+# cd ~
+# git clone https://github.com/ShahanaFarooqui/RTL.git
+# cd RTL
+# npm install
 
