@@ -121,3 +121,10 @@ lnd_enable="YES"
 ```
 Save, (CTRL+O,ENTER) then exit (CTRL+O)
 
+Lets verify lnd auto boots on startup:
+```
+# exit
+root@freenas[~]# iocage restart bitcoin
+root@freenas[~]# iocage console bitcoin
+# ps aux
+```
