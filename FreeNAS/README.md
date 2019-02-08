@@ -39,6 +39,9 @@ Gab: [Seth586](https://gab.com/seth586)
 
 Email: seth586@protonmail.com
 
+### Give me an unreasonably small tip!
+https://tippin.me/@seth586
+
 ### Shout outs
 Special thanks to the Stadicus raspberri pi guide for inspiring this freebsd guide, check it out here:
 https://github.com/Stadicus/guides/blob/master/raspibolt/README.md
