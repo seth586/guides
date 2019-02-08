@@ -84,58 +84,32 @@ Now boot up your electrum client, goto Tools>Network>Server, point it at your ja
 By default, electrum client will also connect to public electrum servers to get block header info. This reduces your privacy. To prevent this from happening, add `--oneserver --server 192.168.84.123:s` (where the ip address reflects your bitcoin jail) to your command path. In windows, right click on the electrum shortcut, select `properties`, then append `--oneserver --server 192.168.84.123:s` after the executable path `"C:\Program Files (x86)\Electrum\electrum-3.3.2.exe"`. Select `OK` to save and exit.
 
 ## Startup Script
-Terminating your SSH will also terminate electrum-personal-server, so lets close it with Ctrl+C, then daemon-zie the process with a rc.d startup script:
+Terminating your SSH will also terminate electrum-personal-server, so lets close it with Ctrl+C, then run the process supervised with `daemon` called at startup with a rc.d service script:
 ```
 # nano /usr/local/etc/rc.d/electrumpersonalserver
 ```
 Copy the following startup script to nano, then save and exit.
 ```
 #!/bin/sh
-# REQUIRE: LOGIN cleanvar bitcoind
- 
+#
+# PROVIDE: electrumpersonalserver
+# REQUIRE: bitcoind
+# KEYWORD:
+
 . /etc/rc.subr
- 
-name=electrumpersonalserver
-rcvar=electrumpersonalserver_enable
- 
-command="/usr/local/bin/electrum-personal-server"
-command_args="/usr/local/electrum-personal-server-eps-v0.1.6/config.cfg"
-logfile="/var/log/${name}.log"
+
+name="electrumpersonalserver"
+rcvar="electrumpersonalserver_enable"
+electrumpersonalserver_command="/usr/local/bin/electrum-personal-server /electrum/config.cfg"
 pidfile="/var/run/${name}.pid"
-sig_stop=-KILL
- 
-start_cmd="${name}_start"
-stop_cmd="${name}_stop"
-status_cmd="${name}_status"
- 
-electrumpersonalserver_start()
-{
-        /usr/sbin/daemon -f -p ${pidfile} ${command} $command_args
-        if [ $? -ne 0 ]; then
-                echo "Error starting ${name}."
-                exit 1
-        fi
-    echo "Starting ${name}."
-}
- 
-electrumpersonalserver_stop()
-{
-    echo "stopping ${name}"
-    kill `cat ${pidfile}`
-}
- 
-electrumpersonalserver_status()
-{
-    if [ -e ${pidfile} ] ; then
-        if ps `cat ${pidfile}` > /dev/null ; then
-            echo "${name} is running"
-            return
-        fi
-    fi
-    echo "${name} is not running"
-}
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -r -f ${electrumpersonalserver_command}"
+
 load_rc_config $name
+: ${electrumpersonalserver_enable:=no}
+
 run_rc_command "$1"
+
 ```
 Make the startup script executable:
 ```
