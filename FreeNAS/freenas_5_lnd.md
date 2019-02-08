@@ -128,3 +128,5 @@ root@freenas[~]# iocage restart bitcoin
 root@freenas[~]# iocage console bitcoin
 # ps aux
 ```
+
+Next: { [Install Ride The Lightning web UI](freenas_6_rtl.md) ]
