@@ -45,7 +45,7 @@ bitcoind.dir=/home/bitcoin/.bitcoin
 ```
 Save (CTRL+O), then exit (CTRL+X)
 
-Lets start it up!
+### LND Startup and initialization
 ```
 # lnd --configfile=/home/bitcoin/.lnd/lnd.conf
 ```
@@ -67,13 +67,13 @@ Open another SSH terminal window, log into to your FreeNAS server, and switch to
 ```
 root@freenas:~# iocage console bitcoin
 # lncli create
-~~~ 
+```
 Follow the prompt to create a wallet. Pick a strong wallet password!
 
 Now lets unlock our wallet:
-~~~
+```
 # lncli unlock
-~~~
+```
 Were done with this terminal, close it.
 
 In your other terminal window, `lnd` will begin its sync. Once the sync is complete, exit (CTRL+C).
