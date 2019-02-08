@@ -40,11 +40,11 @@ nano config.cfg
 ```
 Now we need to add our hardware wallet’s master public keys xpub/ypub/zpub).
 
-xpub is for P2PKH (legacy) addresses, which start with a 1
+xpub is for P2PKH (legacy) addresses, where generated addresses start with a 1
 
-ypub is for P2SH-P2WPKH (segwit), which start with a 3
+ypub is for P2SH-P2WPKH (segwit), where generated addresses start with a 3
 
-zpub is for P2WPKH, (bech32 native segwit), which start with bc1
+zpub is for P2WPKH, (bech32 native segwit), where generated addresses start with bc1
 
 You can find it under Electrum’s menu Wallet>Information.
 
