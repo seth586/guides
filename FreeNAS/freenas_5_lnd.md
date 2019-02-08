@@ -51,7 +51,7 @@ Lets start it up!
 ```
 If it works, you should see the following message:
 ```
-root@btc:~ # lnd --configfile=/home/bitcoin/.lnd/lnd.conf
+root@bitcoin:~ # lnd --configfile=/home/bitcoin/.lnd/lnd.conf
 Attempting automatic RPC configuration to bitcoind
 Automatically obtained bitcoind's RPC credentials
 2019-02-07 22:00:34.994 [INF] LTND: Version: 0.5.2-beta commit=v0.5.2-beta, build=production, logging=default
