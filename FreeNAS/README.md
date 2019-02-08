@@ -28,8 +28,11 @@ Use a password manager to keep track of all the passwords required to run FreeNA
 
 ### Contact me
 If you have any trouble with this guide, or want to share something to improve the guide, contact me!
+
 Twitter: [Seth586](https://twitter.com/seth586)
+
 Gab: [Seth586](https://gab.com/seth586)
+
 Email: seth586@protonmail.com
 
 ### Shout outs
