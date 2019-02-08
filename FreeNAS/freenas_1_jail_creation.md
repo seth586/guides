@@ -18,4 +18,15 @@ It would be a good idea to log into your router and give your bitcoin jail a sta
 
 *Your router's firmware may look different. This is how it looks on OpenWRT.*
 
+Now would also be a good time to port forward 9735 for lnd:
+```
+Name : lnd
+Protocol: TCP+UDP
+External Zone: WAN
+External Port: 9735
+Internal Zone: LAN
+Internal IP address: (inset your jail IP here)
+Internal Port: 9735
+```
+
 Next: [ [Install Bitcoin](freenas_2_bitcoin.md) ]
