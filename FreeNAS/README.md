@@ -16,7 +16,7 @@ So, at this point we can assume that you built your home server. Hopefully you w
 ### Assumptions
 I am assuming you know your way around your router. My example router is a Linksys WRT1900ACv1 running OpenWRT. Your router configuration user interface may be different than explained here.
 
-Lets also assume that you installed FreeNAS on your home server (Version 11.2), navigated the FreeNAS forums, read the [FreeNAS documentation](https://www.ixsystems.com/documentation/freenas/), and set up a ZFS volume. Make sure you set up your SMART test and scrub schedule and email alerts!
+Lets also assume that you installed FreeNAS on your home server (Version 11.2), navigated the [FreeNAS forums](http://forums.freenas.org/index.php), read the [FreeNAS documentation](https://www.ixsystems.com/documentation/freenas/), and set up a ZFS volume. Make sure you set up your SMART test, scrub schedule and email alerts!
 
 Any time a command line is represented by a single `#` hash, that represents the command line inside your jail. Any commands as a user or outside the jail are represented by their full path, which may differ from what you see.
 
