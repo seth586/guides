@@ -75,7 +75,7 @@ In your other terminal window, `lnd` will begin its sync. Once the sync is compl
 ```
 bitcoin@bitcoin:~ % exit
 root@bitcoin
-
+```
 ### Configure start on boot & restart
 
 We will again use [daemon](https://www.freebsd.org/cgi/man.cgi?query=daemon) to run our `lnd` process at bootup, and restart the process should it fail.
