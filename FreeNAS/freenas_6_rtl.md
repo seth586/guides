@@ -20,7 +20,7 @@ If not already there, SSH into your freenas box and switch to your bitcoin jail.
 ```
 Once the install is complete, create a RTL.conf configuration file:
 ```
-nano RTL.conf
+# nano RTL.conf
 ```
 Add the following lines:
 ```
