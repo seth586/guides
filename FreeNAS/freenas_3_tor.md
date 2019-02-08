@@ -60,4 +60,11 @@ root@bitcoin:~ # bitcoin-cli -datadir=/home/bitcoin/.bitcoin getnetworkinfo
 ```
 You should see a .onion address listed, verify it works by copy/pasting the .onion address into [bitnodes](https://bitnodes.earn.com) (It may take a while)
 
+### How to upgrade tor:
+```
+# service tor stop
+# pkg update && pkg upgrade tor
+# service tor start
+```
+
 Next: [ [Electrum](freenas_4_electrum.md) ]
