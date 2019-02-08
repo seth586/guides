@@ -87,7 +87,7 @@ You can see our downloaded file, `v0.17.1.tar.gz` and the unpacked directory `bi
 This process may take a while. Once its done and installed, we need to add a rc.d script to automatically start the bitcoin daemon on start. Read more about FreeBSD rc.d scripting [here](https://www.freebsd.org/doc/en_US.ISO8859-1/articles/rc-scripting/index.html).
 
 ```
-# nano /etc/rc.d/bitcoind
+# nano /usr/local/etc/rc.d/bitcoind
 ```
 
 Copy the script below and paste the following startup script to nano by right clicking in the terminal.
@@ -269,7 +269,7 @@ Save the file by pressing CTRL+O, then ENTER. To exit nano, press, CTRL+X
 
 Lets make the startup script executable:
 ```
-# chmod +x /etc/rc.d/bitcoind
+# chmod +x /usr/local/etc/rc.d/bitcoind
 ```
 Lets enable our startup script in `/etc/rc.conf`
 ```
