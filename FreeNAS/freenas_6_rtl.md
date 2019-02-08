@@ -2,8 +2,6 @@
 
 ### Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
-#### 🚧🚧🚧THIS SECTION IS STILL UNDER CONSTRUCTION, DO NOT USE!🚧🚧🚧
-
 Running `lnd' from the command line is exhausting, lets get a pretty user interface going!
 
 ### Install RTL
