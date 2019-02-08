@@ -73,11 +73,11 @@ Under `[electrum-serever]`, change `host= 0.0.0.0` to allow remote connections. 
 ```
 It will import addresses from each master public key. When complete, electrum-personal-server will exit. Next, if you have transaction history, look up the block height of your oldest transaction, or just start from 1. Then, lets scan the blockchain for those historical transactions:
 ```
-# /usr/local/bin/electrum-personal-server-rescan ~/electrum/config.cfg
+# /usr/local/bin/electrum-personal-server-rescan /electrum/config.cfg
 ```
 Lets run it!
 ```
-# /usr/local/bin/electrum-personal-server ~/electrum/config.cfg
+# /usr/local/bin/electrum-personal-server /electrum/config.cfg
 ```
 Now boot up your electrum client, goto Tools>Network>Server, point it at your jail’s ip:50002, it should work!
 
