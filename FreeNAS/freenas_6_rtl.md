@@ -17,4 +17,25 @@ If not already there, SSH into your freenas box and switch to your bitcoin jail.
 # git clone https://github.com/ShahanaFarooqui/RTL.git
 # cd RTL
 # npm install
-
+```
+Once the install is complete, create a RTL.conf configuration file:
+```
+nano RTL.conf
+```
+Add the following lines:
+```
+[Authentication]
+lndServerUrl=https://localhost:8082/v1
+macroonPath=/home/bitcoin/.lnd/data/chain/bitcoin/mainnet
+nodeAuthType=CUSTOM
+rtlPass=pickapassword
+lndConfigPath=/home/bitcoin/.lnd/lnd.conf
+[Settings]
+flgSidenavOpened=true
+flgSidenavPinned=true
+menu=Vertical
+menuType=Regular
+theme=dark-blue
+satsToBTC=false
+```
+Save (CTRL+O,ENTER) then exit (CTRL+X)
