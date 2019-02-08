@@ -47,11 +47,11 @@ Save (CTRL+O), then exit (CTRL+X)
 
 ### LND Startup and initialization
 ```
-# lnd --configfile=/home/bitcoin/.lnd/lnd.conf
+# su bitcoin
+bitcoin@bitcoin:~ % lnd
 ```
 If it works, you should see the following message:
 ```
-root@bitcoin:~ # lnd --configfile=/home/bitcoin/.lnd/lnd.conf
 Attempting automatic RPC configuration to bitcoind
 Automatically obtained bitcoind's RPC credentials
 2019-02-07 22:00:34.994 [INF] LTND: Version: 0.5.2-beta commit=v0.5.2-beta, build=production, logging=default
@@ -61,22 +61,20 @@ Automatically obtained bitcoind's RPC credentials
 2019-02-07 22:00:35.054 [INF] RPCS: password RPC server listening on 127.0.0.1:10009
 2019-02-07 22:00:35.054 [INF] LTND: Waiting for wallet encryption password. Use `lncli create` to create a wallet, `lncli unlock` to unlock an existing wallet, or `lncli changepassword` to change the password of an existing wallet and unlock it.
 ```
-Press CTRL+C to exit.
-
 Open another SSH terminal window, log into to your FreeNAS server, and switch to your bitcoin jail. We will use `lncli` to create a wallet and store the recovery key.
 ```
 root@freenas:~# iocage console bitcoin
-# lncli create
+# su bitcoin
+bitcoin@bitcoin:~ % lncli create
 ```
 Follow the prompt to create a wallet. Pick a strong wallet password!
 
-Now lets unlock our wallet:
-```
-# lncli unlock
-```
 Were done with this terminal, close it.
 
-In your other terminal window, `lnd` will begin its sync. Once the sync is complete, exit (CTRL+C).
+In your other terminal window, `lnd` will begin its sync. Once the sync is complete, you will see a bunch of "New channel disocvered" nessages, exit (CTRL+C). Exit the bitcoin user:
+```
+bitcoin@bitcoin:~ % exit
+root@bitcoin
 
 ### Configure start on boot & restart
 
@@ -110,4 +108,16 @@ load_rc_config $name
 : ${lnd_enable:=no}
 
 run_rc_command "$1"
+```
+Save (CTRL+O,ENTER) and exit (CTRL+X)
+
+Enable our service in `/etc/rc.conf`
+```
+# nano /etc/rc.conf
+```
+Append the following line
+```
+lnd_enable="YES"
+```
+Save, (CTRL+O,ENTER) then exit (CTRL+O)
 
