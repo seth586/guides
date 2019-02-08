@@ -81,6 +81,8 @@ Lets run it!
 ```
 Now boot up your electrum client, goto Tools>Network>Server, point it at your jail’s ip:50002, it should work!
 
+By default, electrum client will also connect to public electrum servers to get block header info. This reduces your privacy. To prevent this from happening, add `--oneserver --server 192.168.84.123:s` (where the ip address reflects your bitcoin jail) to your command path. In windows, right click on the electrum shortcut, select `properties`, then append `--oneserver --server 192.168.84.123:s` after the executable path `"C:\Program Files (x86)\Electrum\electrum-3.3.2.exe"`. Select `OK` to save and exit.
+
 ## Startup Script
 Terminating your SSH will also terminate electrum-personal-server, so lets close it with Ctrl+C, then daemon-zie the process with a rc.d startup script:
 ```
