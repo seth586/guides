@@ -4,8 +4,6 @@
 
 ### Install Lightning Lab's LND
 
-#### 🚧🚧🚧THIS SECTION IS STILL UNDER CONSTRUCTION, DO NOT USE!🚧🚧🚧
-
 If not already there, SSH into your freenas box as root, then switch to your bitcoin jail:
 ```
 root@freenas[~] # iocage console bitcoin
