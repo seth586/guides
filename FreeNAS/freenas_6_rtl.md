@@ -88,4 +88,4 @@ Give it a run!
 
 Now connect on your web browser at the jail ip:3000
 
-Its been my experience that RTL will hang with the spinning animation, jsut refresh the page and it should go away.
+Its been my experience that RTL will hang with the spinning animation, just refresh the page and it should go away.
