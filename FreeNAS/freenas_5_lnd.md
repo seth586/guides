@@ -23,7 +23,7 @@ Check [LND's github repo](https://github.com/lightningnetwork/lnd/releases) for 
 # mkdir /home/bitcoin/.lnd
 # nano /home/bitcoin/.lnd/lnd.conf
 ```
-### LND COnfiguration
+### LND Configuration
 Read up on configuration options [here](https://github.com/lightningnetwork/lnd/blob/master/sample-lnd.conf)
 Add the following lines to your `lnd.conf` file:
 ```
