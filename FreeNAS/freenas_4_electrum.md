@@ -2,9 +2,6 @@
 
 ### Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
-
-#### 🚧🚧🚧THIS SECTION IS STILL UNDER CONSTRUCTION, DO NOT USE!🚧🚧🚧
-
 If you aren't already there, SSH into your freenas box, and switch to your bitcoin console as root:
 ```
 # iocage console bitcoin
@@ -131,6 +128,36 @@ You can run `ps aux` in the command line to verify that it is running.
 ```
 # service electrumpersonalserver stop
 ```
-Again, verify that it sucessfully stops with `ps aux` . Go ahead and reboot your jail, and check that it is running!
-
+Again, verify that it sucessfully stops with `ps aux` . Go ahead and reboot your jail, and check that it is running:
+```
+# exit
+logout
+root@bitcoin[~]# iocage restart bitcoin
+* Stopping btc
+  + Running prestop OK
+  + Stopping services OK
+  + Tearing down VNET OK
+  + Removing devfs_ruleset: 12 OK
+  + Removing jail process OK
+  + Running poststop OK
+* Starting btc
+  + Started OK
+  + Configuring VNET OK
+  + DHCP Address: 192.168.84.123/24
+  + Starting services OK
+root@freenas[~]# iocage console bitcoin
+```
+### How to update electrum personal server:
+```
+# service electrumpersonalserver stop
+# cd /electrum
+# wget https://github.com/chris-belcher/electrum-personal-server/archive/eps-v0.1.6.tar.gz
+# tar xzvf eps-v0.1.6.tar.gz
+# rm eps-v0.1.6.tar.gz
+# cd electrum-personal-server-eps-v0.1.6
+# pip-3.6 install .
+# cd ..
+# rm -r electrum-personal-server-eps-v0.1.6
+# service electrumpersonalserver start
+```
 Next: [ [lnd](freenas_5_lnd.md) ]
