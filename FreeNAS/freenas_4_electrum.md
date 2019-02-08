@@ -131,20 +131,7 @@ You can run `ps aux` in the command line to verify that it is running.
 Again, verify that it sucessfully stops with `ps aux` . Go ahead and reboot your jail, and check that it is running:
 ```
 # exit
-logout
-root@bitcoin[~]# iocage restart bitcoin
-* Stopping btc
-  + Running prestop OK
-  + Stopping services OK
-  + Tearing down VNET OK
-  + Removing devfs_ruleset: 12 OK
-  + Removing jail process OK
-  + Running poststop OK
-* Starting btc
-  + Started OK
-  + Configuring VNET OK
-  + DHCP Address: 192.168.84.123/24
-  + Starting services OK
+root@freenas[~]# iocage restart bitcoin
 root@freenas[~]# iocage console bitcoin
 ```
 ### How to update electrum personal server:
