@@ -3,3 +3,16 @@
 ### Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
 #### 🚧🚧🚧THIS SECTION IS STILL UNDER CONSTRUCTION, DO NOT USE!🚧🚧🚧
+
+Running `lnd' from the command line is exhausting, lets get a pretty user interface going!
+
+### Install RTL
+Find the latest release [here](https://github.com/ShahanaFarooqui/RTL/releases).
+
+If not already there, SSH into your freenas box and switch to your bitcoin jail.
+
+```
+# su bitcoin
+bitcoin@bitcoin:~ % cd ~
+bitcoin@bitcoin:~ % wget https://github.com/ShahanaFarooqui/RTL/archive/v0.1.14-alpha.tar.gz
+
