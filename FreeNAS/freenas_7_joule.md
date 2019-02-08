@@ -9,6 +9,7 @@ Log into your freenas server using your root privileges, and navigate to the fol
 ```
 /mnt/volume0/iocage/jails/bitcoin/root/home/bitcoin/.lnd/data/chain/bitcoin/mainnet
 ```
+Note: If you are unable to navigate to the `.lnd` folder, enable hidden folders by pressing (CTRL+ALT+H)
 
 Download `admin.macaroon` and `readonly.macaroon`
 
