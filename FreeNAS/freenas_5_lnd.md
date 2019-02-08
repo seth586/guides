@@ -62,3 +62,18 @@ Automatically obtained bitcoind's RPC credentials
 2019-02-07 22:00:35.054 [INF] LTND: Waiting for wallet encryption password. Use `lncli create` to create a wallet, `lncli unlock` to unlock an existing wallet, or `lncli changepassword` to change the password of an existing wallet and unlock it.
 ```
 Press CTRL+C to exit.
+
+Open another SSH terminal window, log into to your FreeNAS server, and switch to your bitcoin jail. We will use `lncli` to create a wallet and store the recovery key.
+```
+root@freenas:~# iocage console bitcoin
+# lncli create
+~~~ 
+Follow the prompt to create a wallet. Pick a strong wallet password!
+
+Now lets unlock our wallet:
+~~~
+# lncli unlock
+~~~
+Were done with this terminal, close it.
+
+In your other terminal window, `lnd` will begin its sync. Once the sync is complete, exit (CTRL+C).
