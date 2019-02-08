@@ -39,3 +39,53 @@ theme=dark-blue
 satsToBTC=false
 ```
 Save (CTRL+O,ENTER) then exit (CTRL+X)
+
+### Configure Autostart
+```
+# nano /usr/local/etc/rc.d/RTL
+```
+Add the following lines:
+```
+#!/bin/sh
+#
+# PROVIDE: RTL
+# REQUIRE: bitcoind lnd
+# KEYWORD:
+
+. /etc/rc.subr
+name="RTL"
+rcvar="RTL_enable"
+RTL_command="/usr/local/bin/node /root/RTL/rtl"
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-u bitcoin -P ${pidfile} -r -f ${RTL_command}"
+
+load_rc_config $name
+: ${lnd_enable:=no}
+
+run_rc_command "$1"
+```
+Save (CTRL+O,ENTER) then exit (CTRL+X)
+
+Make the service script executable:
+```
+# chmod +x /usr/local/etc/rc.d/RTL
+```
+Enable in `etc/rc.conf'
+```
+# nano /etc/rc.conf
+```
+Append the following line:
+```
+service RTL_enable="YES"
+```
+Save (CTRL+O,ENTER) then exit (CTRL+X)
+
+Give it a run!
+```
+# service RTL start
+```
+
+Now connect on your web browser at the jail ip:3000
+
+Its been my experience that RTL will hang with the spinning animation, jsut refresh the page and it should go away.
