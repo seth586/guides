@@ -18,7 +18,7 @@ Make sure that bitcoind is fully synced before running electrum-personal-server:
 ```
 
 ### Install Electrum-Personal-Server
-Electrum Personal Server is a lightweight electrum server to serve an electrum client wallet. The client wallets are compatible with hardware wallets like the ledger nano. So ditch your ledger live wallet software, and let use our own node to verify and broadcast our transactions!
+Electrum Personal Server is a lightweight electrum server to serve an electrum client wallet. The client wallets are compatible with hardware wallets like the ledger nano. So ditch your ledger live wallet software, and let use our own node to verify receipt and broadcast our layer 1 transactions!
 
 Lets make sure that we have python3 and pip installed:
 ```
