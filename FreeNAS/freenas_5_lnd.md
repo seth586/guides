@@ -77,3 +77,34 @@ Now lets unlock our wallet:
 Were done with this terminal, close it.
 
 In your other terminal window, `lnd` will begin its sync. Once the sync is complete, exit (CTRL+C).
+
+### Configure start on boot & restart
+
+We will again use [daemon](https://www.freebsd.org/cgi/man.cgi?query=daemon) to run our `lnd` process at bootup, and restart the process should it fail.
+
+Lets make the [rc.d script](https://www.freebsd.org/doc/en/articles/rc-scripting/):
+```
+# nano /usr/local/etc/rc.d/lnd
+```
+Paste the following service script into nano:
+```
+#!/bin/sh
+#
+# PROVIDE: lnd
+# REQUIRE: bitcoind
+# KEYWORD:
+
+. /etc/rc.subr
+
+name="lnd"
+rcvar="lnd_enable"
+lnd_command="/usr/local/bin/lnd"
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-u bitcoin -P ${pidfile} -r -f ${lnd_command}"
+
+load_rc_config $name
+: ${lnd_enable:=no}
+
+run_rc_command "$1"
+
