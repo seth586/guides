@@ -12,7 +12,7 @@ Find the latest release [here](https://github.com/ShahanaFarooqui/RTL/releases).
 If not already there, SSH into your freenas box and switch to your bitcoin jail.
 
 ```
-# pkg install node npm python
+# pkg install node npm python cairo
 # cd /home/bitcoin
 # git clone https://github.com/ShahanaFarooqui/RTL.git
 # cd RTL
