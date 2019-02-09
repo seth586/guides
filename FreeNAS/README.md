@@ -27,6 +27,13 @@ Within this guide, any time a command line is represented by a single `#` hash, 
 ### Goal
 By the end of this guide, we will have bitcoin core compiled, serving connections over IP and tor. We will have ncurses2 terminal user interface to monitor our bitcoin node. We will install electrum-personal-server, so we can use a hardware wallet to cold store our bitcoin savings, verified with our own node. We will have lightning lab's lnd implementation to onbard the lightning network, and we will use Ride The Lightning web user interface to manage our lnd server, as well as install the joule browser extension and connect it to our lnd server.
 
+## Methodology
+There is more than 1 way to skin a cat. These are the preferred methods followed in this guide that may differ from other guides:
+
+1. Minimize software requirements. This guide does not use systemd, which is a monolithic layer that acts between the kernel and the user space. It has its place, but we don't need it. I don't have an [opinion](https://muchweb.me/systemd-nsa-attempt/) on the matter, but FreeBSD's own daemon has enough functionality to act as our process monitors.
+
+2. Use cookie authentication wherever possible. Remote RPC calls are a [security vulnerability](https://medium.com/@lukedashjr/cve-2018-20587-advisory-and-full-disclosure-a3105551e78b).
+
 ### Recommendations
 Use a password manager to keep track of all the passwords required to run FreeNAS and your software. It's good cypherpunk habit to use unique strong passwords with 3rd parties, too. KeePassDX is an encrypted open source password manager that runs on android. It can generate strong passwords for you. 
 
