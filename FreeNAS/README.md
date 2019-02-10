@@ -22,7 +22,7 @@ I am assuming you know your way around your router. My example router is a Links
 
 Lets also assume that you installed FreeNAS on your home server (Version 11.2), navigated the [FreeNAS forums](http://forums.freenas.org/index.php), read the [FreeNAS documentation](https://www.ixsystems.com/documentation/freenas/), and set up a ZFS volume. Make sure you set up your SMART test, scrub schedule and email alerts!
 
-Within this guide, any time a command line is represented by a single `#` hash, that represents the command line inside your jail. Any commands as a user or outside the jail are represented by their full path, which may differ from what you see see based on how you named your server. Hopefully the guide is clear enough. If not, PLEASE reach out to me!
+Within this guide, any time a command line is represented by a single `#` hash, that represents the command line as root user inside your bitcoin jail. Any commands outside this definition are represented by their full path, which may differ from what you see see based on how you named your server. Hopefully the guide is clear enough. If not, PLEASE reach out to me!
 
 ### Goal
 By the end of this guide, we will have bitcoin core compiled, serving connections over IP and tor. We will have ncurses2 terminal user interface to monitor our bitcoin node. We will install electrum-personal-server, so we can use a hardware wallet to cold store our bitcoin savings, verified with our own node. We will have lightning lab's lnd implementation to onbard the lightning network, and we will use Ride The Lightning web user interface to manage our lnd server, as well as install the joule browser extension and connect it to our lnd server.
