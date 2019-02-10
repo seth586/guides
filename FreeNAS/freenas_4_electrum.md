@@ -101,7 +101,7 @@ rcvar="electrumpersonalserver_enable"
 electrumpersonalserver_command="/usr/local/bin/electrum-personal-server /electrum/config.cfg"
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
-command_args="-P ${pidfile} -r -f ${electrumpersonalserver_command}"
+command_args="-P ${pidfile} -u bitcoin -r -f ${electrumpersonalserver_command}"
 
 load_rc_config $name
 : ${electrumpersonalserver_enable:=no}
