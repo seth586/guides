@@ -20,7 +20,7 @@ Once the install is complete, create a RTL.conf configuration file:
 ```
 # nano RTL.conf
 ```
-Add the following lines, amke sure to set `rtlPass=`:
+Add the following lines, make sure to set `rtlPass=`:
 ```
 [Authentication]
 lndServerUrl=https://localhost:8082/v1
