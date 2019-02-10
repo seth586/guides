@@ -119,7 +119,7 @@ Lets enable our startup script:
 ```
 Add the following line, then save and exit.
 ```
-electrumpersonalserver_enable=YES
+electrumpersonalserver_enable="YES"
 ```
 You should now be able to start and stop electrumpersonalserver as a service.
 ```
