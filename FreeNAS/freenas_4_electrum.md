@@ -143,7 +143,7 @@ root@freenas[~]# iocage console bitcoin
 # tar xzvf eps-v0.1.6.tar.gz
 # rm eps-v0.1.6.tar.gz
 # cd electrum-personal-server-eps-v0.1.6
-# pip-3.6 install .
+# pip-3.6 install --upgrade .
 # cd ..
 # rm -r electrum-personal-server-eps-v0.1.6
 # service electrumpersonalserver start
