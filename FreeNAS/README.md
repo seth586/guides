@@ -32,9 +32,11 @@ There is more than 1 way to skin a cat. These are the preferred methods followed
 
 1. Minimize software requirements. This guide does not use systemd, which is a monolithic layer that acts between the kernel and the user space. It has its place, but we don't need it. I don't have an [opinion](https://muchweb.me/systemd-nsa-attempt/) on the matter, but FreeBSD's own daemon has enough functionality to act as our process monitors.
 
-2. Use cookie authentication wherever possible. Remote RPC calls are a [security vulnerability](https://medium.com/@lukedashjr/cve-2018-20587-advisory-and-full-disclosure-a3105551e78b).
+2. Minimal configuration. This guide is a baseline to get setup. Whenever a configuration file is referenced, follow the supporting docs to explore further configuration options.
 
-3. Do not use UPnP, it is a massive [security vulnerability](https://www.howtogeek.com/122487/htg-explains-is-upnp-a-security-risk/). `lnd.conf` should not use UPnP (`nat=true'). If you want to be a routing node / accept incoming channels, use a static IP address or set up a dynamic DNS. 
+3. Use cookie authentication wherever possible. Remote RPC calls are a [security vulnerability](https://medium.com/@lukedashjr/cve-2018-20587-advisory-and-full-disclosure-a3105551e78b).
+
+4. Do not use UPnP, it is a massive [security vulnerability](https://www.howtogeek.com/122487/htg-explains-is-upnp-a-security-risk/). This guide compiles `bitcoind` without UPnP support. `lnd.conf` should not use UPnP (`nat=true'). If you want to be a routing node / accept incoming channels, use a static IP address or set up a dynamic DNS. 
 
 ### Recommendations
 Use a password manager to keep track of all the passwords required to run FreeNAS and your software. It's good cypherpunk habit to use unique strong passwords with 3rd parties, too. KeePassDX is an encrypted open source password manager that runs on android. It can generate strong passwords for you. 
