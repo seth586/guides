@@ -43,7 +43,7 @@ bitcoind.dir=/home/bitcoin/.bitcoin
 ```
 Make sure to set `externalip=` if you have a static ip or dynamic dns address. If your ISP assigns a dynamic ip address, you can still use lightning to send funds, but you will be unable to receive or route payments.
 
-Make sure port `9735` is forwarded in yoru router to your bitcoin jail!
+Make sure port `9735` is forwarded in your router to your bitcoin jail!
 
 Save (CTRL+O), then exit (CTRL+X)
 
