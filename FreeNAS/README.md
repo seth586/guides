@@ -2,7 +2,7 @@
 
 ### Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
-![FreeNAS_Jail](images/BTCBSDlogo.png) 
+![FreeNAS_Jail](images/BTCBSDsmall.png) 
 
 ### Intro
 
