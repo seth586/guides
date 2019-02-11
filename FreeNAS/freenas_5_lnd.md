@@ -45,6 +45,8 @@ Make sure to set `externalip=` if you have a static ip or dynamic dns address. I
 
 Make sure port `9735` is forwarded in your router to your bitcoin jail!
 
+Option `nat=true` is not secure, see security section in [ [Intro](README.md) ].
+
 Save (CTRL+O), then exit (CTRL+X)
 
 ### LND Startup and initialization
