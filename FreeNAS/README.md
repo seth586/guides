@@ -34,6 +34,8 @@ There is more than 1 way to skin a cat. These are the preferred methods followed
 
 2. Use cookie authentication wherever possible. Remote RPC calls are a [security vulnerability](https://medium.com/@lukedashjr/cve-2018-20587-advisory-and-full-disclosure-a3105551e78b).
 
+3. Do not use UPnP, it is a massive [security vulnerability](https://www.howtogeek.com/122487/htg-explains-is-upnp-a-security-risk/). `lnd.conf` should not use UPnP (`nat=true'). If you want to be a routing node / accept incoming channels, use a static IP address or set up a dynamic DNS. 
+
 ### Recommendations
 Use a password manager to keep track of all the passwords required to run FreeNAS and your software. It's good cypherpunk habit to use unique strong passwords with 3rd parties, too. KeePassDX is an encrypted open source password manager that runs on android. It can generate strong passwords for you. 
 
