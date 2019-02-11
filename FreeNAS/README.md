@@ -2,6 +2,8 @@
 
 ### Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
+![FreeNAS_Jail](images/BLdaemon.png) 
+
 ### Intro
 
 I have been running a FreeNAS server for a few years now, and have come to appreciate what it offers as a personal home server. It is infamous for media streaming & aggregation, and file hosting.
