@@ -75,6 +75,8 @@ Use a password manager to keep track of all the passwords required to run FreeNA
 ### Personal Notes
 This guide is written not only to benefit others, but myself as well. Sometimes I don't touch my server for months on end, and forget how I set things up or did things. This guide is my attempt to act on my belief in the [Cypherpunk Manifesto](https://www.activism.net/cypherpunk/manifesto.html). If cypherpunks can't write code, then cypherpunks deploy code.
 
+This guide will be kept up to date. 
+
 ### Contact me
 If you have any trouble with this guide, or want to share something to improve the guide, contact me! No question is too dumb! I'd rather help people deploy code than waste time browsing social media!
 
