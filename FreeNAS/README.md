@@ -21,13 +21,20 @@ FreeNAS is based on FreeBSD, a UNIX style operating system similar to Linux. Fre
 ### What is the build cost of a FreeNAS system?
 You can buy older generation servers on ebay for dirt cheap! If you want something new, price is not a problem, for bitcoin, nextcloud, plex + transcoding, here is a buy list:
 Latest Generation:
+
 $230 Motherboard:  [SUPERMICRO MBD-X11SSM-F-O Micro ATX Server Motherboard LGA 1151 Intel C236](https://www.newegg.com/Product/Product.aspx?Item=N82E16813183013)
+
 $208 RAM(x2):       [Supermicro MEM-DR480L-SL01-EU24 8GB (1x8GB) DDR4 2400 (PC4 19200) ECC Unbuffered Memory RAM](https://www.newegg.com/Product/Product.aspx?Item=9SIA7S67Y98853)
+
 $215 CPU:           [Intel Xeon E3-1220 V6](https://www.newegg.com/Product/Product.aspx?Item=N82E16819117790)
 $440 Mass Storage(2+raidz2=4 or 4+raidz2=6):       [WD Red 4TB NAS Hard Disk Drive](https://www.newegg.com/Product/Product.aspx?item=N82E16822236599)
+
 $80 Power Supply:   [Any Seasonic Brand with 8 or more SATA power cables.](https://www.newegg.com/Product/Product.aspx?Item=9SIADZJ5W07067)
+
 $110 Case:          [Fractal Design Node 804](https://www.newegg.com/Product/Product.aspx?Item=N82E16811352047)
+
 Total: $1283
+
 #### Whoa, I don't want to spend that much!
 Thanks to our 21st century craving for all things digital, last generation hardware is being sold for pennies! Just search ebay for "server Xeon E3 V3" and you can find fully equipped systems for $200-300, such as the HP Proliant ML310e Gen8 V2 or Dell T20 series.
 
@@ -65,8 +72,11 @@ There is more than 1 way to skin a cat. These are the preferred methods followed
 ### Recommendations
 Use a password manager to keep track of all the passwords required to run FreeNAS and your software. It's good cypherpunk habit to use unique strong passwords with 3rd parties, too. KeePassDX is an encrypted open source password manager that runs on android. It can generate strong passwords for you. 
 
+### Personal Notes
+This guide is written not only to benefit others, but myself as well. Sometimes I don't touch my server for months on end, and forget how I set things up or did things. This guide is my attempt to act on my belief in the [Cypherpunk Manifesto](https://www.activism.net/cypherpunk/manifesto.html). If cypherpunks can't write code, then cypherpunks deploy code.
+
 ### Contact me
-If you have any trouble with this guide, or want to share something to improve the guide, contact me!
+If you have any trouble with this guide, or want to share something to improve the guide, contact me! No question is too dumb! I'd rather help people deploy code than waste time browsing social media!
 
 Twitter: [Seth586](https://twitter.com/seth586)
 
