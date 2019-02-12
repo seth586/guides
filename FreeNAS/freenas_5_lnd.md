@@ -41,11 +41,9 @@ bitcoin.node=bitcoind
 [Bitcoind]
 bitcoind.dir=/home/bitcoin/.bitcoin
 ```
-Make sure to set `externalip=` if you have a static ip or dynamic dns address. If your ISP assigns a dynamic ip address, you can still use lightning to send funds, but you will be unable to receive or route payments.
+Make sure to set `externalip=` if you have a static ip. If your ISP assigns a dynamic ip address, `nat=true` can be used instead. However, this uses universal plug and play or NAT-PMP, which is a [security vulnerability](https://docs.netgate.com/pfsense/en/latest/book/services/upnp-and-nat-pmp.html) if not implemented correctly. Incoming channels will not be able to connect if your advertised IP address is not correct. I will do a write-up in the near future to implement NAT-PMP in openwrt to minimize the attack surface.
 
 Make sure port `9735` is forwarded in your router to your bitcoin jail!
-
-Option `nat=true` is not secure, see security section in [ [Intro](README.md) ].
 
 Save (CTRL+O), then exit (CTRL+X)
 
