@@ -19,12 +19,12 @@ FreeNAS is special because of the hard drive redundancy features. FreeNAS utiliz
 FreeNAS is based on FreeBSD, a UNIX style operating system similar to Linux. FreeBSD utilizes a jail system to seperate operating environments, similar to how virturalization works. Except jails are much more efficient and less resource intensive than virturalizing. For example, my server has seperate jails for plex, medusa, transmission, SoftEther, bitcoin core&electrum-personal-server&lnd, nextcloud, etc. If I 'mess up', its easy to nuke the jail and start over, without ever damaging the host system.
 
 ### What is the build cost of a FreeNAS system?
-You can buy older generation servers on ebay for dirt cheap! If you want something new, price is not a problem, for bitcoin, nextcloud, plex + transcoding, here is a buy list:
+You can buy older generation servers on ebay for dirt cheap! If you want something "price is not a problem" new for bitcoin, nextcloud, plex + transcoding, here is a buy list:
 Latest Generation:
 
 $230 Motherboard:  [SUPERMICRO MBD-X11SSM-F-O Micro ATX Server Motherboard LGA 1151 Intel C236](https://www.newegg.com/Product/Product.aspx?Item=N82E16813183013)
 
-$208 RAM(x2):       [Supermicro MEM-DR480L-SL01-EU24 8GB (1x8GB) DDR4 2400 (PC4 19200) ECC Unbuffered Memory RAM](https://www.newegg.com/Product/Product.aspx?Item=9SIA7S67Y98853)
+$208 ECC RAM(x2):       [Supermicro MEM-DR480L-SL01-EU24 8GB (1x8GB) DDR4 2400 (PC4 19200) ECC Unbuffered Memory RAM](https://www.newegg.com/Product/Product.aspx?Item=9SIA7S67Y98853)
 
 $215 CPU:           [Intel Xeon E3-1220 V6](https://www.newegg.com/Product/Product.aspx?Item=N82E16819117790)
 $440 Mass Storage(2+raidz2=4 or 4+raidz2=6):       [WD Red 4TB NAS Hard Disk Drive](https://www.newegg.com/Product/Product.aspx?item=N82E16822236599)
@@ -36,7 +36,7 @@ $110 Case:          [Fractal Design Node 804](https://www.newegg.com/Product/Pro
 Total: $1283
 
 #### Whoa, I don't want to spend that much!
-Thanks to our 21st century craving for all things digital, last generation hardware is being sold for pennies! Just search ebay for "server Xeon E3 V3" and you can find fully equipped systems for $200-300, such as the HP Proliant ML310e Gen8 V2 or Dell T20 series.
+Thanks to our 21st century craving for all things digital, last generation hardware is being sold for pennies on the dollar! Just search ebay for "server Xeon E3 V3" and you can find fully equipped systems for $200-300, such as the HP Proliant ML310e Gen8 V2 or Dell T20 series.
 
 Now compare the perfornamce between a V3 and a V6 Xeon:
 https://www.cpubenchmark.net/compare/Intel-Xeon-E3-1220-v3-vs-Intel-Xeon-E3-1220-v6/2022vs3131
@@ -44,7 +44,7 @@ https://www.cpubenchmark.net/compare/Intel-Xeon-E3-1220-v3-vs-Intel-Xeon-E3-1220
 Yeah, you can save a lot of $ running last gen used server gear!
 
 ### Requirements
-So, at this point we can assume that you built your home server. Hopefully you were smart enough to follow the [hardware recommendation guide](https://forums.freenas.org/index.php?resources/hardware-recommendations-guide.12/). My basic recommendation is this: Make sure you get a server class motherboard that has Internet Protocol Management Interface (IPMI) & supports Error Code Correcting (ECC) ram. I highly recommend 6 hard drives in RAIDZ2 configuration, it is the best space and redundancy for the money. Any amount of drives in RAIDZ1 loses redundancy the moment you have a hard drive failure, and 4 drives in RAIDZ2 only has half the storage capacity of 6 drives in RAIDZ2. If the value proposition is getting pricey, start with smaller hard drives. You can’t add drives to a volume once its setup, however you can replace drives with larger drives, and once all 6 drives are the larger size, you get to increase the size of the volume.
+So, at this point we can assume that you built your home server. Hopefully you were smart enough to follow the [hardware recommendation guide](https://forums.freenas.org/index.php?resources/hardware-recommendations-guide.12/). My basic recommendation is this: Make sure you get a server class motherboard that has Internet Protocol Management Interface (IPMI) & have Error Code Correcting (ECC) ram. I highly recommend 6 hard drives in RAIDZ2 configuration, it is the best space and redundancy for the money. Any amount of drives in RAIDZ1 loses redundancy the moment you have a hard drive failure, and 4 drives in RAIDZ2 only has half the storage capacity of 6 drives in RAIDZ2. If the value proposition is getting pricey, start with smaller hard drives. You can’t add drives to a volume once its setup, however you can replace drives with larger drives, and once all 6 drives are the larger size, you get to increase the size of the volume.
 
 ### Assumptions
 I am assuming you know your way around your router. My example router is a Linksys WRT1900ACv1 running OpenWRT. Your router configuration user interface may be different than explained here.
