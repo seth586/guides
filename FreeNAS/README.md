@@ -67,7 +67,7 @@ There is more than 1 way to skin a cat. These are the preferred methods followed
 
 1. Use cookie authentication wherever possible. Remote RPC calls are a [security vulnerability](https://medium.com/@lukedashjr/cve-2018-20587-advisory-and-full-disclosure-a3105551e78b).
 
-2. Do not use UPnP, manually set up port forwards in your router. UPnP is a massive [security vulnerability](https://www.howtogeek.com/122487/htg-explains-is-upnp-a-security-risk/). Modern releases of OpenWRT do not include UPnP. If you are using an older router, disable it. This guide compiles `bitcoind` without UPnP support. `lnd.conf` should not use UPnP (`nat=true`). If you want to be a routing node / accept incoming channels, use `externalip=` with a static IP address or dynamic DNS.  Fortunately, tor 
+2. Do not use UPnP, manually set up port forwards in your router. UPnP is a massive [security vulnerability](https://www.howtogeek.com/122487/htg-explains-is-upnp-a-security-risk/). Modern releases of OpenWRT do not include UPnP. If you are using an older router, disable it. This guide compiles `bitcoind` without UPnP support. `lnd.conf` should not use UPnP (`nat=true`). If you want to be a routing node / accept incoming channels, use `externalip=` with a static IP address or dynamic DNS.
 
 ### Recommendations
 Use a password manager to keep track of all the passwords required to run FreeNAS and your software. It's good cypherpunk habit to use unique strong passwords with 3rd parties, too. KeePassDX is an encrypted open source password manager that runs on android. It can generate strong passwords for you. 
