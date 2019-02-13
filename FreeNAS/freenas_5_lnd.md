@@ -71,9 +71,9 @@ bitcoin@bitcoin:~ % lncli create
 ```
 Follow the prompt to create a wallet. Pick a strong wallet password!
 
-Were done with this terminal, close it.
+We are done with this terminal, close it.
 
-In your other terminal window, `lnd` will begin its sync. Once the sync is complete, you will see a bunch of "New channel disocvered" nessages, exit (CTRL+C). Exit the bitcoin user:
+In your other terminal window, `lnd` will begin its sync. Once the sync is complete, you will see a bunch of "New channel disocvered" nessages, exit `lnd` (CTRL+C). Exit the bitcoin user:
 ```
 bitcoin@bitcoin:~ % exit
 root@bitcoin
@@ -113,6 +113,11 @@ run_rc_command "$1"
 ```
 Save (CTRL+O,ENTER) and exit (CTRL+X)
 
+Make the startup script executable:
+```
+# chmod +x /usr/local/etc/rc.d/lnd
+```
+
 Enable our service in `/etc/rc.conf`
 ```
 # nano /etc/rc.conf
@@ -130,5 +135,7 @@ root@freenas[~]# iocage restart bitcoin
 root@freenas[~]# iocage console bitcoin
 # ps aux
 ```
+
+Note: Any time `lnd` reboots, you will need to unlock the wallet again. Open a seperate SSH window, log in to your bitcoin jail, switch to bitcoin user `su bitcoin`, and type `lncli unlock`. Type in the password to unlock your wallet, then you can exit this extra SSH window. This is a security function in case someone steals your server! In the next guide, you will install a web user interface called `RTL`, which makes unlocking your wallet much easier.
 
 Next: { [Install Ride The Lightning web UI](freenas_6_rtl.md) ]
