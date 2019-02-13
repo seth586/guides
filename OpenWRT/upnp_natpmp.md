@@ -27,9 +27,11 @@ Log in to your OpenWRT router's web interface, typically at `192.168.X.1`, where
 
 Click `System`, then `Software`. Click `Update Lists`, then type in `luci-app-upnp`. Click `install` next to `luci-app-upnp`. The package and dependencies will install. 
 
-You may have to manually enable autostart. Click on `System`, then `Startup`. Make sure `miniupnpd` is enabled. Reboot your router.
+You may have to manually enable autostart. Click on `System`, then `Startup`. Make sure `miniupnpd` is enabled. 
 
-Log back in, and click `services` and `UPnP`. Check the `Start UPNP and NAT-PMP service` box, `Enable NAT-PMP functionality`, `enable secure mode`. 
+Click `services` and `UPnP`. 
+
+Check the `Start UPNP and NAT-PMP service` box, `Enable NAT-PMP functionality`, `enable secure mode`. 
 
 Delete the `default allow` rule under the `MiniUPnP ACLs`. 
 
