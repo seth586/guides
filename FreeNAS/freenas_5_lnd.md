@@ -69,7 +69,7 @@ root@freenas:~# iocage console bitcoin
 # su bitcoin
 bitcoin@bitcoin:~ % lncli create
 ```
-Follow the prompt to create a wallet. Pick a strong wallet password!
+Follow the prompt to create a wallet. Write down your 24 word seed on paper, and store it somewhere safe. Pick a strong wallet password, too!
 
 We are done with this terminal, close it.
 
