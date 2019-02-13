@@ -3,7 +3,7 @@
 
 ### Universal Plug & Play / Network Address Translation - Port Mapping Protocol
 
-Universal Plug and Play is a standard to allow software to configure the router's port mapping. It is a tradeoff of security for convenience. It is much more secure to manually set up port forwards in your router.
+Universal Plug and Play is a standard to allow clients to configure the router's port mapping. It is a tradeoff of security for convenience. It is much more secure to manually set up port forwards in your router.
 
 Most commercial grade routers with manufacturer firmware use a very [insecure implementation](https://www.howtogeek.com/122487/htg-explains-is-upnp-a-security-risk/), letting anyone that requests a port forward to do so! Imagine torjan software on your desktop, or your kids computer, reconfiguring your router! 
 
