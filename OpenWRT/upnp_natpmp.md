@@ -13,7 +13,7 @@ There are a few scenarios where a safe implementation of upnp can be reasonably 
 
 If we can control what IP addresses can use upnp/NAT-PMP, we can minimize the vulnerability surface. After all, we are running on the presumption that our funds are safe in our bitcoin jail! 
 
-So log in to your router, and see if your router's upnp or NAT-PMP implementation has an `access control list` to limit what IPs and what port ranges can be opened. If it doesn't, then disable upnp/NAT-PMP! 
+So log in to your router, and see if your router's upnp or NAT-PMP implementation has an `access control list` to limit what client IP addresses can request a port mapping and what port ranges can be opened. If it doesn't, then disable upnp/NAT-PMP! 
 
 I highly, highly, recommend you buy a router than can run OpenWRT, an open source router firmware. Its software is kept up to date, and can be installed on a large number of [consumer devices](https://openwrt.org/supported_devices). Many manufacturers do not offer continued support for their routers firmware, allowing security vulnerabilities to live on, unpatched.
 
