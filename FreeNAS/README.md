@@ -54,7 +54,7 @@ Lets also assume that you installed FreeNAS on your home server (Version 11.2), 
 Within this guide, any time a command line is represented by a single `#` hash, that represents the command line as root user inside your bitcoin jail. Any commands outside this definition are represented by their full path, which may differ from what you see see based on how you named your server. Hopefully the guide is clear enough. If not, PLEASE reach out to me!
 
 ### Goal
-By the end of this guide, we will have bitcoin core compiled, serving connections over IP and tor. We will have ncurses2 terminal user interface to monitor our bitcoin node. We will install electrum-personal-server, so we can use a hardware wallet to cold store our bitcoin savings, verified with our own node. We will have lightning lab's lnd implementation to onbard the lightning network, and we will use Ride The Lightning web user interface to manage our lnd server, as well as install the joule browser extension and connect it to our lnd server.
+By the end of this guide, we will have bitcoin core compiled, serving connections over IP and tor. We will install electrum-personal-server, so we can use a hardware wallet to cold store our bitcoin savings, verified with our own node. We will have lightning lab's lnd implementation to onbard the lightning network, and we will use Ride The Lightning web user interface to manage our lnd server, as well as install the joule browser extension and connect it to our lnd server. Mobile wallet guides to follow...
 
 ### Methodology
 There is more than 1 way to skin a cat. These are the preferred methods followed in this guide that may differ from other guides:
