@@ -1,6 +1,6 @@
 [ [Intro](README.md) ] - [ [Jail Creation](freenas_1_jail_creation.md) ] - [ [Bitcoin](freenas_2_bitcoin.md) ] - [ [Tor](freenas_3_tor.md) ] - [**Electrum**] - [ [lnd](freenas_5_lnd.md) ] - [ [RTL](freenas_6_rtl.md) ] - [ [Joule](freenas_7_joule.md) ] - [ [Extras](extras.md) ]
 
-### Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
+## Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
 Electrum Personal Server is a lightweight electrum server to serve an electrum client wallet. The client wallets are compatible with hardware wallets like the ledger nano and TREZOR. So ditch your hardware wallet software, and let use our own node to verify receipt and broadcast our layer 1 transactions, cold storage style!
 
