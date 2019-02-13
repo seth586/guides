@@ -74,5 +74,5 @@ Sucess!
 
 If it fails, `lnd` will exit. Double check on your router that `miniupnpd` is running under `status` / `processes`.
 
-[ [Back to LND setup guide](guides/FreeNAS/freenas_5_lnd.md) ]
+[ [Back to LND setup guide](https://github.com/seth586/guides/blob/master/FreeNAS/freenas_5_lnd.md) ]
 
