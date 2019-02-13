@@ -43,7 +43,7 @@ bitcoind.dir=/home/bitcoin/.bitcoin
 ```
 Make sure to set `externalip=` if you have a static ip. If your ISP assigns a dynamic ip address, `nat=true` can be used instead. However, this uses universal plug and play or NAT-PMP, which is a [security vulnerability](https://docs.netgate.com/pfsense/en/latest/book/services/upnp-and-nat-pmp.html) if not implemented correctly. Incoming channels will not be able to connect if your advertised IP address is not correct. Follow this [optional guide](https://github.com/seth586/guides/blob/master/OpenWRT/upnp_natpmp.md) to set your OpenWRT router up with NAT-PMP.
 
-Make sure port `9735` is forwarded in your router to your bitcoin jail!
+Make sure port `9735` is [forwarded in your router](freenas_1_jail_creation.md) to your bitcoin jail!
 
 Save (CTRL+O), then exit (CTRL+X)
 
