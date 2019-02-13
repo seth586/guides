@@ -7,7 +7,7 @@ Universal Plug and Play is a standard to allow software to configure the router'
 
 Most commercial grade routers with manufacturer firmware use a very [insecure implementation](https://www.howtogeek.com/122487/htg-explains-is-upnp-a-security-risk/), letting anyone that requests a port forward to do so! Imagine torjan software on your desktop, or your kids computer, reconfiguring your router! 
 
-There are a few scenarios where a safe implementation of upnp can be reasonably secure, if we can control what has access to it. Video game consoles may need to open and close ports on the fly, depending on the multiplayer game. Lightning Lab's `lnd` queries upnp or NAT-PMP for a current ip address assigned by your ISP to make sure it can continue to accept inbound connections as your ISP changes your IP address. 
+There are a few scenarios where a safe implementation of upnp can be reasonably secure, if we can control what has access to it. Video game consoles may need to open and close ports on the fly, depending on the multiplayer game. Lightning Lab's `lnd` queries upnp or NAT-PMP for a current ip address assigned by your ISP. If a change is detected, your peers are notified and you can maintain connectivity with your inbound channels.
 
 ### So how can we securely use upnp or NAT-PMP?
 
