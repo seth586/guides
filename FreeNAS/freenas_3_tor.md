@@ -1,6 +1,6 @@
 [ [Intro](README.md) ] - [ [Jail Creation](freenas_1_jail_creation.md) ] - [ [Bitcoin](freenas_2_bitcoin.md) ] - [**Tor**] - [ [Electrum](freenas_4_electrum.md) ] - [ [lnd](freenas_5_lnd.md) ] - [ [RTL](freenas_6_rtl.md) ] - [ [Joule](freenas_7_joule.md) ] - [ [Extras](extras.md) ]
 
-### Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
+## Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
 ### Why Tor?
 Goto https://bitnodes.earn.com/dashboard/, or http://nodes.bitcoin-russia.ru and sort by onion protocol. How many nodes do you see? 200-500 as of writing. This is a tragedy. Because of this, nodes that exclusively run on tor have a hard time keeping sync with the network. Lets change that. 
