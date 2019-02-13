@@ -7,11 +7,11 @@ Universal Plug and Play is a standard to allow software to configure the router'
 
 Most commercial grade routers with manufacturer firmware use a very [insecure implementation](https://www.howtogeek.com/122487/htg-explains-is-upnp-a-security-risk/), letting anyone that requests a port forward to do so! Imagine torjan software on your desktop, or your kids computer, reconfiguring your router! 
 
-There are a few scenarios where upnp can be useful and safe, if we can control what has access to it. Video game consoles may need to open and close ports on the fly, depending on the multiplayer game. Lightning Lab's `lnd` queries upnp or NAT-PMP for a current ip address assigned by your ISP to make sure it can continue to accept inbound connections as your ISP changes your IP address. 
+There are a few scenarios where a safe implementation of upnp can be reasonably secure, if we can control what has access to it. Video game consoles may need to open and close ports on the fly, depending on the multiplayer game. Lightning Lab's `lnd` queries upnp or NAT-PMP for a current ip address assigned by your ISP to make sure it can continue to accept inbound connections as your ISP changes your IP address. 
 
 ### So how can we securely use upnp or NAT-PMP?
 
-If we can control what IP addresses can use upnp/NAT-PMP, we can minimize the vulnerability surface. 
+If we can control what IP addresses can use upnp/NAT-PMP, we can minimize the vulnerability surface. After all, we are running on the presumption that our funds are safe in our bitcoin jail! 
 
 So log in to your router, and see if your router's upnp or NAT-PMP implementation has an `access control list` to limit what IPs and what port ranges can be opened. If it doesn't, then disable upnp/NAT-PMP! 
 
@@ -37,7 +37,7 @@ Make sure there is a `default deny` rule: External ports `0-65535`, Internal Add
 
 Rules are read top to bottom, so if you have a game console or another service that requires upnp or nat-pmp, put the rule above the deny rule.
 
-Click `save and apply`. Reboot your router.
+Click `save and apply`. Reboot your router again.
 
 ### Configure `lnd` for `NAT-PMP`
 SSH in to your FreeNAS box, and switch consoles to your bitcoin jail.
@@ -70,5 +70,9 @@ Look for the following lines, you may have to grab the scroll bar on the right s
 2019-02-12 18:11:02.183 [INF] SRVR: Automatically set up port forwarding using NAT-PMP to advertise external IP
 
 ```
-Sucess! If it fails, `lnd` will exit. 
+Sucess! 
+
+If it fails, `lnd` will exit. Double check on your router that `miniupnpd` is running under `status` / `processes`.
+
+[ [Back to LND setup guide](guides/FreeNAS/freenas_5_lnd.md) ]
 
