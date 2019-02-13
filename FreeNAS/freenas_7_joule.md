@@ -5,7 +5,7 @@
 ### Install WinSCP
 https://winscp.net/eng/download.php
 
-Log into your freenas server using your root privileges, and navigate to the following folder (change as necessary):
+With WinSCP, log into your freenas server using your root privileges, and navigate to the following folder (change as necessary):
 ```
 /mnt/volume0/iocage/jails/bitcoin/root/home/bitcoin/.lnd/data/chain/bitcoin/mainnet
 ```
@@ -28,7 +28,7 @@ Type in your bitcoin jail address, port 8082 as described in our `'lnd.conf' fil
 https://192.168.84.123:8082
 ```
 
-Upload `admin.macaroon` and `readonly.macaroon`
+Upload `admin.macaroon` and `readonly.macaroon`, Make sure to delete these files, they give the bearer of these credentials the ability to spend your funds!
 
 Set a password, and enjoy in-browser lighting payments! Try out a small tip here:
 https://tippin.me/@seth586
