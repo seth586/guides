@@ -43,7 +43,7 @@ bitcoind.dir=/home/bitcoin/.bitcoin
 ```
 Make sure to set `externalip=` if you have a static ip. If your ip address changes and you have a static ip address set, incoming channels will not be able to connect.
 
-If your ISP assigns a dynamic ip address, use `nat=true` instead. When set, `lnd` will query your router's upnp implmentation to detect a change in ip, then broadcast the new ip to the network. However, this uses universal plug and play or NAT-PMP, which is a [security vulnerability](https://docs.netgate.com/pfsense/en/latest/book/services/upnp-and-nat-pmp.html) if not implemented properly on your router.  Follow this [optional guide](https://github.com/seth586/guides/blob/master/OpenWRT/upnp_natpmp.md) to set your OpenWRT router up with NAT-PMP in a secure fashion.
+If your ISP assigns a dynamic ip address, use `nat=true` instead of `externalip=`. When `nat=true` is set, `lnd` will query your router's upnp implmentation to detect a change in ip, then broadcast the new ip to the network. However, this uses universal plug and play or NAT-PMP, which is a [security vulnerability](https://docs.netgate.com/pfsense/en/latest/book/services/upnp-and-nat-pmp.html) if not implemented properly on your router.  Follow this [optional guide](https://github.com/seth586/guides/blob/master/OpenWRT/upnp_natpmp.md) to set your OpenWRT router up with NAT-PMP in a secure fashion.
 
 Make sure port `9735` is [forwarded in your router](freenas_1_jail_creation.md) to your bitcoin jail!
 
