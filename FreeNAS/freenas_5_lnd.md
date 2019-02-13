@@ -50,6 +50,7 @@ Make sure port `9735` is [forwarded in your router](freenas_1_jail_creation.md) 
 Save (CTRL+O), then exit (CTRL+X)
 
 ### LND Startup and initialization
+Switch to the `bitcoin` user, and start `lnd`:
 ```
 # su bitcoin
 bitcoin@bitcoin:~ % lnd
