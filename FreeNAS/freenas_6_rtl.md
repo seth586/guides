@@ -86,6 +86,16 @@ Give it a run!
 
 Now connect on your web browser at the jail ip:3000
 
-Its been my experience that RTL will hang with the spinning animation, just refresh the page and it should go away.
+Its been my experience that RTL will hang with the spinning animation, especially after unlocking the wallet, just close the browser window and open a new window and it should go away.
+
+### Upgrade RTL
+```
+# cd /home/bitcoin/RTL
+# git reset --hard HEAD
+# git clean -f -d
+# git pull
+# npm install
+```
+
 
 Next: [ [Joule](freenas_7_joule.md) ]
