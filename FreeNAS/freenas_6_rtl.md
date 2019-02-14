@@ -90,11 +90,13 @@ Its been my experience that RTL will hang with the spinning animation, especiall
 
 ### Upgrade RTL
 ```
+# service RTL stop
 # cd /home/bitcoin/RTL
 # git reset --hard HEAD
 # git clean -f -d
 # git pull
 # npm install
+# service RTL start
 ```
 
 
