@@ -2,4 +2,4 @@
 
 ## Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
-### [Configure OpenWRT for 'lnd' auto update external ip address with UPnP](https://github.com/seth586/guides/blob/master/OpenWRT/upnp_natpmp.md)
+### [Configure OpenWRT with UPNP for 'lnd' auto update external ip address](https://github.com/seth586/guides/blob/master/OpenWRT/upnp_natpmp.md)
