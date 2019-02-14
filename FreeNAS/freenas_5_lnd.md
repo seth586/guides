@@ -144,6 +144,7 @@ Note: Any time `lnd` reboots, you will need to unlock the wallet again. Open a s
 ### Upgrade LND
 Read the release notes, if a lot changed, you may have to close channels or do something to prepare for the upgrade! I'll keep a log of upgrade notes beyond 0.5.2 below:
 ```
+# service lnd stop
 # cd ~
 # wget https://github.com/lightningnetwork/lnd/releases/download/v0.5.2-beta/lnd-freebsd-amd64-v0.5.2-beta.tar.gz
 # tar -xzf lnd-freebsd-amd64-v0.5.2-beta.tar.gz
@@ -151,6 +152,7 @@ Read the release notes, if a lot changed, you may have to close channels or do s
 # install -m 0755 -o root -g wheel lnd lncli /usr/local/bin
 # cd ~
 # rm -r lnd-freebsd-amd64-v0.5.2-beta
+# service lnd start
 ```
 
 Next: { [Install Ride The Lightning web UI](freenas_6_rtl.md) ]
