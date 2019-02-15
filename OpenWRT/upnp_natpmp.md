@@ -76,5 +76,11 @@ Sucess!
 
 If it fails, `lnd` will exit. Double check on your router that `miniupnpd` is running under `status` / `processes`.
 
+Press (CTRL+C) to stop the lnd process. Exit the `bitcoin` user shell, and start the `lnd` service.
+```
+bitcoin@bitcoin:~% exit
+# service lnd start
+```
+
 [ [Back to LND setup guide](https://github.com/seth586/guides/blob/master/FreeNAS/freenas_5_lnd.md) ]
 
