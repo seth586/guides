@@ -88,8 +88,8 @@ Now connect on your web browser at the jail ip:3000
 
 Its been my experience that RTL will hang with the spinning animation, especially after unlocking the wallet, just close the browser window and open a new window and it should go away.
 
-### Quick brief on lightning channels...
-Play around with the interface. You can either configure `lnd` to run on [autopilot](https://github.com/lightningnetwork/lnd/blob/master/sample-lnd.conf), or make connections yourself. LND has its own layer 1 wallet, Click `LND Wallet`, select an `Address Type`, and click `Generate Address`. This wallet will need funds sent to it to create lightning channels. Wait for your transaction to confirm...
+### Fund your wallet
+LND has its own layer 1 wallet, Click `LND Wallet`, select an `Address Type`, and click `Generate Address`. This wallet will need funds sent to it to create lightning channels. Wait for your transaction to confirm...
 
 ### Add a Peer
 This step does not commit funds, it just makes a conneciton to the network.
@@ -100,8 +100,9 @@ Click on `Peers`, then type an address under `Add Peer`. You can select a peer o
 ```
 
 ### Add a Channel
-Now lets make our first channel. Click on `Channels`, select your peer's `Alias`, and select how many satoshis you want to commit. Click `Open`. Wait for your transaction to confirm on the blockchain.
+You can either configure `lnd` to run on [autopilot](https://github.com/lightningnetwork/lnd/blob/master/sample-lnd.conf), or make connections yourself. This explains how to make channels yourself.
 
+Click on `Channels`, select your peer's `Alias`, and select how many satoshis you want to commit. Click `Open`. Wait for your transaction to confirm on the blockchain.
 
 ### Managing Channels & Check Balances
 In RTL's web-ui, click on channels. All of your inbound and outbound connections are listed here. The most you can receive is under the `Remote Balance` column. The most you can send is under the `Local Balance`. So after making your first channel, you can send, but not receive.
