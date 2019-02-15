@@ -38,7 +38,7 @@ Total: $1283
 #### Whoa, I don't want to spend that much!
 Thanks to our 21st century craving for all things digital, last generation hardware is being sold for pennies on the dollar! Just search ebay for "server Xeon E3 V3" and you can find fully equipped systems for $200-300, such as the HP Proliant ML310e Gen8 V2 or Dell T20 series.
 
-Now compare the perfornamce between a V3 and a V6 Xeon:
+Now compare the performance between a V3 and a V6 Xeon:
 https://www.cpubenchmark.net/compare/Intel-Xeon-E3-1220-v3-vs-Intel-Xeon-E3-1220-v6/2022vs3131
 
 Yeah, you can save a lot of $ running last gen used server gear!
