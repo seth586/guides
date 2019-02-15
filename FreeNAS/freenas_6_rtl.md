@@ -100,13 +100,20 @@ Click on `Peers`, then type an address under `Add Peer`. You can select a peer o
 ```
 
 ### Add a Channel
-Now lets make our first channel. Click on `Channels`, select your peer, and select how many satoshis you want to commit. Click `Open`. Wait for your transaction to confirm on the blockchain.
+Now lets make our first channel. Click on `Channels`, select your peer's `Alias`, and select how many satoshis you want to commit. Click `Open`. Wait for your transaction to confirm on the blockchain.
 
+
+### Managing Channels & Check Balances
 In RTL's web-ui, click on channels. All of your inbound and outbound connections are listed here. The most you can receive is under the `Remote Balance` column. The most you can send is under the `Local Balance`. So after making your first channel, you can send, but not receive.
 
 If you make a channel for 100,000 satoshis, and spend 40,000 satoshies, that channel now has a `Local Balance` (spending) of 60,000 and `Remote Balance` of 40,000 (receiving). Total `Local Balance` + `Remote Balance` capacity can not exceed the channel `Capacity`.
 
-So go ahead and spend some satoshis! Give https://www.lightningspin.com/ a spin (its really slick after you install the Joule plugin), give someone a tip on https://tippin.me, read a https://yalls.org/ article. Enjoy instantaneous and off chain transactions!
+Right now it is not possible to send or receive a payment over multiple channels. This future feature is called [Atomic Multipath Payments](https://medium.com/coinmonks/specific-fee-routing-for-multi-path-payments-in-lightning-networks-b0e662c79819), which isn't implemented, yet.
+
+### Spend Some Satoshis!
+So go ahead and spend some satoshis! Copy a payment request from a website or service. In RTL's web-ui, click `payments`, and paste lightning invoices in, and click `send payment`.
+
+Give https://www.lightningspin.com/ a spin (its really slick after you install the Joule plugin), give someone a tip on https://tippin.me, read a https://yalls.org/ article. Enjoy instantaneous and off chain transactions!
 
 If you make a channel to me, [contact me](README.md) and I will make a channel back, so you have outbound and inbound capacity!
 
