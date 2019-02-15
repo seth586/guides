@@ -11,7 +11,7 @@ There are a few scenarios where a safe implementation of upnp can be reasonably 
 
 ### So how can we securely use upnp or NAT-PMP?
 
-If we can control what IP addresses can use upnp/NAT-PMP, we can minimize the vulnerability surface. After all, we are running on the presumption that our funds are safe in our bitcoin jail! 
+If we can control what IP addresses can use upnp/NAT-PMP, we can minimize the vulnerability surface. 
 
 So log in to your router, and see if your router's upnp or NAT-PMP implementation has an `access control list` to limit what client IP addresses can request a port mapping and what port ranges can be opened. If it doesn't, then disable upnp/NAT-PMP! 
 
@@ -19,7 +19,7 @@ I highly, highly, recommend you buy a router than can run OpenWRT, an open sourc
 
 ### Goal
 
-This guide is to help you install `miniupnpd` daemon with the `luci-app-upnp` user interface, configured to serve `lnd`'s requests for the external IP address on an OpenWRT compatible router. Fortunately `lnd` only queries the `miniupnpd` daemon for the external IP address, so we will set permissions to deny any upnp port forward request!
+This guide is to help you install `miniupnpd` daemon with the `luci-app-upnp` user interface, configured to serve `lnd`'s requests for the external IP address on an OpenWRT compatible router. Fortunately `lnd` only queries the `miniupnpd` daemon for the external IP address, so we will set permissions to deny any upnp port forward request, and manually set up port forwards.
 
 ### Install miniupnpd
 
