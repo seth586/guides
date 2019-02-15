@@ -94,7 +94,7 @@ Play around with the interface. You can either configure `lnd` to run on [autopi
 ### Add a Peer
 This step does not commit funds, it just makes a conneciton to the network.
 
-Click on `Peers', then type an address under `Add Peer`. You can select a peer on www.1ML.com, or connect to my node:
+Click on `Peers`, then type an address under `Add Peer`. You can select a peer on www.1ML.com, or connect to my node:
 ```
 023ec3d1fa35f7fb8996374cf1848c1a40788df013551c5510c75617222bd2dd2d@68.234.70.195:9735
 ```
