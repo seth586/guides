@@ -9,7 +9,7 @@ Don't have a static IP address? `lnd` will loose peer connections unless you con
 
 ### Mobile Wallet Guides
 
-[Shango - Android](wallets/shango.md)
+#### [Shango - Android / iOS](wallets/shango.md)
 
 ### External VPN guides
 Want to use a lightning wallet, like [Shango](http://www.shangoapp.com/) on the go? Here are a few options on setting up a VPN server at home, so you can securely connect to your `lnd` on the road!
