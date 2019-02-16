@@ -10,4 +10,4 @@ Don't have a static IP address? `lnd` will loose peer connections unless you con
 ### External Links
 
 #### [Setting up a wireguard server running on an OpenWRT router](https://casept.github.io/post/wireguard-server-on-openwrt-router/)
-Want to use a lightning wallet, like [Shango](http://www.shangoapp.com/) on the go? This is a great guide on setting up a VPN on your android device, so you can securely connect to `lnd` on the road!
+Want to use a lightning wallet, like [Shango](http://www.shangoapp.com/) on the go? This is a great guide on setting up a VPN on your android device and router, so you can securely connect to your `lnd` on the road!
