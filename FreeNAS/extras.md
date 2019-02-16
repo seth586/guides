@@ -11,4 +11,4 @@ Don't have a static IP address? `lnd` will loose peer connections unless you con
 Want to use a lightning wallet, like [Shango](http://www.shangoapp.com/) on the go? Here are a few options on setting up a VPN server at home, so you can securely connect to your `lnd` on the road!
 
 #### [SoftEther VPN in a FreeNAS jail](https://forums.freenas.org/index.php?threads/alternative-to-openvpn-softether-vpn.47395/)
-SoftEther is slower, in my opinion, but offers a free DNS service, great option if your ISP changes your home IP address on you! 
+SoftEther offers a free DNS service, great option if your ISP changes your home IP address on you! 
