@@ -2,7 +2,7 @@
 
 Download the Shango app, follow directions on their website: http://www.shangoapp.com/
 
-Add the following line to your `~/.lnd/lnd.conf` configuration file:
+Add the following line to your `/home/bitcoin/.lnd/lnd.conf` configuration file:
 ```
 rpclisten=0.0.0.0:10009
 ```
