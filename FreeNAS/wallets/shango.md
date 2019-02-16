@@ -1,4 +1,4 @@
-[ [<< Back to Extras](extras.md) ]
+[ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
 
 Download the Shango app, follow directions on their website: http://www.shangoapp.com/
 
@@ -25,4 +25,4 @@ Use WinSCP to copy your `admin.macaroon' to a path in your new jail. Then run th
 
 Use the hex output for your server credentials in the app.
 
-[ [<< Back to Extras](extras.md) ]
+[ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
