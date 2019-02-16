@@ -13,5 +13,5 @@ Want to use a lightning wallet, like [Shango](http://www.shangoapp.com/) on the 
 #### [Setting up a wireguard server running on an OpenWRT router](https://casept.github.io/post/wireguard-server-on-openwrt-router/)
 Use this if you have a static IP address or a DNS.
 
-#### [SoftEther VPN](https://forums.freenas.org/index.php?threads/alternative-to-openvpn-softether-vpn.47395/)
+#### [SoftEther VPN in a FreeNAS jail](https://forums.freenas.org/index.php?threads/alternative-to-openvpn-softether-vpn.47395/)
 SoftEther is slower, in my opinion, but offers a free DNS service, great option if your ISP changes your home IP address on you! 
