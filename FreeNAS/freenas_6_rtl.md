@@ -114,7 +114,7 @@ Right now it is not possible to send or receive a payment over multiple channels
 ### Spend Some Satoshis!
 So go ahead and spend some satoshis! Copy a payment request from a website or service. In RTL's web-ui, click `payments`, and paste lightning invoices in, and click `send payment`.
 
-Give https://www.lightningspin.com/ a spin (its really slick after you install the Joule plugin), give someone a tip on https://tippin.me, read a https://yalls.org/ article. Enjoy instantaneous and off chain transactions!
+Give https://www.lightningspin.com/ a spin (its really slick after you install the Joule plugin), give someone a tip on https://tippin.me, read a https://yalls.org/ article. Donate to the [@BTCPayServer fund](https://checkout.opennode.co/p/d235ff54-0c49-4a27-bfa9-0e84e9609097)! Enjoy instantaneous and off chain transactions!
 
 If you make a channel to me, [contact me](README.md) and I will make a channel back, so you have outbound and inbound capacity!
 
