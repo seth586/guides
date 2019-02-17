@@ -5,7 +5,7 @@
 Running `lnd' from the command line is exhausting, lets get a pretty user interface going!
 
 ### Install RTL
-Find the latest release [here](https://github.com/ShahanaFarooqui/RTL/releases).
+Read up on RTL [here](https://github.com/ShahanaFarooqui/RTL).
 
 If not already there, SSH into your freenas box and switch to your bitcoin jail.
 
@@ -121,6 +121,7 @@ If you make a channel to me, [contact me](README.md) and I will make a channel b
 Over time it is likely you will get inbound connections. Make sure your node is always online, and wallet unlocked.
 
 ### Upgrade RTL
+2/17/2019: Confirmed upgrade works from 0.1.14 -> 0.2.1
 ```
 # service RTL stop
 # cd /home/bitcoin/RTL
