@@ -13,7 +13,7 @@ If you aren't already there, SSH into your freenas box, and switch to your bitco
 ### Prerequisites
 Make sure that bitcoind is fully synced before running electrum-personal-server:
 ```
-# bitcoin-cli -datadir=/home/bitcoin/.bitcoin getblockchaininfo
+# bitcoin-cli -datadir=/var/db/bitcoin getblockchaininfo
 ```
 
 ### Install Electrum-Personal-Server
@@ -33,8 +33,8 @@ Electrum-personal-server is on github, check for the latest release at https://g
 ```
 ### Configuration file:
 ```
-cp electrum-personal-server-eps-v0.1.6/config.cfg_sample config.cfg
-nano config.cfg
+# cp electrum-personal-server-eps-v0.1.6/config.cfg_sample /usr/local/etc/electrum.conf
+# nano /usr/local/etc/electrum.conf
 ```
 Now we need to add our hardware wallet’s master public keys xpub/ypub/zpub).
 
@@ -53,7 +53,7 @@ wallet_legacy = xpub.....
 wallet_segwit = ypub....
 wallet_bech32 = zpub...
 ```
-Under `[bitcoin-rpc]`, change `datadir = /home/bitcoin/.bitcoin/`
+Under `[bitcoin-rpc]`, change `datadir = /var/db/bitcoin/`
 
 Under `[electrum-serever]`, change `host= 0.0.0.0` to allow remote connections. Change ip_whitelist to your home network subnet, for example, my router assigns IP adresses as `192.168.84.XXX`, so I typed in `192.168.84.0/24` to limit connections to this range. Save and exit nano.
 
@@ -67,15 +67,15 @@ Under `[electrum-serever]`, change `host= 0.0.0.0` to allow remote connections. 
 ```
 ## First start
 ```
-# /usr/local/bin/electrum-personal-server /electrum/config.cfg
+# /usr/local/bin/electrum-personal-server /usr/local/etc/electrum.conf
 ```
 It will import addresses from each master public key. When complete, electrum-personal-server will exit. Next, if you have transaction history, look up the block height of your oldest transaction, or just start from 1. Then, lets scan the blockchain for those historical transactions:
 ```
-# /usr/local/bin/electrum-personal-server-rescan /electrum/config.cfg
+# /usr/local/bin/electrum-personal-server-rescan /usr/local/etc/electrum.conf
 ```
 Lets run it!
 ```
-# /usr/local/bin/electrum-personal-server /electrum/config.cfg
+# /usr/local/bin/electrum-personal-server /usr/local/etc/electrum.conf
 ```
 Now boot up your electrum client, goto Tools>Network>Server, point it at your jail’s ip:50002, it should work!
 
@@ -98,7 +98,7 @@ Copy the following startup script to nano, then save and exit.
 
 name="electrumpersonalserver"
 rcvar="electrumpersonalserver_enable"
-electrumpersonalserver_command="/usr/local/bin/electrum-personal-server /electrum/config.cfg"
+electrumpersonalserver_command="/usr/local/bin/electrum-personal-server /usr/local/etc/electrum.conf"
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
 command_args="-P ${pidfile} -u bitcoin -r -f ${electrumpersonalserver_command}"
