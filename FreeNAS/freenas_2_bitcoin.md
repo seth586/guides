@@ -298,6 +298,7 @@ Save (CTRL+O,ENTER) and exit (CTRL+X).
 
 Some apps, like `lnd`, look for the config file in the bitcoin data directory. It is FreeBSD tradition to keep config files in '/usr/local/etc'. So lets make a hard link so the config file exists in both spots. Changing one will change the other:
 ```
+# mkdir /var/db/bitcoin
 # ln /usr/local/etc/bitcoin.conf /var/db/bitcoin/bitcoin.conf
 ```
 
