@@ -56,7 +56,7 @@ root@bitcoin:~ # service bitcoind start
 ```
 Bitcoin should automatically detect tor and connect. Verify by running bitcoin-cli:
 ```
-root@bitcoin:~ # bitcoin-cli -datadir=/home/bitcoin/.bitcoin getnetworkinfo
+root@bitcoin:~ # bitcoin-cli -datadir=/var/db/bitcoin getnetworkinfo
 ```
 You should see a .onion address listed, verify it works by copy/pasting the .onion address into [bitnodes](https://bitnodes.earn.com) (It may take a while)
 
