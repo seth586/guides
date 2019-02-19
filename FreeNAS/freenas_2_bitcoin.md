@@ -71,7 +71,7 @@ Go to https://github.com/bitcoin/bitcoin/releases, find the tar.gz release we wa
 
 To see what is in the current directory, type `ls`
 
-You can see our downloaded file, `v0.17.1.tar.gz` and the unpacked directory `bitcoin-0.17.1`, lets change to that bitcoin directory and configure for compiling.
+Configure for compiling:
 ```
 # cd bitcoin-0.17.1
 # sh 
