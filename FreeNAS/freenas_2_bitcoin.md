@@ -82,6 +82,7 @@ Configure for compiling:
 # gmake check
 # gmake install
 # csh
+# cd ~
 # rm -r bitcoin-0.17.1
 ```
 This process may take a while. Once its done and installed, we need to add a rc.d script to automatically start the bitcoin daemon on start. Read more about FreeBSD rc.d scripting [here](https://www.freebsd.org/doc/en_US.ISO8859-1/articles/rc-scripting/index.html).
