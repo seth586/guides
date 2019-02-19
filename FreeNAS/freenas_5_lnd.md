@@ -57,7 +57,7 @@ Save (CTRL+O), then exit (CTRL+X)
 ### LND Startup and initialization
 Start `lnd`:
 ```
-# daemon -u bitcoin /usr/local/bin/lnd --configfile=/usr/local/etc/lnd.conf
+# sudo -u bitcoin /usr/local/bin/lnd --configfile=/usr/local/etc/lnd.conf
 ```
 If it works, you should see the following message:
 ```
@@ -72,7 +72,7 @@ Automatically obtained bitcoind's RPC credentials
 ```
 Open another SSH terminal window, log into to your FreeNAS server, and switch to your bitcoin jail. We will use `lncli` to create a wallet and store the recovery key.
 ```
-# lncli -lnddir "/var/db/lnd" create
+# sudo -u bitcoin lncli -lnddir "/var/db/lnd" create
 ```
 Follow the prompt to create a wallet. Write down your 24 word seed on paper, and store it somewhere safe. Pick a strong wallet password, too!
 
