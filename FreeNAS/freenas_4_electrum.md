@@ -136,7 +136,7 @@ root@freenas[~]# iocage console bitcoin
 ### How to update electrum personal server:
 ```
 # service electrumpersonalserver stop
-# cd /electrum
+# cd ~
 # wget https://github.com/chris-belcher/electrum-personal-server/archive/eps-v0.1.6.tar.gz
 # tar xzvf eps-v0.1.6.tar.gz
 # rm eps-v0.1.6.tar.gz
