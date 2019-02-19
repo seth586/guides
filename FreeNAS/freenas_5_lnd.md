@@ -39,7 +39,7 @@ bitcoin.mainnet=1
 bitcoin.node=bitcoind
 
 [Bitcoind]
-bitcoind.dir=/home/bitcoin/.bitcoin
+bitcoind.dir=/var/db/bitcoin
 ```
 Make sure to set `externalip=` if you have a static ip. If your ip address changes and you have a static ip address set, incoming channels will not be able to connect.
 
