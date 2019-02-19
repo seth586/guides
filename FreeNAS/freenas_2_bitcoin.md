@@ -28,12 +28,12 @@ Uid (Leave empty for default):
 Login group [bitcoin]:
 Login group is bitcoin. Invite bitcoind into other groups? []:
 Login class [default]:
-Shell (sh csh tcsh git-shell nologin) [sh]: csh
+Shell (sh csh tcsh git-shell nologin) [sh]: nologin
 Home directory [/home/bitcoin]:
 Home directory permissions (Leave empty for default):
-Use password-based authentication? [yes]:
+Use password-based authentication? [yes]:no
 Use an empty password? (yes/no) [no]:
-Use a random password? (yes/no) [no]: yes
+Use a random password? (yes/no) [no]: 
 Lock out the account after creation? [no]:
 Username   : bitcoin
 Password   : <random>
@@ -43,7 +43,7 @@ Class      :
 Groups     : bitcoind
 Home       : /home/bitcoin
 Home Mode  :
-Shell      : /bin/csh
+Shell      : nologin
 Locked     : no
 OK? (yes/no): yes
 adduser: INFO: Successfully added (bitcoind) to the user database.
@@ -57,7 +57,7 @@ Lets start installing stuff! (answer proceed questions with `y`)
 
 ```
 # pkg update && pkg upgrade -y
-# pkg install autoconf automake boost-libs git gmake libevent libtool libzmq4 openssl pkgconf wget nano python3
+# pkg install autoconf automake boost-libs git gmake libevent libtool libzmq4 openssl pkgconf wget nano python3 sudo
 ```
 
 Go to https://github.com/bitcoin/bitcoin/releases, find the tar.gz release we want to install. The latest release is 0.17.1 at https://github.com/bitcoin/bitcoin/archive/v0.17.1.tar.gz . Copy the link. PuTTY will let you paste by right clicking.
