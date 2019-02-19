@@ -4,7 +4,7 @@
 
 ### Bitcoin Core Install
 
-Note: We are going to compile bitcoin from source. There is a much easier way to install bitcoin (`pkg`), however the current repository build does not include zeromq support, which is required for lnd! Plus, we should know how to compile manually, in case the official bitcoin repository or package repositories go rogue.
+Note: We are going to compile bitcoin from source. There is a much easier way to install bitcoin (`pkg`), however we should know how to compile manually, in case the official bitcoin repository or package repositories go rogue.
 
 Secure Socket Shell into your freenas server. SSH is a way to manage your server remotely over a network. When you don’t plug in a monitor & keyboard directly into the server, it’s called a ‘headless’ server. The most popular SSH client is called [PuTTY, download it here](https://www.putty.org/). Connect to your FreeNAS’ IP address, and log in with your root credentials.
 
@@ -106,8 +106,8 @@ Copy the script below and paste the following startup script to nano by right cl
 #				Set it to "YES" to enable bitcoind
 # bitcoind_user (str)		Set to "bitcoin" by default.
 # bitcoind_group (str)		Set to "bitcoin" by default.
-# bitcoind_conf (str)		Set to "/home/bitcoin/.bitcoin/bitcoin.conf" by default.
-# bitcoind_data_dir (str)	Set to "/home/bitcoin/.bitcoin" by default.
+# bitcoind_conf (str)		Set to "/usr/local/etc/bitcoin.conf" by default.
+# bitcoind_data_dir (str)	Set to "/var/db/bitcoin" by default.
 # bitcoindlimits_enable (bool)	Set to "NO" by default.
 #				Set it to "YES" to enable bitcoindlimits
 # bitcoindlimits_args		Set to "-e -U ${bitcoind_user}" by default
@@ -138,8 +138,8 @@ load_rc_config ${name}
 
 : ${bitcoind_user:="bitcoin"}
 : ${bitcoind_group:="bitcoin"}
-: ${bitcoind_data_dir:="/home/bitcoin/.bitcoin"}
-: ${bitcoind_config_file:="/home/bitcoin/.bitcoin/bitcoin.conf"}
+: ${bitcoind_data_dir:="/var/db/bitcoin"}
+: ${bitcoind_config_file:="/usr/local/etc/bitcoin.conf"}
 : ${bitcoindlimits_args:="-e -U ${bitcoind_user}"}
 
 # set up dependant variables
@@ -283,13 +283,13 @@ Save (CTRL+O), ENTER, then exit (CTRL+X)
 
 Lets make bitcoin's [configuration file](https://jlopp.github.io/bitcoin-core-config-generator/):
 ```
-#  mkdir /home/bitcoin/.bitcoin
-# nano /home/bitcoin/.bitcoin/bitcoin.conf
+# nano /usr/local/etc/bitcoin.conf
 ```
 Add the following lines:
 ```
 server=1
 txindex=1
+daradir=/var/db/bitcoin
 zmqpubrawblock=tcp://127.0.0.1:28332
 zmqpubrawtx=tcp://127.0.0.1:28333
 ```
@@ -303,7 +303,7 @@ You can check running processes by typing:
 ```
 If everything was set up correctly, bitcoin should be running! At this point, bitcoin will start downloading the blockchain. This can take a long time. Check bitcoin's initial block download progress by running the following command:
 ```
-# bitcoin-cli -datadir=/home/bitcoin/.bitcoin getblockchaininfo
+# bitcoin-cli -datadir=/var/db/bitcoin getblockchaininfo
 ```
 Once "blocks" equals "headers", bitcoin is fully synced!
 
