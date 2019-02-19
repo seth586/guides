@@ -24,10 +24,10 @@ Add the following lines, make sure to set `rtlPass=`:
 ```
 [Authentication]
 lndServerUrl=https://localhost:8082/v1
-macroonPath=/home/bitcoin/.lnd/data/chain/bitcoin/mainnet
+macroonPath=/var/db/lnd/data/chain/bitcoin/mainnet
 nodeAuthType=CUSTOM
 rtlPass=pickapassword
-lndConfigPath=/home/bitcoin/.lnd/lnd.conf
+lndConfigPath=/usr/local/etc/lnd.conf
 [Settings]
 flgSidenavOpened=true
 flgSidenavPinned=true
@@ -40,20 +40,20 @@ Save (CTRL+O,ENTER) then exit (CTRL+X)
 
 ### Configure Autostart
 ```
-# nano /usr/local/etc/rc.d/RTL
+# nano /usr/local/etc/rc.d/rtl
 ```
 Add the following lines:
 ```
 #!/bin/sh
 #
-# PROVIDE: RTL
+# PROVIDE: rtl
 # REQUIRE: bitcoind lnd
 # KEYWORD:
 
 . /etc/rc.subr
-name="RTL"
-rcvar="RTL_enable"
-RTL_command="/usr/local/bin/node /home/bitcoin/RTL/rtl"
+name="rtl"
+rcvar="rtl_enable"
+RTL_command="/usr/local/bin/node /home/bitcoin/rtl/rtl"
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
 command_args="-u bitcoin -P ${pidfile} -r -f ${RTL_command}"
@@ -67,7 +67,7 @@ Save (CTRL+O,ENTER) then exit (CTRL+X)
 
 Make the service script executable:
 ```
-# chmod +x /usr/local/etc/rc.d/RTL
+# chmod +x /usr/local/etc/rc.d/rtl
 ```
 Enable in `etc/rc.conf'
 ```
@@ -75,13 +75,13 @@ Enable in `etc/rc.conf'
 ```
 Append the following line:
 ```
-service RTL_enable="YES"
+service rtl_enable="YES"
 ```
 Save (CTRL+O,ENTER) then exit (CTRL+X)
 
 Give it a run!
 ```
-# service RTL start
+# service rtl start
 ```
 
 Now connect on your web browser at the jail ip:3000
