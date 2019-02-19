@@ -33,7 +33,7 @@ Save (CTRL+O, ENTER), then exit (CTRL+X)
 
 Enable autostart by adding `tor_enable="YES"` to `/etc/rc.conf`.
 ```
-root@bitcoin:~ # nano /etc/rc.conf
+# nano /etc/rc.conf
 tor_enable="YES"
 ```
 Save (Ctrl+O,ENTER) and exit (CTRL+X)
