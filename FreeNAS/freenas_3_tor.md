@@ -58,7 +58,7 @@ Bitcoin should automatically detect tor and connect. Verify by running bitcoin-c
 ```
 root@bitcoin:~ # bitcoin-cli -datadir=/var/db/bitcoin getnetworkinfo
 ```
-You should see a .onion address listed, verify it works by copy/pasting the .onion address into [bitnodes](https://bitnodes.earn.com) (It may take a while)
+You should see a .onion address listed!
 
 ### How to upgrade tor:
 ```
