@@ -18,20 +18,25 @@ Check [LND's github repo](https://github.com/lightningnetwork/lnd/releases) for 
 # install -m 0755 -o root -g wheel lnd lncli /usr/local/bin
 # cd ~
 # rm -r lnd-freebsd-amd64-v0.5.2-beta
-# mkdir /home/bitcoin/.lnd
-# nano /home/bitcoin/.lnd/lnd.conf
+# nano /usr/local/etc/lnd.conf
 ```
 ### LND Configuration
 Read up on configuration options [here](https://github.com/lightningnetwork/lnd/blob/master/sample-lnd.conf). 
 Add the following lines to your `lnd.conf` file:
 ```
 [Application Options]
+datadir=/var/db/lnd/data
+logdir=/var/db/lnd/logs
+maxlogfiles=1
+maxlogfilesize=10
+tlscertpath=/var/db/lnd
+tlskeypath=/var/db/lnd
+
 externalip=xxx.xxx.xxx.xxx
 listen=0.0.0.0:9735
 restlisten=0.0.0.0:8082
 alias=thisisthenamethatblockexplorerswillshow
-maxlogfiles=1
-maxlogfilesize=10
+
 
 [Bitcoin]
 bitcoin.active=1
@@ -52,7 +57,7 @@ Save (CTRL+O), then exit (CTRL+X)
 ### LND Startup and initialization
 Start `lnd`:
 ```
-# daemon -u bitcoin /usr/local/bin/lnd
+# daemon -u bitcoin /usr/local/bin/lnd --configfile=/usr/local/etc/lnd.conf
 ```
 If it works, you should see the following message:
 ```
@@ -103,7 +108,7 @@ rcvar="lnd_enable"
 
 export HOME=/home/bitcoin
 
-lnd_command="/usr/local/bin/lnd"
+lnd_command="/usr/local/bin/lnd --configfile=/usr/local/etc/lnd.conf"
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
 command_args="-u bitcoin -P ${pidfile} -r -f ${lnd_command}"
