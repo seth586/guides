@@ -11,7 +11,7 @@ Every bitcoin node should be serving tor connections, there is no reason not to!
 
 ### Install Tor
 
-Tor is a communications protocol that anonymizes communications by bouncing encrypted data between relays. It is also slower than TCP/IP. By serving TOR connections, you help other nodes that require the privacy. If you want to run your node over tor only, you can add `/home/bitcoin/.bitcoin/bitcoin.conf` with the line `onlynet=onion`.
+Tor is a communications protocol that anonymizes communications by bouncing encrypted data between relays. It is also slower than TCP/IP. By serving TOR connections, you help other nodes that require the privacy. If you want to run your node over tor only, you can add `/usr/local/etc/bitcoin.conf` with the line `onlynet=onion`.
 
 Lets install!
 ```
