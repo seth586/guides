@@ -72,19 +72,14 @@ Automatically obtained bitcoind's RPC credentials
 ```
 Open another SSH terminal window, log into to your FreeNAS server, and switch to your bitcoin jail. We will use `lncli` to create a wallet and store the recovery key.
 ```
-root@freenas:~# iocage console bitcoin
-# su bitcoin
-bitcoin@bitcoin:~ % lncli create
+# lncli -lnddir "/var/db/lnd" create
 ```
 Follow the prompt to create a wallet. Write down your 24 word seed on paper, and store it somewhere safe. Pick a strong wallet password, too!
 
 We are done with this terminal, close it.
 
-In your other terminal window, `lnd` will begin its sync. Once the sync is complete, you will see a bunch of "New channel disocvered" nessages, exit `lnd` (CTRL+C). Exit the bitcoin user:
-```
-bitcoin@bitcoin:~ % exit
-root@bitcoin
-```
+In your other terminal window, `lnd` will begin its sync. Once the sync is complete, you will see a bunch of "New channel disocvered" nessages, exit `lnd` (CTRL+C). 
+
 ### Configure start on boot & restart
 
 We will again use [daemon](https://www.freebsd.org/cgi/man.cgi?query=daemon) to run our `lnd` process at bootup, and restart the process should it fail.
