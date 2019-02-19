@@ -293,7 +293,12 @@ daradir=/var/db/bitcoin
 zmqpubrawblock=tcp://127.0.0.1:28332
 zmqpubrawtx=tcp://127.0.0.1:28333
 ```
-Save, and exit.
+Save (CTRL+O,ENTER) and exit (CTRL+X).
+
+Some apps, like 'lnd', look for the config file in the bitcoin data directory. It is FreeBSD tradition to keep config files in '/usr/local/etc'. So lets make a hard link so the config file exists in both spots. Changing one will change the other:
+```
+# ln /usr/local/etc/bitcoin.conf /var/db/bitcoin/bitcoin.conf
+```
 
 Go to your FreeNAS web UI, and reboot the jail. SSH back into your freenas and switch consoles to your bitcoin jail.
 
