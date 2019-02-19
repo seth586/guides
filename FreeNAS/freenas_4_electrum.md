@@ -25,8 +25,6 @@ Lets make sure that we have python3 and pip installed:
 Electrum-personal-server is on github, check for the latest release at https://github.com/chris-belcher/electrum-personal-server/releases .
 ```
 # cd ~
-# mkdir /electrum
-# cd /electrum
 # wget https://github.com/chris-belcher/electrum-personal-server/archive/eps-v0.1.6.tar.gz
 # tar xzvf eps-v0.1.6.tar.gz
 # rm eps-v0.1.6.tar.gz
@@ -53,7 +51,7 @@ wallet_legacy = xpub.....
 wallet_segwit = ypub....
 wallet_bech32 = zpub...
 ```
-Under `[bitcoin-rpc]`, change `datadir = /var/db/bitcoin/`
+Under `[bitcoin-rpc]`, change `datadir = /var/db/bitcoin`
 
 Under `[electrum-serever]`, change `host= 0.0.0.0` to allow remote connections. Change ip_whitelist to your home network subnet, for example, my router assigns IP adresses as `192.168.84.XXX`, so I typed in `192.168.84.0/24` to limit connections to this range. Save and exit nano.
 
