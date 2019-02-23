@@ -42,13 +42,20 @@ alias=thisisthenamethatblockexplorerswillshow
 bitcoin.active=1
 bitcoin.mainnet=1
 bitcoin.node=bitcoind
+bitcoin.basefee=1000
+bitcoin.feerate=2500
 
 [Bitcoind]
 bitcoind.dir=/var/db/bitcoin
 ```
-Make sure to set `externalip=` if you have a static ip. If your ip address changes and you have a static ip address set, incoming channels will not be able to connect.
+### Configuration Notes
+Fees. You may have to pay fees to other nodes when you rebalance channels, don't operate at a loss!  
+`bitcoin.basefee=1000` = Fee of 1.000 satoshi per payment forwarded
+`bitcoin.feerate=2500` = Fee of 0.25% of amount forwarded
 
-If your ISP assigns a dynamic ip address, use `nat=true` instead of `externalip=`. When `nat=true` is set, `lnd` will query your router's upnp implmentation to detect a change in ip, then broadcast the new ip to the network. However, this uses universal plug and play or NAT-PMP, which is a [security vulnerability](https://docs.netgate.com/pfsense/en/latest/book/services/upnp-and-nat-pmp.html) if not implemented properly on your router.  Follow this [optional guide](https://github.com/seth586/guides/blob/master/OpenWRT/upnp_natpmp.md) to set your OpenWRT router up with NAT-PMP in a secure fashion.
+`externalip=` = Set if you have a static IP address assigned by your ISP. If your ip address changes with this set, inbound channels will lose connection with you. If your ISP assigns a dynamic ip address, use `nat=true` instead of `externalip=`. 
+
+`nat=true` = `lnd` will query your router's upnp implmentation to detect a change in ip, then broadcast the new ip to the network. However, this uses universal plug and play or NAT-PMP, which is a [security vulnerability](https://docs.netgate.com/pfsense/en/latest/book/services/upnp-and-nat-pmp.html) if not implemented properly on your router.  Follow this [optional guide](https://github.com/seth586/guides/blob/master/OpenWRT/upnp_natpmp.md) to set your OpenWRT router up with NAT-PMP in a secure fashion.
 
 Make sure port `9735` is [forwarded in your router](freenas_1_jail_creation.md) to your bitcoin jail!
 
