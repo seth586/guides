@@ -49,8 +49,10 @@ bitcoin.feerate=2500
 bitcoind.dir=/var/db/bitcoin
 ```
 ### Configuration Notes
-Fees. You may have to pay fees to other nodes when you rebalance channels, don't operate at a loss!  
+Fees. You may have to pay fees to other nodes when you rebalance channels, and you may have to close and reopen channels to disconected nodes, which will require on-chain fees. Don't operate at a loss! 
+
 `bitcoin.basefee=1000` = Fee of 1.000 satoshi per payment forwarded
+
 `bitcoin.feerate=2500` = Fee of 0.25% of amount forwarded
 
 `externalip=` = Set if you have a static IP address assigned by your ISP. If your ip address changes with this set, inbound channels will lose connection with you. If your ISP assigns a dynamic ip address, use `nat=true` instead of `externalip=`. 
