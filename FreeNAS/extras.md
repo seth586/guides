@@ -9,8 +9,10 @@ Don't have a static IP address? `lnd` will loose peer connections unless you con
 
 #### [Shango - Android / iOS mobile wallet](wallets/shango.md)
 
-### External VPN guides
+### External guides
 Want to use a lightning wallet, like [Shango](http://www.shangoapp.com/) away from your home network? Here are a few options on setting up a VPN server at home, so you can securely connect to your `lnd` on the road!
 
 #### [SoftEther VPN in a FreeNAS jail](https://forums.freenas.org/index.php?threads/alternative-to-openvpn-softether-vpn.47395/)
 SoftEther offers a free DNS service, great option if your ISP changes your home IP address on you! 
+
+#### [Tor relay node](https://trac.torproject.org/projects/tor/wiki/TorRelayGuide/FreeBSD) Tor doesn't give anonymity unless there are sufficient relays to hide the source from the destination, and vice versa. Do NOT run a Tor exit, run a relay only. Make sure `ExitRelay 0` is set! I also recommend `RelayBandwidthRate 250 KBytes` so it doesn't eat up all of your bandwidth. (125kbyte = 1 Mbit). Run this in its own jail.
