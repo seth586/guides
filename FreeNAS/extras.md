@@ -10,10 +10,10 @@ Don't have a static IP address? `lnd` will loose peer connections unless you con
 #### [Shango - Android / iOS mobile wallet](wallets/shango.md)
 
 ### External guides
-Want to use a lightning wallet, like [Shango](http://www.shangoapp.com/) away from your home network? Here are a few options on setting up a VPN server at home, so you can securely connect to your `lnd` on the road!
+
 
 #### [SoftEther VPN in a FreeNAS jail](https://forums.freenas.org/index.php?threads/alternative-to-openvpn-softether-vpn.47395/)
-SoftEther offers a free DNS service, great option if your ISP changes your home IP address on you! 
+Want to use a lightning wallet, like [Shango](http://www.shangoapp.com/) away from your home network? Set up a VPN server at home, so you can securely connect to your `lnd` on the road! SoftEther offers a free DNS service, great option if your ISP changes your home IP address on you! 
 
 #### [Tor relay node](https://trac.torproject.org/projects/tor/wiki/TorRelayGuide/FreeBSD) 
 Tor doesn't give anonymity unless there are sufficient relays to hide the source from the destination, and vice versa. Do NOT run a Tor exit, run a relay only. Make sure `ExitRelay 0` is set! I also recommend `RelayBandwidthRate 250 KBytes` and `MaxAdvertisedBandwidth 250 Kbytes` so it doesn't eat up all of your bandwidth. (125kbyte = 1 Mbit, adjust as you see fit). Run this in its own jail. Port forward 9001 to your tor relay jail. If you need an onion service anonymity (such as running bitcoin in `onlynet=onion`) [do not run a relay](https://research.kudelskisecurity.com/2013/09/04/dont-run-a-tor-router-and-a-hidden-service-from-the-same-connection/).
