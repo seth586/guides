@@ -16,7 +16,7 @@ If not already there, SSH into your freenas box and switch to your bitcoin jail.
 # cd RTL
 # npm install
 ```
-Once the install is complete, create a RTL.conf configuration file:
+Once the install is complete, create RTL.conf [configuration options](https://github.com/ShahanaFarooqui/RTL/blob/master/Application_configurations):
 ```
 # nano RTL.conf
 ```
