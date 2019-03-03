@@ -25,4 +25,14 @@ WORK IN PROGRESS, DO NOT USE
 # bitcoin-cli --datadir=/var/db/bitcoin getblockchaininfo
 ```
 
-5. 
+5. Install c-lightning:
+```
+# pkg install -y autoconf automake git gmp asciidoc gmake libtool python python3 sqlite3 libsodium
+# cd ~
+# git clone https://github.com/ElementsProject/lightning.git
+# cd lightning
+# ./configure
+# gmake
+# gmake install
+```
+
