@@ -34,6 +34,7 @@ WORK IN PROGRESS, DO NOT USE
 # ./configure
 # gmake
 # gmake install
+# rm -r lightning
 # nano /usr/local/etc/rc.d/lightningd
 ```
 paste the following:
