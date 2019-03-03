@@ -35,6 +35,7 @@ WORK IN PROGRESS, DO NOT USE
 # gmake
 # gmake install
 # rm -r lightning
+# lightningd --help
 # nano /usr/local/etc/rc.d/lightningd
 ```
 paste the following:
@@ -58,4 +59,8 @@ load_rc_config $name
 : ${lightningd_enable:=no}
 
 run_rc_command "$1"
+```
+enable autostart
+```
+sysrc bitcoind_enable="YES"
 ```
