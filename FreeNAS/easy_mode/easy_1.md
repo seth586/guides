@@ -11,7 +11,7 @@ WORK IN PROGRESS, DO NOT USE
 
 3. Install `bitcoin-daemon`
 ```
-# pkg install bitcoin-daemon bitcoin-utils
+# pkg install -y bitcoin-daemon bitcoin-utils
 # sysrc bitcoind_enable="YES"
 # echo 'server=1' >> /usr/local/etc/bitcoin.conf
 # echo 'txindex=1' >> /usr/local/etc/bitcoin.conf
