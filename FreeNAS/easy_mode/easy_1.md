@@ -62,5 +62,6 @@ run_rc_command "$1"
 ```
 enable autostart
 ```
-sysrc lightningd_enable="YES"
+# chmod +x /usr/local/etc/rc.d/lightningd
+# sysrc lightningd_enable="YES"
 ```
