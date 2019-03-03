@@ -48,7 +48,7 @@ paste the following:
 
 name="lightningd"
 rcvar="lightningd_enable"
-lightningd_command="/usr/local/bin/lightningd /usr/local/etc/lightningd.conf"
+lightningd_command="/usr/local/bin/lightningd ~/.lightning/config"
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
 command_args="-P ${pidfile} -u bitcoin -r -f ${lightningd_command}"
