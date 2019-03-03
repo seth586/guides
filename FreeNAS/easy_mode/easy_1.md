@@ -62,5 +62,5 @@ run_rc_command "$1"
 ```
 enable autostart
 ```
-sysrc bitcoind_enable="YES"
+sysrc lightningd_enable="YES"
 ```
