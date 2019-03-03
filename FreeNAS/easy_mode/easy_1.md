@@ -65,3 +65,15 @@ enable autostart
 # chmod +x /usr/local/etc/rc.d/lightningd
 # sysrc lightningd_enable="YES"
 ```
+configure c-lightning
+```
+# nano ~/lightning/config
+```
+paste the following
+```
+alias=makesomethingup
+rgb=008000
+port=9737
+network=bitcoin
+bitcoin-datadir /var/db/bitcoin
+```
