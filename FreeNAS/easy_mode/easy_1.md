@@ -34,5 +34,27 @@ WORK IN PROGRESS, DO NOT USE
 # ./configure
 # gmake
 # gmake install
+# nano /usr/local/etc/rc.d/lightningd
 ```
+paste the following:
+```
+#!/bin/sh
+#
+# PROVIDE: lightningd
+# REQUIRE: bitcoind
+# KEYWORD:
 
+. /etc/rc.subr
+
+name="lightningd"
+rcvar="lightningd_enable"
+lightningd_command="/usr/local/bin/lightningd /usr/local/etc/lightningd.conf"
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -u bitcoin -r -f ${lightningd_command}"
+
+load_rc_config $name
+: ${lightningd_enable:=no}
+
+run_rc_command "$1"
+```
