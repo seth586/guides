@@ -1,6 +1,6 @@
 [ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
 
-Download the pebble wallet for your ombile device: https://www.pebble.indiesquare.me/
+Download the pebble wallet for your mobile device: https://www.pebble.indiesquare.me/
 
 Add the following line to your `lnd.conf` configuration file:
 ```
