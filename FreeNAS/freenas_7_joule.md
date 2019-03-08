@@ -36,3 +36,5 @@ Set a password, and enjoy in-browser lighting payments! Try out a small tip here
 https://tippin.me/@seth586
 
 If you want to try sending / receiving invoices, reach out to me. Contact info on the [ [Intro](README.md) ] page.
+
+Next: [Extras](extras.md)
