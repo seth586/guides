@@ -3,7 +3,7 @@
 Download the Zeus app, APKs available here: https://github.com/ZeusLN/zeus/releases
 
 You will need to convert your `/var/db/lnd/data/chain/bitcoin/mainnet/admin.macaroon` file into hex.
-Unfortunately vim has a lot of dependencies, so you may want to do all of this in a seperate jail you can nuke later:
+Unfortunately `vim` has a lot of dependencies, so you may want to do all of this in a seperate jail you can nuke later:
 
 Use WinSCP to copy your `admin.macaroon' to a path in your new jail. Then run the following commands:
 
