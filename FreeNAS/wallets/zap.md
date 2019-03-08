@@ -13,6 +13,11 @@ Restart LND
 ```
 Remember to unlock your wallet, use RTL's web-ui.
 
+Link your lnd.conf to lnd's data dir:
+```
+ln /usr/local/etc/lnd.conf /var/db/lnd/lnd.conf
+```
+
 Install `go`, compile [lndconnect](https://github.com/LN-Zap/lndconnect), and generate a LND connect URL QR code:
 ```
 # pkg install go
