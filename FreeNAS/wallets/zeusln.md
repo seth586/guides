@@ -12,6 +12,6 @@ Use WinSCP to copy your `admin.macaroon' to a path in your new jail. Then run th
 # xxd -ps -u -c 1000 /path/to/admin.macaroon
 ```
 
-Use the hex output for your server credentials in the app.
+Use the hex output for your server credentials in the app. Use REST API port `8082` and your local ip address for your bitcoin jail.
 
 [ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
