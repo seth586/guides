@@ -13,7 +13,7 @@ Restart LND
 ```
 Remember to unlock your wallet, use RTL's web-ui.
 
-You will need to convert your `/home/bitcoin/.lnd/data/chain/bitcoin/mainnet/admin.macaroon` file into hex.
+You will need to convert your `/var/db/lnd/data/chain/bitcoin/mainnet/admin.macaroon` file into hex.
 Unfortunately vim has a lot of dependencies, so you may want to do all of this in a seperate jail you can nuke later:
 
 Use WinSCP to copy your `admin.macaroon' to a path in your new jail. Then run the following commands:
