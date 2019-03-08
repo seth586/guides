@@ -7,7 +7,7 @@ https://winscp.net/eng/download.php
 
 With WinSCP, log into your freenas server using your root privileges, and navigate to the following folder (change as necessary):
 ```
-/mnt/volume0/iocage/jails/bitcoin/root/home/bitcoin/.lnd/data/chain/bitcoin/mainnet
+/mnt/volume0/iocage/jails/bitcoin/root/var/db/lnd/data/chain/bitcoin/mainnet
 ```
 Note: If you are unable to navigate to the `.lnd` folder, enable hidden folders by pressing (CTRL+ALT+H)
 
@@ -27,6 +27,8 @@ Type in your bitcoin jail address, port 8082 as described in our `'lnd.conf' fil
 ```
 https://192.168.84.123:8082
 ```
+
+You may have to follow the link since the browser does not trust lnd's TLS certificate by default. Once you follow the link, go back to joule's tab and it should work.
 
 Upload `admin.macaroon` and `readonly.macaroon`, Make sure to delete these files, they give the bearer of these credentials the ability to spend your funds!
 
