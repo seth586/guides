@@ -12,7 +12,7 @@ Make sure you set up a VPN so you can access your node remotely!
 
 #### [Zap with lndconnect - iOS mobile wallet](wallets/zap.md)
 
-#### [Pebble with lndconnect - Android mobile wallet](wallets/pebble.md)
+#### [Pebble with lndconnect - Android / iOS mobile wallet](wallets/pebble.md)
 
 #### [Shango - Android / iOS mobile wallet](wallets/shango.md)
 
