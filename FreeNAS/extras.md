@@ -7,7 +7,7 @@
 #### [Configure OpenWRT with UPNP for 'lnd' auto update external ip address](https://github.com/seth586/guides/blob/master/OpenWRT/upnp_natpmp.md)
 Don't have a static IP address? `lnd` will loose peer connections unless you configure `nat=true` and have a working UPnP implementation. This is a process to ensure your UPnP implementation is secure.
 
-#### [Zap - iOS mobile wallet](wallets/zap.md)
+#### [Zap with lndconnect - iOS mobile wallet](wallets/zap.md)
 
 #### [Shango - Android / iOS mobile wallet](wallets/shango.md)
 
