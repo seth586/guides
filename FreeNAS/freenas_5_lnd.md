@@ -29,8 +29,8 @@ datadir=/var/db/lnd/data
 logdir=/var/db/lnd/logs
 maxlogfiles=1
 maxlogfilesize=10
-tlscertpath=/var/db/lnd
-tlskeypath=/var/db/lnd
+tlscertpath=/var/db/lnd/lnd.cert
+tlskeypath=/var/db/lnd/lnd.key
 
 externalip=xxx.xxx.xxx.xxx
 listen=0.0.0.0:9735
