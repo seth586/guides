@@ -31,7 +31,7 @@ maxlogfiles=1
 maxlogfilesize=10
 tlscertpath=/var/db/lnd/tls.cert
 tlskeypath=/var/db/lnd/tls.key
-
+tlsextraip=0.0.0.0
 externalip=xxx.xxx.xxx.xxx
 listen=0.0.0.0:9735
 restlisten=0.0.0.0:8082
