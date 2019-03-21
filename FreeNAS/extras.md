@@ -8,17 +8,21 @@
 Don't have a static IP address? `lnd` will loose peer connections unless you configure `nat=true` and have a working UPnP implementation. This is a process to ensure your UPnP implementation is secure.
 
 ### Mobile Wallets
-Make sure you set up a VPN so you can access your node remotely!
 
 #### [Zap with lndconnect - iOS mobile wallet](wallets/zap.md)
+VPN Required
 
 #### [Pebble with lndconnect - Android / iOS mobile wallet](wallets/pebble.md)
+VPN Required
 
 #### [Shango - Android / iOS mobile wallet](wallets/shango.md)
+VPN Required
 
 #### [Zeus LN - Android / iOS mobile wallet](wallets/zeusln.md)
+VPN Required
 
 #### [Blockstream Green Android on chain wallet](wallets/green.md)
+No VPN, uses Tor for remote connections!
 
 ### External guides
 
