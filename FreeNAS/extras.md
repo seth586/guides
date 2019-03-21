@@ -18,6 +18,8 @@ Make sure you set up a VPN so you can access your node remotely!
 
 #### [Zeus LN - Android / iOS mobile wallet](wallets/zeusln.md)
 
+#### [Blockstream Green Android / iOS on chain wallet](wallets/green.md)
+
 ### External guides
 
 
