@@ -2,7 +2,7 @@
 
 ### Blockstream Green Wallet
 
-This isn't a lightning app (yet), but you can trustlessly connect it to your bitcoind node via SPV over tor!
+This isn't a lightning app (yet), but you can connect it to your bitcoind node via SPV over tor!
 
 Download and install Orbot for android: https://play.google.com/store/apps/details?id=org.torproject.android
 
