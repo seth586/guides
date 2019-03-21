@@ -10,7 +10,7 @@ Download the Blockstream Green app: https://play.google.com/store/apps/details?i
 
 Open orbot, and select the gear icon under "Tor-Enabled Apps". Select Green, then back. Turn on VPN Mode. Wait until the app is bootstrapped and connected to the tor network.
 
-Open Green Wallet. Click on `Bitcoin ⯆`. Check `connect through a proxy`, with `Socks5 Hostname` `localhost` and `Socks5 Port` of `9050`. Click `Save`. 
+Open Green Wallet. Click on `Bitcoin ⯆`. Check `connect through a proxy`, with `Socks5 Hostname` `localhost` and `Socks5 Port` of `9050`. Check `Connect with Tor`. Click `Save`. 
 
 Create a new wallet. Once you're done, Click the gear ⚙️ icon on the lower left. Under `Advanced` click `SPV synchronization`. Check `Enable SPV`. 
 Select `Only connect to trusted node(s) for SPV`. Remember your bitcoind onion address? If not, SSH into your bitcoin jail, and run 
