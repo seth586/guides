@@ -121,7 +121,7 @@ If you make a channel to me, [contact me](README.md) and I will make a channel b
 Over time it is likely you will get inbound connections. Make sure your node is always online, and wallet unlocked.
 
 ### Upgrade RTL
-2/17/2019: Confirmed upgrade works from 0.1.14 -> 0.2.1
+2/17/2019: Confirmed upgrade works from 0.1.14 -> 0.2.15
 ```
 # service RTL stop
 # cd /home/bitcoin/RTL
