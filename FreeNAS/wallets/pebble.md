@@ -2,17 +2,6 @@
 
 Download the pebble wallet for your mobile device: https://www.pebble.indiesquare.me/
 
-Add the following line to your `lnd.conf` configuration file:
-```
-rpclisten=0.0.0.0:10009
-```
-Restart LND
-```
-# service lnd stop
-# service lnd start
-```
-Remember to unlock your wallet, use RTL's web-ui.
-
 Link your lnd.conf to lnd's data dir:
 ```
 # ln /usr/local/etc/lnd.conf /var/db/lnd/lnd.conf
