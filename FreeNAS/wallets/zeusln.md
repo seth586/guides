@@ -1,5 +1,7 @@
 [ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
 
+### Zeus Lightning Wallet over Tor for Android
+
 Tor has numerous benefits for serving your mobile wallet. 
 * Securely, anonymously and remotely connect to your home server. 
 * Connections are encrypted
