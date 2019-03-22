@@ -52,7 +52,7 @@ Install `go`, compile [lndconnect](https://github.com/LN-Zap/lndconnect), and ge
 # cd ~/go/src/github.com/LN-Zap/lndconnect
 # gmake
 # cd ~/go/bin
-# ./lndconnect --lnddir=/var/db/lnd --image --host=z1234567890abc.onion
+# ./lndconnect --lnddir=/var/db/lnd --image --host=z1234567890abc.onion --port=8082
 ```
 A png file will be generated. Use WinSCP to download the image to your PC and scan it with the ZeusLN app!
 
