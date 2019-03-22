@@ -35,6 +35,7 @@ tlsextraip=0.0.0.0
 externalip=xxx.xxx.xxx.xxx
 listen=0.0.0.0:9735
 restlisten=0.0.0.0:8082
+rpclisten=0.0.0.0:10009
 alias=thisisthenamethatblockexplorerswillshow
 
 
