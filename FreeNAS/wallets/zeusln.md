@@ -4,11 +4,11 @@
 
 Tor has numerous benefits for serving your mobile wallet. 
 * Securely, anonymously and remotely connect to your home server. 
-* Connections are encrypted
+* Connections are encrypted end to end.
 * Onion address will remain static even if you are behind a dynamic IP address. No ddns required!
 * No port forwards required by your router! 
-* Tor cookie authenticated hidden services keep your `lnd` REST API a secret
-* Tor cookie authentication prevents denial of service attacks
+* Tor cookie authenticated hidden services keep your `lnd` REST API a secret 
+* Tor cookie authentication prevents denial of service attacks!
 
 Download the Zeus app, APKs available here: https://github.com/ZeusLN/zeus/releases
 
