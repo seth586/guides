@@ -8,6 +8,7 @@
 Don't have a static IP address? `lnd` will loose peer connections unless you configure `nat=true` and have a working UPnP implementation. This is a process to ensure your UPnP implementation is secure.
 
 ### Mobile Wallets for Android over Tor Hidden Service
+Connect securely, privately, and anonymously to your home node wherever you are in the world!
 
 #### [Zeus LN](wallets/zeusln.md)
 
@@ -15,7 +16,7 @@ Don't have a static IP address? `lnd` will loose peer connections unless you con
 
 
 ### Mobile Wallets for iOS, requires a home VPN server
-
+Unfortubately iOS does not have a tor hidden service client :(
 #### [Zap - iOS](wallets/zap.md)
 
 
