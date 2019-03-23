@@ -38,7 +38,7 @@ Open orbot. Click the `⋮`, select `hidden services ˃`, select `Client cookies
 
 Press the + button on the lower right. Type in the the onion address and secret cookie you revealed with `cat  /var/lnd/tor/lnd_rest/hostname`.
 
-Go back to orbot's main screen, and select the gear icon under `tor enabled apps`. Add `Zeus`, then press back. Click `stop` on the big onion logo. Exit orbot and reopen it. Turn on `VPN Mode`.
+Go back to orbot's main screen, and select the gear icon under `tor enabled apps`. Add `Zeus`, then press back. Click `stop` on the big onion logo. Exit orbot and reopen it. Turn on `VPN Mode`. Start your connection to the tor network by clicking on the big onion (if it hasbt automatically connected already)
 
 
 Link your lnd.conf to lnd's data dir:
