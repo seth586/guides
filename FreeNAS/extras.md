@@ -16,13 +16,13 @@ Don't have a static IP address? `lnd` will loose peer connections unless you con
 
 ### Mobile Wallets for iOS, requires a home VPN server
 
-#### [Zap with lndconnect - iOS mobile wallet](wallets/zap.md)
+#### [Zap - iOS](wallets/zap.md)
 
 
-#### [Pebble with lndconnect - Android / iOS mobile wallet](wallets/pebble.md)
+#### [Pebble - Android / iOS](wallets/pebble.md)
 
 
-#### [Shango - Android / iOS mobile wallet](wallets/shango.md)
+#### [Shango - Android / iOS](wallets/shango.md)
 
 
 
