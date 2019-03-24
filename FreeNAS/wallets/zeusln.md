@@ -29,7 +29,7 @@ Restart Tor
 
 View the private credentials of your new hidden service. The first part is the onion address, the second part is the secret.
 ```
-# cat /var/lnd/tor/lnd_rest/hostname
+# cat /var/db/tor/lnd_rest/hostname
 z1234567890abc.onion AbyZXCfghtG+E0r84y/nR # client: myandroid
 ```
 
