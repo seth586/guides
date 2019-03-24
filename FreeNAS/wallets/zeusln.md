@@ -18,6 +18,7 @@ HiddenServiceDir /var/db/tor/lnd_rest/
 HiddenServiceVersion 2
 HiddenServiceAuthorizeClient stealth myandroid
 HiddenServicePort 8082 127.0.0.1:8082
+HiddenServicePort 10009 127.0.0.1:10009
 ```
 Save (Ctrl+O, ENTER) and exit (Ctrl+X)
 
