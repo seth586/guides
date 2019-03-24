@@ -14,7 +14,7 @@ Download the Zeus app, APKs available here: https://github.com/ZeusLN/zeus/relea
 
 Edit `torrc` with `nano /usr/local/etc/tor/torrc` and add the following lines (`myandroid` can be unique):
 ```
-HiddenServiceDir /var/db/tor/lnd_rest/
+HiddenServiceDir /var/db/tor/lnd_api/
 HiddenServiceVersion 2
 HiddenServiceAuthorizeClient stealth myandroid
 HiddenServicePort 8082 127.0.0.1:8082
