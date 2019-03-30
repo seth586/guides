@@ -2,6 +2,8 @@
 
 ## Ride The Lightning (RTL) over Tor for Android
 
+This guide will help you remotely access RTL over Tor. This will work on any platform that supports Tor authenticated hidden service connections, the below example is for Android.
+
 Tor has numerous benefits over VPN and HTTPS for serving RTL to remote connections: 
 * Securely, anonymously and remotely connect to your home server anywhere you are. 
 * Connections are encrypted end to end.
