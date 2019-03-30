@@ -48,6 +48,6 @@ Press the + button on the lower right. Type in the the onion address and secret 
 
 Go back to orbot's main screen, and select the gear icon under `tor enabled apps`. Add `Tor Browser`, then press back. Click `stop` on the big onion logo. Exit orbot and reopen it. Turn on `VPN Mode`. Start your connection to the tor network by clicking on the big onion (if it has not automatically connected already)
 
-Now open Tor browser and type in the onion address (example `z1234567890abc.onion`) Only you have access to this website!
+Now open Tor browser and type in the onion address (example `z1234567890abc.onion:3000`) Only you have access to this website!
 
 [ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
