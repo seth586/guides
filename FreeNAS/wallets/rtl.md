@@ -1,6 +1,6 @@
 [ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
 
-## Ride The Lightning (RTL) over Tor
+## Ride The Lightning (RTL) over Tor for Android
 
 Tor has numerous benefits over VPN and HTTPS for serving RTL to remote connections: 
 * Securely, anonymously and remotely connect to your home server anywhere you are. 
