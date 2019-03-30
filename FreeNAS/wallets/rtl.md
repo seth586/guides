@@ -9,6 +9,14 @@ Tor has numerous benefits for serving RTL for remote connections:
 * No port forwards required by your router! 
 * Tor cookie authenticated hidden services keeps your RTL website a secret 
 * Tor cookie authentication prevents denial of service attacks!
+VPN Disadvantages:
+* Increased configuration complexity
+* requires ddns
+SSL Disadvantages:
+* Increased configuration complexity
+* requires ddns
+* vulnerable to denial of service attacks
+* Your website is public. Best defense is being private in the first place!
 
 Edit `torrc` with `nano /usr/local/etc/tor/torrc` and add the following lines (`myandroid` can be unique):
 ```
