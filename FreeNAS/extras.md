@@ -12,6 +12,8 @@ Connect securely, privately, and anonymously to your home node wherever you are 
 
 #### [Zeus LN](wallets/zeusln.md)
 
+#### [RTL](wallets/rtl.md)
+
 #### [Blockstream Green](wallets/green.md)
 
 
