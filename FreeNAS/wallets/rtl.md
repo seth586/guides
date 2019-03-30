@@ -64,7 +64,7 @@ In Windows, edit `"%HOMEDRIVE%%HOMEPATH%"\Desktop\Tor Browser\Browser\TorBrowser
 
 Add the following line. Replace the onion address, password(cookie), and mydevice with your credentials:
 ```
-HidServAuth 1234567890abcdefg.onion abcdef01234567890+/K mydevice
+HidServAuth z1234567890abc.onion AbyZXCfghtG+E0r84y/nR myandroid
 ```
 
 Save and exit. 
