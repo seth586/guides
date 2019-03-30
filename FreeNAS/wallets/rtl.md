@@ -40,9 +40,7 @@ View the private credentials of your new hidden service. The first part is the o
 z1234567890abc.onion AbyZXCfghtG+E0r84y/nR # client: myandroid
 ```
 
-Download orbot for android. https://guardianproject.info/apps/orbot/
-
-Download Tor Browser for android: https://www.torproject.org/download/#downloads-alpha
+Download Orbot and Orfox for android (add their repos to F-Droid here: https://guardianproject.info/fdroid/)
 
 Open orbot. Click the `⋮`, select `hidden services ˃`, select `Client cookies`.
 
