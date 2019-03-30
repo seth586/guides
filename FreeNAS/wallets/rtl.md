@@ -40,13 +40,13 @@ View the private credentials of your new hidden service. The first part is the o
 z1234567890abc.onion AbyZXCfghtG+E0r84y/nR # client: myandroid
 ```
 
-Download Orbot and Orfox for android (add their repos to F-Droid here: https://guardianproject.info/fdroid/)
+Download Orbot for android (add their repos to F-Droid here: https://guardianproject.info/fdroid/)
 
 Open orbot. Click the `⋮`, select `hidden services ˃`, select `Client cookies`.
 
 Press the + button on the lower right. Type in the the onion address and secret cookie you revealed with `cat  /var/lnd/tor/rtl/hostname`.
 
-Go back to orbot's main screen, and select the gear icon under `tor enabled apps`. Add `Tor Browser`, then press back. Click `stop` on the big onion logo. Exit orbot and reopen it. Turn on `VPN Mode`. Start your connection to the tor network by clicking on the big onion (if it has not automatically connected already)
+Go back to orbot's main screen, and select the gear icon under `tor enabled apps`. Add your favorite tor compatible browser (I use brave) `Brave`, then press back. Click `stop` on the big onion logo. Exit orbot and reopen it. Turn on `VPN Mode`. Start your connection to the tor network by clicking on the big onion (if it has not automatically connected already)
 
 Now open Tor browser and type in the onion address (example `z1234567890abc.onion:3000`) Only you have access to this website!
 
