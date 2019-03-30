@@ -2,7 +2,7 @@
 
 ## Ride The Lightning (RTL) over Tor
 
-Tor has numerous benefits over VPN and HTTPS for serving RTL for remote connections: 
+Tor has numerous benefits over VPN and HTTPS for serving RTL to remote connections: 
 * Securely, anonymously and remotely connect to your home server anywhere you are. 
 * Connections are encrypted end to end.
 * Onion address will remain static even if you are behind a dynamic IP address. No ddns required!
