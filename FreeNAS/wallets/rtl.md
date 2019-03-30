@@ -19,6 +19,8 @@ HTTPS Disadvantages:
 * requires ddns
 * vulnerable to denial of service attacks
 * Your website is public. Best defense is being private in the first place!
+TOR Disadvantages:
+* Tor is slower than direct connections.
 
 Edit `torrc` with `nano /usr/local/etc/tor/torrc` and add the following lines (`myandroid` can be unique):
 ```
