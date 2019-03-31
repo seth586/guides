@@ -1,4 +1,4 @@
-Guides by Seth586
+Seth586😈guides
 
 I am not a professional programmer or unix adminsitrator, use at your own risk!
 Contributions are welcome!
