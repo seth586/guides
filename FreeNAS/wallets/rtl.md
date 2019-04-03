@@ -25,11 +25,11 @@ HTTPS Disadvantages:
 TOR Disadvantages:
 * Tor is slower than direct connections.
 
-Edit `torrc` with `nano /usr/local/etc/tor/torrc` and add the following lines (`myandroid` can be unique):
+Edit `torrc` with `nano /usr/local/etc/tor/torrc` and add the following lines (`mydevices` can be unique):
 ```
 HiddenServiceDir /var/db/tor/rtl/
 HiddenServiceVersion 2
-HiddenServiceAuthorizeClient stealth myandroid
+HiddenServiceAuthorizeClient stealth mydevices
 HiddenServicePort 3000 127.0.0.1:3000
 ```
 Save (Ctrl+O, ENTER) and exit (Ctrl+X)
@@ -42,7 +42,7 @@ Restart Tor
 View the private credentials of your new hidden service. The first part is the onion address, the second part is the secret.
 ```
 # cat /var/db/tor/rtl/hostname
-z1234567890abc.onion AbyZXCfghtG+E0r84y/nR # client: myandroid
+z1234567890abc.onion AbyZXCfghtG+E0r84y/nR # client: mydevices
 ```
 
 #### Client Setup: Android
@@ -54,7 +54,7 @@ Press the + button on the lower right. Type in the the onion address and secret 
 
 Go back to orbot's main screen, and select the gear icon under `tor enabled apps`. Add your favorite tor compatible browser (I use brave) `Brave`, then press back. Click `stop` on the big onion logo. Exit orbot and reopen it. Turn on `VPN Mode`. Start your connection to the tor network by clicking on the big onion (if it has not automatically connected already)
 
-Now open Tor browser and type in the onion address (example `z1234567890abc.onion:3000`) Only you have access to this website! All traffic in the brave browser will go over Tor (which is slower than clearnet). TO go back to clearnet browsing, turn off VPN mode in Orbot.
+Now open Tor browser and type in the onion address (example `z1234567890abc.onion:3000`) Only you have access to this website! All traffic in the brave browser will go over Tor (which is slower than clearnet). To go back to clearnet browsing, turn off VPN mode in Orbot.
 
 #### Client Setup: Windows Tor Browser
 
