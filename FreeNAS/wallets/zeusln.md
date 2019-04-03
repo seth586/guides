@@ -12,11 +12,11 @@ Tor has numerous benefits for serving your mobile wallet.
 
 Download the Zeus app, APKs available here: https://github.com/ZeusLN/zeus/releases
 
-Edit `torrc` with `nano /usr/local/etc/tor/torrc` and add the following lines (`myandroid` can be unique):
+If you didn't already add these lines ina  previous step, edit `torrc` with `nano /usr/local/etc/tor/torrc` and add the following lines (`mydevices` can be unique):
 ```
 HiddenServiceDir /var/db/tor/lnd_api/
 HiddenServiceVersion 2
-HiddenServiceAuthorizeClient stealth myandroid
+HiddenServiceAuthorizeClient stealth mydevices
 HiddenServicePort 8082 127.0.0.1:8082
 HiddenServicePort 10009 127.0.0.1:10009
 ```
@@ -30,7 +30,7 @@ Restart Tor
 View the private credentials of your new hidden service. The first part is the onion address, the second part is the secret.
 ```
 # cat /var/db/tor/lnd_api/hostname
-z1234567890abc.onion AbyZXCfghtG+E0r84y/nR # client: myandroid
+z1234567890abc.onion AbyZXCfghtG+E0r84y/nR # client: mydevices
 ```
 
 Download orbot for android. https://guardianproject.info/apps/orbot/
