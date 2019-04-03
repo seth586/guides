@@ -47,7 +47,7 @@ In your bitcoin jail, edit `torrc` with `nano /usr/local/etc/tor/torrc` and add 
 ```
 HiddenServiceDir /var/db/tor/lnd_api/
 HiddenServiceVersion 2
-HiddenServiceAuthorizeClient stealth myandroid
+HiddenServiceAuthorizeClient stealth mydevices
 HiddenServicePort 8082 127.0.0.1:8082
 HiddenServicePort 10009 127.0.0.1:10009
 ``` 
@@ -61,13 +61,13 @@ Restart Tor
 View the private credentials of your new hidden service. The first part is the onion address, the second part is the password(cookie).
 ```
 # cat /var/db/tor/lnd_api/hostname
-z1234567890abc.onion AbyZXCfghtG+E0r84y/nR # client: mydevice
+z1234567890abc.onion AbyZXCfghtG+E0r84y/nR # client: mydevices
 ```
 
 On your windows laptop, the tor browser will create a folder on your desktop. Navigate to `\Desktop\Tor Browser\Browser\TorBrowser\Data\Tor\` and edit the `torrc` file. 
 Add the following line. Replace the onion address, password(cookie), and mydevice with your credentials:
 ```
-HidServAuth z1234567890abc.onion AbyZXCfghtG+E0r84y/nR mydevice
+HidServAuth z1234567890abc.onion AbyZXCfghtG+E0r84y/nR mydevices
 ```
 
 Close and reopen the tor browser. Install the [Joule extension for firefox](https://lightningjoule.com/). Lets turn on our browsing history so the browser can remember that we approved our self signed TLS security certificate. Click the 3-line button on the top right, click `options`, and click `privacy & security`.  Under History, select Tor Browser will 'Remember history'.
