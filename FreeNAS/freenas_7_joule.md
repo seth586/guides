@@ -38,7 +38,7 @@ https://tippin.me/@seth586
 If you want to try sending / receiving invoices, reach out to me. Contact info on the [ [Intro](README.md) ] page.
 
 ### Optional: Remote connections over Tor
-Want to use Joule on your laptop, while away from your home network? Tor can give you anonymous remote connetivity!
+Want to use Joule on your laptop, while away from your home network? Tor can give you anonymous remote connectivity!
 
 Download the Tor Browser [here](https://www.torproject.org/download/). The Tor browser is based on Firefox, so Joule's extension also works on the Tor browser!
 
