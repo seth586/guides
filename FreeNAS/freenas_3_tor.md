@@ -15,7 +15,7 @@ Tor is a communications protocol that anonymizes communications by bouncing encr
 
 Lets install!
 ```
-root@bitcoin:~ # pkg install tor
+root@bitcoin:~ # pkg install tor nano
 root@bitcoin:~ # nano /usr/local/etc/tor/torrc
 ```
 Uncomment (remove the #) from the following lines:
