@@ -21,10 +21,12 @@ You're in! Install `bitcoin-daemon`
 ```
 # pkg install -y bitcoin-daemon bitcoin-utils
 # sysrc bitcoind_enable="YES"
-# echo 'server=1' >> /usr/local/etc/bitcoin.conf
-# echo 'txindex=1' >> /usr/local/etc/bitcoin.conf
-# echo 'zmqpubrawblock=tcp://127.0.0.1:28332' >> /usr/local/etc/bitcoin.conf
-# echo 'zmqpubrawtx=tcp://127.0.0.1:28333' >> /usr/local/etc/bitcoin.conf
+# cat <<EOT >> /usr/local/etc/bitcoin.conf
+server=1
+txindex=1
+zmqpubrawblock=tcp://127.0.0.1:28332
+zmqpubrawtx=tcp://127.0.0.1:28333
+EOT
 # service bitcoind start
 ```
 
