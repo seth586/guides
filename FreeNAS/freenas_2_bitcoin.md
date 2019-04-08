@@ -34,6 +34,8 @@ EOT
 ```
 # bitcoin-cli --datadir=/var/db/bitcoin getblockchaininfo
 ```
+To upgrade bitcoind the easy way, simply type `pkg update && pkg upgrade -y`
+
 Next: [ [Install Tor](freenas_3_tor.md) ]
 
 ### Bitcoin Core Install Method #2: The Hard Way
@@ -347,7 +349,7 @@ If everything was set up correctly, bitcoin should be running! At this point, bi
 ```
 Once "blocks" equals "headers", bitcoin is fully synced!
 
-### How to update Bitcoin Core
+### How to update Bitcoin Core the Hard Way
 Note: Do not run `pkg update && upgrade` unless you are ready to recompile bitcoind. For example, boost libraries recently updated to a newer version, and bitcoind could no longer find an older named boost library reference. As a result, I had to recompile bitcoind with the new boost libraries installed before it worked again.
 ```
 # iocage console bitcoin
