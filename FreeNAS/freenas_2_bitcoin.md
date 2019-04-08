@@ -34,7 +34,7 @@ EOT
 ```
 # bitcoin-cli --datadir=/var/db/bitcoin getblockchaininfo
 ```
-To upgrade bitcoind the easy way, simply type `pkg update && pkg upgrade -y`
+To upgrade bitcoind to a newer available version the easy way, simply type `pkg update && pkg upgrade -y`
 
 Next: [ [Install Tor](freenas_3_tor.md) ]
 
