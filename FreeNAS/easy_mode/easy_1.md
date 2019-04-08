@@ -2,14 +2,7 @@ WORK IN PROGRESS, DO NOT USE
 
 1. Create Jail
 
-2. Change repository to latest
-```
-# mkdir /usr/local/etc/pkg
-# mkdir /usr/local/etc/pkg/repos
-# echo 'FreeBSD: { url: "pkg+http://pkg.FreeBSD.org/${ABI}/latest" }' >> /usr/local/etc/pkg/repos/FreeBSD.conf
-```
-
-3. Install `bitcoin-daemon`
+2. Install `bitcoin-daemon`
 ```
 # pkg install -y bitcoin-daemon bitcoin-utils
 # sysrc bitcoind_enable="YES"
@@ -20,7 +13,7 @@ WORK IN PROGRESS, DO NOT USE
 # service bitcoind start
 ```
 
-4. Wait until sync is complete, once blocks=headers you're good to go. Let this run overnight.
+3. Wait until sync is complete, once blocks=headers you're good to go. Let this run overnight.
 ```
 # bitcoin-cli --datadir=/var/db/bitcoin getblockchaininfo
 ```
