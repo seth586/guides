@@ -53,7 +53,7 @@ wallet_bech32 = zpub...
 ```
 Under `[bitcoin-rpc]`, change `datadir = /var/db/bitcoin`
 
-Under `[electrum-serever]`, change `host= 0.0.0.0` to allow remote connections. Change ip_whitelist to your home network subnet, for example, my router assigns IP adresses as `192.168.84.XXX`, so I typed in `192.168.84.0/24` to limit connections to this range. Save and exit nano.
+Under `[electrum-serever]`, change `host= 0.0.0.0` to allow remote connections. Change `ip_whitelist` to your home network subnet, for example, my router assigns IP adresses as `192.168.84.XXX`, so I typed in `192.168.84.0/24` to limit connections to this range. Save and exit nano.
 
 ## Install: 
 (Note: ignore the suggestion to upgrade pip)
@@ -77,7 +77,7 @@ Lets run it!
 ```
 Now boot up your electrum client, goto Tools>Network>Server, point it at your jail’s ip:50002, it should work!
 
-By default, electrum client will also connect to public electrum servers to get block header info. This reduces your privacy. To prevent this from happening, add `--oneserver --server 192.168.84.123:s` (where the ip address reflects your bitcoin jail) to your command path. In windows, right click on the electrum shortcut, select `properties`, then append `--oneserver --server 192.168.84.123:s` after the executable path `"C:\Program Files (x86)\Electrum\electrum-3.3.2.exe"`. Select `OK` to save and exit.
+By default, electrum client will also connect to public electrum servers to get block header info. This reduces your privacy. To prevent this from happening, add `--oneserver --server 192.168.84.123:50002:s` (where the ip address reflects your bitcoin jail) to your command path. In windows, right click on the electrum shortcut, select `properties`, then append `--oneserver --server 192.168.84.123:50002:s` after the executable path `"C:\Program Files (x86)\Electrum\electrum-3.3.4.exe"`. Select `OK` to save and exit.
 
 ## Startup Script
 Terminating your SSH will also terminate electrum-personal-server, so lets close it with Ctrl+C, then run the process supervised with `daemon` called at startup with a rc.d service script:
