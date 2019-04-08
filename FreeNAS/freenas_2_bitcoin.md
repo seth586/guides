@@ -2,8 +2,39 @@
 
 ## Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
-### Bitcoin Core Install
+There are two options on installing the bitcoin daemon: The easy way and the hard way. Pick one. Both methods will have the same result.
 
+### Bitcoin Core Install Method #1: Easy Way
+Secure Socket Shell into your freenas server. SSH is a way to manage your server remotely over a network. When you don’t plug in a monitor & keyboard directly into the server, it’s called a ‘headless’ server. The most popular SSH client is called [PuTTY, download it here](https://www.putty.org/). Connect to your FreeNAS’ IP address, and log in with your root credentials.
+
+```
+# iocage list
+```
+
+You should see your bitcoin jail listed. Lets switch our console from our base system to our jail.
+
+```
+# iocage console bitcoin
+```
+
+You're in! Install `bitcoin-daemon`
+```
+# pkg install -y bitcoin-daemon bitcoin-utils
+# sysrc bitcoind_enable="YES"
+# echo 'server=1' >> /usr/local/etc/bitcoin.conf
+# echo 'txindex=1' >> /usr/local/etc/bitcoin.conf
+# echo 'zmqpubrawblock=tcp://127.0.0.1:28332' >> /usr/local/etc/bitcoin.conf
+# echo 'zmqpubrawtx=tcp://127.0.0.1:28333' >> /usr/local/etc/bitcoin.conf
+# service bitcoind start
+```
+
+3. Wait until sync is complete, once blocks=headers you're good to go. Let this run overnight.
+```
+# bitcoin-cli --datadir=/var/db/bitcoin getblockchaininfo
+```
+Next: [ [Install Tor](freenas_3_tor.md) ]
+
+### Bitcoin Core Install Method #2: The Hard Way
 Note: We are going to compile bitcoin from source. There is a much easier way to install bitcoin (`pkg`), however we should know how to compile manually, in case the official bitcoin repository or package repositories go rogue.
 
 Secure Socket Shell into your freenas server. SSH is a way to manage your server remotely over a network. When you don’t plug in a monitor & keyboard directly into the server, it’s called a ‘headless’ server. The most popular SSH client is called [PuTTY, download it here](https://www.putty.org/). Connect to your FreeNAS’ IP address, and log in with your root credentials.
