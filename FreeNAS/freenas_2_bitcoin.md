@@ -28,12 +28,11 @@ zmqpubrawblock=tcp://127.0.0.1:28332
 zmqpubrawtx=tcp://127.0.0.1:28333
 EOT
 # service bitcoind start
-```
-
-3. Wait until sync is complete, once blocks=headers you're good to go. Let this run overnight.
-```
 # bitcoin-cli --datadir=/var/db/bitcoin getblockchaininfo
 ```
+
+Wait until sync is complete, once blocks=headers you're good to go. Let this run overnight.
+
 To upgrade bitcoind to a newer available version the easy way, simply type `pkg update && pkg upgrade -y`
 
 Next: [ [Install Tor](freenas_3_tor.md) ]
