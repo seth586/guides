@@ -26,15 +26,6 @@ Internal Zone: LAN
 Internal IP address: (inset your jail IP here)
 Internal Port: 8333
 ```
-Now would also be a good time to port forward 9735 for lnd:
-```
-Name : lnd
-Protocol: TCP+UDP
-External Zone: WAN
-External Port: 9735
-Internal Zone: LAN
-Internal IP address: (inset your jail IP here)
-Internal Port: 9735
-```
+
 
 Next: [ [Install Bitcoin](freenas_2_bitcoin.md) ]
