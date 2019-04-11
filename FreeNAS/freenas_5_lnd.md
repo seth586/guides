@@ -25,45 +25,39 @@ Read up on configuration options [here](https://github.com/lightningnetwork/lnd/
 Add the following lines to your `lnd.conf` file:
 ```
 [Application Options]
-datadir=/var/db/lnd/data
-logdir=/var/db/lnd/logs
-maxlogfiles=1
-maxlogfilesize=10
-tlscertpath=/var/db/lnd/tls.cert
-tlskeypath=/var/db/lnd/tls.key
-tlsextraip=0.0.0.0
-externalip=xxx.xxx.xxx.xxx
-listen=0.0.0.0:9735
+alias=insert_something_catchy_here
 restlisten=0.0.0.0:8082
 rpclisten=0.0.0.0:10009
-alias=thisisthenamethatblockexplorerswillshow
-
+tlsextraip=0.0.0.0
+minchansize=900000
+maxlogfiles=1
+maxlogfilesize=10
 
 [Bitcoin]
 bitcoin.active=1
 bitcoin.mainnet=1
 bitcoin.node=bitcoind
 bitcoin.basefee=1000
-bitcoin.feerate=2500
+bitcoin.feerate=10
 
 [Bitcoind]
-bitcoind.dir=/var/db/bitcoin
+bitcoind.dir=/home/bitcoin/.bitcoin
 
 [tor]
+tor.active=1
 tor.socks=localhost:9050
+tor.dns=soa.nodes.lightning.directory:53
+tor.control=localhost:9051
+tor.v3=1
 ```
 ### Configuration Notes
+This configuration uses tor for NAT traversal and to prevent doxing your home IP address. Don't tell the world "this house has bitcoins!"! If you want to run on clearnet and advertise your home IP address, check out the [Extras](extras.md) page to set up `nat=true` in a secure fashion.
+
 Fees. You may have to pay fees to other nodes when you rebalance channels, and you may have to close and reopen channels to disconected nodes, which will require on-chain fees. Don't operate at a loss! Do NOT make a 0 fee node, this will leave you vulnerable to denial of service attacks!
 
 `bitcoin.basefee=1000` = Fee of 1.000 satoshi per payment forwarded
 
-`bitcoin.feerate=2500` = Fee of 2500 satoshis per million forwarded (0.25% fee)
-
-`externalip=` = Set if you have a static IP address assigned by your ISP. If your ip address changes with this set, inbound channels will lose connection with you. If your ISP assigns a dynamic ip address, use `nat=true` instead of `externalip=`. 
-
-`nat=true` = `lnd` will query your router's upnp implmentation to detect a change in ip, then broadcast the new ip to the network. However, this uses universal plug and play or NAT-PMP, which is a [security vulnerability](https://docs.netgate.com/pfsense/en/latest/book/services/upnp-and-nat-pmp.html) if not implemented properly on your router.  Follow this [optional guide](https://github.com/seth586/guides/blob/master/OpenWRT/upnp_natpmp.md) to set your OpenWRT router up with NAT-PMP in a secure fashion.
-
-Make sure port `9735` is [forwarded in your router](freenas_1_jail_creation.md) to your bitcoin jail!
+`bitcoin.feerate=100` = Fee of 100 satoshis per million forwarded (0.01% fee)
 
 Save (CTRL+O), then exit (CTRL+X)
 
