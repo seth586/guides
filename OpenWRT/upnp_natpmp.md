@@ -1,5 +1,5 @@
 [ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
-## OpenWRT Configuration - 
+## Run LND on clearnet
 
 ### Universal Plug & Play / Network Address Translation - Port Mapping Protocol
 
@@ -51,7 +51,7 @@ Edit your `lnd.conf` file:
 ```
 # nano /home/bitcoin/.lnd/lnd.conf
 ```
-Remove `externalip=` entry, and replace it with `nat=true`
+Remove all tor entries except for outbound connections with `tor.socks=localhost:9050`. Add `nat=true` under `[Application Options]`
 Save (CTRL+O,ENTER) and exit (CTRL+X)
 
 Stop the lnd service:
