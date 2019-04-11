@@ -7,7 +7,7 @@
 #### [Configure OpenWRT with UPNP for 'lnd' auto update external ip address](https://github.com/seth586/guides/blob/master/OpenWRT/upnp_natpmp.md)
 Don't have a static IP address? `lnd` will loose peer connections unless you configure `nat=true` and have a working UPnP implementation. This is a process to ensure your UPnP implementation is secure.
 
-#### [Manually compile bitcoind](compile_bitcoind.md)
+#### [Manually compile bitcoind](extras/compile_bitcoind.md)
 Some situations require you to compile directly from source code.  
 
 #### [Electrs: Electrum Server in Rust](extras/electrs.md)
