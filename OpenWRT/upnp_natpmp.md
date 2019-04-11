@@ -1,13 +1,14 @@
 [ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
 ## Run LND on clearnet
+To run LND on clearnet, we need to advertise our IP address. But what if our ISP changes our IP address? This guide explains how to set up your router and LND to use `nat=true` so LND will detect our public IP and broadcast changes to the network.
 
 ### Universal Plug & Play / Network Address Translation - Port Mapping Protocol
 
-Universal Plug and Play is a standard to allow clients to configure the router's port mapping. It is a tradeoff of security for convenience. It is much more secure to manually set up port forwards in your router.
+Universal Plug and Play is a standard to allow clients to configure the router's port mapping. It is a tradeoff of security for convenience. It is much more secure to manually set up port forwards in your router. For example, video game consoles may need to open and close ports on the fly, depending on the multiplayer game.
 
 Most commercial grade routers with manufacturer firmware use a very [insecure implementation](https://www.howtogeek.com/122487/htg-explains-is-upnp-a-security-risk/), letting anyone that requests a port forward to do so! Imagine torjan software on your desktop, or your kids computer, reconfiguring your router! 
 
-There are a few scenarios where a safe implementation of upnp can be reasonably secure, if we can control what has access to it. Video game consoles may need to open and close ports on the fly, depending on the multiplayer game. Lightning Lab's `lnd` queries upnp or NAT-PMP for a current ip address assigned by your ISP. If a change is detected, your peers are notified and you can maintain connectivity with your inbound channels.
+There are a few scenarios where a safe implementation of upnp can be reasonably secure, if we can control what has access to it.  Lightning Lab's `lnd` queries upnp or NAT-PMP for a current ip address assigned by your ISP. If a change is detected, your peers are notified and you can maintain connectivity with your inbound channels.
 
 ### So how can we securely use upnp or NAT-PMP?
 
