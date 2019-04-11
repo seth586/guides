@@ -48,6 +48,9 @@ bitcoin.feerate=2500
 
 [Bitcoind]
 bitcoind.dir=/var/db/bitcoin
+
+[tor]
+tor.socks=localhost:9050
 ```
 ### Configuration Notes
 Fees. You may have to pay fees to other nodes when you rebalance channels, and you may have to close and reopen channels to disconected nodes, which will require on-chain fees. Don't operate at a loss! Do NOT make a 0 fee node, this will leave you vulnerable to denial of service attacks!
