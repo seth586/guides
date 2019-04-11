@@ -40,7 +40,20 @@ Make sure there is a `default deny` rule: External ports `0-65535`, Internal Add
 
 Rules are read top to bottom, so if you have a game console or another service that requires upnp or nat-pmp, put the rule above the deny rule.
 
-Click `save and apply`. Reboot your router.
+Click `save and apply`. 
+
+Now would also be a good time to port forward 9735 for lnd:
+```
+Name : lnd
+Protocol: TCP+UDP
+External Zone: WAN
+External Port: 9735
+Internal Zone: LAN
+Internal IP address: (inset your jail IP here)
+Internal Port: 9735
+```
+
+Reboot your router.
 
 ### Configure `lnd` for `NAT-PMP`
 SSH in to your FreeNAS box, and switch consoles to your bitcoin jail.
