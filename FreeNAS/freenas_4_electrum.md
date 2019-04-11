@@ -2,7 +2,11 @@
 
 ## Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
+This guide is not required for running lightning, but is still a great way to run a trusted electrum server for your hardware wallets!
+
 Electrum Personal Server is a lightweight electrum server to serve an electrum client wallet. The client wallets are compatible with hardware wallets like the ledger nano and TREZOR. So ditch your hardware wallet software, and let use our own node to verify receipt and broadcast our layer 1 transactions, cold storage style!
+
+Electrum Personal Server is lightweight and will only monitor addresses and xpubs you specify. If you want to run a heavier version (+40GB as of writing) that can look up any transaction or xpub, check out the [extras](extras.md) page on instructions to install [Electrs](https://github.com/romanz/electrs).
 
 If you aren't already there, SSH into your freenas box, and switch to your bitcoin console as root:
 ```
