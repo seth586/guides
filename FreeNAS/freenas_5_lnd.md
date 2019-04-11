@@ -38,7 +38,7 @@ bitcoin.active=1
 bitcoin.mainnet=1
 bitcoin.node=bitcoind
 bitcoin.basefee=1000
-bitcoin.feerate=10
+bitcoin.feerate=100
 
 [Bitcoind]
 bitcoind.dir=/var/db/bitcoin
