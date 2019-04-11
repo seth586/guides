@@ -43,7 +43,7 @@ Right click on your windows electrum client, select properties, and add the foll
 ```
 --oneserver --server 192.168.84.208:50001:t
 ```
-Start up electrum client. It should connect! Terminate electrs with ctrl+c. Verify it is no longer running with `ps aux`. If it is still running, kill it with `kill -9 <pid>`, whereas <pid> is the number from `ps aux`. 
+Start up electrum client. It should connect! Terminate electrs with ctrl+c. Verify it is no longer running with `ps aux`. If it is still running, kill it with `kill -9 <pid>`, whereas `<pid>` is the number under the PID column from command `ps aux`. 
 
 Now lets write an rc.d script so it automatically starts as a service:
 
