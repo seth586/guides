@@ -41,7 +41,7 @@ bitcoin.basefee=1000
 bitcoin.feerate=10
 
 [Bitcoind]
-bitcoind.dir=/home/bitcoin/.bitcoin
+bitcoind.dir=/var/db/bitcoin
 
 [tor]
 tor.active=1
