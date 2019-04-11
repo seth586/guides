@@ -4,7 +4,7 @@
 
 ### My Extras
 
-#### [Configure OpenWRT with UPNP for 'lnd' auto update external ip address](https://github.com/seth586/guides/blob/master/OpenWRT/upnp_natpmp.md)
+#### [Run LND on clearnet](https://github.com/seth586/guides/blob/master/OpenWRT/upnp_natpmp.md)
 Don't have a static IP address? `lnd` will loose peer connections unless you configure `nat=true` and have a working UPnP implementation. This is a process to ensure your UPnP implementation is secure.
 
 #### [Manually compile bitcoind](extras/compile_bitcoind.md)
