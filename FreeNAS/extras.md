@@ -11,7 +11,7 @@ Don't have a static IP address? `lnd` will loose peer connections unless you con
 Some situations require you to compile directly from source code.  
 
 #### [Electrs: Electrum Server in Rust](extras/electrs.md)
-This is a fully indexed Electrum Server. It adds +40GB or so, but can look up any address or xpub, whereas Electrum Personal Server is lightweight, but only monitors addresses and xpubs you specify.
+This is a fully indexed Electrum Server. It adds +40GB or so, but can look up any address or xpub, whereas Electrum Personal Server is lightweight, but only indexes addresses and xpubs you specify.
 
 ### Mobile Wallets for Android over Tor Hidden Service
 Connect securely, privately, and anonymously to your home node wherever you are in the world!
