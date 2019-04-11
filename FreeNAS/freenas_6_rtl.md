@@ -96,7 +96,7 @@ This step does not commit funds, it just makes a conneciton to the network.
 
 Click on `Peers`, then type an address under `Add Peer`. You can select a peer on www.1ML.com, or connect to my node:
 ```
-023ec3d1fa35f7fb8996374cf1848c1a40788df013551c5510c75617222bd2dd2d@68.234.70.195:9735
+023ec3d1fa35f7fb8996374cf1848c1a40788df013551c5510c75617222bd2dd2d@wdqs3xasdxubvft4xzyjeqvpujtescd7wa6lqkptab55tpu2ebis7pad.onion:9735
 ```
 
 ### Add a Channel
