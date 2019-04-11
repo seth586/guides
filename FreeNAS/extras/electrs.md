@@ -2,6 +2,8 @@
 
 ### Electrs: Electrum In Rust
 
+Read up more on electrs at its github page [here](https://github.com/romanz/electrs)
+
 SSH into your bitcoin jail. 
 
 ```
