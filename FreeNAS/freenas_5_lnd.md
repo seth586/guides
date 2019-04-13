@@ -26,6 +26,7 @@ Add the following lines to your `lnd.conf` file:
 ```
 [Application Options]
 alias=insert_something_catchy_here
+listen=localhost
 restlisten=0.0.0.0:8082
 rpclisten=0.0.0.0:10009
 tlsextraip=0.0.0.0
@@ -49,7 +50,6 @@ tor.socks=localhost:9050
 tor.dns=soa.nodes.lightning.directory:53
 tor.control=localhost:9051
 tor.v3=1
-listen=localhost
 ```
 ### Configuration Notes
 This configuration uses tor for NAT traversal and to prevent doxing your home IP address. Don't tell the world "this house has bitcoins!"! If you want to run on clearnet and advertise your home IP address, check out the [Extras](extras.md) page to set up `nat=true` in a secure fashion.
