@@ -80,7 +80,7 @@ Automatically obtained bitcoind's RPC credentials
 2019-02-07 22:00:34.994 [INF] LTND: Version: 0.5.2-beta commit=v0.5.2-beta, build=production, logging=default
 2019-02-07 22:00:34.994 [INF] LTND: Active chain: Bitcoin (network=mainnet)
 2019-02-07 22:00:35.013 [INF] CHDB: Checking for schema update: latest_version=7, db_version=7
-2019-02-07 22:00:35.054 [INF] RPCS: password gRPC proxy started at [::]:8082
+2019-02-07 22:00:35.054 [INF] RPCS: password gRPC proxy started at [::]:8080
 2019-02-07 22:00:35.054 [INF] RPCS: password RPC server listening on 127.0.0.1:10009
 2019-02-07 22:00:35.054 [INF] LTND: Waiting for wallet encryption password. Use `lncli create` to create a wallet, `lncli unlock` to unlock an existing wallet, or `lncli changepassword` to change the password of an existing wallet and unlock it.
 ```
