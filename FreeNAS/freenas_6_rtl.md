@@ -25,11 +25,11 @@ Once the install is complete, create RTL.conf [configuration options](https://gi
 Add the following lines, make sure to set `rtlPass=`:
 ```
 [Authentication]
-lndServerUrl=https://localhost:8082/v1
-macroonPath=/var/db/lnd/data/chain/bitcoin/mainnet
+macaroonPath=/var/db/lnd/data/chain/bitcoin/mainnet
 nodeAuthType=CUSTOM
-rtlPass=pickapassword
 lndConfigPath=/usr/local/etc/lnd.conf
+rtlPass=password
+
 [Settings]
 flgSidenavOpened=true
 flgSidenavPinned=true
@@ -37,6 +37,15 @@ menu=Vertical
 menuType=Regular
 theme=dark-blue
 satsToBTC=false
+lndServerUrl=https://localhost:8080/v1
+enableLogging=false
+port=3000
+
+[SSO]
+rtlSSO=0
+rtlCookiePath=~/rtl/cookies/auth.cookie
+logoutRedirectLink=/login
+
 ```
 Save (CTRL+O,ENTER) then exit (CTRL+X)
 
