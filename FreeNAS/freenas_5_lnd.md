@@ -71,7 +71,7 @@ Save (CTRL+O), then exit (CTRL+X)
 ### LND Startup and initialization
 Start `lnd`:
 ```
-# sudo -u bitcoin /usr/local/bin/lnd --configfile=/usr/local/etc/lnd.conf
+# lnd --configfile=/usr/local/etc/lnd.conf
 ```
 If it works, you should see the following message:
 ```
