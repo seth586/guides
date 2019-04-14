@@ -48,7 +48,7 @@ In your bitcoin jail, edit `torrc` with `nano /usr/local/etc/tor/torrc` and add 
 HiddenServiceDir /var/db/tor/lnd_api/
 HiddenServiceVersion 2
 HiddenServiceAuthorizeClient stealth mydevices
-HiddenServicePort 8082 127.0.0.1:8082
+HiddenServicePort 8080 127.0.0.1:8080
 HiddenServicePort 10009 127.0.0.1:10009
 ``` 
 Save (Ctrl+O, ENTER) and exit (Ctrl+X)
