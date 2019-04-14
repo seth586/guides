@@ -154,9 +154,9 @@ root@freenas[~]# iocage console bitcoin
 ### Unlock wallet on `lnd` reboot or restart
 Note: Any time `lnd` reboots, you will need to unlock the wallet again.  
 ```
-sudo -u bitcoin lncli -lnddir "/var/db/lnd" unlock
+# lncli -lnddir "/var/db/lnd" unlock
 ```
-Type in the password to unlock your wallet, then you can exit this extra SSH window. This is a security function in case someone steals your server! In the next guide, you will install a web user interface called `RTL`, which makes unlocking your wallet much easier.
+Type in the password to unlock your wallet. This is a security function in case someone steals your server! In the next guide, you will install a web user interface called `RTL`, which makes unlocking your wallet much easier.
 
 ### Upgrade LND
 Read the release notes, if a lot changed, you may have to close channels or do something to prepare for the upgrade! I'll keep a log of upgrade notes beyond 0.5.2 below:
