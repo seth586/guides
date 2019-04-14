@@ -74,7 +74,7 @@ Close and reopen the tor browser. Install the [Joule extension for firefox](http
 
 Now go ahead and set up Joule as described above, except use the tor address revealed by `cat /var/db/tor/lnd_api/hostname'. Example:
 ```
-https://z1234567890abc.onion:8082
+https://z1234567890abc.onion:8080
 ```
 
 Next: [ [Extras](extras.md) ]
