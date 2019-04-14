@@ -25,6 +25,11 @@ Read up on configuration options [here](https://github.com/lightningnetwork/lnd/
 Add the following lines to your `lnd.conf` file:
 ```
 [Application Options]
+datadir=/var/db/lnd/data
+logdir=/var/db/lnd/logs
+tlscertpath=/var/db/lnd/tls.cert
+tlskeypath=~/var/db/lnd/tls.key
+
 alias=insert_something_catchy_here
 listen=localhost
 restlisten=0.0.0.0:8082
