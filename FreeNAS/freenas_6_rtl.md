@@ -20,7 +20,7 @@ If not already there, SSH into your freenas box and switch to your bitcoin jail.
 ```
 Once the install is complete, create RTL.conf [configuration options](https://github.com/ShahanaFarooqui/RTL/blob/master/Application_configurations):
 ```
-# nano RTL.conf
+# nano rtl.conf
 ```
 Add the following lines, make sure to set `rtlPass=`:
 ```
