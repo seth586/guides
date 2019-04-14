@@ -29,6 +29,8 @@ Unfortubately iOS does not have a tor hidden service client :(
 
 #### [Pebble](wallets/pebble.md)
 
+#### [Shango](wallets/shango.md)
+
 ### External guides
 
 
