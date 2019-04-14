@@ -86,9 +86,9 @@ Automatically obtained bitcoind's RPC credentials
 ```
 Open another SSH terminal window, log into to your FreeNAS server, and switch to your bitcoin jail. We will use `lncli` to create a wallet and store the recovery key.
 ```
-# sudo -u bitcoin lncli -lnddir "/var/db/lnd" create
+# lncli -lnddir "/var/db/lnd" create
 ```
-Follow the prompt to create a wallet. Write down your 24 word seed on paper, and store it somewhere safe. Pick a strong wallet password, too!
+Follow the prompt to create a wallet. Pick a strong wallet password. Write down your 24 word seed on paper, and store it somewhere safe!
 
 We are done with this terminal, close it.
 
