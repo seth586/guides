@@ -29,7 +29,7 @@ Add the following lines to your `lnd.conf` file:
 datadir=/var/db/lnd/data
 logdir=/var/db/lnd/logs
 tlscertpath=/var/db/lnd/tls.cert
-tlskeypath=~/var/db/lnd/tls.key
+tlskeypath=/var/db/lnd/tls.key
 
 alias=insert_something_catchy_here
 listen=localhost
