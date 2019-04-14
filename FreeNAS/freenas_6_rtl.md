@@ -5,15 +5,17 @@
 Running `lnd' from the command line is exhausting, lets get a pretty user interface going!
 
 ### Install RTL
-Read up on RTL [here](https://github.com/ShahanaFarooqui/RTL).
+Read up on RTL [here](https://github.com/ShahanaFarooqui/RTL). Find the latest RTL release [here](https://github.com/ShahanaFarooqui/RTL/releases)
 
 If not already there, SSH into your freenas box and switch to your bitcoin jail.
 
 ```
 # pkg install node npm python cairo
 # cd ~
-# git clone https://github.com/ShahanaFarooqui/RTL.git
-# cd RTL
+# wget https://github.com/ShahanaFarooqui/RTL/archive/v0.2.16.tar.gz
+# tar -xzf v0.2.16.tar.gz
+# mv ~/RTL-0.2.16 ~/rtl
+# cd rtl
 # npm install
 ```
 Once the install is complete, create RTL.conf [configuration options](https://github.com/ShahanaFarooqui/RTL/blob/master/Application_configurations):
@@ -53,10 +55,10 @@ Add the following lines:
 . /etc/rc.subr
 name="rtl"
 rcvar="rtl_enable"
-RTL_command="/usr/local/bin/node /root/rtl/rtl"
+rtl_command="/usr/local/bin/node /root/rtl/rtl"
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
-command_args="-P ${pidfile} -r -f ${RTL_command}"
+command_args="-P ${pidfile} -r -f ${rtl_command}"
 
 load_rc_config $name
 : ${lnd_enable:=no}
