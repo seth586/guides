@@ -17,7 +17,7 @@ If you didn't already add these lines ina  previous step, edit `torrc` with `nan
 HiddenServiceDir /var/db/tor/lnd_api/
 HiddenServiceVersion 2
 HiddenServiceAuthorizeClient stealth mydevices
-HiddenServicePort 8082 127.0.0.1:8082
+HiddenServicePort 8080 127.0.0.1:8080
 HiddenServicePort 10009 127.0.0.1:10009
 ```
 Save (Ctrl+O, ENTER) and exit (Ctrl+X)
@@ -55,7 +55,7 @@ Install `go`, compile [lndconnect](https://github.com/LN-Zap/lndconnect), and ge
 # cd ~/go/src/github.com/LN-Zap/lndconnect
 # gmake
 # cd ~/go/bin
-# ./lndconnect --lnddir=/var/db/lnd --image --host=z1234567890abc.onion --port=8082
+# ./lndconnect --lnddir=/var/db/lnd --image --host=z1234567890abc.onion --port=8080
 ```
 A png file will be generated. Use WinSCP to download the image to your PC and scan it with the ZeusLN app!
 
