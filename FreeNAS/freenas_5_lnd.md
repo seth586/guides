@@ -33,7 +33,7 @@ tlskeypath=/var/db/lnd/tls.key
 
 alias=insert_something_catchy_here
 listen=localhost
-restlisten=0.0.0.0:8082
+restlisten=0.0.0.0:8080
 rpclisten=0.0.0.0:10009
 tlsextraip=0.0.0.0
 minchansize=900000
