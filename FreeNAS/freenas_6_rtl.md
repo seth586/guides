@@ -61,7 +61,7 @@ command="/usr/sbin/daemon"
 command_args="-P ${pidfile} -r -f ${rtl_command}"
 
 load_rc_config $name
-: ${lnd_enable:=no}
+: ${rtl_enable:=no}
 
 run_rc_command "$1"
 ```
