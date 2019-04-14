@@ -56,6 +56,7 @@ tor.socks=localhost:9050
 tor.dns=soa.nodes.lightning.directory:53
 tor.control=localhost:9051
 tor.v3=1
+tor.privatekeypath=/var/db/lnd/v3_onion_private_key
 ```
 ### Configuration Notes
 This configuration uses tor for NAT traversal and to prevent doxing your home IP address. Don't tell the world "this house has bitcoins!"! If you want to run on clearnet and advertise your home IP address, check out the [Extras](extras.md) page to set up `nat=true` in a secure fashion.
