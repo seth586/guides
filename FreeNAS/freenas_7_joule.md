@@ -23,9 +23,9 @@ Click on the joule extension button on the top right of your browser, and select
 
 Select `remote node`
 
-Type in your bitcoin jail address, port 8082 as described in our `'lnd.conf' file's REST configuration.
+Type in your bitcoin jail address, port 8080 as described in our `'lnd.conf' file's REST configuration.
 ```
-https://192.168.84.123:8082
+https://192.168.84.123:8080
 ```
 
 You may have to follow the link since the browser does not trust lnd's TLS certificate by default. Once you follow the link, go back to joule's tab and it should work.
