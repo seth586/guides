@@ -75,7 +75,7 @@ Enable in `etc/rc.conf'
 ```
 Append the following line:
 ```
-service rtl_enable="YES"
+rtl_enable="YES"
 ```
 Save (CTRL+O,ENTER) then exit (CTRL+X)
 
