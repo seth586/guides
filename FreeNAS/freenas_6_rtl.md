@@ -11,7 +11,7 @@ If not already there, SSH into your freenas box and switch to your bitcoin jail.
 
 ```
 # pkg install node npm python cairo
-# cd /home/bitcoin
+# cd ~
 # git clone https://github.com/ShahanaFarooqui/RTL.git
 # cd RTL
 # npm install
@@ -53,10 +53,10 @@ Add the following lines:
 . /etc/rc.subr
 name="rtl"
 rcvar="rtl_enable"
-RTL_command="/usr/local/bin/node /home/bitcoin/rtl/rtl"
+RTL_command="/usr/local/bin/node /root/rtl/rtl"
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
-command_args="-u bitcoin -P ${pidfile} -r -f ${RTL_command}"
+command_args="-P ${pidfile} -r -f ${RTL_command}"
 
 load_rc_config $name
 : ${lnd_enable:=no}
