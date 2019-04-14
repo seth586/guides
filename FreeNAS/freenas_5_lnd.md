@@ -11,6 +11,7 @@ root@freenas[~] # iocage console bitcoin
 
 Check [LND's github repo](https://github.com/lightningnetwork/lnd/releases) for the latest release, make sure you select the correct binaries for your processor and operating system. (amd64 is for amd and intel processors)
 ```
+# pkg install wget
 # cd ~
 # wget https://github.com/lightningnetwork/lnd/releases/download/v0.6-beta-rc4/lnd-freebsd-amd64-v0.6-beta-rc4.tar.gz
 # tar -xzf lnd-freebsd-amd64-v0.6-beta-rc4.tar.gz
