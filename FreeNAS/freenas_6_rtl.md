@@ -12,9 +12,10 @@ If not already there, SSH into your freenas box and switch to your bitcoin jail.
 ```
 # pkg install node npm python cairo
 # cd ~
-# wget https://github.com/ShahanaFarooqui/RTL/archive/v0.2.16.tar.gz
-# tar -xzf v0.2.16.tar.gz
-# mv ~/RTL-0.2.16 ~/rtl
+# wget https://github.com/ShahanaFarooqui/RTL/archive/v0.3.0.tar.gz
+# tar -xzf v0.3.0.tar.gz
+# mkdir ~/rtl
+# mv /root/RTL-0.3.0 /root/rtl
 # cd rtl
 # npm install
 ```
