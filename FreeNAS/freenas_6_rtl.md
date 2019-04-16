@@ -14,6 +14,7 @@ If not already there, SSH into your freenas box and switch to your bitcoin jail.
 # cd ~
 # wget https://github.com/ShahanaFarooqui/RTL/archive/v0.3.0.tar.gz
 # tar -xzf v0.3.0.tar.gz
+# rm v0.3.0.tar.gz
 # mkdir ~/rtl
 # mv /root/RTL-0.3.0 /root/rtl
 # cd rtl
