@@ -116,8 +116,6 @@ Paste the following service script into nano:
 name="lnd"
 rcvar="lnd_enable"
 
-export HOME=/home/bitcoin
-
 lnd_command="/usr/local/bin/lnd --configfile=/usr/local/etc/lnd.conf"
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
