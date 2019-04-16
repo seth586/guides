@@ -114,7 +114,7 @@ rcvar="lnd_enable"
 lnd_command="/usr/local/bin/lnd --configfile=/usr/local/etc/lnd.conf"
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
-command_args="-u bitcoin -P ${pidfile} -r -f ${lnd_command}"
+command_args="-P ${pidfile} -r -f ${lnd_command}"
 
 load_rc_config $name
 : ${lnd_enable:=no}
