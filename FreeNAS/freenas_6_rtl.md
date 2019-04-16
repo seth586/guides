@@ -16,7 +16,7 @@ If not already there, SSH into your freenas box and switch to your bitcoin jail.
 # tar -xzf v0.3.0.tar.gz
 # rm v0.3.0.tar.gz
 # mkdir ~/rtl
-# mv /root/RTL-0.3.0 /root/rtl
+# mv RTL-0.3.0 rtl
 # cd rtl
 # npm install
 ```
