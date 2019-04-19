@@ -129,6 +129,8 @@ So go ahead and spend some satoshis! Copy a payment request from a website or se
 
 Give https://www.lightningspin.com/ a spin (its really slick after you install the Joule plugin), give someone a tip on https://tippin.me, read a https://yalls.org/ article. Donate to the [@BTCPayServer fund](https://t.co/FbCF1rtPvY)! Enjoy instantaneous and off chain transactions!
 
+Send me an unreasonably small tip! Use a tor compatible browser: http://seth576fk35mys5mem6s2bterxdcsma3cnp6do2tc33uidtndc3cbead.onion/lightningtip/
+
 If you make a channel to me, [contact me](README.md) and I will make a channel back, so you have outbound and inbound capacity!
 
 Over time it is likely you will get inbound connections. Make sure your node is always online, and wallet unlocked.
