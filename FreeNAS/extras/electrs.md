@@ -41,9 +41,9 @@ Make sure to replace `electrum-rpc-addr=` with your bitcoin jail's IP to serve l
 
 Electrs will now index the blockchain into its own database. This can take a few hours, depending on your CPU and disk IO. You may get spammed by a `WARN - failed to export stats: failed to read stats`, just ignore it. When its done indexing, it will start to serve connections.
 
-Right click on your windows electrum client, select properties, and add the following after the target path `...\electrum-3.3.4.exe"`
+Right click on your windows electrum client, select properties, and modify the shortcut to resemble below:
 ```
---oneserver --server 192.168.84.208:50001:t
+"C:\Program Files (x86)\Electrum\electrum-3.3.4.exe" -1 -s 192.168.84.208:50001:t
 ```
 Start up electrum client. It should connect! Terminate electrs with ctrl+c. Verify it is no longer running with `ps aux`. If it is still running, kill it with `kill -9 <pid>`, whereas `<pid>` is the number under the PID column from command `ps aux`. 
 
