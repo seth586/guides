@@ -15,30 +15,30 @@ If you aren't already there, SSH into your freenas box, and switch to your bitco
 ```
 
 ### Prerequisites
-Make sure that bitcoind is fully synced before running electrum-personal-server:
+Make sure that bitcoind is fully synced before running electrum-personal-server, then install some utilities to fetch the source code:
 ```
 # bitcoin-cli -datadir=/var/db/bitcoin getblockchaininfo
 ```
 
 ### Install Electrum-Personal-Server
 
-Lets make sure that we have python3 and pip installed:
+Lets make sure that we have python3 and pip installed, and utilities to fetch source code:
 ```
-# pkg install py36-pip python3
+# pkg install py36-pip python3 wget ca_root_nss nano
 ```
 Electrum-personal-server is on github, check for the latest release at https://github.com/chris-belcher/electrum-personal-server/releases .
 ```
 # cd ~
-# wget https://github.com/chris-belcher/electrum-personal-server/archive/eps-v0.1.6.tar.gz
-# tar xzvf eps-v0.1.6.tar.gz
-# rm eps-v0.1.6.tar.gz
+# wget https://github.com/chris-belcher/electrum-personal-server/archive/electrum-personal-server-v0.1.7.tar.gz
+# tar xzvf electrum-personal-server-v0.1.7.tar.gz
+# rm electrum-personal-server-v0.1.7.tar.gz
 ```
 ### Configuration file:
 ```
-# cp electrum-personal-server-eps-v0.1.6/config.cfg_sample /usr/local/etc/electrum.conf
+# cp electrum-personal-server-electrum-personal-server-v0.1.7/config.ini_sample /usr/local/etc/electrum.conf
 # nano /usr/local/etc/electrum.conf
 ```
-Now we need to add our hardware wallet’s master public keys xpub/ypub/zpub).
+Now we need to add our hardware wallet’s master public keys (xpub/ypub/zpub) under `[master-public-keys]`.
 
 xpub is for P2PKH (legacy) addresses, where generated addresses start with a 1
 
@@ -62,10 +62,10 @@ Under `[electrum-serever]`, change `host= 0.0.0.0` to allow remote connections. 
 ## Install: 
 (Note: ignore the suggestion to upgrade pip)
 ```
-# cd electrum-personal-server-eps-v0.1.6
+# cd electrum-personal-server-electrum-personal-server-v0.1.7
 # pip-3.6 install .
 # cd ..
-# rm -r electrum-personal-server-eps-v0.1.6
+# rm -r electrum-personal-server-electrum-personal-server-v0.1.7
 ```
 ## First start
 ```
@@ -73,7 +73,7 @@ Under `[electrum-serever]`, change `host= 0.0.0.0` to allow remote connections. 
 ```
 It will import addresses from each master public key. When complete, electrum-personal-server will exit. Next, if you have transaction history, look up the block height of your oldest transaction, or just start from 1. Then, lets scan the blockchain for those historical transactions:
 ```
-# /usr/local/bin/electrum-personal-server-rescan /usr/local/etc/electrum.conf
+# /usr/local/bin/electrum-personal-server --rescan /usr/local/etc/electrum.conf
 ```
 Lets run it!
 ```
@@ -141,13 +141,13 @@ root@freenas[~]# iocage console bitcoin
 ```
 # service electrumpersonalserver stop
 # cd ~
-# wget https://github.com/chris-belcher/electrum-personal-server/archive/eps-v0.1.6.tar.gz
-# tar xzvf eps-v0.1.6.tar.gz
-# rm eps-v0.1.6.tar.gz
-# cd electrum-personal-server-eps-v0.1.6
+# wget https://github.com/chris-belcher/electrum-personal-server/archive/electrum-personal-server-v0.1.7.tar.gz
+# tar xzvf electrum-personal-server-v0.1.7.tar.gz
+# rm electrum-personal-server-v0.1.7.tar.gz
+# cd electrum-personal-server-electrum-personal-server-v0.1.7
 # pip-3.6 install --upgrade .
 # cd ..
-# rm -r electrum-personal-server-eps-v0.1.6
+# rm -r electrum-personal-server-electrum-personal-server-v0.1.7
 # service electrumpersonalserver start
 ```
 Next: [ [lnd](freenas_5_lnd.md) ]
