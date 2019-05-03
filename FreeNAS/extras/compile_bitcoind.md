@@ -29,18 +29,16 @@ Shell (sh csh tcsh git-shell nologin) [sh]: nologin
 Home directory [/home/bitcoin]:
 Home directory permissions (Leave empty for default):
 Use password-based authentication? [yes]:no
-Use an empty password? (yes/no) [no]:
-Use a random password? (yes/no) [no]: 
 Lock out the account after creation? [no]:
 Username   : bitcoin
-Password   : <random>
+Password   : <disabled>
 Full Name  :
 Uid        : 1001
 Class      :
 Groups     : bitcoind
 Home       : /home/bitcoin
 Home Mode  :
-Shell      : nologin
+Shell      : /usr/sbin/nologin
 Locked     : no
 OK? (yes/no): yes
 adduser: INFO: Successfully added (bitcoind) to the user database.
