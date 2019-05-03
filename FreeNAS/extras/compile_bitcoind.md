@@ -284,7 +284,7 @@ Add the following lines:
 ```
 server=1
 txindex=1
-daradir=/var/db/bitcoin
+datadir=/var/db/bitcoin
 zmqpubrawblock=tcp://127.0.0.1:28332
 zmqpubrawtx=tcp://127.0.0.1:28333
 ```
