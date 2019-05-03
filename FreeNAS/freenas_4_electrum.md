@@ -136,6 +136,7 @@ Again, verify that it sucessfully stops with `ps aux` . Go ahead and reboot your
 # exit
 root@freenas[~]# iocage restart bitcoin
 root@freenas[~]# iocage console bitcoin
+```
 
 ### Usage Notes
 If you need to add another wallet, edit `nano /usr/local/etc/electrum.conf` to add the new xpubs, then run the following commands:
