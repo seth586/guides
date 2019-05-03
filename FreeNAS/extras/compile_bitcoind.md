@@ -42,7 +42,6 @@ Shell      : /usr/sbin/nologin
 Locked     : no
 OK? (yes/no): yes
 adduser: INFO: Successfully added (bitcoind) to the user database.
-adduser: INFO: Password for (bitcoind) is: 123GVLZXYABC
 Add another user? (yes/no): no
 Goodbye!
 #
