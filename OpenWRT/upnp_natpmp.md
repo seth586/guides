@@ -65,7 +65,7 @@ Edit your `lnd.conf` file:
 ```
 # nano /home/bitcoin/.lnd/lnd.conf
 ```
-Remove all tor entries except for outbound connections with `tor.socks=localhost:9050`. Add `nat=true` under `[Application Options]`
+Remove all tor entries except for outbound connections with `tor.active=1` and `tor.socks=localhost:9050`. Add `nat=true` under `[Application Options]`
 Save (CTRL+O,ENTER) and exit (CTRL+X)
 
 Stop the lnd service:
