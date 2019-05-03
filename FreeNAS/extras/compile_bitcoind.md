@@ -120,7 +120,7 @@ stop_cmd="bitcoind_stop"
 stop_postcmd="bitcoind_wait"
 command="/usr/local/bin/bitcoind"
 daemon_command="/usr/sbin/daemon"
-#pidfile="/var/run/${name}.pid"
+pidfile="/var/run/${name}.pid"
 extra_commands="configtest"
 
 
@@ -137,7 +137,6 @@ load_rc_config ${name}
 
 # set up dependant variables
 procname="${command}"
-pidfile="${bitcoind_data_dir}/bitcoind.pid"
 required_files="${bitcoind_config_file}"
 
 
