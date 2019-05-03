@@ -54,30 +54,30 @@ Lets start installing stuff! (answer proceed questions with `y`)
 # pkg install autoconf automake boost-libs git gmake libevent libtool libzmq4 openssl pkgconf wget nano python3
 ```
 
-Go to https://github.com/bitcoin/bitcoin/releases, find the tar.gz release we want to install. The latest release is 0.17.1 at https://github.com/bitcoin/bitcoin/archive/v0.17.1.tar.gz . Copy the link. PuTTY will let you paste by right clicking.
+Go to https://github.com/bitcoin/bitcoin/releases, find the tar.gz release we want to install. The latest release is 0.18.0 at https://github.com/bitcoin/bitcoin/archive/v0.18.0.tar.gz . Copy the link. PuTTY will let you paste by right clicking.
 
 ```
 # cd ~
-# wget https://github.com/bitcoin/bitcoin/archive/v0.17.1.tar.gz
-# tar xzvf v0.17.1.tar.gz
-# rm v0.17.1.tar.gz
+# wget https://github.com/bitcoin/bitcoin/archive/v0.18.0.tar.gz
+# tar xzvf v0.18.0.tar.gz
+# rm v0.18.0.tar.gz
 ```
 
 To see what is in the current directory, type `ls`
 
 Configure for compiling:
 ```
-# cd bitcoin-0.17.1
+# cd bitcoin-0.18.0
 # sh 
 # ./contrib/install_db4.sh `pwd`
-# export BDB_PREFIX='/root/bitcoin-0.17.1/db4'
+# export BDB_PREFIX='/root/bitcoin-0.18.0/db4'
 # ./autogen.sh
 # ./configure MAKE=gmake BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --without-gui --without-miniupnpc
 # gmake check
 # gmake install
 # csh
 # cd ~
-# rm -r bitcoin-0.17.1
+# rm -r bitcoin-0.18.0
 ```
 This process may take a while. Once its done and installed, we need to add a rc.d script to automatically start the bitcoin daemon on start. Read more about FreeBSD rc.d scripting [here](https://www.freebsd.org/doc/en_US.ISO8859-1/articles/rc-scripting/index.html).
 
@@ -308,26 +308,26 @@ If everything was set up correctly, bitcoin should be running! At this point, bi
 ```
 Once "blocks" equals "headers", bitcoin is fully synced!
 
-### How to update Bitcoin Core the Hard Way
+### How to update Bitcoin Core
 Note: Do not run `pkg update && upgrade` unless you are ready to recompile bitcoind. For example, boost libraries recently updated to a newer version, and bitcoind could no longer find an older named boost library reference. As a result, I had to recompile bitcoind with the new boost libraries installed before it worked again.
 ```
 # iocage console bitcoin
 # pkg update && pkg upgrade -y
 # cd ~
 # service bitcoind stop
-# wget https://github.com/bitcoin/bitcoin/archive/v0.17.1.tar.gz
-# tar xzvf v0.17.1.tar.gz
+# wget wget https://github.com/bitcoin/bitcoin/archive/v0.18.0.tar.gz
+# tar xzvf v0.18.0.tar.gz
 # rm *.gz
-# cd /bitcoin-0.17.1
+# cd /bitcoin-0.18.0
 # sh 
 # ./contrib/install_db4.sh `pwd`
-# export BDB_PREFIX='/root/bitcoin-0.17.1/db4'
+# export BDB_PREFIX='/root/bitcoin-0.18.0/db4'
 # ./autogen.sh
 # ./configure MAKE=gmake BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --without-gui --without-miniupnpc
 # gmake check
 # gmake install
 # tcsh
-# rm -r bitcoin-0.17.1
+# rm -r bitcoin-0.18.0
 # service bitcoind start
 ```
 [ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
