@@ -88,9 +88,6 @@ This process may take a while. Once its done and installed, we need to add a rc.
 Copy the script below and paste the following startup script to nano by right clicking in the terminal.
 
 ```
-#!/bin/sh
-# $FreeBSD$
-
 # PROVIDE: bitcoind
 # REQUIRE: LOGIN cleanvar
 # KEYWORD: shutdown
@@ -101,7 +98,7 @@ Copy the script below and paste the following startup script to nano by right cl
 #				Set it to "YES" to enable bitcoind
 # bitcoind_user (str)		Set to "bitcoin" by default.
 # bitcoind_group (str)		Set to "bitcoin" by default.
-# bitcoind_conf (str)		Set to "/usr/local/etc/bitcoin.conf" by default.
+# bitcoind_conf (str)		Set to "/usr/local/etc/bitcoind.conf" by default.
 # bitcoind_data_dir (str)	Set to "/var/db/bitcoin" by default.
 # bitcoindlimits_enable (bool)	Set to "NO" by default.
 #				Set it to "YES" to enable bitcoindlimits
@@ -123,6 +120,7 @@ stop_cmd="bitcoind_stop"
 stop_postcmd="bitcoind_wait"
 command="/usr/local/bin/bitcoind"
 daemon_command="/usr/sbin/daemon"
+#pidfile="/var/run/${name}.pid"
 extra_commands="configtest"
 
 
