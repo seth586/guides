@@ -2,16 +2,13 @@
 
 ## Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
-### Why Tor?
-Goto https://bitnodes.earn.com/dashboard/, or http://nodes.bitcoin-russia.ru and sort by onion protocol. How many nodes do you see? 200-500 as of writing. This is a tragedy. Because of this, nodes that exclusively run on tor have a hard time keeping sync with the network. Lets change that. 
-
-The goal of this tor installation is to connect to the bitcoin network via IP and tor, acting as a bridge between 'clearnet' and 'onion'.
-
-Every bitcoin node should be serving tor connections, there is no reason not to! Tor gives users the ability to use the bitcoin network without doxxing their IP address. This may not be important in jurisdictions where bitcoin is legal, however you would certainly want a tor connection should you need the privacy!
-
 ### Install Tor
 
-Tor is a communications protocol that anonymizes communications by bouncing encrypted data between relays. It is also slower than TCP/IP. By serving TOR connections, you help other nodes that require the privacy. If you want to run your node over tor only, you can add `/usr/local/etc/bitcoin.conf` with the line `onlynet=onion`.
+Tor is a communications protocol that anonymizes communications by bouncing encrypted data between relays. It's like using several different VPNs between client and server. By serving TOR connections, you help other nodes that require the privacy. TOR also allows you to securely and privately remote connect to your home server with a static address and zero router configuration!
+
+This guide runs bitcoind on clearnet and tor, runs lnd exclusively on tor, and privately host ports for remote connections with mobile wallets and electrum clients.  
+
+
 
 Lets install!
 ```
@@ -29,6 +26,17 @@ Add the following lines:
 CookieAuthFileGroupReadable 1
 CacheDirectoryGroupReadable 1
 ```
+Add the following lines to privately serve remote services for mobile lightning wallets (`8080`), remote electrum client (`50001`), remote use of RTL web-ui (`3000`):
+Note: v3 onion addresses are not public, these ports are not discoverable unless you share the onion address.
+```
+HiddenServiceDir /var/db/tor/remote_connections
+HiddenServiceVersion 3
+HiddenServicePort 50001 127.0.0.1:50001
+HiddenServicePort 8080 127.0.0.1:8080
+HiddenServicePort 3000 127.0.0.1:3000
+```
+
+
 Save (CTRL+O, ENTER), then exit (CTRL+X)
 
 Enable autostart by adding `tor_enable="YES"` to `/etc/rc.conf`.
@@ -59,6 +67,12 @@ Bitcoin should automatically detect tor and connect. Verify by running bitcoin-c
 root@bitcoin:~ # bitcoin-cli -datadir=/var/db/bitcoin getnetworkinfo
 ```
 You should see a .onion address listed!
+
+View the private onion address of your new hidden service:
+```
+# cat /var/db/tor/remote_connections/hostname
+7fa6xlti5joarlmkuhjaifa47ukgcwz6tfndgax45ocyn4rixm632jid.onion
+```
 
 ### How to upgrade tor:
 ```
