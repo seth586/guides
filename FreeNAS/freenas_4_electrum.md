@@ -75,7 +75,7 @@ Lets run it!
 ```
 # /usr/local/bin/electrum-personal-server /usr/local/etc/electrum.conf
 ```
-Now on your client machine, make sure tor browser is open and connected. In windows, right click on the electrum shortcut, select `properties`, then append `-1 -s myprivateonionaddressocyn4rixm632jid.onion:50002:s` after the executable path `"C:\Program Files (x86)\Electrum\electrum-3.3.4.exe"`. Select `OK` to save and exit. Now start your electrum client, it should connect!
+Now on your client machine, make sure tor browser is open and connected. In windows, right click on the electrum shortcut, select `properties`, then append `-1 -s myprivateonionaddressocyn4rixm632jid.onion:50002:s` after the executable path `"C:\Program Files (x86)\Electrum\electrum-3.3.4.exe"`. Select `OK` to save and exit. Now start your electrum client, it should connect, even from a remote internet connection!
 
 ## Startup Script
 Terminating your SSH will also terminate electrum-personal-server, so lets close it with Ctrl+C, then run the process supervised with `daemon` called at startup with a rc.d service script:
@@ -109,12 +109,9 @@ Make the startup script executable:
 ```
 # chmod +x /usr/local/etc/rc.d/electrumpersonalserver
 ```
-Lets enable our startup script:
+Lets enable our startup script. Add the following line, then save and exit.
 ```
 # nano /etc/rc.conf
-```
-Add the following line, then save and exit.
-```
 electrumpersonalserver_enable="YES"
 ```
 You should now be able to start and stop electrumpersonalserver as a service.
@@ -136,6 +133,7 @@ root@freenas[~]# iocage console bitcoin
 If you need to add another wallet, edit `nano /usr/local/etc/electrum.conf` to add the new xpubs, then run the following commands:
 ```
 # service electrumpersonalserver stop
+# /usr/local/bin/electrum-personal-server /usr/local/etc/electrum.conf
 # /usr/local/bin/electrum-personal-server --rescan /usr/local/etc/electrum.conf
 # service electrumpersonalserver start
 
