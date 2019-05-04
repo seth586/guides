@@ -35,15 +35,15 @@ Now try to compile, it should suceed:
 # cargo build --release
 # cp /root/electrs/target/release/electrs /usr/local/bin
 # mkdir /var/db/electrs
-# electrs -vvv --db-dir=/var/db/electrs --electrum-rpc-addr=192.168.84.208:50001 --daemon-dir=/var/db/bitcoin
+# electrs -vvv --db-dir=/var/db/electrs --electrum-rpc-addr=192.168.84.208:50002 --daemon-dir=/var/db/bitcoin
 ```
-Make sure to replace `electrum-rpc-addr=` with your bitcoin jail's IP to serve local connections, or use 127.0.0.1:50001 if you plan on serving remote connections over tor authenticated hidden services.
+Make sure to replace `electrum-rpc-addr=` with your bitcoin jail's IP to serve local connections, or use 127.0.0.1:50002 if you plan on serving remote connections over tor authenticated hidden services.
 
 Electrs will now index the blockchain into its own database. This can take a few hours, depending on your CPU and disk IO. You may get spammed by a `WARN - failed to export stats: failed to read stats`, just ignore it. When its done indexing, it will start to serve connections.
 
 Right click on your windows electrum client, select properties, and modify the shortcut to resemble below:
 ```
-"C:\Program Files (x86)\Electrum\electrum-3.3.4.exe" -1 -s 192.168.84.208:50001:t
+"C:\Program Files (x86)\Electrum\electrum-3.3.4.exe" -1 -s 192.168.84.208:50002:t
 ```
 Start up electrum client. It should connect! Terminate electrs with ctrl+c. Verify it is no longer running with `ps aux`. If it is still running, kill it with `kill -9 <pid>`, whereas `<pid>` is the number under the PID column from command `ps aux`. 
 
@@ -65,7 +65,7 @@ Paste the following script:
 
 name="electrs"
 rcvar="electrs_enable"
-electrs_command="/usr/local/bin/electrs --db-dir=/var/db/electrs --electrum-rpc-addr=192.168.84.208:50001 --daemon-dir=/var/db/bitcoin"
+electrs_command="/usr/local/bin/electrs --db-dir=/var/db/electrs --electrum-rpc-addr=192.168.84.208:50002 --daemon-dir=/var/db/bitcoin"
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
 command_args="-P ${pidfile} -r -f ${electrs_command}"
