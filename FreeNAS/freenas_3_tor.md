@@ -57,7 +57,7 @@ You should see a .onion address listed!
 View the private onion address of your new hidden service:
 ```
 # cat /var/db/tor/remote_connections/hostname
-7fa6xlti5joarlmkuhjaifa47ukgcwz6tfndgax45ocyn4rixm632jid.onion
+myprivateonionaddressocyn4rixm632jid.onion
 ```
 
 ### How to upgrade tor:
