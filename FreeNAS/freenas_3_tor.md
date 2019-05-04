@@ -26,7 +26,7 @@ CookieAuthFileGroupReadable 1
 CacheDirectoryGroupReadable 1
 ```
 
-Add the following lines to privately serve your remote clients for mobile lightning wallets (`8080`), electrum (`50001`), and remote use of RTL web-ui (`3000`):
+Add the following lines to privately serve your remote clients for mobile lightning wallets (`8080`), electrum (`50002`), and remote use of RTL web-ui (`3000`):
 
 ```
 HiddenServiceDir /var/db/tor/remote_connections
