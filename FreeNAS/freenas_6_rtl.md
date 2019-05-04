@@ -99,8 +99,6 @@ Give it a run!
 
 Now connect on your web browser at the jail ip:3000 or myprivateonionaddressocyn4rixm632jid.onion:3000 for remote connections.
 
-Its been my experience that RTL will hang with the spinning animation, especially after unlocking the wallet, just close the browser window and open a new window and it should go away.
-
 ### Fund your wallet
 LND has its own layer 1 wallet, Click `LND Wallet`, select an `Address Type`, and click `Generate Address`. This wallet will need funds sent to it to create lightning channels. Wait for your transaction to confirm...
 
@@ -109,12 +107,10 @@ This step does not commit funds, it just makes a conneciton to the network.
 
 Click on `Peers`, then type an address under `Add Peer`. You can select a peer on www.1ML.com, or connect to my node:
 ```
-023ec3d1fa35f7fb8996374cf1848c1a40788df013551c5510c75617222bd2dd2d@awfpwfxgrck7brrtu47muplavfocmtwq2angyrm6lbgyv7nqrznnlayd.onion:9735
+023ec3d1fa35f7fb8996374cf1848c1a40788df013551c5510c75617222bd2dd2d@sethnetppzp4diqkclzql5bzsb2rtug74q7yfkuxfcbkpjklniieltid.onion:9735
 ```
 
 ### Add a Channel
-You can either configure `lnd` to run on [autopilot](https://github.com/lightningnetwork/lnd/blob/master/sample-lnd.conf), or make connections yourself. This explains how to make channels yourself.
-
 Click on `Channels`, select your peer's `Alias`, and select how many satoshis you want to commit. Click `Open`. Wait for your transaction to confirm on the blockchain.
 
 ### Managing Channels & Check Balances
