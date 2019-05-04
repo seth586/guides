@@ -7,39 +7,20 @@ Tor has numerous benefits for serving your mobile wallet.
 * Connections are encrypted end to end.
 * Onion address will remain static even if you are behind a dynamic IP address. No ddns required!
 * No port forwards required by your router! 
-* Tor cookie authenticated hidden services keep your `lnd` REST API a secret 
-* Tor cookie authentication prevents denial of service attacks!
+* Tor v3 hidden services keep your `lnd` REST API a secret 
+* Tor prevents denial of service attacks!
 
 Download the Zeus app, APKs available here: https://github.com/ZeusLN/zeus/releases
 
-If you didn't already add these lines ina  previous step, edit `torrc` with `nano /usr/local/etc/tor/torrc` and add the following lines (`mydevices` can be unique):
+View the private onion address of your tor hidden service:
 ```
-HiddenServiceDir /var/db/tor/lnd_api/
-HiddenServiceVersion 2
-HiddenServiceAuthorizeClient stealth mydevices
-HiddenServicePort 8080 127.0.0.1:8080
-HiddenServicePort 10009 127.0.0.1:10009
-```
-Save (Ctrl+O, ENTER) and exit (Ctrl+X)
-
-Restart Tor 
-```
-# service tor restart
-```
-
-View the private credentials of your new hidden service. The first part is the onion address, the second part is the secret.
-```
-# cat /var/db/tor/lnd_api/hostname
-z1234567890abc.onion AbyZXCfghtG+E0r84y/nR # client: mydevices
+# cat /var/db/tor/remote_connections/hostname
+myprivateonionaddressocyn4rixm632jid.onion
 ```
 
 Download orbot for android. https://guardianproject.info/apps/orbot/
 
-Open orbot. Click the `⋮`, select `hidden services ˃`, select `Client cookies`.
-
-Press the + button on the lower right. Type in the the onion address and secret cookie you revealed with `cat  /var/lnd/tor/lnd_api/hostname`.
-
-Go back to orbot's main screen, and select the gear icon under `tor enabled apps`. Add `Zeus`, then press back. Click `stop` on the big onion logo. Exit orbot and reopen it. Turn on `VPN Mode`. Start your connection to the tor network by clicking on the big onion (if it has not automatically connected already)
+Open orbot, and select the gear icon under `tor enabled apps`. Add `Zeus`, then press back. Click `stop` on the big onion logo. Exit orbot and reopen it. Turn on `VPN Mode`. Start your connection to the tor network by clicking on the big onion (if it has not automatically connected already)
 
 
 Link your lnd.conf to lnd's data dir:
