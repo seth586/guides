@@ -29,7 +29,7 @@ Add the following lines to your `lnd.conf` file:
 lnddir=/var/db/lnd
 alias=insert_something_catchy_here
 listen=localhost
-restlisten=0.0.0.0:8080
+restlisten=127.0.0.1:8080
 rpclisten=0.0.0.0:10009
 tlsextraip=0.0.0.0
 minchansize=900000
