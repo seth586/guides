@@ -9,7 +9,7 @@ Tor is a communications protocol that encrypts and anonymizes communications by 
 This guide runs bitcoind on clearnet and tor, runs lnd exclusively on tor, and privately host ports for remote connections with mobile wallets and electrum clients.  
 
 
-### Install T& Configure Tor
+### Install & Configure Tor
 ```
 root@bitcoin:~ # pkg install tor nano
 root@bitcoin:~ # nano /usr/local/etc/tor/torrc
@@ -35,8 +35,6 @@ HiddenServicePort 50001 127.0.0.1:50001
 HiddenServicePort 8080 127.0.0.1:8080
 HiddenServicePort 3000 127.0.0.1:3000
 ```
-
-
 Save (CTRL+O, ENTER), then exit (CTRL+X)
 
 Enable autostart by adding `tor_enable="YES"` to `/etc/rc.conf`.
@@ -46,25 +44,13 @@ tor_enable="YES"
 ```
 Save (Ctrl+O,ENTER) and exit (CTRL+X)
 
-Add user `bitcoin` to the` _tor` group so that bitcoin can read the cookie authentication file in `/var/db/tor`:
+Add user `bitcoin` to the` _tor` group so that bitcoin can read the cookie authentication file in `/var/db/tor`, then stop and start the tor and bitcoin service:
 ```
-root@bitcoin:~ # pw usermod bitcoin -G _tor
-```
-Stop bitcoin service:
-```
-root@bitcoin:~ # service bitcoind stop
-```
-Start tor:
-```
-root@bitcoin:~ # service tor start
-```
-Wait a few seconds, then start bitcoind:
-```
-root@bitcoin:~ # service bitcoind start
-```
-Bitcoin should automatically detect tor and connect. Verify by running bitcoin-cli:
-```
-root@bitcoin:~ # bitcoin-cli -datadir=/var/db/bitcoin getnetworkinfo
+# pw usermod bitcoin -G _tor
+# service bitcoind stop
+# service tor start
+# service bitcoind start
+# bitcoin-cli -datadir=/var/db/bitcoin getnetworkinfo
 ```
 You should see a .onion address listed!
 
