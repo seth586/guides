@@ -97,7 +97,7 @@ Give it a run!
 # service rtl start
 ```
 
-Now connect on your web browser at the jail ip:3000
+Now connect on your web browser at the jail ip:3000 or myprivateonionaddressocyn4rixm632jid.onion:3000 for remote connections.
 
 Its been my experience that RTL will hang with the spinning animation, especially after unlocking the wallet, just close the browser window and open a new window and it should go away.
 
