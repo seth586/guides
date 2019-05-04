@@ -17,7 +17,7 @@ Download `admin.macaroon` and `readonly.macaroon`
 
 Goto Joule's website at https://lightningjoule.com/
 
-Install the firefox extension on the [Tor Browser](https://www.torproject.org/download/).
+Install the firefox extension on the [Tor Browser](https://www.torproject.org/download/). Click on the tor bworser `3 line icon` on the top right, select `options`, and select privacy & `security`. Under `History` enable `remember hsitory`, otherwise the browser will not remember Joule's configuration.
 
 Click on the joule extension button on the top right of your browser, and select `get started`. 
 
