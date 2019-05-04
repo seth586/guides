@@ -4,7 +4,7 @@
 
 This guide is not required for running lightning, but is still a great way to run a trusted electrum server for your hardware wallets!
 
-Electrum Personal Server is a lightweight electrum server to serve an electrum client wallet. The client wallets are compatible with hardware wallets like the ledger nano s, trezor, and coldcard. So ditch your hardware wallet software, and let use our own node to verify receipt and broadcast our layer 1 transactions, cold storage style!
+Electrum Personal Server is a lightweight electrum server to serve an electrum client wallet. The client wallets are compatible with hardware wallets like the ledger nano s, trezor, and coldcard. 
 
 Electrum Personal Server is lightweight and will only monitor addresses and xpubs you specify. If you want to run a heavier version (+40GB as of writing) that can look up any transaction or xpub, check out the [extras](extras.md) page on instructions to install [Electrs](https://github.com/romanz/electrs) instead.
 
@@ -18,12 +18,6 @@ If you aren't already there, SSH into your freenas box, and switch to your bitco
 Make sure that bitcoind is fully synced before running electrum-personal-server, then install some utilities to fetch the source code:
 ```
 # bitcoin-cli -datadir=/var/db/bitcoin getblockchaininfo
-```
-
-### Install Electrum-Personal-Server
-
-Lets make sure that we have python3 and pip installed, and utilities to fetch source code:
-```
 # pkg install py36-pip python3 wget ca_root_nss nano
 ```
 Electrum-personal-server is on github, check for the latest release at https://github.com/chris-belcher/electrum-personal-server/releases .
@@ -57,7 +51,9 @@ wallet_bech32 = zpub...
 ```
 Under `[bitcoin-rpc]`, change `datadir = /var/db/bitcoin`
 
-Under `[electrum-serever]`, change `host= 0.0.0.0` to allow remote connections. Change `ip_whitelist` to your home network subnet, for example, my router assigns IP adresses as `192.168.84.XXX`, so I typed in `192.168.84.0/24` to limit connections to this range. Save and exit nano.
+Under `[electrum-server]`, change `host = ` to `host = 127.0.0.1`
+
+Save (CTRL+O, ENTER) and exit (CTRL+X) nano.
 
 ## Install: 
 (Note: ignore the suggestion to upgrade pip)
@@ -79,9 +75,7 @@ Lets run it!
 ```
 # /usr/local/bin/electrum-personal-server /usr/local/etc/electrum.conf
 ```
-Now boot up your electrum client, goto Tools>Network>Server, point it at your jail’s ip:50002, it should work!
-
-By default, electrum client will also connect to public electrum servers to get block header info. This reduces your privacy. To prevent this from happening, add `--oneserver --server 192.168.84.123:50002:s` (where the ip address reflects your bitcoin jail) to your command path. In windows, right click on the electrum shortcut, select `properties`, then append `--oneserver --server 192.168.84.123:50002:s` after the executable path `"C:\Program Files (x86)\Electrum\electrum-3.3.4.exe"`. Select `OK` to save and exit.
+Now on your client machine, make sure tor browser is open and connected. In windows, right click on the electrum shortcut, select `properties`, then append `-1 -s 7fa6xlti5joarlmkuhjaifa47ukgcwz6tfndgax45ocyn4rixm632jid.onion:50002:s` after the executable path `"C:\Program Files (x86)\Electrum\electrum-3.3.4.exe"`. Select `OK` to save and exit. Now start your electrum client, it should connect!
 
 ## Startup Script
 Terminating your SSH will also terminate electrum-personal-server, so lets close it with Ctrl+C, then run the process supervised with `daemon` called at startup with a rc.d service script:
