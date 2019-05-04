@@ -2,15 +2,14 @@
 
 ## Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
-### Install Tor
+### Why Tor
 
-Tor is a communications protocol that anonymizes communications by bouncing encrypted data between relays. It's like using several different VPNs between client and server. By serving TOR connections, you help other nodes that require the privacy. TOR also allows you to securely and privately remote connect to your home server with a static address and zero router configuration!
+Tor is a communications protocol that encrypts and anonymizes communications by bouncing encrypted data between relays. It's like using several different VPNs between client and server. TOR also allows you to securely and privately remote connect to your home server with a static address and zero router configuration! Hidden Service Version 3 is not discoverable, so you don't have to worry about exposing ports to the public, as long as you don't share your hidden service onion address!
 
 This guide runs bitcoind on clearnet and tor, runs lnd exclusively on tor, and privately host ports for remote connections with mobile wallets and electrum clients.  
 
 
-
-Lets install!
+### Install T& Configure Tor
 ```
 root@bitcoin:~ # pkg install tor nano
 root@bitcoin:~ # nano /usr/local/etc/tor/torrc
@@ -26,8 +25,9 @@ Add the following lines:
 CookieAuthFileGroupReadable 1
 CacheDirectoryGroupReadable 1
 ```
-Add the following lines to privately serve remote services for mobile lightning wallets (`8080`), remote electrum client (`50001`), remote use of RTL web-ui (`3000`):
-Note: v3 onion addresses are not public, these ports are not discoverable unless you share the onion address.
+
+Add the following lines to privately serve your remote clients for mobile lightning wallets (`8080`), electrum (`50001`), and remote use of RTL web-ui (`3000`):
+
 ```
 HiddenServiceDir /var/db/tor/remote_connections
 HiddenServiceVersion 3
