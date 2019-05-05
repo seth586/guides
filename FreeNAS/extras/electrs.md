@@ -47,7 +47,7 @@ ScXbs5LpbigOffbig = sc!(_SC_V6_LPBIG_OFFBIG),
 Now try to compile, it should suceed:
 ```
 # cargo build --release
-# cp /root/electrs/target/release/electrs /usr/local/bin
+# install -m 0755 -o root -g wheel /root/electrs/target/release/electrs /usr/local/bin
 # mkdir /var/db/electrs
 # electrs -vvv --db-dir=/var/db/electrs --electrum-rpc-addr=192.168.84.208:50002 --daemon-dir=/var/db/bitcoin
 ```
