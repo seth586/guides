@@ -4,18 +4,32 @@
 
 Read up more on electrs at its github page [here](https://github.com/romanz/electrs)
 
-SSH into your bitcoin jail. 
 
+Download prerequisites:
 ```
 # pkg install rust git
+```
+Electrs uses some new features of rust (v1.34), so if pkg says it will install a version lower than 1.34, change our pkg repository from quarterly releases to latest releases:
+```
+# mkdir -p /usr/local/etc/pkg/repos
+# nano /usr/local/etc/pkg/repos/FreeBSD.conf
+FreeBSD: {
+    url: "pkg+http://pkg.FreeBSD.org/${ABI}/latest"
+}
+# pkg install rust
+```
+
+Lets compile!
+
+```
 # cd ~
 # git clone https://github.com/romanz/electrs
-# # cd electrs
+# cd electrs
 # cargo build --release
 ```
-You will get an error. The author made this with Lunix, so we have to change some syntax for FreeBSD. Find the error that looks like this:
+You will get an error. Find the error that looks like this:
 ```
-/root/.cargo/registry/src/github.com-1ecc6299db9ec823/sysconf-0.3.4/src
+/root/.cargo/registry/src/github.com-1ecc6299db9ec823/sysconf-0.3.4/src/raw.rs
 ```
 The path may vary as the author updates his program. Use nano to edit that file, and replace the following lines:
 ```
