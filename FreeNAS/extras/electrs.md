@@ -9,7 +9,7 @@ Download prerequisites:
 ```
 # pkg install rust git
 ```
-Electrs uses some new features of rust (v1.34), so if pkg says it will install a version lower than 1.34, change our pkg repository from quarterly releases to latest releases:
+Electrs version 0.6.0 uses some new features of rust (v1.34), so if pkg says it will install a version lower than 1.34, change our pkg repository from quarterly releases to latest releases:
 ```
 # mkdir -p /usr/local/etc/pkg/repos
 # nano /usr/local/etc/pkg/repos/FreeBSD.conf
