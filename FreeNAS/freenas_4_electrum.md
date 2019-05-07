@@ -24,7 +24,7 @@ Electrum-personal-server is on github, check for the latest release at https://g
 ```
 # cd ~
 # wget https://github.com/chris-belcher/electrum-personal-server/archive/electrum-personal-server-v0.1.7.tar.gz
-# tar xzvf electrum-personal-server-v0.1.7.tar.gz
+# tar xvf electrum-personal-server-v0.1.7.tar.gz
 # rm electrum-personal-server-v0.1.7.tar.gz
 ```
 ### Configuration file:
@@ -143,7 +143,7 @@ If you need to add another wallet, edit `nano /usr/local/etc/electrum.conf` to a
 # service electrumpersonalserver stop
 # cd ~
 # wget https://github.com/chris-belcher/electrum-personal-server/archive/electrum-personal-server-v0.1.7.tar.gz
-# tar xzvf electrum-personal-server-v0.1.7.tar.gz
+# tar xvf electrum-personal-server-v0.1.7.tar.gz
 # rm electrum-personal-server-v0.1.7.tar.gz
 # cd electrum-personal-server-electrum-personal-server-v0.1.7
 # pip-3.6 install --upgrade .
