@@ -163,7 +163,7 @@ Read the release notes, if a lot changed, you may have to close channels or do s
 # cd lnd-freebsd-amd64-v0.6.1-beta
 # install -m 0755 -o root -g wheel lnd lncli /usr/local/bin
 # cd ~
-# rm -r lnd-freebsd-amd64-v0.6-beta
+# rm -r lnd-freebsd-amd64-v0.6.1-beta
 # service lnd start
 ```
 
