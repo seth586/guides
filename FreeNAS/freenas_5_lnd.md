@@ -153,7 +153,8 @@ Note: Any time `lnd` reboots, you will need to unlock the wallet again.
 Type in the password to unlock your wallet. This is a security function in case someone steals your server! In the next guide, you will install a web user interface called `RTL`, which makes unlocking your wallet much easier.
 
 ### Upgrade LND
-Read the release notes, if a lot changed, you may have to close channels or do something to prepare for the upgrade! I'll keep a log of upgrade notes beyond 0.5.2 below:
+Read the release notes, if a lot changed, you may have to close channels or do something to prepare for the upgrade! I'll keep a log of upgrade notes beyond 0.5.2 if anything breaks by upgrading below:
+(0.5.2->0.6.1 - nothing breaks!)
 ```
 # service lnd stop
 # cd ~
