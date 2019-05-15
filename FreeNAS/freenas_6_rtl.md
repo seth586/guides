@@ -134,7 +134,7 @@ Over time it is likely you will get inbound connections. Make sure your node is 
 ### Upgrade RTL
 2/17/2019: Confirmed upgrade works from 0.1.14 -> 0.2.15
 ```
-# service RTL stop
+# service rtl stop
 # cd ~/rtl
 # git reset --hard HEAD
 # git clean -f -d
