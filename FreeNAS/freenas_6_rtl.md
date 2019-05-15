@@ -135,12 +135,14 @@ Over time it is likely you will get inbound connections. Make sure your node is 
 2/17/2019: Confirmed upgrade works from 0.1.14 -> 0.2.15
 ```
 # service rtl stop
-# cd ~/rtl
-# git reset --hard HEAD
-# git clean -f -d
-# git pull
+# wget https://github.com/ShahanaFarooqui/RTL/archive/v0.3.2.tar.gz
+# tar -xvf v0.3.2.tar.gz
+# cp ~/rtl/RTL.conf ~/RTL-0.3.2/RTL.conf
+# rm -r ~/rtl
+# mv ~/RTL-0.3.2 ~/rtl
+# cd rtl
 # npm install
-# service RTL start
+# service rtl start
 ```
 
 
