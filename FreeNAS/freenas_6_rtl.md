@@ -12,10 +12,10 @@ If not already there, SSH into your freenas box and switch to your bitcoin jail.
 ```
 # pkg install node npm python cairo
 # cd ~
-# wget https://github.com/ShahanaFarooqui/RTL/archive/v0.3.2.tar.gz
-# tar -xvf v0.3.2.tar.gz
-# rm v0.3.2.tar.gz
-# mv ~/RTL-0.3.2 ~/rtl
+# wget https://github.com/ShahanaFarooqui/RTL/archive/v0.3.3.tar.gz
+# tar -xvf v0.3.3.tar.gz
+# rm v0.3.3.tar.gz
+# mv ~/RTL-0.3.3 ~/rtl
 # cd rtl
 # npm install
 ```
@@ -134,11 +134,11 @@ Over time it is likely you will get inbound connections. Make sure your node is 
 
 ```
 # service rtl stop
-# wget https://github.com/ShahanaFarooqui/RTL/archive/v0.3.2.tar.gz
-# tar -xvf v0.3.2.tar.gz
-# cp ~/rtl/RTL.conf ~/RTL-0.3.2/RTL.conf
+# wget https://github.com/ShahanaFarooqui/RTL/archive/v0.3.3.tar.gz
+# tar -xvf v0.3.3.tar.gz
+# cp ~/rtl/RTL.conf ~/RTL-0.3.3/RTL.conf
 # rm -r ~/rtl
-# mv ~/RTL-0.3.2 ~/rtl
+# mv ~/RTL-0.3.3 ~/rtl
 # cd rtl
 # npm install
 # service rtl start
