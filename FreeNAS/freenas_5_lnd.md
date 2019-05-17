@@ -103,7 +103,7 @@ Paste the following service script into nano:
 #!/bin/sh
 #
 # PROVIDE: lnd
-# REQUIRE: bitcoind
+# REQUIRE: bitcoind tor
 # KEYWORD:
 
 . /etc/rc.subr
