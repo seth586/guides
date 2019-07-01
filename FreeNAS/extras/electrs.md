@@ -48,6 +48,7 @@ Now try to compile, it should suceed:
 ```
 # cargo build --release
 # install -m 0755 -o root -g wheel /root/electrs/target/release/electrs /usr/local/bin
+# rm -r ~/electrs
 # mkdir /var/db/electrs
 # electrs -vvv --db-dir=/var/db/electrs --electrum-rpc-addr=192.168.84.208:50002 --daemon-dir=/var/db/bitcoin
 ```
