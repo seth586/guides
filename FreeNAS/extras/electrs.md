@@ -106,4 +106,18 @@ Give it a whir:
 ```
 # service electrs start
 ```
+
+### How to update electrs
+```
+# service electrs stop
+# pkg update
+# pkg upgrade rust
+# cd ~
+# git clone https://github.com/romanz/electrs
+# cd electrs
+# cargo build --release
+# install -m 0755 -o root -g wheel /root/electrs/target/release/electrs /usr/local/bin
+# rm -r ~/electrs
+# service electrs start
+```
 [ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
