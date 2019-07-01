@@ -12,10 +12,10 @@ If not already there, SSH into your freenas box and switch to your bitcoin jail.
 ```
 # pkg install node npm python cairo
 # cd ~
-# wget https://github.com/ShahanaFarooqui/RTL/archive/v0.3.3.tar.gz
-# tar -xvf v0.3.3.tar.gz
-# rm v0.3.3.tar.gz
-# mv ~/RTL-0.3.3 ~/rtl
+# wget https://github.com/ShahanaFarooqui/RTL/archive/v0.4.2.tar.gz
+# tar -xvf v0.4.2.tar.gz
+# rm v0.4.2.tar.gz
+# mv ~/RTL-0.4.2 ~/rtl
 # cd rtl
 # npm install
 ```
@@ -41,6 +41,7 @@ satsToBTC=false
 lndServerUrl=https://localhost:8080/v1
 enableLogging=false
 port=3000
+bitcoindConfigPath=/usr/local/etc/bitcoin.conf
 
 [SSO]
 rtlSSO=0
@@ -124,7 +125,8 @@ So go ahead and spend some satoshis! Copy a payment request from a website or se
 
 Give https://www.lightningspin.com/ a spin (its really slick after you install the Joule plugin), give someone a tip on https://tippin.me, read a https://yalls.org/ article. Donate to the [@BTCPayServer fund](https://t.co/FbCF1rtPvY)! Enjoy instantaneous and off chain transactions!
 
-Send me an unreasonably small tip! Use a tor compatible browser: http://seth576fk35mys5mem6s2bterxdcsma3cnp6do2tc33uidtndc3cbead.onion/lightningtip/
+Send me an unreasonably small tip! 
+https://tippin.me/@seth586
 
 If you make a channel to me, [contact me](README.md) and I will make a channel back, so you have outbound and inbound capacity!
 
@@ -134,11 +136,11 @@ Over time it is likely you will get inbound connections. Make sure your node is 
 
 ```
 # service rtl stop
-# wget https://github.com/ShahanaFarooqui/RTL/archive/v0.3.3.tar.gz
-# tar -xvf v0.3.3.tar.gz
-# cp ~/rtl/RTL.conf ~/RTL-0.3.3/RTL.conf
+# wget https://github.com/ShahanaFarooqui/RTL/archive/v0.4.2.tar.gz
+# tar -xvf v0.4.2.tar.gz
+# cp ~/rtl/RTL.conf ~/RTL-0.4.2/RTL.conf
 # rm -r ~/rtl
-# mv ~/RTL-0.3.3 ~/rtl
+# mv ~/RTL-0.4.2 ~/rtl
 # cd rtl
 # npm install
 # service rtl start
