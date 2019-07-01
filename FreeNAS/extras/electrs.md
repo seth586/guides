@@ -27,7 +27,7 @@ Lets compile!
 # cd electrs
 # cargo build --release
 ```
-You will get an error. Find the error that looks like this:
+You may get an error. (If no error, skip this step and proceed to "Install and cleanup" below) Find the error that looks like this:
 ```
 /root/.cargo/registry/src/github.com-1ecc6299db9ec823/sysconf-0.3.4/src/raw.rs
 ```
@@ -43,10 +43,12 @@ ScXbs5Ilp32Off32 = sc!(_SC_V6_ILP32_OFF32),
 ScXbs5Ilp32Offbig = sc!(_SC_V6_ILP32_OFFBIG),
 ScXbs5LpbigOffbig = sc!(_SC_V6_LPBIG_OFFBIG),
 ```
-
 Now try to compile, it should suceed:
 ```
 # cargo build --release
+```
+Install and cleanup:
+```
 # install -m 0755 -o root -g wheel /root/electrs/target/release/electrs /usr/local/bin
 # rm -r ~/electrs
 # mkdir /var/db/electrs
