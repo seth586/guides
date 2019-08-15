@@ -13,12 +13,13 @@ Check [LND's github repo](https://github.com/lightningnetwork/lnd/releases) for 
 ```
 # pkg install wget ca_root_nss
 # cd ~
-# wget https://github.com/lightningnetwork/lnd/releases/download/v0.6.1-beta/lnd-freebsd-amd64-v0.6.1-beta.tar.gz
-# tar -xvf lnd-freebsd-amd64-v0.6.1-beta.tar.gz
-# cd lnd-freebsd-amd64-v0.6.1-beta
+# wget https://github.com/lightningnetwork/lnd/releases/download/v0.7.1-beta/lnd-freebsd-amd64-v0.7.1-beta.tar.gz
+# tar -xvf lnd-freebsd-amd64-v0.7.1-beta.tar.gz
+# cd lnd-freebsd-amd64-v0.7.1-beta
 # install -m 0755 -o root -g wheel lnd lncli /usr/local/bin
 # cd ~
-# rm -r lnd-freebsd-amd64-v0.6.1-beta
+# rm -r lnd-freebsd-amd64-v0.7.1-beta
+# rm lnd-freebsd-amd64-v0.7.1-beta.tar.gz
 # nano /usr/local/etc/lnd.conf
 ```
 ### LND Configuration
