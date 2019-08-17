@@ -68,14 +68,10 @@ Edit your `lnd.conf` file:
 Remove all tor entries except for outbound connections with `tor.active=1` and `tor.socks=localhost:9050`. Add `nat=true` under `[Application Options]`
 Save (CTRL+O,ENTER) and exit (CTRL+X)
 
-Stop the lnd service:
+Stop the lnd service, and manually start it to read the verbose messages:
 ```
 # service lnd stop
-```
-Switch to user bitcoin and run `lnd` (this will be verbose to verify our NAT-PMP was configured correctly):
-```
-# su bitcoin
-bitcoin@bitcoin:~% lnd
+# lnd --configfile=/usr/local/etc/lnd.conf
 ```
  Unlock your wallet (If you installed RTL, you can do it there, otherwise start a new SSH session, switch to user bitcoin `su bitcoin` and run `lncli unlock`
 
