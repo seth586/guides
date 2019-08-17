@@ -91,8 +91,6 @@ Email: seth586@protonmail.com
 ### Give me an unreasonably small tip!
 https://tippin.me/@seth586
 
-(Use TOR browser) http://seth576fk35mys5mem6s2bterxdcsma3cnp6do2tc33uidtndc3cbead.onion/lightningtip/
-
 ### Shout outs
 Special thanks to the Stadicus raspberri pi guide for inspiring this freebsd guide, check it out here:
 https://github.com/Stadicus/guides/blob/master/raspibolt/README.md
