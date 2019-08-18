@@ -54,20 +54,20 @@ Lets start installing stuff! (answer proceed questions with `y`)
 # pkg install autoconf automake boost-libs git gmake libevent libtool libzmq4 openssl pkgconf wget nano python3
 ```
 
-Go to https://github.com/bitcoin/bitcoin/releases, find the tar.gz release we want to install. The latest release is 0.18.0 at https://github.com/bitcoin/bitcoin/archive/v0.18.0.tar.gz . Copy the link. PuTTY will let you paste by right clicking.
+Go to https://github.com/bitcoin/bitcoin/releases, find the tar.gz release we want to install. The latest release is 0.18.1 at https://github.com/bitcoin/bitcoin/archive/v0.18.1.tar.gz . Copy the link. PuTTY will let you paste by right clicking.
 
 ```
 # cd ~
-# wget https://github.com/bitcoin/bitcoin/archive/v0.18.0.tar.gz
-# tar xzvf v0.18.0.tar.gz
-# rm v0.18.0.tar.gz
+# wget https://github.com/bitcoin/bitcoin/archive/v0.18.1.tar.gz
+# tar xzvf v0.18.1.tar.gz
+# rm v0.18.1.tar.gz
 ```
 
 To see what is in the current directory, type `ls`
 
 Configure for compiling:
 ```
-# cd bitcoin-0.18.0
+# cd bitcoin-0.18.1
 # sh 
 # ./contrib/install_db4.sh `pwd`
 # export BDB_PREFIX='/root/bitcoin-0.18.0/db4'
@@ -77,7 +77,7 @@ Configure for compiling:
 # gmake install
 # csh
 # cd ~
-# rm -r bitcoin-0.18.0
+# rm -r bitcoin-0.18.1
 ```
 This process may take a while. Once its done and installed, we need to add a rc.d script to automatically start the bitcoin daemon on start. Read more about FreeBSD rc.d scripting [here](https://www.freebsd.org/doc/en_US.ISO8859-1/articles/rc-scripting/index.html).
 
@@ -312,19 +312,19 @@ Note: Do not run `pkg update && upgrade` unless you are ready to recompile bitco
 # pkg update && pkg upgrade -y
 # cd ~
 # service bitcoind stop
-# wget wget https://github.com/bitcoin/bitcoin/archive/v0.18.0.tar.gz
-# tar xzvf v0.18.0.tar.gz
+# wget wget https://github.com/bitcoin/bitcoin/archive/v0.18.1.tar.gz
+# tar xzvf v0.18.1.tar.gz
 # rm *.gz
-# cd /bitcoin-0.18.0
+# cd /bitcoin-0.18.1
 # sh 
 # ./contrib/install_db4.sh `pwd`
-# export BDB_PREFIX='/root/bitcoin-0.18.0/db4'
+# export BDB_PREFIX='/root/bitcoin-0.18.1/db4'
 # ./autogen.sh
 # ./configure MAKE=gmake BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --without-gui --without-miniupnpc
 # gmake check
 # gmake install
 # tcsh
-# rm -r bitcoin-0.18.0
+# rm -r bitcoin-0.18.1
 # service bitcoind start
 ```
 [ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
