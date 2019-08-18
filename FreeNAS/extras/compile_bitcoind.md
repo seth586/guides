@@ -312,7 +312,7 @@ Note: Do not run `pkg update && upgrade` unless you are ready to recompile bitco
 # pkg update && pkg upgrade -y
 # cd ~
 # service bitcoind stop
-# wget wget https://github.com/bitcoin/bitcoin/archive/v0.18.1.tar.gz
+# wget https://github.com/bitcoin/bitcoin/archive/v0.18.1.tar.gz
 # tar xzvf v0.18.1.tar.gz
 # rm *.gz
 # cd /bitcoin-0.18.1
