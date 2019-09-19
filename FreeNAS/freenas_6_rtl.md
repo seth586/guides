@@ -136,7 +136,7 @@ Over time it is likely you will get inbound connections. Make sure your node is 
 
 ```
 # service rtl stop
-# wget https://github.com/ShahanaFarooqui/RTL/archive/v0.5.0.tar.gz
+# wget https://github.com/ShahanaFarooqui/RTL/archive/v0.4.6.tar.gz
 # tar -xvf v0.4.6.tar.gz
 # cp ~/rtl/RTL.conf ~/RTL-0.4.6/RTL.conf
 # rm -r ~/rtl
