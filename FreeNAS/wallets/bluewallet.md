@@ -4,7 +4,7 @@
 
 BlueWallet for android serves layer 1 on-chain transactions over the electrum protocol, which is more data efficient compared to SPV (such as Blockstream Green). We can serve this function with our own electrum server! The BlueWallet roadmap plans future support for BIP174, which would allow a hardware wallet like the coldcard to be utilized on android!
 
-BlueWallet serves layer 2 transactions with a wrapper called [lndhub](https://github.com/BlueWallet/LndHub) which is designed to share an LND node in a trusted environment. Read up on the technical tradeoffs bluewallet employs with lndhub [here](https://medium.com/bluewallet/bluewallet-brings-zero-configuration-lightning-payments-to-ios-and-android-30137a69f071). This guide does not explain how to set up your own lndhub.
+BlueWallet serves layer 2 lightning transactions with a wrapper called [lndhub](https://github.com/BlueWallet/LndHub) which is designed to share an LND node in a trusted environment. Read up on the technical tradeoffs bluewallet employs with lndhub [here](https://medium.com/bluewallet/bluewallet-brings-zero-configuration-lightning-payments-to-ios-and-android-30137a69f071). This guide does not explain how to set up your own lndhub.
 
 Download and install Orbot for android: https://play.google.com/store/apps/details?id=org.torproject.android
 
