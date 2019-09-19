@@ -16,10 +16,12 @@ This is a fully indexed Electrum Server. It adds +40GB or so, but can look up an
 ### Mobile Wallets for Android over Tor Hidden Service
 Connect securely, privately, and anonymously to your home node wherever you are in the world!
 
+
 #### [Zeus LN](wallets/zeusln.md)
 
-#### [Blockstream Green](wallets/green.md)
+#### [Blockstream Green](wallets/green.md) 
 
+#### [BlueWallet](wallets/bluewallet.md)
 
 ### Mobile Wallets for iOS, requires a home VPN server
 Unfortubately iOS does not have a tor hidden service client :(
