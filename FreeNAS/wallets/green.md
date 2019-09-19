@@ -2,7 +2,7 @@
 
 ### Blockstream Green Wallet
 
-This isn't a lightning app (yet), but you can connect it to your bitcoind node via SPV over tor!
+This isn't a lightning app (yet), but you can connect it to your bitcoind node via SPV over tor! (SPV is more data intensive than the electrum protocol, I recommend using [BlueWallet](https://github.com/seth586/guides/blob/master/FreeNAS/wallets/bluewallet.md) as an android electrum client) 
 
 Download and install Orbot for android: https://play.google.com/store/apps/details?id=org.torproject.android
 
