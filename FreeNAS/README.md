@@ -63,14 +63,6 @@ There is more than 1 way to skin a cat. These are the preferred methods followed
 
 2. Minimal configuration. This guide is a baseline to get setup. Whenever a configuration file is referenced, follow the supporting docs to explore further configuration options.
 
-### Guide Security Goals
-
-1. Use cookie authentication instead of exposing RPC credentials wherever possible. Use a VPN for remote access. Port forwarding an RPC interface is a [security vulnerability](https://medium.com/@lukedashjr/cve-2018-20587-advisory-and-full-disclosure-a3105551e78b).
-
-2. Do not use UPnP for port forwarding, manually set up port forwards in your router. UPnP port forwarding is a massive [security vulnerability](https://www.howtogeek.com/122487/htg-explains-is-upnp-a-security-risk/). Modern releases of OpenWRT do not include UPnP. If your router does not feature an access control list, disable UPnP! This guide compiles `bitcoind` without UPnP support. `lnd.conf` should not use UPnP (`nat=true`), unless you have a dynamic IP address assigned by your internet service provider AND YOUR UPNP IMPLEMENTATION IS SECURE. Read how to securely use UPnP with `lnd` for dynamic IP connections, while keeping automatic port forwards disabled [here](https://github.com/seth586/guides/blob/master/OpenWRT/upnp_natpmp.md).
-
-3. This guide sets up a public IP address AND a tor service address. This means that your tor service address is NOT considered private. However this does help the network for users who exclusively need tor only connections. 
-
 ### Recommendations
 Use a password manager to keep track of all the passwords required to run FreeNAS and your software. It's good cypherpunk habit to use unique strong passwords with 3rd parties, too. KeePassDX is an encrypted open source password manager that runs on android. It can generate strong passwords for you. 
 
