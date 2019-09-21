@@ -2,6 +2,9 @@
 
 Download the Zap wallet on google play: https://play.google.com/store/apps/details?id=zapsolutions.zap or build from source: https://github.com/LN-Zap/zap-android/releases
 
+```
+# nano /usr/local/etc/lnd.conf
+```
 Add the following line to your `lnd.conf` configuration file:
 ```
 rpclisten=0.0.0.0:10009
