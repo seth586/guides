@@ -23,6 +23,8 @@ Connect securely, privately, and anonymously to your home node wherever you are 
 
 #### [BlueWallet](wallets/bluewallet.md)
 
+#### [Zap for Android](wallets/zapandroid.md)
+
 ### Mobile Wallets for iOS, requires a home VPN server
 Unfortubately iOS does not have a tor hidden service client :(
 #### [Zap](wallets/zap.md)
