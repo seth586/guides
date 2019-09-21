@@ -1,5 +1,7 @@
 [ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
 
+Note: As of 0.2.5 Zap Android can not translate .onion addresses. For remote connections, use a vpn.
+
 Download the Zap wallet on google play: https://play.google.com/store/apps/details?id=zapsolutions.zap or build from source: https://github.com/LN-Zap/zap-android/releases
 
 ```
