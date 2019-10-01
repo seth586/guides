@@ -28,6 +28,6 @@ Install `go`, compile [lndconnect](https://github.com/LN-Zap/lndconnect), change
 # cd ~/go/bin
 # ./lndconnect --lnddir=/var/db/lnd --image --host=192.168.84.123
 ```
-A png file will be generated. Use WinSCP to download the image to your PC and scan it with the zap app!
+A png file will be generated. Use WinSCP to download the image (path should be something like this: `/mnt/volume0/iocage/jails/bitcoin/root/root/go/bin`)to your PC and scan it with the zap app!
 
 [ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
