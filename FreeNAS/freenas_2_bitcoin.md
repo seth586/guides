@@ -29,8 +29,15 @@ zmqpubrawblock=tcp://127.0.0.1:28332
 zmqpubrawtx=tcp://127.0.0.1:28333
 EOT
 # service bitcoind start
+# ps aux
 # bitcoin-cli --datadir=/var/db/bitcoin getblockchaininfo
 ```
+
+If bitcoin fails to start, change the pid file in the rc.d startup script:
+```
+# nano /usr/local/etc/rc.d/bitcoind
+```
+Remove the `#` comment before `pidfile="/var/run/${name}.pid"`
 
 Some apps, like `lnd`, look for the config file in the bitcoin data directory. It is FreeBSD tradition to keep config files in `/usr/local/etc`. So lets make a hard link so the config file exists in both spots. Changing one will change the other:
 ```
