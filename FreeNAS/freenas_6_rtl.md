@@ -138,9 +138,9 @@ Over time it is likely you will get inbound connections. Make sure your node is 
 # service rtl stop
 # wget https://github.com/ShahanaFarooqui/RTL/archive/v0.5.2.tar.gz
 # tar -xvf v0.5.2.tar.gz
-# cp ~/rtl/RTL.conf ~/RTL-0.4.6/RTL.conf
+# cp ~/rtl/RTL.conf ~/RTL-0.5.2/RTL.conf
 # rm -r ~/rtl
-# mv ~/RTL-0.4.6 ~/rtl
+# mv ~/RTL-0.5.2 ~/rtl
 # rm v0.5.2.tar.gz
 # cd rtl
 # npm install
