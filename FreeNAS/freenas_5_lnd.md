@@ -169,7 +169,7 @@ Read the release notes, if a lot changed, you may have to close channels or do s
 # lnd --configfile=/usr/local/etc/lnd.conf
 ```
 
-Watch the console to make sure that the database migration is sucessful. Ctrl+C to shut down lnd, then start the service:
+Watch the console to make sure that the database migration is sucessful. If migration is unsucessful, see [this issue](https://github.com/lightningnetwork/lnd/issues/3606). Ctrl+C to shut down lnd, then start the service:
 
 ```
 # service lnd start
