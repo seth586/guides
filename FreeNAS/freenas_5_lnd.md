@@ -166,6 +166,12 @@ Read the release notes, if a lot changed, you may have to close channels or do s
 # cd ~
 # rm -r lnd-freebsd-amd64-v0.8.0-beta
 # rm lnd-freebsd-amd64-v0.8.0-beta.tar.gz
+# lnd --configfile=/usr/local/etc/lnd.conf
+```
+
+Watch the console to make sure that the database migration is sucessful. Ctrl+C to shut down lnd, then start the service:
+
+```
 # service lnd start
 ```
 
