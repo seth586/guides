@@ -155,7 +155,7 @@ Type in the password to unlock your wallet. This is a security function in case 
 
 ### Upgrade LND
 Read the release notes, if a lot changed, you may have to close channels or do something to prepare for the upgrade! I'll keep a log of upgrade notes beyond 0.5.2 if anything breaks by upgrading below:
-(0.5.2->0.6.1 - nothing breaks!)
+(0.7.1 -> 0.8.0 - the channel databse needs to migrate. Make sure this process is sucessful, if not, revert to 0.7.1)
 ```
 # service lnd stop
 # cd ~
