@@ -2,9 +2,9 @@
 
 Download the Zap wallet on the Apple store: https://testflight.apple.com/join/P32C380R
 
-Add the following line to your `lnd.conf` configuration file:
+Make sure the following line exists in your `lnd.conf` configuration file:
 ```
-rpclisten=0.0.0.0:10009
+rpclisten=127.0.0.1:8080
 ```
 Restart LND
 ```
@@ -26,7 +26,7 @@ Install `go`, compile [lndconnect](https://github.com/LN-Zap/lndconnect), change
 # cd ~/go/src/github.com/LN-Zap/lndconnect
 # gmake
 # cd ~/go/bin
-# ./lndconnect --lnddir=/var/db/lnd --image --host=192.168.84.123
+# ./lndconnect --lnddir=/var/db/lnd --image --host=whateveryouronionaddressis.onion --port=8080
 ```
 A png file will be generated. Use WinSCP to download the image (path should be something like this: `/mnt/volume0/iocage/jails/bitcoin/root/root/go/bin`)to your PC and scan it with the zap app!
 
