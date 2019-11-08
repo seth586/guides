@@ -4,13 +4,9 @@
 
 This isn't a lightning app (yet), but you can connect it to your bitcoind node via SPV over tor! (SPV is more data intensive than the electrum protocol, I recommend using [BlueWallet](https://github.com/seth586/guides/blob/master/FreeNAS/wallets/bluewallet.md) as an android electrum client) 
 
-Download and install Orbot for android: https://play.google.com/store/apps/details?id=org.torproject.android
-
 Download the Blockstream Green app: https://play.google.com/store/apps/details?id=com.greenaddress.greenbits_android_wallet
 
-Open orbot, and select the gear icon under "Tor-Enabled Apps". Select Green, then back. Turn on VPN Mode. Wait until the app is bootstrapped and connected to the tor network.
-
-Open Green Wallet. Click on `Bitcoin ⯆`. Check `connect through a proxy`, set `Socks5 Hostname` to `localhost` and set `Socks5 Port` to `9050`. Check `Connect with Tor`. Click `Save`. 
+Open Green Wallet. Click on `Bitcoin ⯆`. Check `Connect with Tor`. Click `Save`. 
 
 Create a new wallet. Once you're done, Click the gear ⚙️ icon on the lower left. Under `Advanced` click `SPV synchronization`. Check `Enable SPV`. 
 Select `Only connect to trusted node(s) for SPV`. Remember your bitcoind onion address? If not, SSH into your bitcoin jail, and run 
