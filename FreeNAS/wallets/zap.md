@@ -1,17 +1,11 @@
 [ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
 
-Download the Zap wallet on the Apple store: https://testflight.apple.com/join/P32C380R
+Download the Zap wallet on the Apple store: https://apps.apple.com/us/app/zap-bitcoin-lightning-wallet/id1406311960
 
-Make sure the following line exists in your `lnd.conf` configuration file:
+Make sure the following line exists in your `lnd.conf` configuration file, if not, add and restart lnd (remmeber to unlock your wallet!):
 ```
 rpclisten=127.0.0.1:8080
 ```
-Restart LND
-```
-# service lnd stop
-# service lnd start
-```
-Remember to unlock your wallet, use RTL's web-ui.
 
 Link your lnd.conf to lnd's data dir:
 ```
