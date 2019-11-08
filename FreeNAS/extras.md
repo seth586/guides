@@ -25,7 +25,7 @@ Connect securely, privately, and anonymously to your home node wherever you are 
 
 #### [Zap for Android](wallets/zapandroid.md)
 
-### Mobile Wallets for iOSover Tor Hidden Service
+### Mobile Wallets for iOS over Tor Hidden Service
 
 #### [Zap iOS](wallets/zap.md)
 
