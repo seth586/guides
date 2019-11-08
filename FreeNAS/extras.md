@@ -25,13 +25,9 @@ Connect securely, privately, and anonymously to your home node wherever you are 
 
 #### [Zap for Android](wallets/zapandroid.md)
 
-### Mobile Wallets for iOS, requires a home VPN server
-Unfortubately iOS does not have a tor hidden service client :(
-#### [Zap](wallets/zap.md)
+### Mobile Wallets for iOSover Tor Hidden Service
 
-#### [Pebble](wallets/pebble.md)
-
-#### [Shango](wallets/shango.md)
+#### [Zap iOS](wallets/zap.md)
 
 ### External guides
 
