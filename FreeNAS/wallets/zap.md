@@ -18,6 +18,12 @@ Link your lnd.conf to lnd's data dir:
 ln /usr/local/etc/lnd.conf /var/db/lnd/lnd.conf
 ```
 
+View the private onion address of your tor hidden service:
+```
+# cat /var/db/tor/remote_connections/hostname
+whateveryouronionaddressis.onion
+```
+
 Install `go`, compile [lndconnect](https://github.com/LN-Zap/lndconnect), change `--host=` to the jails local IP, and generate a LND connect URL QR code:
 ```
 # pkg install go
