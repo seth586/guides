@@ -13,6 +13,9 @@ Some situations require you to compile directly from source code.
 #### [Electrs: Electrum Server in Rust](extras/electrs.md)
 This is a fully indexed Electrum Server. It adds +40GB or so, but can look up any address or xpub, whereas Electrum Personal Server is lightweight, but only indexes addresses and xpubs you specify.
 
+#### [Tor relay node](extras/torrelay.md) 
+Tor doesn't give anonymity unless there are sufficient relays to hide the source from the destination, and vice versa. If you need an onion service anonymity (such as running bitcoin in `onlynet=onion`) [do not run a relay](https://research.kudelskisecurity.com/2013/09/04/dont-run-a-tor-router-and-a-hidden-service-from-the-same-connection/).
+
 ### Mobile Wallets for Android over Tor Hidden Service
 Connect securely, privately, and anonymously to your home node wherever you are in the world!
 
@@ -34,6 +37,3 @@ Connect securely, privately, and anonymously to your home node wherever you are 
 
 #### [SoftEther VPN in a FreeNAS jail](https://forums.freenas.org/index.php?threads/alternative-to-openvpn-softether-vpn.47395/)
 Want to use a mobile lightning wallet away from your home network? Set up a VPN server at home, so you can securely connect to your `lnd` on the road! SoftEther offers a free DNS service, great option if your ISP changes your home IP address on you! 
-
-#### [Tor relay node](extras/torrelay.md) 
-Tor doesn't give anonymity unless there are sufficient relays to hide the source from the destination, and vice versa. If you need an onion service anonymity (such as running bitcoin in `onlynet=onion`) [do not run a relay](https://research.kudelskisecurity.com/2013/09/04/dont-run-a-tor-router-and-a-hidden-service-from-the-same-connection/).
