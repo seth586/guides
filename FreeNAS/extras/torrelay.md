@@ -71,5 +71,7 @@ To exit, press (Ctrl+C)
 
 It will take about ~3 hours for your relay to propogate through the network. Search for your node here: https://metrics.torproject.org/rs.html
 
+It takes about a good two weeks before you will see steady traffic, see this tor project blog post [here](https://blog.torproject.org/lifecycle-new-relay).
+
 
 [ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
