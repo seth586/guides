@@ -21,15 +21,15 @@ ControlPort 9051
 CookieAuthentication 1
 ExitRelay 0
 SocksPort 0
-BandwidthRate 2500 KBits
-BandwidthBurst 10000 KBits
-MaxAdvertisedBandwidth 2500 KBits
+BandwidthRate 16 Mbits
+BandwidthBurst 64 Mbits
+MaxAdvertisedBandwidth 16 Mbits
 # Change the email address bellow and be aware that it will be published
 ContactInfo tor-operator@your-emailaddress-domain
 Log notice syslog
 ```
-2,500 Kbits = 2.5Mbps, adjust based on the lower of your maximum download and upload speed. So if your ISP provides 50Mbit download and 
-10Mbit upload, do not use any value over 10Mbit.
+Set `bandwidthrate` below the lower value of your download and upload speed. So if your ISP provides 500 Mbit download and 
+250 Mbit upload, do not use any value over 250 Mbit. Check your speed [here](https://beta.speedtest.net/).
 
 Save (Ctrl+o, ENTER) and exit (Ctrl+x)
 
