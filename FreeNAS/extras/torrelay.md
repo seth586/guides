@@ -55,13 +55,8 @@ Save (Ctrl+o, ENTER) and exit (Ctrl+x)
 ```
 ### Enable random IP_IDs (see [this](https://mebsd.com/freebsd-security-hardening/protecting-freebsd-with-sysctl-101.html))
 ```
-# nano /etc/sysctl.conf
+# echo "net.inet.ip.random_id=1" >> /etc/sysctl.conf
 ```
-Add the following line:
-```
-net.inet.ip.random_id=1
-```
-Save (Ctrl+o, ENTER) and exit (Ctrl+x)
 
 Reboot your jail and ssh back in. `ps aux` should show tor running!
 
