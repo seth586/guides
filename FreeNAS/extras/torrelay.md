@@ -20,11 +20,15 @@ ORPort 9001
 ExitRelay 0
 SocksPort 0
 BandwidthRate 2500 KBits
+BandwidthBurst 10000 KBits
 MaxAdvertisedBandwidth 2500 KBits
 # Change the email address bellow and be aware that it will be published
 ContactInfo tor-operator@your-emailaddress-domain
 Log notice syslog
 ```
+2,500 Kbits = 2.5Mbps, adjust based on the lower of your maximum download and upload speed. So if your ISP provides 50Mbit download and 
+10Mbit upload, do not use any value over 10Mbit.
+
 Save (Ctrl+o, ENTER) and exit (Ctrl+x)
 
 Set up auto updates:
@@ -39,8 +43,11 @@ RAND=$(jot -r 1 300)
 sleep ${RAND}
 env AUTOCLEAN=YES ASSUME_ALWAYS_YES=YES HANDLE_RC_SCRIPTS=YES pkg upgrade
 ```
-Schedule the job to run:
+Save (Ctrl+o, ENTER) and exit (Ctrl+x)
+
+Make executable and schedule the job to run:
 ```
+# chmod +x /root/pkg_upgrade.sh
 # echo "0 0 * * * root /bin/sh /root/pkg_upgrade.sh >/dev/null" >> /etc/crontab
 # service cron restart
 ```
@@ -52,6 +59,7 @@ Add the following line:
 ```
 net.inet.ip.random_id=1
 ```
+Save (Ctrl+o, ENTER) and exit (Ctrl+x)
 
 
 
