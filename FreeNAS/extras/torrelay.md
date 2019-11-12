@@ -17,6 +17,8 @@ Edit the configuration files for tor (I recommend setting up a burner email you 
 #change the nickname "myNiceRelay" to a name that you like
 Nickname myNiceRelay
 ORPort 9001
+ControlPort 9051
+CookieAuthentication 1
 ExitRelay 0
 SocksPort 0
 BandwidthRate 2500 KBits
