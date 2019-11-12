@@ -69,5 +69,7 @@ Lets use a terminal UI to monitor the useage of our relay!
 ```
 To exit, press (Ctrl+C)
 
+It will take about ~3 hours for your relay to propogate through the network. Search for your node here: https://metrics.torproject.org/rs.html
+
 
 [ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
