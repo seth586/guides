@@ -14,7 +14,7 @@ Some situations require you to compile directly from source code.
 This is a fully indexed Electrum Server. It adds +40GB or so, but can look up any address or xpub, whereas Electrum Personal Server is lightweight, but only indexes addresses and xpubs you specify.
 
 #### [Tor relay node](extras/torrelay.md) 
-Tor doesn't give anonymity unless there are sufficient relays to hide the source from the destination, and vice versa. If you need an onion service anonymity (such as running bitcoin in `onlynet=onion`) [do not run a relay](https://research.kudelskisecurity.com/2013/09/04/dont-run-a-tor-router-and-a-hidden-service-from-the-same-connection/).
+Tor doesn't give anonymity or sufficient bandwidth unless there are enough volunteer relays helping the network. If you need onion service anonymity for bitcoin and lightning [do not run a relay](https://research.kudelskisecurity.com/2013/09/04/dont-run-a-tor-router-and-a-hidden-service-from-the-same-connection/) from the same internet connection.
 
 ### Mobile Wallets for Android over Tor Hidden Service
 Connect securely, privately, and anonymously to your home node wherever you are in the world!
