@@ -31,7 +31,7 @@ Log notice syslog
 
 Save (Ctrl+o, ENTER) and exit (Ctrl+x)
 
-Set up auto updates:
+# Set up auto updates:
 ```
 # nano /root/pkg_upgrade.sh
 ```
