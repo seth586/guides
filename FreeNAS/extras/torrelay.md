@@ -69,5 +69,10 @@ Reboot your jail and ssh back in. `ps aux` should show tor running!
 
 Lets use a terminal UI to monitor the useage of our relay!
 
+```
+# nyx
+```
+To exit, press (Ctrl+C)
+
 
 [ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
