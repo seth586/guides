@@ -4,7 +4,7 @@
 
 While it is safe and realtively anonymous to run a relay and a hidden service from the same internet connection, it isn't perfect. Do not run a relay from the same internet connection as your bitcoin & lightning jail if you require *absolute* anonymity! See [this](https://research.kudelskisecurity.com/2013/09/04/dont-run-a-tor-router-and-a-hidden-service-from-the-same-connection/) for details. Your home router shold be beefy enough to handle 7,000+ connections and the tor preject recommends a minimum of 16 Mbit download and upload speed for relays.
 
-Create a new jail, forward port 9001 to this jail's IP address, and ssh in.
+Create a new jail, forward TCP port 9001 to this jail's IP address, and ssh in.
 
 ### Install and configure tor:
 ```
