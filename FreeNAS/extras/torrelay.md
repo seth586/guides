@@ -61,7 +61,11 @@ net.inet.ip.random_id=1
 ```
 Save (Ctrl+o, ENTER) and exit (Ctrl+x)
 
-### Start the service!
+Reboot your jail and ssh back in. `ps aux` should show tor running!
+
+### Nyx
+
+Lets use a terminal UI to monitor the useage of our relay!
 
 
 [ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
