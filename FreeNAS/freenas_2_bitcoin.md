@@ -48,7 +48,7 @@ Wait until sync is complete, once blocks=headers you're good to go. Let this run
 ### How to upgrade bitcoind: 
 ```
 # service bitcoind stop
-# pkg update && pkg upgrade bitcoin-daemon bitcoin-utils`
+# pkg update && pkg upgrade bitcoin-daemon bitcoin-utils
 # nano /usr/local/etc/rc.d/bitcoind
 ```
 Remove the `#` comment before `pidfile="/var/run/${name}.pid"`
