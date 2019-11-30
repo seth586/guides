@@ -35,7 +35,7 @@ Change the pid file in the rc.d startup script. Remove the `#` comment before `p
 
 Save (Ctrl+O, ENTER) and exit (Ctrl+X)
 
-Some apps, like `lnd`, look for the config file in the bitcoin data directory. It is FreeBSD tradition to keep config files in `/usr/local/etc`. So lets make a hard link so the config file exists in both spots. Changing one will change the other, then start bitcoind:
+Some apps, like `lnd`, look for the config file in the bitcoin data directory. It is FreeBSD tradition to keep config files in `/usr/local/etc`. So lets make a hard link so the config file exists in both spots. Changing one will change the other. Then start bitcoind and check sync progress:
 
 ```
 # ln /usr/local/etc/bitcoin.conf /var/db/bitcoin/bitcoin.conf
