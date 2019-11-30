@@ -33,11 +33,13 @@ EOT
 # bitcoin-cli --datadir=/var/db/bitcoin getblockchaininfo
 ```
 
-If bitcoin fails to start, change the pid file in the rc.d startup script:
+Change the pid file in the rc.d startup script:
 ```
 # nano /usr/local/etc/rc.d/bitcoind
 ```
 Remove the `#` comment before `pidfile="/var/run/${name}.pid"`
+
+Save (Ctrl+O, ENTER) and exit (Ctrl+X)
 
 Some apps, like `lnd`, look for the config file in the bitcoin data directory. It is FreeBSD tradition to keep config files in `/usr/local/etc`. So lets make a hard link so the config file exists in both spots. Changing one will change the other:
 ```
@@ -46,6 +48,19 @@ Some apps, like `lnd`, look for the config file in the bitcoin data directory. I
 
 Wait until sync is complete, once blocks=headers you're good to go. Let this run overnight.
 
-To upgrade bitcoind to a newer available version the easy way, simply type `pkg update && pkg upgrade -y`
+To upgrade bitcoind to a newer available version the easy way: 
+```
+# service bitcoind stop
+# pkg update && pkg upgrade bitcoin-daemon bitcoin-utils`
+# nano /usr/local/etc/rc.d/bitcoind
+```
+Remove the `#` comment before `pidfile="/var/run/${name}.pid"`
+
+Save (Ctrl+O, ENTER) and exit (Ctrl+X)
+
+Start bitcoin:
+```
+# service bitcoind start
+```
 
 Next: [ [Install Tor](freenas_3_tor.md) ]
