@@ -48,7 +48,7 @@ Some apps, like `lnd`, look for the config file in the bitcoin data directory. I
 
 Wait until sync is complete, once blocks=headers you're good to go. Let this run overnight.
 
-To upgrade bitcoind to a newer available version the easy way: 
+### How to upgrade bitcoind: 
 ```
 # service bitcoind stop
 # pkg update && pkg upgrade bitcoin-daemon bitcoin-utils`
