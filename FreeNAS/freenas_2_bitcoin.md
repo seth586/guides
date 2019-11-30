@@ -20,7 +20,7 @@ You should see your bitcoin jail listed. Lets switch our console from our base s
 
 You're in! Install `bitcoin-daemon`
 ```
-# pkg install -y bitcoin-daemon bitcoin-utils
+# pkg install -y bitcoin-daemon bitcoin-utils nano
 # sysrc bitcoind_enable="YES"
 # cat <<EOT >> /usr/local/etc/bitcoin.conf
 server=1
@@ -28,22 +28,19 @@ txindex=1
 zmqpubrawblock=tcp://127.0.0.1:28332
 zmqpubrawtx=tcp://127.0.0.1:28333
 EOT
-# service bitcoind start
-# ps aux
-# bitcoin-cli --datadir=/var/db/bitcoin getblockchaininfo
-```
-
-Change the pid file in the rc.d startup script:
-```
 # nano /usr/local/etc/rc.d/bitcoind
 ```
-Remove the `#` comment before `pidfile="/var/run/${name}.pid"`
+
+Change the pid file in the rc.d startup script. Remove the `#` comment before `pidfile="/var/run/${name}.pid"`
 
 Save (Ctrl+O, ENTER) and exit (Ctrl+X)
 
-Some apps, like `lnd`, look for the config file in the bitcoin data directory. It is FreeBSD tradition to keep config files in `/usr/local/etc`. So lets make a hard link so the config file exists in both spots. Changing one will change the other:
+Some apps, like `lnd`, look for the config file in the bitcoin data directory. It is FreeBSD tradition to keep config files in `/usr/local/etc`. So lets make a hard link so the config file exists in both spots. Changing one will change the other, then start bitcoind:
+
 ```
 # ln /usr/local/etc/bitcoin.conf /var/db/bitcoin/bitcoin.conf
+# service bitcoind start
+# bitcoin-cli -datadir=/var/db/bitcoin getblockchaininfo
 ```
 
 Wait until sync is complete, once blocks=headers you're good to go. Let this run overnight.
