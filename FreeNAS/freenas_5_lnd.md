@@ -13,13 +13,13 @@ Check [LND's github repo](https://github.com/lightningnetwork/lnd/releases) for 
 ```
 # pkg install wget ca_root_nss
 # cd ~
-# wget https://github.com/lightningnetwork/lnd/releases/download/v0.8.1-beta/lnd-freebsd-amd64-v0.8.1-beta.tar.gz
-# tar -xvf lnd-freebsd-amd64-v0.8.1-beta.tar.gz
-# cd lnd-freebsd-amd64-v0.8.1-beta
+# wget https://github.com/lightningnetwork/lnd/releases/download/v0.8.1-beta/lnd-freebsd-amd64-v0.8.2-beta.tar.gz
+# tar -xvf lnd-freebsd-amd64-v0.8.2-beta.tar.gz
+# cd lnd-freebsd-amd64-v0.8.2-beta
 # install -m 0755 -o root -g wheel lnd lncli /usr/local/bin
 # cd ~
-# rm -r lnd-freebsd-amd64-v0.8.1-beta
-# rm lnd-freebsd-amd64-v0.8.1-beta.tar.gz
+# rm -r lnd-freebsd-amd64-v0.8.2-beta
+# rm lnd-freebsd-amd64-v0.8.2-beta.tar.gz
 # nano /usr/local/etc/lnd.conf
 ```
 ### LND Configuration
@@ -59,7 +59,7 @@ This configuration uses tor for NAT traversal and to prevent doxing your home IP
 
 Fees. You may have to pay fees to other nodes when you rebalance channels, and you may have to close and reopen channels to disconected nodes, which will require on-chain fees. Don't operate at a loss! Do NOT make a 0 fee node, this will leave you vulnerable to denial of service attacks!
 
-`bitcoin.basefee=1000` = Fee of 1.000 satoshi per payment forwarded
+`bitcoin.basefee=1000` = Fee of 1 satoshi per payment forwarded
 
 `bitcoin.feerate=100` = Fee of 100 satoshis per million forwarded (0.01% fee)
 
