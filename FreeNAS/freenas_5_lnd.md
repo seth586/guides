@@ -13,7 +13,7 @@ Check [LND's github repo](https://github.com/lightningnetwork/lnd/releases) for 
 ```
 # pkg install wget ca_root_nss
 # cd ~
-# wget https://github.com/lightningnetwork/lnd/releases/download/v0.8.1-beta/lnd-freebsd-amd64-v0.8.2-beta.tar.gz
+# wget https://github.com/lightningnetwork/lnd/releases/download/v0.8.2-beta/lnd-freebsd-amd64-v0.8.2-beta.tar.gz
 # tar -xvf lnd-freebsd-amd64-v0.8.2-beta.tar.gz
 # cd lnd-freebsd-amd64-v0.8.2-beta
 # install -m 0755 -o root -g wheel lnd lncli /usr/local/bin
