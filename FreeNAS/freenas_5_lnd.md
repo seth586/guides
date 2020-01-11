@@ -156,16 +156,17 @@ Type in the password to unlock your wallet. This is a security function in case 
 ### Upgrade LND
 Read the release notes, if a lot changed, you may have to close channels or do something to prepare for the upgrade! I'll keep a log of upgrade notes beyond 0.5.2 if anything breaks by upgrading below:
 (0.7.1 -> 0.8.0 - the channel databse needs to migrate. Make sure this process is sucessful, if not, revert to 0.7.1)
+(0.9.0 also needs a database migration, verify it runs sucessfully as described below)
 ```
 # service lnd stop
 # cd ~
-# wget https://github.com/lightningnetwork/lnd/releases/download/v0.8.2-beta/lnd-freebsd-amd64-v0.8.2-beta.tar.gz
-# tar -xvf lnd-freebsd-amd64-v0.8.2-beta.tar.gz
-# cd lnd-freebsd-amd64-v0.8.2-beta
+# wget https://github.com/lightningnetwork/lnd/releases/download/v0.9.0-beta-rc1/lnd-freebsd-amd64-v0.9.0-beta-rc1.tar.gz
+# tar -xvf lnd-freebsd-amd64-v0.9.0-beta-rc1.tar.gz
+# cd lnd-freebsd-amd64-v0.9.0-beta-rc1
 # install -m 0755 -o root -g wheel lnd lncli /usr/local/bin
 # cd ~
-# rm -r lnd-freebsd-amd64-v0.8.2-beta
-# rm lnd-freebsd-amd64-v0.8.2-beta.tar.gz
+# rm -r lnd-freebsd-amd64-v0.9.0-beta-rc1
+# rm lnd-freebsd-amd64-v0.9.0-beta-rc1.tar.gz
 # lnd --configfile=/usr/local/etc/lnd.conf
 ```
 
