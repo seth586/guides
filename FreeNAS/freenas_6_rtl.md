@@ -136,14 +136,14 @@ Over time it is likely you will get inbound connections. Make sure your node is 
 
 ```
 # service rtl stop
-# wget https://github.com/Ride-The-Lightning/RTL/archive/v0.5.4.tar.gz
-# tar -xvf v0.5.4.tar.gz
-# cp ~/rtl/RTL.conf ~/RTL-0.5.4/RTL.conf
+# wget https://github.com/Ride-The-Lightning/RTL/archive/v0.6.1.tar.gz
+# tar -xvf v0.6.1.tar.gz
+# cp ~/rtl/RTL.conf ~/RTL-0.6.1/RTL.conf
 # rm -r ~/rtl
-# mv ~/RTL-0.5.4 ~/rtl
-# rm v0.5.4.tar.gz
+# mv ~/RTL-0.6.1 ~/rtl
+# rm v0.6.1.tar.gz
 # cd rtl
-# npm install
+# npm install --only=production
 # service rtl start
 ```
 
