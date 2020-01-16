@@ -12,41 +12,39 @@ If not already there, SSH into your freenas box and switch to your bitcoin jail.
 ```
 # pkg install node npm python cairo
 # cd ~
-# wget https://github.com/ShahanaFarooqui/RTL/archive/v0.5.3.tar.gz
-# tar -xvf v0.5.3.tar.gz
-# rm v0.5.3.tar.gz
-# mv ~/RTL-0.5.3 ~/rtl
+# wget https://github.com/Ride-The-Lightning/RTL/archive/v0.6.1.tar.gz
+# tar -xvf v0.6.1.tar.gz
+# rm v0.6.1.tar.gz
+# mv ~/RTL-0.6.1 ~/rtl
 # cd rtl
-# npm install
+# npm install --only=production
 ```
 Once the install is complete, create RTL.conf [configuration options](https://github.com/Ride-The-Lightning/RTL/blob/master/docs/Application_configurations):
 ```
-# nano RTL.conf
+# nano ~/rtl/RTL.conf
 ```
 Add the following lines, make sure to set `rtlPass=`:
 ```
+[SSO]
+rtlSSO=0
+logoutRedirectLink=/login
+
+[Settings]
+lndServerUrl=https://127.0.0.1:8080/v1
+bitcoindConfigPath=/usr/local/etc/bitcoin.conf
+enableLogging=false
+port=3000
+
+userPersona=OPERATOR
+themeMode=NIGHT
+themeColor=PURPLE
+currencyUnit=USD
+
 [Authentication]
 macaroonPath=/var/db/lnd/data/chain/bitcoin/mainnet
 nodeAuthType=CUSTOM
 lndConfigPath=/usr/local/etc/lnd.conf
-rtlPass=password
-
-[Settings]
-flgSidenavOpened=true
-flgSidenavPinned=true
-menu=Vertical
-menuType=Regular
-theme=dark-blue
-satsToBTC=false
-lndServerUrl=https://localhost:8080/v1
-enableLogging=false
-port=3000
-bitcoindConfigPath=/usr/local/etc/bitcoin.conf
-
-[SSO]
-rtlSSO=0
-rtlCookiePath=~/rtl/cookies/auth.cookie
-logoutRedirectLink=/login
+rtlPass=useapasswordhere
 
 ```
 Save (CTRL+O,ENTER) then exit (CTRL+X)
