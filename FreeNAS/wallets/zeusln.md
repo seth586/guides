@@ -12,7 +12,7 @@ Tor has numerous benefits for serving your mobile wallet.
 
 Download the Zeus app, APKs available here: https://github.com/ZeusLN/zeus/releases
 
-View the private onion address of your tor hidden service:
+View the private onion address of your tor hidden service [that you set up on this step!](https://github.com/seth586/guides/blob/master/FreeNAS/freenas_3_tor.md):
 ```
 # cat /var/db/tor/remote_connections/hostname
 myprivateonionaddressocyn4rixm632jid.onion
