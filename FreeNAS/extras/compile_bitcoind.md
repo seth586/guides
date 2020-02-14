@@ -70,7 +70,7 @@ Configure for compiling:
 # cd bitcoin-0.19.0.1
 # sh 
 # ./contrib/install_db4.sh `pwd`
-# export BDB_PREFIX='/root/bitcoin-0.18.0/db4'
+# export BDB_PREFIX='/root/bitcoin-0.19.0.1/db4'
 # ./autogen.sh
 # ./configure MAKE=gmake BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --without-gui --without-miniupnpc
 # gmake check
