@@ -31,7 +31,7 @@ Add the following lines to privately serve your remote clients for mobile lightn
 ```
 HiddenServiceDir /var/db/tor/remote_connections
 HiddenServiceVersion 3
-HiddenServicePort 50001 127.0.0.1:50002
+HiddenServicePort 50002 127.0.0.1:50002
 HiddenServicePort 8080 127.0.0.1:8080
 HiddenServicePort 10009 127.0.0.1:10009
 HiddenServicePort 3000 127.0.0.1:3000
