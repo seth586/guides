@@ -41,7 +41,7 @@ Home Mode  :
 Shell      : /usr/sbin/nologin
 Locked     : no
 OK? (yes/no): yes
-adduser: INFO: Successfully added (bitcoind) to the user database.
+adduser: INFO: Successfully added (bitcoin) to the user database.
 Add another user? (yes/no): no
 Goodbye!
 #
