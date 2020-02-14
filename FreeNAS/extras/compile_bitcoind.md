@@ -58,16 +58,16 @@ Go to https://github.com/bitcoin/bitcoin/releases, find the tar.gz release we wa
 
 ```
 # cd ~
-# wget https://github.com/bitcoin/bitcoin/archive/v0.18.1.tar.gz
-# tar xzvf v0.18.1.tar.gz
-# rm v0.18.1.tar.gz
+# wget https://github.com/bitcoin/bitcoin/archive/v0.19.0.1.tar.gz
+# tar xzvf v0.19.0.1.tar.gz
+# rm v0.19.0.1.tar.gz
 ```
 
 To see what is in the current directory, type `ls`
 
 Configure for compiling:
 ```
-# cd bitcoin-0.18.1
+# cd bitcoin-0.19.0.1
 # sh 
 # ./contrib/install_db4.sh `pwd`
 # export BDB_PREFIX='/root/bitcoin-0.18.0/db4'
@@ -77,7 +77,7 @@ Configure for compiling:
 # gmake install
 # csh
 # cd ~
-# rm -r bitcoin-0.18.1
+# rm -r bitcoin-0.19.0.1
 ```
 This process may take a while. Once its done and installed, we need to add a rc.d script to automatically start the bitcoin daemon on start. Read more about FreeBSD rc.d scripting [here](https://www.freebsd.org/doc/en_US.ISO8859-1/articles/rc-scripting/index.html).
 
