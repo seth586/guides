@@ -54,7 +54,7 @@ Lets start installing stuff! (answer proceed questions with `y`)
 # pkg install autoconf automake boost-libs git gmake libevent libtool libzmq4 pkgconf wget nano
 ```
 
-Go to https://github.com/bitcoin/bitcoin/releases, find the tar.gz release we want to install. The latest release is 0.18.1 at https://github.com/bitcoin/bitcoin/archive/v0.18.1.tar.gz . Copy the link. PuTTY will let you paste by right clicking.
+Go to https://github.com/bitcoin/bitcoin/releases, find the tar.gz release we want to install. The latest release is 0.19.0.1 at https://github.com/bitcoin/bitcoin/archive/v0.19.0.1.tar.gz . Copy the link. PuTTY will let you paste by right clicking.
 
 ```
 # cd ~
