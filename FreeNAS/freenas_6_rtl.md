@@ -14,7 +14,7 @@ If not already there, SSH into your freenas box and switch to your bitcoin jail.
 # cd ~
 # wget https://github.com/Ride-The-Lightning/RTL/archive/v0.6.7.tar.gz
 # tar -xvf v0.6.7.tar.gz
-# rm v0.6.5.tar.gz
+# rm v0.6.7.tar.gz
 # mv ~/RTL-0.6.7 ~/rtl
 # cd rtl
 # npm install --only=production
