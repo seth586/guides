@@ -32,12 +32,11 @@ Connect securely, privately, and anonymously to your home node wherever you are 
 
 #### [Zap iOS](wallets/zap.md)
 
-### External guides
-
 ### Browser Enabled Wallets over Tor Hidden Service
 
 #### [ [Joule](freenas_7_joule.md) ]
 
+### External guides
 
 #### [SoftEther VPN in a FreeNAS jail](https://forums.freenas.org/index.php?threads/alternative-to-openvpn-softether-vpn.47395/)
 Want to use a mobile lightning wallet away from your home network? Set up a VPN server at home, so you can securely connect to your `lnd` on the road! SoftEther offers a free DNS service, great option if your ISP changes your home IP address on you! 
