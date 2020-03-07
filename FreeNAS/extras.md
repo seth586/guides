@@ -1,4 +1,4 @@
-[ [Intro](README.md) ] - [ [Jail Creation](freenas_1_jail_creation.md) ] - [ [Bitcoin](freenas_2_bitcoin.md) ] - [ [Tor](freenas_3_tor.md) ] - [ [Electrum](freenas_4_electrum.md) ] - [ [lnd](freenas_5_lnd.md) ] - [ [RTL](freenas_6_rtl.md) ] - [ [Joule](freenas_7_joule.md) ] -  **[Extras]** 
+[ [Intro](README.md) ] - [ [Jail Creation](freenas_1_jail_creation.md) ] - [ [Bitcoin](freenas_2_bitcoin.md) ] - [ [Tor](freenas_3_tor.md) ] - [ [Electrum](freenas_4_electrum.md) ] - [ [lnd](freenas_5_lnd.md) ] - [ [RTL](freenas_6_rtl.md) ] -  **[Extras]** 
 
 ## Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
@@ -33,6 +33,10 @@ Connect securely, privately, and anonymously to your home node wherever you are 
 #### [Zap iOS](wallets/zap.md)
 
 ### External guides
+
+### Browser Enabled Wallets over Tor Hidden Service
+
+#### [ [Joule](freenas_7_joule.md) ]
 
 
 #### [SoftEther VPN in a FreeNAS jail](https://forums.freenas.org/index.php?threads/alternative-to-openvpn-softether-vpn.47395/)
