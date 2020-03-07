@@ -2,6 +2,8 @@
 
 ## Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
+## Joule Browser Extension
+
 ### Install WinSCP
 https://winscp.net/eng/download.php
 
