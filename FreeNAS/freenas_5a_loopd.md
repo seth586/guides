@@ -94,7 +94,7 @@ Append the following line
 ```
 loopd_enable="YES"
 ```
-Save, (CTRL+O,ENTER) then exit (CTRL+O)
+Save, (CTRL+O,ENTER) then exit (CTRL+X)
 
 Now start the service:
 ```
@@ -117,7 +117,7 @@ Read the release notes, if a lot changed, you may have to close channels or do s
 # rm loop-freebsd-amd64-v0.5.1-beta.tar.gz
 # lnd --configfile=/usr/local/etc/lnd.conf
 ```
-Save (Ctrl+O & ENTER) and exit (Ctrl+X)
+Save (Ctrl+O,ENTER) and exit (Ctrl+X)
 
 ```
 # service loopd start
