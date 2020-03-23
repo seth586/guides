@@ -22,7 +22,7 @@ Check [lightning lab's loop github repo](https://github.com/lightninglabs/loop/r
 ```
 
 
-### LND Startup and initialization
+### loopd Startup and initialization
 Start `loopd`:
 ```
 # loopd --lnd.macaroondir=/var/db/lnd/data/chain/bitcoin/mainnet --lnd.tlspath=/var/db/lnd/tls.cert
