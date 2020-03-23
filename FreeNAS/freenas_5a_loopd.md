@@ -100,6 +100,11 @@ Now start the service:
 ```
 # service loopd start
 ```
+### loopd liquidity
+loopd uses a liquidity provider that you send off-chain funds to receive an on-chain transaction (loop out). Make sure you have an adequate liquidity path (or open a channel directly) with their node:
+```
+021c97a90a411ff2b10dc2a8e32de2f29d2fa49d41bfbb52bd416e460db0747d0d@18.224.56.146:9735
+```
 
 ### Upgrade loopd
 Read the release notes, if a lot changed, you may have to close channels or do something to prepare for the upgrade! I'll keep a log of upgrade notes beyond 0.5.2 if anything breaks by upgrading below:
