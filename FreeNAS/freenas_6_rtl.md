@@ -150,7 +150,7 @@ Over time it is likely you will get inbound connections. Make sure your node is 
 # service rtl stop
 # wget https://github.com/Ride-The-Lightning/RTL/archive/v0.7.0.tar.gz
 # tar -xvf v0.7.0.tar.gz
-# cp ~/rtl/RTL.conf ~/RTL-0.7.0/RTL.conf
+# cp ~/rtl/RTL-Config.json ~/RTL-0.7.0/RTL-Config.json
 # rm -r ~/rtl
 # mv ~/RTL-0.7.0 ~/rtl
 # rm v0.7.0.tar.gz
@@ -160,4 +160,4 @@ Over time it is likely you will get inbound connections. Make sure your node is 
 ```
 
 
-Next: [ [Joule](freenas_7_joule.md) ]
+Next: [ [Extras](extras.md) ]
