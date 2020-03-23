@@ -45,12 +45,6 @@ If it works, you should see the following message:
 2020-03-23 13:00:18.145 [INF] LOOP: Connected to lnd node seth586😈guides with pubkey 023ec3d1fa35f7fb8996374cf1848c1a40788df013551c5510c75617222bd2dd2d
 2020-03-23 13:00:18.145 [INF] LOOP: Wait for first block ntfn
 2020-03-23 13:00:18.163 [INF] LOOP: Starting event loop at height 622668
-^C2020-03-23 13:00:22.562 [INF] LOOPD: Received SIGINT (Ctrl+C).
-2020-03-23 13:00:22.563 [INF] LOOP: Swap client terminating
-2020-03-23 13:00:22.563 [INF] LOOP: Swap client terminated
-2020-03-23 13:00:22.563 [INF] LOOPD: Swap client stopped
-2020-03-23 13:00:22.563 [INF] LOOPD: Stopping gRPC server
-2020-03-23 13:00:22.563 [ERR] LOOPD: accept tcp 127.0.0.1:8081: use of closed network connection
 ```
 Press Ctrl+C to stop the program.
 
