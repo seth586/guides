@@ -72,7 +72,7 @@ Add the following lines:
 #!/bin/sh
 #
 # PROVIDE: rtl
-# REQUIRE: bitcoind lnd
+# REQUIRE: bitcoind lnd loopd
 # KEYWORD:
 
 . /etc/rc.subr
