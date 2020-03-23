@@ -25,19 +25,35 @@ Check [lightning lab's loop github repo](https://github.com/lightninglabs/loop/r
 ### LND Startup and initialization
 Start `loopd`:
 ```
-# loopd --lnd.macaroondir=/var/db/lnd/data/chain/bitcoin/mainnet --lnd.tlspath=/var/db/lnd/
+# loopd --lnd.macaroondir=/var/db/lnd/data/chain/bitcoin/mainnet --lnd.tlspath=/var/db/lnd/tls.cert
 ```
 If it works, you should see the following message:
 ```
-Attempting automatic RPC configuration to bitcoind
-Automatically obtained bitcoind's RPC credentials
-2019-02-07 22:00:34.994 [INF] LTND: Version: 0.5.2-beta commit=v0.5.2-beta, build=production, logging=default
-2019-02-07 22:00:34.994 [INF] LTND: Active chain: Bitcoin (network=mainnet)
-2019-02-07 22:00:35.013 [INF] CHDB: Checking for schema update: latest_version=7, db_version=7
-2019-02-07 22:00:35.054 [INF] RPCS: password gRPC proxy started at [::]:8080
-2019-02-07 22:00:35.054 [INF] RPCS: password RPC server listening on 127.0.0.1:10009
-2019-02-07 22:00:35.054 [INF] LTND: Waiting for wallet encryption password. Use `lncli create` to create a wallet, `lncli unlock` to unlock an existing wallet, or `lncli changepassword` to change the password of an existing wallet and unlock it.
+2020-03-23 13:00:16.634 [INF] LOOPD: Version: 0.5.1-beta commit=
+2020-03-23 13:00:16.688 [INF] LNDC: Creating lnd connection to localhost:10009
+2020-03-23 13:00:16.830 [INF] LNDC: Connected to lnd
+2020-03-23 13:00:17.528 [INF] LNDC: Using network mainnet
+2020-03-23 13:00:17.528 [INF] LOOPD: Swap server address: swap.lightning.today:11010
+2020-03-23 13:00:17.848 [INF] STORE: Initializing new database with version 3
+2020-03-23 13:00:18.105 [INF] STORE: Checking for schema update: latest_version=3, db_version=3
+2020-03-23 13:00:18.105 [INF] LOOPD: Starting gRPC listener
+2020-03-23 13:00:18.105 [INF] LOOPD: Starting REST proxy listener
+2020-03-23 13:00:18.105 [INF] LOOPD: Waiting for updates
+2020-03-23 13:00:18.105 [INF] LOOPD: RPC server listening on 127.0.0.1:11010
+2020-03-23 13:00:18.106 [INF] LOOPD: REST proxy listening on 127.0.0.1:8081
+2020-03-23 13:00:18.105 [INF] LOOPD: Starting swap client
+2020-03-23 13:00:18.145 [INF] LOOP: Connected to lnd node seth586😈guides with pubkey 023ec3d1fa35f7fb8996374cf1848c1a40788df013551c5510c75617222bd2dd2d
+2020-03-23 13:00:18.145 [INF] LOOP: Wait for first block ntfn
+2020-03-23 13:00:18.163 [INF] LOOP: Starting event loop at height 622668
+^C2020-03-23 13:00:22.562 [INF] LOOPD: Received SIGINT (Ctrl+C).
+2020-03-23 13:00:22.563 [INF] LOOP: Swap client terminating
+2020-03-23 13:00:22.563 [INF] LOOP: Swap client terminated
+2020-03-23 13:00:22.563 [INF] LOOPD: Swap client stopped
+2020-03-23 13:00:22.563 [INF] LOOPD: Stopping gRPC server
+2020-03-23 13:00:22.563 [ERR] LOOPD: accept tcp 127.0.0.1:8081: use of closed network connection
 ```
+Press Ctrl+C to stop the program.
+
 ### Configure start on boot & restart
 
 We will again use [daemon](https://www.freebsd.org/cgi/man.cgi?query=daemon) to run our `loopd` process at bootup, and restart the process should it fail.
@@ -59,7 +75,7 @@ Paste the following service script into nano:
 name="loopd"
 rcvar="loopd_enable"
 
-loopd_command="/usr/local/bin/loopd --lnd.macaroondir=/var/db/lnd/data/chain/bitcoin/mainnet --lnd.tlspath=/var/db/lnd/"
+loopd_command="/usr/local/bin/loopd --lnd.macaroondir=/var/db/lnd/data/chain/bitcoin/mainnet --lnd.tlspath=/var/db/lnd/tls.cert"
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
 command_args="-P ${pidfile} -r -f ${loopd_command}"
