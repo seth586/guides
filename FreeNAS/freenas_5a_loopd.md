@@ -107,9 +107,6 @@ loopd uses a liquidity provider that you send off-chain funds to receive an on-c
 ```
 
 ### Upgrade loopd
-Read the release notes, if a lot changed, you may have to close channels or do something to prepare for the upgrade! I'll keep a log of upgrade notes beyond 0.5.2 if anything breaks by upgrading below:
-(0.7.1 -> 0.8.0 - the channel databse needs to migrate. Make sure this process is sucessful, if not, revert to 0.7.1)
-(0.9.0 also needs a database migration, verify it runs sucessfully as described below)
 ```
 # service lnd stop
 # cd ~
