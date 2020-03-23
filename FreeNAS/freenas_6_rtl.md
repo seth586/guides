@@ -21,30 +21,42 @@ If not already there, SSH into your freenas box and switch to your bitcoin jail.
 ```
 Once the install is complete, create RTL.conf [configuration options](https://github.com/Ride-The-Lightning/RTL/blob/master/docs/Application_configurations):
 ```
-# nano ~/rtl/RTL.conf
+# nano ~/rtl/RTL-Config.json
 ```
-Add the following lines, make sure to set `rtlPass=`:
+Edit the following lines, make sure to set `rtlPass=`:
 ```
-[SSO]
-rtlSSO=0
-logoutRedirectLink=/login
+{
+  "multiPass": "enteryourownpasswordhere",
+  "port": "3000",
+  "defaultNodeIndex": 1,
+  "SSO": {
+    "rtlSSO": 0,
+    "rtlCookiePath": "",
+    "logoutRedirectLink": ""
+  },
+  "nodes": [
+    {
+      "index": 1,
+      "lnNode": "My BSD Node",
+      "lnImplementation": "LND",
+      "Authentication": {
+        "macaroonPath": "/var/db/lnd/data/chain/bitcoin/mainnet",
+        "configPath": "/usr/local/etc/lnd.conf"
+      },
+      "Settings": {
+        "userPersona": "OPERATOR",
+        "themeMode": "NIGHT",
+        "themeColor": "PURPLE",
+        "channelBackupPath": "/root/rtl",
+        "enableLogging": false,
+        "lnServerUrl": "https://localhost:8080/v1",
+        "swapServerUrl": "http://localhost:8081/v1",
+        "fiatConversion": false
+      }
+    }
+  ]
+}
 
-[Settings]
-lndServerUrl=https://127.0.0.1:8080/v1
-bitcoindConfigPath=/usr/local/etc/bitcoin.conf
-enableLogging=false
-port=3000
-
-userPersona=OPERATOR
-themeMode=NIGHT
-themeColor=PURPLE
-currencyUnit=USD
-
-[Authentication]
-macaroonPath=/var/db/lnd/data/chain/bitcoin/mainnet
-nodeAuthType=CUSTOM
-lndConfigPath=/usr/local/etc/lnd.conf
-rtlPass=useapasswordhere
 
 ```
 Save (CTRL+O,ENTER) then exit (CTRL+X)
