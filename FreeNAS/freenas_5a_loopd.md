@@ -114,20 +114,19 @@ Read the release notes, if a lot changed, you may have to close channels or do s
 ```
 # service lnd stop
 # cd ~
-# wget https://github.com/lightningnetwork/lnd/releases/download/v0.9.1-beta/lnd-freebsd-amd64-v0.9.1-beta.tar.gz
-# tar -xvf lnd-freebsd-amd64-v0.9.1-beta.tar.gz
-# cd lnd-freebsd-amd64-v0.9.1-beta
+# wget https://github.com/lightninglabs/loop/releases/download/v0.5.1-beta/loop-freebsd-amd64-v0.5.1-beta.tar.gz
+# tar -xvf loop-freebsd-amd64-v0.5.1-beta.tar.gz
+# cd loop-freebsd-amd64-v0.5.1-beta
 # install -m 0755 -o root -g wheel lnd lncli /usr/local/bin
 # cd ~
-# rm -r lnd-freebsd-amd64-v0.9.1-beta
-# rm lnd-freebsd-amd64-v0.9.1-beta.tar.gz
+# rm -r loop-freebsd-amd64-v0.5.1-beta
+# rm loop-freebsd-amd64-v0.5.1-beta.tar.gz
 # lnd --configfile=/usr/local/etc/lnd.conf
 ```
-
-Watch the console to make sure that the database migration is sucessful. If migration is unsucessful, see [this issue](https://github.com/lightningnetwork/lnd/issues/3606). Ctrl+C to shut down lnd, then start the service:
+Save (Ctrl+O & ENTER) and exit (Ctrl+X)
 
 ```
-# service lnd start
+# service loopd start
 ```
 
 Next: { [Install Ride The Lightning web UI](freenas_6_rtl.md) ]
