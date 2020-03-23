@@ -47,6 +47,8 @@ Edit the following lines, make sure to set `rtlPass=`:
         "userPersona": "OPERATOR",
         "themeMode": "NIGHT",
         "themeColor": "PURPLE",
+        "currencyUnit": "USD",
+        "bitcoindConfigPath": "/usr/local/etc/bitcoin.conf",
         "channelBackupPath": "/root/rtl",
         "enableLogging": false,
         "lnServerUrl": "https://localhost:8080/v1",
