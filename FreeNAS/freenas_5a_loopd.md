@@ -108,7 +108,7 @@ loopd uses a liquidity provider that you send off-chain funds to receive an on-c
 
 ### Upgrade loopd
 ```
-# service lnd stop
+# service loopd stop
 # cd ~
 # wget https://github.com/lightninglabs/loop/releases/download/v0.5.1-beta/loop-freebsd-amd64-v0.5.1-beta.tar.gz
 # tar -xvf loop-freebsd-amd64-v0.5.1-beta.tar.gz
