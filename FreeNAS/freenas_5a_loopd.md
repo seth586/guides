@@ -40,11 +40,11 @@ Automatically obtained bitcoind's RPC credentials
 ```
 ### Configure start on boot & restart
 
-We will again use [daemon](https://www.freebsd.org/cgi/man.cgi?query=daemon) to run our `lnd` process at bootup, and restart the process should it fail.
+We will again use [daemon](https://www.freebsd.org/cgi/man.cgi?query=daemon) to run our `loopd` process at bootup, and restart the process should it fail.
 
 Lets make the [rc.d script](https://www.freebsd.org/doc/en/articles/rc-scripting/):
 ```
-# nano /usr/local/etc/rc.d/lnd
+# nano /usr/local/etc/rc.d/loopd
 ```
 Paste the following service script into nano:
 ```
@@ -59,13 +59,13 @@ Paste the following service script into nano:
 name="loopd"
 rcvar="loopd_enable"
 
-lnd_command="/usr/local/bin/loopd --lnd.macaroondir=/var/db/lnd/data/chain/bitcoin/mainnet --lnd.tlspath=/var/db/lnd/"
+loopd_command="/usr/local/bin/loopd --lnd.macaroondir=/var/db/lnd/data/chain/bitcoin/mainnet --lnd.tlspath=/var/db/lnd/"
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
-command_args="-P ${pidfile} -r -f ${lnd_command}"
+command_args="-P ${pidfile} -r -f ${loopd_command}"
 
 load_rc_config $name
-: ${lnd_enable:=no}
+: ${loopd_enable:=no}
 
 run_rc_command "$1"
 ```
