@@ -2,7 +2,7 @@
 
 ## Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
-### Install Lightning Lab's Loop service
+### Install Lightning Lab's Loop client
 
 If not already there, SSH into your freenas box as root, then switch to your bitcoin jail:
 ```
