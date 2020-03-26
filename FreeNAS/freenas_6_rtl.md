@@ -19,7 +19,7 @@ If not already there, SSH into your freenas box and switch to your bitcoin jail.
 # cd rtl
 # npm install --only=production
 ```
-Once the install is complete, create RTL.conf [configuration options](https://github.com/Ride-The-Lightning/RTL/blob/master/docs/Application_configurations):
+Once the install is complete, create RTL-Config.json [configuration options](https://github.com/Ride-The-Lightning/RTL/blob/master/docs/Application_configurations):
 ```
 # nano ~/rtl/RTL-Config.json
 ```
