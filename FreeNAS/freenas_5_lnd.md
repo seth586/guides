@@ -13,13 +13,13 @@ Check [LND's github repo](https://github.com/lightningnetwork/lnd/releases) for 
 ```
 # pkg install wget ca_root_nss
 # cd ~
-# wget https://github.com/lightningnetwork/lnd/releases/download/v0.9.0-beta/lnd-freebsd-amd64-v0.9.0-beta.tar.gz
-# tar -xvf lnd-freebsd-amd64-v0.9.0-beta.tar.gz
-# cd lnd-freebsd-amd64-v0.9.0-beta
+# wget https://github.com/lightningnetwork/lnd/releases/download/v0.9.2-beta/lnd-freebsd-amd64-v0.9.2-beta.tar.gz
+# tar -xvf lnd-freebsd-amd64-v0.9.2-beta.tar.gz
+# cd lnd-freebsd-amd64-v0.9.2-beta
 # install -m 0755 -o root -g wheel lnd lncli /usr/local/bin
 # cd ~
-# rm -r lnd-freebsd-amd64-v0.9.0-beta
-# rm lnd-freebsd-amd64-v0.9.0-beta.tar.gz
+# rm -r lnd-freebsd-amd64-v0.9.2-beta
+# rm lnd-freebsd-amd64-v0.9.2-beta.tar.gz
 # nano /usr/local/etc/lnd.conf
 ```
 ### LND Configuration
@@ -161,13 +161,13 @@ Read the release notes, if a lot changed, you may have to close channels or do s
 ```
 # service lnd stop
 # cd ~
-# wget https://github.com/lightningnetwork/lnd/releases/download/v0.9.1-beta/lnd-freebsd-amd64-v0.9.1-beta.tar.gz
-# tar -xvf lnd-freebsd-amd64-v0.9.1-beta.tar.gz
-# cd lnd-freebsd-amd64-v0.9.1-beta
+# wget https://github.com/lightningnetwork/lnd/releases/download/v0.9.1-beta/lnd-freebsd-amd64-v0.9.2-beta.tar.gz
+# tar -xvf lnd-freebsd-amd64-v0.9.2-beta.tar.gz
+# cd lnd-freebsd-amd64-v0.9.2-beta
 # install -m 0755 -o root -g wheel lnd lncli /usr/local/bin
 # cd ~
-# rm -r lnd-freebsd-amd64-v0.9.1-beta
-# rm lnd-freebsd-amd64-v0.9.1-beta.tar.gz
+# rm -r lnd-freebsd-amd64-v0.9.2-beta
+# rm lnd-freebsd-amd64-v0.9.2-beta.tar.gz
 # lnd --configfile=/usr/local/etc/lnd.conf
 ```
 
