@@ -36,6 +36,7 @@ tlsextraip=0.0.0.0
 minchansize=900000
 maxlogfiles=1
 maxlogfilesize=10
+accept-keysend=1
 
 [Bitcoin]
 bitcoin.active=1
