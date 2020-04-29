@@ -156,23 +156,19 @@ Note: Any time `lnd` reboots, you will need to unlock the wallet again.
 Type in the password to unlock your wallet. This is a security function in case someone steals your server! In the next guide, you will install a web user interface called `RTL`, which makes unlocking your wallet much easier.
 
 ### Upgrade LND
-Read the release notes, if a lot changed, you may have to close channels or do something to prepare for the upgrade! I'll keep a log of upgrade notes beyond 0.5.2 if anything breaks by upgrading below:
-(0.7.1 -> 0.8.0 - the channel databse needs to migrate. Make sure this process is sucessful, if not, revert to 0.7.1)
-(0.9.0 also needs a database migration, verify it runs sucessfully as described below)
+Read the release notes, if a lot changed, you may have to close channels or do something to prepare for the upgrade!
 ```
 # service lnd stop
 # cd ~
-# wget https://github.com/lightningnetwork/lnd/releases/download/v0.9.2-beta/lnd-freebsd-amd64-v0.9.2-beta.tar.gz
-# tar -xvf lnd-freebsd-amd64-v0.9.2-beta.tar.gz
-# cd lnd-freebsd-amd64-v0.9.2-beta
-# install -m 0755 -o root -g wheel lnd lncli /usr/local/bin
-# cd ~
-# rm -r lnd-freebsd-amd64-v0.9.2-beta
-# rm lnd-freebsd-amd64-v0.9.2-beta.tar.gz
+# wget https://github.com/lightningnetwork/lnd/releases/download/v0.10.0-beta/lnd-freebsd-amd64-v0.10.0-beta.tar.gz
+# tar -xvf lnd-freebsd-amd64-v0.10.0-beta.tar.gz
+# install -m 0755 -o root -g wheel ~/lnd-freebsd-amd64-v0.10.0-beta/lnd ~/lnd-freebsd-amd64-v0.10.0-beta/lncli /usr/local/bin
+# rm -r lnd-freebsd-amd64-v0.10.0-beta
+# rm lnd-freebsd-amd64-v0.10.0-beta.tar.gz
 # lnd --configfile=/usr/local/etc/lnd.conf
 ```
 
-Watch the console to make sure that the database migration is sucessful. If migration is unsucessful, see [this issue](https://github.com/lightningnetwork/lnd/issues/3606). Ctrl+C to shut down lnd, then start the service:
+Watch the console to make sure that the database migration is sucessful. Ctrl+C to shut down lnd, then start the service:
 
 ```
 # service lnd start
