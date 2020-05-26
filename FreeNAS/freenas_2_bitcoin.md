@@ -52,6 +52,7 @@ Wait until sync is complete, once blocks=headers you're good to go. Let this run
 # nano /usr/local/etc/rc.d/bitcoind
 ```
 Remove the `#` comment before `pidfile="/var/run/${name}.pid"`
+Delete the entire line `pidfile="${bitcoind_data_dir}/bitcoind.pid"
 
 Save (Ctrl+O, ENTER) and exit (Ctrl+X)
 
