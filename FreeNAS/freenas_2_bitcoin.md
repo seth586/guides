@@ -31,7 +31,11 @@ EOT
 # nano /usr/local/etc/rc.d/bitcoind
 ```
 
-Change the pid file in the rc.d startup script. Remove the `#` comment before `pidfile="/var/run/${name}.pid"`
+Change the pid file in the rc.d startup script. 
+
+Remove the `#` comment before `pidfile="/var/run/${name}.pid"`
+
+Delete the entire line: `pidfile="${bitcoind_data_dir}/bitcoind.pid"`
 
 Save (Ctrl+O, ENTER) and exit (Ctrl+X)
 
