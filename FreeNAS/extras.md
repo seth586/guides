@@ -10,9 +10,6 @@ Don't have a static IP address? `lnd` will loose peer connections unless you con
 #### [Manually compile bitcoind](extras/compile_bitcoind.md)
 Some situations require you to compile directly from source code.  
 
-#### [Electrs: Electrum Server in Rust](extras/electrs.md)
-This is a fully indexed Electrum Server. It adds +40GB or so, but can look up any address or xpub, whereas Electrum Personal Server is lightweight, but only indexes addresses and xpubs you specify.
-
 #### [Tor relay node](extras/torrelay.md) 
 Tor doesn't give anonymity or sufficient bandwidth unless there are enough volunteer relays helping the network. Lets give back!
 
