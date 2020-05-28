@@ -56,7 +56,7 @@ Paste the following script:
 
 name="electrs"
 rcvar="electrs_enable"
-electrs_command="/usr/local/bin/electrs --db-dir=/var/db/electrs --electrum-rpc-addr=192.168.84.254:50001 --daemon-dir=/var/db/bitcoin"
+electrs_command="/usr/local/bin/electrs --db-dir=/var/db/electrs --electrum-rpc-addr=192.168.84.208:50001 --daemon-dir=/var/db/bitcoin"
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
 command_args="-P ${pidfile} -r -f ${electrs_command}"
