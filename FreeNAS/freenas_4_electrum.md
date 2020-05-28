@@ -2,153 +2,96 @@
 
 ## Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
-This guide is not required for running lightning, but is still a great way to run a trusted electrum server for your hardware wallets!
+### Electrs: Electrum In Rust
 
-Electrum Personal Server is a lightweight electrum server to serve an electrum client wallet. The client wallets are compatible with hardware wallets like the ledger nano s, trezor, and coldcard. 
+Read up more on electrs at its github page [here](https://github.com/romanz/electrs)
 
-Electrum Personal Server is lightweight and will only monitor addresses and xpubs you specify. If you want to run a heavier version (+40GB as of writing) that can look up any transaction or xpub, check out the [extras](extras.md) page on instructions to install [Electrs](https://github.com/romanz/electrs) instead.
 
-If you aren't already there, SSH into your freenas box, and switch to your bitcoin console as root:
+Download prerequisites:
 ```
-# iocage console bitcoin
-#
+# pkg install rust git
 ```
 
-### Prerequisites
-Make sure that bitcoind is fully synced before running electrum-personal-server, then install some utilities to fetch the source code:
-```
-# bitcoin-cli -datadir=/var/db/bitcoin getblockchaininfo
-# pkg install py36-pip python3 wget ca_root_nss nano
-```
-Electrum-personal-server is on github, check for the latest release at https://github.com/chris-belcher/electrum-personal-server/releases .
+Lets compile!
+
 ```
 # cd ~
-# wget https://github.com/chris-belcher/electrum-personal-server/archive/electrum-personal-server-v0.1.7.tar.gz
-# tar xvf electrum-personal-server-v0.1.7.tar.gz
-# rm electrum-personal-server-v0.1.7.tar.gz
+# git clone https://github.com/romanz/electrs
+# cd electrs
+# cargo build --release
 ```
-### Configuration file:
-```
-# cp electrum-personal-server-electrum-personal-server-v0.1.7/config.ini_sample /usr/local/etc/electrum.conf
-# nano /usr/local/etc/electrum.conf
-```
-Now we need to add our hardware wallet’s master public keys (xpub/ypub/zpub) under `[master-public-keys]`.
 
-xpub is for P2PKH (legacy) addresses, where generated addresses start with a 1
+Install and cleanup:
+```
+# install -m 0755 -o root -g wheel /root/electrs/target/release/electrs /usr/local/bin
+# rm -r ~/electrs
+# mkdir /var/db/electrs
+# electrs -vvv --db-dir=/var/db/electrs --electrum-rpc-addr=192.168.84.208:50001 --daemon-dir=/var/db/bitcoin
+```
+Make sure to replace `electrum-rpc-addr=` with your bitcoin jail's IP to serve local connections, or use 127.0.0.1:50001 if you plan on serving remote connections over tor authenticated hidden services.
 
-ypub is for P2SH-P2WPKH (segwit), where generated addresses start with a 3
+Electrs will now index the blockchain into its own database. This can take a few hours, depending on your CPU and disk IO. You may get spammed by a `WARN - failed to export stats: failed to read stats`, just ignore it. When its done indexing, it will start to serve connections.
 
-zpub is for P2WPKH, (bech32 native segwit), where generated addresses start with bc1
+Right click on your windows electrum client, select properties, and modify the shortcut to resemble below:
+```
+"C:\Program Files (x86)\Electrum\electrum-3.3.4.exe" -1 -s 192.168.84.208:50001:t
+```
+Start up electrum client. It should connect! Terminate electrs with ctrl+c. Verify it is no longer running with `ps aux`. If it is still running, kill it with `kill -9 <pid>`, whereas `<pid>` is the number under the PID column from command `ps aux`. 
 
-You can find it under Electrum’s menu Wallet>Information.
+Now lets write an rc.d script so it automatically starts as a service:
 
-You 24 word seed can generate all 3, so it might be best to put all 3 in your config.cfg file under `[master-public-keys]`
 ```
-[master-public-keys]
-wallet_legacy = xpub.....
-wallet_segwit = ypub....
-wallet_bech32 = zpub...
+# nano /usr/local/etc/rc.d/electrs
 ```
-Under `[bitcoin-rpc]`, change `datadir = /var/db/bitcoin`
 
-Under `[electrum-server]`, change `host = ` to `host = 127.0.0.1`
-
-Save (CTRL+O, ENTER) and exit (CTRL+X) nano.
-
-## Install: 
-(Note: ignore the suggestion to upgrade pip)
-```
-# cd electrum-personal-server-electrum-personal-server-v0.1.7
-# pip-3.6 install .
-# cd ..
-# rm -r electrum-personal-server-electrum-personal-server-v0.1.7
-```
-## First start
-```
-# /usr/local/bin/electrum-personal-server /usr/local/etc/electrum.conf
-```
-It will import addresses from each master public key. When complete, electrum-personal-server will exit. Next, if you have transaction history, look up the block height of your oldest transaction, or just start from 1. Then, lets scan the blockchain for those historical transactions:
-```
-# /usr/local/bin/electrum-personal-server --rescan /usr/local/etc/electrum.conf
-```
-Lets run it!
-```
-# /usr/local/bin/electrum-personal-server /usr/local/etc/electrum.conf
-```
-Now on your client machine, make sure tor browser is open and connected. In windows, right click on the electrum shortcut, select `properties`, then change the shortcut (keep the program path) `"C:\Program Files (x86)\Electrum\electrum-3.3.4.exe" -1 -s myprivateonionaddressocyn4rixm632jid.onion:50001:t`. Select `OK` to save and exit. Now start your electrum client, it should connect, even from a remote internet connection!
-
-## Startup Script
-Terminating your SSH will also terminate electrum-personal-server, so lets close it with Ctrl+C, then run the process supervised with `daemon` called at startup with a rc.d service script:
-```
-# nano /usr/local/etc/rc.d/electrumpersonalserver
-```
-Copy the following startup script to nano, then save and exit.
+Paste the following script:
 ```
 #!/bin/sh
 #
-# PROVIDE: electrumpersonalserver
+# PROVIDE: electrs
 # REQUIRE: bitcoind
 # KEYWORD:
 
 . /etc/rc.subr
 
-name="electrumpersonalserver"
-rcvar="electrumpersonalserver_enable"
-electrumpersonalserver_command="/usr/local/bin/electrum-personal-server /usr/local/etc/electrum.conf"
+name="electrs"
+rcvar="electrs_enable"
+electrs_command="/usr/local/bin/electrs --db-dir=/var/db/electrs --electrum-rpc-addr=192.168.84.254:50001 --daemon-dir=/var/db/bitcoin"
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
-command_args="-P ${pidfile} -u bitcoin -r -f ${electrumpersonalserver_command}"
+command_args="-P ${pidfile} -r -f ${electrs_command}"
 
 load_rc_config $name
-: ${electrumpersonalserver_enable:=no}
+: ${electrs_enable:=no}
 
 run_rc_command "$1"
+```
+Save, (ctrl+o,enter) and exit (ctrl+x)
 
+Make the script executable:
 ```
-Make the startup script executable:
+# chmod +x /usr/local/etc/rc.d/electrs
 ```
-# chmod +x /usr/local/etc/rc.d/electrumpersonalserver
+And enable on startup:
 ```
-Lets enable our startup script. Add the following line, then save and exit.
+# sysrc electrs_enable="YES"
 ```
-# nano /etc/rc.conf
-electrumpersonalserver_enable="YES"
+Give it a whir:
 ```
-You should now be able to start and stop electrumpersonalserver as a service.
-```
-# service electrumpersonalserver start
-```
-You can run `ps aux` in the command line to verify that it is running.
-```
-# service electrumpersonalserver stop
-```
-Again, verify that it sucessfully stops with `ps aux` . Go ahead and reboot your jail, and check that it is running:
-```
-# exit
-root@freenas[~]# iocage restart bitcoin
-root@freenas[~]# iocage console bitcoin
+# service electrs start
 ```
 
-### Usage Notes
-If you need to add another wallet, edit `nano /usr/local/etc/electrum.conf` to add the new xpubs, then run the following commands:
+### How to update electrs
 ```
-# service electrumpersonalserver stop
-# /usr/local/bin/electrum-personal-server /usr/local/etc/electrum.conf
-# /usr/local/bin/electrum-personal-server --rescan /usr/local/etc/electrum.conf
-# service electrumpersonalserver start
-
-```
-### How to update electrum personal server:
-```
-# service electrumpersonalserver stop
+# service electrs stop
+# pkg update
+# pkg upgrade rust
 # cd ~
-# wget https://github.com/chris-belcher/electrum-personal-server/archive/electrum-personal-server-v0.1.7.tar.gz
-# tar xvf electrum-personal-server-v0.1.7.tar.gz
-# rm electrum-personal-server-v0.1.7.tar.gz
-# cd electrum-personal-server-electrum-personal-server-v0.1.7
-# pip-3.6 install --upgrade .
-# cd ..
-# rm -r electrum-personal-server-electrum-personal-server-v0.1.7
-# service electrumpersonalserver start
+# git clone https://github.com/romanz/electrs
+# cd electrs
+# cargo build --release
+# install -m 0755 -o root -g wheel /root/electrs/target/release/electrs /usr/local/bin
+# rm -r ~/electrs
+# service electrs start
 ```
 Next: [ [lnd](freenas_5_lnd.md) ]
