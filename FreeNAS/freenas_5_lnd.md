@@ -160,11 +160,11 @@ Read the release notes, if a lot changed, you may have to close channels or do s
 ```
 # service lnd stop
 # cd ~
-# wget https://github.com/lightningnetwork/lnd/releases/download/v0.10.1-beta.rc2/lnd-freebsd-amd64-v0.10.1-beta.rc2.tar.gz
-# tar -xvf lnd-freebsd-amd64-v0.10.1-beta.rc2.tar.gz
-# install -m 0755 -o root -g wheel ~/lnd-freebsd-amd64-v0.10.1-beta.rc2/lnd ~/lnd-freebsd-amd64-v0.10.1-beta.rc2/lncli /usr/local/bin
-# rm -r lnd-freebsd-amd64-v0.10.1-beta.rc2
-# rm lnd-freebsd-amd64-v0.10.1-beta.rc2.tar.gz
+# wget https://github.com/lightningnetwork/lnd/releases/download/v0.10.1-beta.rc2/lnd-freebsd-amd64-v0.10.1-beta.rc3.tar.gz
+# tar -xvf lnd-freebsd-amd64-v0.10.1-beta.rc3.tar.gz
+# install -m 0755 -o root -g wheel ~/lnd-freebsd-amd64-v0.10.1-beta.rc3/lnd ~/lnd-freebsd-amd64-v0.10.1-beta.rc3/lncli /usr/local/bin
+# rm -r lnd-freebsd-amd64-v0.10.1-beta.rc3
+# rm lnd-freebsd-amd64-v0.10.1-beta.rc3.tar.gz
 # lnd --configfile=/usr/local/etc/lnd.conf
 ```
 
