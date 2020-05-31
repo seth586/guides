@@ -36,3 +36,17 @@ Make sure that the `rcpallowip=` coorelates to your local subnet address range.
 
 Save (CTRL+O,ENTER) and exit (CTRL+X)
 
+Reboot bitcoin core, make sure bitcoind is running sucessfuly after the reboot by running `ps aux`.
+```
+# service bitcoind restart
+# ps aux
+USER      PID %CPU %MEM     VSZ     RSS TT  STAT STARTED      TIME COMMAND
+bitcoin 76206  4.4  2.2 4551716 1449288  -  SJ   Wed23   426:49.66 /usr/local/bin/bitcoind -conf=/usr/local/etc/bitcoin.conf -datadir=/var/db/bitcoin
+...
+```
+We are done in your bitcoin jail, so exit the jail:
+```
+# exit
+logout
+root@freenas[~]#
+```
