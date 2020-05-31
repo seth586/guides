@@ -201,3 +201,73 @@ Configure mempool backend to connect to bitcoin core:
 
 ```
 Save (CTRL+O,ENTER) and exit (CTRL+X)
+
+Now lets give it a test run. If everything is properly configured, you should see something like the following:
+
+```
+root@mempool:~/mempool/backend # npm run start
+
+> mempool-backend@1.0.0 start /root/mempool/backend
+> npm run build && node dist/index.js
+
+
+> mempool-backend@1.0.0 build /root/mempool/backend
+> tsc
+
+Server started on 127.0.0.1:8999
+Updating mempool
+Calculated fee for transaction 1 / 621
+Calculated fee for transaction 2 / 621
+Calculated fee for transaction 3 / 621
+Calculated fee for transaction 4 / 621
+Calculated fee for transaction 5 / 621
+...
+```
+Press CTRL+C to abort the process.
+
+## Configure backend as a service and autostart
+
+```
+# nano /usr/local/etc/rc.d/mempoolbackend
+```
+
+Paste the following:
+
+```
+#!/bin/sh
+#
+# PROVIDE: mempoolbackend
+# REQUIRE: 
+# KEYWORD:
+
+. /etc/rc.subr
+name="mempoolbackend"
+rcvar="mempoolbackend_enable"
+mempoolbackend_chdir="/root/mempool/backend"
+mempoolbackend_command="/usr/local/bin/node /root/mempool/backend/dist"
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -r -f ${mempoolbackend_command}"
+
+load_rc_config $name
+: ${mempoolbackend_enable:=no}
+
+run_rc_command "$1"
+```
+Save (CTRL+O, ENTER) and exit (CTRL+X)
+
+```
+# chmod +x /usr/local/etc/rc.d/mempoolbackend
+# sysrc mempoolbackend_enable=YES
+# service mempoolbackend start
+```
+
+## Install frontend
+```
+# cd ~/mempool/frontend
+# npm i @angular-devkit/build-angular@0.803.24
+# npm run build
+# rsync -av --delete dist/mempool/ /usr/local/www/mempool.lan/
+```
+
+Navigate to mempool's jail IP and you should have a working website!
