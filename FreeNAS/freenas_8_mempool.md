@@ -68,11 +68,11 @@ Setup our MariaDB database:
 # service mysql-server onestart
 # mysql_secure_installation
 # mysql -u root -p
-> create database mempool;
-> grant all privileges on mempool.* to 'mempool' identified by 'password123';
+> create database mempooldb;
+> grant all privileges on mempooldb.* to 'mempooluser' identified by 'password123';
 > FLUSH PRIVILEGES;
 > exit
-# mysql -u mempool -p password123 < /root/mempool/mariadb-structure.sql
+# mysql -u mempooluser -p password123 < /root/mempool/mariadb-structure.sql
 ```
 
 Setup the web server nginx
@@ -177,9 +177,9 @@ Configure mempool backend to connect to bitcoin core:
   "ENV": "dev",
   "DB_HOST": "localhost",
   "DB_PORT": 3306,
-  "DB_USER": "mempool",
+  "DB_USER": "mempooluser",
   "DB_PASSWORD": "password123",
-  "DB_DATABASE": "mempool",
+  "DB_DATABASE": "mempooldb",
   "HTTP_PORT": 3000,
   "API_ENDPOINT": "/api/v1/",
   "CHAT_SSL_ENABLED": false,
