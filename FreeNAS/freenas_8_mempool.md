@@ -154,3 +154,50 @@ http {
 }
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
+
+## Download mempool code, build, and deploy
+
+```
+# npm install -g typescript
+# fetch https://github.com/mempool/mempool/archive/v1.0.0.tar.gz
+# tar -xvf v1.0.0.tar.gz
+# rm v1.0.0.tar.gz
+# mv ~/mempool-1.0.0 ~/mempool
+# cd ~/mempool/backend
+# touch ~/mempool/backend/cache.json
+# npm install
+# npm run build
+# cp mempool-config.sample.json mempool-config.json
+```
+
+Configure mempool backend to connect to bitcoin core:
+```
+# nano mempool-config.json
+{
+  "ENV": "dev",
+  "DB_HOST": "localhost",
+  "DB_PORT": 3306,
+  "DB_USER": "mempool",
+  "DB_PASSWORD": "password123",
+  "DB_DATABASE": "mempool",
+  "HTTP_PORT": 3000,
+  "API_ENDPOINT": "/api/v1/",
+  "CHAT_SSL_ENABLED": false,
+  "CHAT_SSL_PRIVKEY": "",
+  "CHAT_SSL_CERT": "",
+  "CHAT_SSL_CHAIN": "",
+  "MEMPOOL_REFRESH_RATE_MS": 500,
+  "INITIAL_BLOCK_AMOUNT": 8,
+  "DEFAULT_PROJECTED_BLOCKS_AMOUNT": 3,
+  "KEEP_BLOCK_AMOUNT": 24,
+  "BITCOIN_NODE_HOST": "192.168.84.208",
+  "BITCOIN_NODE_PORT": 8332,
+  "BITCOIN_NODE_USER": "mempool",
+  "BITCOIN_NODE_PASS": "2tm5NiN8wZVyjx_hgUL5O8it68WfoadHDEZ-v6w_RhQ=",
+  "BACKEND_API": "bitcoind",
+  "ELECTRS_API_URL": "https://www.blockstream.info/api",
+  "TX_PER_SECOND_SPAN_SECONDS": 150
+}
+
+```
+Save (CTRL+O,ENTER) and exit (CTRL+X)
