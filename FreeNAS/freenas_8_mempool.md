@@ -251,7 +251,7 @@ Paste the following:
 #!/bin/sh
 #
 # PROVIDE: mempoolbackend
-# REQUIRE: nginx mysql
+# REQUIRE: mysql
 # KEYWORD:
 
 . /etc/rc.subr
