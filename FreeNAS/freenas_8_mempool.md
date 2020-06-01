@@ -148,7 +148,7 @@ http {
 		listen [::]:80;
 		server_name mempool.lan;
 
-		root /usr/local/www/mempool.lan;
+		root /usr/local/www;
 
 		index index.html;
 		server_name mempool.lan; # managed by Certbot
