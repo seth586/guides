@@ -6,7 +6,7 @@
 
 When transacting on chain, you need a good understanding on what network fees are currently trending so you can set yuour transaction priority accordingly. The best visual tool I've ever found is this gem called [mempool](https://github.com/mempool/mempool). 
 
-## Create RPC credentials for Bitcoin Core
+### Create RPC credentials for Bitcoin Core
 
 SSH into your bitcoin jail.
 
@@ -48,7 +48,7 @@ We are done in your bitcoin jail, so exit the jail:
 logout
 root@freenas[~]#
 ```
-
+### Create new jail for mempool
 Create a new jail with the process described [in the beginning of this guide](freenas_1_jail_creation.md). Name it mempool or the like. Enter the jail.
 ```
 root@freenas[~]# iocage console mempool
@@ -60,7 +60,7 @@ Lets get installing!
 pkg update && pkg upgrade -y && pkg install nano ca_root_nss npm-node12 nginx mariadb104-server mariadb104-client git
 ```
 
-Setup our MariaDB database:
+### Setup MariaDB database:
 ```
 # sysrc mysql_enable="YES"
 # service mysql-server onestart
@@ -153,7 +153,7 @@ http {
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 
-## Download mempool code, build, and deploy
+### Download mempool code, build, and deploy
 
 ```
 # npm install -g typescript
@@ -223,7 +223,7 @@ Calculated fee for transaction 5 / 621
 ```
 Press CTRL+C to abort the process.
 
-## Configure backend as a service and autostart
+### Configure backend as a service and autostart
 
 ```
 # nano /usr/local/etc/rc.d/mempoolbackend
@@ -260,7 +260,7 @@ Save (CTRL+O, ENTER) and exit (CTRL+X)
 # service mempoolbackend start
 ```
 
-## Install frontend
+### Install frontend
 ```
 # cd ~/mempool/frontend
 # npm i @angular-devkit/build-angular@0.803.24
