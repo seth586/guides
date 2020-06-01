@@ -65,6 +65,21 @@ pkg update -y && pkg upgrade -y && pkg install -y nano ca_root_nss npm-node12 ng
 # sysrc mysql_enable="YES"
 # service mysql-server onestart
 # mysql_secure_installation
+```
+Follow the prompts to secure your database:
+```
+Enter current password for root (enter for none): [ENTER]
+Switch to unix_socket authentication [Y/n] n
+Change the root password? [Y/n] n
+Remove anonymous users? [Y/n] Y
+Disallow root login remotely? [Y/n] Y
+Remove test database and access to it? [Y/n] Y
+Reload privilege tables now? [Y/n] Y
+```
+
+
+
+```
 # mysql -u root -p
 > create database mempooldb;
 > grant all privileges on mempooldb.* to 'mempooluser' identified by 'password123';
