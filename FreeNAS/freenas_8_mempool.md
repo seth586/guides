@@ -103,8 +103,6 @@ open browser to jail IP, you should see "welcome to nginx!" message
 
 ```
 # service nginx stop
-# mkdir /usr/local/www/mempool.lan
-# chown -R www:www /usr/local/www/mempool.lan
 # rm /usr/local/etc/nginx/nginx.conf
 # nano /usr/local/etc/nginx/nginx.conf
 ```
@@ -173,6 +171,10 @@ http {
 }
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
+
+```
+# service nginx start
+```
 
 ### Compile and deploy
 
@@ -280,7 +282,7 @@ Save (CTRL+O, ENTER) and exit (CTRL+X)
 # cd ~/mempool/frontend
 # npm i @angular-devkit/build-angular@0.803.24
 # npm run build
-# rsync -av --delete dist/mempool/ /usr/local/www/mempool.lan/
+# rsync -av --delete dist/mempool/ /usr/local/www/
 ```
 
 Navigate to mempool's jail IP and you should have a working website!
