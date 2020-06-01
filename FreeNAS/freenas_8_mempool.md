@@ -57,7 +57,7 @@ root@mempool:~ #
 
 Lets get installing!
 ```
-# pkg update -y && pkg upgrade -y && pkg install -y nano ca_root_nss npm-node12 nginx mariadb104-server mariadb104-client git
+# pkg update && pkg upgrade -y && pkg install -y nano ca_root_nss npm-node12 nginx mariadb104-server mariadb104-client git
 # fetch https://github.com/mempool/mempool/archive/v1.0.0.tar.gz
 # tar -xvf v1.0.0.tar.gz
 # rm v1.0.0.tar.gz
