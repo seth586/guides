@@ -230,11 +230,10 @@ root@mempool:~/mempool/backend # npm run start
 
 Server started on 127.0.0.1:8999
 Updating mempool
-Calculated fee for transaction 1 / 621
-Calculated fee for transaction 2 / 621
-Calculated fee for transaction 3 / 621
-Calculated fee for transaction 4 / 621
-Calculated fee for transaction 5 / 621
+Updating mempool
+Calculated fee for transaction 1 / 3257
+Calculated fee for transaction 2 / 3257
+Calculated fee for transaction 3 / 3257
 ...
 ```
 Press CTRL+C to abort the process.
