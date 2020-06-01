@@ -57,7 +57,11 @@ root@mempool:~ #
 
 Lets get installing!
 ```
-pkg update -y && pkg upgrade -y && pkg install -y nano ca_root_nss npm-node12 nginx mariadb104-server mariadb104-client git
+# pkg update -y && pkg upgrade -y && pkg install -y nano ca_root_nss npm-node12 nginx mariadb104-server mariadb104-client git
+# fetch https://github.com/mempool/mempool/archive/v1.0.0.tar.gz
+# tar -xvf v1.0.0.tar.gz
+# rm v1.0.0.tar.gz
+# mv ~/mempool-1.0.0 ~/mempool
 ```
 
 ### Setup MariaDB database:
@@ -77,15 +81,16 @@ Remove test database and access to it? [Y/n] Y
 Reload privilege tables now? [Y/n] Y
 ```
 
-
-
 ```
 # mysql -u root -p
+Enter password: [ENTER]
 > create database mempooldb;
 > grant all privileges on mempooldb.* to 'mempooluser' identified by 'password123';
 > FLUSH PRIVILEGES;
 > exit
-# mysql -u mempooluser -p password123 < /root/mempool/mariadb-structure.sql
+# mysql -u mempooluser -p mempooldb < /root/mempool/mariadb-structure.sql
+Enter password: password123
+#
 ```
 
 Setup the web server nginx
@@ -100,6 +105,7 @@ open browser to jail IP, you should see "welcome to nginx!" message
 # service nginx stop
 # mkdir /usr/local/www/mempool.lan
 # chown -R www:www /usr/local/www/mempool.lan
+# rm /usr/local/etc/nginx/nginx.conf
 # nano /usr/local/etc/nginx/nginx.conf
 ```
 
@@ -168,14 +174,10 @@ http {
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 
-### Download mempool code, build, and deploy
+### Compile and deploy
 
 ```
 # npm install -g typescript
-# fetch https://github.com/mempool/mempool/archive/v1.0.0.tar.gz
-# tar -xvf v1.0.0.tar.gz
-# rm v1.0.0.tar.gz
-# mv ~/mempool-1.0.0 ~/mempool
 # cd ~/mempool/backend
 # touch ~/mempool/backend/cache.json
 # npm install
