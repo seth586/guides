@@ -177,8 +177,8 @@ Save (CTRL+O, ENTER) and exit (CTRL+X)
 ### Compile and deploy
 
 ```
-# npm install -g typescript
 # cd ~/mempool/backend
+# npm install -g typescript
 # touch ~/mempool/backend/cache.json
 # npm install
 # npm run build
