@@ -184,11 +184,11 @@ Save (CTRL+O, ENTER) and exit (CTRL+X)
 # touch ~/mempool/backend/cache.json
 # npm install
 # cp mempool-config.sample.json mempool-config.json
+# nano mempool-config.json
 ```
 
 Configure mempool backend to connect to bitcoin core:
 ```
-# nano mempool-config.json
 {
   "ENV": "dev",
   "DB_HOST": "localhost",
