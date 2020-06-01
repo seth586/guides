@@ -231,11 +231,10 @@ root@mempool:~/mempool/backend # npm run start
 > tsc
 
 Server started on 127.0.0.1:8999
-Updating mempool
-Updating mempool
-Calculated fee for transaction 1 / 3257
-Calculated fee for transaction 2 / 3257
-Calculated fee for transaction 3 / 3257
+Statistics cache created
+Fetching block tx 1 of 1492
+Fetching block tx 2 of 1492
+Fetching block tx 3 of 1492
 ...
 ```
 Press CTRL+C to abort the process.
