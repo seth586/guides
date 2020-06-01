@@ -57,7 +57,7 @@ root@mempool:~ #
 
 Lets get installing!
 ```
-pkg update && pkg upgrade -y && pkg install nano ca_root_nss npm-node12 nginx mariadb104-server mariadb104-client git
+pkg update -y && pkg upgrade -y && pkg install -y nano ca_root_nss npm-node12 nginx mariadb104-server mariadb104-client git
 ```
 
 ### Setup MariaDB database:
