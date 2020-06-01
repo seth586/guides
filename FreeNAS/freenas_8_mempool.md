@@ -49,7 +49,7 @@ logout
 root@freenas[~]#
 ```
 ### Create new jail for mempool
-Create a new jail with the process described [in the beginning of this guide](freenas_1_jail_creation.md). Name it mempool or the like. Enter the jail.
+We are going to jail this process seperately in case you want to expose this website to clearnet. Create a new jail with the process described [in the beginning of this guide](freenas_1_jail_creation.md). Name it mempool or the like. Enter the jail.
 ```
 root@freenas[~]# iocage console mempool
 root@mempool:~ #
