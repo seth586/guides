@@ -181,7 +181,6 @@ Save (CTRL+O, ENTER) and exit (CTRL+X)
 # npm install -g typescript
 # touch ~/mempool/backend/cache.json
 # npm install
-# npm run build
 # cp mempool-config.sample.json mempool-config.json
 ```
 
