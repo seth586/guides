@@ -4,7 +4,7 @@
 
 ## mempool
 
-When transacting on chain, you need a good understanding on what network fees are currently trending so you can set yuour transaction priority accordingly. The best visual tool I've ever found is this gem called [mempool](https://github.com/mempool/mempool). 
+When transacting on chain, you need a good understanding on what network fees are currently trending so you can set your transaction priority accordingly. The best visual tool I've ever found is this gem called [mempool](https://github.com/mempool/mempool). 
 
 ### Create RPC credentials for Bitcoin Core
 
