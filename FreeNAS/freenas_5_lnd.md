@@ -165,8 +165,7 @@ Read the release notes, if a lot changed, you may have to close channels or do s
 # install -m 0755 -o root -g wheel ~/lnd-freebsd-amd64-v0.10.1-beta/lnd ~/lnd-freebsd-amd64-v0.10.1-beta/lncli /usr/local/bin
 # rm -r lnd-freebsd-amd64-v0.10.1-beta
 # rm lnd-freebsd-amd64-v0.10.1-beta.tar.gz
-# service lnd start
-# tail -f /var/db/lnd/logs/bitcoin/mainnet/lnd.log
+# service lnd start && tail -f /var/db/lnd/logs/bitcoin/mainnet/lnd.log
 ```
 
 Unlock lnd with RTL. Watch the logs to make sure that the database migration is sucessful.
