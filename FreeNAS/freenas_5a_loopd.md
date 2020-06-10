@@ -22,26 +22,26 @@ Check [lightning lab's loop github repo](https://github.com/lightninglabs/loop/r
 ### loopd Startup and initialization
 Start `loopd`:
 ```
-# loopd --lnd.macaroondir=/var/db/lnd/data/chain/bitcoin/mainnet --lnd.tlspath=/var/db/lnd/tls.cert
+# loopd --lnd.macaroondir=/var/db/lnd/data/chain/bitcoin/mainnet --lnd.tlspath=/var/db/lnd/tls.cert --proxy=localhost:9050
 ```
 If it works, you should see the following message:
 ```
-2020-03-23 13:00:16.634 [INF] LOOPD: Version: 0.5.1-beta commit=
-2020-03-23 13:00:16.688 [INF] LNDC: Creating lnd connection to localhost:10009
-2020-03-23 13:00:16.830 [INF] LNDC: Connected to lnd
-2020-03-23 13:00:17.528 [INF] LNDC: Using network mainnet
-2020-03-23 13:00:17.528 [INF] LOOPD: Swap server address: swap.lightning.today:11010
-2020-03-23 13:00:17.848 [INF] STORE: Initializing new database with version 3
-2020-03-23 13:00:18.105 [INF] STORE: Checking for schema update: latest_version=3, db_version=3
-2020-03-23 13:00:18.105 [INF] LOOPD: Starting gRPC listener
-2020-03-23 13:00:18.105 [INF] LOOPD: Starting REST proxy listener
-2020-03-23 13:00:18.105 [INF] LOOPD: Waiting for updates
-2020-03-23 13:00:18.105 [INF] LOOPD: RPC server listening on 127.0.0.1:11010
-2020-03-23 13:00:18.106 [INF] LOOPD: REST proxy listening on 127.0.0.1:8081
-2020-03-23 13:00:18.105 [INF] LOOPD: Starting swap client
-2020-03-23 13:00:18.145 [INF] LOOP: Connected to lnd node seth586😈guides with pubkey 023ec3d1fa35f7fb8996374cf1848c1a40788df013551c5510c75617222bd2dd2d
-2020-03-23 13:00:18.145 [INF] LOOP: Wait for first block ntfn
-2020-03-23 13:00:18.163 [INF] LOOP: Starting event loop at height 622668
+2020-06-09 21:56:54.119 [INF] LOOPD: Version: 0.6.3-beta commit=
+2020-06-09 21:56:54.119 [INF] LNDC: Creating lnd connection to localhost:10009
+2020-06-09 21:56:54.119 [INF] LNDC: Connected to lnd
+2020-06-09 21:56:54.170 [INF] LNDC: Using network mainnet
+2020-06-09 21:56:54.170 [INF] LOOPD: Swap server address: swap.lightning.today:11010
+2020-06-09 21:56:54.207 [INF] STORE: Checking for schema update: latest_version=3, db_version=3
+2020-06-09 21:56:54.207 [INF] LOOP: Proxying connection to swap.lightning.today:11010 over Tor SOCKS proxy localhost:9050
+2020-06-09 21:56:54.208 [INF] LOOPD: Starting swap client
+2020-06-09 21:56:54.208 [INF] LOOP: Connected to lnd node 'seth586😈guides' with pubkey 023ec3d1fa35f7fb8996374cf1848c1a40788df013551c5510c75617222bd2dd2d (version v0.10.1-beta, build tags 'autopilotrpc,signrpc,walletrpc,chainrpc,invoicesrpc,watchtowerrpc')
+2020-06-09 21:56:54.208 [INF] LOOPD: Waiting for updates
+2020-06-09 21:56:54.208 [INF] LOOPD: Starting gRPC listener
+2020-06-09 21:56:54.208 [INF] LOOPD: Starting REST proxy listener
+2020-06-09 21:56:54.208 [INF] LOOPD: REST proxy listening on 127.0.0.1:8081
+2020-06-09 21:56:54.208 [INF] LOOPD: RPC server listening on 127.0.0.1:11010
+2020-06-09 21:56:54.209 [INF] LOOP: Wait for first block ntfn
+2020-06-09 21:56:54.209 [INF] LOOP: Starting event loop at height 633975
 ```
 Press Ctrl+C to stop the program.
 
@@ -66,7 +66,7 @@ Paste the following service script into nano:
 name="loopd"
 rcvar="loopd_enable"
 
-loopd_command="/usr/local/bin/loopd --lnd.macaroondir=/var/db/lnd/data/chain/bitcoin/mainnet --lnd.tlspath=/var/db/lnd/tls.cert"
+loopd_command="/usr/local/bin/loopd --lnd.macaroondir=/var/db/lnd/data/chain/bitcoin/mainnet --lnd.tlspath=/var/db/lnd/tls.cert --proxy=localhost:9050"
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
 command_args="-P ${pidfile} -r -f ${loopd_command}"
