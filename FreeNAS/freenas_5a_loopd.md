@@ -13,10 +13,9 @@ Check [lightning lab's loop github repo](https://github.com/lightninglabs/loop/r
 ```
 # cd ~
 # wget https://github.com/lightninglabs/loop/releases/download/v0.6.3-beta/loop-freebsd-amd64-20200604-01.tar.gz
-# tar -xvf loop-freebsd-amd64-v0.6.2-beta.tar.gz
-# install -m 0755 -o root -g wheel loop-freebsd-amd64-v0.6.2-beta/loop loop-freebsd-amd64-v0.6.2-beta/loopd /usr/local/bin
-# rm -r loop-freebsd-amd64-v0.6.2-beta
-# rm loop-freebsd-amd64-v0.6.2-beta.tar.gz
+# tar -xvf loop-freebsd-amd64-20200604-01.tar.gz
+# install -m 0755 -o root -g wheel loop-freebsd-amd64-20200604-01/loop loop-freebsd-amd64-20200604-01/loopd /usr/local/bin
+# rm -r loop-freebsd-amd64-20200604-01 loop-freebsd-amd64-20200604-01.tar.gz
 ```
 
 ### loopd Startup and initialization
@@ -110,8 +109,7 @@ loopd uses a liquidity provider that you send off-chain funds to receive an on-c
 # wget https://github.com/lightninglabs/loop/releases/download/v0.6.3-beta/loop-freebsd-amd64-20200604-01.tar.gz
 # tar -xvf loop-freebsd-amd64-20200604-01.tar.gz
 # install -m 0755 -o root -g wheel loop-freebsd-amd64-20200604-01/loop loop-freebsd-amd64-20200604-01/loopd /usr/local/bin
-# rm -r loop-freebsd-amd64-20200604-01
-# rm loop-freebsd-amd64-20200604-01.tar.gz
+# rm -r loop-freebsd-amd64-20200604-01 loop-freebsd-amd64-20200604-01.tar.gz
 # service loopd start && tail -f /root/.loop/logs/mainnet/loopd.log
 ```
 
