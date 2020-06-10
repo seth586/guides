@@ -93,7 +93,7 @@ Enter password: password123
 #
 ```
 
-Setup the web server nginx
+### Setup the web server nginx
 ```
 # sysrc nginx_enable="YES"
 # service nginx start
