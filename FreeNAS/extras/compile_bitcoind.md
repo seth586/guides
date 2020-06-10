@@ -15,7 +15,7 @@ You should see your bitcoin jail listed. Lets switch our console from our base s
 # iocage console bitcoin
 ```
 
-You're in! Lets create our bitcoin user/group. Press ENTER to leave blank:
+You're in! Lets create our bitcoin user/group. If you previosuly installed `bitcoin-daemon` with pkg, you can skip this step. Press ENTER to leave blank:
 
 ```
 root@bitcoin:~ # adduser
@@ -54,32 +54,30 @@ Lets start installing stuff! (answer proceed questions with `y`)
 # pkg install autoconf automake boost-libs git gmake libevent libtool libzmq4 pkgconf wget nano
 ```
 
-Go to https://github.com/bitcoin/bitcoin/releases, find the tar.gz release we want to install. The latest release is 0.19.0.1 at https://github.com/bitcoin/bitcoin/archive/v0.19.0.1.tar.gz . Copy the link. PuTTY will let you paste by right clicking.
+Go to https://github.com/bitcoin/bitcoin/releases, find the tar.gz release we want to install. The latest release is 0.20.0 at https://bitcoincore.org/bin/bitcoin-core-0.20.0/bitcoin-0.20.0.tar.gz . Copy the link. PuTTY will let you paste by right clicking.
 
 ```
 # cd ~
-# wget https://github.com/bitcoin/bitcoin/archive/v0.19.0.1.tar.gz
-# tar xvf v0.19.0.1.tar.gz
-# rm v0.19.0.1.tar.gz
+# wget https://bitcoincore.org/bin/bitcoin-core-0.20.0/bitcoin-0.20.0.tar.gz
+# tar xvf bitcoin-0.20.0.tar.gz
+# rm bitcoin-0.20.0.tar.gz
 ```
 
 To see what is in the current directory, type `ls`
 
 Configure for compiling:
 ```
-# cd bitcoin-0.19.0.1
+# cd bitcoin-0.20.0
 # sh 
-# ./contrib/install_db4.sh `pwd`
-# export BDB_PREFIX='/root/bitcoin-0.19.0.1/db4'
 # ./autogen.sh
-# ./configure MAKE=gmake BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --without-gui --without-miniupnpc
+# ./configure MAKE=gmake --with-gui=no --without-miniupnpc --disable-wallet --enable-util-cli
 # gmake check
 # gmake install
 # csh
 # cd ~
-# rm -r bitcoin-0.19.0.1
+# rm -r bitcoin-0.20.0
 ```
-This process may take a while. Once its done and installed, we need to add a rc.d script to automatically start the bitcoin daemon on start. Read more about FreeBSD rc.d scripting [here](https://www.freebsd.org/doc/en_US.ISO8859-1/articles/rc-scripting/index.html).
+This process may take a while. Once its done and installed, we need to add a rc.d script to automatically start the bitcoin daemon on start. Read more about FreeBSD rc.d scripting [here](https://www.freebsd.org/doc/en_US.ISO8859-1/articles/rc-scripting/index.html). Again, if you previously installed `bitcoin-daemon` package, you can skip this step since it already exists.
 
 ```
 # nano /usr/local/etc/rc.d/bitcoind
@@ -312,20 +310,18 @@ Note: Do not run `pkg update && upgrade` unless you are ready to recompile bitco
 # pkg update && pkg upgrade -y
 # cd ~
 # service bitcoind stop
-# wget https://github.com/bitcoin/bitcoin/archive/v0.18.1.tar.gz
-# tar xzvf v0.18.1.tar.gz
+# wget https://bitcoincore.org/bin/bitcoin-core-0.20.0/bitcoin-0.20.0.tar.gz
+# tar xzvf bitcoin-0.20.0.tar.gz
 # rm *.gz
-# cd bitcoin-0.18.1
+# cd bitcoin-0.20.0
 # sh 
-# ./contrib/install_db4.sh `pwd`
-# export BDB_PREFIX='/root/bitcoin-0.18.1/db4'
 # ./autogen.sh
-# ./configure MAKE=gmake BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --without-gui --without-miniupnpc
+# ./configure MAKE=gmake --with-gui=no --without-miniupnpc --disable-wallet --enable-util-cli
 # gmake check
 # gmake install
 # tcsh
 # cd ~
-# rm -r bitcoin-0.18.1
+# rm -r bitcoin-0.20.0
 # service bitcoind start
 ```
 [ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
