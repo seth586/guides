@@ -338,6 +338,8 @@ Note: Do not run `pkg update && upgrade` unless you are ready to recompile bitco
 # tcsh
 # cd ~
 # rm -r bitcoin-0.20.0
-# service bitcoind start
+# service bitcoind start && tail -f /var/db/bitcoin/debug.log
 ```
+Verify `bitcoind` starts up sucessfully by monitoring the logs. Exit `tail` with CTRL+C.
+
 [ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
