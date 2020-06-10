@@ -18,8 +18,7 @@ Check [LND's github repo](https://github.com/lightningnetwork/lnd/releases) for 
 # cd lnd-freebsd-amd64-v0.10.0-beta
 # install -m 0755 -o root -g wheel lnd lncli /usr/local/bin
 # cd ~
-# rm -r lnd-freebsd-amd64-v0.10.0-beta
-# rm lnd-freebsd-amd64-v0.10.0-beta.tar.gz
+# rm -r lnd-freebsd-amd64-v0.10.0-beta lnd-freebsd-amd64-v0.10.0-beta.tar.gz
 # nano /usr/local/etc/lnd.conf
 ```
 ### LND Configuration
@@ -163,8 +162,7 @@ Read the release notes, if a lot changed, you may have to close channels or do s
 # wget https://github.com/lightningnetwork/lnd/releases/download/v0.10.1-beta/lnd-freebsd-amd64-v0.10.1-beta.tar.gz
 # tar -xvf lnd-freebsd-amd64-v0.10.1-beta.tar.gz
 # install -m 0755 -o root -g wheel ~/lnd-freebsd-amd64-v0.10.1-beta/lnd ~/lnd-freebsd-amd64-v0.10.1-beta/lncli /usr/local/bin
-# rm -r lnd-freebsd-amd64-v0.10.1-beta
-# rm lnd-freebsd-amd64-v0.10.1-beta.tar.gz
+# rm -r lnd-freebsd-amd64-v0.10.1-beta lnd-freebsd-amd64-v0.10.1-beta.tar.gz
 # service lnd start && tail -f /var/db/lnd/logs/bitcoin/mainnet/lnd.log
 ```
 
