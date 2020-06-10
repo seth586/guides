@@ -14,6 +14,7 @@ You should see your bitcoin jail listed. Lets switch our console from our base s
 ```
 # iocage console bitcoin
 ```
+### Add User
 
 You're in! Lets create our bitcoin user/group. If you previosuly installed `bitcoin-daemon` with pkg, you can skip this step. Press ENTER to leave blank:
 
@@ -47,6 +48,7 @@ Goodbye!
 #
 ```
 
+### Install prerequisites
 Lets start installing stuff! (answer proceed questions with `y`)
 
 ```
@@ -54,6 +56,18 @@ Lets start installing stuff! (answer proceed questions with `y`)
 # pkg install autoconf automake boost-libs git gmake libevent libtool libzmq4 pkgconf wget nano
 ```
 
+### Verify Gnu Compiler Collection Version
+Bitcoin 0.20.0 requires gcc11, remove previous versions and install gcc11:
+```
+# pkg info -x gcc
+```
+Remove older versions:
+```
+
+```
+
+
+### Download bitcoin core
 Go to https://github.com/bitcoin/bitcoin/releases, find the tar.gz release we want to install. The latest release is 0.20.0 at https://bitcoincore.org/bin/bitcoin-core-0.20.0/bitcoin-0.20.0.tar.gz . Copy the link. PuTTY will let you paste by right clicking.
 
 ```
@@ -65,7 +79,7 @@ Go to https://github.com/bitcoin/bitcoin/releases, find the tar.gz release we wa
 
 To see what is in the current directory, type `ls`
 
-Configure for compiling:
+### Configure and compile:
 ```
 # cd bitcoin-0.20.0
 # sh 
