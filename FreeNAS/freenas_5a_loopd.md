@@ -112,7 +112,9 @@ loopd uses a liquidity provider that you send off-chain funds to receive an on-c
 # install -m 0755 -o root -g wheel loop-freebsd-amd64-20200604-01/loop loop-freebsd-amd64-20200604-01/loopd /usr/local/bin
 # rm -r loop-freebsd-amd64-20200604-01
 # rm loop-freebsd-amd64-20200604-01.tar.gz
-# service loopd start
+# service loopd start && tail -f /root/.loop/logs/mainnet/loopd.log
 ```
+
+Verify the logs show the service started sucessfully, kill `tail` with CTRL+C
 
 Next: { [Install Ride The Lightning web UI](freenas_6_rtl.md) ]
