@@ -57,13 +57,15 @@ Lets start installing stuff! (answer proceed questions with `y`)
 ```
 
 ### Verify Gnu Compiler Collection Version
-Bitcoin 0.20.0 requires gcc11, remove previous versions and install gcc11:
+The only `gcc` compiler that I got working for Bitcoin 0.20.0 is gcc48, remove other versions and install gcc48:
 ```
 # pkg info -x gcc
 ```
 Remove older versions:
 ```
-
+# pkg remove gcc9
+# pkg remove gcc8
+# pkg install gcc48
 ```
 
 
