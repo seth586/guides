@@ -1,4 +1,4 @@
-[ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
+[ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/bitcoin/extras.md) ]
 
 ### Blockstream Green Wallet
 
@@ -20,4 +20,4 @@ Finally, tap 'Reset SPV' and it will sync from your node. It may take a while to
 
 
 
-[ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
+[ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/bitcoin/extras.md) ]
