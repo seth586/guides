@@ -31,7 +31,7 @@ Connect securely, privately, and anonymously to your home node wherever you are 
 
 ### Browser Enabled Wallets over Tor Hidden Service
 
-#### [Joule](freenas_7_joule.md)
+#### [Joule](wallets/joule.md)
 
 ### External guides
 
