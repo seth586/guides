@@ -1,6 +1,6 @@
 [ [Intro](README.md) ] - [ [Jail Creation](freenas_1_jail_creation.md) ] - [ [Bitcoin](freenas_2_bitcoin.md) ] - [ [Tor](freenas_3_tor.md) ] - [ [Electrum](freenas_4_electrum.md) ] - [ [lnd](freenas_5_lnd.md) ] - [ [loopd ](freenas_5a_loopd.md)] - [ [RTL](freenas_6_rtl.md) ] - [ [mempool](freenas_8_mempool.md) ] - **[Extras]** 
 
-## Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
+## Guide to ₿itcoin & Lightning️ on FreeNAS / TrueNAS
 
 ### My Extras
 
