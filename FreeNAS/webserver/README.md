@@ -1,4 +1,4 @@
-##Guide to a self hosted wordpress website on FreeNAS/TrueNAS
+## Guide to a self hosted wordpress website on FreeNAS/TrueNAS
 
 **[Intro]** - [ [Jail Creation](1_jail_creation.md) ] - [ [nginx](2_nginx.md) ] - [ [mysql](3_mysql.md) ] - [ [PHP](4_php.md) ] - [ [wordpress](5_wordpress.md) ]
 
