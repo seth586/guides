@@ -1,4 +1,4 @@
-[ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
+[ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/bitcoin/extras.md) ]
 ## Run LND on clearnet
 To run LND on clearnet, we need to advertise our IP address. But what if our ISP changes our IP address? This guide explains how to set up your router and LND to use `nat=true` so LND will detect our public IP and broadcast changes to the network.
 
@@ -94,4 +94,4 @@ bitcoin@bitcoin:~% exit
 
 [ [Back to LND setup guide](https://github.com/seth586/guides/blob/master/FreeNAS/freenas_5_lnd.md) ]
 
-[ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
+[ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/bitcoin/extras.md) ]
