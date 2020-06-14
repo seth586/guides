@@ -1,4 +1,4 @@
-[ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
+[ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/bitcoin/extras.md) ]
 
 ## Tor Relay
 
@@ -74,4 +74,4 @@ It will take about ~3 hours for your relay to propogate through the network. Sea
 It takes about a good two weeks before you will see steady traffic, see this tor project blog post [here](https://blog.torproject.org/lifecycle-new-relay).
 
 
-[ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
+[ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/bitcoin/extras.md) ]
