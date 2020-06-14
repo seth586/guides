@@ -5,4 +5,4 @@ Contributions are welcome!
 
 Guides:
 
-[Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈](FreeNAS/README.md)
+[Guide to ₿itcoin & Lightning️ on FreeNAS/TrueNAS](FreeNAS/bitcoin/README.md)
