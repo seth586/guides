@@ -1,4 +1,4 @@
-[ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
+[ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/bitcoin/extras.md) ]
 
 ### Bitcoin Core Install: Compile from source
 Note: Here are the instructions to compile bitcoind from source. There is a much easier way to install bitcoin (`pkg`), however we should know how to compile manually, in case the official bitcoin repository or package repositories go rogue.
@@ -342,4 +342,4 @@ Note: Do not run `pkg update && upgrade` unless you are ready to recompile bitco
 ```
 Verify `bitcoind` starts up sucessfully by monitoring the logs. Exit `tail` with CTRL+C.
 
-[ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/extras.md) ]
+[ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/bitcoin/extras.md) ]
