@@ -1,4 +1,4 @@
-**[Intro]** - [ [Jail Creation](1_jail_creation.md) ]
+**[Intro]** - [ [Jail Creation](1_jail_creation.md) ] - [ [nginx](2_nginx.md) ] - [ [mysql](3_mysql.md) ] - [ [PHP](4_php.md) ] - [ [wordpress](5_wordpress.md) ]
 
 As commercial, government & social pressures for censorship continue to increase, self sovreignity on the internet is becoming more and more improtant. This guide will help you configure a wordpress webserver on FreeNAS & TrueNAS flavors of FreeBSD. The internet is still relatively permissioned around centralized domain name service providers, so make sure to select a provider that will not censor you based on your character, beliefs, or content. For this purpose I highly recommend epik.com
 
