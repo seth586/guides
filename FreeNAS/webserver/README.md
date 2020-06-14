@@ -4,7 +4,7 @@ As commercial, government & social pressures for censorship continue to increase
 
 Wordpress is the single most popular web structure online. Countless free and premium plugins and themes are available to start your own user interactive blog, business, resume, you name it. Do be aware that using a domain directed to your home IP address will still dox your location. If you can not dox your location, consider using a VPS tor redirect or a tor only address for your website or host on a VPS.
 
-When you are finished with this guide, you will have a working wordpress website hosted in an iocage jail, with a seperate reverse proxy jail that redirects domain requests from your home IP to the approprite jail, allowing you to host multiple jails.
+When you are finished with this guide, you will have a working FEMP (FreeBSD, nginx, mysql database, php) stack running a wordpress website hosted in an iocage jail, with a seperate reverse proxy jail that redirects domain requests from your home IP to the approprite jail, allowing you to host multiple websites and domains.
 
 Your server is only secure as its firewall. For home use I highly recommend using a capable router running OpenWRT.
 
