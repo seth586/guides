@@ -92,6 +92,6 @@ bitcoin@bitcoin:~% exit
 # service lnd start
 ```
 
-[ [Back to LND setup guide](https://github.com/seth586/guides/blob/master/FreeNAS/freenas_5_lnd.md) ]
+[ [Back to LND setup guide](https://github.com/seth586/guides/blob/master/FreeNAS/bitcoin/freenas_5_lnd.md) ]
 
 [ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/bitcoin/extras.md) ]
