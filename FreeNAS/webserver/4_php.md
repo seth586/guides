@@ -5,6 +5,8 @@ PHP is a programming language designed for interactive web content. Numerous PHP
 
 Numerous modern wordpress themes rely on an import and export wordpress plugin that has not been updated in several years ([here](https://github.com/humanmade/WordPress-Importer) and [here](https://github.com/awesomemotive/one-click-demo-import)), so we are going to compile a few required modules directly into the PHP executable, providing support for this important wordpress function. 
 
+As of writing the latest branch of PHP is version 7.4. Check out this website to see what the latest version is: https://www.php.net/supported-versions.php 
+
 ## Configure ports Makefile
 ```
 # portsnap fetch update
