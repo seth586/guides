@@ -15,7 +15,7 @@ Login to the TrueNAS web-ui. Create a new jail with a static IP address outside 
 
 ![FreeNAS_Jail](images/reverseproxyportforwardrouter.png)
 
-# Port Forwarding
+## Port Forwarding
 
 Forward ports 443 and 80 to your reverseproxyjail in your router.
 
