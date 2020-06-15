@@ -36,3 +36,25 @@ Search (CTRL+W) for `cgi.fix_pathinfo=` and change the value to `cgi.fix_pathinf
 Search (CTRL+W) for `upload_max_filesize` and change the value to something bigger. I use `upload_max_filesize = 8M`. This will be the maximum file upload size to your web server. Plugins that have to be naually uploaded can be several magabytes in size, so this value may have to change. When you create blog posts, or allow users to upload data, this is useful to restricting bandwidth and storage use.
 
 Save (CTRL+O, ENTER) and exit (CTRL+X)
+
+```
+# nano /usr/local/etc/php-fpm.d/www.conf
+```
+We are going to configure PHP to communicate on a unix socket, which is more performant than communicating locally over the TCP protocol. comment out `listen = 127.0.0.1:9000` with a `;` and uncomment the following lines as so:
+```
+;listen = 127.0.0.1:9000
+listen = /var/run/php-fpm.sock;
+listen.owner = www
+listen.group = www
+listen.mode = 0660
+```
+Save (CTRL+O, ENTER) and exit (CTRL+X)
+
+## Start the PHP service and install modules
+Your wordpress theme and/or plugins may require more modules, if so run a `pkg search module_name` and `pkg install` the `php74*` variant.
+```
+$ sysrc php_fpm_enable=YES
+$ service php-fpm start
+$ pkg install -y php74-mysqli php74-mbstring php74-zlib php74-curl php74-gd php74-json php74-exif php74-fileinfo php74-openssl php74-pecl-imagick php74-zip php74-filter php74-iconv php74-xmlwriter
+```
+
