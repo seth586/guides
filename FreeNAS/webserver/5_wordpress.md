@@ -16,8 +16,8 @@ Add the first three commented out `//` lines right above the `// ** MySQL settin
 // if (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
 //        $_SERVER['HTTPS'] = 'on';
 //}
-define( 'WP_HOME', 'http://192.168.84.58' );
-define( 'WP_SITEURL', 'http://192.168.84.58' );
+define( 'WP_HOME', 'http://192.168.84.80' );
+define( 'WP_SITEURL', 'http://192.168.84.80' );
 define( 'DB_NAME', 'database_name_here' );
 define( 'DB_USER', 'username_here' );
 define( 'DB_PASSWORD', 'password_here' );
