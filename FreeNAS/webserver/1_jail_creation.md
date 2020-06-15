@@ -6,6 +6,8 @@ Jails are a way to seperate computing environments. Since we are exposing a web 
 
 Login to the TrueNAS web-ui. Create a new jail with a static IP address outside the range of your router's DHCP IP range. The default DHCP range on openwrt is 192.168.0.100 thru 192.168.0.254, I will use 192.168.84.80 as an example and call the jail 'blog'.
 
+![JailBlog](images/jailblog.png)
+
 ## SSH into your new jail
 SSH into TrueNAS and switch to your blog jail.
 ```
