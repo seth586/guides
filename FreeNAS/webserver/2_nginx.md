@@ -97,5 +97,5 @@ nginx: configuration file /usr/local/etc/nginx/nginx.conf test is successful
 ```
 Open a web browser and navigate to the jail IP address, you should see a basic "welcome to nginx!" website.
 
-Next: [mysql](3_mysql.md) >>
+Next: [ [mysql](3_mysql.md) ] >>
 
