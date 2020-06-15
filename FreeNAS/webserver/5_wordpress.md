@@ -23,6 +23,8 @@ define( 'DB_USER', 'username_here' );
 define( 'DB_PASSWORD', 'password_here' );
 define( 'DB_HOST', 'localhost:/tmp/mysql.sock' );
 ```
+In a browser, navigate to https://api.wordpress.org/secret-key/1.1/salt/ . This will generate salt to create unique cookies for your site visitors. Cookies are used to remember login activity, shopping carts, etc. Copy and replace the lines generated.
+
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 ```
 # cd ~
