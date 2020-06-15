@@ -87,8 +87,15 @@ http {
 ```
 Save (CTRL+O,ENTER) and exit (CTRL+X)
 
+## Test nginx config file and start service
 
+```
+# nginx -t
+nginx: the configuration file /usr/local/etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /usr/local/etc/nginx/nginx.conf test is successful
+# service nginx start
+```
+Open a web browser and navigate to the jail IP address, you should see a basic "welcome to nginx!" website.
 
-
-
+Next: [mysql](3_mysql.md) >>
 
