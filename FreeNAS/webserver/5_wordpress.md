@@ -21,6 +21,6 @@ define( 'WP_SITEURL', 'http://192.168.84.58' );
 define( 'DB_NAME', 'database_name_here' );
 define( 'DB_USER', 'username_here' );
 define( 'DB_PASSWORD', 'password_here' );
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', 'localhost:/tmp/mysql.sock' );
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
