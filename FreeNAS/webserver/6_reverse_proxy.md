@@ -13,9 +13,13 @@ https://www.samueldowling.com/2020/01/18/nginx-reverse-proxy-freenas-ssl-tls/
 
 Login to the TrueNAS web-ui. Create a new jail with a static IP address outside the range of yoru routers DHCP IP range. The default DHCP range on openwrt is 192.168.0.100 thru 192.168.0.254, I will use 192.168.84.44 as an example.
 
-![FreeNAS_Jail](images/reverseproxyjail.png)
+![FreeNAS_Jail](images/reverseproxyportforwardrouter.png)
+
+# Port Forwarding
 
 Forward ports 443 and 80 to your reverseproxyjail in your router.
+
+![FreeNAS_Jail](images/reverseproxyjail.png)
 
 SSH into TrueNAS and switch to your reverseproxy jail.
 ```
