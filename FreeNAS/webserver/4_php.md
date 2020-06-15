@@ -33,7 +33,7 @@ This will take some time.
 
 Search (CTRL+W) for `cgi.fix_pathinfo=` and change the value to `cgi.fix_pathinfo=0`
 
-Search (CTRL+W) for `upload_max_filesize` and change the value to something bigger. I use `upload_max_filesize = 8M`. This will be the maximum file upload size to your web server. Plugins that have to be naually uploaded can be several magabytes in size, so this value may have to change. When you create blog posts, or allow users to upload data, this is useful to restricting bandwidth and storage use.
+Search (CTRL+W) for `upload_max_filesize` and change the value to something bigger. I use `upload_max_filesize = 8M`. This will be the maximum file upload size to your web server. Wordpress themes and plugins that have to be maually uploaded can be several magabytes in size, so this value may have to change. When you create blog posts, or allow users to upload data, this is useful to restricting bandwidth and storage use.
 
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 
