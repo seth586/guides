@@ -3,7 +3,7 @@
 
 PHP is a programming language designed for interactive web content. Numerous PHP modules exist to increase the capability of this language. These PHP modules can be individually installed depending on what your plugins and themes require and isntalled with seperate packages. To see what modules are activated, type `php -m`.
 
-Numerous modern wordpress themes rely on an import and export wordpress plugin that has not been updated in several years ([here](https://github.com/humanmade/WordPress-Importer) and [here](https://github.com/awesomemotive/one-click-demo-import)), so we are going to compile a few required modules directly into the PHP executable, providing support for this important wordpress function. 
+Numerous modern wordpress themes rely on an import and export wordpress plugin that has not been updated in several years ([here](https://github.com/humanmade/WordPress-Importer) and [here](https://github.com/awesomemotive/one-click-demo-import)). The import / export plugin expects its required PHP modules to be compiled in, not added as seperately loaded so we are going to compile a few required modules directly into the PHP executable. 
 
 As of writing the latest branch of PHP is version 7.4. Check out this website to see what the latest version is: https://www.php.net/supported-versions.php 
 
