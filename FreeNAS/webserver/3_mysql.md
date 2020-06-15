@@ -35,9 +35,10 @@ Reload privilege tables now? [Y/n] Y
 ```
 
 ## Create your website database 
-Replace `database_name_here`, `username_here`, and `password_here`. Do not lose this information!
+Press ENTER since there is no root password required. (It is secured by SSH login) Replace `database_name_here`, `username_here`, and `password_here`. Do not lose this information!
 ```
 # mysql -u root -p
+Enter password:
 > CREATE DATABASE database_name_here;
 > GRANT ALL PRIVILEGES ON database_name_here.* TO 'username_here'@'localhost' IDENTIFIED BY 'password_here';
 > FLUSH PRIVILEGES;
