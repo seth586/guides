@@ -64,4 +64,9 @@ Add the following line:
 <?php phpinfo(); ?>
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
-
+ Navigate to your jail IP on a web browser: ( example `http://192.168.84.80/test.php` ), you should see a website summary of your PHP installation. PHP and nginx are communicating, congradulations! Now lets delete this test file, since leaking your php info can expose you to hackers that may become aware of specific php version vulnerabilities in the future:
+ ```
+ #
+ ```
+ 
+ Next: [ [wordpress](5_wordpress.md) ] >>
