@@ -50,13 +50,18 @@ listen.mode = 0660
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 
-## Start the PHP service, install modules, test nginx connection
+## Start the PHP service, install and view modules
 Your wordpress theme and/or plugins may require more modules, if so run a `pkg search module_name` and `pkg install` the `php74*` variant.
 ```
 $ sysrc php_fpm_enable=YES
 $ service php-fpm start
 $ pkg install -y php74-mysqli php74-mbstring php74-zlib php74-curl php74-gd php74-json php74-exif php74-fileinfo php74-openssl php74-pecl-imagick php74-zip php74-filter php74-iconv php74-xmlwriter
 # php -m
+```
+Notice that the `dom` and `xmlreader` modules are active, even tho the `php74-dom` and `php74-xmlreader` packages are not installed. Somce PHP modules require these packages, which will cause a PHP conflict since `dom` and `xmlreader` would be installed twice. To remove these conflicts, navigate to `/usr/local/etc/php/` and delete the `dom.ini` and/or `xmlreader.ini` files since they are already directly compiled into PHP.
+
+## Test PHP installation
+```
 # nano /usr/local/www/nginx/test.php
 ```
 Add the following line:
@@ -66,7 +71,7 @@ Add the following line:
 Save (CTRL+O, ENTER) and exit (CTRL+X)
  Navigate to your jail IP on a web browser: ( example `http://192.168.84.80/test.php` ), you should see a website summary of your PHP installation. PHP and nginx are communicating, congradulations! Now lets delete this test file, since leaking your php info can expose you to hackers that may become aware of specific php version vulnerabilities in the future:
  ```
- #
+ # rm /usr/local/www/nginx/test.php
  ```
  
  Next: [ [wordpress](5_wordpress.md) ] >>
