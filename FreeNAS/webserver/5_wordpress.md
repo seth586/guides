@@ -24,3 +24,14 @@ define( 'DB_PASSWORD', 'password_here' );
 define( 'DB_HOST', 'localhost:/tmp/mysql.sock' );
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
+```
+# cd ~
+# cp -r wordpress/* /usr/local/www/nginx
+# rm -r wordpress
+# chown -R www:www /usr/local/www/nginx/
+# service nginx restart
+```
+
+Navigate to your jail IP, you should be greeted with the wordpress installation! If you ever lose the login URL, its `http://192.168.84.58/wp-login.php`
+
+Next: [ [reverse proxy](6_reverse_proxy.md) ] >>
