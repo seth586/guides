@@ -89,3 +89,160 @@ Add the following line:
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 
 ## Configure NGINX
+These are the following configuration files we are going to create: This simplifies the addition and removal of domains that you choose to host:
+```
+/usr/local/etc/nginx/nginx.conf
+/usr/local/etc/nginx/vdomains/subdomain1.example.com.conf
+/usr/local/etc/nginx/vdomains/subdomain2.example.com.conf
+/usr/local/etc/nginx/snippets/example.com.cert.conf
+/usr/local/etc/nginx/snippets/ssl-params.conf
+/usr/local/etc/nginx/snippets/proxy-params.conf
+/usr/local/etc/nginx/snippets/internal-access-rules.conf
+```
+### Certificate Configuration:
+This file details the location of your certificates. Create one per domain.
+```
+# mkdir /usr/local/etc/nginx/snippets
+# nano /usr/local/etc/nginx/snippets/example.com.cert.conf
+```
+Add the following lines. Remember to replace `example.com` with your domain:
+```
+# certs sent to the client in SERVER HELLO are concatenated in ssl_certificate
+ssl_certificate /usr/local/etc/letsencrypt/live/example.com/fullchain.pem;
+ssl_certificate_key /usr/local/etc/letsencrypt/live/example.com/privkey.pem;
+
+# verify chain of trust of OCSP response using Root CA and Intermediate certs
+ssl_trusted_certificate /usr/local/etc/letsencrypt/live/example.com/chain.pem;
+```
+Save (CTRL+O, ENTER) and exit (CTRL+X)
+### SSL Configuration:
+
+```
+# curl https://ssl-config.mozilla.org/ffdhe2048.txt > /usr/local/etc/ssl/dhparam.pem
+# nano /usr/local/etc/nginx/snippets/ssl-params.conf
+```
+You can use https://ssl-config.mozilla.org/ to create the parameters, or just copy paste below:
+```
+ssl_session_timeout 1d;
+ssl_session_cache shared:MozSSL:10m;  # about 40000 sessions
+ssl_session_tickets off;
+
+# curl https://ssl-config.mozilla.org/ffdhe2048.txt > /usr/local/etc/ssl/dhparam.pem
+ssl_dhparam /usr/local/etc/ssl/dhparam.pem;
+
+# intermediate configuration
+ssl_protocols TLSv1.2 TLSv1.3;
+ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384;
+ssl_prefer_server_ciphers off;
+
+# HSTS (ngx_http_headers_module is required) (63072000 seconds)
+add_header Strict-Transport-Security "max-age=63072000" always;
+
+# OCSP stapling
+ssl_stapling on;
+ssl_stapling_verify on;
+
+# replace with the IP address of your resolver
+resolver 192.168.0.1;
+```
+Save (CTRL+O, ENTER) and exit (CTRL+X)
+
+### Proxy Header Configuration
+```
+# nano /usr/local/etc/nginx/snippets/proxy-params.conf
+```
+Paste the following:
+```
+proxy_set_header Host $host;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header X-Forwarded-Proto $scheme;
+proxy_set_header X-Forwarded-Host $server_name;
+proxy_set_header X-Forwarded-Ssl on;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection "upgrade";
+proxy_http_version 1.1;
+```
+Save (CTRL+O, ENTER) and exit (CTRL+X)
+
+### Access policy configuration
+This is the policy that we’ll apply to services that you don’t want to be externally available, but still want to access it using HTTPS on your LAN.
+```
+# nano /usr/local/etc/nginx/snippets/internal-access-rules.conf
+```
+Paste the following. Make sure you select your appropriate LAN subnet range:
+```
+allow 192.168.0.0/24;
+deny all;
+```
+Save (CTRL+O, ENTER) and exit (CTRL+X)
+
+### Virtural domain configuration
+```
+# mkdir /usr/local/etc/nginx/vdomains
+```
+This directory will contain the configurations for each domain and their subdomains you wiosh to proxy to. Create one configuration file for each domain (such as https://example.com) and/or subdomain (such as https://subdomain.example.com
+
+Lets create a proxy for "https://blog.example.com"
+```
+# nano /usr/local/etc/nginx/vdomains/blog.example.com.conf
+```
+Paste the following:
+```
+server {
+        listen 443 ssl http2;
+
+        server_name blog.example.com;
+        access_log /var/log/nginx/blog.access.log;
+        error_log /var/log/nginx/blog.error.log;
+
+        include snippets/example.com.cert.conf;
+        include snippets/ssl-params.conf;
+
+        location / {
+                include snippets/proxy-params.conf;
+                # Uncomment below if you only want internal access on your LAN
+                # include snippets/internal-access-rules.conf;
+                proxy_pass http://192.168.0.10;
+        }
+}
+```
+Save (CTRL+O, ENTER) and exit (CTRL+X).
+
+Notice how this configuration recalls our other created config files. Nice and clean!
+
+## NGINX.conf
+Now lets tie it all together!
+
+```
+# mv /usr/local/etc/nginx/nginx.conf /usr/local/etc/nginx/nginx.conf.bak
+# nano /usr/local/etc/nginx/nginx.conf
+```
+Paste the following.
+```
+worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include mime.types;
+    default_type application/octet-stream;
+    sendfile on;
+    keepalive_timeout 65;
+
+    # Redirect all HTTP traffic to HTTPS
+    server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        return 301 https://$host$request_uri;
+    }
+
+    # Import server blocks for all subdomains
+    include "vdomains/*.conf";
+}
+```
+Save (CTRL+O, ENTER), exit (CTRL+X) and restart nginx `service nginx restart`.
+
