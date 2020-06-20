@@ -253,3 +253,6 @@ http {
 }
 ```
 Save (CTRL+O, ENTER), exit (CTRL+X) and restart nginx `service nginx restart`.
+
+### Credits
+The samueldowling.com blog!
