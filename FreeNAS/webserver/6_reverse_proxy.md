@@ -75,3 +75,17 @@ Make sure to replace "example.com" with your own domain name!
 ```
 certbot certonly --dns-route53 -d 'example.com,*.example.com'
 ```
+
+## Configure certificate auto-renewal
+
+```
+# setenv EDITOR nano
+# crontab -e
+```
+Add the following line:
+```
+0 0,12 * * * /usr/local/bin/python -c 'import random; import time; time.sleep(random.random() * 3600)' && /usr/local/bin/certbot renew --quiet --deploy-hook "/usr/sbin/service nginx reload"
+```
+Save (CTRL+O, ENTER) and exit (CTRL+X)
+
+## Configure NGINX
