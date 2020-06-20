@@ -24,7 +24,7 @@ Create hostnames:
 
 Click on "Network" -> "Hostnames"
 
-Create an entry for every domain and subdomain you are going to set up so you can access the domain from inside your LAN
+Create an entry for every domain and subdomain you are going to set up so you can access the domain from inside your LAN. Have it resolve to your reverse proxy:
 
 ![RouterHostname](images/routerhostname.png)
 
