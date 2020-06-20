@@ -38,9 +38,7 @@ At this point you should have sucessfully registered a domain on Amazon's Route 
 Under "Service" select "Route 53"
 Under "Actions" select the following permissions required by [documentation for certbot's route 53 plugin](https://certbot-dns-route53.readthedocs.io/en/stable/):  
 
-route53:ListHostedZones
-route53:GetChange
-route53:ChangeResourceRecordSets
+route53:ListHostedZones route53:GetChange route53:ChangeResourceRecordSets
 
 Under Resources select "All resources". Click "Review Policy". Give the policy a name, I used `certbot`. Write a description to remind you what its for: "Policy so my reverse proxy can request and renew SSL and TLS certificates". Click "Create policy". You should now have the "certbot" policy in your "Policies" list.
 
@@ -52,11 +50,19 @@ Now lets create a user with this policy. Click "Users" on the left menu. Click "
 # aws configure
 ```
 Answer the 4 questions:
-AWS Access Key ID
-AWS Secret Access Key
-Default region name (4 options, on your aws console select the "global" menu to the right of your username. As of writing region options are US East (N. Virginia) `us-east-1`
+
+AWS Access Key ID : `insert access key id for your reverseproxy aws user`
+
+AWS Secret Access Key : `insert the secret access key for your reverseproxy aws user`
+
+Default region name :
+
+On your aws console select the "global" menu to the right of your username. As of writing region options are US East (N. Virginia) `us-east-1`
+
 US East (Ohio)`us-east-2`
+
 US West (N. California)`us-west-1`
+
 US West (Oregon)`us-west-2`
 
 
