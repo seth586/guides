@@ -57,7 +57,9 @@ AWS Secret Access Key : `insert the secret access key for your reverseproxy aws 
 
 Default region name :
 
-On your aws console select the "global" menu to the right of your username. As of writing region options are US East (N. Virginia) `us-east-1`
+On your aws console select the "global" menu to the right of your username. As of writing region options are 
+
+US East (N. Virginia) `us-east-1`
 
 US East (Ohio)`us-east-2`
 
@@ -65,4 +67,11 @@ US West (N. California)`us-west-1`
 
 US West (Oregon)`us-west-2`
 
+Default output format: `text`
 
+## Request domain and wildcard certificate
+
+Make sure to replace "example.com" with your own domain name!
+```
+certbot certonly --dns-route53 -d 'example.com,*.example.com'
+```
