@@ -15,10 +15,18 @@ Login to the TrueNAS web-ui. Create a new jail with a static IP address outside 
 
 ![ReverseProxyJail](images/reverseproxyjail.png)
 
-## Port Forwarding
+## Router Configuration
 Forward ports 443 and 80 to your reverseproxyjail in your router.
 
 ![ReverseProxyPortForwardRouter](images/reverseproxyportforwardrouter.png)
+
+Create hostnames:
+
+Click on "Network" -> "Hostnames"
+
+Create an entry for every domain and subdomain you are going to set up so you can access the domain from inside your LAN
+
+![RouterHostname](images/routerhostname.png)
 
 ## Install nginx
 SSH into TrueNAS and switch to your reverseproxy jail.
@@ -245,4 +253,3 @@ http {
 }
 ```
 Save (CTRL+O, ENTER), exit (CTRL+X) and restart nginx `service nginx restart`.
-
