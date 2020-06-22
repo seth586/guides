@@ -21,9 +21,13 @@ Create an entry for every domain and subdomain you are going to set up so you ca
 
 ![RouterHostname](images/routerhostname.png)
 
+ 
+
 ## Create AWS Route 53 user with minimum permissions
 
 In this example we will use certbot with the Amazon Route 53 plugin for our domain name server. For other dns providers using this method run `pkg search certbot` to see a list of provider plugins. This list is not exhaustive, there are many different ways to obtain and renew SSL/TLS certificates, refer to documentation provided by your domain provider.
+
+For security reasons we will create an aws user with minimum permissions to maintain your domain with an SSL/TLS certificate and update recordsets with a dynamic dns.
 
 At this point you should have sucessfully registered a domain on Amazon's Route 53. Login to your Amazon Web Services as a root user. Bring up the "services" menu on the top left, and under "Security, Identity, & Complaince" click on IAM to bring up the "Identity and Access Management" dashboard. Click "Policies" on the left menu, then click "Create Policy". We can build the permissions thru the visual editor:
 
@@ -32,11 +36,36 @@ Under "Actions" select the following permissions required by [documentation for 
 
 route53:ListHostedZones route53:GetChange route53:ChangeResourceRecordSets
 
-Under Resources select "All resources". Click "Review Policy". Give the policy a name, I used `certbot`. Write a description to remind you what its for: "Policy so my reverse proxy can request and renew SSL and TLS certificates". Click "Create policy". You should now have the "certbot" policy in your "Policies" list.
+Under Resources select "All resources". Click "Review Policy". Give the policy a name, I used `certbot`. Write a description to remind you what its for: "Policy so my ddns can update my webservers IP address and my reverse proxy can request and renew SSL and TLS certificates". Click "Create policy". You should now have the "certbot" policy in your "Policies" list.
 
 Now lets create a user with this policy. Click "Users" on the left menu. Click "Add user". Lets call it `reverseproxy`. Under "access type*" select "Programmatic access". Click "Next: Permissions". Click "Attach existing policies directly" and search for your "certbot" policy. Click the checkmark to the left of "certbot". Click "Next: Tags". Click "Next: Review". Click "Create User". Write down the Access key ID and Secret access key, and store this information in a safe place. Click "close". You should now see the user "reverse proxy" listed in your user list.
 
+## Set up Dynamic DNS on OpenWRT with domain provider AWS Route 53
+
+The Domain Name System converts "domains" to IP addresses. If your internet service provides a static IP address, you can skip this step. Just make sure you create a type A record set with your domain pointing to your static IP address. However, most ISPs dynamically assign IP addresses. So lets install some software that will automatically update your domain as your home IP address changes.
+
+Log into your OpenWRT router and select "System ▼", "Software". Click "Update lists". Under "Filter" type in `ddns-scripts`. Click "Install" next to `ddns-scripts` and `ddns-scripts_route53-v1` if you use AWS Route 53 for your domain management. Click "System ▼", "Reboot".
+
+The UI is useful here but not completely. As of writing some authentication fields are missing, so SSH or WinSCP into your router and edit `/etc/config/ddns`: Replace `lookup_host`, `username`, `password`, and `domain` with your specific values:
+```
+config service 'aws'
+	option service_name 'route53-v1'
+	option lookup_host 'example.com'
+	option username 'BJIA3YD4TV7OO9Y2BYWC'
+	option password 'u6Gb+34YoE7+W0ilBsq0vQteryNAHo4wPGfes7s2'
+	option domain 'Z047921702ZO3KWIG23WP'
+	option dns_server 'google-public-dns-a.google.com'
+	option interface 'wan'
+	option use_syslog '0'
+	option enabled '1'
+```
+Save and exit.
+
+Log into your OpenWRT web-ui and Click "Services ▼", "Dynamic DNS". You should see your ddns process. Click "Edit". As you can see, not all the fields are here that are represented by our `/etc/config/ddns` config file. But if you click on the "Log file viewer" tab, you should see a sucessful record update. 
+
 ## Configure certbot to request and renew SSL/TLS certificates
+At this point your domain should sucessfully resolve to your home IP address. You can check with [this tool](https://www.whatismyip.com/dns-lookup/).
+
 ```
 # pkg install python py37-certbot openssl py37-certbot-dns-route53 awscli
 # aws configure
