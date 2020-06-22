@@ -11,11 +11,11 @@ root@TrueNAS[~]# iocage list
 +=====+===============+=======+==============+===============+
 | 1   | bitcoin       | up    | 11.3-RELEASE | DHCP          |
 +-----+---------------+-------+--------------+---------------+
-| 2   | webserver     | up    | 11.3-RELEASE | 192.168.84.80 |
+| 2   | blog          | up    | 11.3-RELEASE | 192.168.84.80 |
 +-----+---------------+-------+--------------+---------------+
-root@TrueNAS[~]# iocage console webserver
+root@TrueNAS[~]# iocage console blog
 ...
-root@webserver:~ #
+root@blog:~ #
 ```
 ### Install & configure nginx
 ```
