@@ -21,15 +21,6 @@ Create an entry for every domain and subdomain you are going to set up so you ca
 
 ![RouterHostname](images/routerhostname.png)
 
-## Install nginx
-SSH into TrueNAS and switch to your reverseproxy jail.
-```
-# iocage console reverseproxy
-# pkg update
-# pkg install nginx nano python
-# sysrc nginx_enable=yes
-```
-
 ## Create AWS Route 53 user with minimum permissions
 
 In this example we will use certbot with the Amazon Route 53 plugin for our domain name server. For other dns providers using this method run `pkg search certbot` to see a list of provider plugins. This list is not exhaustive, there are many different ways to obtain and renew SSL/TLS certificates, refer to documentation provided by your domain provider.
@@ -47,7 +38,7 @@ Now lets create a user with this policy. Click "Users" on the left menu. Click "
 
 ## Configure certbot to request and renew SSL/TLS certificates
 ```
-# pkg install py37-certbot openssl py37-certbot-dns-route53 awscli
+# pkg install python py37-certbot openssl py37-certbot-dns-route53 awscli
 # aws configure
 ```
 Answer the 4 questions:
@@ -88,6 +79,15 @@ Add the following line:
 0 0,12 * * * /usr/local/bin/python -c 'import random; import time; time.sleep(random.random() * 3600)' && /usr/local/bin/certbot renew --quiet --deploy-hook "/usr/sbin/service nginx reload"
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
+
+## Install nginx
+
+```
+# iocage console reverseproxy
+# pkg update
+# pkg install nginx nano 
+# sysrc nginx_enable=yes
+```
 
 ## Configure NGINX
 These are the following configuration files we are going to create: This simplifies the addition and removal of domains that you choose to host:
