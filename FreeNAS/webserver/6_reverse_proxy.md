@@ -32,7 +32,7 @@ Now lets create a user with this policy. Click "Users" on the left menu. Click "
 
 ## 4. Set up Dynamic DNS on OpenWRT with domain provider AWS Route 53
 
-The Domain Name System converts "domains" to IP addresses. If your internet service provides a static IP address, you can skip this step. Just make sure you create a type A record set with your domain pointing to your static IP address. However, most ISPs dynamically assign IP addresses. So lets install some software that will automatically update your domain as your home IP address changes.
+The Domain Name System converts "domains" to IP addresses. If your internet service provides a static IP address, you can skip this step. Just make sure you create a "type A record set" with your domain pointing to your static home IP address. However, most ISPs dynamically assign IP addresses. So lets install some software that will automatically update your "type A record set" for your domain as your home IP address changes.
 
 Log into your OpenWRT router and select "System ▼", "Software". Click "Update lists". Under "Filter" type in `ddns-scripts`. Click "Install" next to `ddns-scripts` and `ddns-scripts_route53-v1` if you use AWS Route 53 for your domain management. Click "System ▼", "Reboot".
 
@@ -87,7 +87,7 @@ Make sure to replace "example.com" with your own domain name!
 certbot certonly --dns-route53 -d 'example.com,*.example.com'
 ```
 
-## Configure certificate auto-renewal
+## 7. Configure certificate auto-renewal
 
 ```
 # setenv EDITOR nano
@@ -99,7 +99,7 @@ Add the following line:
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 
-## Install nginx
+## 8. Install nginx
 
 ```
 # iocage console reverseproxy
@@ -108,7 +108,7 @@ Save (CTRL+O, ENTER) and exit (CTRL+X)
 # sysrc nginx_enable=yes
 ```
 
-## Configure NGINX
+## 9. Configure NGINX
 These are the following configuration files we are going to create: This simplifies the addition and removal of domains that you choose to host:
 ```
 /usr/local/etc/nginx/nginx.conf
@@ -119,7 +119,7 @@ These are the following configuration files we are going to create: This simplif
 /usr/local/etc/nginx/snippets/proxy-params.conf
 /usr/local/etc/nginx/snippets/internal-access-rules.conf
 ```
-### Certificate Configuration:
+### 9.1 Certificate Configuration:
 This file details the location of your certificates. Create one per domain.
 ```
 # mkdir /usr/local/etc/nginx/snippets
@@ -135,7 +135,7 @@ ssl_certificate_key /usr/local/etc/letsencrypt/live/example.com/privkey.pem;
 ssl_trusted_certificate /usr/local/etc/letsencrypt/live/example.com/chain.pem;
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
-### SSL Configuration:
+### 9.2 SSL Configuration:
 
 ```
 # curl https://ssl-config.mozilla.org/ffdhe2048.txt > /usr/local/etc/ssl/dhparam.pem
@@ -167,7 +167,7 @@ resolver 192.168.0.1;
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 
-### Proxy Header Configuration
+### 9.3 Proxy Header Configuration
 ```
 # nano /usr/local/etc/nginx/snippets/proxy-params.conf
 ```
@@ -185,7 +185,7 @@ proxy_http_version 1.1;
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 
-### Access policy configuration
+### 9.4 Access policy configuration
 This is the policy that we’ll apply to services that you don’t want to be externally available, but still want to access it using HTTPS on your LAN.
 ```
 # nano /usr/local/etc/nginx/snippets/internal-access-rules.conf
@@ -197,7 +197,7 @@ deny all;
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 
-### Virtural domain configuration
+### 9.5 Virtural domain configuration
 ```
 # mkdir /usr/local/etc/nginx/vdomains
 ```
@@ -231,7 +231,7 @@ Save (CTRL+O, ENTER) and exit (CTRL+X).
 
 Notice how this configuration recalls our other created config files. Nice and clean!
 
-## NGINX.conf
+## 9.6 NGINX.conf
 Now lets tie it all together!
 
 ```
@@ -272,7 +272,7 @@ Out in the wild internet, to reach your web server, the path is: User sends DNS 
 
 Inside our safe, firewall protected LAN, the path needs to be: Router detects a DNS request that matches a Hostnames entry - > router resolves IP address to -> reverse proxy forwards to -> your wordpress jail.
 
-## Create hostnames:
+## 10. Create hostnames:
 
 So lets make our domain accessible on our LAN.
 
