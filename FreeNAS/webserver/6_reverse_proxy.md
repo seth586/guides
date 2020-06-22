@@ -112,6 +112,7 @@ Save (CTRL+O, ENTER) and exit (CTRL+X)
 These are the following configuration files we are going to create: This simplifies the addition and removal of domains that you choose to host:
 ```
 /usr/local/etc/nginx/nginx.conf
+/usr/local/etc/nginx/vdomains/example.com.conf
 /usr/local/etc/nginx/vdomains/subdomain1.example.com.conf
 /usr/local/etc/nginx/vdomains/subdomain2.example.com.conf
 /usr/local/etc/nginx/snippets/example.com.cert.conf
