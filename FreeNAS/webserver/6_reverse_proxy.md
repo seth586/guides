@@ -274,7 +274,7 @@ Inside our safe, firewall protected LAN, the path needs to be: Router detects a 
 
 ## 10. Create hostnames:
 
-So lets make our domain accessible on our LAN.
+So lets make our domain accessible inside our LAN.
 
 Click on "Network" -> "Hostnames"
 
