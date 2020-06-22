@@ -15,7 +15,7 @@ root@TrueNAS[~]# iocage list
 +-----+---------------+-------+--------------+---------------+
 root@TrueNAS[~]# iocage console webserver
 ...
-root@camp:~ #
+root@webserver:~ #
 ```
 ### Install & configure nginx
 ```
