@@ -223,7 +223,7 @@ server {
                 include snippets/proxy-params.conf;
                 # Uncomment below if you only want internal access on your LAN
                 # include snippets/internal-access-rules.conf;
-                proxy_pass http://192.168.0.10;
+                proxy_pass http://192.168.84.58;
         }
 }
 ```
