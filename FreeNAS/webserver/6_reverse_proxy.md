@@ -193,7 +193,7 @@ This is the policy that we’ll apply to services that you don’t want to be ex
 ```
 Paste the following. Make sure you select your appropriate LAN subnet range:
 ```
-allow 192.168.0.0/24;
+allow 192.168.84.0/24;
 deny all;
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
@@ -277,7 +277,7 @@ Inside our safe, firewall protected LAN, the path needs to be: Router detects a 
 
 So lets make our domain accessible inside our LAN.
 
-Click on "Network" -> "Hostnames"
+Enter your OpenWRT web-ui. Click on "Network" -> "Hostnames"
 
 Create an entry for every domain and subdomain you want to access from inside your LAN. Have it resolve to your reverse proxy:
 
