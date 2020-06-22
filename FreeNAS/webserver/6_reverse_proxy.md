@@ -9,7 +9,7 @@ Login to the TrueNAS web-ui. Create a new jail with a static IP address outside 
 ![ReverseProxyJail](images/reverseproxyjail.png)
 
 ## 2. Router Configuration
-Forward ports 443 and 80 to your reverseproxyjail in your router.
+Forward ports 443 and 80 to your reverseproxy jail in your router.
 
 ![ReverseProxyPortForwardRouter](images/reverseproxyportforwardrouter.png)
 
