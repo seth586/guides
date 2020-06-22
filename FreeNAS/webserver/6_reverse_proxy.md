@@ -3,27 +3,17 @@
 
 A reverse proxy allows you to host multiple websites from the same IP address. Our reverse proxy will also offer SSL/TLS termination, such as wildcard.sampledomain.com or sampledomain.com.
 
-## Create a new jail
+## 1. Create a new jail
 Login to the TrueNAS web-ui. Create a new jail with a static IP address outside the range of your routers DHCP IP range. The default DHCP range on openwrt is 192.168.0.100 thru 192.168.0.254, I will use 192.168.84.44 as an example.
 
 ![ReverseProxyJail](images/reverseproxyjail.png)
 
-## Router Configuration
+## 2. Router Configuration
 Forward ports 443 and 80 to your reverseproxyjail in your router.
 
 ![ReverseProxyPortForwardRouter](images/reverseproxyportforwardrouter.png)
 
-Create hostnames:
-
-Click on "Network" -> "Hostnames"
-
-Create an entry for every domain and subdomain you are going to set up so you can access the domain from inside your LAN. Have it resolve to your reverse proxy:
-
-![RouterHostname](images/routerhostname.png)
-
- 
-
-## Create AWS Route 53 user with minimum permissions
+## 3. Create AWS Route 53 user with minimum permissions
 
 In this example we will use certbot with the Amazon Route 53 plugin for our domain name server. For other dns providers using this method run `pkg search certbot` to see a list of provider plugins. This list is not exhaustive, there are many different ways to obtain and renew SSL/TLS certificates, refer to documentation provided by your domain provider.
 
@@ -60,6 +50,8 @@ config service 'aws'
 	option enabled '1'
 ```
 Save and exit.
+
+Remember the hostname entry we made in step 2 so our computers on our LAN can reach our website? If we exclude `dns_server`, our ddns script will correctly identify the domain is reachable at our reverse proxy jail, and will hillariously update amazon's "A record set" to our example of 192.168.84.44 ! 
 
 Log into your OpenWRT web-ui and Click "Services ▼", "Dynamic DNS". You should see your ddns process. Click "Edit". As you can see, not all the fields are here that are represented by our `/etc/config/ddns` config file. But if you click on the "Log file viewer" tab, you should see a sucessful record update. 
 
@@ -275,6 +267,20 @@ http {
 }
 ```
 Save (CTRL+O, ENTER), exit (CTRL+X) and restart nginx `service nginx restart`.
+
+Now try connecting to your website on your computer connected to your LAN. It shouldn't work. Now turn off the wifi on your smartphone, it should work! Why? Because your domain is resolving your home IP address, not your reverse proxy! 
+
+Out in the wild internet, to reach your web server, the path is DNS Lookup - > your home IP address on port 80 or 443- > Your firewall forwards this to port 80 or 443 on your reverse proxy - > reverse proxy forwards to your wordpress jail.
+
+Inside our safe, firewall protected LAN, we can't resolve our home IP address. However, we can create a hostname entry in our router, so our router can intervene and return a local IP address instead of our public "A record set".
+
+## Create hostnames:
+
+Click on "Network" -> "Hostnames"
+
+Create an entry for every domain and subdomain you want to access from inside your LAN. Have it resolve to your reverse proxy:
+
+![RouterHostname](images/routerhostname.png)
 
 ### Credits
 The samueldowling.com blog!
