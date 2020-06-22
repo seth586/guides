@@ -30,7 +30,7 @@ Under Resources select "All resources". Click "Review Policy". Give the policy a
 
 Now lets create a user with this policy. Click "Users" on the left menu. Click "Add user". Lets call it `reverseproxy`. Under "access type*" select "Programmatic access". Click "Next: Permissions". Click "Attach existing policies directly" and search for your "certbot" policy. Click the checkmark to the left of "certbot". Click "Next: Tags". Click "Next: Review". Click "Create User". Write down the Access key ID and Secret access key, and store this information in a safe place. Click "close". You should now see the user "reverse proxy" listed in your user list.
 
-## Set up Dynamic DNS on OpenWRT with domain provider AWS Route 53
+## 4. Set up Dynamic DNS on OpenWRT with domain provider AWS Route 53
 
 The Domain Name System converts "domains" to IP addresses. If your internet service provides a static IP address, you can skip this step. Just make sure you create a type A record set with your domain pointing to your static IP address. However, most ISPs dynamically assign IP addresses. So lets install some software that will automatically update your domain as your home IP address changes.
 
@@ -51,11 +51,9 @@ config service 'aws'
 ```
 Save and exit.
 
-Remember the hostname entry we made in step 2 so our computers on our LAN can reach our website? If we exclude `dns_server`, our ddns script will correctly identify the domain is reachable at our reverse proxy jail, and will hillariously update amazon's "A record set" to our example of 192.168.84.44 ! 
-
 Log into your OpenWRT web-ui and Click "Services ▼", "Dynamic DNS". You should see your ddns process. Click "Edit". As you can see, not all the fields are here that are represented by our `/etc/config/ddns` config file. But if you click on the "Log file viewer" tab, you should see a sucessful record update. 
 
-## Configure certbot to request and renew SSL/TLS certificates
+## 5. Configure certbot to request and renew SSL/TLS certificates
 At this point your domain should sucessfully resolve to your home IP address. You can check with [this tool](https://www.whatismyip.com/dns-lookup/).
 
 ```
@@ -82,7 +80,7 @@ US West (Oregon)`us-west-2`
 
 Default output format: `text`
 
-## Request domain and wildcard certificate
+## 6. Request domain and wildcard certificate
 
 Make sure to replace "example.com" with your own domain name!
 ```
@@ -268,19 +266,23 @@ http {
 ```
 Save (CTRL+O, ENTER), exit (CTRL+X) and restart nginx `service nginx restart`.
 
-Now try connecting to your website on your computer connected to your LAN. It shouldn't work. Now turn off the wifi on your smartphone, it should work! Why? Because your domain is resolving your home IP address, not your reverse proxy! 
+Now try connecting to your website on your computer connected to your LAN. It shouldn't work. Now turn off the wifi on your smartphone and try to connect from the outside, it should work! Why? Because you cant resolve your home IP address inside your NAT! Domain Name Servers resolve your home IP address, not your reverse proxy! 
 
-Out in the wild internet, to reach your web server, the path is DNS Lookup - > your home IP address on port 80 or 443- > Your firewall forwards this to port 80 or 443 on your reverse proxy - > reverse proxy forwards to your wordpress jail.
+Out in the wild internet, to reach your web server, the path is: User sends DNS request example.com - > DNS looks up your "A record set" = your home IP address - > Your firewall forwards this to - > reverse proxy forwards to - > your wordpress jail.
 
-Inside our safe, firewall protected LAN, we can't resolve our home IP address. However, we can create a hostname entry in our router, so our router can intervene and return a local IP address instead of our public "A record set".
+Inside our safe, firewall protected LAN, the path needs to be: Router detects a DNS request that matches a Hostnames entry - > router resolves IP address to -> reverse proxy forwards to -> your wordpress jail.
 
 ## Create hostnames:
+
+So lets make our domain accessible on our LAN.
 
 Click on "Network" -> "Hostnames"
 
 Create an entry for every domain and subdomain you want to access from inside your LAN. Have it resolve to your reverse proxy:
 
 ![RouterHostname](images/routerhostname.png)
+
+Remember in step 4 when we set the `dns_server` to a DNS outside our LAN? If we didn't set it, our ddns script will correctly identify the domain resolved by our routers Hostnames, which is reachable at our reverse proxy jail, and will hillariously update amazon's "A record set" to our reverse-proxy jail of 192.168.84.44 ! Onbiously we need the domain to resolve to our home IP address so our firewall can correctly port forward to our reverse-proxy jail! 
 
 ### Credits
 The samueldowling.com blog!
