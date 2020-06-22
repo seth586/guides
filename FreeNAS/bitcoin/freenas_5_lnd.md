@@ -13,12 +13,12 @@ Check [LND's github repo](https://github.com/lightningnetwork/lnd/releases) for 
 ```
 # pkg install wget ca_root_nss
 # cd ~
-# wget https://github.com/lightningnetwork/lnd/releases/download/v0.10.0-beta/lnd-freebsd-amd64-v0.10.0-beta.tar.gz
-# tar -xvf lnd-freebsd-amd64-v0.10.0-beta.tar.gz
-# cd lnd-freebsd-amd64-v0.10.0-beta
+# wget https://github.com/lightningnetwork/lnd/releases/download/v0.10.2-beta.rc2/lnd-freebsd-amd64-v0.10.2-beta.rc2.tar.gz
+# tar -xvf lnd-freebsd-amd64-v0.10.2-beta.rc2.tar.gz
+# cd lnd-freebsd-amd64-v0.10.2-beta.rc2
 # install -m 0755 -o root -g wheel lnd lncli /usr/local/bin
 # cd ~
-# rm -r lnd-freebsd-amd64-v0.10.0-beta lnd-freebsd-amd64-v0.10.0-beta.tar.gz
+# rm -r lnd-freebsd-amd64-v0.10.2-beta.rc2 lnd-freebsd-amd64-v0.10.2-beta.rc2.tar.gz
 # nano /usr/local/etc/lnd.conf
 ```
 ### LND Configuration
@@ -56,7 +56,7 @@ tor.control=localhost:9051
 tor.v3=1
 ```
 ### Configuration Notes
-This configuration uses tor for NAT traversal and to prevent doxing your home IP address. Don't tell the world "this house has bitcoins!"! If you want to run on clearnet and advertise your home IP address, check out the [Extras](extras.md) page to set up `nat=true` in a secure fashion.
+This configuration uses tor for the benefit of a static address, NAT traversal, and to prevent doxing your home IP address. Don't tell the world "this house has bitcoins!"! If you want to run on clearnet and advertise your home IP address, check out the [Extras](extras.md) page to set up `nat=true` in a secure fashion.
 
 Fees. You may have to pay fees to other nodes when you rebalance channels, and you may have to close and reopen channels to disconected nodes, which will require on-chain fees. Don't operate at a loss! Do NOT make a 0 fee node, this will leave you vulnerable to denial of service attacks!
 
