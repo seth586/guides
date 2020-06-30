@@ -19,7 +19,7 @@ Click "Network ▼", "Firewall". Click the "Port Forwards" tab, then click "Add"
 
 ![mumbleportforward](images/mumbleportforward.png)
 
-Click "
+Click "Save". 
 
 ## SSH into your new jail
 SSH into TrueNAS and switch to your blog jail.
