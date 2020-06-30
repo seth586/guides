@@ -19,7 +19,7 @@ Click "Network ▼", "Firewall". Click the "Port Forwards" tab, then click "Add"
 
 ![mumbleportforward](images/mumbleportforward.png)
 
-Click "Save". Notice the ![unsavedchanges](images/unsavedchanges.png) icon. The configuration will not work until you click ![saveapply](/images/saveapply.png). You should now see the following configuration:
+Click "Save". Notice the ![unsavedchanges](images/unsavedchanges.png) icon. The configuration will not work until you click ![saveapply](images/saveapply.png). You should now see the following configuration:
 
 ![mumbleportforwardcomplete](images/mumbpleportforwardcomplete.png)
 
