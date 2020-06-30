@@ -7,7 +7,7 @@ Guides:
 
 ![BitcoinBSD](bitcoin/images/BTCBSDsmall.png) 
 
-[Guide to ₿itcoin & Lightning️ on FreeNAS/TrueNAS](FreeNAS/bitcoin/README.md)
+[Guide to ₿itcoin & Lightning️ on FreeNAS/TrueNAS](https://github.com/seth586/guides/blob/master/FreeNAS/bitcoin/README.md)
 
 [Guide to a TOR relay on FreeNAS/TrueNAS](https://github.com/seth586/guides/tree/master/FreeNAS/tor_relay)
 
