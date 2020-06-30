@@ -100,7 +100,7 @@ Add the following line:
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 
 ## 5.3 Certbot: Add new group for external certificate access
-Some jails we add later (such as mumble server) will require to access these certificates files. Lets create a group called `certs` and give them group ownership of our certificates.
+Some jails we add later (such as mumble server) will require to access these certificates files. Lets create a group called `certs` and give them group ownership of our certificates and set access permissions for the `live` and `archive` folders. Remember to change `example.com` to your domain!
 
 ```
 # pw groupadd certs
