@@ -15,7 +15,9 @@ Login to the TrueNAS web-ui. Create a new jail with a static IP address outside 
 
 Log in to your OpenWRT web-ui and configure UDP and TCP forwarding for port 64738:
 
+Click "Network ▼", "Firewall". Click the "Port Forwards" tab, then click "Add".
 
+![mumbleportforward](images/mumbleportforward.png)
 
 ## SSH into your new jail
 SSH into TrueNAS and switch to your blog jail.
