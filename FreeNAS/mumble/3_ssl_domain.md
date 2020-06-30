@@ -8,7 +8,10 @@ In the [Guide to a self hosted wordpress website on FreeNAS/TrueNAS](https://git
 
 Murmur is not using a shared port like websites use on 80 and 443 by default, so we will not need nginx to reverse proxy port 64738, the firewall rule we created during [Jail Creation](1_jail_creation.md) will forward TCP and UDP requests on `(public IP address):64738` to our `(mumble jail IP address):64738`.
 
-However the [reverse-proxy jail guide](https://github.com/seth586/guides/blob/master/FreeNAS/webserver/6_reverse_proxy.md) also handles our domain certificate request and renewals, so for the sake of configuring and maintaining a domain and SSL/TLS certificates for mumble, please complete steps 1-5 on that page, then come back here. 
+However the [reverse-proxy jail guide](https://github.com/seth586/guides/blob/master/FreeNAS/webserver/6_reverse_proxy.md) also handles our domain certificate request and renewals, so for the sake of configuring and maintaining a domain and SSL/TLS certificates for mumble, and for future website projects on our server, this mumble guide will require the reverse proxy jail to be created and utilized.
+
+## Configure Dynamic DNS & Certbot
+Please complete steps 1-5 (minimum!) on the [reverse-proxy tutorial](https://github.com/seth586/guides/blob/master/FreeNAS/webserver/6_reverse_proxy.md) if you have not already done so, then come back here. 
 
 ## Mount Points for SSL/TLS keys
 ```
