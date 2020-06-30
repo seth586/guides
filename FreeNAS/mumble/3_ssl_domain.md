@@ -61,3 +61,5 @@ root@mumble:~ #
 Uh oh, looks like we have a permissions error! Lets fix it!
 
 ## Configure mounted SSL/TLS file permissions
+
+(work in progress)
