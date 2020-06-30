@@ -25,10 +25,4 @@ Click "Save". Notice the ![unsavedchanges](images/unsavedchanges.png) icon. The 
 
 Log out of your OpenWRT web-ui.
 
-## SSH into your new jail
-SSH into TrueNAS and switch to your blog jail.
-```
-# iocage console mumble
-```
-
 Next: [ [murmur](2_murmur.md) ] >>
