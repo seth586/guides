@@ -27,5 +27,37 @@ Check the "Read Only" box. Click "Save".
 
 Start the jail and SSH in.
 
+```
+# cd /usr/local/etc/certs
+# ls
+cert.pem        chain.pem       fullchain.pem   privkey.pem     README
+```
+
+You should see the `reverse-proxy` jail certs for your domain mounted in your `mumble` jail!
+
 ## Configure murmur for SSL/TLS certificates
 
+```
+nano /usr/local/etc/murmur.ini
+```
+Edit the following lines:
+```
+sslCert=/usr/local/etc/certs/fullchain.pem
+sslKey=/usr/local/etc/certs/privkey.pem
+```
+Save (CTRL+O, ENTER) and exit (CTRL+X)
+
+Now start murmur:
+```
+# service murmur start && tail -f /var/log/murmur/murmur.log
+Starting murmur.
+<W>2020-06-30 01:09:06.877 SSL: OpenSSL version is 'OpenSSL 1.0.2s-freebsd  28 May 2019'
+<W>2020-06-30 01:09:06.878 Initializing settings from /usr/local/etc/murmur.ini (basepath /usr/local/etc)
+<C>2020-06-30 01:09:06.878 MetaParams: Failed to read /usr/local/etc/certs/fullchain.pem
+<F>2020-06-30 01:09:06.878 MetaParams: Failed to load SSL settings. See previous errors.
+/usr/local/etc/rc.d/murmur: WARNING: failed to start murmur
+root@mumble:~ #
+```
+Uh oh, looks like we have a permissions error! Lets fix it!
+
+## Configure mounted SSL/TLS file permissions
