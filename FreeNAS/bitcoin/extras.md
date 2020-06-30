@@ -10,9 +10,6 @@ Don't have a static IP address? `lnd` will loose peer connections unless you con
 #### [Manually compile bitcoind](extras/compile_bitcoind.md)
 Some situations require you to compile directly from source code.  
 
-#### [Tor relay node](extras/torrelay.md) 
-Tor doesn't give anonymity or sufficient bandwidth unless there are enough volunteer relays helping the network. Lets give back!
-
 ### Mobile Wallets for Android over Tor Hidden Service
 Connect securely, privately, and anonymously to your home node wherever you are in the world!
 
