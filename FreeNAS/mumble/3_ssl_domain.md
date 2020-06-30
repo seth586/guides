@@ -17,5 +17,13 @@ However the [reverse-proxy jail guide](https://github.com/seth586/guides/blob/ma
 
 We need to share the public and private SSL/TLS keys in our `reverse-proxy` jail with our `mumble` jail, so log in to FreeNAS' web-ui and "stop" the mumble jail. Click "mount points". Click "Actions ▼", "Add".
 
+Remember to replace `example.com` with your own domain.
+
 Source: `/mnt/volume0/iocage/jails/reverse-proxy/root/usr/local/etc/letsencrypt/live/example.com`
+
 Destination: `/mnt/volume0/iocage/jails/mumble/root/usr/local/etc/certs`
+
+Start the jail and SSH in.
+
+## Configure murmur for SSL/TLS certificates
+
