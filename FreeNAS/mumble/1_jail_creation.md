@@ -23,6 +23,8 @@ Click "Save". Notice the ![unsavedchanges](images/unsavedchanges.png) icon. The 
 
 ![mumbleportforwardcomplete](images/mumbleportforwardcomplete.png)
 
+Log out of your OpenWRT web-ui.
+
 ## SSH into your new jail
 SSH into TrueNAS and switch to your blog jail.
 ```
