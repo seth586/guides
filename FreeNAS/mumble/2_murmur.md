@@ -13,4 +13,10 @@ SSH into TrueNAS and switch to your blog jail.
 Lets get installing the server [murmur](https://wiki.mumble.info/wiki/Running_Murmur)!
 ```
 # pkg install -y murmur
+# sysrc murmur_enable=yes
+```
+
+### Configure Murmur
+```
+# nano /usr/local/etc/murmur.ini
 ```
