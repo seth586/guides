@@ -11,4 +11,4 @@ Murmur is not using a shared port like websites use on 80 and 443 by default, so
 However the [reverse-proxy jail guide](https://github.com/seth586/guides/blob/master/FreeNAS/webserver/6_reverse_proxy.md) also handles our domain certificate request and renewals, so for the sake of configuring and maintaining a domain and SSL/TLS certificates for mumble, please complete steps 1-7 on that page, then come back here. 
 
 ## Mount Points for SSL/TLS keys
-We need to share the public and private SSL/TLS keys in our `reverse-proxy` jail with our `mumble` jail, so log in to FreeNAS' web-ui and "stop" the mumble jail. Click "mount points". Click "Actions", "Add".
+We need to share the public and private SSL/TLS keys in our `reverse-proxy` jail with our `mumble` jail, so log in to FreeNAS' web-ui and "stop" the mumble jail. Click "mount points". Click "Actions ▼", "Add".
