@@ -80,14 +80,14 @@ US West (Oregon)`us-west-2`
 
 Default output format: `text`
 
-## 6. Request domain and wildcard certificate
+## 5.1. Request domain and wildcard certificate
 
 Make sure to replace "example.com" with your own domain name!
 ```
 certbot certonly --dns-route53 -d 'example.com,*.example.com'
 ```
 
-## 7. Configure certificate auto-renewal
+## 5.2. Configure certificate auto-renewal
 
 ```
 # setenv EDITOR nano
@@ -98,6 +98,16 @@ Add the following line:
 0 0,12 * * * /usr/local/bin/python -c 'import random; import time; time.sleep(random.random() * 3600)' && /usr/local/bin/certbot renew --quiet --deploy-hook "/usr/sbin/service nginx reload"
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
+
+## 5.3 Add new group for external certificate access
+Some jails we add later (such as mumble server) will require to access these certificates files. Lets create a group called `certs` and give them group ownership of our certificates.
+
+```
+# pw groupadd certs
+# chmod -R 755 /usr/local/etc/letsencrypt/{archive,live}/
+# chown root:certs /usr/local/etc/letsencrypt/archive/example.com/privkey*.pem
+# chmod 640 /usr/local/etc/letsencrypt/archive/example.com/privkey*.pem
+```
 
 ## 8. Install nginx
 
