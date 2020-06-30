@@ -10,15 +10,15 @@ Murmur is not using a shared port like websites use on 80 and 443 by default, so
 
 However the [reverse-proxy jail guide](https://github.com/seth586/guides/blob/master/FreeNAS/webserver/6_reverse_proxy.md) also handles our domain certificate request and renewals, so for the sake of configuring and maintaining a domain and SSL/TLS certificates for mumble, and for future website projects on our server, this mumble guide will require the reverse proxy jail to be created and utilized.
 
-## Configure Dynamic DNS & Certbot
+## 1. Configure Dynamic DNS & Certbot
 Please complete steps 1-5 (minimum!) on the [reverse-proxy tutorial](https://github.com/seth586/guides/blob/master/FreeNAS/webserver/6_reverse_proxy.md) if you have not already done so, then come back here. 
 
-## Mount Points for SSL/TLS keys
+## 2. Mount Points for SSL/TLS keys
 ```
 # mkdir /usr/local/etc/certs
 ```
 
-We need to share the public and private SSL/TLS keys in our `reverse-proxy` jail with our `mumble` jail, so log in to FreeNAS' web-ui and "stop" the mumble jail. Click "mount points". Click "Actions ▼", "Add".
+We need to share the public and private SSL/TLS keys in our `reverse-proxy` jail with our `mumble` jail, so log in to FreeNAS' web-ui and "stop" the `mumble` jail. With the `mumble` jail still selected, click "mount points". Click "Actions ▼", "Add".
 
 Remember to replace `example.com` with your own domain.
 
@@ -28,7 +28,7 @@ Destination: `/mnt/volume0/iocage/jails/mumble/root/usr/local/etc/certs`
 
 Check the "Read Only" box. Click "Save".
 
-Start the jail and SSH in.
+Start the `mumble` jail and SSH in.
 
 ```
 # cd /usr/local/etc/certs
@@ -41,6 +41,8 @@ drwxr-xr-x  3 root  certs   4 May 11 21:16 live/
 drwxr-xr-x  2 root  wheel   5 Jun 20 01:10 renewal/
 drwxr-xr-x  5 root  wheel   5 Feb 17 05:23 renewal-hooks/
 ```
+The `reverse-proxy` jail path `/usr/local/etc/letsencrypt` is now accessible in our `mumble` jail at `/usr/local/etc/certs`!
+
 ## Add certs group and add murmur to certs group
 ```
 # pw groupadd certs
