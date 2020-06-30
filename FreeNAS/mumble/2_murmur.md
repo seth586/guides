@@ -5,8 +5,12 @@
 ## Guide to Mumble server (murmur) on FreeNAS/TrueNAS
 ### Murmur
 
-Lets get installing the server [murmur](https://wiki.mumble.info/wiki/Running_Murmur)!
+SSH into TrueNAS and switch to your blog jail.
+```
+# iocage console mumble
+```
 
+Lets get installing the server [murmur](https://wiki.mumble.info/wiki/Running_Murmur)!
 ```
 # pkg install -y murmur
 ```
