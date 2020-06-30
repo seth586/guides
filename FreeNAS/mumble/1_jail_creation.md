@@ -16,3 +16,5 @@ SSH into TrueNAS and switch to your blog jail.
 ```
 # iocage console mumble
 ```
+
+Next: [ [murmur](2_murmur.md) ] >>
