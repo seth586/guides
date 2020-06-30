@@ -53,7 +53,7 @@ Save and exit.
 
 Log into your OpenWRT web-ui and Click "Services ▼", "Dynamic DNS". You should see your ddns process. Click "Edit". As you can see, not all the fields are here that are represented by our `/etc/config/ddns` config file. But if you click on the "Log file viewer" tab, you should see a sucessful record update. 
 
-## 5. Configure certbot to request and renew SSL/TLS certificates
+## 5. Certbot
 At this point your domain should sucessfully resolve to your home IP address. You can check with [this tool](https://www.whatismyip.com/dns-lookup/).
 
 ```
@@ -80,14 +80,14 @@ US West (Oregon)`us-west-2`
 
 Default output format: `text`
 
-## 5.1. Request domain and wildcard certificate
+## 5.1. Certbot: Request domain and wildcard certificate
 
 Make sure to replace "example.com" with your own domain name!
 ```
 certbot certonly --dns-route53 -d 'example.com,*.example.com'
 ```
 
-## 5.2. Configure certificate auto-renewal
+## 5.2. Certbot: Configure certificate auto-renewal
 
 ```
 # setenv EDITOR nano
@@ -99,7 +99,7 @@ Add the following line:
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 
-## 5.3 Add new group for external certificate access
+## 5.3 Certbot: Add new group for external certificate access
 Some jails we add later (such as mumble server) will require to access these certificates files. Lets create a group called `certs` and give them group ownership of our certificates.
 
 ```
@@ -109,7 +109,7 @@ Some jails we add later (such as mumble server) will require to access these cer
 # chmod 640 /usr/local/etc/letsencrypt/archive/example.com/privkey*.pem
 ```
 
-## 8. Install nginx
+## 6. NGINX: Install
 
 ```
 # iocage console reverseproxy
@@ -118,7 +118,7 @@ Some jails we add later (such as mumble server) will require to access these cer
 # sysrc nginx_enable=yes
 ```
 
-## 9. Configure NGINX
+## 6.1 NGINX: Configure
 These are the following configuration files we are going to create: This simplifies the addition and removal of domains that you choose to host:
 ```
 /usr/local/etc/nginx/nginx.conf
@@ -130,7 +130,7 @@ These are the following configuration files we are going to create: This simplif
 /usr/local/etc/nginx/snippets/proxy-params.conf
 /usr/local/etc/nginx/snippets/internal-access-rules.conf
 ```
-### 9.1 Certificate Configuration:
+### 6.2 NGINX: Certificate Configuration:
 This file details the location of your certificates. Create one per domain.
 ```
 # mkdir /usr/local/etc/nginx/snippets
@@ -146,7 +146,7 @@ ssl_certificate_key /usr/local/etc/letsencrypt/live/example.com/privkey.pem;
 ssl_trusted_certificate /usr/local/etc/letsencrypt/live/example.com/chain.pem;
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
-### 9.2 SSL Configuration:
+### 6.3 NGINX: SSL Configuration:
 
 ```
 # curl https://ssl-config.mozilla.org/ffdhe2048.txt > /usr/local/etc/ssl/dhparam.pem
@@ -178,7 +178,7 @@ resolver 192.168.0.1;
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 
-### 9.3 Proxy Header Configuration
+### 6.4 NGINX: Proxy Header Configuration
 ```
 # nano /usr/local/etc/nginx/snippets/proxy-params.conf
 ```
@@ -196,7 +196,7 @@ proxy_http_version 1.1;
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 
-### 9.4 Access policy configuration
+### 6.5 NGINX: Access policy configuration
 This is the policy that we’ll apply to services that you don’t want to be externally available, but still want to access it using HTTPS on your LAN.
 ```
 # nano /usr/local/etc/nginx/snippets/internal-access-rules.conf
@@ -208,7 +208,7 @@ deny all;
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 
-### 9.5 Virtural domain configuration
+### 6.6 NGINX: Virtural domain configuration
 ```
 # mkdir /usr/local/etc/nginx/vdomains
 ```
@@ -242,7 +242,7 @@ Save (CTRL+O, ENTER) and exit (CTRL+X).
 
 Notice how this configuration recalls our other created config files. Nice and clean!
 
-## 9.6 NGINX.conf
+## 6.7: NGINX.conf
 Now lets tie it all together!
 
 ```
@@ -283,7 +283,7 @@ Out in the wild internet, to reach your web server, the path is: User sends DNS 
 
 Inside our safe, firewall protected LAN, the path needs to be: Router detects a DNS request that matches a Hostnames entry - > router resolves IP address to -> reverse proxy forwards to -> your wordpress jail.
 
-## 10. Create hostnames:
+## 7. Create hostnames:
 
 So lets make our domain accessible inside our LAN.
 
