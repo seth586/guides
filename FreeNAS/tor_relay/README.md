@@ -1,4 +1,4 @@
-[ [<< Back to Main Menu](https://github.com/seth586/guides/README.md) ]
+[ [<< Back to Main Menu](https://github.com/seth586/guides) ]
 
 ## Tor Relay
 
@@ -73,5 +73,5 @@ It will take about ~3 hours for your relay to propogate through the network. Sea
 
 It takes about a good two weeks before you will see steady traffic, see this tor project blog post [here](https://blog.torproject.org/lifecycle-new-relay).
 
-[ [<< Back to Main Menu](https://github.com/seth586/guides/README.md) ]
+[ [<< Back to Main Menu](https://github.com/seth586/guides) ]
 
