@@ -19,7 +19,7 @@ We need to share the public and private SSL/TLS keys in our `reverse-proxy` jail
 
 Remember to replace `example.com` with your own domain.
 
-Source: `/mnt/volume0/iocage/jails/reverse-proxy/root/usr/local/etc/letsencrypt/live/example.com`
+Source: `/mnt/volume0/iocage/jails/reverse-proxy/root/usr/local/etc/letsencrypt`
 
 Destination: `/mnt/volume0/iocage/jails/mumble/root/usr/local/etc/certs`
 
@@ -29,21 +29,33 @@ Start the jail and SSH in.
 
 ```
 # cd /usr/local/etc/certs
-# ls
-cert.pem        chain.pem       fullchain.pem   privkey.pem     README
+# ll
+drwxr-xr-x  3 root  wheel   3 Feb 17 05:23 accounts/
+drwxr-xr-x  3 root  certs   3 Jun 30 02:14 archive/
+drwxr-xr-x  2 root  wheel  12 Jun 20 01:09 csr/
+drwx------  2 root  wheel  12 Jun 20 01:09 keys/
+drwxr-xr-x  3 root  certs   4 May 11 21:16 live/
+drwxr-xr-x  2 root  wheel   5 Jun 20 01:10 renewal/
+drwxr-xr-x  5 root  wheel   5 Feb 17 05:23 renewal-hooks/
+```
+## Add certs group and add murmur to certs group
+```
+# pw groupadd certs
+# pw groupmod certs -M murmur
+# pw groupshow certs
+certs:*:1001:murmur
+# id murmur
+uid=338(murmur) gid=338(murmur) groups=338(murmur),1001(certs)
 ```
 
-You should see the `reverse-proxy` jail certs for your domain mounted in your `mumble` jail!
-
 ## Configure murmur for SSL/TLS certificates
-
 ```
 nano /usr/local/etc/murmur.ini
 ```
 Edit the following lines:
 ```
-sslCert=/usr/local/etc/certs/fullchain.pem
-sslKey=/usr/local/etc/certs/privkey.pem
+sslCert=/usr/local/etc/certs/live/example.com/fullchain.pem
+sslKey=/usr/local/etc/certs/live/example.com/privkey.pem
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 
@@ -51,15 +63,5 @@ Now start murmur:
 ```
 # service murmur start && tail -f /var/log/murmur/murmur.log
 Starting murmur.
-<W>2020-06-30 01:09:06.877 SSL: OpenSSL version is 'OpenSSL 1.0.2s-freebsd  28 May 2019'
-<W>2020-06-30 01:09:06.878 Initializing settings from /usr/local/etc/murmur.ini (basepath /usr/local/etc)
-<C>2020-06-30 01:09:06.878 MetaParams: Failed to read /usr/local/etc/certs/fullchain.pem
-<F>2020-06-30 01:09:06.878 MetaParams: Failed to load SSL settings. See previous errors.
-/usr/local/etc/rc.d/murmur: WARNING: failed to start murmur
-root@mumble:~ #
 ```
-Uh oh, looks like we have a permissions error! Lets fix it!
 
-## Configure mounted SSL/TLS file permissions
-
-(work in progress)
