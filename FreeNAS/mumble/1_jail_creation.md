@@ -21,7 +21,7 @@ Click "Network ▼", "Firewall". Click the "Port Forwards" tab, then click "Add"
 
 Click "Save". Notice the ![unsavedchanges](images/unsavedchanges.png) icon. The configuration will not work until you click ![saveapply](images/saveapply.png). You should now see the following configuration:
 
-![mumbleportforwardcomplete](images/mumbpleportforwardcomplete.png)
+![mumbleportforwardcomplete](images/mumbleportforwardcomplete.png)
 
 ## SSH into your new jail
 SSH into TrueNAS and switch to your blog jail.
