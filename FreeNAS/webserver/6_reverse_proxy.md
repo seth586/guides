@@ -118,7 +118,7 @@ Some jails we add later (such as mumble server) will require to access these cer
 # sysrc nginx_enable=yes
 ```
 
-## 6.1 NGINX: Configure
+## 6.1 NGINX: Overview
 These are the following configuration files we are going to create: This simplifies the addition and removal of domains that you choose to host:
 ```
 /usr/local/etc/nginx/nginx.conf
