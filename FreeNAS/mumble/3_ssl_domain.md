@@ -23,6 +23,8 @@ Source: `/mnt/volume0/iocage/jails/reverse-proxy/root/usr/local/etc/letsencrypt/
 
 Destination: `/mnt/volume0/iocage/jails/mumble/root/usr/local/etc/certs`
 
+Check the "Read Only" box. Click "Save".
+
 Start the jail and SSH in.
 
 ## Configure murmur for SSL/TLS certificates
