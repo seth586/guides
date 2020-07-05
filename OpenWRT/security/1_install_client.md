@@ -12,7 +12,7 @@ As of writing, Putty does not support the interactive ed25519-sk signature types
 
 The `cygwin64` installer is where you add or remove pre-compiled packages. Use default installation options. When you get to the "select a mirror" page, click any mirror you wish to use, then press next. You will be greeted with a "select Packages" window. Under "view", click "full". Search for `OpenSSH`. Under the "New" column, select the OpenSSH version you would like to install, make sure to use version 8.2 or newer.
 
-Now search for `nano`, and under the "New" column, select the latest version. Finish the installation with default options. The installation will create a "Cygwin64 Terminal" icon on your desktop. To read your FIDO/U2F USB device, we will need to run `cygwin64` as an administrator. Right click on the shortcut, select "Properties", click the "Compatibility" tab, and select the "Run this program as an administrator" box. Click "OK".
+Now search for `nano`, and under the "New" column, select the latest version. Finish the installation with default options. The installation will create a "Cygwin64 Terminal" shortcut on your desktop. To read your FIDO/U2F USB device, we will need to run `cygwin64` as an administrator. Right click on the shortcut, select "Properties", click the "Compatibility" tab, and select the "Run this program as an administrator" box. Click "OK".
 
 Now launch `cygwin64`, and check the OpenSSH version installed:
 ```
