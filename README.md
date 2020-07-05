@@ -5,13 +5,13 @@ Contributions are welcome!
 
 **FreeNAS / TrueNAS Guides:**
 
-[₿itcoin & Lightning️ on FreeNAS/TrueNAS](FreeNAS/bitcoin/README.md)
+[₿itcoin & Lightning️](FreeNAS/bitcoin/README.md)
 
-[TOR Relay on Freenas/TrueNAS](FreeNAS/tor_relay/README.md)
+[TOR Relay](FreeNAS/tor_relay/README.md)
 
-[Mumble Server on FreeNAS/TrueNAS](FreeNAS/mumble/README.md)
+[Mumble Server](FreeNAS/mumble/README.md)
 
-[Self Hosted Wordpress Website on FreeNAS/TrueNAS](FreeNAS/webserver/README.md)
+[Wordpress Website with Reverse Proxy](FreeNAS/webserver/README.md)
 
 **OpenWRT Guides:**
 
