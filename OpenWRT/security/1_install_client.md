@@ -24,5 +24,10 @@ Success!
 
 #### OpenSSH Client - Linux
 
+Coming soon....
+
+#### OpenSSH Client - Mac
+
+You're on your own, buddy! Maybee start your search at https://brew.sh/
 
 Next: [ [OpenSSH on OpenWRT](2_install_openssh.md) ] >>
