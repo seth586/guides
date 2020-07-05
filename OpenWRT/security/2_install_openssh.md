@@ -58,3 +58,15 @@ root@OpenWrt:~# sshd -v
 OpenSSH_8.2p1, OpenSSL 1.1.1g  21 Apr 2020
 ```
 Success!
+
+Now lets create the `~/.ssh` folder which will hold our public keys, set [permissions](https://www.freebsd.org/doc/handbook/permissions.html), and exit to our client:
+```
+root@OpenWrt:~# mkdir ~/.ssh
+root@OpenWrt:~# touch ~/.ssh/config
+root@OpenWrt:~# touch ~/.ssh/authorized_keys
+root@OpenWrt:~# chmod 700 ~/.ssh
+root@OpenWrt:~# chmod 600 ~/.ssh/*
+root@OpenWrt:~# exit
+```
+
+Next: [ [Generate Keys](3_keys.md) ] >>
