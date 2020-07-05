@@ -4,7 +4,7 @@
 
 ## SSH Bastion Security Hardening Guide
 ### Intro
-Password based authentication for your SSH sessions is unsecure. This guide will configure your home router and freenas server to utilize public key cryptography for authentication.
+Password based authentication for your SSH sessions and web user interfaces are not secure. This guide will configure your home router and freenas server to utilize public key cryptography for authentication.
 
 ### Threat Model - Passwords
 Up to this point you have probably been authenticating your SSH sessions for your router and freenas with a password. Lets go over the threat models you currently face with this configuration:
