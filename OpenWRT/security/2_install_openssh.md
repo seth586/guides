@@ -81,6 +81,6 @@ root@Freenas:~# exit
 root@OpenWrt:~# exit
 User@Desktop ~ $ 
 ```
-^Inseert [Inception](https://en.wikipedia.org/wiki/Inception) meme here!
+^Insert [Inception](https://en.wikipedia.org/wiki/Inception) meme here! 
 
 Next: [ [Generate Keys](3_keys.md) ] >>
