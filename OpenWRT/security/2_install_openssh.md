@@ -11,7 +11,7 @@ Lets start with changing the default listening port of `dropbear` from port 22 t
 
 SSH into your router.
 ```
-$ SSH root@192.168.84.1
+User@Desktop ~ $ SSH root@192.168.84.1
 root@OpenWrt:~# opkg update
 ...
 root@OpenWrt:~# opkg install nano
@@ -23,12 +23,12 @@ Change `option port '22'` to `option port '2222'`. Save (CTRL+O,ENTER) and Exit 
 root@OpenWrt:~# /etc/init.d/dropbear restart
 root@OpenWrt:~# exit
 Connection to 192.168.84.1 closed.
-User@DESKTOP ~
-$
+User@DESKTOP ~ $
 ```
-Relogin using the new port to verify dropbear still works:
+Relogin using password authentication and the new port to verify dropbear still works:
 ```
-$ ssh root@192.168.84.1 -p 2222
+User@Desktop ~ $ ssh root@192.168.84.1 -p 2222
+root@OpenWrt:~#
 ```
 
 ### Install & Configure OpenSSH Server on OpenWRT
