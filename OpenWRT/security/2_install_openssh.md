@@ -65,9 +65,13 @@ root@OpenWrt:~# mkdir ~/.ssh
 root@OpenWrt:~# touch ~/.ssh/authorized_keys
 root@OpenWrt:~# chmod 700 ~/.ssh
 root@OpenWrt:~# chmod 600 ~/.ssh/*
-root@OpenWrt:~# exit
 ```
 ### Install OpenSSH Client on OpenWRT
-Since it is our goal to use our router as a SSH bastion, we will install the OpenSSH client and configure to connect to our other SSH servers, such as FreeNAS / TrueNAS.
+Since it is our goal to use our router as a SSH bastion, we will install the OpenSSH client on OpenWRT so that we must authenticate on our OpenWRT bastion before making further connections to our servers such as FreeNAS / TrueNAS. 
+```
+root@OpenWrt:~# curl -O https://dc502wrt.org/snapshots/r13342/packages/arm_cortex-a9_vfpv3-d16/packages/openssh-client_8.2p1-3_arm_cortex-a9_vfpv3-d16.ipk
+root@OpenWrt:~# opkg install openssh-client_8.2p1-3_arm_cortex-a9_vfpv3-d16.ipk
+root@OpenWrt:~# rm openssh-client_8.2p1-3_arm_cortex-a9_vfpv3-d16.ipk
+```
 
 Next: [ [Generate Keys](3_keys.md) ] >>
