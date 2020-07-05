@@ -47,7 +47,7 @@ This guide will refer to all console commands on your home FreeNAS server with a
 
 Client: Your home desktop, laptop, cell phone, tablet, etc.
 
-This guide will refer to all console commands on your client with a proceeding `$`
+This guide will refer to all console commands on your client with a proceeding `User@Desktop ~ $`
 
 There are two files you must manage when utilizing public key cryptography: a **Public Key** and a **Private Key**. Your servers only need the public key on them. Your clients only needs the Private key. You can recreate a public key from a private key, but you can not create a private key from a public key. Hence it is important to not lose your private key! **If you lose your private key, you lose all ability to SSH into your devices!** 
 
