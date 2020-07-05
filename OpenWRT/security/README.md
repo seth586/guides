@@ -1,6 +1,6 @@
 [ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/README.md) ]
 
-**[Intro]** - [ [Jail Creation](1_jail_creation.md) ] - [ [murmur](2_murmur.md) ] - [ [SSL & Domain](3_ssl_domain.md) ] - [ [Basic ACL Config](4_acl.md) ]
+**[Intro]** - [ [OpenSSH Client](1_install_client.md) ] - [ [Install OpenSSH on OpenWRT](2_install_openssh.md) ] - [ [Generate Keys](3_keys.md) ] - [ [Bastion](4_bastion.md) ]
 
 ## SSH Bastion Security Hardening Guide
 ### Intro
@@ -76,5 +76,5 @@ If you are adding a third layer of protection with a FIDO/U2F device, buy two or
 We briefly discussed the threats we face using passwords and why public key cryptography is more secure. We also touched on the importance of not losing your private key, and how to adequately secure your private key. So lets move on and create a private key to access our SSH servers securely!
 
 
-
+Next: [ [OpenSSH Client](1_install_client.md) ] >>
 
