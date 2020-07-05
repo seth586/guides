@@ -59,7 +59,7 @@ OpenSSH_8.2p1, OpenSSL 1.1.1g  21 Apr 2020
 ```
 Success!
 
-Now lets create the `~/.ssh` folder which will hold our public keys, set [permissions](https://www.freebsd.org/doc/handbook/permissions.html), and exit to our client:
+Now lets create the `~/.ssh` folder which will hold our public keys and set [permissions](https://www.freebsd.org/doc/handbook/permissions.html):
 ```
 root@OpenWrt:~# mkdir ~/.ssh
 root@OpenWrt:~# touch ~/.ssh/authorized_keys
@@ -76,6 +76,10 @@ root@OpenWrt:~# rm openssh-client_8.2p1-3_arm_cortex-a9_vfpv3-d16.ipk
 Verify our ssh client works by attempting a password authentication to our FreeNAS server (replace `192.168.84.85` with your freenas server local IP address):
 ```
 root@OpenWrt:~# ssh root@192.168.84.85
+Password:
+root@Freenas:~# exit
+root@OpenWrt:~# exit
+User@Desktop ~ $ 
 ```
 
 Next: [ [Generate Keys](3_keys.md) ] >>
