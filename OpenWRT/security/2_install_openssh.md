@@ -32,3 +32,8 @@ $ ssh root@192.168.84.1 -p 2222
 ```
 
 ### Install OpenSSH
+Lets search to see what versions are avialble with our default package repository:
+```
+root@OpenWrt:~# opkg list | grep openssh
+```
+What versions do you see? As of writing, Version 8.0. Not good enough! We need at minimum version 8.1 to support interactive 
