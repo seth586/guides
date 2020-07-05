@@ -62,11 +62,12 @@ Success!
 Now lets create the `~/.ssh` folder which will hold our public keys, set [permissions](https://www.freebsd.org/doc/handbook/permissions.html), and exit to our client:
 ```
 root@OpenWrt:~# mkdir ~/.ssh
-root@OpenWrt:~# touch ~/.ssh/config
 root@OpenWrt:~# touch ~/.ssh/authorized_keys
 root@OpenWrt:~# chmod 700 ~/.ssh
 root@OpenWrt:~# chmod 600 ~/.ssh/*
 root@OpenWrt:~# exit
 ```
+### Install OpenSSH Client on OpenWRT
+Since it is our goal to use our router as a SSH bastion, we will install the OpenSSH client and configure to connect to our other SSH servers, such as FreeNAS / TrueNAS.
 
 Next: [ [Generate Keys](3_keys.md) ] >>
