@@ -16,13 +16,13 @@ Now search for `nano`, and under the "New" column, select the latest version. Fi
 
 Now launch `cygwin64`, and check the OpenSSH version installed:
 ```
-$ ssh -V
+User@Desktop ~ $ ssh -V
 OpenSSH_8.3p1, OpenSSL 1.1.1f  31 Mar 2020
 ```
 
 Success! Now verify your current SSH session works, replace `192.168.84.85` with your FreeNAS' local IP address:
 ```
-$ ssh root@192.168.84.85
+User@Desktop ~ $ ssh root@192.168.84.85
 ```
 Type in your password, you should be able to sucessfully SSH in using password based authentication.
 
