@@ -15,7 +15,7 @@ Guides:
 
 [Mumble Server](https://github.com/seth586/guides/blob/master/FreeNAS/mumble/README.md)
 
-[Self hosted Wordpress Website](https://github.com/seth586/guides/tree/master/FreeNAS/webserver)
+[Wordpress Website and Reverse Proxy](https://github.com/seth586/guides/tree/master/FreeNAS/webserver)
 
 **OpenWRT Guides:**
 
