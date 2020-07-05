@@ -62,7 +62,7 @@ We can configure our servers with multiple public keys corresponding to multiple
 
 2. Derive a private key with multiple inputs
 
-We can derive a private key requiring more input to fully decrypt it, such as also requiring a password, or a FIDO/U2F device! By combining something we **HAVE** (private key file) with something we **KNOW** (password) and something **PHYSICAL** (FIDO/U2F or yubikey), we encrypt the private keys with multiple layers of security. If our private key is stolen, its still secure because its encrypted with a password and/or a FIDO/U2F device.
+We can derive a private key requiring more input to fully decrypt it, such as also requiring a password and/or a FIDO/U2F device! By combining something we **HAVE** (private key file) with something we **KNOW** (password) and something **PHYSICAL** (FIDO/U2F or yubikey), we encrypt the private keys with multiple layers of security. If our private key is stolen, its still secure because its encrypted with a password and/or a FIDO/U2F device.
 
 So now that we know how we can secure the private key, what threat models remain?
 
