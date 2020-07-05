@@ -31,9 +31,30 @@ Relogin using the new port to verify dropbear still works:
 $ ssh root@192.168.84.1 -p 2222
 ```
 
-### Install OpenSSH
+### Install & Configure OpenSSH Server on OpenWRT
 Lets search to see what versions are avialble with our default package repository:
 ```
 root@OpenWrt:~# opkg list | grep openssh
 ```
-What versions do you see? As of writing, Version 8.0. Not good enough! We need at minimum version 8.1 to support interactive 
+What versions do you see? As of writing, Version 8.0. Not good enough! We need at minimum version 8.1 to support interactive ed25519-sk signature types! Fortunately someone has been compiling newer software versions for the Linksys WRT line, check out [Davidc502 OpenWrt snapshots](https://dc502wrt.org/). Specifically, the website owner has a repository at https://dc502wrt.org/snapshots/. Click on the latest release (r13342 as of writing)->(packages)->(arm_cortex-a9_vfpv3-d16)->(Packages). Scroll down to the openssh packages. Looks like version 8.2 compiled for our hardware, excellent! Copy the URL and paste using the `curl -O` command and install:
+```
+root@OpenWrt:~# curl -O https://dc502wrt.org/snapshots/r13342/packages/arm_cortex-a9_vfpv3-d16/packages/openssh
+-server_8.2p1-3_arm_cortex-a9_vfpv3-d16.ipk
+root@OpenWrt:~# opkg install openssh-server_8.2p1-3_arm_cortex-a9_vfpv3-d16.ipk
+root@OpenWrt:~# rm openssh-server_8.2p1-3_arm_cortex-a9_vfpv3-d16.ipk
+root@OpenWrt:~# nano /etc/ssh/sshd_config
+```
+Change the following lines:
+```
+PermitRootLogin yes
+PubkeyAuthentication yes
+PasswordAuthentication no
+```
+Save (CTRL+O, ENTER) and Exit (CTRL+X). Now enable and start the OpenSSH server
+```
+root@OpenWrt:~# /etc/init.d/sshd enable
+root@OpenWrt:~# /etc/init.d/sshd start
+root@OpenWrt:~# sshd -v
+OpenSSH_8.2p1, OpenSSL 1.1.1g  21 Apr 2020
+```
+Success!
