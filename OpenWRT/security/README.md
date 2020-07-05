@@ -6,7 +6,6 @@
 ### Intro
 Password based authentication for your SSH sessions is unsecure. This guide will configure your home router and freenas server to utilize public key cryptography for authentication.
 
-
 ### Threat Model - Passwords
 Up to this point you have probably been authenticating your SSH sessions for your router and freenas with a password. Lets go over the threat models you currently face with this configuration:
 
@@ -71,6 +70,11 @@ So now that we know how we can secure the private key, what threat models remain
 Make multiple backups on multiple devices, such as USB thumb drives. Use an offline QR code generator, print out the private key, and store it in a fireproof box. Use an old-school printer, modern wifi or network-enabled printers are extremely unsecure! Always have a private key backed up in a geographically seperated location!
 
 If you are adding a third layer of protection with a FIDO/U2F device, buy two or three of them, and create private public key pairs for each of them. If you lose or break your FIDO/U2F device, the other two will save your butt!
+
+### Threat Model - the Web User Interface
+Securing SSH is half the battle. Your OpenWRT and FreeNAS web user interfaces are also privileged entrances to your system. They may not have complete file system access, but they control the permissions on who gets access! Are you running the [bitcoin & lightning guide](https://github.com/seth586/guides/blob/master/FreeNAS/bitcoin/README.md)? RTL's web ui gives unrestricted access to your funds! Imagine a smart light bulb trying to brute force RTL's password authentication inside your home noetwork, scary and plausible scenario if we don't upgrade to public key authentication!
+
+In the guide we wil redirect web based interfaces to only work over an authenticated SSH session. Hopefully in the near future these web-UIs can integrate second factor authentication like TOTP or FIDO/U2F so we don't have to worry about this step.
 
 ### Summary
 We briefly discussed the threats we face using passwords and why public key cryptography is more secure. We also touched on the importance of not losing your private key, and how to adequately secure your private key. So lets move on and create a private key to access our SSH servers securely!
