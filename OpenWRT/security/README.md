@@ -54,13 +54,11 @@ This is called 'passwordless login', and this is how FIDO/U2F devices (such as t
 
 ### Threat Model - Stolen Private Key
 
-A private key can be stolen since its just a computer file. Perhaps your laptop was stolen and you have your private key on the laptop. Lets discuss how we mitigate this security threat:
+A private key can be stolen since its just a computer file. Perhaps your laptop was stolen and you have your private key on the laptop. Lets discuss how we might mitigate this security threat:
 
 1. Have multiple private keys
 
-We can configure our servers with multiple public keys corresponding to multiple private keys. If our laptop is stolen, we can use a different private key to authenticate, then remove the public key corresponding to our stolen private key.
-
-But what if we don't know the private key is stolen? 
+We can configure our servers with multiple public keys corresponding to multiple private keys. If our laptop is stolen, we can use a different private key to authenticate, then remove the public key corresponding to our stolen private key. But what if we don't know the private key is stolen? Perhaps malware scanned our hard drive and phoned home our private key. There is a better way to secure a private key:
 
 2. Derive a private key with multiple inputs
 
@@ -72,8 +70,11 @@ So now that we know how we can secure the private key, what threat models remain
 
 Make multiple backups on multiple devices, such as USB thumb drives. Use an offline QR code generator, print out the private key, and store it in a fireproof box. Use an old-school printer, modern wifi or network-enabled printers are extremely unsecure! Always have a private key backed up in a geographically seperated location!
 
+If you are adding a third layer of protection with a FIDO/U2F device, buy two or three of them, and create private public key pairs for each of them. If you lose or break your FIDO/U2F device, the other two will save your butt!
+
 ### Summary
 We briefly discussed the threats we face using passwords and why public key cryptography is more secure. We also touched on the importance of not losing your private key, and how to adequately secure your private key. So lets move on and create a private key to access our SSH servers securely!
+
 
 
 
