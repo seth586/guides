@@ -73,5 +73,9 @@ root@OpenWrt:~# curl -O https://dc502wrt.org/snapshots/r13342/packages/arm_corte
 root@OpenWrt:~# opkg install openssh-client_8.2p1-3_arm_cortex-a9_vfpv3-d16.ipk
 root@OpenWrt:~# rm openssh-client_8.2p1-3_arm_cortex-a9_vfpv3-d16.ipk
 ```
+Verify our ssh client works by attempting a password authentication to our FreeNAS server (replace `192.168.84.85` with your freenas server local IP address):
+```
+root@OpenWrt:~# ssh root@192.168.84.85
+```
 
 Next: [ [Generate Keys](3_keys.md) ] >>
