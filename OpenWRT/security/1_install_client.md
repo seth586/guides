@@ -5,7 +5,7 @@
 ## SSH Bastion Security Hardening Guide
 ### OpenSSH Clients
 Before we begin changing our servers, we need to make sure our clients have up to date versions of OpenSSH to utilize the full featureset of security in this guide.
-To utilize the most secure cryptography, OpenSSH version 6.5 or newer is required. To utilize a FIDO/U2F device, such as yubikey, you need a minimum OpenSSH version 8.1 on the server and 8.2 on the client.
+To utilize the most modern cryptographic function ed25519, OpenSSH version 6.5 or newer is required. To utilize a FIDO/U2F device, such as yubikey, you need a minimum OpenSSH version 8.1 on the server and 8.2 on the client to support ed25519-sk interactive signature types.
 
 #### Open SSH Client - Windows
 As of writing, Putty does not support the interactive ed25519-sk signature types, so if you wan't to use a FIDO/U2F device such as the yubikey, you will need something else. For now I recommend `cygwin64`, download on [www.cygwin.com](https://www.cygwin.com)
