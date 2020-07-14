@@ -4,3 +4,7 @@
 
 ## SSH Bastion Security Hardening Guide
 ### Bastion
+`nano ~/.ssh/config` on client to ProxyJump thru our router bastion:
+```
+
+```
