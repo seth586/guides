@@ -83,4 +83,12 @@ User@Desktop ~ $
 ```
 ^Insert [Inception](https://en.wikipedia.org/wiki/Inception) meme here! 
 
+### Disable and remove Dropbear on OpenWRT
+```
+root@OpenWrt:~# /etc/init.d/dropbear disable
+root@OpenWrt:~# /etc/init.d/dropbear stop
+root@OpenWrt:~# opkg remove dropbear
+```
+
+
 Next: [ [Generate Keys](3_keys.md) ] >>
