@@ -4,3 +4,14 @@
 
 ## SSH Bastion Security Hardening Guide
 ### Generate Keys
+
+### Attempt Connections Individually
+
+### Disable and remove Dropbear on OpenWRT
+```
+root@OpenWrt:~# /etc/init.d/dropbear disable
+root@OpenWrt:~# /etc/init.d/dropbear stop
+root@OpenWrt:~# opkg remove dropbear
+```
+
+Next: [ [Bastion](4_bastion.md) ] >>
