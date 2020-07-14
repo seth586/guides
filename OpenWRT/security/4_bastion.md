@@ -4,7 +4,18 @@
 
 ## SSH Bastion Security Hardening Guide
 ### Bastion
-`nano ~/.ssh/config` on client to ProxyJump thru our router bastion:
+`User@Desktop ~ $ nano ~/.ssh/config` on client to ProxyJump thru our router bastion:
 ```
-
+### The Bastion Host
+Host router
+  HostName 192.168.84.1
+  IdentityFile ~/.ssh/router
+  User root
+  Port 22
+### The Remote Host
+Host freenas
+  HostName 192.168.84.85
+  IdentityFile ~/.ssh/freenas
+  User root
+  ProxyJump router
 ```
