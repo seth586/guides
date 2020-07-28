@@ -84,6 +84,12 @@ Host openwrt
   IdentityFile ~/.ssh/openwrt
   User root
   Port 22
+### The Remote Host FreeNAS 
+Host freenas
+  HostName 192.168.84.85
+  IdentityFile ~/.ssh/freenas
+  User root
+  Port 22
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X). Test the config file:
 ```
