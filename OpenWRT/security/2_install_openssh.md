@@ -59,12 +59,13 @@ OpenSSH_8.2p1, OpenSSL 1.1.1g  21 Apr 2020
 ```
 Success!
 
-Now lets create the `~/.ssh` folder which will hold our public keys and set [permissions](https://www.freebsd.org/doc/handbook/permissions.html):
+Now lets create the `~/.ssh` folder which will hold our public keys and set [permissions](https://www.freebsd.org/doc/handbook/permissions.html). You can view file permissions of a directory with the `ls -la` command:
 ```
 root@OpenWrt:~# mkdir ~/.ssh
 root@OpenWrt:~# touch ~/.ssh/authorized_keys
 root@OpenWrt:~# chmod 700 ~/.ssh
 root@OpenWrt:~# chmod 600 ~/.ssh/*
+root@OpenWrt:~# ls -la ~/.ssh
 ```
 ### Install OpenSSH Client on OpenWRT
 Since it is our goal to use our router as a SSH bastion, we will install the OpenSSH client on OpenWRT so that we must authenticate on our OpenWRT bastion before making further connections to our servers such as FreeNAS / TrueNAS. 
