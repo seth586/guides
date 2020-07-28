@@ -2,7 +2,7 @@
 
 [ [Intro](README.md) ] - [ [OpenSSH Client](1_install_client.md) ] - [ [OpenSSH on OpenWRT](2_install_openssh.md) ] - **[Generate Keys]** - [ [Bastion](4_bastion.md) ] - [ [Hardening](5_hardening.md) ]
 
-## SSH Bastion Security Hardening Guide
+## SSH Bastion & Security Hardening Guide
 ### Step 1a: Generate Keys without a FIDO2 device
 Log in to your client device and generate a key with [ssh-keygen](https://man.openbsd.org/OpenBSD-current/man1/ssh-keygen.1#NAME):
 ```
