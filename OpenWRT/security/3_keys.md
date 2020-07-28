@@ -43,8 +43,10 @@ Repeat this step to create another keypair for your FreeNAS box, `User@Desktop ~
 
 ### Step 1b: Generate Keys with a FIDO/U2F device
 ***work in progress***
+Your OpenWRT router should be running the latest version of openssh, however FreeNAS runs an older version, so use Step 1a for your freenas keypair. But definately use this step for generating your OpenWRT keypair! On the next page, we will set the router up as a bastion host, requiring you to authenticate on the router before being able to connect to your freenas machine, effectively requiring FIDO/U2F device authentication to access freenas!
+
 ### Step 2: Add public keys to your OpenWRT Router
-Highlight the result of `cat openwrt.pub` from the 'Generate Keys' step and copy it. We will paste it in the router's `~/.ssh/authorized-keys` file.
+Highlight the result of `cat openwrt.pub` from Step 1a or 1b and copy it. We will paste it in the router's `~/.ssh/authorized-keys` file.
 ```
 User@Desktop ~/.ssh $ ssh root@192.168.84.1 -p 2222
 Password:
