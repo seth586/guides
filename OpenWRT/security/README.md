@@ -91,8 +91,13 @@ Securing SSH is half the battle. Your OpenWRT and FreeNAS web user interfaces ar
 
 In the guide we wil redirect web based interfaces to only work over an authenticated SSH session. Hopefully in the near future these web-UIs can integrate second factor authentication like TOTP or FIDO/U2F so we don't have to worry about this step.
 
+### Prerequisites
+1. A router running OpenWRT. Now would be a good time to update your firmare to the latest patch level!
+2. A SSH client, such as FreeNAS
+3. (Optional) A FIDO/U2F device to secure your authentication private keys. Not necessary, but an additional layer of security!
+
 ### Summary
-We briefly discussed the threats we face using passwords and why public key cryptography is more secure. We also touched on the importance of not losing your private key, and how to adequately secure your private key. So lets move on and create a private key to access our SSH servers securely!
+We briefly discussed the threats we face using passwords and why public key cryptography is more secure. We also touched on the importance of not losing your private key, and how to adequately secure your private key. So lets set up your client machines first!
 
 
 Next: [ [OpenSSH Client](1_install_client.md) ] >>
