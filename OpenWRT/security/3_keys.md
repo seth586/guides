@@ -36,13 +36,20 @@ User@Desktop ~/.ssh $
 ```
 `openwrt` is your private key and `openwrt.pub` is your public key. the `-a` flag requires 256 hash iterations to process your passphrase, this exponentially increases the processing power required to brute force your passphrase should your private key be compromised.
 
-Highlight the result of `cat openwrt.pub` and copy it. We will paste it in:
-
+Highlight the result of `cat openwrt.pub` and copy it. We will paste it in the router's `~/.ssh/authorized-keys` file:
 ```
 User@Desktop ~/.ssh $ ssh root@192.168.84.1 -p 2222
 Password:
-root@OpenWrt:~# cd ~/.ssh
+root@OpenWrt:~# nano ~/.ssh/authorized_keys
 ```
+Paste your public key, save (CTRL+O, ENTER) and exit (CTRL+X). Now lets try to login using our new public private key authentication:
+```
+root@OpenWrt:~# exit
+User@Desktop ~/.ssh $ ssh root@192.168.84.1 -p 22 -i openwrt
+root@OpenWrt:~#
+```
+Success!
+
 
 ### Generate Keys with a FIDO/U2F device
 
