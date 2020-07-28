@@ -36,7 +36,10 @@ User@Desktop ~/.ssh $
 ```
 `openwrt` is your private key and `openwrt.pub` is your public key. the `-a` flag requires 256 hash iterations to process your passphrase, this exponentially increases the processing power required to brute force your passphrase should your private key be compromised.
 
-Highlight the result of `cat openwrt.pub` and copy it. We will paste it in the router's `~/.ssh/authorized-keys` file:
+### Generate Keys with a FIDO/U2F device
+***work in progress***
+### Add public keys to your OpenWRT Router
+Highlight the result of `cat openwrt.pub` from the 'Generate Keys' step and copy it. We will paste it in the router's `~/.ssh/authorized-keys` file.
 ```
 User@Desktop ~/.ssh $ ssh root@192.168.84.1 -p 2222
 Password:
@@ -50,10 +53,7 @@ root@OpenWrt:~#
 ```
 Success!
 
-
-### Generate Keys with a FIDO/U2F device
-
-### Attempt Connections Individually & Create config file
+### Create config file on client
 Typing in `ssh root@192.168.84.1 -p 22 -i openwrt` is a lot of work, lets make things easier and set up a config file:
 ```
 User@Desktop ~/.ssh $ touch config && chmod 600 config && nano config
@@ -67,7 +67,14 @@ Host openwrt
   User root
   Port 22
 ```
-Save (CTRL+O, ENTER) and exit (CTRL+X)
+Save (CTRL+O, ENTER) and exit (CTRL+X). Test the config file:
+```
+User@Desktop ~/.ssh $ cd ~
+User@Desktop ~ $ ssh openwrt
+Enter passphrase for key '/home/User/.ssh/router':
+root@OpenWrt:~#
+```
+Success!
 
 ### Disable and remove Dropbear on OpenWRT
 ```
