@@ -32,7 +32,11 @@ User@Desktop ~ $
 ```
 `openwrt` is your private key and `openwrt.pub` is your public key. the `-a` flag requires 256 hash iterations to process your passphrase, this exponentially increases the processing power required to brute force your passphrase should your private key be compromised.
 
-Repeat this step to create another keypair for your FreeNAS box, `User@Desktop ~ $ ssh-keygen -o -a 256 -t ed25519 -C "$(hostname)-$(date +'%d-%m-%Y')" -f ~/.ssh/freenas` You should now have the following files in `~/.ssh`:
+Repeat this step to create another keypair for your FreeNAS box, 
+```
+User@Desktop ~ $ ssh-keygen -o -a 256 -t ed25519 -C "$(hostname)-$(date +'%d-%m-%Y')" -f ~/.ssh/freenas
+``` 
+You should now have the following files in `~/.ssh`:
 ```
 User@Desktop ~ $ ls -la ~/.ssh
 drwx------+ 1 Seth None   0 Jul 27 23:42 .
