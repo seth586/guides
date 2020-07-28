@@ -30,6 +30,10 @@ Type in your password, you should be able to sucessfully SSH in using password b
 
 Coming soon....
 
+#### OpenSSH Client - Android
+
+I don't believe interactive FIDO/U2F works with android, but you can still securely log in using a password protected public/private key authentication! Download Termux at [https://termux.com/](https://termux.com/)
+
 #### OpenSSH Client - Mac
 
 You're on your own, buddy! Maybe start your search at https://brew.sh/
