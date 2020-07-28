@@ -19,3 +19,4 @@ Host freenas
   User root
   ProxyJump openwrt
 ```
+### Configure FreeNAS to only accept connecitons thru the bastion
