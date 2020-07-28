@@ -49,6 +49,7 @@ Paste your public key, save (CTRL+O, ENTER) and exit (CTRL+X). Now lets try to l
 ```
 root@OpenWrt:~# exit
 User@Desktop ~/.ssh $ ssh root@192.168.84.1 -p 22 -i openwrt
+Enter passphrase for key '/home/User/.ssh/openwrt':
 root@OpenWrt:~#
 ```
 Success!
