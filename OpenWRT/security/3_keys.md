@@ -116,22 +116,13 @@ root@freenas:~# exit
 ```
 Success!
 
-### Step 5: Disable and remove Dropbear on OpenWRT, turn off web-ui.
+### Step 5: Disable and remove Dropbear on OpenWRT
 Remove dropbear:
 ```
 root@OpenWrt:~# /etc/init.d/dropbear disable
 root@OpenWrt:~# /etc/init.d/dropbear stop
 root@OpenWrt:~# opkg remove dropbear
 ```
-Stop the LUCI web interface, it is not required for your router to perform its functions. 
-```
-root@OpenWrt:~# /etc/init.d/uhttpd stop
-```
-If you want to change router settings, then SSH in and start the web-ui, make your adjustments, then stop the web-ui:
-```
-root@OpenWrt:~# /etc/init.d/uhttpd start 
-```
-Advanced option: Leave the LUCI web interface on all the time, just make it accessible only thru a SSH tunnel: [here](https://openwrt.org/docs/guide-user/luci/luci.secure)
 
 ### Step 6: Disable SSH password authentication on FreeNAS
 Login to your freenas web-ui. Click "accounts", "users", "root", "edit". Under "Disable Password", select "Yes". Click "Save". Now try a password based login:
