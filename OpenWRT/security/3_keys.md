@@ -64,14 +64,14 @@ User@Desktop ~/.ssh $ ssh root@192.168.84.1 -p 2222
 Password:
 root@OpenWrt:~# nano ~/.ssh/authorized_keys
 ```
-Paste your public key in a new line, save (CTRL+O, ENTER) and exit (CTRL+X). Now lets try to login using our new public private key authentication:
+Paste each public key in a new line, save (CTRL+O, ENTER) and exit (CTRL+X). Now lets try to login using our new public private key authentication:
 ```
 root@OpenWrt:~# exit
 User@Desktop ~/.ssh $ ssh root@192.168.84.1 -p 22 -i openwrt
 Enter passphrase for key '/home/User/.ssh/openwrt':
 root@OpenWrt:~#
 ```
-Success! Make sure to test all keypairs you created, and backup all private keys. 
+Success! Make sure to test all keypairs you created, and backup all private key files. 
 
 ### Step 3: Add public key to your FreeNAS server:
 Login to your freenas web-ui. Click "accounts", "users", "root", "edit". Paste the `cat freenas.pub` you copied to your clipboard from step 1a to the "SSH Public Key" field. Click "Save". Now attempt a SSH key based login, replace `192.168.84.85` with your freenas local IP address:
