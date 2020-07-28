@@ -64,8 +64,10 @@ Login to your freenas web-ui. Click "accounts", "users", "root", "edit". Paste t
 ```
 User@Desktop ~/.ssh $ ssh root@192.168.84.85 -p 22 -i freenas
 Enter passphrase for key '/home/User/.ssh/freenas':
-
+root@freenas:~# exit
+User@Desktop ~/.ssh $
 ```
+Success!
 
 ### Step 4: Create config file on client
 Typing in `ssh root@192.168.84.1 -p 22 -i openwrt` is a lot of work, lets make things easier and set up a config file:
