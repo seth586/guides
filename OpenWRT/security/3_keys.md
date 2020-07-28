@@ -28,8 +28,11 @@ The key's randomart image is:
 |*Bo*Eo=o+.       |
 |==B=Oo+= ..      |
 +----[SHA256]-----+
-User@Desktop ~/.ssh $ ls
-openwrt openwrt.pub
+User@Desktop ~/.ssh $ ls -la
+drwx------+ 1 Seth None   0 Jul 27 23:42 .
+drwxr-xr-x+ 1 Seth None   0 Jul  2 21:27 ..
+-rw-------  1 Seth None 464 Jul 27 23:25 openwrt
+-rw-r--r--  1 Seth None 108 Jul 27 23:25 openwrt.pub
 User@Desktop ~/.ssh $ cat openwrt.pub
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDLBdhdBaIlmBUAoVGT2PsGQyl5kTv1r+IJYIz1pVZsa DESKTOP-PCJ779K-27-07-2020
 User@Desktop ~/.ssh $
@@ -64,7 +67,7 @@ Add the following info:
 ### The Bastion Host
 Host openwrt
   HostName 192.168.84.1
-  IdentityFile ~/.ssh/router
+  IdentityFile ~/.ssh/openwrt
   User root
   Port 22
 ```
