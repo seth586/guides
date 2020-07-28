@@ -44,11 +44,12 @@ root@OpenWrt:~# opkg install openssh-server_8.2p1-3_arm_cortex-a9_vfpv3-d16.ipk
 root@OpenWrt:~# rm openssh-server_8.2p1-3_arm_cortex-a9_vfpv3-d16.ipk
 root@OpenWrt:~# nano /etc/ssh/sshd_config
 ```
-Change the following lines:
+Change & add the following lines to below:
 ```
 PermitRootLogin yes
 PubkeyAuthentication yes
 PasswordAuthentication no
+AuthenticationMethods publickey
 ```
 Save (CTRL+O, ENTER) and Exit (CTRL+X). Now enable and start the OpenSSH server
 ```
