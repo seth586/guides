@@ -9,13 +9,13 @@
 ### The Bastion Host
 Host router
   HostName 192.168.84.1
-  IdentityFile ~/.ssh/router
+  IdentityFile ~/.ssh/openwrt
   User root
   Port 22
 ### The Remote Host
 Host freenas
   HostName 192.168.84.85
-  IdentityFile ~/.ssh/freenas
+  IdentityFile ~/.ssh/openwrt
   User root
-  ProxyJump router
+  ProxyJump openwrt
 ```
