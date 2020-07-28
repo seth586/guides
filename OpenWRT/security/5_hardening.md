@@ -26,10 +26,10 @@ User@Desktop ~ $ nano ~/.ssh/config
 Add `LocalForward 127.0.0.1:8000 127.0.0.1:80` to your `host openwrt` block to securely tunnel client side requests on 127.0.0.1:8000 to server side 127.0.0.1:80. It should look something like this:
 ```
 ### The Bastion Host
-Host router
+Host openwrt
   HostName 192.168.84.1
-  IdentityFile ~/.ssh/router
-  IdentityFile ~/.ssh/router_yubi5_nano
+  IdentityFile ~/.ssh/openwrt
+  IdentityFile ~/.ssh/openwrt_yubi5_nano
   User root
   Port 22
   LocalForward 127.0.0.1:8000 127.0.0.1:80
@@ -43,7 +43,6 @@ Host freenas
 Save (CTRL+O, ENTER) and exit (CTRL+X). Now open a web browser on the client and type in `127.0.0.1:8000`. The luci web-ui should appear. Now close the SSH session, and the address should fail. Success!
 
 Now lets restrict luci's web-ui to localhost so the only connection path is thru the SSH tunnel:
-
 ```
 root@OpenWrt:~# /etc/config/uhttpd
 ```
@@ -61,9 +60,9 @@ Save (CTRL+O, ENTER) and exit (CTRL+X). Restart the service:
 ```
 root@OpenWrt:~# /etc/init.d/uhttpd restart
 ```
-Now try the old address for logging in to luci (such as `192.168.84.1`) in a web browser. You should get a 'refused to connect error'.
+Now try the old address for logging in to luci (such as `192.168.84.1`) in a web browser. You should get a 'refused to connect error'. 
 
-Now SSH into openwrt, then open a browser to `127.0.0.1:8000`. You should see the luci web-ui. Success!
+Now SSH into openwrt, then open a browser to `127.0.0.1:8000`. You should see the luci web-ui. Success! This process can be replicated for any web-ui that needs securing, such as RTL in the bitcoin guide!
 
 
 [ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/README.md) ]
