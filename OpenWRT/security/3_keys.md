@@ -95,16 +95,27 @@ Save (CTRL+O, ENTER) and exit (CTRL+X). Test the config file:
 ```
 User@Desktop ~/.ssh $ cd ~
 User@Desktop ~ $ ssh openwrt
-Enter passphrase for key '/home/User/.ssh/router':
-root@OpenWrt:~#
+Enter passphrase for key '/home/User/.ssh/openwrt':
+root@OpenWrt:~# exit
+User@Desktop ~ $ ssh freenas
+Enter passphrase for key '/home/User/.ssh/freenas':
+root@freenas:~# exit
 ```
 Success!
 
-### Disable and remove Dropbear on OpenWRT
+### Step 5: Disable and remove Dropbear on OpenWRT
 ```
 root@OpenWrt:~# /etc/init.d/dropbear disable
 root@OpenWrt:~# /etc/init.d/dropbear stop
 root@OpenWrt:~# opkg remove dropbear
 ```
+
+### Step 6: Disable SSH password authentication on FreeNAS
+Login to your freenas web-ui. Click "accounts", "users", "root", "edit". Under "Disable Password", select "Yes". Click "Save". Now try a password based login:
+```
+User@Desktop ~ $ ssh root@192.168.84.85
+root@192.168.84.85: Permission denied (publickey).
+```
+Success!
 
 Next: [ [Bastion](4_bastion.md) ] >>
