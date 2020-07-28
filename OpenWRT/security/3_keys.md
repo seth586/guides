@@ -3,7 +3,7 @@
 [ [Intro](README.md) ] - [ [OpenSSH Client](1_install_client.md) ] - [ [OpenSSH on OpenWRT](2_install_openssh.md) ] - **[Generate Keys]** - [ [Bastion](4_bastion.md) ]
 
 ## SSH Bastion Security Hardening Guide
-### Step 1a: Generate Keys without a FIDO/U2F device
+### Step 1a: Generate Keys without a FIDO2 device
 Log in to your client device and generate a key with [ssh-keygen](https://man.openbsd.org/OpenBSD-current/man1/ssh-keygen.1#NAME):
 ```
 
@@ -41,9 +41,15 @@ User@Desktop ~/.ssh $
 
 Repeat this step to create another keypair for your FreeNAS box, `User@Desktop ~/.ssh $ ssh-keygen -o -a 256 -t ed25519 -C "$(hostname)-$(date +'%d-%m-%Y')" -f freenas`
 
-### Step 1b: Generate Keys with a FIDO/U2F device
-***work in progress***
-Your OpenWRT router should be running the latest version of openssh, however FreeNAS runs an older version, so use Step 1a for your freenas keypair. But definately use this step for generating your OpenWRT keypair! On the next page, we will set the router up as a bastion host, requiring you to authenticate on the router before being able to connect to your freenas machine, effectively requiring FIDO/U2F device authentication to access freenas!
+### Step 1b: Generate Keys with a FIDO2 device
+Your OpenWRT router should be running the latest version of openssh, however FreeNAS runs an older version, so use Step 1a for your freenas keypair. But definately use this step for generating your OpenWRT keypair! On the next page, we will set the router up as a bastion host, requiring you to authenticate on the router before being able to connect to your freenas machine, effectively requiring FIDO2 device authentication to access freenas!
+
+It is highly recommended you have two or more FIDO2 devices, you dont want a single point of failure! Run this command for each FIDO2 device, and set the `-f` filename uniquely per device:
+```
+User@Desktop ~ $ ssh-keygen -t ed25519-sk -C "$(hostname)-$(date +'%d-%m-%Y')-yubikey_description" -f ~/.ssh/openwrt_yubi
+```
+
+All other steps are the same as 1a.
 
 ### Step 2: Add public keys to your OpenWRT Router
 Highlight the result of `cat openwrt.pub` from Step 1a or 1b and copy it. We will paste it in the router's `~/.ssh/authorized-keys` file.
@@ -82,6 +88,7 @@ Add the following info:
 Host openwrt
   HostName 192.168.84.1
   IdentityFile ~/.ssh/openwrt
+  IdentityFile ~/.ssh/openwrt_yubi5_nano
   User root
   Port 22
 ### The Remote Host FreeNAS 
@@ -91,7 +98,7 @@ Host freenas
   User root
   Port 22
 ```
-Save (CTRL+O, ENTER) and exit (CTRL+X). Test the config file:
+Note: You can add multiple `IdentityFile` lines for multiple keys for multiple FIDO2 devices. Save (CTRL+O, ENTER) and exit (CTRL+X). Test the config file:
 ```
 User@Desktop ~/.ssh $ cd ~
 User@Desktop ~ $ ssh openwrt
