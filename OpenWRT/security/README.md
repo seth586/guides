@@ -2,7 +2,7 @@
 
 **[Intro]** - [ [OpenSSH Client](1_install_client.md) ] - [ [OpenSSH on OpenWRT](2_install_openssh.md) ] - [ [Generate Keys](3_keys.md) ] - [ [Bastion](4_bastion.md) ] - [ [Hardening](5_hardening.md) ]
 
-## SSH Bastion Security Hardening Guide
+## SSH Bastion & Security Hardening Guide
 ### Intro
 Password authenticated SSH sessions are not secure. This guide will configure your home router and freenas server to utilize public key cryptography for authentication, further encrypted with optional passphrase and FIDO2 device.
 
