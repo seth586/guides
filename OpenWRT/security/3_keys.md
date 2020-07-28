@@ -3,7 +3,7 @@
 [ [Intro](README.md) ] - [ [OpenSSH Client](1_install_client.md) ] - [ [OpenSSH on OpenWRT](2_install_openssh.md) ] - **[Generate Keys]** - [ [Bastion](4_bastion.md) ]
 
 ## SSH Bastion Security Hardening Guide
-### Generate Keys without a FIDO/U2F device
+### Step 1a: Generate Keys without a FIDO/U2F device
 Log in to your client device and generate a key with [ssh-keygen](https://man.openbsd.org/OpenBSD-current/man1/ssh-keygen.1#NAME):
 ```
 
@@ -39,16 +39,18 @@ User@Desktop ~/.ssh $
 ```
 `openwrt` is your private key and `openwrt.pub` is your public key. the `-a` flag requires 256 hash iterations to process your passphrase, this exponentially increases the processing power required to brute force your passphrase should your private key be compromised.
 
-### Generate Keys with a FIDO/U2F device
+Repeat this step to create another keypair for your FreeNAS box, `User@Desktop ~/.ssh $ ssh-keygen -o -a 256 -t ed25519 -C "$(hostname)-$(date +'%d-%m-%Y')" -f freenas`
+
+### Step 1b: Generate Keys with a FIDO/U2F device
 ***work in progress***
-### Add public keys to your OpenWRT Router
+### Step 2: Add public keys to your OpenWRT Router
 Highlight the result of `cat openwrt.pub` from the 'Generate Keys' step and copy it. We will paste it in the router's `~/.ssh/authorized-keys` file.
 ```
 User@Desktop ~/.ssh $ ssh root@192.168.84.1 -p 2222
 Password:
 root@OpenWrt:~# nano ~/.ssh/authorized_keys
 ```
-Paste your public key, save (CTRL+O, ENTER) and exit (CTRL+X). Now lets try to login using our new public private key authentication:
+Paste your public key in a new line, save (CTRL+O, ENTER) and exit (CTRL+X). Now lets try to login using our new public private key authentication:
 ```
 root@OpenWrt:~# exit
 User@Desktop ~/.ssh $ ssh root@192.168.84.1 -p 22 -i openwrt
@@ -57,7 +59,15 @@ root@OpenWrt:~#
 ```
 Success!
 
-### Create config file on client
+### Step 3: Add public key to your FreeNAS server:
+Login to your freenas web-ui. Click "accounts", "users", "root", "edit". Paste the `cat freenas.pub` you copied to your clipboard from step 1a to the "SSH Public Key" field. Click "Save". Now attempt a SSH key based login, replace `192.168.84.85` with your freenas local IP address:
+```
+User@Desktop ~/.ssh $ ssh root@192.168.84.85 -p 22 -i freenas
+Enter passphrase for key '/home/User/.ssh/freenas':
+
+```
+
+### Step 4: Create config file on client
 Typing in `ssh root@192.168.84.1 -p 22 -i openwrt` is a lot of work, lets make things easier and set up a config file:
 ```
 User@Desktop ~/.ssh $ touch config && chmod 600 config && nano config
