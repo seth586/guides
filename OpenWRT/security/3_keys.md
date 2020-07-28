@@ -56,8 +56,18 @@ Success!
 ### Attempt Connections Individually & Create config file
 Typing in `ssh root@192.168.84.1 -p 22 -i openwrt` is a lot of work, lets make things easier and set up a config file:
 ```
-User@Desktop ~/.ssh $
+User@Desktop ~/.ssh $ touch config && chmod 600 config && nano config
 ```
+Add the following info:
+```
+### The Bastion Host
+Host openwrt
+  HostName 192.168.84.1
+  IdentityFile ~/.ssh/router
+  User root
+  Port 22
+```
+Save (CTRL+O, ENTER) and exit (CTRL+X)
 
 ### Disable and remove Dropbear on OpenWRT
 ```
