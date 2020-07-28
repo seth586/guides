@@ -15,6 +15,6 @@ Contributions are welcome!
 
 **OpenWRT Guides:**
 
-Coming soon!
+[SSH PublicKey Authentication thru Bastion](OpenWRT/security/README.md)
 
 
