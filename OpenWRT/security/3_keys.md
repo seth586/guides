@@ -52,7 +52,7 @@ User@Desktop ~ $ ssh-keygen -t ed25519-sk -C "$(hostname)-$(date +'%d-%m-%Y')-yu
 All other steps are the same as 1a.
 
 ### Step 2: Add public keys to your OpenWRT Router
-Highlight the result of `cat openwrt.pub` from Step 1a or 1b and copy it. We will paste it in the router's `~/.ssh/authorized-keys` file.
+Highlight the output of your public key from the command `cat openwrt.pub` from Step 1a to copy it. We will paste it in the router's `~/.ssh/authorized-keys` file.
 ```
 User@Desktop ~/.ssh $ ssh root@192.168.84.1 -p 2222
 Password:
@@ -65,7 +65,7 @@ User@Desktop ~/.ssh $ ssh root@192.168.84.1 -p 22 -i openwrt
 Enter passphrase for key '/home/User/.ssh/openwrt':
 root@OpenWrt:~#
 ```
-Success!
+Success! Make sure to test all keypairs you created, and backup all private keys. 
 
 ### Step 3: Add public key to your FreeNAS server:
 Login to your freenas web-ui. Click "accounts", "users", "root", "edit". Paste the `cat freenas.pub` you copied to your clipboard from step 1a to the "SSH Public Key" field. Click "Save". Now attempt a SSH key based login, replace `192.168.84.85` with your freenas local IP address:
