@@ -5,10 +5,10 @@
 ## SSH Bastion Security Hardening Guide
 ### OpenSSH Clients
 Before we begin changing our servers, we need to make sure our clients have up to date versions of OpenSSH to utilize the full featureset of security in this guide.
-To utilize the most modern cryptographic function ed25519, OpenSSH version 6.5 or newer is required. To utilize a FIDO/U2F device, such as yubikey, you need a minimum OpenSSH version 8.1 on the server and 8.2 on the client to support ed25519-sk interactive signature types.
+To utilize the most modern cryptographic function ed25519, OpenSSH version 6.5 or newer is required. To utilize a FIDO/U2F device (such as yubikey, trezor or ledger nano) you need a minimum OpenSSH version 8.1 on the server and 8.2 on the client to support ed25519-sk interactive signature types.
 
 #### Open SSH Client - Windows
-As of writing, Putty does not support the interactive ed25519-sk signature types, so if you wan't to use a FIDO/U2F device such as the yubikey, you will need something else. For now I recommend `cygwin64`, download on [www.cygwin.com](https://www.cygwin.com)
+As of writing, Putty does not support the interactive ed25519-sk signature types, so if you wan't to use a FIDO/U2F device, you will need something else. For now I recommend `cygwin64`, download on [www.cygwin.com](https://www.cygwin.com)
 
 The `cygwin64` installer is where you add or remove pre-compiled packages. Use default installation options. When you get to the "select a mirror" page, click any mirror you wish to use, then press next. You will be greeted with a "select Packages" window. Under "view", click "full". Search for `OpenSSH`. Under the "New" column, select the OpenSSH version you would like to install, make sure to use version 8.2 or newer.
 
