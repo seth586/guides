@@ -7,7 +7,7 @@
 `User@Desktop ~ $ nano ~/.ssh/config` on client to ProxyJump thru our router bastion:
 ```
 ### The Bastion Host
-Host router
+Host openwrt
   HostName 192.168.84.1
   IdentityFile ~/.ssh/openwrt
   User root
