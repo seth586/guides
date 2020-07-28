@@ -20,3 +20,11 @@ Host freenas
   ProxyJump openwrt
 ```
 ### Configure FreeNAS to only accept connecitons thru the bastion
+Log in to the freenas web-ui, click "services", and click the "configure" icon on the SSH line. Click "advanced mode". Add the following line to "extra options":
+```
+AllowUsers root@192.168.84.1
+```
+FreeNAS will now only accept incoming SSH requests from your openwrt bastion, effectively requiring a sucessful ssh login to your router first! 
+
+If your router goes up in flames, no worries. Your router is not storing any private keys! A new router with the same IP address configuration, your backup private keys & FIDO2 devices are all you need to SSH back in to freenas. 
+
