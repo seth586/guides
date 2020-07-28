@@ -27,12 +27,22 @@ User@Desktop ~ $ ssh root@192.168.84.85
 Type in your password, you should be able to sucessfully SSH in using password based authentication.
 
 #### OpenSSH Client - Linux
-
-Coming soon....
+```
+User@Desktop ~ $ sudo apt-get update
+User@Desktop ~ $ sudo apt-get install openssh
+User@Desktop ~ $ ssh -V
+OpenSSH_8.3p1, OpenSSL 1.1.1g, 21 Apr 2020
+```
 
 #### OpenSSH Client - Android
 
 I don't believe interactive FIDO/U2F works with android, but you can still securely log in using a password protected public/private key authentication! Download Termux at [https://termux.com/](https://termux.com/)
+
+```
+$ pkg install openssh
+$ ssh -V
+OpenSSH_8.3p1, OpenSSL 1.1.1g, 21 Apr 2020
+```
 
 #### OpenSSH Client - Mac
 
