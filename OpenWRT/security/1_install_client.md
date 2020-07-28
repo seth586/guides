@@ -2,7 +2,7 @@
 
 [ [Intro](README.md) ] - **[OpenSSH Client]** - [ [OpenSSH on OpenWRT](2_install_openssh.md) ] - [ [Generate Keys](3_keys.md) ] - [ [Bastion](4_bastion.md) ] - [ [Hardening](5_hardening.md) ]
 
-## SSH Bastion Security Hardening Guide
+## SSH Bastion & Security Hardening Guide
 ### OpenSSH Clients
 Before we begin changing our servers, we need to make sure our clients have up to date versions of OpenSSH to utilize the full featureset of security in this guide.
 To utilize the most modern cryptographic function ed25519, OpenSSH version 6.5 or newer is required. To utilize a FIDO/U2F device (such as yubikey, trezor or ledger nano) you need a minimum OpenSSH version 8.1 on the server and 8.2 on the client to support ed25519-sk interactive signature types.
