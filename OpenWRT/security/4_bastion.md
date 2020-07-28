@@ -2,7 +2,7 @@
 
 [ [Intro](README.md) ] - [ [OpenSSH Client](1_install_client.md) ] - [ [OpenSSH on OpenWRT](2_install_openssh.md) ] - [ [Generate Keys](3_keys.md) ] - **[Bastion]** - [ [Hardening](5_hardening.md) ]
 
-## SSH Bastion Security Hardening Guide
+## SSH Bastion & Security Hardening Guide
 ### Bastion
 `User@Desktop ~ $ nano ~/.ssh/config` on client to ProxyJump thru our router bastion:
 ```
