@@ -6,9 +6,7 @@
 ### Step 1a: Generate Keys without a FIDO2 device
 Log in to your client device and generate a key with [ssh-keygen](https://man.openbsd.org/OpenBSD-current/man1/ssh-keygen.1#NAME):
 ```
-
-User@Desktop ~ $ cd ~/.ssh
-User@Desktop ~/.ssh $ ssh-keygen -o -a 256 -t ed25519 -C "$(hostname)-$(date +'%d-%m-%Y')" -f openwrt
+User@Desktop ~ $ ssh-keygen -o -a 256 -t ed25519 -C "$(hostname)-$(date +'%d-%m-%Y')" -f ~/.ssh/openwrt
 Generating public/private ed25519 key pair.
 Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
@@ -28,18 +26,18 @@ The key's randomart image is:
 |*Bo*Eo=o+.       |
 |==B=Oo+= ..      |
 +----[SHA256]-----+
-User@Desktop ~/.ssh $ ls -la
+User@Desktop ~ $ ls -la ~/.ssh
 drwx------+ 1 Seth None   0 Jul 27 23:42 .
 drwxr-xr-x+ 1 Seth None   0 Jul  2 21:27 ..
 -rw-------  1 Seth None 464 Jul 27 23:25 openwrt
 -rw-r--r--  1 Seth None 108 Jul 27 23:25 openwrt.pub
-User@Desktop ~/.ssh $ cat openwrt.pub
+User@Desktop ~ $ cat ~/.ssh/openwrt.pub
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDLBdhdBaIlmBUAoVGT2PsGQyl5kTv1r+IJYIz1pVZsa DESKTOP-PCJ779K-27-07-2020
-User@Desktop ~/.ssh $
+User@Desktop ~ $
 ```
 `openwrt` is your private key and `openwrt.pub` is your public key. the `-a` flag requires 256 hash iterations to process your passphrase, this exponentially increases the processing power required to brute force your passphrase should your private key be compromised.
 
-Repeat this step to create another keypair for your FreeNAS box, `User@Desktop ~/.ssh $ ssh-keygen -o -a 256 -t ed25519 -C "$(hostname)-$(date +'%d-%m-%Y')" -f freenas`
+Repeat this step to create another keypair for your FreeNAS box, `User@Desktop ~ $ ssh-keygen -o -a 256 -t ed25519 -C "$(hostname)-$(date +'%d-%m-%Y')" -f ~/.ssh/freenas`
 
 ### Step 1b: Generate Keys with a FIDO2 device
 Your OpenWRT router should be running the latest version of openssh, however FreeNAS runs an older version, so use Step 1a for your freenas keypair. But definately use this step for generating your OpenWRT keypair! On the next page, we will set the router up as a bastion host, requiring you to authenticate on the router before being able to connect to your freenas machine, effectively requiring FIDO2 device authentication to access freenas!
