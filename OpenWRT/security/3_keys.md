@@ -118,6 +118,7 @@ If you want to change router settings, then SSH in and start the web-ui, make yo
 ```
 root@OpenWrt:~# /etc/init.d/uhttpd start 
 ```
+Advanced option: Leave the LUCI web interface on all the time, just make it accessible only thru a SSH tunnel: [here](https://openwrt.org/docs/guide-user/luci/luci.secure)
 
 ### Step 6: Disable SSH password authentication on FreeNAS
 Login to your freenas web-ui. Click "accounts", "users", "root", "edit". Under "Disable Password", select "Yes". Click "Save". Now try a password based login:
