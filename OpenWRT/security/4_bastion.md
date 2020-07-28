@@ -19,6 +19,12 @@ Host freenas
   User root
   ProxyJump openwrt
 ```
+Save (CTRL+O, ENTER) and exit (CTRL+X). Verify the new configuration works:
+```
+User@Desktop ~ $ ssh freenas
+```
+It should ask you to authenticate to openwrt first!
+
 ### Configure FreeNAS to only accept connecitons thru the bastion
 Log in to the freenas web-ui, click "services", and click the "configure" icon on the SSH line. Click "advanced mode". Add the following line to "extra options":
 ```
