@@ -61,6 +61,9 @@ Save (CTRL+O, ENTER) and exit (CTRL+X). Restart the service:
 ```
 root@OpenWrt:~# /etc/init.d/uhttpd restart
 ```
+Now try the old address for logging in to luci (such as `192.168.84.1`) in a web browser. You should get a 'refused to connect error'.
+
+Now SSH into openwrt, then open a browser to `127.0.0.1:8000`. You should see the luci web-ui. Success!
 
 
 [ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/README.md) ]
