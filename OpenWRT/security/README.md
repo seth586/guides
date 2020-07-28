@@ -92,7 +92,7 @@ Securing SSH is half the battle. Your OpenWRT and FreeNAS web user interfaces ar
 In the guide we wil redirect web based interfaces to only work over an authenticated SSH session. Hopefully in the near future these web-UIs can integrate second factor authentication like TOTP or FIDO/U2F so we don't have to worry about this step.
 
 ### Prerequisites
-1. A router running OpenWRT. Now would be a good time to update your firmare to the latest patch level!
+1. A router running OpenWRT. THis guide works verbatim if you are running a LinksysWRT 1200 or newer (1900, 3200) Now would be a good time to update your firmare to the latest patch level!
 2. A SSH client, such as FreeNAS
 3. (Optional) A FIDO/U2F device to secure your authentication private keys. Not necessary, but an additional layer of security!
 
