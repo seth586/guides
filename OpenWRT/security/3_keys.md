@@ -53,7 +53,11 @@ Success!
 
 ### Generate Keys with a FIDO/U2F device
 
-### Attempt Connections Individually
+### Attempt Connections Individually & Create config file
+Typing in `ssh root@192.168.84.1 -p 22 -i openwrt` is a lot of work, lets make things easier and set up a config file:
+```
+User@Desktop ~/.ssh $
+```
 
 ### Disable and remove Dropbear on OpenWRT
 ```
