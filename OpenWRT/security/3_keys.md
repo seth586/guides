@@ -41,7 +41,7 @@ Highlight the result of `cat openwrt.pub` and copy it. We will paste it in:
 ```
 User@Desktop ~/.ssh $ ssh root@192.168.84.1 -p 2222
 Password:
-root@OpenWRT
+root@OpenWrt:~# cd ~/.ssh
 ```
 
 ### Generate Keys with a FIDO/U2F device
