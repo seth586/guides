@@ -118,7 +118,7 @@ root@freenas[~]# nginx restart
 ```
 Try entering your FreeNAS IP address, it should fail. Now on your client machine, SSH into freenas, then open a browser to 127.0.0.1:8080, you should see the FreeNAS WebGUI!
 
-Note: Until FreeNAS allows redirecting the WebGUI to `127.0.0.1` from the WebGUI's "System" > "General" settings, this configuration will likely not survive an upgrade.
+Note: Until FreeNAS allows redirecting the WebGUI to `127.0.0.1` from the WebGUI's "System" > "General" settings, this configuration will likely not survive an upgrade. If you want this feature, make sure to add your voice to the issue here: https://jira.ixsystems.com/browse/NAS-104177
 
 
 [ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/README.md) ]
