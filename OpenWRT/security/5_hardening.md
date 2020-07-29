@@ -21,6 +21,19 @@ You should see update lists download from https addresses and see `signature che
 OpenWRT's web user interface, called Luci, has nearly all privileges as a root user on the command line. Upgrading our SSH authentication to public key cryptography doesn't do us any good if the web-ui is accessible with password authentication. So lets only allow luci to be accessed from an authenticated SSH tunnel.
 
 ```
+root@OpenWrt:~# nano /etc/ssh/sshd_config
+```
+Uncomment the following line and enable `AllowTcpForwarding`
+```
+AllowTcpForwarding yes
+```
+Save (CTRL+X, ENTER) and exit (CTRL+X). Restart `sshd` with:
+```
+root@OpenWrt:~# /etc/init.d/sshd restart
+```
+
+Now lets configure the client
+```
 User@Desktop ~ $ nano ~/.ssh/config
 ```
 Add `LocalForward 127.0.0.1:8000 127.0.0.1:80` to your `host openwrt` block to securely tunnel client side requests on 127.0.0.1:8000 to server side 127.0.0.1:80. It should look something like this:
