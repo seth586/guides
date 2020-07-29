@@ -78,13 +78,46 @@ Now try the old address for logging in to luci (such as `192.168.84.1`) in a web
 Now SSH into openwrt, then open a browser to `127.0.0.1:8000`. You should see the luci web-ui. Success! This process can be replicated for any web-ui that needs securing, such as RTL in the bitcoin guide!
 
 ### Require SSH tunnel to access FreeNAS WebGUI
-Enable TcpPortForwarding in your router:
+#### Client Config
 ```
-root@OpenWrt:~# nano /etc/ssh/sshd_config
+User@Desktop ~ $ nano ~/.ssh/config
 ```
-Edit the following line:
+Add the `localforward` rule to your `host freenas` block:
 ```
+Host freenas
+  HostName 192.168.84.85
+  IdentityFile ~/.ssh/freenas
+  User root
+  ProxyJump router
+  LocalForward 127.0.0.1:8080 127.0.0.1:80
+```
+Save (CTRL+O, ENTER) and Exit (CTRL+X)
 
+#### Router Config
+Make sure `TcpPortForwarding yes` is in your router's `/etc/ssh/sshd_config`.
+
+#### FreeNAS Config
+Log in to your FreeNAS WebGUI. Click "Services", "Configure" adjacent to the SSH line, click "Allow TCP Port Forwarding". Click "Save".
+
+SSH into your freenas server:
 ```
+root@freenas[~]# service sshd onestart
+root@freenas[~]# nano /usr/local/etc/nginx/nginx.conf
+```
+In the `server {` block comment out and chenge the following lines:
+```
+        #listen                 0.0.0.0:443 default_server ssl http2;
+        #listen                 [::]:443 default_server ssl http2;
+        
+        listen       127.0.0.1:80;
+        #listen       [::]:80;
+```
+Save (CTRL+O, ENTER) and exit (CTRL+X). Now restart nginx:
+```
+root@freenas[~]# nginx restart
+```
+Try entering your FreeNAS IP address, it should fail. Now on your client machine, SSH into freenas, then open a browser to 127.0.0.1:8080, you should see the FreeNAS WebGUI!
+
+
 
 [ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/README.md) ]
