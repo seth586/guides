@@ -64,5 +64,14 @@ Now try the old address for logging in to luci (such as `192.168.84.1`) in a web
 
 Now SSH into openwrt, then open a browser to `127.0.0.1:8000`. You should see the luci web-ui. Success! This process can be replicated for any web-ui that needs securing, such as RTL in the bitcoin guide!
 
+### Require SSH tunnel to access FreeNAS WebGUI
+Enable TcpPortForwarding in your router:
+```
+root@OpenWrt:~# nano /etc/ssh/sshd_config
+```
+Edit the following line:
+```
+
+```
 
 [ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/README.md) ]
