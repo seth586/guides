@@ -15,12 +15,10 @@ Check [LND's github repo](https://github.com/lightningnetwork/lnd/releases) for 
 ```
 # pkg install wget ca_root_nss
 # cd ~
-# wget https://github.com/lightningnetwork/lnd/releases/download/v0.10.2-beta/lnd-freebsd-amd64-v0.10.2-beta.tar.gz
-# tar -xvf lnd-freebsd-amd64-v0.10.2-beta.tar.gz
-# cd lnd-freebsd-amd64-v0.10.2-beta
-# install -m 0755 -o root -g wheel lnd lncli /usr/local/bin
-# cd ~
-# rm -r lnd-freebsd-amd64-v0.10.2-beta lnd-freebsd-amd64-v0.10.2-beta.tar.gz
+# wget https://github.com/lightningnetwork/lnd/releases/download/v0.11.0-beta.rc1/lnd-freebsd-amd64-v0.11.0-beta.rc1.tar.gz
+# tar -xvf lnd-freebsd-amd64*
+# install -m 0755 -o root -g wheel ~/lnd-freebsd-amd64*/* /usr/local/bin
+# rm -r /lnd-freebsd-amd64* lnd-freebsd-amd64*
 # nano /usr/local/etc/lnd.conf
 ```
 ### LND Configuration
@@ -38,6 +36,7 @@ minchansize=900000
 maxlogfiles=1
 maxlogfilesize=10
 accept-keysend=1
+protocol.wumbo-channels=1
 
 [Bitcoin]
 bitcoin.active=1
