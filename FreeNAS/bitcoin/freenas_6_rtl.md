@@ -14,10 +14,10 @@ If not already there, SSH into your freenas box and switch to your bitcoin jail.
 ```
 # pkg install node npm python cairo
 # cd ~
-# wget https://github.com/Ride-The-Lightning/RTL/archive/v0.7.0.tar.gz
-# tar -xvf v0.7.0.tar.gz
-# rm v0.7.0.tar.gz
-# mv ~/RTL-0.7.0 ~/rtl
+# wget https://github.com/Ride-The-Lightning/RTL/archive/v0.8.4.tar.gz
+# tar -xvf v0.8.4.tar.gz
+# rm v0.8.4.tar.gz
+# mv ~/RTL-0.8.4 ~/rtl
 # cd rtl
 # npm install --only=production
 ```
@@ -117,12 +117,12 @@ Now connect on your web browser at the jail ip:3000 or myprivateonionaddressocyn
 
 ```
 # service rtl stop
-# wget https://github.com/Ride-The-Lightning/RTL/archive/v0.8.2.tar.gz
-# tar -xvf v0.8.2.tar.gz
-# cp ~/rtl/RTL-Config.json ~/RTL-0.8.2/RTL-Config.json
+# wget https://github.com/Ride-The-Lightning/RTL/archive/v0.8.4.tar.gz
+# tar -xvf v0.8.4.tar.gz
+# cp ~/rtl/RTL-Config.json ~/RTL-0.8.4/RTL-Config.json
 # rm -r ~/rtl
-# mv ~/RTL-0.8.2 ~/rtl
-# rm v0.8.2.tar.gz
+# mv ~/RTL-0.8.4 ~/rtl
+# rm v0.8.4.tar.gz
 # cd rtl
 # npm install --only=production
 # service rtl start
