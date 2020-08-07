@@ -14,10 +14,10 @@ root@freenas[~] # iocage console bitcoin
 Check [lightning lab's loop github repo](https://github.com/lightninglabs/loop/releases) for the latest release, make sure you select the correct binaries for your processor and operating system. (amd64 is for amd and intel processors)
 ```
 # cd ~
-# wget https://github.com/lightninglabs/loop/releases/download/v0.6.3-beta/loop-freebsd-amd64-20200604-01.tar.gz
-# tar -xvf loop-freebsd-amd64-20200604-01.tar.gz
-# install -m 0755 -o root -g wheel loop-freebsd-amd64-20200604-01/loop loop-freebsd-amd64-20200604-01/loopd /usr/local/bin
-# rm -r loop-freebsd-amd64-20200604-01 loop-freebsd-amd64-20200604-01.tar.gz
+# wget https://github.com/lightninglabs/loop/releases/download/v0.7.0-beta/loop-freebsd-amd64-v0.7.0-beta.tar.gz
+# tar -xvf loop-freebsd-amd64-v0.7.0-beta.tar.gz
+# install -m 0755 -o root -g wheel loop-freebsd-amd64-v0.7.0-beta/loop loop-freebsd-amd64-v0.7.0-beta/loopd /usr/local/bin
+# rm -r loop-freebsd-amd64-v0.7.0-beta loop-freebsd-amd64-v0.7.0-beta.tar.gz
 ```
 
 ### loopd Startup and initialization
@@ -108,10 +108,10 @@ loopd uses a liquidity provider that you send off-chain funds to receive an on-c
 ```
 # service loopd stop
 # cd ~
-# wget https://github.com/lightninglabs/loop/releases/download/v0.6.3-beta/loop-freebsd-amd64-20200604-01.tar.gz
-# tar -xvf loop-freebsd-amd64-20200604-01.tar.gz
-# install -m 0755 -o root -g wheel loop-freebsd-amd64-20200604-01/loop loop-freebsd-amd64-20200604-01/loopd /usr/local/bin
-# rm -r loop-freebsd-amd64-20200604-01 loop-freebsd-amd64-20200604-01.tar.gz
+# wget https://github.com/lightninglabs/loop/releases/download/v0.7.0-beta/loop-freebsd-amd64-v0.7.0-beta.tar.gz
+# tar -xvf loop-freebsd-amd64-v0.7.0-beta.tar.gz
+# install -m 0755 -o root -g wheel loop-freebsd-amd64-v0.7.0-beta/loop loop-freebsd-amd64-v0.7.0-beta/loopd /usr/local/bin
+# rm -r loop-freebsd-amd64-v0.7.0-beta loop-freebsd-amd64-v0.7.0-beta.tar.gz
 # service loopd start && tail -f /root/.loop/logs/mainnet/loopd.log
 ```
 
