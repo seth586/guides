@@ -19,4 +19,4 @@ Guides:
 
 **OpenWRT Guides:**
 
-[SSH PublicKey Authentication thru Bastion](OpenWRT/security/README.md)
+[SSH PublicKey Authentication thru Bastion](https://github.com/seth586/guides/blob/master/OpenWRT/security/README.md)
