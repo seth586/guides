@@ -109,9 +109,9 @@ loopd uses a liquidity provider that you send off-chain funds to receive an on-c
 # service loopd stop
 # cd ~
 # wget https://github.com/lightninglabs/loop/releases/download/v0.7.0-beta/loop-freebsd-amd64-v0.7.0-beta.tar.gz
-# tar -xvf loop-freebsd-amd64-v0.7.0-beta.tar.gz
-# install -m 0755 -o root -g wheel loop-freebsd-amd64-v0.7.0-beta/loop loop-freebsd-amd64-v0.7.0-beta/loopd /usr/local/bin
-# rm -r loop-freebsd-amd64-v0.7.0-beta loop-freebsd-amd64-v0.7.0-beta.tar.gz
+# tar -xvf loop-freebsd-amd64*
+# install -m 0755 -o root -g wheel loop-freebsd-amd64*/* /usr/local/bin
+# rm -r /loop-freebsd-amd64* loop-freebsd-amd64*
 # service loopd start && tail -f /root/.loop/logs/mainnet/loopd.log
 ```
 
