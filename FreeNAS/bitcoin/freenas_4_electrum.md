@@ -18,7 +18,7 @@ Download prerequisites and compile:
 # cargo build --release
 ```
 
-If you get an error, see this [issue for FreeBSD systems](https://github.com/romanz/electrs/issues/294) to fix. Rerun `cargo build --release`
+If you get an error, see this [issue for FreeBSD systems](https://github.com/romanz/electrs/issues/132#issuecomment-481870879) to fix. Rerun `cargo build --release`
 
 Install and cleanup:
 ```
