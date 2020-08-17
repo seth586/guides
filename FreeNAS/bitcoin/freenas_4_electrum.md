@@ -9,19 +9,16 @@
 Read up more on electrs at its github page [here](https://github.com/romanz/electrs)
 
 
-Download prerequisites:
+Download prerequisites and compile:
 ```
-# pkg install rust git
-```
-
-Lets compile!
-
-```
+# pkg install rust git llvm-devel nano
 # cd ~
 # git clone https://github.com/romanz/electrs
 # cd electrs
 # cargo build --release
 ```
+
+If you get an error, see this [issue for FreeBSD systems](https://github.com/romanz/electrs/issues/294) to fix. Rerun `cargo build --release`
 
 Install and cleanup:
 ```
