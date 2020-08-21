@@ -23,7 +23,7 @@ Check [lightning lab's loop github repo](https://github.com/lightninglabs/loop/r
 ### loopd Startup and initialization
 Start `loopd`:
 ```
-# loopd --lnd.macaroondir=/var/db/lnd/data/chain/bitcoin/mainnet --lnd.tlspath=/var/db/lnd/tls.cert --proxy=localhost:9050
+# loopd --lnd.macaroondir=/var/db/lnd/data/chain/bitcoin/mainnet --lnd.tlspath=/var/db/lnd/tls.cert --server.proxy=localhost:9050
 ```
 If it works, you should see the following message:
 ```
