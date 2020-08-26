@@ -51,6 +51,18 @@ Some apps, like `lnd`, look for the config file in the bitcoin data directory. I
 
 Wait until sync is complete, once blocks=headers you're good to go. Let this run overnight.
 
+### Shell Alias
+Typing in `-datadir=/var/db/bitcoin` everytime we want to run a bitcoin-cli command is cumbersome, lets make a shell alias.
+```
+# alias bitcoin-cli bitcoin-cli -datadir=/var/db/bitcoin
+# bitcoin-cli getnetworkinfo
+```
+Success! Now lets make this survivie a reboot, `nano ~/.cshrc` and add the following line:
+```
+alias bitcoin-cli bitcoin-cli -datadir=/var/db/bitcoin
+```
+Save (Ctrl+O, ENTER) and exit (Ctrl +X)
+
 ### How to upgrade bitcoind: 
 ```
 # service bitcoind stop
