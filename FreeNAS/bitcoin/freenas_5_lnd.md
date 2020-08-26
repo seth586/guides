@@ -19,11 +19,10 @@ Check [LND's github repo](https://github.com/lightningnetwork/lnd/releases) for 
 # tar -xvf lnd-freebsd-amd64*
 # install -m 0755 -o root -g wheel ~/lnd-freebsd-amd64*/* /usr/local/bin
 # rm -r /lnd-freebsd-amd64* lnd-freebsd-amd64*
-# nano /usr/local/etc/lnd.conf
 ```
 ### LND Configuration
 Read up on configuration options [here](https://github.com/lightningnetwork/lnd/blob/master/sample-lnd.conf). 
-Add the following lines to your `lnd.conf` file:
+Edit your lnd config file with command `nano /usr/local/etc/lnd.conf`:
 ```
 [Application Options]
 lnddir=/var/db/lnd
@@ -56,6 +55,8 @@ tor.dns=soa.nodes.lightning.directory:53
 tor.control=localhost:9051
 tor.v3=1
 ```
+Save (CTRL+O, ENTER) and exit (CTRL+X)
+
 ### Configuration Notes
 This configuration uses tor for the benefit of a static address, NAT traversal, and to prevent doxing your home IP address. Don't tell the world "this house has bitcoins!"! If you want to run on clearnet and advertise your home IP address, check out the [Extras](extras.md) page to set up `nat=true` in a secure fashion.
 
