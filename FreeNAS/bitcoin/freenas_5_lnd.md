@@ -97,11 +97,7 @@ In your other terminal window, `lnd` will begin its sync. Once the sync is compl
 
 We will again use [daemon](https://www.freebsd.org/cgi/man.cgi?query=daemon) to run our `lnd` process at bootup, and restart the process should it fail.
 
-Lets make the [rc.d script](https://www.freebsd.org/doc/en/articles/rc-scripting/):
-```
-# nano /usr/local/etc/rc.d/lnd
-```
-Paste the following service script into nano:
+Lets make the [rc.d script](https://www.freebsd.org/doc/en/articles/rc-scripting/). Edit the script with `nano /usr/local/etc/rc.d/lnd`:
 ```
 #!/bin/sh
 #
@@ -131,11 +127,7 @@ Make the startup script executable:
 # chmod +x /usr/local/etc/rc.d/lnd
 ```
 
-Enable our service in `/etc/rc.conf`
-```
-# nano /etc/rc.conf
-```
-Append the following line
+Enable our service with `nano /etc/rc.conf` and append the following line:
 ```
 lnd_enable="YES"
 ```
