@@ -9,6 +9,8 @@
 
 If you want USB connectivity for a trezor or ledger type of device, you will need to run specter desktop on the client machine as well to create the USB bridge.
 
+Note: if you manually compiled bitcoind with the `--disable-wallet`, you will need to recompile with wallet functionality for specter to work.
+
 Minimizing the amount of software that has file access to your lightning hot wallet is considered a security best practice, so lets [spin up a new jail](https://github.com/seth586/guides/blob/master/FreeNAS/bitcoin/freenas_1_jail_creation.md). I will name this jail `specter` and assign it an ip address of `192.168.84.11`. SSH in and lets begin!
 
 ```
