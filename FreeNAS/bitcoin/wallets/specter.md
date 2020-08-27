@@ -104,5 +104,7 @@ root@specter:~ # rm -r specter-desktop*
 root@specter:~ # fetch https://github.com/cryptoadvance/specter-desktop/archive/v0.7.1.tar.gz
 root@specter:~ # tar -xvf v0.7.1.tar.gz
 root@specter:~ # pip-3.7 install -e specter-desktop*/. --upgrade
+root@specter:~ # service specter start
 ```
 
+[ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/bitcoin/extras.md) ]
