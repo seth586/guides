@@ -52,7 +52,7 @@ root@specter:~ # sysrc specter_enable="YES"
 root@specter:~ # service specter start
 ```
 
-Point a web browser to http://192.168.84.11:25441/, success! Notice that specter is nto connected to bitcoin core yet, so lets create RPC credentials and configure.
+Point a web browser to http://192.168.84.11:25441/, success! Notice that specter is not connected to bitcoin core yet, so lets create RPC credentials and configure.
 
 ## Bitcoind RPC authentication
 Switch to your bitcoin jail and generate RPC credentials.
