@@ -85,8 +85,10 @@ To see what is in the current directory, type `ls`
 ```
 # cd bitcoin-0.20.0
 # sh 
+# ./contrib/install_db4.sh `pwd`
+# export BDB_PREFIX="$PWD/db4"
 # ./autogen.sh
-# ./configure MAKE=gmake --with-gui=no --without-miniupnpc --disable-wallet --enable-util-cli
+# ./configure MAKE=gmake --with-gui=no --without-miniupnpc --enable-util-cli BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include"
 # gmake check
 # gmake install
 # csh
