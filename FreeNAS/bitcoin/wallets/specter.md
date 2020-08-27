@@ -18,11 +18,7 @@ root@freenas:~ # iocage console specter
 root@specter:~ # pkg install python3 py37-pip nano
 root@specter:~ # fetch https://github.com/cryptoadvance/specter-desktop/archive/v0.7.1.tar.gz
 root@specter:~ # tar -xvf v0.7.1.tar.gz
-root@specter:~ # cd specter-desktop-0.7.1
-root@specter:~/specter-desktop-0.7.1 # pip-3.7 install -e .
-root@specter:~/specter-desktop-0.7.1 # cd ~
-root@specter:~ #
-root@specter:~/specter-desktop-0.7.1 # python3 -m cryptoadvance.specter server --host 0.0.0.0
+root@specter:~ # pip-3.7 install -e specter-desktop*/.
 ```
 
 Lets create a service, `mkdir /usr/local/etc/rc.d && nano /usr/local/etc/rc.d/specter`:
@@ -100,4 +96,13 @@ Navigate to the specter website http://192.168.84.11:25441/, and click on "Bitco
 Click "test", you should get green checkmarks. Click "save".
 
 Read the docuemntation to get started! 
+
+## upgrade specter
+```
+root@specter:~ # service specter stop
+root@specter:~ # rm -r specter-desktop*
+root@specter:~ # fetch https://github.com/cryptoadvance/specter-desktop/archive/v0.7.1.tar.gz
+root@specter:~ # tar -xvf v0.7.1.tar.gz
+root@specter:~ # pip-3.7 install -e specter-desktop*/. --upgrade
+```
 
