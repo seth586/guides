@@ -28,9 +28,11 @@ Connect securely, privately, and anonymously to your home node wherever you are 
 
 #### [Zap iOS](wallets/zap.md)
 
-### Browser Enabled Wallets over Tor Hidden Service
+### Browser Enabled Wallets
 
 #### [Joule](wallets/joule.md)
+
+#### [Specter](wallets/specter.md) - A new electrum alternative
 
 ### External guides
 
