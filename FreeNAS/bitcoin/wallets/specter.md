@@ -37,17 +37,29 @@ rcvar="specter_enable"
 specter_command="/usr/local/bin/python3 -m cryptoadvance.specter server --host 0.0.0.0"
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
-command_args="-P ${pidfile} -r -f ${lnd_command}"
+command_args="-P ${pidfile} -r -f ${specter_command}"
 
 load_rc_config $name
 : ${lnd_enable:=no}
 
 run_rc_command "$1"
 ```
-Save (CTRL+O, ENTER) and exit (CTRL+X). Make the rc.d script executable and enable our service 
+Save (CTRL+O, ENTER) and exit (CTRL+X). Make the rc.d script executable, enable our service, and start the daemon: 
 
 ```
 root@specter:~ # chmod +x /usr/local/etc/rc.d/specter
 root@specter:~ # sysrc specter_enable="YES"
+root@specter:~ # service specter start
 ```
+
+Point a web browser to http://192.168.84.11:25441/, success! Notice that specter is nto connected to bitcoin core yet, so lets create RPC credentials and configure.
+
+## Bitcoind RPC authentication
+Switch to your bitcoin jail and generate RPC credentials.
+```
+root@specter:~ # exit
+root@freenas[~]# iocage console bitcoin
+root@bitcoin:~ #
+```
+
 
