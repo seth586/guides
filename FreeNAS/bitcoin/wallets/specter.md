@@ -71,11 +71,12 @@ Your password:
 2tm5NiN8wZVyjx_hgUL5O8it68WfoadHDEZ-v6w_RhQ=
 ```
 
-Add the `rpcauth`,`rpcallowip`, and `rpcbind` to bitcoin.conf with `nano /usr/local/etc/bitcoin.conf`:
+Add the following lines to bitcoin config with `nano /usr/local/etc/bitcoin.conf`:
 ```
 rpcauth=specter:5d0d70936350d0a79b588a9bb2906ea1$82afc2d29dfcfd808acd98f855cf47989564d8f1cd55b515f23fb10ace0dd75a
 rpcallowip=192.168.84.0/24
 rpcbind=0.0.0.0
+blockfilterindex=1
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X). Restart bitcoind & verify it is running:
 ```
