@@ -2,6 +2,8 @@
 
 ## Guide to ₿itcoin & ⚡Lightning️⚡ on 🦈FreeNAS🦈
 
+
+![Specter](img/specter.png) 
 ## Specter Daemon
 [Specter](https://github.com/cryptoadvance/specter-desktop) is an electrum alternative that connects directly to bitcoin core. By hosting the daemon version on freenas, you can remotely generate, sign with coldcard, and broadcast PSBT transactions without having to install client side software. 
 
