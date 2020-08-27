@@ -11,7 +11,7 @@ Minimizing the amount of software that has file access to your lightning hot wal
 
 ```
 root@freenas:~ # iocage console specter
-root@specter:~ # pkg install python3 py37-pip
+root@specter:~ # pkg install python3 py37-pip nano
 root@specter:~ # fetch https://github.com/cryptoadvance/specter-desktop/archive/v0.7.1.tar.gz
 root@specter:~ # tar -xvf v0.7.1.tar.gz
 root@specter:~ # cd specter-desktop-0.7.1
@@ -19,5 +19,28 @@ root@specter:~/specter-desktop-0.7.1 # pip-3.7 install -e .
 root@specter:~/specter-desktop-0.7.1 # python3 -m cryptoadvance.specter server --host 0.0.0.0
 ```
 
-Lets create a service 
+Lets create a service, `nano /usr/local/etc/rc.d/specter`:
+```
+#!/bin/sh
+#
+# PROVIDE: specter
+# REQUIRE: bitcoind tor
+# KEYWORD:
+
+. /etc/rc.subr
+
+name="specter"
+rcvar="specter_enable"
+
+specter_command="/usr/local/bin/python3 -m cryptoadvance.specter server --host 0.0.0.0"
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -r -f ${lnd_command}"
+
+load_rc_config $name
+: ${lnd_enable:=no}
+
+run_rc_command "$1"
+```
+Save (CTRL+O, ENTER) and exit (CTRL+X)
 
