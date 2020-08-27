@@ -16,10 +16,12 @@ root@specter:~ # fetch https://github.com/cryptoadvance/specter-desktop/archive/
 root@specter:~ # tar -xvf v0.7.1.tar.gz
 root@specter:~ # cd specter-desktop-0.7.1
 root@specter:~/specter-desktop-0.7.1 # pip-3.7 install -e .
+root@specter:~/specter-desktop-0.7.1 # cd ~
+root@specter:~ #
 root@specter:~/specter-desktop-0.7.1 # python3 -m cryptoadvance.specter server --host 0.0.0.0
 ```
 
-Lets create a service, `nano /usr/local/etc/rc.d/specter`:
+Lets create a service, `mkdir /usr/local/etc/rc.d && nano /usr/local/etc/rc.d/specter`:
 ```
 #!/bin/sh
 #
@@ -42,5 +44,10 @@ load_rc_config $name
 
 run_rc_command "$1"
 ```
-Save (CTRL+O, ENTER) and exit (CTRL+X)
+Save (CTRL+O, ENTER) and exit (CTRL+X). Make the rc.d script executable and enable our service 
+
+```
+root@specter:~ # chmod +x /usr/local/etc/rc.d/specter
+root@specter:~ # sysrc specter_enable="YES"
+```
 
