@@ -2,7 +2,7 @@
 
 [ [Intro](README.md) ] - [ [Jail Creation](freenas_1_jail_creation.md) ] - [ [Bitcoin](freenas_2_bitcoin.md) ] - [ [Tor](freenas_3_tor.md) ] - [ [Electrum](freenas_4_electrum.md) ] - [**lnd**] - [ [loopd ](freenas_5a_loopd.md)] - [ [RTL](freenas_6_rtl.md) ] - [ [mempool](freenas_8_mempool.md) ] - [ [Extras](extras.md) ]
 
-## Guide to ₿itcoin & Lightning️ on FreeNAS / TrueNAS ![BSDBTC100.png](images/BSDBTC100.png)
+## Guide to ₿itcoin & Lightning️ on FreeNAS / TrueNAS ![BSDBTC60.png](images/BSDBTC60.png)
 
 ### Install Lightning Lab's LND
 
