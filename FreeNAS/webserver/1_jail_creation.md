@@ -1,6 +1,6 @@
 [ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/README.md) ]
 
-## Guide to a self hosted wordpress website on FreeNAS/TrueNAS
+## Guide to a self hosted wordpress website on FreeNAS/TrueNAS ![wordpress60.png](images/wordpress60.png)
 [ [Intro](README.md) ] - **[Jail Creation]** - [ [nginx](2_nginx.md) ] - [ [mysql](3_mysql.md) ] - [ [PHP](4_php.md) ] - [ [wordpress](5_wordpress.md) ]  - [ [reverse proxy](6_reverse_proxy.md) ]
 
 ## Create new jail
