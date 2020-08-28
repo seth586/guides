@@ -2,7 +2,7 @@
 
 [ [Intro](README.md) ] - [ [Jail Creation](1_jail_creation.md) ] - [ **Murmur** ] - [ [SSL & Domain](3_ssl_domain.md) ] - [ [Basic ACL Config](4_acl.md) ]
 
-## Guide to Mumble server (murmur) on FreeNAS/TrueNAS
+## Guide to Mumble server (murmur) on FreeNAS/TrueNAS ![mumble60.png](images/mumble60.png)
 ### Murmur
 
 SSH into TrueNAS and switch to your blog jail.
