@@ -17,6 +17,8 @@ Contributions are welcome!
 
 [Mumble Server](FreeNAS/mumble/README.md) 
 
+![wordpress60.png](FreeNAS/webserver/images/wordpress60.png)
+
 [Wordpress Website with Reverse Proxy](FreeNAS/webserver/README.md)
 
 **OpenWRT Guides:**
