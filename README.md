@@ -5,7 +5,7 @@ Contributions are welcome!
 
 **FreeNAS / TrueNAS Guides:**
 
-[₿itcoin & Lightning️](FreeNAS/bitcoin/README.md)
+![BSDBTC60.png](FreeNAS/bitcoin/images/BSDBTC60.png) [₿itcoin & Lightning️](FreeNAS/bitcoin/README.md)
 
 [TOR Relay](FreeNAS/tor_relay/README.md)
 
