@@ -2,10 +2,8 @@
 
 **[Intro]** - [ [Jail Creation](1_jail_creation.md) ] - [ [murmur](2_murmur.md) ] - [ [SSL & Domain](3_ssl_domain.md) ] - [ [Basic ACL Config](4_acl.md) ]
 
-## Guide to Mumble server (murmur) on FreeNAS/TrueNAS
+## Guide to Mumble server (murmur) on FreeNAS/TrueNAS ![mumble60.png](images/mumble60.png)
 ### Intro
-
-![JailMumble](images/mumble.jpg)
 
 Discord is currently the most popular voice chat system among many communities, however they are a closed source platform, do not offer end to end encryption, and frequently engage in censorship. 
 
