@@ -7,7 +7,7 @@ Contributions are welcome!
 
 ![BSDBTC60.png](FreeNAS/bitcoin/images/BSDBTC60.png) [₿itcoin & Lightning️](FreeNAS/bitcoin/README.md)
 
-[TOR Relay](FreeNAS/tor_relay/README.md)
+![BSDBTC60.png](FreeNAS/tor_relay/images/tor60.png) [TOR Relay](FreeNAS/tor_relay/README.md)
 
 [Mumble Server](FreeNAS/mumble/README.md)
 
