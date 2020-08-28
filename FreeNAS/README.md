@@ -5,7 +5,7 @@ Contributions are welcome!
 
 Guides:
 
-![BitcoinBSD](bitcoin/images/BTCBSD300.png) 
+![BitcoinBSD](bitcoin/images/BSDBTC300.png) 
 
 **FreeNAS / TrueNAS Guides:**
 
