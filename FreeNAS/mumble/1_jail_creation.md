@@ -2,7 +2,7 @@
 
 [ [Intro](README.md) ] - [ **Jail Creation** ] - [ [murmur](2_murmur.md) ] - [ [SSL & Domain](3_ssl_domain.md) ] - [ [Basic ACL Config](4_acl.md) ]
 
-## Guide to Mumble server (murmur) on FreeNAS/TrueNAS
+## Guide to Mumble server (murmur) on FreeNAS/TrueNAS ![mumble60.png](images/mumble60.png)
 ### Jail Creation
 
 Jails are a way to seperate computing environments. Since we are exposing murmur to the internet, we wouldn't want our whole system compromised if our murmur server got compromised. It also helps us partition software on our system. Make a mistake? No worries, just nuke the jail and start over!
