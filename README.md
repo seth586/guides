@@ -9,9 +9,13 @@ Contributions are welcome!
 
 [₿itcoin & Lightning️](FreeNAS/bitcoin/README.md) 
 
-[TOR Relay](FreeNAS/tor_relay/README.md) ![BSDBTC60.png](FreeNAS/tor_relay/images/tor60.png) 
+![BSDBTC60.png](FreeNAS/tor_relay/images/tor60.png) 
 
-[Mumble Server](FreeNAS/mumble/README.md) ![mumble60.png](FreeNAS/mumble/images/mumble60.png)
+[TOR Relay](FreeNAS/tor_relay/README.md)
+
+![mumble60.png](FreeNAS/mumble/images/mumble60.png)
+
+[Mumble Server](FreeNAS/mumble/README.md) 
 
 [Wordpress Website with Reverse Proxy](FreeNAS/webserver/README.md)
 
