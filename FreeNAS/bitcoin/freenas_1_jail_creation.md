@@ -1,9 +1,8 @@
-
-
-[ [Intro](README.md) ] - [**Jail Creation**] - [ [Bitcoin](freenas_2_bitcoin.md) ] - [ [Tor](freenas_3_tor.md) ] - [ [Electrum](freenas_4_electrum.md) ] - [ [lnd](freenas_5_lnd.md) ] - [ [loopd ](freenas_5a_loopd.md)] - [ [RTL](freenas_6_rtl.md) ] - [ [mempool](freenas_8_mempool.md) ] - [ [Extras](extras.md) ] ![BSDBTC100.png](images/BSDBTC100.png)
-
 [ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/README.md) ]
 
+[ [Intro](README.md) ] - [**Jail Creation**] - [ [Bitcoin](freenas_2_bitcoin.md) ] - [ [Tor](freenas_3_tor.md) ] - [ [Electrum](freenas_4_electrum.md) ] - [ [lnd](freenas_5_lnd.md) ] - [ [loopd ](freenas_5a_loopd.md)] - [ [RTL](freenas_6_rtl.md) ] - [ [mempool](freenas_8_mempool.md) ] - [ [Extras](extras.md) ] 
+
+![BSDBTC100.png](images/BSDBTC100.png)
 ##  Guide to ₿itcoin & Lightning️ on FreeNAS / TrueNAS
 
 ### Jail Creation
