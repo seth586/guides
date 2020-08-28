@@ -1,6 +1,6 @@
 [ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/README.md) ]
 
-## Guide to a self hosted wordpress website on FreeNAS/TrueNAS
+## Guide to a self hosted wordpress website on FreeNAS/TrueNAS ![wordpress60.png](images/wordpress60.png)
 [ [Intro](README.md) ] - [ [Jail Creation](1_jail_creation.md) ] - [ [nginx](2_nginx.md) ] - **[mysql]** - [ [PHP](4_php.md) ] - [ [wordpress](5_wordpress.md) ] - [ [reverse proxy](6_reverse_proxy.md) ]
 
 MySQL is a database structure for storing and recalling information. When you use wordpress to make a blog post, or allow users to comment, or create a transaction, this data is stored and retreived from the database. There are several MySQL clones out there, and my personal favorite is MariaDB.
