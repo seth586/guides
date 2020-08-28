@@ -2,7 +2,7 @@
 
 [ [Intro](README.md) ] - [ [Jail Creation](1_jail_creation.md) ] - [ [murmur](2_murmur.md) ] - [ **SSL & Domain** ] - [ [Basic ACL Config](4_acl.md) ]
 
-## Guide to Mumble server (murmur) on FreeNAS/TrueNAS
+## Guide to Mumble server (murmur) on FreeNAS/TrueNAS ![mumble60.png](images/mumble60.png)
 ### SSL & Domain Configuration
 In the [Guide to a self hosted wordpress website on FreeNAS/TrueNAS](https://github.com/seth586/guides/tree/master/FreeNAS/webserver), I specify in detail how to create a [reverse proxy](https://github.com/seth586/guides/blob/master/FreeNAS/webserver/6_reverse_proxy.md) to serve multiple websites. On this `reverse-proxy` jail, nginx monitors website requests on the default port 80 for http and 443 for https, and sends those requests to the appropriate jail for our multiple websites we are hosting now or in the future.
 
