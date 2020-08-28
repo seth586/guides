@@ -4,7 +4,7 @@
 
 ## Guide to ₿itcoin & Lightning️ on FreeNAS / TrueNAS
 
-![FreeNAS_Jail](images/BTCBSDsmall.png) 
+![FreeNAS_Jail](images/BSDBTC300.png) 
 
 ### Intro
 
