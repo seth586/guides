@@ -14,7 +14,7 @@ Contributions are welcome!
 
 | **OpenWRT Guides:** | Column 2 Header | 
 | --------------- | --------------- | 
-| logo | [SSH PublicKey Authentication thru Bastion](OpenWRT/security/README.md) | 
+| ![ssh60.png](OpenWRT/security/images/ssh60.png) | [SSH PublicKey Authentication thru Bastion](OpenWRT/security/README.md) | 
 
 
 
