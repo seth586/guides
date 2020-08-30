@@ -18,11 +18,6 @@ Verify thhat mysql is running.
 mysql 56864  0.0  0.0   7068  2776  -  IsJ  20:32   0:00.01 /bin/sh /usr/local/bin/mysqld_safe --defaults-extra-file=/var/db/mysql/my.cnf --user=mysql --datadir=/var/db/mysql --pid-file=/var/db/mysql/blog.pid
 mysql 56933  0.0  0.1 583512 91640  -  IJ   20:32   0:00.15 /usr/local/libexec/mysqld --defaults-extra-file=/var/db/mysql/my.cnf --basedir=/usr/local --datadir=/var/db/mysql --plugin-dir=/usr/local/lib/mysql/plugin --log-error=/var/db/mysql/blog.err --pid-file=/var/db/mysql/blog.pid
 ```
-If `ps aux` does not reveal where the unix socket was created, the location is likely in the `/tmp` folder.
-```
-# ll /tmp
-srwxrwxrwx  1 mysql  wheel  0 Jun 14 20:32 mysql.sock=
-```
 
 ## Secure the database installation
 ```
