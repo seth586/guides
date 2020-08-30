@@ -23,7 +23,7 @@ define( 'WP_SITEURL', 'http://192.168.84.80' );
 define( 'DB_NAME', 'database_name_here' );
 define( 'DB_USER', 'username_here' );
 define( 'DB_PASSWORD', 'password_here' );
-define( 'DB_HOST', 'localhost:/tmp/mysql.sock' );
+define( 'DB_HOST', 'localhost:/var/run/mysql/mysql.sock' );
 ```
 In a browser, navigate to https://api.wordpress.org/secret-key/1.1/salt/ . This will generate salt to create unique cookies for your site visitors. Cookies are used to remember login activity, shopping carts, etc. Copy and replace the lines generated.
 
