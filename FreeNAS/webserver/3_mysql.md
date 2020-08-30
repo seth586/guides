@@ -42,4 +42,14 @@ Enter password:
 > exit
 ```
 
+## Upgrade mariadb
+Make sure to back up your database prior to an upgrade attempt!
+```
+# pkg update
+# pkg upgrade mariadb104-server
+# service mariadb-server restart
+# pkg upgrade mariadb104
+# mariadb-upgrade --datadir=/var/db/mysql
+```
+
 Next: [ [PHP](4_php.md) ] >>
