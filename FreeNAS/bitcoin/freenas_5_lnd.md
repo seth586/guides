@@ -162,4 +162,4 @@ Read the release notes, if a lot changed, you may have to close channels or do s
 
 Unlock lnd with RTL. Watch the logs to make sure that the database migration is sucessful.
 
-Next: { [Install Ride The Lightning web UI](freenas_6_rtl.md) ]
+Next: { [Install Lightning Lab's Loop client](freenas_5a_loopd.md) ]
