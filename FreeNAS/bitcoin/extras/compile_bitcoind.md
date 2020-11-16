@@ -56,19 +56,6 @@ Lets start installing stuff! (answer proceed questions with `y`)
 # pkg install autoconf automake boost-libs git gmake libevent libtool libzmq4 pkgconf wget nano
 ```
 
-### Verify Gnu Compiler Collection Version
-The only `gcc` compiler that I got working for Bitcoin 0.20.0 is gcc48, remove other versions and install gcc48:
-```
-# pkg info -x gcc
-```
-Remove older versions:
-```
-# pkg remove gcc9
-# pkg remove gcc8
-# pkg install gcc48
-```
-
-
 ### Download bitcoin core
 Go to https://github.com/bitcoin/bitcoin/releases, find the tar.gz release we want to install. The latest release is 0.20.0 at https://bitcoincore.org/bin/bitcoin-core-0.20.0/bitcoin-0.20.0.tar.gz . Copy the link. PuTTY will let you paste by right clicking.
 
