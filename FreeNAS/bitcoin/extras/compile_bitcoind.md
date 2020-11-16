@@ -22,7 +22,7 @@ You're in! Lets create our bitcoin user/group. If you previosuly installed `bitc
 root@bitcoin:~ # adduser
 Username: bitcoin
 Full name:
-Uid (Leave empty for default):
+Uid (Leave empty for default): 779
 Login group [bitcoin]:
 Login group is bitcoin. Invite bitcoind into other groups? []:
 Login class [default]:
@@ -34,9 +34,9 @@ Lock out the account after creation? [no]:
 Username   : bitcoin
 Password   : <disabled>
 Full Name  :
-Uid        : 1001
+Uid        : 779
 Class      :
-Groups     : bitcoind
+Groups     : bitcoin
 Home       : /home/bitcoin
 Home Mode  :
 Shell      : /usr/sbin/nologin
