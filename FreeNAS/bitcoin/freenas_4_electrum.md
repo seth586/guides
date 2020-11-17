@@ -23,15 +23,13 @@ Add the `/usr/local/llvm90/bin` directory to a priority position in the shell's 
 set path = (/usr/local/llvm90/bin /sbin /bin /usr/sbin /usr/bin /usr/local/sbin /usr/local/bin $HOME/bin)
 ...
 ```
-Save (CTRL+O, ENTER) and exit (CTRL+X). Exit the jail by typing `exit`, then re-enter the jail `iocage console bitcoin` so the shell loads the new configuration. 
+Save (CTRL+O, ENTER) and exit (CTRL+X). Refresh your shell:
 ```
+# source ~/.cshrc
 # c++ --version
 clang version 9.0.1
 ```
-Success!
-
-
-Now lets download and compile!
+Success! Now lets download and compile!
 ```
 # cd ~
 # git clone https://github.com/romanz/electrs
