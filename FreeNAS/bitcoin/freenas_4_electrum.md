@@ -9,9 +9,20 @@
 Read up more on electrs at its github page [here](https://github.com/romanz/electrs)
 
 
-Download prerequisites and compile:
+TrueNAS 12's base compiler is llvm10, however we need to downgrade to version 9 for a sucessful compile. Download prerequisites and compile:
 ```
-# pkg install rust git llvm-devel nano
+# pkg install rust git llvm90 nano
+# ln /usr/local/llvm90/bin/clang++ /usr/local/llvm90/bin/c++
+# nano ~/.cshrc
+```
+Add the `/usr/local/llvm90/bin` directory to a priority position in the shell's path:
+```
+set path = (/usr/local/llvm90/bin /sbin /bin /usr/sbin /usr/bin /usr/local/sbin /usr/local/bin $HOME/bin)
+```
+Save (CTRL+O, ENTER) and exit (CTRL+X). Exit the jail by typing `exit`, then re-enter the jail `iocage console bitcoin` so the shell loads the new configuration.
+
+Now lets download and compile!
+```
 # cd ~
 # git clone https://github.com/romanz/electrs
 # cd electrs
