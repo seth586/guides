@@ -114,7 +114,7 @@ Give it a whir:
 ```
 
 ### Bonus: Reverse proxy configuration for domain & SSL certificate access
-If you want to access electrum without using a VPN or TOR, you can have a SSL encrypted connection by configuring your [reverse proxy](https://github.com/seth586/guides/blob/master/FreeNAS/webserver/6_reverse_proxy.md) config file by appending the data below to your main nginx config file located at `/usr/local/etc/nginx/nginx.conf` in your reverseproxy jail:
+If you want to access electrum without using a VPN or TOR, you can have a SSL encrypted connection by configuring your [reverse proxy](https://github.com/seth586/guides/blob/master/FreeNAS/webserver/6_reverse_proxy.md) config file by appending the data below to the bottom of `/usr/local/etc/nginx/nginx.conf` in your reverseproxy jail:
 ```
 ### ELECTRUM.EXAMPLE.COM
 stream {
@@ -135,6 +135,6 @@ stream {
 }
 ### / ELECTRUM
 ```
-Change `192.168.84.208` with the jail hosting electrum. Save (CTRL+O, ENTER) and exit (CTRL+X), and refresh nginx with `service nginx restart`
+Change `192.168.84.208` with the jail hosting electrum. Then add `load_module /usr/local/libexec/nginx/ngx_stream_module.so;` to the very first line of `nginx.conf`. Save (CTRL+O, ENTER) and exit (CTRL+X), and refresh nginx with `service nginx restart`
 
 Next: [ [lnd](freenas_5_lnd.md) ]
