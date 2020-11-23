@@ -84,7 +84,7 @@ Email: seth586@protonmail.com
 https://tippin.me/@seth586
 
 ### Shout outs
-Special thanks to the Stadicus raspberri pi guide for inspiring this freebsd guide, check it out here:
+Special thanks to the Stadicus Raspberry pi guide for inspiring this freebsd guide, check it out here:
 https://github.com/Stadicus/guides/blob/master/raspibolt/README.md
 
 Next: [ [Jail Creation](freenas_1_jail_creation.md) ]
