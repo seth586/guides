@@ -73,11 +73,13 @@ It will take about ~3 hours for your relay to propogate through the network. Sea
 
 It takes about a good two weeks before you will see steady traffic, see this tor project blog post [here](https://blog.torproject.org/lifecycle-new-relay).
 
-### Useful links
+### Useful stuff for low power devices
 Useful info to make sure FreeBSD loads AES-NI drivers to hardware accelerate OpenSSL, especially important for low power platforms:
 https://manuth.life/enable-aes-ni-freebsd/
 
 https://forums.freebsd.org/threads/openssl-and-hardware-acceleration-aes-ni.69167/
+
+If system doesnt have a cmos battery, set `sysrc ntpd_sync_on_start=YES` to update time on boot. Verify with `date`
 
 [ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/README.md) ]
 
