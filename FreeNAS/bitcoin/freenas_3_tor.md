@@ -24,6 +24,7 @@ CookieAuthentication 1
 ```
 Add the following lines:
 ```
+CookieAuthFile /var/db/tor/control_auth_cookie
 CookieAuthFileGroupReadable 1
 CacheDirectoryGroupReadable 1
 ```
