@@ -57,7 +57,7 @@ Typing in `-datadir=/var/db/bitcoin` everytime we want to run a bitcoin-cli comm
 # alias bitcoin-cli bitcoin-cli -datadir=/var/db/bitcoin
 # bitcoin-cli getnetworkinfo
 ```
-Success! Now lets make this survivie a reboot, `nano ~/.cshrc` and add the following line:
+Success! Now lets make this survive a reboot, `nano ~/.cshrc` and add the following line:
 ```
 alias bitcoin-cli bitcoin-cli -datadir=/var/db/bitcoin
 ```
@@ -70,7 +70,7 @@ Save (Ctrl+O, ENTER) and exit (Ctrl +X)
 # nano /usr/local/etc/rc.d/bitcoind
 ```
 Remove the `#` comment before `pidfile="/var/run/${name}.pid"`
-Delete the entire line `pidfile="${bitcoind_data_dir}/bitcoind.pid"
+Delete the entire line `pidfile="${bitcoind_data_dir}/bitcoind.pid"`
 
 Save (Ctrl+O, ENTER) and exit (Ctrl+X)
 
