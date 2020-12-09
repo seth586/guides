@@ -74,9 +74,11 @@ This guide will be kept up to date.
 ### Contact me
 If you have any trouble with this guide, or want to share something to improve the guide, contact me! No question is too dumb! I'd rather help people deploy code than waste time browsing social media!
 
-Twitter: [Seth586](https://twitter.com/seth586)
+Twitter: (do yourself a favor and get off that orwellian platform)
 
 Gab: [Seth586](https://gab.com/seth586)
+
+Telegram: [Seth586](https://www.t.me/seth586)
 
 Email: seth586@protonmail.com
 
