@@ -1,5 +1,10 @@
 [ [Intro](README.md) ] - [ [Jail Creation](1_jail.md) ] - [ [Postgresql](2_postgresql.md) ] - [ [synapse](3_synapse.md) ] - [ [reverse proxy](4_nginx.md) ] - **[ token registration ]** - [ [tor ](6_tor.md)]
 
+## Guide to matrix-synapse server on TrueNAS ![BSDBTC60.png](images/matrix60.png)
+
+### Token based registration
+This will allow you to generate invite links, allowing 1 unique registration onto your server per link generated.
+
 ## FreeBSD rc.d
 In this example pip installed the binary at `/usr/local/bin/matrix-registration`: 
 
