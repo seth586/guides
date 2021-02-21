@@ -1,6 +1,6 @@
 [ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/README.md) ]
 
-**[Intro]** - [ [Jail Creation](1_jail.md) ] - [ [Postgresql](2_postgresql.md) ] - [ [synapse](3_synapse.md) ] - [ [reverse proxy](4_nginx.md) ] - [ [token registration](5_registration.md) ] - [ [tor ](6_tor.md)]
+**[Intro]** - [ [Jail Creation](1_jail.md) ] - [ [Postgresql](2_postgresql.md) ] - [ [synapse](3_synapse.md) ] - [ [reverse proxy](4_nginx.md) ] - [ [token registration](5_registration.md) ] - [ [tor ](6_tor.md)] - [ [coturn](7_coturn.md) ]- [ [jitsi](8_jitsi.md) ]
 
 ## Guide to matrix-synapse server on TrueNAS ![BSDBTC60.png](images/matrix60.png)
 
@@ -36,6 +36,10 @@ You will be able to connect a chat client to your server. I personally like [Ele
 Your server will be able to federate with other matrix servers. 
 
 Public signups will be disabled, however you will have a token generator to give permissioned signups to friends. 
+
+You will have a stun/turn server running, to help 1-on-1 WebRTC voice and video calls connections find each other (stun) or act as a relay to punch through various NAT & network topologies (turn).
+
+You will have a jitsi server running to serve group voice and video calls.
 
 We will also allow clients to connect over tor, allowing them to stay anonymous. Unfortunately, the matrix-synapse  server can not federate with other servers over tor, but it is on the development roadmap.
 
