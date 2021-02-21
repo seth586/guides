@@ -1,6 +1,6 @@
 [ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/README.md) ]
 
-**[Intro]** - [ [Jail Creation](freenas_1_jail_creation.md) ] - [ [Bitcoin](freenas_2_bitcoin.md) ] - [ [Tor](freenas_3_tor.md) ] - [ [Electrum](freenas_4_electrum.md) ] - [ [lnd](freenas_5_lnd.md) ] - [ [loopd ](freenas_5a_loopd.md)] - [ [RTL](freenas_6_rtl.md) ] - [ [mempool](freenas_8_mempool.md) ] - [ [Extras](extras.md) ]
+**[Intro]** - [ [Jail Creation](1_jail.md) ] - [ [Postgresql](2_postgresql.md) ] - [ [synapse](3_synapse.md) ] - [ [reverse proxy](4_nginx.md) ] - [ [token registration](5_registration.md) ] - [ [tor ](6_tor.md)]
 
 ## Guide to matrix-synapse server on TrueNAS ![BSDBTC60.png](images/BSDBTC60.png)
 
@@ -18,16 +18,17 @@ Sure, gmail could in theory block all communication with hotmail. In the same wa
 Censorship only works on centralized networks. Consider the following network topologies:
 
 #### The centralized server: 
-Twitter decides who you can and can't talk to on their platform. Complete centralized control rules with tyrrany. Absolute power corrupts absolutely. The individual has no choice in moderation policies.
+One monolithic sever - Twitter - decides who you can and can't talk to on their platform. Complete centralized control rules with tyrrany. Absolute power corrupts absolutely. The individual has no choice in moderation policies. 
 
 #### The federated network:
-gnu/social server mastodon.social server blocks the gnu/social gab.com server. Individual adminstrators decide who their members can and can't talk to. Power structure is moved closer to the individual. This increases the freedom for individuals as they can now choose their own moderators. 
+gnu/social server mastodon.social server blocks the gnu/social gab.com server. Individual adminstrators decide who their members can and can't talk to. Power structure is moved closer to the individual. This increases the freedom for individuals as they can now choose their servers and moderators. 
 
 #### The decentralized network:
-Every individual determines who they want to block. 
+Every individual runs their own [dendrite](https://github.com/matrix-org/dendrite) server and chat client on the same device. Completely decentralized network. The individual decides who to block and who to voluntarily associate with.
 
+Eventually, with enough engineering, the matrix protocol can reach a completely decentralized state. Until then, the best we can do is run a federated network topology for like minded individuals.
 
+### Goal
+By the end of this guide, you will be running a matrix-synapse server in a TrueNAS / FreeBSD jail. Your server will be able to federate with other matrix servers. Public signups will be disabled, however you will have a token generator to give permissioned signups to friends. We will also allow clients to connect over tor, allowing them to stay anonymous. Unfortunately, the matrix-synapse  server can not federate with other servers over tor, but it is on the development roadmap.
 
-This guide 
-
-Next: [ [Jail Creation](freenas_1_jail_creation.md) ]
+Next: [ [Jail Creation](1_jail.md) ]
