@@ -1,3 +1,5 @@
+[ [Intro](README.md) ] - [ [Jail Creation](1_jail.md) ] - [ [Postgresql](2_postgresql.md) ] - [ [synapse](3_synapse.md) ] - [ [reverse proxy](4_nginx.md) ] - **[ token registration ]** - [ [tor ](6_tor.md)]
+
 ## FreeBSD rc.d
 In this example pip installed the binary at `/usr/local/bin/matrix-registration`: 
 
