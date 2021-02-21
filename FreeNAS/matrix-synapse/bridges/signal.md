@@ -1,5 +1,5 @@
 ```
-pkg install py37-virtualenv olm rust py37-pillow
+pkg install py37-virtualenv olm rust py37-pillow nano
 
 virtualenv -p /usr/local/bin/python3.7 .
 
