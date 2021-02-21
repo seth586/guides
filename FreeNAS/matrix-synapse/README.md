@@ -29,6 +29,14 @@ Every individual runs their own [dendrite](https://github.com/matrix-org/dendrit
 Eventually, with enough engineering, the matrix protocol can reach a completely decentralized state. Until then, the best we can do is run a federated network topology for like minded individuals.
 
 ### Goal
-By the end of this guide, you will be running a matrix-synapse server in a TrueNAS / FreeBSD jail. Your server will be able to federate with other matrix servers. Public signups will be disabled, however you will have a token generator to give permissioned signups to friends. We will also allow clients to connect over tor, allowing them to stay anonymous. Unfortunately, the matrix-synapse  server can not federate with other servers over tor, but it is on the development roadmap.
+By the end of this guide, you will be running a matrix-synapse server in a TrueNAS / FreeBSD jail. 
+
+Your server will be able to federate with other matrix servers. 
+
+Public signups will be disabled, however you will have a token generator to give permissioned signups to friends. 
+
+We will also allow clients to connect over tor, allowing them to stay anonymous. Unfortunately, the matrix-synapse  server can not federate with other servers over tor, but it is on the development roadmap.
+
+And then, you will send me a message at @seth586:nym.im to test your federation! 
 
 Next: [ [Jail Creation](1_jail.md) ]
