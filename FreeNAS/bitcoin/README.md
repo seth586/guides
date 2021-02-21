@@ -78,7 +78,7 @@ Twitter: (do yourself a favor and get off that orwellian platform)
 
 Gab: [Seth586](https://gab.com/seth586)
 
-Telegram: [Seth586](https://www.t.me/seth586)
+Matrix: @seth586:nym.im
 
 Email: seth586@protonmail.com
 
