@@ -1,3 +1,5 @@
+Install
+
 ```
 pkg install py37-virtualenv olm rust py37-pillow nano
 
@@ -13,4 +15,15 @@ cp example-config.yaml config.yaml
 
 
 ```
+
+Create new database
+
+```
+sudo -i -u postgres
+psql
+postgres=# CREATE USER "mautrix-signal" WITH PASSWORD 'password';
+\q
+exit
+```
+
 
