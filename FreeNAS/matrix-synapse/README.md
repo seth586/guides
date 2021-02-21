@@ -1,6 +1,6 @@
 [ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/README.md) ]
 
-**[Intro]** - [ [Jail Creation](1_jail.md) ] - [ [Postgresql](2_postgresql.md) ] - [ [synapse](3_synapse.md) ] - [ [reverse proxy](4_nginx.md) ] - [ [token registration](5_registration.md) ] - [ [tor ](6_tor.md)] - [ [coturn](7_coturn.md) ]- [ [jitsi](8_jitsi.md) ]
+**[Intro]** - [ [Jail Creation](1_jail.md) ] - [ [Postgresql](2_postgresql.md) ] - [ [synapse](3_synapse.md) ] - [ [reverse proxy](4_nginx.md) ] - [ [token registration](5_registration.md) ] - [ [tor ](6_tor.md)] - [ [coturn](7_coturn.md) ] - [ [jitsi](8_jitsi.md) ] - [ [bridges](9_bridges.md) ]
 
 ## Guide to matrix-synapse server on TrueNAS ![BSDBTC60.png](images/matrix60.png)
 
@@ -33,7 +33,7 @@ By the end of this guide, you will be running a matrix-synapse server in a TrueN
 
 You will be able to connect a chat client to your server. I personally like [Element Secure Messenger](https://element.io/get-started).
 
-Your server will be able to federate with other matrix servers. 
+Your server will be able to federate with other matrix servers. Send me a message at @seth586:nym.im to test your federation, and let me know how it went!
 
 Public signups will be disabled, however you will have a token generator to give permissioned signups to friends. 
 
@@ -43,6 +43,6 @@ You will have a jitsi server running to serve group voice and video calls.
 
 We will also allow clients to connect over tor, allowing them to stay anonymous. Unfortunately, the matrix-synapse  server can not federate with other servers over tor, but it is on the development roadmap.
 
-And then, you will send me a message at @seth586:nym.im to test your federation! 
+Optionally, you can set up [bridges](https://matrix.org/bridges/), to communicate with other popular chat services.
 
 Next: [ [Jail Creation](1_jail.md) ]
