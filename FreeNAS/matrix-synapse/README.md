@@ -31,6 +31,8 @@ Eventually, with enough engineering, the matrix protocol can reach a completely 
 ### Goal
 By the end of this guide, you will be running a matrix-synapse server in a TrueNAS / FreeBSD jail. 
 
+You will be able to connect a chat client to your server. I personally like [Element Secure Messenger](https://element.io/get-started).
+
 Your server will be able to federate with other matrix servers. 
 
 Public signups will be disabled, however you will have a token generator to give permissioned signups to friends. 
