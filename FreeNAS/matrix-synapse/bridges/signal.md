@@ -1,9 +1,9 @@
-##Install signald
+## Install signald
 
 ???
 
 
-##Install mautrix-signal
+## Install mautrix-signal
 ```
 pkg install py37-virtualenv olm rust py37-pillow nano
 
