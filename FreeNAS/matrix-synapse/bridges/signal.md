@@ -44,7 +44,8 @@ Add mautrix-signal to synapse config `nano ~/.synapse/homeserver.yaml`:
 app_service_config_files:
   - /usr/local/etc/mautrix-signal/registration.yaml
 ```
-Start mautrix-signal:
+restart synapse & start mautrix-signal:
 ```
+synctl restart
 python -m mautrix_signal -c /usr/local/etc/mautrix-signal/config.yaml -r /usr/local/etc/mautrix-signal/registration.yaml
 ```
