@@ -13,7 +13,7 @@ Install `miniupnpd` on your router, and enable the service. Or, if you're not us
 
 `root@turnserver:~ #` `pkg install upnpc`
 
-`root@turnserver:~ #` `nano /usr/local/etc/coturn_ext_ip.sh`:
+`root@turnserver:~ #` `touch /usr/local/etc/coturn_ext_ip.sh && chmod +x /usr/local/etc/coturn_ext_ip.sh && nano /usr/local/etc/coturn_ext_ip.sh`:
 ```
 #!/bin/csh
 set current_external_ip_config = `cat /usr/local/etc/turnserver.conf | grep "^external-ip" | cut -d'=' -f2`
