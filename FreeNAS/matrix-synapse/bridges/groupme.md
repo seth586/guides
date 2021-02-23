@@ -4,7 +4,7 @@ git clone https://gitlab.com/robintown/mx-puppet-groupme
 
 cd mx-puppet-groupme
 
-npm install
+npm install groupme
 
 cp sample.config.yaml config.yaml
 
