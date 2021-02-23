@@ -7,7 +7,7 @@
 root@synapse:~ # sudo -i -u postgres
 $ psql
 postgres=# CREATE USER "mautrix-signal" WITH PASSWORD 'password';
-postgres=# CREATE DATABASE mautrix-signal OWNER "mautrix-signal";
+postgres=# CREATE DATABASE "mautrix-signal" OWNER "mautrix-signal";
 postgres=# \q
 $ exit
 root@synapse:~ #
