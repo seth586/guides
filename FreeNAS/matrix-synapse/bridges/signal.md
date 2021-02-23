@@ -17,6 +17,10 @@ root@synapse:~ #
 ```
 pkg install py37-virtualenv olm rust py37-pillow nano
 
+mkdir /var/db/mautrix-signal
+
+cd /var/db/mautrix-signal
+
 virtualenv -p /usr/local/bin/python3.7 .
 
 source ~/bin/activate.csh
