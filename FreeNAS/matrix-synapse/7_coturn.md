@@ -23,7 +23,7 @@ if ( "$current_external_ip_config" != "$current_external_ip" ) then
   sed -i '' "s/^external-ip=.*/external-ip="$current_external_ip"/" /usr/local/etc/turnserver.conf
   service turnserver restart
 endif
-``
+```
 
 `root@turnserver:~ #` `crontab -e`:
 ```
