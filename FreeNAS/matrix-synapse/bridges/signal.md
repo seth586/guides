@@ -17,7 +17,9 @@ root@synapse:~ #
 ```
 pkg install py37-virtualenv olm rust py37-pillow nano
 
-mkdir /var/db/mautrix-signal
+pw adduser mautrix-signal -d /nonexistent -s /usr/sbin/nologin -c "User for mautrix-signal bridge"
+
+mkdir /var/db/mautrix-signal && chown -R mautrix-signal:mautrix-signal /var/db/mautrix-signalcd
 
 cd /var/db/mautrix-signal
 
