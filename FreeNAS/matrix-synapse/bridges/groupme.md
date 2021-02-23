@@ -12,4 +12,4 @@ nano config.yaml
 
 npm run start -- --register
 
-npm run start
+`/usr/local/bin/node /root/mx-puppet-groupme/build/index.js --config=/root/mx-puppet-groupme/config.yaml --registration-file=/root/mx-puppet-groupme/groupme-registration.yaml`
