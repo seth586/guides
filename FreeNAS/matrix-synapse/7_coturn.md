@@ -7,7 +7,7 @@
 ### Coturn
 
 #### Poor mans ddns
-coturn is designed to be utilized without a NAT and with a static IP address. You and I are likely using a NAT (router) and a dynamic ip address. This script will ask the router's upnp daemon for the WAN ip address, and if its different than whats in `turnserver.conf`, will edit `turnserver.conf` and restart coturn.
+coturn is designed to be utilized without a NAT and with a static IP address. You and I are likely using a NAT (router) and a dynamic ip address. This script will be called every 5 minutes as a cronjob, ask the router's upnp daemon for the WAN ip address, and if its different than whats it reads in `turnserver.conf`, will edit `turnserver.conf` with the new IP and restart coturn.
 
 Install `miniupnpd` on your router, and enable the service. Or, if you're not using an open source operating system on your router, poray to the gods the manufacturer set up upnp correctly...
 
@@ -25,3 +25,7 @@ if ( "$current_external_ip_config" != "$current_external_ip" ) then
 endif
 ``
 
+`root@turnserver:~ #` `crontab -e`:
+```
+*/5  * * * * /usr/local/etc/coturn_ext_ip.sh
+```
