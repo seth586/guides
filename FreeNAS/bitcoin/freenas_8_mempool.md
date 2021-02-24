@@ -68,6 +68,7 @@ Lets get installing!
 
 ### Setup MariaDB database:
 ```
+# chown mysql:mysql /var/run/mysql
 # sysrc mysql_enable="YES"
 # service mysql-server onestart
 # mysql_secure_installation
