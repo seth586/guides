@@ -82,9 +82,6 @@ Matrix: [@seth586:nym.im](https://matrix.to/#/@seth586:nym.im)
 
 Email: seth586@protonmail.com
 
-### Give me an unreasonably small tip!
-https://tippin.me/@seth586
-
 ### Shout outs
 Special thanks to the Stadicus Raspberry pi guide for inspiring this freebsd guide, check it out here:
 https://github.com/Stadicus/guides/blob/master/raspibolt/README.md
