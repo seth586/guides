@@ -3,9 +3,9 @@ Seth586😈guides
 I am not a professional programmer or unix adminsitrator, use at your own risk!
 Contributions are welcome!
 
-Guides:
+Contact me on the matrix chat protocol: [@seth586:nym.im](https://matrix.to/#/@seth586:nym.im)
 
-![BitcoinBSD](bitcoin/images/BSDBTC300.png) 
+Guides:
 
 **FreeNAS / TrueNAS Guides:**
 
