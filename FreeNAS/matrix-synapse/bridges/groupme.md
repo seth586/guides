@@ -37,3 +37,9 @@ load_rc_config $name
 
 run_rc_command "$1"
 ```
+
+```
+# sysrc groupme_enable="YES"
+# service groupme start
+ps aux
+```
