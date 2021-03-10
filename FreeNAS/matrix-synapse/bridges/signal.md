@@ -25,7 +25,7 @@ cd /var/db/mautrix-signal
 
 virtualenv -p /usr/local/bin/python3.7 .
 
-source ~/bin/activate.csh
+source /var/db/mautrix-signal/bin/activate.csh
 
 pip install --global-option=build_ext --global-option="-I/usr/local/include" --upgrade python-olm
 
