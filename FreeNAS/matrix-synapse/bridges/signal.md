@@ -4,11 +4,18 @@
 
 ## Create new database
 ```
+# nano /var/lib/postgres/data13/pg_hba.conf
+
+host    mautrix-signal  mautrix-signal  127.0.0.1/32         password
+```
+
+```
 root@synapse:~ # sudo -i -u postgres
 $ psql
 postgres=# CREATE USER "mautrix-signal" WITH PASSWORD 'password';
 postgres=# CREATE DATABASE "mautrix-signal" OWNER "mautrix-signal";
 postgres=# \q
+$ pg_ctl reload -D /var/db/postgres/data13
 $ exit
 root@synapse:~ #
 ```
