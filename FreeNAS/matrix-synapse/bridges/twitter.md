@@ -2,12 +2,13 @@
 
 ## Twitter bridge
 
-### Create new database
-`# nano /var/db/postgres/data13/pg_hba.conf`:
+### Configure database
+Allow connection to database `# nano /var/db/postgres/data13/pg_hba.conf`:
 ```
 host    mautrix-twitter  mautrix-twitter  127.0.0.1/32         password
 ```
 
+### Create database:
 ```
 root@synapse:~ # sudo -i -u postgres
 $ psql
@@ -42,10 +43,10 @@ root@synapse:~ #
 
 ### Configure mautrix-twitter: 
 
-`nano config.yaml`:
+`# nano config.yaml`:
 ```
 homeserver:
-    address: https://exmaple.tld
+    address: https://example.tld
     domain: example.tld
 appservice:
     database: postgres://mautrix-twitter:password@localhost/mautrix-twitter
@@ -76,7 +77,7 @@ restart synapse:
 ```
 service synapse restart
 ```
-## Create startup script
+### Create startup script
 `touch /usr/local/etc/rc.d/mautrix-twitter && chmod +x /usr/local/etc/rc.d/mautrix-twitter && nano /usr/local/etc/rc.d/mautrix-twitter`:
 ```
 #!/bin/sh
@@ -100,16 +101,17 @@ run_rc_command "$1"
 ```
 Enable service: `sysrc mautrix_twitter_enable="YES"`
 
-## Dry run verbose mode
+### Dry run verbose mode
 ```
 sudo -u mautrix-twitter /var/db/mautrix-twitter/bin/python -m mautrix_twitter -c /usr/local/etc/mautrix-twitter/config.yaml -r /usr/local/etc/mautrix-twitter/registration.yaml
 ```
 (Ctrl+C to stop)
-## Start Service
+### Start Service
 ```
 # service mautrix-twitter start
 # ps aux
 mautrix-twitter 10193 50.4  0.1 110020  66508  -  SJ   00:59   0:00.93 /var/db/mautrix-twitter/bin/python -m mautrix_twitter -c /usr/local/etc/mautrix-twitter/config.yaml -r /usr/local/etc/mautrix-twitter/registration.yaml (python3.7)
 root             10192  0.0  0.0  10844   2292  -  SsJ  00:59   0:00.00 daemon: /var/db/mautrix-twitter/bin/python[10193] (daemon)
 ```
+
 [ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/FreeNAS/matrix-synapse/9_bridges.md) ]
