@@ -12,7 +12,7 @@ In this example pip installed the binary at `/usr/local/bin/matrix-registration`
 
 Create user: `pw adduser matrixreg -d /nonexistent -s /usr/sbin/nologin -c "matrix-registration user"`
 
-Create working directory & set permissions: `mkdir /var/db/matrixreg && chown -R matrixreg:matrixreg /var/db/matrixreg`
+Create working directory & set permissions: `mkdir /var/db/matrixreg`
 
 Create config: `cd /usr/local/etc && fetch https://raw.githubusercontent.com/ZerataX/matrix-registration/master/config.sample.yaml && mv config.sample.yaml matrix-registration.yaml && nano matrix-registration.yaml`:
 ```
@@ -55,5 +55,7 @@ run_rc_command "$1"
 Make startup script executable: `chmod +x /usr/local/etc/rc.d/matrixreg`
 
 Enable script on startup: `sysrc matrixreg_enable="YES"`
+
+Set permissions: `chown -R matrixreg:matrixreg /var/db/matrixreg`
 
 Start the service: `service matrixreg start`
