@@ -3,9 +3,8 @@
 ## Twitter bridge
 
 ### Create new database
+`# nano /var/db/postgres/data13/pg_hba.conf`:
 ```
-# nano /var/db/postgres/data13/pg_hba.conf
-
 host    mautrix-twitter  mautrix-twitter  127.0.0.1/32         password
 ```
 
@@ -22,26 +21,28 @@ root@synapse:~ #
 
 ### Install mautrix-twitter
 ```
-pkg install py37-virtualenv olm rust py37-pillow nano
+# pkg install py37-virtualenv olm rust py37-pillow nano
 
-pw adduser mautrix-twitter -d /nonexistent -s /usr/sbin/nologin -c "User for mautrix-twitter bridge"
+# pw adduser mautrix-twitter -d /nonexistent -s /usr/sbin/nologin -c "User for mautrix-twitter bridge"
 
-mkdir /var/db/mautrix-twitter && chown -R mautrix-twitter:mautrix-twitter /var/db/mautrix-twitter
+# mkdir /var/db/mautrix-twitter && chown -R mautrix-twitter:mautrix-twitter /var/db/mautrix-twitter
 
-cd /var/db/mautrix-twitter
+# cd /var/db/mautrix-twitter
 
-virtualenv -p /usr/local/bin/python3.7 .
+# virtualenv -p /usr/local/bin/python3.7 .
 
-source /var/db/mautrix-twitter/bin/activate.csh
+# source /var/db/mautrix-twitter/bin/activate.csh
 
-pip install --global-option=build_ext --global-option="-I/usr/local/include" --upgrade python-olm
+# pip install --global-option=build_ext --global-option="-I/usr/local/include" --upgrade python-olm
 
-pip install --upgrade 'mautrix-twitter[all]'
+# pip install --upgrade 'mautrix-twitter[all]'
 
-cp example-config.yaml config.yaml
+# cp example-config.yaml config.yaml
 ```
 
-### Configure mautrix-twitter: `nano config.yaml`:
+### Configure mautrix-twitter: 
+
+`nano config.yaml`:
 ```
 homeserver:
     address: https://exmaple.tld
