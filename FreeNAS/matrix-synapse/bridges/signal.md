@@ -1,6 +1,6 @@
 ## Create new database
 ```
-# nano /var/lib/postgres/data13/pg_hba.conf
+# nano /var/db/postgres/data13/pg_hba.conf
 
 host    mautrix-facebook  mautrix-facebook  127.0.0.1/32         password
 ```
