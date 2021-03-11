@@ -1,3 +1,5 @@
+[ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/9_bridges.md) ]
+
 ## Create new database
 ```
 # nano /var/db/postgres/data13/pg_hba.conf
