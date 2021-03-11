@@ -8,3 +8,5 @@
 
 [Twitter](bridges/twitter.md)
 
+[Instagram](bridges/instagram.md)
+
