@@ -5,6 +5,8 @@
 ## Guide to matrix-synapse server on TrueNAS ![BSDBTC60.png](images/matrix60.png)
 
 ### Token based registration
+https://github.com/ZerataX/matrix-registration
+
 This will allow you to generate invite links, allowing 1 unique registration onto your server per link generated.
 
 ## FreeBSD rc.d
