@@ -43,7 +43,7 @@ root@synapse:~ #
 
 ### Configure mautrix-twitter: 
 
-`# nano config.yaml`:
+At minimum change these values `# nano config.yaml`:
 ```
 homeserver:
     address: https://example.tld
