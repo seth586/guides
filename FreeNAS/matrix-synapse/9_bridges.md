@@ -4,4 +4,7 @@
 
 ## Guide to matrix-synapse server on TrueNAS ![BSDBTC60.png](images/matrix60.png)
 
-### Intro
+### Bridges
+
+[Twitter](bridges/twitter.md)
+
