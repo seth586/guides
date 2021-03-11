@@ -1,53 +1,49 @@
-## Install signald
-
-???
-
 ## Create new database
 ```
 # nano /var/lib/postgres/data13/pg_hba.conf
 
-host    mautrix-signal  mautrix-signal  127.0.0.1/32         password
+host    mautrix-facebook  mautrix-facebook  127.0.0.1/32         password
 ```
 
 ```
 root@synapse:~ # sudo -i -u postgres
 $ psql
-postgres=# CREATE USER "mautrix-signal" WITH PASSWORD 'password';
-postgres=# CREATE DATABASE "mautrix-signal" OWNER "mautrix-signal";
+postgres=# CREATE USER "mautrix-facebook" WITH PASSWORD 'password';
+postgres=# CREATE DATABASE "mautrix-facebook" OWNER "mautrix-facebook";
 postgres=# \q
 $ pg_ctl reload -D /var/db/postgres/data13
 $ exit
 root@synapse:~ #
 ```
 
-## Install mautrix-signal
+## Install mautrix-facebook
 ```
 pkg install py37-virtualenv olm rust py37-pillow nano
 
-pw adduser mautrix-signal -d /nonexistent -s /usr/sbin/nologin -c "User for mautrix-signal bridge"
+pw adduser mautrix-facebook -d /nonexistent -s /usr/sbin/nologin -c "User for mautrix-facebook bridge"
 
-mkdir /var/db/mautrix-signal && chown -R mautrix-signal:mautrix-signal /var/db/mautrix-signal
+mkdir /var/db/mautrix-facebook && chown -R mautrix-facebook:mautrix-facebook /var/db/mautrix-facebook
 
-cd /var/db/mautrix-signal
+cd /var/db/mautrix-facebook
 
 virtualenv -p /usr/local/bin/python3.7 .
 
-source /var/db/mautrix-signal/bin/activate.csh
+source /var/db/mautrix-facebook/bin/activate.csh
 
 pip install --global-option=build_ext --global-option="-I/usr/local/include" --upgrade python-olm
 
-pip install --upgrade 'mautrix-signal[all]'
+pip install --upgrade 'mautrix-facebook[all]'
 
 cp example-config.yaml config.yaml
 ```
 
-Configure mautrix-signal: `nano config.yaml`:
+Configure mautrix-facebook: `nano config.yaml`:
 ```
 homeserver:
     address: https://exmaple.tld
     domain: example.tld
 appservice:
-    database: postgres://mautrix-signal:password@localhost/mautrix-signal
+    database: postgres://mautrix-facebook:password@localhost/mautrix-facebook
 bridge:
     permissions:
         example.tld: user
@@ -60,21 +56,21 @@ logging:
 
 Generate `registration.yaml`:
 ```
-# mkdir /usr/local/etc/mautrix-signal
-# mv config.yaml /usr/local/etc/mautrix-signal/config.yaml
-# sudo -u mautrix-facebook /var/db/mautrix-facebook/bin/python -m mautrix_signal -g -c /usr/local/etc/mautrix-signal/config.yaml -r /usr/local/etc/mautrix-signal/registration.yaml
+# mkdir /usr/local/etc/mautrix-facebook
+# mv config.yaml /usr/local/etc/mautrix-facebook/config.yaml
+# sudo -u mautrix-facebook /var/db/mautrix-facebook/bin/python -m mautrix_facebook -g -c /usr/local/etc/mautrix-facebook/config.yaml -r /usr/local/etc/mautrix-facebook/registration.yaml
 ```
-Add mautrix-signal to synapse config `nano ~/.synapse/homeserver.yaml`:
+Add mautrix-facebook to synapse config `nano ~/.synapse/homeserver.yaml`:
 ```
 app_service_config_files:
-  - /usr/local/etc/mautrix-signal/registration.yaml
+  - /usr/local/etc/mautrix-facebook/registration.yaml
 ```
 restart synapse:
 ```
 service synapse restart
 ```
 ## Create startup script
-`touch /usr/local/etc/rc.d/mautrix-signal && chmod +x /usr/local/etc/rc.d/mautrix-signal && nano /usr/local/etc/rc.d/mautrix-signal`:
+`touch /usr/local/etc/rc.d/mautrix-facebook && chmod +x /usr/local/etc/rc.d/mautrix-facebook && nano /usr/local/etc/rc.d/mautrix-facebook`:
 ```
 #!/bin/sh
 #
@@ -103,7 +99,7 @@ run_rc_command "$1"
 
 ## Dry run verbose mode
 ```
-sudo -u mautrix-facebook /var/db/mautrix-facebook/bin/python -m mautrix_signal -c /usr/local/etc/mautrix-signal/config.yaml -r /usr/local/etc/mautrix-signal/registration.yaml
+sudo -u mautrix-facebook /var/db/mautrix-facebook/bin/python -m mautrix_facebook -c /usr/local/etc/mautrix-facebook/config.yaml -r /usr/local/etc/mautrix-facebook/registration.yaml
 ```
 (Ctrl+C to stop)
 ## Start Service
