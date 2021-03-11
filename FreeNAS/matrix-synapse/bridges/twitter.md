@@ -1,6 +1,8 @@
 [ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/FreeNAS/matrix-synapse/9_bridges.md) ]
 
-## Create new database
+## Twitter bridge
+
+### Create new database
 ```
 # nano /var/db/postgres/data13/pg_hba.conf
 
@@ -18,7 +20,7 @@ $ exit
 root@synapse:~ #
 ```
 
-## Install mautrix-twitter
+### Install mautrix-twitter
 ```
 pkg install py37-virtualenv olm rust py37-pillow nano
 
@@ -39,7 +41,7 @@ pip install --upgrade 'mautrix-twitter[all]'
 cp example-config.yaml config.yaml
 ```
 
-Configure mautrix-twitter: `nano config.yaml`:
+### Configure mautrix-twitter: `nano config.yaml`:
 ```
 homeserver:
     address: https://exmaple.tld
@@ -109,3 +111,4 @@ sudo -u mautrix-twitter /var/db/mautrix-twitter/bin/python -m mautrix_twitter -c
 mautrix-twitter 10193 50.4  0.1 110020  66508  -  SJ   00:59   0:00.93 /var/db/mautrix-twitter/bin/python -m mautrix_twitter -c /usr/local/etc/mautrix-twitter/config.yaml -r /usr/local/etc/mautrix-twitter/registration.yaml (python3.7)
 root             10192  0.0  0.0  10844   2292  -  SsJ  00:59   0:00.00 daemon: /var/db/mautrix-twitter/bin/python[10193] (daemon)
 ```
+[ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/FreeNAS/matrix-synapse/9_bridges.md) ]
