@@ -62,7 +62,7 @@ Generate `registration.yaml`:
 # chown -R mautrix-facebook:mautrix-facebook /usr/local/etc/mautrix-facebook
 # sudo -u mautrix-facebook /var/db/mautrix-facebook/bin/python -m mautrix_facebook -g -c /usr/local/etc/mautrix-facebook/config.yaml -r /usr/local/etc/mautrix-facebook/registration.yaml
 ```
-Add mautrix-facebook to synapse config `nano ~/.synapse/homeserver.yaml`:
+Add mautrix-facebook to synapse config `nano /usr/local/etc/matrix-synapse/homeserver.yaml`:
 ```
 app_service_config_files:
   - /usr/local/etc/mautrix-facebook/registration.yaml
