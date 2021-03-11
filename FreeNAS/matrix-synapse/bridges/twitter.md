@@ -1,4 +1,4 @@
-[ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/9_bridges.md) ]
+[ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/FreeNAS/matrix-synapse/9_bridges.md) ]
 
 ## Create new database
 ```
