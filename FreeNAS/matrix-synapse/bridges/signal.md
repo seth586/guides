@@ -93,11 +93,7 @@ load_rc_config $name
 
 run_rc_command "$1"
 ```
-## Set permissions
-```
-# chown -R mautrix-facebook:mautrix-facebook /var/db/mautrix-facebook
-# chown -R mautrix-facebook:mautrix-facebook /usr/local/etc/mautrix-facebook
-```
+Enable service: `sysrc mautrix_facebook_enable="YES"`
 
 ## Dry run verbose mode
 ```
