@@ -52,3 +52,11 @@ Signing Key: `/var/db/matrix-synapse/example.tld.signing.key`
 Media Repo: `/var/db/matrix-synapse/media_store` -> non critical, worst case scenario historical chats will loose uploaded media & files
 
 `cat homeserver.yaml | grep media_store_path:`
+
+### Create Jail
+
+### Mount datasets to jail
+
+### Start Jail & Install
+
+### Configuration
