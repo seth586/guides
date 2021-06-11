@@ -21,5 +21,5 @@ FreeBSD: {
 ```
 ```
 pkg install postgresql13-server
-
+sysrc postgresql_enable="YES"
 ```
