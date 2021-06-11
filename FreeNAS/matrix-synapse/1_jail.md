@@ -14,8 +14,10 @@ I highly recommend the following dataset folder structure, as it will make sense
 ```
 ─── volume0
     ├── apps
+    │   ├── nextcloud
+    │   │   ├── files  
     │   ├── synapse
-    │   │   ├── mediastore  
+    │   │   ├── mediastore 
 
 ─── volume1
     ├── apps
@@ -25,7 +27,7 @@ I highly recommend the following dataset folder structure, as it will make sense
     │   │   ├── db
     |   ├── synapse
     │   │   ├── config
-    │   │   ├── themes
+    │   │   ├── signingkey
     │   │   ├── db    
 ... and so on
 ```  
