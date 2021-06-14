@@ -56,21 +56,74 @@ Lets start installing stuff! (answer proceed questions with `y`)
 # pkg install autoconf automake boost-libs git gmake libevent libtool libzmq4 pkgconf wget nano
 ```
 
-### Download bitcoin core
-Go to https://github.com/bitcoin/bitcoin/releases, find the tar.gz release we want to install. The latest release is 0.20.0 at https://bitcoincore.org/bin/bitcoin-core-0.20.0/bitcoin-0.20.0.tar.gz . Copy the link. PuTTY will let you paste by right clicking.
+### Download Bitcoin Core
+Go to https://github.com/bitcoin/bitcoin/releases, find the tar.gz release we want to install. The latest release is 0.21.1 at https://bitcoincore.org/bin/bitcoin-core-0.21.1/bitcoin-0.21.1.tar.gz . Copy the link. PuTTY will let you paste by right clicking.
 
 ```
 # cd ~
-# wget https://bitcoincore.org/bin/bitcoin-core-0.20.0/bitcoin-0.20.0.tar.gz
-# tar xvf bitcoin-0.20.0.tar.gz
-# rm bitcoin-0.20.0.tar.gz
+# wget https://bitcoincore.org/bin/bitcoin-core-0.21.1/bitcoin-0.21.1.tar.gz
+```
+### Verify Bitcoin Core
+* Install pgp
+```
+# pkg install gnupg
+```
+* Download and display the signing key
+```
+# wget https://bitcoin.org/laanwj-releases.asc
+# gpg --import-options show-only --import laanwj-releases.asc
+```
+* check for the fingerprint: 01EA5486DE18A882D4C2684590C8019E36C2E964 in the output
+```
+gpg: Warning: using insecure memory!
+gpg: key 90C8019E36C2E964: 51 signatures not checked due to missing keys
+pub   rsa4096 2015-06-24 [SC] [expires: 2022-02-10]
+      01EA5486DE18A882D4C2684590C8019E36C2E964
+uid                      Wladimir J. van der Laan (Bitcoin Core binary release signing key) <laanwj@gmail.com>
+```
+* Import the key
+```
+# gpg --import laanwj-releases.asc
+```
+* Download the hashes
+```
+# wget https://bitcoincore.org/bin/bitcoin-core-0.21.1/SHA256SUMS.asc -O SHA256SUMS.asc
+```
+* Verify
+```
+# gpg --verify SHA256SUMS.asc 
+```
+* Look for `Good signature` in the output
+```
+gpg: Warning: using insecure memory!
+gpg: Signature made Sat May  1 12:33:58 2021 PDT
+gpg:                using RSA key 90C8019E36C2E964
+gpg: Good signature from "Wladimir J. van der Laan (Bitcoin Core binary release signing key) <laanwj@gmail.com>" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 01EA 5486 DE18 A882 D4C2  6845 90C8 019E 36C2 E964
+```
+* Compare to the hashes to the hash of the downloaded file
+```
+# shasum -c --ignore-missing SHA256SUMS.asc bitcoin-0.21.1.tar.gz
+```
+* Look for `OK` in the output
+```
+bitcoin-0.21.1.tar.gz: OK
+shasum: WARNING: 20 lines are improperly formatted
+shasum: bitcoin-0.21.1.tar.gz: no properly formatted SHA checksum lines found
+```
+* extract the downloaded file and remove the .tar.gz
+```
+# tar xvf bitcoin-0.21.1.tar.gz
+# rm bitcoin-0.21.1.tar.gz
 ```
 
 To see what is in the current directory, type `ls`
 
 ### Configure and compile:
 ```
-# cd bitcoin-0.20.0
+# cd bitcoin-0.21.1
 # sh 
 # ./contrib/install_db4.sh `pwd`
 # export BDB_PREFIX="$PWD/db4"
@@ -80,7 +133,7 @@ To see what is in the current directory, type `ls`
 # gmake install
 # csh
 # cd ~
-# rm -r bitcoin-0.20.0
+# rm -r bitcoin-0.21.1
 ```
 This process may take a while. Once its done and installed, we need to add a rc.d script to automatically start the bitcoin daemon on start. Read more about FreeBSD rc.d scripting [here](https://www.freebsd.org/doc/en_US.ISO8859-1/articles/rc-scripting/index.html). Again, if you previously installed `bitcoin-daemon` package, you can skip this step since it already exists.
 
@@ -314,19 +367,22 @@ Note: Do not run `pkg update && upgrade` unless you are ready to recompile bitco
 # iocage console bitcoin
 # pkg update && pkg upgrade -y
 # cd ~
-# service bitcoind stop
-# wget https://bitcoincore.org/bin/bitcoin-core-0.20.0/bitcoin-0.20.0.tar.gz
-# tar xzvf bitcoin-0.20.0.tar.gz
+# wget https://bitcoincore.org/bin/bitcoin-core-0.21.1/bitcoin-0.21.1.tar.gz
+# wget https://bitcoincore.org/bin/bitcoin-core-0.21.1/SHA256SUMS.asc -O SHA256SUMS.asc
+# gpg --verify SHA256SUMS.asc
+# shasum -c --ignore-missing SHA256SUMS.asc bitcoin-0.21.1.tar.gz
+# tar xzvf bitcoin-0.21.1.tar.gz
 # rm *.gz
-# cd bitcoin-0.20.0
+# cd bitcoin-0.21.1
 # sh 
 # ./autogen.sh
 # ./configure MAKE=gmake --with-gui=no --without-miniupnpc --disable-wallet --enable-util-cli
 # gmake check
+# service bitcoind stop
 # gmake install
 # tcsh
 # cd ~
-# rm -r bitcoin-0.20.0
+# rm -r bitcoin-0.21.1
 # service bitcoind start && tail -f /var/db/bitcoin/debug.log
 ```
 Verify `bitcoind` starts up sucessfully by monitoring the logs. Exit `tail` with CTRL+C.
