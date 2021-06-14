@@ -2,21 +2,21 @@
 
 [ [Intro](README.md) ] - [**Jail Creation**] - [ [Bitcoin](freenas_2_bitcoin.md) ] - [ [Tor](freenas_3_tor.md) ] - [ [Electrum](freenas_4_electrum.md) ] - [ [lnd](freenas_5_lnd.md) ] - [ [loopd ](freenas_5a_loopd.md)] - [ [RTL](freenas_6_rtl.md) ] - [ [mempool](freenas_8_mempool.md) ] - [ [Extras](extras.md) ] 
 
-##  Guide to ₿itcoin & Lightning️ on FreeNAS / TrueNAS ![BSDBTC100.png](images/BSDBTC60.png)
+##  TrueNASnode - full bitcoin stack deployment guide ![BSDBTC100.png](images/BSDBTC60.png)
 
 ### Jail Creation
 
-Think of jails as more efficient virtual machines (VMs). You could just install a bunch of VMs on FreeNAS, run linux on them, and pick your choice on the many varieties of linux guides available online. But running a VM requires a lot more resources than jails, allocating memory just for that VM, etc. Plus, if we mess up, we can delete the jail and start over. Anything we do in the jail should not mess up anything on the host machine. After all, we built a computer with server grade hardware for the uptime!
+Think of jails as more efficient virtual machines (VMs). You could just install a bunch of VMs on TrueNAS, run linux on them, and pick your choice on the many varieties of linux guides available online. But running a VM requires a lot more resources than jails, allocating memory just for that VM, etc. Plus, if we mess up, we can delete the jail and start over. Anything we do in the jail should not mess up anything on the host machine. After all, we built a computer with server grade hardware for the uptime!
 
-FreeNAS 11.2 uses iocage to manage jails. Previous versions used warden, which is now considered deprecated. To create a jail, log in to your FreeNAS user interface, and select Jails on the left hand menu. Click the ‘ADD’ button on the top right, and select 'advanced jail creation'.
+TrueNAS uses iocage to manage jails. Previous versions used warden, which is now considered deprecated. To create a jail, log in to your TrueNAS user interface, and select Jails on the left hand menu. Click the ‘ADD’ button on the top right, and select 'advanced jail creation'.
 
-![FreeNAS_Jail](images/jail_create.png)  
+![TrueNAS_Jail](images/jail_create.png)  
 
 Give the jail a name, such as `bitcoin`. Select release `11.2-RELEASE`, select `DHCP Autoconfigure IPv4` and select `Auto-start` as shown. Click `SAVE`.
 
 It would be a good idea to log into your router and give your bitcoin jail a static IP address. Also forward port 8333 from your WAN to your jail's LAN IP address. For example, my internal IP address assigned to my bitcoin jail is 192.168.84.123
 
-![FreeNAS_Jail_Port_Forward](images/jail_port_forward.png)
+![TrueNAS_Jail_Port_Forward](images/jail_port_forward.png)
 
 *Your router's firmware may look different. This is how it looks on OpenWRT.*
 ```
