@@ -2,23 +2,23 @@
 
 **[Intro]** - [ [Jail Creation](freenas_1_jail_creation.md) ] - [ [Bitcoin](freenas_2_bitcoin.md) ] - [ [Tor](freenas_3_tor.md) ] - [ [Electrum](freenas_4_electrum.md) ] - [ [lnd](freenas_5_lnd.md) ] - [ [loopd ](freenas_5a_loopd.md)] - [ [RTL](freenas_6_rtl.md) ] - [ [mempool](freenas_8_mempool.md) ] - [ [Extras](extras.md) ]
 
-## Guide to ₿itcoin & Lightning️ on FreeNAS / TrueNAS ![BSDBTC60.png](images/BSDBTC60.png)
+## TrueNASnode - full bitcoin stack deployment guide ![BSDBTC60.png](images/BSDBTC60.png)
 
 ### Intro
 
-I have been running a FreeNAS server for a few years now, and have come to appreciate what it offers as a personal home server. It is infamous for media streaming & aggregation, and file hosting.
+I have been running a TrueNAS server for a few years now, and have come to appreciate what it offers as a personal home server. It is infamous for media streaming & aggregation, and file hosting.
 
-## Why FreeNAS? Raspberri Pis are much cheaper!
+## Why TrueNAS? Raspberri Pis are much cheaper!
 
-Answer: [FreeNAS](https://github.com/lightningnetwork/lnd/issues/1214)[ fixes](https://github.com/lightningnetwork/lnd/issues/3760)[ this](https://github.com/lightningnetwork/lnd/issues/3861). Drive failure and power loss are the most common ways your lightning database can become corrupt. FreeNAS protects you from both scenarios.
+Answer: [TrueNAS](https://github.com/lightningnetwork/lnd/issues/1214)[ fixes](https://github.com/lightningnetwork/lnd/issues/3760)[ this](https://github.com/lightningnetwork/lnd/issues/3861). Drive failure and power loss are the most common ways your lightning database can become corrupt. TrueNAS protects you from both scenarios.
 
 Raspberri pis are awesome, they are cheap, consume tiny amounts of electricity, and a ton of documentation exists for so many projects, including bitcoin and lightning. The problem with Raspberri Pis are the hard drives on these setups. These drives are 1 spinning platter or 1 SSD away from catastrophic failure due to power loss corruption or drive degradation.  
 
-FreeNAS is special because of the hard drive redundancy features. FreeNAS utilizes the resilient and modern ZFS file system, which not only adds redundancy, but hashes data on your drives to detect and automatically fix errors. ZFS is better than hardware RAID, which is [obsolete](http://newsvideo.su/tech/video/102062)! If you follow the [FreeNAS documentation](https://www.ixsystems.com/documentation/freenas/), you will be set up to automatically run SMART tests on your hard drives, scrub data to verify & fix disk errors, and receive email alerts if a drive begins failing on you, allowing you to insert a new drive and resliver without any downtime. Add a battery backup, set up UPS monitoring & controlled shutdowns on power loss & emails and you are running an enterprise grade environment at home, protecting your lightning database from corruption from the most common scenarios.
+TrueNAS is special because of the hard drive redundancy features. TrueNAS utilizes the resilient and modern ZFS file system, which not only adds redundancy, but hashes data on your drives to detect and automatically fix errors. ZFS is better than hardware RAID, which is [obsolete](http://newsvideo.su/tech/video/102062)! If you follow the [TrueNAS documentation](https://www.truenas.com/docs/core/), you will be set up to automatically run SMART tests on your hard drives, scrub data to verify & fix disk errors, and receive email alerts if a drive begins failing on you, allowing you to insert a new drive and resliver without any downtime. Add a battery backup, set up UPS monitoring & controlled shutdowns on power loss & emails and you are running an enterprise grade environment at home, protecting your lightning database from corruption from the most common scenarios.
 
-FreeNAS is based on FreeBSD, a UNIX style operating system similar to Linux. FreeBSD utilizes a jail system to seperate operating environments, similar to how virturalization works. Except jails are much more efficient and less resource intensive than virturalizing. For example, my server has seperate jails for plex, medusa, transmission, SoftEther, bitcoin core&electrum-personal-server&lnd, nextcloud, etc. If I 'mess up', its easy to nuke the jail and start over, without ever damaging the host system or other jails.
+TrueNAS is based on FreeBSD, a UNIX style operating system similar to Linux. FreeBSD utilizes a jail system to seperate operating environments, similar to how virturalization works. Except jails are much more efficient and less resource intensive than virturalizing. For example, my server has seperate jails for plex, medusa, transmission, SoftEther, bitcoin core&electrum-personal-server&lnd, nextcloud, etc. If I 'mess up', its easy to nuke the jail and start over, without ever damaging the host system or other jails.
 
-### What is the build cost of a FreeNAS system?
+### What is the build cost of a TrueNAS system?
 You can buy older generation servers on ebay for dirt cheap! If you want something "price is not a problem" new for bitcoin, nextcloud, plex + transcoding, here is a buy list:
 Latest Generation:
 
@@ -49,7 +49,7 @@ So, at this point we can assume that you built your home server. Hopefully you w
 ### Assumptions
 I am assuming you know your way around your router. My example router is a Linksys WRT1900ACv1 running OpenWRT. Your router configuration user interface may be different than explained here.
 
-Lets also assume that you installed FreeNAS on your home server (Version 11.2), navigated the [FreeNAS forums](http://forums.freenas.org/index.php), read the [FreeNAS documentation](https://www.ixsystems.com/documentation/freenas/), and set up a ZFS volume. Make sure you set up your SMART test, scrub schedule and email alerts!
+Lets also assume that you installed TrueNAS on your home server (Version 11.2), navigated the [TrueNAS forums](https://www.truenas.com/community/), read the [TrueNAS documentation](https://www.ixsystems.com/documentation/freenas/), and set up a ZFS volume. Make sure you set up your SMART test, scrub schedule, email alerts, and UPS shutdown at low battery level!
 
 Within this guide, any time a command line is represented by a single `#` hash, that represents the command line as root user inside your bitcoin jail. Any commands outside this definition are represented by their full path, which may differ from what you see see based on how you named your server. Hopefully the guide is clear enough. If not, PLEASE reach out to me!
 
@@ -64,7 +64,7 @@ There is more than 1 way to skin a cat. These are the preferred methods followed
 2. Minimal configuration. This guide is a baseline to get setup. Whenever a configuration file is referenced, follow the supporting docs to explore further configuration options.
 
 ### Recommendations
-Use a password manager to keep track of all the passwords required to run FreeNAS and your software. It's good cypherpunk habit to use unique strong passwords with 3rd parties, too. KeePassDX is an encrypted open source password manager that runs on android. It can generate strong passwords for you. 
+Use a password manager to keep track of all the passwords required to run TrueNAS and your software. It's good cypherpunk habit to use unique strong passwords with 3rd parties, too. KeePassDX is an encrypted open source password manager that runs on android. It can generate strong passwords for you. 
 
 ### Personal Notes
 This guide is written not only to benefit others, but myself as well. Sometimes I don't touch my server for months on end, and forget how I set things up or did things. This guide is my attempt to act on my belief in the [Cypherpunk Manifesto](https://www.activism.net/cypherpunk/manifesto.html). If cypherpunks can't write code, then cypherpunks deploy code.
