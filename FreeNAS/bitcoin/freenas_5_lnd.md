@@ -2,7 +2,7 @@
 
 [ [Intro](README.md) ] - [ [Jail Creation](freenas_1_jail_creation.md) ] - [ [Bitcoin](freenas_2_bitcoin.md) ] - [ [Tor](freenas_3_tor.md) ] - [ [Electrum](freenas_4_electrum.md) ] - [**lnd**] - [ [loopd ](freenas_5a_loopd.md)] - [ [RTL](freenas_6_rtl.md) ] - [ [mempool](freenas_8_mempool.md) ] - [ [Extras](extras.md) ]
 
-## Guide to ₿itcoin & Lightning️ on FreeNAS / TrueNAS ![BSDBTC60.png](images/BSDBTC60.png)
+## TrueNASnode - full bitcoin stack deployment guide ![BSDBTC60.png](images/BSDBTC60.png)
 
 ### Install Lightning Lab's LND
 
@@ -84,7 +84,7 @@ Automatically obtained bitcoind's RPC credentials
 2019-02-07 22:00:35.054 [INF] RPCS: password RPC server listening on 127.0.0.1:10009
 2019-02-07 22:00:35.054 [INF] LTND: Waiting for wallet encryption password. Use `lncli create` to create a wallet, `lncli unlock` to unlock an existing wallet, or `lncli changepassword` to change the password of an existing wallet and unlock it.
 ```
-Open another SSH terminal window, log into to your FreeNAS server, and switch to your bitcoin jail. We will use `lncli` to create a wallet and store the recovery key.
+Open another SSH terminal window, log into to your TrueNAS server, and switch to your bitcoin jail. We will use `lncli` to create a wallet and store the recovery key.
 ```
 # lncli -lnddir "/var/db/lnd" create
 ```
