@@ -21,6 +21,7 @@ FreeBSD: {
 ### Install and configure tor:
 ```
 # pkg install tor ca_root_nss nano nyx
+# sysrc tor_enable="YES"
 # rm /usr/local/etc/tor/torrc
 # nano /usr/local/etc/tor/torrc
 ```
