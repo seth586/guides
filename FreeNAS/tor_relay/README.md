@@ -6,6 +6,18 @@ While it is safe and realtively anonymous to run a relay and a hidden service fr
 
 Create a new jail, forward TCP port 9001 to this jail's IP address, and ssh in.
 
+### Update package repository to latest
+```
+# pkg install nano
+# mkdir -p /usr/local/etc/pkg/repos
+```
+Code: `# nano /usr/local/etc/pkg/repos/FreeBSD.conf` :
+```
+FreeBSD: {
+    url: "pkg+http://pkg.FreeBSD.org/${ABI}/latest"
+}
+```
+
 ### Install and configure tor:
 ```
 # pkg install tor ca_root_nss nano nyx
