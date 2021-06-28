@@ -117,12 +117,12 @@ Now connect on your web browser at the jail ip:3000 or myprivateonionaddressocyn
 
 ```
 # service rtl stop
-# wget https://github.com/Ride-The-Lightning/RTL/archive/v0.9.1.tar.gz
-# tar -xvf v0.9.1.tar.gz
-# cp ~/rtl/RTL-Config.json ~/RTL-0.9.1/RTL-Config.json
+# wget https://github.com/Ride-The-Lightning/RTL/archive/refs/tags/v0.11.0.tar.gz
+# tar -xvf v0.11.0.tar.gz
+# cp ~/rtl/RTL-Config.json ~/RTL-0.11.0/RTL-Config.json
 # rm -r ~/rtl
-# mv ~/RTL-0.9.1 ~/rtl
-# rm v0.9.1.tar.gz
+# mv ~/RTL-0.11.0 ~/rtl
+# rm v0.11.0.tar.gz
 # cd rtl
 # npm install --only=production
 # service rtl start
