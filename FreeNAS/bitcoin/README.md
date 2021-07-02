@@ -82,6 +82,8 @@ Matrix: [#TrueNASnode:nym.im](https://matrix.to/#/#truenasnode:nym.im)
 
 Email: seth586@protonmail.com
 
+Tip jar: https://strike.me/seth
+
 ### Shout outs
 Special thanks to the Stadicus Raspberry pi guide for inspiring this freebsd guide, check it out here:
 https://github.com/Stadicus/guides/blob/master/raspibolt/README.md
