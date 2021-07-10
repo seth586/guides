@@ -61,14 +61,13 @@ Lets get installing!
 ```
 # pkg update && pkg upgrade -y && pkg install -y nano ca_root_nss npm-node12 nginx mariadb105-server mariadb105-client git
 # fetch https://github.com/mempool/mempool/archive/refs/tags/v2.2.0.tar.gz
-# tar -xvf v1.0.0.tar.gz
-# rm v1.0.0.tar.gz
-# mv ~/mempool-1.0.0 ~/mempool
+# tar -xvf v2.2.0.tar.gz
+# rm v2.2.0.tar.gz
+# mv ~/mempool-2.2.0 ~/mempool
 ```
 
 ### Setup MariaDB database:
 ```
-# chown mysql:mysql /var/run/mysql
 # sysrc mysql_enable="YES"
 # service mysql-server onestart
 # mysql_secure_installation
@@ -99,13 +98,6 @@ Enter password: password123
 ### Setup the web server nginx
 ```
 # sysrc nginx_enable="YES"
-# service nginx start
-```
-
-open browser to jail IP, you should see "welcome to nginx!" message
-
-```
-# service nginx stop
 # rm /usr/local/etc/nginx/nginx.conf
 # nano /usr/local/etc/nginx/nginx.conf
 ```
