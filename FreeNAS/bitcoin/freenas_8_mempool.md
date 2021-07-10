@@ -459,7 +459,7 @@ Save (CTRL+O, ENTER) and exit (CTRL+X)
 ### Install frontend
 ```
 # cd ~/mempool/frontend
-# npm i @angular-devkit/build-angular@0.803.24
+# npm install
 # npm run build
 # rsync -av --delete dist/mempool /usr/local/www/
 ```
