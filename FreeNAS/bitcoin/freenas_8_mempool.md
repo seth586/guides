@@ -246,6 +246,7 @@ http {
 }
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
+
 Edit nginx-mempool.conf: `nano /usr/local/etc/nginx/nginx-mempool.conf`:
 ```
         root /usr/local/www/browser;
