@@ -86,11 +86,11 @@ Reload privilege tables now? [Y/n] Y
 ```
 # mysql -u root -p
 Enter password: [ENTER]
-> create database mempooldb;
-> grant all privileges on mempooldb.* to 'mempooluser' identified by 'password123';
+> create database mempool;
+> grant all privileges on mempool.* to 'mempool' identified by 'password123';
 > FLUSH PRIVILEGES;
 > exit
-# mysql -u mempooluser -p mempooldb < /root/mempool/mariadb-structure.sql
+# mysql -u mempool -p mempool < /root/mempool/mariadb-structure.sql
 Enter password: password123
 #
 ```
@@ -105,67 +105,219 @@ Enter password: password123
 Populate `nginx.conf` with the following:
 ```
 user www;
-worker_processes 1;
 pid /var/run/nginx.pid;
-#include /etc/nginx/modules-enabled/*.conf;
+
+worker_processes auto;
+worker_rlimit_nofile 100000;
 
 events {
-	worker_connections 768;
-	# multi_accept on;
+        worker_connections 9000;
+        multi_accept on;
 }
 
 http {
-	sendfile on;
-	tcp_nopush on;
-	tcp_nodelay on;
-	keepalive_timeout 65;
-	types_hash_max_size 2048;
+        sendfile on;
+        tcp_nopush on;
+        tcp_nodelay on;
 
-	include /usr/local/etc/nginx/mime.types;
-	default_type application/octet-stream;
+        server_tokens off;
+        server_name_in_redirect off;
 
-	ssl_protocols TLSv1 TLSv1.1 TLSv1.2; # Dropping SSLv3, ref: POODLE
-	ssl_prefer_server_ciphers on;
+        include /usr/local/etc/nginx/mime.types;
+        default_type application/octet-stream;
 
-	access_log /var/log/nginx/access.log;
-	error_log /var/log/nginx/error.log;
+        access_log /var/log/nginx/access.log;
+        error_log /var/log/nginx/error.log;
 
-	gzip on;
-	gzip_comp_level    5;
-	gzip_min_length    256;
-	gzip_proxied       any;
-	gzip_vary          on;
+        # reset timed out connections freeing ram
+        reset_timedout_connection on;
+        # maximum time between packets the client can pause when sending nginx any data
+        client_body_timeout 10s;
+        # maximum time the client has to send the entire header to nginx
+        client_header_timeout 10s;
+        # timeout which a single keep-alive client connection will stay open
+        keepalive_timeout 69s;
+        # maximum time between packets nginx is allowed to pause when sending the client data
+        send_timeout 10s;
 
-	gzip_types application/atom+xml application/javascript application/json application/ld+json application/manifest+json application/rss+xml application/vnd.geo+json application/vnd.ms-fontobject application/x-font-ttf application/x-web-app-manifest+json application/xhtml+xml application/xml font/opentype image/bmp image/svg+xml image/x-icon text/cache-manifest text/css text/plain text/vcard text/vnd.rim.location.xloc text/vtt text/x-component text/x-cross-domain-policy; # text/html is always compressed by gzip module
+        # number of requests per connection, does not affect SPDY
+        keepalive_requests 100;
 
-	server {
-		listen 80;
-		listen [::]:80;
-		server_name mempool.lan;
+        # enable gzip compression
+        gzip on;
+        gzip_vary on;
+        gzip_comp_level 6;
+        gzip_min_length 1000;
+        gzip_proxied expired no-cache no-store private auth;
+        # text/html is always compressed by gzip module
+        gzip_types application/javascript application/json application/ld+json application/manifest+json application/x-font-ttf application/x-web-app-manifest+json application/xhtml+xml application/xml font/opentype image/bmp image/svg+xml image/x-icon text/cache-manifest text/css text/plain text/vcard;
 
-		root /usr/local/www;
+        # limit request body size
+        client_max_body_size 10m;
 
-		index index.html;
-		server_name mempool.lan; # managed by Certbot
+        # proxy cache
+        proxy_cache off;
+        proxy_cache_path /var/cache/nginx keys_zone=cache:20m levels=1:2 inactive=600s max_size=500m;
+        types_hash_max_size 2048;
 
-		location / {
-			try_files $uri $uri/ /index.html =404;
-		}
+        # exempt localhost from rate limit
+        geo $limited_ip {
+                default         1;
+                127.0.0.1       0;
+        }
+        map $limited_ip $limited_ip_key {
+                1 $binary_remote_addr;
+                0 '';
+        }
 
-		location /api {
-			proxy_pass http://127.0.0.1:8999/api;
-		}
+        # rate limit requests
+        limit_req_zone $limited_ip_key zone=api:5m rate=200r/m;
+        limit_req_zone $limited_ip_key zone=electrs:5m rate=2000r/m;
+        limit_req_status 429;
 
-		location /ws {
-			proxy_pass http://127.0.0.1:8999/;
-			proxy_http_version 1.1;
-			proxy_set_header Upgrade $http_upgrade;
-			proxy_set_header Connection "Upgrade";
-		}
-	}
+        # rate limit connections
+        limit_conn_zone $limited_ip_key zone=websocket:10m;
+        limit_conn_status 429;
+
+        map $http_accept_language $header_lang {
+                default en-US;
+                ~*^en-US en-US;
+                ~*^en en-US;
+                ~*^ar ar;
+                ~*^cs cs;
+                ~*^de de;
+                ~*^es es;
+                ~*^fa fa;
+                ~*^fr fr;
+                ~*^ko ko;
+                ~*^it it;
+                ~*^he he;
+                ~*^ka ka;
+                ~*^hu hu;
+                ~*^nl nl;
+                ~*^ja ja;
+                ~*^nb nb;
+                ~*^pl pl;
+                ~*^pt pt;
+                ~*^sl sl;
+                ~*^fi fi;
+                ~*^sv sv;
+                ~*^tr tr;
+                ~*^uk uk;
+                ~*^vi vi;
+                ~*^zh zh;
+                ~*^ru ru;
+        }
+
+        map $cookie_lang $lang {
+                default $header_lang;
+                ~*^en-US en-US;
+                ~*^en en-US;
+                ~*^ar ar;
+                ~*^cs cs;
+                ~*^de de;
+                ~*^es es;
+                ~*^fa fa;
+                ~*^fr fr;
+                ~*^ko ko;
+                ~*^it it;
+                ~*^he he;
+                ~*^ka ka;
+                ~*^hu hu;
+                ~*^nl nl;
+                ~*^ja ja;
+                ~*^nb nb;
+                ~*^pl pl;
+                ~*^pt pt;
+                ~*^sl sl;
+                ~*^fi fi;
+                ~*^sv sv;
+                ~*^tr tr;
+                ~*^uk uk;
+                ~*^vi vi;
+                ~*^zh zh;
+                ~*^ru ru;
+        }
+
+        server {
+                listen 80;
+                include /usr/local/etc/nginx/nginx-mempool.conf;
+        }
 }
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
+Edit nginx-mempool.conf: `nano /usr/local/etc/nginx/nginx-mempool.conf`:
+```
+        root /usr/local/www/browser;
+
+        index index.html;
+
+        # fallback for all URLs i.e. /address/foo /tx/foo /block/000
+        location / {
+                add_header Vary Cookie;
+                try_files /$lang/$uri /$lang/$uri/ $uri $uri/ /en-US/$uri @index-redirect;
+        }
+        location @index-redirect {
+                add_header Vary Cookie;
+                rewrite (.*) /$lang/index.html;
+        }
+
+        # location block using regex are matched in order
+
+        # used to rewrite resources from /<lang>/ to /en-US/
+        location ~ ^/(ar|bg|bs|ca|cs|da|de|et|el|es|eo|eu|fa|fr|gl|ko|hr|id|it|he|ka|lv|lt|hu|mk|ms|nl|ja|ka|no|nb|nn|pl|pt|pt-BR|ro|ru|sk|sl|sr|sh|fi|sv|th|tr|uk|vi|zh)/resources/ {
+                add_header Vary Cookie;
+                rewrite ^/[a-zA-Z-]*/resources/(.*) /en-US/resources/$1;
+        }
+        # used for cookie override
+        location ~ ^/(ar|bg|bs|ca|cs|da|de|et|el|es|eo|eu|fa|fr|gl|ko|hr|id|it|he|ka|lv|lt|hu|mk|ms|nl|ja|ka|no|nb|nn|pl|pt|pt-BR|ro|ru|sk|sl|sr|sh|fi|sv|th|tr|uk|vi|zh)/ {
+                add_header Vary Cookie;
+                try_files $uri $uri/ /$1/index.html =404;
+        }
+
+        # static API docs
+        location = /api {
+                try_files $uri $uri/ /en-US/index.html =404;
+        }
+        location = /api/ {
+                try_files $uri $uri/ /en-US/index.html =404;
+        }
+
+        # mainnet API
+        location /api/v1/donations {
+                proxy_pass https://mempool.space;
+        }
+        location /api/v1/donations/images {
+                proxy_pass https://mempool.space;
+        }
+        location /api/v1/contributors {
+                proxy_pass https://mempool.space;
+        }
+        location /api/v1/contributors/images {
+                proxy_pass https://mempool.space;
+        }
+        location /api/v1/ws {
+                proxy_pass http://127.0.0.1:8999/;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "Upgrade";
+        }
+        location /api/v1 {
+                proxy_pass http://127.0.0.1:8999/api/v1;
+        }
+        location /api/ {
+                proxy_pass http://127.0.0.1:8999/api/v1/;
+        }
+
+        # mainnet API
+        location /ws {
+                proxy_pass http://127.0.0.1:8999/;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "Upgrade";
+        }
+
+```
 
 ```
 # service nginx start
@@ -277,7 +429,7 @@ Save (CTRL+O, ENTER) and exit (CTRL+X)
 # cd ~/mempool/frontend
 # npm i @angular-devkit/build-angular@0.803.24
 # npm run build
-# rsync -av --delete dist/mempool/ /usr/local/www/
+# rsync -av --delete dist/mempool /usr/local/www/
 ```
 
 Navigate to mempool's jail IP and you should have a working website!
