@@ -339,31 +339,62 @@ Edit nginx-mempool.conf: `nano /usr/local/etc/nginx/nginx-mempool.conf`:
 Configure mempool backend to connect to bitcoin core:
 ```
 {
-  "ENV": "dev",
-  "DB_HOST": "localhost",
-  "DB_PORT": 3306,
-  "DB_USER": "mempooluser",
-  "DB_PASSWORD": "password123",
-  "DB_DATABASE": "mempooldb",
-  "HTTP_PORT": 3000,
-  "API_ENDPOINT": "/api/v1/",
-  "CHAT_SSL_ENABLED": false,
-  "CHAT_SSL_PRIVKEY": "",
-  "CHAT_SSL_CERT": "",
-  "CHAT_SSL_CHAIN": "",
-  "MEMPOOL_REFRESH_RATE_MS": 500,
-  "INITIAL_BLOCK_AMOUNT": 8,
-  "DEFAULT_PROJECTED_BLOCKS_AMOUNT": 3,
-  "KEEP_BLOCK_AMOUNT": 24,
-  "BITCOIN_NODE_HOST": "192.168.84.208",
-  "BITCOIN_NODE_PORT": 8332,
-  "BITCOIN_NODE_USER": "mempool",
-  "BITCOIN_NODE_PASS": "2tm5NiN8wZVyjx_hgUL5O8it68WfoadHDEZ-v6w_RhQ=",
-  "BACKEND_API": "bitcoind",
-  "ELECTRS_API_URL": "https://www.blockstream.info/api",
-  "TX_PER_SECOND_SPAN_SECONDS": 150
+  "MEMPOOL": {
+    "NETWORK": "mainnet",
+    "BACKEND": "electrum",
+    "HTTP_PORT": 8999,
+    "SPAWN_CLUSTER_PROCS": 0,
+    "API_URL_PREFIX": "/api/v1/",
+    "POLL_RATE_MS": 2000,
+    "CACHE_DIR": "./cache",
+    "CLEAR_PROTECTION_MINUTES": 20,
+    "RECOMMENDED_FEE_PERCENTILE": 50
+  },
+  "CORE_RPC": {
+    "HOST": "192.168.84.21",
+    "PORT": 8332,
+    "USERNAME": "mempool",
+    "PASSWORD": "2tm5NiN8wZVyjx_hgUL5O8it68WfoadHDEZ-v6w_RhQ="
+  },
+  "ELECTRUM": {
+    "HOST": "192.168.84.21",
+    "PORT": 50001,
+    "TLS_ENABLED": false
+  },
+  "ESPLORA": {
+    "REST_API_URL": "http://127.0.0.1:3000"
+  },
+  "CORE_RPC_MINFEE": {
+    "ENABLED": false,
+    "HOST": "127.0.0.1",
+    "PORT": 8332,
+    "USERNAME": "mempool",
+    "PASSWORD": "mempool"
+  },
+  "DATABASE": {
+    "ENABLED": true,
+    "HOST": "127.0.0.1",
+    "PORT": 3306,
+    "DATABASE": "mempool",
+    "USERNAME": "mempool",
+    "PASSWORD": "password123"
+  },
+  "SYSLOG": {
+    "ENABLED": false,
+    "HOST": "127.0.0.1",
+    "PORT": 514,
+    "MIN_PRIORITY": "info",
+    "FACILITY": "local7"
+  },
+  "STATISTICS": {
+    "ENABLED": false,
+    "TX_PER_SECOND_SAMPLE_PERIOD": 150
+  },
+  "BISQ": {
+    "ENABLED": false,
+    "DATA_PATH": "/bisq/statsnode-data/btc_mainnet/db"
+  }
 }
-
 ```
 Save (CTRL+O,ENTER) and exit (CTRL+X)
 
