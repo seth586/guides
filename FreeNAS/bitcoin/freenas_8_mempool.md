@@ -104,7 +104,7 @@ Enter password: password123
 
 Populate `nginx.conf` with the following:
 ```
-user www;
+user nobody;
 pid /var/run/nginx.pid;
 
 worker_processes auto;
@@ -249,7 +249,7 @@ Save (CTRL+O, ENTER) and exit (CTRL+X)
 
 Edit nginx-mempool.conf: `nano /usr/local/etc/nginx/nginx-mempool.conf`:
 ```
-        root /usr/local/www/browser;
+root /usr/local/www/mempool/browser;
 
         index index.html;
 
@@ -266,12 +266,12 @@ Edit nginx-mempool.conf: `nano /usr/local/etc/nginx/nginx-mempool.conf`:
         # location block using regex are matched in order
 
         # used to rewrite resources from /<lang>/ to /en-US/
-        location ~ ^/(ar|bg|bs|ca|cs|da|de|et|el|es|eo|eu|fa|fr|gl|ko|hr|id|it|he|ka|lv|lt|hu|mk|ms|nl|ja|ka|no|nb|nn|pl|pt|pt-BR|ro|ru|sk|sl|sr|sh|fi|sv|th|tr|uk|vi|zh)/resources/ {
+        location ~ ^/(ar|bg|bs|ca|cs|da|de|et|el|es|eo|eu|fa|fr|gl|ko|hr|id|it|he|ka|lv|lt|hu|mk|ms|nl|ja|ka|no|nb|nn|pl|pt|pt-BR|ro|ru|sk|sl|sr|sh|fi|sv|th|tr|uk|>
                 add_header Vary Cookie;
                 rewrite ^/[a-zA-Z-]*/resources/(.*) /en-US/resources/$1;
         }
         # used for cookie override
-        location ~ ^/(ar|bg|bs|ca|cs|da|de|et|el|es|eo|eu|fa|fr|gl|ko|hr|id|it|he|ka|lv|lt|hu|mk|ms|nl|ja|ka|no|nb|nn|pl|pt|pt-BR|ro|ru|sk|sl|sr|sh|fi|sv|th|tr|uk|vi|zh)/ {
+        location ~ ^/(ar|bg|bs|ca|cs|da|de|et|el|es|eo|eu|fa|fr|gl|ko|hr|id|it|he|ka|lv|lt|hu|mk|ms|nl|ja|ka|no|nb|nn|pl|pt|pt-BR|ro|ru|sk|sl|sr|sh|fi|sv|th|tr|uk|>
                 add_header Vary Cookie;
                 try_files $uri $uri/ /$1/index.html =404;
         }
@@ -317,7 +317,6 @@ Edit nginx-mempool.conf: `nano /usr/local/etc/nginx/nginx-mempool.conf`:
                 proxy_set_header Upgrade $http_upgrade;
                 proxy_set_header Connection "Upgrade";
         }
-
 ```
 
 ```
