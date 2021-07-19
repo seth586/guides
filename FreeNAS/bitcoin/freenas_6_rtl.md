@@ -54,7 +54,7 @@ Edit the following lines, make sure to set `rtlPass=`:
         "channelBackupPath": "/root/rtl",
         "enableLogging": false,
         "lnServerUrl": "https://localhost:8080/v1",
-        "swapServerUrl": "http://localhost:8081/v1",
+        "swapServerUrl": "https://localhost:8081/v1",
         "fiatConversion": false
       }
     }
@@ -112,6 +112,15 @@ Give it a run!
 ```
 
 Now connect on your web browser at the jail ip:3000 or myprivateonionaddressocyn4rixm632jid.onion:3000 for remote connections.
+
+### Set loop macaroon path in RTL
+
+In the RTL web UI go to: Node Config > Services > Loop
+Enter Loop Macaroon Path 
+```
+/root/.loop/mainnet
+```
+Click Update
 
 ### Upgrade RTL
 
