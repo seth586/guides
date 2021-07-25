@@ -3,7 +3,7 @@ Seth586😈guides
 I am not a professional programmer or unix adminsitrator, use at your own risk!
 Contributions are welcome!
 
-Join the chatroom on the matrix chat protocol: [#TrueNASnode:nym.im](https://matrix.to/#/#truenasnode:nym.im)
+Join the chatroom on the matrix chat protocol: [#truenasnode:nym.im](https://matrix.to/#/#truenasnode:nym.im)
 
 
 
