@@ -470,7 +470,7 @@ Navigate to mempool's jail IP and you should have a working website!
 
 ## Upgrade Mempool
 ```
-# service stop mempoolbackend && service stop nginx
+# service mempoolbackend stop && service nginx stop
 # cd ~
 # fetch https://github.com/mempool/mempool/archive/refs/tags/v2.2.1.tar.gz
 # tar -xvf v2.2.1.tar.gz && rm v2.2.1.tar.gz
@@ -484,7 +484,7 @@ Navigate to mempool's jail IP and you should have a working website!
 # npm install
 # npm run build
 # rsync -av --delete dist/mempool /usr/local/www/
-# service start mempoolbackend && service start nginx
+# service mempoolbackend start && service nginx start
 ```
 
 Next: [ [Extras](extras.md) ]
