@@ -484,6 +484,7 @@ Navigate to mempool's jail IP and you should have a working website!
 # npm install
 # npm run build
 # rsync -av --delete dist/mempool /usr/local/www/
+# service start mempoolbackend && service start nginx
 ```
 
 Next: [ [Extras](extras.md) ]
