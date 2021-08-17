@@ -395,7 +395,10 @@ Configure mempool backend to connect to bitcoin core:
   }
 }
 ```
-Save (CTRL+O,ENTER) and exit (CTRL+X)
+Save (CTRL+O,ENTER) and exit (CTRL+X). Save a backup of your config to `/usr/local/etc/mempool-config.json`:
+```
+# cp mempool-config.json /usr/local/etc/mempool-config.json
+```
 
 Now lets give it a test run. If everything is properly configured, you should see something like the following:
 
@@ -464,5 +467,23 @@ Save (CTRL+O, ENTER) and exit (CTRL+X)
 ```
 
 Navigate to mempool's jail IP and you should have a working website!
+
+## Upgrade Mempool
+```
+# service stop mempoolbackend && service stop nginx
+# cd ~
+# fetch https://github.com/mempool/mempool/archive/refs/tags/v2.2.1.tar.gz
+# tar -xvf v2.2.1.tar.gz && rm v2.2.1.tar.gz
+# rm ~/mempool && mv ~/mempool-2.2.1 ~/mempool
+# cd ~/mempool/backend
+# touch ~/mempool/backend/cache.json
+# npm install
+# npm run build
+# cp /usr/local/etc/mempool-config.json ~/mempool/backend/mempool-config.json
+# cd ~/mempool/frontend
+# npm install
+# npm run build
+# rsync -av --delete dist/mempool /usr/local/www/
+```
 
 Next: [ [Extras](extras.md) ]
