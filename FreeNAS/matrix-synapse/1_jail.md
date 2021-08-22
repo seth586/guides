@@ -41,7 +41,7 @@ exit
 exit
 ```
 
-Config: `/usr/local/etc/matrix-synapse/homeserver.yaml & /usr/local/etc/matrix-synapse/log.config`
+Config: `/usr/local/etc/matrix-synapse/homeserver.yaml & /usr/local/etc/matrix-synapse/log.config & /usr/local/etc/matrix-synapse/domain.tld.log.config`
 
 `cat /usr/local/etc/rc.d/synapse | grep synapse_conf`
 
