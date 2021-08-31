@@ -48,7 +48,7 @@ Make sure to back up your database prior to an upgrade attempt!
 # pkg update
 # pkg upgrade mariadb105-server
 # service mariadb-server restart
-# pkg upgrade mariadb105
+# pkg upgrade mariadb105-client
 # mariadb-upgrade --datadir=/var/db/mysql
 ```
 
