@@ -26,7 +26,7 @@ root@blog:~ #
 # rm  /usr/local/etc/nginx/nginx.conf
 # nano /usr/local/etc/nginx/nginx.conf
 ```
-Paste the following recomended configuration for a wordpress webserver. Change the `server_name` to the appropriate static ip for the webserver jail.
+Paste the following recomended configuration for a wordpress webserver. Change the `server_name` to the appropriate static ip for the webserver jail for now. Remmeber to change this to your `domain.tld` address once your reverse proxy is working.
 ```
 user  www;
 worker_processes  1;
