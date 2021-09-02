@@ -150,7 +150,7 @@ Save (CTRL+O, ENTER) and exit (CTRL+X)
 ### 6.3 NGINX: SSL Configuration:
 
 ```
-# mkdir /usr/local/etc/ssl && curl https://ssl-config.mozilla.org/ffdhe2048.txt > /usr/local/etc/ssl/dhparam.pem
+# curl https://ssl-config.mozilla.org/ffdhe2048.txt > /usr/local/etc/ssl/dhparam.pem
 # nano /usr/local/etc/nginx/snippets/ssl-params.conf
 ```
 You can use https://ssl-config.mozilla.org/ to create the parameters, or just copy paste below:
