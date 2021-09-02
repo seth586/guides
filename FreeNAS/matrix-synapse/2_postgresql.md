@@ -20,6 +20,12 @@ FreeBSD: {
 }
 ```
 ```
-pkg install postgresql13-server
+pkg install postgresql13-server sudo
 sysrc postgresql_enable="YES"
+```
+
+### Initialize database
+```
+sudo -i -u postgres
+
 ```
