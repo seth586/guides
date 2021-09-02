@@ -16,7 +16,7 @@ This will allow you to snapshot & backup the database, and keep the data safe if
 
 Then start the jail
 
-### Switch pkg repo to latest
+### Switch pkg repo to latest & install
 ```
 pkg install nano
 mkdir -p /usr/local/etc/pkg/repos/
@@ -31,10 +31,20 @@ FreeBSD: {
 pkg install postgresql13-server sudo
 sysrc postgresql_enable="YES"
 ```
+### Give postgres user permissions to our dataset
+```
+chown postgres:postgres /var/db/postgres/data13
+```
 
 ### Initialize database
 ```
-/usr/local/etc/rc.d/postgresql initdb
-sudo -i -u postgres
-
+# /usr/local/etc/rc.d/postgresql initdb
+# service postgresql start
+# sudo -i -u postgres
+$ psql
+postgres=# CREATE USER "synapse" WITH PASSWORD 'password';
+postgres=# CREATE DATABASE synapse ENCODING 'UTF8' LC_COLLATE='C' LC_CTYPE='C' template=template0 OWNER "synapse";
+postgres=# \q
+$ exit
+#
 ```
