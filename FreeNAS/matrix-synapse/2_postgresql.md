@@ -8,6 +8,14 @@ pkg dependancies between matrix-synapse38 and postgresql can conflict between ve
 
 As a bonus, this database installation can serve other jails as well (nextcloud, mempool.space, etc)
 
+### Create database dataset & mount to jail
+
+This will allow you to snapshot & backup the database, and keep the data safe if you nuke the jail.
+
+/mnt/volume1/apps/synapse/db -> /mnt/volume1/iocage/jails/synapse/root/var/db/postgres/data13
+
+Then start the jail
+
 ### Switch pkg repo to latest
 ```
 pkg install nano
@@ -26,6 +34,7 @@ sysrc postgresql_enable="YES"
 
 ### Initialize database
 ```
+/usr/local/etc/rc.d/postgresql initdb
 sudo -i -u postgres
 
 ```
