@@ -55,8 +55,13 @@ Media Repo: `/var/db/matrix-synapse/media_store` -> non critical, worst case sce
 
 ### Create Jail
 
+Create two jails:
+
+database host - synapsedb - 192.168.84.78
+synapse server - synapse - 192.168.84.79
+
 ### Mount datasets to jail
 
-### Start Jail
+### Start Jails
 
 
