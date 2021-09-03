@@ -39,7 +39,7 @@ Create config: `cd /usr/local/etc && fetch https://raw.githubusercontent.com/Zer
 server_location: 'http://192.168.1.79:8008'
 server_name: 'example.tld'
 shared_secret: 'Registration_Shared_Secret'
-admin_secret: 'APIAdminPassword'
+admin_api_shared_secret: 'APIAdminPassword'
 ...
 db: 'sqlite:////var/db/matrixreg/db.sqlite3'
 ...
