@@ -56,3 +56,16 @@ nano /var/db/postgres/data13/pg_hba.conf
 ```
 host    synapse         synapse         192.168.84.79/32        md5
 ```
+### Allow remote connections
+```
+nano /var/db/postgres/data13/postgresql.conf
+```
+```
+...
+listen_addresses = '*'
+...
+```
+### Reload configuration changes
+```
+su -m postgres -c 'pg_ctl reload -D /var/db/postgres/data13'
+```
