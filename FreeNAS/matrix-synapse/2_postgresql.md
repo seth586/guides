@@ -54,5 +54,5 @@ $ exit
 nano /var/db/postgres/data13/pg_hba.conf
 ```
 ```
-host    synapse         synapse         192.168.84.79           md5
+host    synapse         synapse         192.168.84.79/32        md5
 ```
