@@ -46,7 +46,7 @@ Create working directory & set permissions: `mkdir /var/db/matrixreg`
 Create config: `cd /usr/local/etc && fetch https://raw.githubusercontent.com/ZerataX/matrix-registration/master/config.sample.yaml && mv config.sample.yaml matrix-registration.yaml && nano matrix-registration.yaml`:
 ```
 ...
-server_location: 'http://192.168.1.79:8008'
+server_location: 'http://192.168.84.79:8008'
 server_name: 'example.tld'
 shared_secret: 'Registration_Shared_Secret'
 admin_api_shared_secret: 'APIAdminPassword'
