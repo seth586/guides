@@ -36,7 +36,7 @@ pkg install py38-pip
 pip install matrix-registration==1.0.0.dev7
 ```
 
-## FreeBSD rc.d
+## Config
 In this example pip installed the binary at `/usr/local/bin/matrix-registration`: 
 
 Create user: `pw adduser matrixreg -d /nonexistent -s /usr/sbin/nologin -c "matrix-registration user"`
@@ -59,8 +59,14 @@ logging:
    file:
      filename: /var/db/matrixreg/m_reg.log
 ```
+## Test with a verbose run:
+```
+/usr/local/bin/python3.8 /usr/local/bin/matrix-registration --config-path=/usr/local/etc/matrix-registration.yaml serve
+waitress - INFO - Serving on http://192.168.84.79:5000
+```
 
-Create rc.d startup script `nano /usr/local/etc/rc.d/matrixreg`:
+
+## Create rc.d startup script `nano /usr/local/etc/rc.d/matrixreg`:
 ```
 #!/bin/sh
 #
