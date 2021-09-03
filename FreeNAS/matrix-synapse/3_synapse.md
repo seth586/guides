@@ -16,4 +16,6 @@ FreeBSD: {
   url: "pkg+http://pkg.FreeBSD.org/${ABI}/latest"
 }
 ```
-
+```
+pkg install -y py38-matrix-synapse
+```
