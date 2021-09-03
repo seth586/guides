@@ -63,6 +63,7 @@ nano /var/db/postgres/data13/postgresql.conf
 ```
 ...
 listen_addresses = '*'
+port = 5432
 ...
 ```
 ### Reload configuration changes
