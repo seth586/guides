@@ -9,7 +9,7 @@ https://github.com/ZerataX/matrix-registration
 
 This will allow you to generate invite links, allowing 1 unique registration onto your server per link generated.
 
-## Create database for matrixreg
+## Create database for matrixreg (in synapsedb jail)
 ```
 iocage console synapsedb
 # sudo -i -u postgres
@@ -20,10 +20,20 @@ postgres=# \q
 $ exit
 #
 ```
-## Install
+## Set database access permission (in synapsedb jail)
 ```
+nano /var/db/postgres/data13/pg_hba.conf
+```
+```
+host    matrixreg         matrixreg         192.168.84.79/32        md5
+```
+
+## Install (in synapse jail)
+```
+exit
+iocage console synapse
 pkg install py38-pip
-pip install matrix-registration
+pip install matrix-registration==1.0.0.dev7
 ```
 
 ## FreeBSD rc.d
@@ -41,7 +51,8 @@ server_name: 'example.tld'
 shared_secret: 'Registration_Shared_Secret'
 admin_api_shared_secret: 'APIAdminPassword'
 ...
-db: 'sqlite:////var/db/matrixreg/db.sqlite3'
+db: 'postgresql://matrixreg:matrixreg@192.168.84.78:5432/matrixreg'
+host: '192.168.84.79'
 ...
 logging:
  handlers:
