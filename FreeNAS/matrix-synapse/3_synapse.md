@@ -3,6 +3,17 @@
 
 ## Synapse
 
-### Install
-
+### Switch jails and Install
+```
+exit
+iocage console synapse
+pkg install nano -y
+mkdir -p /usr/local/etc/pkg/repos/
+nano /usr/local/etc/pkg/repos/FreeBSD.conf
+```
+```
+FreeBSD: {
+  url: "pkg+http://pkg.FreeBSD.org/${ABI}/latest"
+}
+```
 
