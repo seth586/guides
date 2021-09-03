@@ -62,7 +62,7 @@ Create rc.d startup script `nano /usr/local/etc/rc.d/matrixreg`:
 name="matrixreg"
 rcvar="${name}_enable"
 matrixreg_command="/usr/local/bin/matrix-registration --config-path=/usr/local/etc/matrix-registration.yaml serve"
-matrixreg_interpreter="/usr/local/bin/python3.7"
+matrixreg_interpreter="/usr/local/bin/python3.8"
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
 command_args="-P ${pidfile} -u matrixreg -r -f ${matrixreg_command}"
