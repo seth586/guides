@@ -18,7 +18,7 @@ FreeBSD: {
 ```
 ```
 pkg install -y py38-matrix-synapse
-
+sysrc synapse_enable="YES"
 ```
 
 ### Configure
