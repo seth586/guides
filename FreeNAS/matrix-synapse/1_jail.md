@@ -62,7 +62,10 @@ database host - synapsedb - 192.168.84.78
 synapse server - synapse - 192.168.84.79
 
 ### Mount datasets to jail
-
+```
+synapse: /mnt/volume1/apps/synapse/config -> /mnt/volume1/iocage/jails/synapse/root/usr/local/etc/matrix-synapse
+synapsedb: /mnt/volume1/apps/synapse/db -> /mnt/volume1/iocage/jails/synapsedb/root/var/db/postgres/data13
+```
 ### Start Jails
 
 
