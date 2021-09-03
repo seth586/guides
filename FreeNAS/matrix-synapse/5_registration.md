@@ -9,6 +9,12 @@ https://github.com/ZerataX/matrix-registration
 
 This will allow you to generate invite links, allowing 1 unique registration onto your server per link generated.
 
+## Install
+```
+pkg install py38-pip
+pip install matrix-registration
+```
+
 ## FreeBSD rc.d
 In this example pip installed the binary at `/usr/local/bin/matrix-registration`: 
 
