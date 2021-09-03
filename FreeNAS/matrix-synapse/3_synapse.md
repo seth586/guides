@@ -7,7 +7,7 @@
 ```
 exit
 iocage console synapse
-pkg install nano -y
+pkg install -y nano
 mkdir -p /usr/local/etc/pkg/repos/
 nano /usr/local/etc/pkg/repos/FreeBSD.conf
 ```
