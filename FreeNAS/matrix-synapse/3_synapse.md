@@ -18,4 +18,10 @@ FreeBSD: {
 ```
 ```
 pkg install -y py38-matrix-synapse
+
+```
+
+### Configure
+```
+nano /usr/local/etc/matrix-synapse/homeserver.yaml
 ```
