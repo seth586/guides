@@ -64,7 +64,7 @@ logging:
 /usr/local/bin/python3.8 /usr/local/bin/matrix-registration --config-path=/usr/local/etc/matrix-registration.yaml serve
 waitress - INFO - Serving on http://192.168.84.79:5000
 ```
-
+Ctrl+C to stop
 
 ## Create rc.d startup script `nano /usr/local/etc/rc.d/matrixreg`:
 ```
