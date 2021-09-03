@@ -65,7 +65,7 @@ Create rc.d startup script `nano /usr/local/etc/rc.d/matrixreg`:
 #!/bin/sh
 #
 # PROVIDE: matrixreg
-# REQUIRE:
+# REQUIRE: LOGIN postgresql synapse
 # KEYWORD:
 
 . /etc/rc.subr
