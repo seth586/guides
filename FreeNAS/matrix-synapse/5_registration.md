@@ -9,6 +9,17 @@ https://github.com/ZerataX/matrix-registration
 
 This will allow you to generate invite links, allowing 1 unique registration onto your server per link generated.
 
+## Create database for matrixreg
+```
+iocage console synapsedb
+# sudo -i -u postgres
+$ psql
+postgres=# CREATE USER "matrixreg" WITH PASSWORD 'password';
+postgres=# CREATE DATABASE matrixreg ENCODING 'UTF8' LC_COLLATE='C' LC_CTYPE='C' template=template0 OWNER "matrixreg";
+postgres=# \q
+$ exit
+#
+
 ## Install
 ```
 pkg install py38-pip
