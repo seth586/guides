@@ -16,9 +16,9 @@ Then start the jail
 
 ### Switch pkg repo to latest & install
 ```
-pkg install nano
-mkdir -p /usr/local/etc/pkg/repos/
-nano /usr/local/etc/pkg/repos/FreeBSD.conf
+# pkg install nano
+# mkdir -p /usr/local/etc/pkg/repos/
+# nano /usr/local/etc/pkg/repos/FreeBSD.conf
 ```
 ```
 FreeBSD: {
@@ -26,12 +26,13 @@ FreeBSD: {
 }
 ```
 ```
-pkg install postgresql13-server sudo
-sysrc postgresql_enable="YES"
+# pkg install postgresql13-server sudo
+# sysrc postgresql_enable="YES"
 ```
-### Give postgres user permissions to our dataset
+### Set permissions and start
 ```
-chown postgres:postgres /var/db/postgres/data13
+# chown postgres:postgres /var/db/postgres/data13
+# service postgresql start
 ```
 
 ### Initialize database
