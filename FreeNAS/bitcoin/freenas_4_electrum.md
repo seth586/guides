@@ -171,7 +171,7 @@ If you want to access electrum without using a VPN or TOR, you can have a SSL en
 ### ELECTRUM.EXAMPLE.COM
 stream {
         upstream electrs {
-                server 192.168.84.208:50001;
+                server 192.168.84.21:50001;
         }
 
         server {
