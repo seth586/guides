@@ -44,19 +44,65 @@ Install and cleanup:
 # install -m 0755 -o root -g wheel /root/electrs/target/release/electrs /usr/local/bin
 # rm -r ~/electrs
 # mkdir /var/db/electrs
-# electrs -vvv --db-dir=/var/db/electrs --electrum-rpc-addr=192.168.84.208:50001 --daemon-dir=/var/db/bitcoin
 ```
+### Create RPC credentials for Bitcoin Core
+
+Download the rpcauth tool as documented [here](https://github.com/bitcoin/bitcoin/tree/master/share/rpcauth). Save this information.
+
+```
+# fetch https://raw.githubusercontent.com/bitcoin/bitcoin/master/share/rpcauth/rpcauth.py
+# python3 ./rpcauth.py electrs
+String to be appended to bitcoin.conf:
+rpcauth=electrs:5d0d70936350d0a79b588a9bb2906ea1$82afc2d29dfcfd808acd98f855cf47989564d8f1cd55b515f23fb10ace0dd75a
+Your password:
+2tm5NiN8wZVyjx_hgUL5O8it68WfoadHDEZ-v6w_RhQ=
+```
+
+Add the `rpcauth=` string above to `bitcoin.conf` and configure rpc access. Make sure that the `rcpallowip=` coorelates to your local subnet address range.
+```
+# nano /usr/local/etc/bitcoin.conf
+rpcauth=mempool:5d0d70936350d0a79b588a9bb2906ea1$82afc2d29dfcfd808acd98f855cf47989564d8f1cd55b515f23fb10ace0dd75a
+rpcallowip=192.168.84.0/24
+rpcbind=0.0.0.0
+```
+Save (CTRL+O,ENTER) and exit (CTRL+X)
+
+Reboot bitcoin core, make sure bitcoind is running sucessfuly after the reboot by running `ps aux`.
+```
+# service bitcoind restart
+# ps aux
+USER      PID %CPU %MEM     VSZ     RSS TT  STAT STARTED      TIME COMMAND
+bitcoin 76206  4.4  2.2 4551716 1449288  -  SJ   Wed23   426:49.66 /usr/local/bin/bitcoind -conf=/usr/local/etc/bitcoin.conf -datadir=/var/db/bitcoin
+...
+```
+### Create user, config
+```
+# pw adduser electrs -d /nonexistent -s /usr/sbin/nologin
+# mkdir /var/db/electrs
+# mkdir /usr/local/etc/electrs
+# nano /usr/local/etc/electrs/config.toml
+```
+```
+jsonrpc_import = true
+daemon_rpc_addr = "127.0.0.1:8332"
+auth = "electrs:2tm5NiN8wZVyjx_hgUL5O8it68WfoadHDEZ-v6w_RhQ="
+db_dir = "/var/db/electrs"
+network = "bitcoin"
+electrum_rpc_addr = "192.168.84.21:50001"
+```
+Save (CTRL+O,ENTER) and exit (CTRL+X)
+
 Make sure to replace `electrum-rpc-addr=` with your bitcoin jail's IP to serve local connections, or use 127.0.0.1:50001 if you plan on serving remote connections over tor authenticated hidden services.
 
-Electrs will now index the blockchain into its own database. This can take a few hours, depending on your CPU and disk IO. You may get spammed by a `WARN - failed to export stats: failed to read stats`, just ignore it. When its done indexing, it will start to serve connections.
-
-Right click on your windows electrum client, select properties, and modify the shortcut to resemble below:
+### Create permissions & test run
 ```
-"C:\Program Files (x86)\Electrum\electrum-3.3.4.exe" -1 -s 192.168.84.208:50001:t
+# chown -R electrs:electrs /var/db/electrs
+# su -m electrs -c 'electrs -vvv --conf=/usr/local/etc/electrs/config.toml'
 ```
-Start up electrum client. It should connect! Terminate electrs with ctrl+c. Verify it is no longer running with `ps aux`. If it is still running, kill it with `kill -9 <pid>`, whereas `<pid>` is the number under the PID column from command `ps aux`. 
 
-Now lets write an rc.d script so it automatically starts as a service:
+Electrs will now index the blockchain into its own database. This can take a few hours, depending on your CPU and disk IO. When its done indexing, it will start to serve connections.
+
+### rc.d script
 
 ```
 # nano /usr/local/etc/rc.d/electrs
@@ -74,10 +120,10 @@ Paste the following script:
 
 name="electrs"
 rcvar="electrs_enable"
-electrs_command="/usr/local/bin/electrs --db-dir=/var/db/electrs --electrum-rpc-addr=192.168.84.208:50001 --daemon-dir=/var/db/bitcoin"
+electrs_command="/usr/local/bin/electrs --conf=/usr/local/etc/electrs/config.toml"
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
-command_args="-P ${pidfile} -r -f ${electrs_command}"
+command_args="-P ${pidfile} -u electrs -r -f ${electrs_command}"
 
 load_rc_config $name
 : ${electrs_enable:=no}
@@ -97,6 +143,12 @@ And enable on startup:
 Give it a whir:
 ```
 # service electrs start
+```
+
+### Client Setup
+Right click on your windows electrum client, select properties, and modify the shortcut to resemble below:
+```
+"C:\Program Files (x86)\Electrum\electrum-3.3.4.exe" -1 -s 192.168.84.21:50001:t
 ```
 
 ### How to update electrs
