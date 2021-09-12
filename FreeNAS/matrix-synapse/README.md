@@ -47,6 +47,6 @@ Optionally, you can set up [bridges](https://matrix.org/bridges/), to communicat
 
 ### Target Versions
 
-This guide was written and tested to work with FreeBSD 12.2 and Synapse 1.40. If installing a newer version (likely) catch up on the [upgrade notes](https://matrix-org.github.io/synapse/latest/upgrade) to ensure these instructions are still accurate. 
+This guide was written and tested to work with FreeBSD 12.2 and Synapse 1.40. If installing a newer version (likely) catch up on the [upgrade notes](https://matrix-org.github.io/synapse/latest/upgrade) to ensure these instructions and configurations are still accurate. 
 
 Next: [ [Jail Creation](1_jail.md) ]
