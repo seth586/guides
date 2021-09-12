@@ -100,7 +100,7 @@ Make sure to replace `electrum-rpc-addr=` with your bitcoin jail's IP to serve l
 # su -m electrs -c 'electrs -vvv --conf=/usr/local/etc/electrs/config.toml'
 ```
 
-Electrs will now index the blockchain into its own database. This can take a few hours, depending on your CPU and disk IO. When its done indexing, it will start to serve connections. Stop the app with Ctrl+C.
+Electrs should begin to index the blockchain into its own database.  Stop the app with Ctrl+C.
 
 ### rc.d script
 
@@ -144,6 +144,8 @@ Give it a whir:
 ```
 # service electrs start
 ```
+
+Electrs will begin to index the blockchain into its own database. This can take a few hours, depending on your CPU and disk IO. When its done indexing, it will start to serve connections.
 
 ### Client Setup
 Right click on your windows electrum client, select properties, and modify the shortcut to resemble below:
