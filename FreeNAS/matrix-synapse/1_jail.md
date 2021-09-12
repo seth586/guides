@@ -40,18 +40,20 @@ show data_directory;
 exit
 exit
 ```
-
-Config: `/usr/local/etc/matrix-synapse/homeserver.yaml & /usr/local/etc/matrix-synapse/log.config & /usr/local/etc/matrix-synapse/domain.tld.log.config`
+### Default data locations that need backup to sucessfully restore a homeserver
+Config files: `/usr/local/etc/matrix-synapse/homeserver.yaml & /usr/local/etc/matrix-synapse/log.config & /usr/local/etc/matrix-synapse/domain.tld.log.config`
 
 `cat /usr/local/etc/rc.d/synapse | grep synapse_conf`
 
-Signing Key: `/var/db/matrix-synapse/example.tld.signing.key`
+Signing Key: `/var/db/matrix-synapse/example.tld.signing.key` (I move this to the config folder to keep my `config` dataset concise
 
-`cat homeserver.yaml | grep signing_key_path`
+`cat /usr/local/etc/matrix-synapse/homeserver.yaml | grep signing_key_path`
+
+Database: '/var/db/postgres/data13'
 
 Media Repo: `/var/db/matrix-synapse/media_store` -> non critical, worst case scenario historical chats will loose uploaded media & files
 
-`cat homeserver.yaml | grep media_store_path:`
+`cat /usr/local/etc/matrix-synapse/homeserver.yaml | grep media_store_path:`
 
 ### Create Jail
 
