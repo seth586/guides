@@ -40,18 +40,30 @@ show data_directory;
 exit
 exit
 ```
-### Default data locations that need backup to sucessfully restore a homeserver
-Config files: `/usr/local/etc/matrix-synapse/homeserver.yaml & /usr/local/etc/matrix-synapse/log.config & /usr/local/etc/matrix-synapse/domain.tld.log.config`
+### Files that need backup to sucessfully restore your homeserver
+These locations may vary from the default installation & configuration locations to streamline your dataset backups 
+#### 1. Config files: 
+```
+/usr/local/etc/matrix-synapse/homeserver.yaml
+/usr/local/etc/matrix-synapse/log.config
+/usr/local/etc/matrix-synapse/domain.tld.log.config
+/usr/local/etc/example.tld.signing.key
+```
+Locations: 
+```
+cat /usr/local/etc/rc.d/synapse | grep synapse_conf
+cat /usr/local/etc/matrix-synapse/homeserver.yaml | grep signing_key_path
+```
+#### 2. Database: 
+```
+/var/db/postgres/data13
+```
 
-`cat /usr/local/etc/rc.d/synapse | grep synapse_conf`
-
-Signing Key: `/var/db/matrix-synapse/example.tld.signing.key` (I move this to the config folder to keep my `config` dataset concise
-
-`cat /usr/local/etc/matrix-synapse/homeserver.yaml | grep signing_key_path`
-
-Database: '/var/db/postgres/data13'
-
-Media Repo: `/var/db/matrix-synapse/media_store` -> non critical, worst case scenario historical chats will loose uploaded media & files
+#### 3. Media Repo: 
+```
+/var/db/matrix-synapse/media_store
+````
+Non critical, worst case scenario historical chats will loose uploaded media & files
 
 `cat /usr/local/etc/matrix-synapse/homeserver.yaml | grep media_store_path:`
 
