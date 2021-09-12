@@ -100,7 +100,7 @@ Make sure to replace `electrum-rpc-addr=` with your bitcoin jail's IP to serve l
 # su -m electrs -c 'electrs -vvv --conf=/usr/local/etc/electrs/config.toml'
 ```
 
-Electrs will now index the blockchain into its own database. This can take a few hours, depending on your CPU and disk IO. When its done indexing, it will start to serve connections.
+Electrs will now index the blockchain into its own database. This can take a few hours, depending on your CPU and disk IO. When its done indexing, it will start to serve connections. Stop the app with Ctrl+C.
 
 ### rc.d script
 
