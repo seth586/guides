@@ -97,6 +97,8 @@ Make sure to replace `electrum-rpc-addr=` with your bitcoin jail's IP to serve l
 ### Create permissions & test run
 ```
 # chown -R electrs:electrs /var/db/electrs
+# chown -R electrs:electrs /usr/local/etc/electrs
+# chmod -R 600 /usr/local/etc/electrs
 # su -m electrs -c 'electrs -vvv --conf=/usr/local/etc/electrs/config.toml'
 ```
 
