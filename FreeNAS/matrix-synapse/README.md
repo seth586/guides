@@ -33,7 +33,7 @@ By the end of this guide, you will be running a matrix-synapse server in a TrueN
 
 You will be able to connect a chat client to your server. I personally like [Element Secure Messenger](https://element.io/get-started).
 
-Your server will be able to federate with other matrix servers. Send me a message at @seth586:nym.im to test your federation, and let me know how it went!
+Your server will be able to federate with other matrix servers. Send me a message at [@seth586:nym.im](https://matrix.to/#/@seth586:nym.im) to test your federation, and let me know how it went!
 
 Public signups will be disabled, however you will have a token generator to give permissioned signups to friends. 
 
