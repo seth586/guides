@@ -22,6 +22,7 @@ sysrc synapse_enable="YES"
 ```
 
 ### Configure
+There is a lot to unpack here, these are my minimum lines to edit. Search for the following lines (CTRL+W) and make appropriate entries
 ```
 nano /usr/local/etc/matrix-synapse/homeserver.yaml
 ```
