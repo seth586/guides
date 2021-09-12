@@ -45,27 +45,27 @@ These locations may vary from the default installation & configuration locations
 #### 1. Config files: 
 ```
 /usr/local/etc/matrix-synapse/homeserver.yaml
-/usr/local/etc/matrix-synapse/log.config
 /usr/local/etc/matrix-synapse/domain.tld.log.config
-/usr/local/etc/example.tld.signing.key
+/usr/local/etc/matrix-synapse/example.tld.signing.key
 ```
 Locations: 
 ```
 cat /usr/local/etc/rc.d/synapse | grep synapse_conf
+cat /usr/local/etc/matrix-synapse/homeserver.yaml | grep domain.tld.log.config
 cat /usr/local/etc/matrix-synapse/homeserver.yaml | grep signing_key_path
 ```
-#### 2. Database: 
+#### 2. Database folder: 
 ```
 /var/db/postgres/data13
 ```
 
-#### 3. Media Repo: 
+#### 3. Media Repo folder: 
 ```
 /var/db/matrix-synapse/media_store
 ````
 Non critical, worst case scenario historical chats will loose uploaded media & files
 
-`cat /usr/local/etc/matrix-synapse/homeserver.yaml | grep media_store_path:`
+Location: `cat /usr/local/etc/matrix-synapse/homeserver.yaml | grep media_store_path:`
 
 ### Create Jail
 
