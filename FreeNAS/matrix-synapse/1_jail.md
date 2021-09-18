@@ -46,7 +46,7 @@ These locations may vary from the default installation & configuration locations
 ```
 /usr/local/etc/matrix-synapse/homeserver.yaml
 /usr/local/etc/matrix-synapse/domain.tld.log.config
-/usr/local/etc/matrix-synapse/example.tld.signing.key
+/usr/local/etc/matrix-synapse/domain.tld.signing.key
 ```
 Locations: 
 ```
