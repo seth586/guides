@@ -5,20 +5,22 @@
 
 ### Switch jails and Install
 ```
-exit
-iocage console synapse
-pkg install -y nano
-mkdir -p /usr/local/etc/pkg/repos/
-nano /usr/local/etc/pkg/repos/FreeBSD.conf
+# exit
+root@truenas[~]# iocage console synapse
+# pkg install -y nano
+# mkdir -p /usr/local/etc/pkg/repos/
+# nano /usr/local/etc/pkg/repos/FreeBSD.conf
 ```
 ```
 FreeBSD: {
   url: "pkg+http://pkg.FreeBSD.org/${ABI}/latest"
 }
 ```
+Save (CTRL+o, ENTER) and exit (CTRL+x)
+
 ```
-pkg install -y py38-matrix-synapse
-sysrc synapse_enable="YES"
+# pkg install -y py38-matrix-synapse
+# sysrc synapse_enable="YES"
 ```
 
 ### Configure
