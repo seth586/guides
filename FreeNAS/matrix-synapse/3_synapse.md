@@ -23,8 +23,15 @@ Save (CTRL+o, ENTER) and exit (CTRL+x)
 # sysrc synapse_enable="YES"
 ```
 
-### Configure
-There is a lot to unpack here, these are my minimum lines to edit. Search for the following lines (CTRL+W) and make appropriate entries
+### Configuration
+
+Familiarize yourself with the [documentation](https://matrix-org.github.io/synapse/latest/setup/installation.html) as everyone must configure to their individual needs.
+
+Create `homeserver.yaml`, Replace `domain.tld` with the domain of your matrix-synapse server:
 ```
-nano /usr/local/etc/matrix-synapse/homeserver.yaml
+# /usr/local/bin/python3.8 -B -m synapse.app.homeserver -c /usr/local/etc/matrix-synapse/homeserver.yaml --generate-config -H domain.tld --report-stats no
+# nano /usr/local/etc/matrix-synapse/homeserver.yaml
+```
+```
+
 ```
