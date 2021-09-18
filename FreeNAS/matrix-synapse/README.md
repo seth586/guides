@@ -6,7 +6,7 @@
 
 ### Intro
 
-[Matrix](https://matrix.org/) is a protocol for secure, decentralised, real-time communication. [Synapse](https://github.com/matrix-org/synapse) is the reference implementation of the matrix protocol.
+[Matrix](https://matrix.org/) is a protocol for secure, decentralised, real-time communication. [Synapse](https://github.com/matrix-org/synapse) is the reference server implementation of the matrix protocol and [Element](https://element.io/) is the reference client implementation of the matrix protocol. Other servers and clients exist, but are usually forks of the main projects.
 
 ### What makes the Matrix protocol so special?
 
@@ -24,7 +24,7 @@ One monolithic sever - Twitter - decides who you can and can't talk to on their 
 gnu/social server mastodon.social server blocks the gnu/social gab.com server. Individual adminstrators decide who their members can and can't talk to. Power structure is moved closer to the individual. This increases the freedom for individuals as they can now choose their servers and moderators. 
 
 #### The decentralized network:
-Every individual runs their own [dendrite](https://github.com/matrix-org/dendrite) matrix server and chat client on the same device. Completely decentralized network. The individual decides who to block and who to voluntarily associate with.
+Every individual runs their own [dendrite](https://github.com/matrix-org/dendrite) matrix server and chat client on the same device. Completely decentralized network. The individual decides who to block and who to voluntarily associate with. 
 
 Eventually, with enough engineering, the matrix protocol can reach a completely decentralized state. Until then, the best we can do is run a federated network topology for like minded individuals.
 
