@@ -158,9 +158,9 @@ Right click on your windows electrum client, select properties, and modify the s
 ### How to update electrs
 ```
 # service electrs stop
-# pkg update
-# pkg upgrade rust
+# pkg update && pkg upgrade rust
 # cd ~
+# rm -r electrs
 # git clone https://github.com/romanz/electrs
 # cd electrs
 # cargo build --release
