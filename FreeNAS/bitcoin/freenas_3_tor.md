@@ -76,12 +76,10 @@ Bitcoind's use of i2pd is well docuemnted [here](https://github.com/bitcoin/bitc
 # sysrc i2pd_enable="YES"
 # nano /usr/local/etc/i2pd/i2pd.conf
 ```
-The following configuration changes enables SAM protocol & shares 256kb/s of bandwidth with the network. Change `port =` to a random port between 10000 and 65000:
+The following configuration changes enables SAM protocol hidden service for bitcoind & turns on the management interface:
 ```
 ...
 loglevel = none
-port = 12345
-bandwidth = o
 [http]
 enabled = true
 address = 192.168.84.21
@@ -111,7 +109,18 @@ i2pacceptincoming=1
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X). 
 
-Port forward TCP+UDP `port =` from your router to your bitcoin jail `port =`. Then start the service and check that i2p is working:
+### Optional: Relay
+
+If you want to donate bandwidth as a i2p relay, add the following, pick a random `port =` between 10000 and 65000 to share 256KB/s:
+
+`nano /usr/local/etc/i2pd/i2pd.conf`:
+```
+port = 12345
+bandwidth = o
+```
+Port forward TCP+UDP `port =` from your router to your bitcoin jail `port =`. 
+
+### Start & verify
 ```
 # service bitcoind stop
 # service i2pd start
@@ -119,9 +128,9 @@ Port forward TCP+UDP `port =` from your router to your bitcoin jail `port =`. Th
 # bitcoin-cli getnetworkinfo
 # bitcoin-cli -addrinfo
 ```
-Open a browser and navigate to your bitcoin jail and port 7070, ex: `http://192.168.84.21:7070/`. Network status should read: OK. Click `SAM Sessions`. You shoud see bitcoind's SAM session! You can go back and disable the [http] section in `/usr/local/etc/i2pd/i2pd.conf` if you dont want to monitor, or add password credentials to secure the monitoring & configuration interface.
+Open a browser and navigate to your bitcoin jail and port 7070, ex: `http://192.168.84.21:7070/`. Network status should read: Firewalled if you are not running a relay, and OK if you are running a relay. Click `SAM Sessions`. You shoud see bitcoind's SAM session! You can go back and disable the [http] section in `/usr/local/etc/i2pd/i2pd.conf` if you dont want to monitor, or add password credentials to secure the monitoring & configuration interface.
 
-### How to upgrade tor:
+### How to upgrade i2p:
 ```
 # service i2pd stop
 # pkg update && pkg upgrade i2pd -y
