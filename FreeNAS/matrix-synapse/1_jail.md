@@ -31,6 +31,21 @@ I highly recommend the following dataset folder structure, as it will make sense
     │   │   ├── db    
 ... and so on
 ```  
+### Create Jails
+
+Create two jails:
+
+database host - synapsedb - 192.168.84.78
+
+synapse server - synapse - 192.168.84.79
+
+### Mount datasets to jail
+```
+synapse: /mnt/volume1/apps/synapse/config -> /mnt/volume1/iocage/jails/synapse/root/usr/local/etc/matrix-synapse
+synapse: /mnt/volume0/apps/synapse/media_store -> /mnt/volume1/iocage/jails/synapse/root/var/db/matrix-synapse/media_store
+synapsedb: /mnt/volume1/apps/synapse/db -> /mnt/volume1/iocage/jails/synapsedb/root/var/db/postgres/data13
+```
+### Start Jails
 
 ### Files that need backup to sucessfully restore your homeserver
 These locations may vary from the default installation & configuration locations to streamline your dataset backups 
@@ -66,20 +81,6 @@ Non critical, worst case scenario historical chats will loose uploaded media & f
 
 How to verify media repo location: `cat /usr/local/etc/matrix-synapse/homeserver.yaml | grep media_store_path:`
 
-### Create Jail
 
-Create two jails:
-
-database host - synapsedb - 192.168.84.78
-
-synapse server - synapse - 192.168.84.79
-
-### Mount datasets to jail
-```
-synapse: /mnt/volume1/apps/synapse/config -> /mnt/volume1/iocage/jails/synapse/root/usr/local/etc/matrix-synapse
-synapse: /mnt/volume0/apps/synapse/media_store -> /mnt/volume1/iocage/jails/synapse/root/var/db/matrix-synapse/media_store
-synapsedb: /mnt/volume1/apps/synapse/db -> /mnt/volume1/iocage/jails/synapsedb/root/var/db/postgres/data13
-```
-### Start Jails
 
 
