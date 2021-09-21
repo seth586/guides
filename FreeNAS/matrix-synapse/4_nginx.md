@@ -47,6 +47,34 @@ server {
     }
 
 }
+
+# TOR HIDDEN SERVICE FOR CLIENTS 
+server {
+    listen 80 http2;
+    
+    server_name onion.onion;
+
+    # Token registration
+    location ~ ^/(static|register) {
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_pass http://192.168.84.79:5000;
+    }
+
+    location /_synapse/client {
+        proxy_pass http://192.168.84.79:8008;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Host $host;
+        client_max_body_size 50M;
+    }
+
+    location /.well-known/matrix/client {
+      return 200 '{"m.homeserver": {"base_url": "http://onion.onion"},"m.identity_server": {"base_url": "https://vector.im"}}';
+      default_type application/json;
+      add_header "Access-Control-Allow-Origin" *;
+    }
+
+}
 ```
 Save (CTRL+o, ENTER) and exit (CTRL+x)
 
