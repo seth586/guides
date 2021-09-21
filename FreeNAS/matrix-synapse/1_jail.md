@@ -32,14 +32,6 @@ I highly recommend the following dataset folder structure, as it will make sense
 ... and so on
 ```  
 
-Database: `/var/db/postgres/data13`
-```
-sudo -i -u postgres
-psql
-show data_directory;
-exit
-exit
-```
 ### Files that need backup to sucessfully restore your homeserver
 These locations may vary from the default installation & configuration locations to streamline your dataset backups 
 #### 1. Config files: 
@@ -48,24 +40,31 @@ These locations may vary from the default installation & configuration locations
 /usr/local/etc/matrix-synapse/domain.tld.log.config
 /usr/local/etc/matrix-synapse/domain.tld.signing.key
 ```
-Locations: 
+How to verify locations: 
 ```
-cat /usr/local/etc/rc.d/synapse | grep synapse_conf
-cat /usr/local/etc/matrix-synapse/homeserver.yaml | grep domain.tld.log.config
-cat /usr/local/etc/matrix-synapse/homeserver.yaml | grep signing_key_path
+# cat /usr/local/etc/rc.d/synapse | grep synapse_conf
+# cat /usr/local/etc/matrix-synapse/homeserver.yaml | grep domain.tld.log.config
+# cat /usr/local/etc/matrix-synapse/homeserver.yaml | grep signing_key_path
 ```
 #### 2. Database folder: 
 ```
 /var/db/postgres/data13
 ```
-
+How to verify database location:
+```
+# sudo -i -u postgres
+# psql
+# show data_directory;
+# exit
+# exit
+```
 #### 3. Media Repo folder: 
 ```
 /var/db/matrix-synapse/media_store
 ````
 Non critical, worst case scenario historical chats will loose uploaded media & files
 
-Location: `cat /usr/local/etc/matrix-synapse/homeserver.yaml | grep media_store_path:`
+How to verify media repo location: `cat /usr/local/etc/matrix-synapse/homeserver.yaml | grep media_store_path:`
 
 ### Create Jail
 
