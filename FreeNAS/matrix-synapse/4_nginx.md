@@ -8,7 +8,7 @@ Enter your `reverseproxy` jail and add the following file:
 # nano /usr/local/etc/nginx/vdomains/domain.tld.conf
 ```
 
-Remember to replace `domain.tld` with your own domain:
+Remember to replace `domain.tld` with your own domain and onion.onion with your hidden service address for clients:
 ```
 server {
     listen 443 ssl http2;
