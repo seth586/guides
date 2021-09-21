@@ -1,7 +1,9 @@
 [ [<< Back to Extras](https://github.com/seth586/guides/blob/master/FreeNAS/bitcoin/extras.md) ]
 
 ### Bitcoin Core Install: Compile from source
-Note: Here are the instructions to compile bitcoind from source. There is a much easier way to install bitcoin (`pkg`), however we should know how to compile manually, in case the official bitcoin repository or package repositories go rogue.
+Note: Here are the instructions to compile bitcoind from source. There is a much easier way to install bitcoin (`pkg`), however its better to minimize trust in repositories and build ourselves.
+
+The bitcoin core project now maintains detailed compile isntructions on FreeBSD, view [here](https://github.com/bitcoin/bitcoin/blob/master/doc/build-freebsd.md)
 
 Secure Socket Shell into your freenas server. SSH is a way to manage your server remotely over a network. When you don’t plug in a monitor & keyboard directly into the server, it’s called a ‘headless’ server. The most popular SSH client is called [PuTTY, download it here](https://www.putty.org/). Connect to your FreeNAS’ IP address, and log in with your root credentials.
 
