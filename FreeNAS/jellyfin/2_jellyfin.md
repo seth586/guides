@@ -34,3 +34,5 @@ cat /etc/group
 ```
 
 https://github.com/Thefrank/jellyfin-server-freebsd/blob/main/Installation_TrueNAS_GUI.md
+
+[jailip]:8096 !
