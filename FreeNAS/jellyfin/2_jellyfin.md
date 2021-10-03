@@ -2,6 +2,7 @@
 
 [ [Intro](README.md) ] - [ [Jail Creation](1_jail.md) ] - **[Jellyfin]** - [ [aria2](3_aria2.md) ] - [ [Medusa](4_medusa.md) ]
 
+### Create User:Group, Dataset, and apply permissions:
 Goto your freenas UI, and create new group `jellyfin` under `Accounts / Groups / Add`:
 ```
 GID = 710
@@ -21,6 +22,8 @@ Disable Password = Yes
 Shell = nologin
 ```
 Click `SUBMIT`
+
+Create your media dataset, and apply jellyfin:jellyfin as user:group recursively for your dataset
 
 SSH into your `jellyfin` jail:
 ```
