@@ -5,7 +5,7 @@
 cat /etc/passwd
 pw groupshow -a
 pw adduser medusa -G jellyfin -d /nonexistent -s /usr/sbin/nologin
-
+pw usermod medusa -G jellyfin
 ```
 
 
