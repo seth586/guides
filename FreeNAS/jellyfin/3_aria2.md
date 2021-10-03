@@ -41,3 +41,7 @@ seed-ratio=1.0
 seed-time=1440
 ```
 Save (Ctrl+O, ENTER) and exit (Ctrl + X)
+```
+service aria2 start
+```
+Point your Aria2 front end to  http://yourJailIP:6800/jsonrpc
