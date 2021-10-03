@@ -1,3 +1,31 @@
 [ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/README.md) ]
 
 [ [Intro](README.md) ] - [ [Jail Creation](1_jail.md) ] - [ [Jellyfin](2_jellyfin.md) ] - **[aria2]** - [ [Medusa](4_medusa.md) ]
+
+```
+pkg install nano aria2 lighttpd ca_root_nss git
+sysrc lighttpd_enable=YES
+sysrc aria2_enable=YES
+sysrc aria2_user=jellyfin
+sysrc aria2_group=jellyfin
+nano /usr/local/etc/aria2.conf
+```
+Configure:
+```
+continue
+daemon=true
+dir=/media/downloads
+file-allocation=falloc
+log-level=warn
+disable-ipv6=true
+log-level=warn
+max-connection-per-server=4
+max-concurrent-downloads=3
+max-overall-download-limit=0
+min-split-size=5M
+rpc-listen-all=true
+enable-rpc=true
+rpc-secret=t2150cdt!
+ca-certificate=/etc/ssl/cert.pem
+```
+Save (Ctrl+O, ENTER) and exit (Ctrl + X)
