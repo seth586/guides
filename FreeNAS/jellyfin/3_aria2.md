@@ -37,5 +37,7 @@ save-session-interval=10
 dht-file-path=/var/db/aria2/dht.dat
 dht-file-path6=/var/db/aria2/dht6.dat
 max-overall-upload-limit=125K
+seed-ratio=1.0
+seed-time=1440
 ```
 Save (Ctrl+O, ENTER) and exit (Ctrl + X)
