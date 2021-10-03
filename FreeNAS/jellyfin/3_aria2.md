@@ -30,5 +30,7 @@ ca-certificate=/etc/ssl/cert.pem
 save-session=/var/db/aria2/aria2.txt
 input-file=/var/db/aria2/aria2.txt
 save-session-interval=10
+dht-file-path=/var/db/aria2/dht.dat
+dht-file-path6=/var/db/aria2/dht6.dat
 ```
 Save (Ctrl+O, ENTER) and exit (Ctrl + X)
