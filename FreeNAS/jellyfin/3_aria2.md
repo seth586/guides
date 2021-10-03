@@ -14,7 +14,7 @@ chown -R jellyfin:jellyfin /var/db/aria2
 chmod -R 770 /var/db/aria2
 nano /usr/local/etc/aria2.conf
 ```
-Configure:
+Configure: (See configuration options [here](https://aria2.github.io/manual/en/html/aria2c.html#aria2-conf))
 ```
 continue=true
 daemon=true
@@ -36,5 +36,6 @@ input-file=/var/db/aria2/aria2.txt
 save-session-interval=10
 dht-file-path=/var/db/aria2/dht.dat
 dht-file-path6=/var/db/aria2/dht6.dat
+max-overall-upload-limit=125K
 ```
 Save (Ctrl+O, ENTER) and exit (Ctrl + X)
