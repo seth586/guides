@@ -15,7 +15,7 @@ Configure:
 continue
 daemon=true
 dir=/media/downloads
-file-allocation=falloc
+file-allocation=none
 log-level=warn
 disable-ipv6=true
 log-level=warn
