@@ -32,3 +32,5 @@ pw user add jellyfin -c jellyfin -u 710 -d /nonexistent -s /usr/bin/nologin
 cat /etc/passwd
 cat /etc/group
 ```
+
+https://github.com/Thefrank/jellyfin-server-freebsd/blob/main/Installation_TrueNAS_GUI.md
