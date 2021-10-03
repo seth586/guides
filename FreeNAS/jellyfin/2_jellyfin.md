@@ -21,9 +21,9 @@ Home Directory = /nonexistent
 Disable Password = Yes
 Shell = nologin
 ```
-Click `SUBMIT`
+Click `SUBMIT`. It is important that your uid & id are `710`, so go back and make sure they are correct!
 
-Create your media dataset, and apply jellyfin:jellyfin as user:group recursively for your dataset
+Create your media dataset, and apply `jellyfin:jellyfin` as `user:group` recursively for your dataset
 
 SSH into your `jellyfin` jail:
 ```
