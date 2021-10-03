@@ -27,5 +27,8 @@ rpc-listen-all=true
 enable-rpc=true
 rpc-secret=t2150cdt!
 ca-certificate=/etc/ssl/cert.pem
+save-session=/var/db/aria2/aria2.txt
+input-file=/var/db/aria2/aria2.txt
+save-session-interval=10
 ```
 Save (Ctrl+O, ENTER) and exit (Ctrl + X)
