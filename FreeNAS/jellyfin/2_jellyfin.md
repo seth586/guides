@@ -29,4 +29,6 @@ SSH into your `jellyfin` jail:
 ```
 iocage console jellyfin
 pw user add jellyfin -c jellyfin -u 710 -d /nonexistent -s /usr/bin/nologin
+cat /etc/passwd
+cat /etc/group
 ```
