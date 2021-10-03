@@ -12,7 +12,7 @@ nano /usr/local/etc/aria2.conf
 ```
 Configure:
 ```
-continue
+continue=true
 daemon=true
 dir=/media/downloads
 file-allocation=none
