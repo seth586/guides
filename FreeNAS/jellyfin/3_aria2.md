@@ -8,6 +8,10 @@ sysrc lighttpd_enable=YES
 sysrc aria2_enable=YES
 sysrc aria2_user=jellyfin
 sysrc aria2_group=jellyfin
+mkdir /var/db/aria2
+touch /var/db/aira2/aria2.txt
+chown -R jellyfin:jellyfin /var/db/aria2
+chmod -R 770 /var/db/aria2
 nano /usr/local/etc/aria2.conf
 ```
 Configure:
