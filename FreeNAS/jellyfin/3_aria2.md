@@ -44,4 +44,4 @@ Save (Ctrl+O, ENTER) and exit (Ctrl + X)
 ```
 service aria2 start
 ```
-Point your Aria2 front end to  http://yourJailIP:6800/jsonrpc
+Point your Aria2 front end to  `http://your.Jail.I.P:6800/jsonrpc`
