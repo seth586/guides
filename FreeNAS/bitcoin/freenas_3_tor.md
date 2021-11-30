@@ -139,7 +139,7 @@ Open a browser and navigate to your bitcoin jail and port 7070, ex: `http://192.
 ### Bootstrap i2p peers
 Find a list of publically maintained addresses [here](https://github.com/bitcoin/bitcoin/blob/master/contrib/seeds/nodes_main.txt)
 ```
-# bitcoin-cli addnode 4hllr6w55mbtemb3ebvlzl4zj6qke4si7zcob5qdyg63mjgq624a.b32.i2p:0 add
+# bitcoin-cli -datadir=/var/db/bitcoin addnode 4hllr6w55mbtemb3ebvlzl4zj6qke4si7zcob5qdyg63mjgq624a.b32.i2p:0 add
 # bitcoin-cli -datadir=/var/db/bitcoin -addrinfo
 # bitcoin-cli -datadir=/var/db/bitcoin -netinfo 4
 ```
