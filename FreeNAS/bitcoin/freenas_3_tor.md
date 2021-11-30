@@ -76,7 +76,7 @@ Bitcoind's use of i2pd is well docuemnted [here](https://github.com/bitcoin/bitc
 # sysrc i2pd_enable="YES"
 # nano /usr/local/etc/i2pd/i2pd.conf
 ```
-The following configuration changes enables SAM protocol hidden service for bitcoind & turns on the management interface:
+The following configuration changes enables SAM protocol hidden service for bitcoind & turns on the web-ui for monitoring. This is not the complete configuration file, these are just the fields that you should change. the [http] `address =` field should be your jail IP. This is the web-ui to monitor your i2pd session.
 ```
 ...
 loglevel = none
