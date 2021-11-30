@@ -77,7 +77,7 @@ Bootstrap your tor peer discovery by manually adding known tor peers (public lis
 
 ## Install & Configure i2pd
 
-Bitcoind's use of i2pd is well docuemnted [here](https://github.com/bitcoin/bitcoin/blob/master/doc/i2p.md)
+Bitcoind's use of i2pd is well documented [here](https://github.com/bitcoin/bitcoin/blob/master/doc/i2p.md)
 ```
 # pkg install i2pd
 # sysrc i2pd_enable="YES"
