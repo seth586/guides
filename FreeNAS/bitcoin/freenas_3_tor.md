@@ -61,6 +61,13 @@ View the private onion address of your new hidden service:
 myprivateonionaddressocyn4rixm632jid.onion
 ```
 
+Bootstrap your tor peer discovery by manually adding known tor peers (public list available [here](https://github.com/bitcoin/bitcoin/blob/master/contrib/seeds/nodes_main.txt)) & other informational commands:
+```
+# bitcoin-cli addnode 2g5qfdkn2vvcbqhzcyvyiitg4ceukybxklraxjnu7atlhd22gdwywaid.onion:8333 add
+# bitcoin-cli -datadir=/var/db/bitcoin -addrinfo
+# bitcoin-cli -datadir=/var/db/bitcoin -netinfo 4
+```
+
 ### How to upgrade tor:
 ```
 # service tor stop
@@ -126,9 +133,16 @@ Port forward TCP+UDP `port =` from your router to your bitcoin jail `port =`.
 # service i2pd start
 # service bitcoind start
 # bitcoin-cli getnetworkinfo
-# bitcoin-cli -addrinfo
 ```
 Open a browser and navigate to your bitcoin jail and port 7070, ex: `http://192.168.84.21:7070/`. Network status should read: Firewalled if you are not running a relay, and OK if you are running a relay. Click `SAM Sessions`. You shoud see bitcoind's SAM session! You can go back and disable the [http] section in `/usr/local/etc/i2pd/i2pd.conf` if you dont want to monitor, or add password credentials to secure the monitoring & configuration interface.
+
+### Bootstrap i2p peers
+Find a list of publically maintained addresses [here](https://github.com/bitcoin/bitcoin/blob/master/contrib/seeds/nodes_main.txt)
+```
+# bitcoin-cli addnode 4hllr6w55mbtemb3ebvlzl4zj6qke4si7zcob5qdyg63mjgq624a.b32.i2p:0 add
+# bitcoin-cli -datadir=/var/db/bitcoin -addrinfo
+# bitcoin-cli -datadir=/var/db/bitcoin -netinfo 4
+```
 
 ### How to upgrade i2p:
 ```
