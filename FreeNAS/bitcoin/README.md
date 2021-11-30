@@ -78,7 +78,11 @@ Twitter: (do yourself a favor and get off that orwellian platform)
 
 Gab: [Seth586](https://gab.com/seth586)
 
+Mastodon: [Seth586](https://bitcoinhackers.org/web/@Seth586)
+
 Matrix: [#TrueNASnode:nym.im](https://matrix.to/#/#truenasnode:nym.im)
+
+Iris: [Seth586](https://iris.to/profile/YGon8MM_QEyj335M0ofumHdO9oEutPVOZLEB-cyfGYs.tSbHyqrn4GWzhJZyFoMtAV6pt866L6hesp5f8Ekt5WI)
 
 Email: seth586@protonmail.com
 
