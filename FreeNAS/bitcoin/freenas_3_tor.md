@@ -63,7 +63,7 @@ myprivateonionaddressocyn4rixm632jid.onion
 
 Bootstrap your tor peer discovery by manually adding known tor peers (public list available [here](https://github.com/bitcoin/bitcoin/blob/master/contrib/seeds/nodes_main.txt)) & other informational commands:
 ```
-# bitcoin-cli addnode 2g5qfdkn2vvcbqhzcyvyiitg4ceukybxklraxjnu7atlhd22gdwywaid.onion:8333 add
+# bitcoin-cli -datadir=/var/db/bitcoin addnode 2g5qfdkn2vvcbqhzcyvyiitg4ceukybxklraxjnu7atlhd22gdwywaid.onion:8333 add
 # bitcoin-cli -datadir=/var/db/bitcoin -addrinfo
 # bitcoin-cli -datadir=/var/db/bitcoin -netinfo 4
 ```
