@@ -95,3 +95,6 @@ Enable script on startup: `sysrc matrixreg_enable="YES"`
 Set permissions: `chown -R matrixreg:matrixreg /var/db/matrixreg`
 
 Start the service: `service matrixreg start`
+
+## Future admin panel:
+https://github.com/Awesome-Technologies/synapse-admin
