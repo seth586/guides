@@ -8,6 +8,8 @@
 ```
 [mysqld]
 innodb_file_per_table           = 1
+transaction_isolation = READ-COMMITTED
+binlog_format = ROW
 ```
 
 ### Database Configuration
