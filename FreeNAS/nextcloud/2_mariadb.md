@@ -9,3 +9,6 @@
 [mysqld]
 innodb_file_per_table           = 1
 ```
+
+### Database Configuration
+Official documentation on database configuration exists [here](https://docs.nextcloud.com/server/latest/admin_manual/configuration_database/index.html)
