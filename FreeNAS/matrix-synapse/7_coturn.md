@@ -11,7 +11,7 @@ coturn is designed to be utilized without a NAT and with a static IP address. Yo
 
 Install `miniupnpd` on your router, and enable the service. Or, if you're not using an open source operating system on your router, pray to the retail router gods that the manufacturer set up upnp correctly...
 
-`root@turnserver:~ #` `pkg install upnpc`
+`root@turnserver:~ #` `pkg install miniupnpc`
 
 `root@turnserver:~ #` `touch /usr/local/etc/coturn_ext_ip.sh && chmod +x /usr/local/etc/coturn_ext_ip.sh && nano /usr/local/etc/coturn_ext_ip.sh`:
 ```
