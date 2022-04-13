@@ -49,7 +49,7 @@ Save and exit
 ```
 # python -m matrix_registration_bot.bot
 ```
-It should work, try it out!
+It should work, try it out! Press Ctrl+C to stop when done testing
 
 #### Create system user & permissions
 ```
