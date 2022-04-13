@@ -15,7 +15,7 @@ registration_requires_token: true
 ```
 Save and exit
 
-#### Create registration-bot account & install
+#### Create registration-bot user on homeserver & install
 ```
 # register_new_matrix_user -c /usr/local/etc/matrix-synapse/homeserver.yaml http://localhost:8008
 ...
