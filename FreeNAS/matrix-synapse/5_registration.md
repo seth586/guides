@@ -7,6 +7,21 @@
 ### Modern token based registration
 https://github.com/moan0s/matrix-registration-bot
 
+`nano /usr/local/etc/matrix-synapse/homeserver.yaml`:
+```
+enable_registration: true
+registration_requires_token: true
+```
+Save and exit.
+
+```
+register_new_matrix_user -c /usr/local/etc/matrix-synapse/homeserver.yaml http://localhost:8008
+
+pip install matrix-registration-bot
+```
+
+
+
 ### Token based registration (obsolete)
 https://github.com/ZerataX/matrix-registration
 
