@@ -48,12 +48,6 @@ server {
     
     server_name onion.onion;
 
-    # Token registration
-    location ~ ^/(static|register) {
-        proxy_set_header X-Forwarded-For $remote_addr;
-        proxy_pass http://192.168.84.79:5000;
-    }
-
     location /_synapse/client {
         proxy_pass http://192.168.84.79:8008;
         proxy_set_header X-Forwarded-For $remote_addr;
