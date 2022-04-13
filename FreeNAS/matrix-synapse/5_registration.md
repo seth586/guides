@@ -12,13 +12,32 @@ https://github.com/moan0s/matrix-registration-bot
 enable_registration: true
 registration_requires_token: true
 ```
-Save and exit.
+Save and exit
 
 ```
-register_new_matrix_user -c /usr/local/etc/matrix-synapse/homeserver.yaml http://localhost:8008
-
-pip install matrix-registration-bot
+# register_new_matrix_user -c /usr/local/etc/matrix-synapse/homeserver.yaml http://localhost:8008
+...
+# pip install matrix-registration-bot
+# mkdir /usr/local/etc/matrix-registration-bot
 ```
+
+`nano /usr/local/etc/matrix-registration-bot/config.yml`:
+```
+bot:
+  server: "https://synapse.example.com"
+  username: "registration-bot"
+  access_token: "verysecret"
+  # It is also possible to use a password based login by commenting out the access token line and adjusting the line below
+  # password: "secretpassword" 
+api:
+  # API endpoint of the registration tokens
+  base_url: 'https://synapse.example.com'
+  # Access token of an administrator on the server
+  token: "supersecret"
+logging:
+  level: DEBUG|INFO|ERROR
+```
+Save and exit
 
 
 
