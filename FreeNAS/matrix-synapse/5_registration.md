@@ -40,25 +40,25 @@ logging:
 ```
 Save and exit
 
-`nano /usr/local/etc/rc.d/matrixregistrationbot`:
+`nano /usr/local/etc/rc.d/mrb`:
 ```
 #!/bin/sh
 #
-# PROVIDE: matrixregistrationbot
+# PROVIDE: mrb
 # REQUIRE:
 # KEYWORD:
 
 . /etc/rc.subr
-name="matrixregistrationbot"
-rcvar="matrixregistrationbot_enable"
-matrixregistrationbot_command="/var/db/mautrix-twitter/bin/python -m mautrix_twitter -c /usr/local/etc/mautrix-twitter/config.yaml -r /usr/local/etc/mautrix-twitter/registration.yaml"
+name="mrb"
+rcvar="mrb_enable"
+mrb_command="/usr/local/bin/python -m matrix_registration_bot.bot"
 pidfile="/var/run/${name}.pid"
-blog_chdir="/path/to/wd"
+mrb_chdir="/usr/local/etc/matrix-registration-bot"
 command="/usr/sbin/daemon"
-command_args="-P ${pidfile} -u mautrix-twitter -r -f ${mautrix_twitter_command}"
+command_args="-P ${pidfile} -u mrb -r -f ${mrb_command}"
 
 load_rc_config $name
-: ${mautrix_twitter_enable:=no}
+: ${mrb_enable:=no}
 
 run_rc_command "$1"
 ```
