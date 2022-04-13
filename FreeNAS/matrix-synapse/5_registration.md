@@ -42,6 +42,18 @@ logging:
 ```
 Save and exit
 
+#### Test 
+```
+# python -m matrix_registration_bot.bot
+```
+It should work, try it out!
+
+#### Create system user & permissions
+```
+# pw adduser mrb -d /nonexistent -s /usr/sbin/nologin -c "matrix-registration-bot"
+# chown -R mrb:mrb /usr/local/etc/matrix-registration-bot
+```
+
 #### Startup script
 `touch /usr/local/etc/rc.d/mrb && chmod +x /usr/local/etc/rc.d/mrb && nano /usr/local/etc/rc.d/mrb`:
 ```
