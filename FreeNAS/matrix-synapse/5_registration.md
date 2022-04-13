@@ -7,6 +7,7 @@
 ### Modern token based registration
 https://github.com/moan0s/matrix-registration-bot
 
+#### Enable token registrations on your homeserver
 `nano /usr/local/etc/matrix-synapse/homeserver.yaml`:
 ```
 enable_registration: true
@@ -14,6 +15,7 @@ registration_requires_token: true
 ```
 Save and exit
 
+#### Create registration-bot account & install
 ```
 # register_new_matrix_user -c /usr/local/etc/matrix-synapse/homeserver.yaml http://localhost:8008
 ...
@@ -21,7 +23,7 @@ Save and exit
 # pip install simplematrixbotlib
 # mkdir /usr/local/etc/matrix-registration-bot
 ```
-
+#### Configure
 `nano /usr/local/etc/matrix-registration-bot/config.yml`:
 ```
 bot:
@@ -40,7 +42,8 @@ logging:
 ```
 Save and exit
 
-`nano /usr/local/etc/rc.d/mrb`:
+#### Startup script
+`touch /usr/local/etc/rc.d/mrb && chmod +x /usr/local/etc/rc.d/mrb && nano /usr/local/etc/rc.d/mrb`:
 ```
 #!/bin/sh
 #
@@ -62,100 +65,12 @@ load_rc_config $name
 
 run_rc_command "$1"
 ```
+Save and exit.
 
-
-
-### Token based registration (obsolete)
-https://github.com/ZerataX/matrix-registration
-
-This will allow you to generate invite links, allowing 1 unique registration onto your server per link generated.
-
-## Create database for matrixreg (in synapsedb jail)
 ```
-iocage console synapsedb
-# sudo -i -u postgres
-$ psql
-postgres=# CREATE USER "matrixreg" WITH PASSWORD 'password';
-postgres=# CREATE DATABASE matrixreg ENCODING 'UTF8' LC_COLLATE='C' LC_CTYPE='C' template=template0 OWNER "matrixreg";
-postgres=# \q
-$ exit
-#
+# sysrc mrb_enable="YES"
+# service mrb start
 ```
-## Set database access permission (in synapsedb jail)
-```
-nano /var/db/postgres/data13/pg_hba.conf
-```
-```
-host    matrixreg         matrixreg         192.168.84.79/32        md5
-```
-
-## Install (in synapse jail)
-```
-exit
-iocage console synapse
-pkg install py38-pip
-pip install matrix-registration==1.0.0.dev7
-```
-
-## Config
-In this example pip installed the binary at `/usr/local/bin/matrix-registration`: 
-
-Create user: `pw adduser matrixreg -d /nonexistent -s /usr/sbin/nologin -c "matrix-registration user"`
-
-Create working directory & set permissions: `mkdir /var/db/matrixreg`
-
-Create config: `cd /usr/local/etc && fetch https://raw.githubusercontent.com/ZerataX/matrix-registration/master/config.sample.yaml && mv config.sample.yaml matrix-registration.yaml && nano matrix-registration.yaml`:
-```
-...
-server_location: 'http://192.168.84.79:8008'
-server_name: 'example.tld'
-shared_secret: 'Registration_Shared_Secret'
-admin_api_shared_secret: 'APIAdminPassword'
-...
-db: 'postgresql://matrixreg:matrixreg@192.168.84.78:5432/matrixreg'
-host: '192.168.84.79'
-...
-logging:
- handlers:
-   file:
-     filename: /var/db/matrixreg/m_reg.log
-```
-## Test with a verbose run:
-```
-/usr/local/bin/python3.8 /usr/local/bin/matrix-registration --config-path=/usr/local/etc/matrix-registration.yaml serve
-waitress - INFO - Serving on http://192.168.84.79:5000
-```
-Ctrl+C to stop
-
-## Create rc.d startup script `nano /usr/local/etc/rc.d/matrixreg`:
-```
-#!/bin/sh
-#
-# PROVIDE: matrixreg
-# REQUIRE: LOGIN postgresql synapse
-# KEYWORD:
-
-. /etc/rc.subr
-
-name="matrixreg"
-rcvar="${name}_enable"
-matrixreg_command="/usr/local/bin/matrix-registration --config-path=/usr/local/etc/matrix-registration.yaml serve"
-matrixreg_interpreter="/usr/local/bin/python3.8"
-pidfile="/var/run/${name}.pid"
-command="/usr/sbin/daemon"
-command_args="-P ${pidfile} -u matrixreg -r -f ${matrixreg_command}"
-
-load_rc_config $name
-
-run_rc_command "$1"
-```
-Make startup script executable: `chmod +x /usr/local/etc/rc.d/matrixreg`
-
-Enable script on startup: `sysrc matrixreg_enable="YES"`
-
-Set permissions: `chown -R matrixreg:matrixreg /var/db/matrixreg`
-
-Start the service: `service matrixreg start`
 
 ## Future admin panel:
 https://github.com/Awesome-Technologies/synapse-admin
