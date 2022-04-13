@@ -18,6 +18,7 @@ Save and exit
 # register_new_matrix_user -c /usr/local/etc/matrix-synapse/homeserver.yaml http://localhost:8008
 ...
 # pip install matrix-registration-bot
+# pip install simplematrixbotlib
 # mkdir /usr/local/etc/matrix-registration-bot
 ```
 
@@ -38,6 +39,29 @@ logging:
   level: DEBUG|INFO|ERROR
 ```
 Save and exit
+
+`nano /usr/local/etc/rc.d/matrixregistrationbot`:
+```
+#!/bin/sh
+#
+# PROVIDE: matrixregistrationbot
+# REQUIRE:
+# KEYWORD:
+
+. /etc/rc.subr
+name="matrixregistrationbot"
+rcvar="matrixregistrationbot_enable"
+matrixregistrationbot_command="/var/db/mautrix-twitter/bin/python -m mautrix_twitter -c /usr/local/etc/mautrix-twitter/config.yaml -r /usr/local/etc/mautrix-twitter/registration.yaml"
+pidfile="/var/run/${name}.pid"
+blog_chdir="/path/to/wd"
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -u mautrix-twitter -r -f ${mautrix_twitter_command}"
+
+load_rc_config $name
+: ${mautrix_twitter_enable:=no}
+
+run_rc_command "$1"
+```
 
 
 
