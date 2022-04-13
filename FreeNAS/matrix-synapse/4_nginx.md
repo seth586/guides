@@ -19,12 +19,6 @@ server {
         include snippets/domain.tld.cert.conf;
         include snippets/ssl-params.conf;
         
-    # Token registration
-    location ~ ^/(static|register) {
-        proxy_set_header X-Forwarded-For $remote_addr;
-        proxy_pass http://192.168.84.79:5000;
-    }
-
     location ~ ^/(_matrix|_synapse/client)/ {
         proxy_pass http://192.168.84.79:8008;
         proxy_set_header X-Forwarded-For $remote_addr;
