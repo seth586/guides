@@ -18,7 +18,10 @@ Save and exit
 #### Create registration-bot user on homeserver & install
 ```
 # register_new_matrix_user -c /usr/local/etc/matrix-synapse/homeserver.yaml http://localhost:8008
-...
+New user localpart [root]: registration-bot
+Password: (enter a strong password here)
+Make admin [no]: no
+
 # pip install matrix-registration-bot
 # pip install simplematrixbotlib
 # mkdir /usr/local/etc/matrix-registration-bot
