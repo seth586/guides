@@ -4,7 +4,7 @@
 
 ## Guide to matrix-synapse server on TrueNAS ![BSDBTC60.png](images/matrix60.png)
 
-### Modern token based registration
+### Token based registration bot
 https://github.com/moan0s/matrix-registration-bot
 
 #### Enable token registrations on your homeserver
@@ -48,7 +48,7 @@ Save and exit
 #!/bin/sh
 #
 # PROVIDE: mrb
-# REQUIRE:
+# REQUIRE: synapse
 # KEYWORD:
 
 . /etc/rc.subr
