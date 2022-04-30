@@ -46,7 +46,7 @@ Set `bandwidthrate` below the lower value of your download and upload speed. So 
 
 Save (Ctrl+o, ENTER) and exit (Ctrl+x)
 
-### Set up auto updates:
+### Set up auto updates [[info]](https://community.torproject.org/relay/setup/guard/freebsd/updates/):
 ```
 # nano /root/pkg_upgrade.sh
 ```
