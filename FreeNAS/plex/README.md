@@ -17,3 +17,7 @@ Set the root password so that the new user will be able to use the su command to
 
 Create your tunnel
 7.a) On OSX or Linux, run the command `ssh IP.address.of.server -L 8888:localhost:32400`
+
+pw addgroup jellyfin -g 710
+pw adduser jellyfin -u 710 -d /nonexistent -s /usr/sbin/nologin
+pw usermod jellyfin -G jellyfin,plex
