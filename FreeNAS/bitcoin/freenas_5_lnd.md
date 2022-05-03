@@ -34,7 +34,8 @@ tlsextraip=0.0.0.0
 minchansize=900000
 maxlogfiles=1
 maxlogfilesize=10
-accept-keysend=1
+accept-keysend=true
+accept-amp=true
 protocol.wumbo-channels=1
 
 [Bitcoin]
@@ -49,9 +50,9 @@ bitcoin.timelockdelta=40
 bitcoind.dir=/var/db/bitcoin
 
 [tor]
-tor.active=1
+tor.active=true
 tor.socks=localhost:9050
-tor.dns=soa.nodes.lightning.directory:53
+tor.dns=nodes.lightning.directory
 tor.control=localhost:9051
 tor.v3=1
 ```
