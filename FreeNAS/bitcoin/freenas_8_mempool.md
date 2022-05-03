@@ -59,11 +59,11 @@ root@mempool:~ #
 
 Lets get installing!
 ```
-# pkg update && pkg upgrade -y && pkg install -y nano ca_root_nss npm-node14 nginx mariadb105-server mariadb105-client
-# fetch https://github.com/mempool/mempool/archive/refs/tags/v2.2.0.tar.gz
-# tar -xvf v2.2.0.tar.gz
-# rm v2.2.0.tar.gz
-# mv ~/mempool-2.2.0 ~/mempool
+# pkg update && pkg upgrade -y && pkg install -y nano ca_root_nss node16 npm-node16 nginx mariadb105-server mariadb105-client
+# fetch https://github.com/mempool/mempool/archive/refs/tags/v2.3.1.tar.gz
+# tar -xvf v2.3.1.tar.gz
+# rm v2.3.1.tar.gz
+# mv ~/mempool-2.3.1 ~/mempool
 ```
 
 ### Setup MariaDB database:
