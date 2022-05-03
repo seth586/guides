@@ -4,6 +4,8 @@
 
 ## Guide to Nextcloud server on TrueNAS
 
+https://github.com/CollaboraOnline/online/blob/master/.cirrus.yml
+
 https://collaboraonline.github.io/post/build-code/ Has instructions how to build CODE
 
 ### 1. install prerequisites
