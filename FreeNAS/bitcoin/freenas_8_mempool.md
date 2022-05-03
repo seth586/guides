@@ -90,9 +90,6 @@ Enter password: [ENTER]
 > grant all privileges on mempool.* to 'mempool' identified by 'password123';
 > FLUSH PRIVILEGES;
 > exit
-# mysql -u mempool -p mempool < /root/mempool/mariadb-structure.sql
-Enter password: password123
-#
 ```
 
 ### Setup the web server nginx
@@ -327,9 +324,7 @@ root /usr/local/www/mempool/browser;
 
 ```
 # cd ~/mempool/backend
-# npm install -g typescript
-# touch ~/mempool/backend/cache.json
-# npm install
+# npm install --prod
 # npm run build
 # cp mempool-config.sample.json mempool-config.json
 # nano mempool-config.json
