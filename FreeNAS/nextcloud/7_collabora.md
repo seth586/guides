@@ -20,7 +20,7 @@ FreeBSD: {
 # cd libreoffice-src
 # fetch https://github.com/CollaboraOnline/online/releases/download/for-code-assets/LibreOfficeKit-includes-co-2021.tar.gz
 # tar -xzf LibreOfficeKit-includes-co-2021.tar.gz
-# mkdir .git/hooks
+# mkdir -p .git/hooks
 # pw useradd -n cool -d /tmp/coolhome -m
 # chmod -R o+rwx ./
 # su -m cool -c './autogen.sh'
