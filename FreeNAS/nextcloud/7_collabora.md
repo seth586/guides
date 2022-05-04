@@ -8,12 +8,8 @@ https://github.com/CollaboraOnline/online/blob/master/.cirrus.yml
 
 https://collaboraonline.github.io/post/build-code/ Has instructions how to build CODE
 
-### 1. install prerequisites
-```
-# portsnap fetch && portsnap extract
-# cd /usr/ports/editors/libreoffice && make patch
-# make -DBATCH install clean
-```
+
+### 1. Set up environment
 
 Create a new jail `collabora`, give it a static IP. SSH into the jail
 
@@ -27,25 +23,44 @@ FreeBSD: {
 ```
 # pkg install -y python3 python38 py38-polib py38-lxml
 # pkg install -y gmake pkgconf poco cppunit autotools coreutils git bash npm png pango
+```
 
-
-
-# mkdir libreoffice-src
-# cd libreoffice-src
+### 2. build LibreOffice and prerequisites
+LibreOffice is a prerequisite to build Collabora Online
+```
+# portsnap fetch && portsnap extract
+# cd /usr/ports/editors/libreoffice && make patch
+# make -DBATCH install
+# cd /usr/ports/editors/libreoffice/work/libreoffice-7.3.2.2
 # fetch https://github.com/CollaboraOnline/online/releases/download/for-code-assets/LibreOfficeKit-includes-co-2021.tar.gz
 # tar -xzf LibreOfficeKit-includes-co-2021.tar.gz
-# mkdir -p .git/hooks
+# rm LibreOfficeKit-includes-co-2021.tar.gz
+```
+
+Note directory `/usr/ports/editors/libreoffice/work/libreoffice-7.3.2.2/include` 
+and `/usr/ports/editors/libreoffice/work/libreoffice-7.3.2.2/instdir `
+
+### 3. build Collabora Online
+
+```
+# cd ~
+# git clone https://github.com/CollaboraOnline/online collabora-online
+# cd collabora-online
+# # mkdir -p .git/hooks
 # pw useradd -n cool -d /tmp/coolhome -m
 # chmod -R o+rwx ./
 # su -m cool -c './autogen.sh'
-# su -m cool -c ''env HOME=/tmp/coolhome MAKE=gmake
-        CPPFLAGS="-isystem /usr/local/include" CFLAGS="-I/usr/local/include"
-        CXXFLAGS="-I/usr/local/include" LDFLAGS=-L/usr/local/lib ./configure
-        --with-lo-path=/usr/local/lib/libreoffice/
-        --with-lokit-path=./libreoffice-src/include
-        --disable-seccomp --disable-setcap --enable-debug''
-# su -m cool -c 'env HOME=/tmp/coolhome gmake -j`sysctl -n hw.ncpu`
+# su -m cool -c './configure MAKE=gmake \
+  --enable-silent-rules \
+  --with-lokit-path=/usr/ports/editors/libreoffice/work/libreoffice-7.3.2.2/include \
+  --with-lo-path=/usr/ports/editors/libreoffice/work/libreoffice-7.3.2.2/instdir \
+  --with-libpng-includes=/usr/local/include \
+  --with-libpng-libs=/usr/local/lib \
+  --disable-seccomp \
+  --enable-debug'
+# su -m cool -c 'env HOME=/tmp/coolhome gmake -j`sysctl -n hw.ncpu`'
 # chown root ./coolmount
 # chmod +s ./coolmount
-# su -m cool -c 'env HOME=/tmp/coolhome gmake check'
+# chown cool /tmp/coolwsd.log
+# su -m cool -c 'gmake run'
 ```
