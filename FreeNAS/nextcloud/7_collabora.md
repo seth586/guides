@@ -21,8 +21,7 @@ FreeBSD: {
 ```
 
 ```
-# pkg install -y python3 python38 py38-polib py38-lxml
-# pkg install -y gmake pkgconf poco cppunit autotools coreutils git bash npm png pango
+# pkg install -y python3 python38 py38-polib py38-lxml gmake pkgconf poco cppunit autotools coreutils git bash npm png pango
 ```
 
 ### 2. build LibreOffice and prerequisites
