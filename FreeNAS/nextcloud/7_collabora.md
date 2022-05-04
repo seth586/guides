@@ -20,26 +20,23 @@ FreeBSD: {
 }
 ```
 
-```
-# pkg install -y python3 python38 py38-polib py38-lxml gmake pkgconf poco cppunit autotools coreutils git bash npm png pango
-```
-
 ### 2. build LibreOffice and prerequisites
 LibreOffice is a prerequisite to build Collabora Online
 ```
+# pkg install -y python3 python38 py38-polib py38-lxml gmake pkgconf poco cppunit autotools coreutils git bash npm png pango
 # portsnap fetch && portsnap extract
 # cd /usr/ports/editors/libreoffice && make patch
 # make -DBATCH install
-# cd /usr/ports/editors/libreoffice/work/libreoffice-7.3.2.2
-# fetch https://github.com/CollaboraOnline/online/releases/download/for-code-assets/LibreOfficeKit-includes-co-2021.tar.gz
-# tar -xzf LibreOfficeKit-includes-co-2021.tar.gz
-# rm LibreOfficeKit-includes-co-2021.tar.gz
+## cd /usr/ports/editors/libreoffice/work/libreoffice-7.3.2.2
+## fetch https://github.com/CollaboraOnline/online/releases/download/for-code-assets/LibreOfficeKit-includes-co-2021.tar.gz
+## tar -xzf LibreOfficeKit-includes-co-2021.tar.gz
+## rm LibreOfficeKit-includes-co-2021.tar.gz
 ```
 
 Note directory `/usr/ports/editors/libreoffice/work/libreoffice-7.3.2.2/include` 
 and `/usr/ports/editors/libreoffice/work/libreoffice-7.3.2.2/instdir `
 
-### 3. build Collabora Online
+### 3. build Collabora Online 
 
 ```
 # cd ~
@@ -60,6 +57,4 @@ and `/usr/ports/editors/libreoffice/work/libreoffice-7.3.2.2/instdir `
 # su -m cool -c 'env HOME=/tmp/coolhome gmake -j`sysctl -n hw.ncpu`'
 # chown root ./coolmount
 # chmod +s ./coolmount
-# chown cool /tmp/coolwsd.log
-# su -m cool -c 'gmake run'
 ```
