@@ -23,9 +23,9 @@ FreeBSD: {
 ### 2. install prerequisites & build LibreOffice 
 ```
 # pkg install -y python3 python38 py38-polib py38-lxml gmake pkgconf poco cppunit autotools coreutils git bash npm png pango
-# portsnap fetch && portsnap extract
-# cd /usr/ports/editors/libreoffice && make patch
-# make -DBATCH install
+# # git clone --single-branch --branch distro/collabora/co-2021 https://gerrit.libreoffice.org/core /root/libreoffice
+# cd /root/libreoffice
+
 # cd /usr/ports/editors/libreoffice/work/libreoffice-7.3.2.2
 # fetch https://github.com/CollaboraOnline/online/releases/download/for-code-assets/LibreOfficeKit-includes-co-2021.tar.gz
 # tar -xzf LibreOfficeKit-includes-co-2021.tar.gz
