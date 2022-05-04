@@ -42,18 +42,10 @@ and `/usr/ports/editors/libreoffice/work/libreoffice-7.3.2.2/instdir `
 # cd ~
 # git clone https://github.com/CollaboraOnline/online collabora-online
 # cd collabora-online
-# # mkdir -p .git/hooks
 # pw useradd -n cool -d /tmp/coolhome -m
 # chmod -R o+rwx ./
 # su -m cool -c './autogen.sh'
-# su -m cool -c './configure MAKE=gmake \
-  --enable-silent-rules \
-  --with-lokit-path=/usr/ports/editors/libreoffice/work/libreoffice-7.3.2.2/include \
-  --with-lo-path=/usr/ports/editors/libreoffice/work/libreoffice-7.3.2.2/instdir \
-  --with-libpng-includes=/usr/local/include \
-  --with-libpng-libs=/usr/local/lib \
-  --disable-seccomp \
-  --enable-debug'
+# su -m cool -c 'env HOME=/tmp/coolhome MAKE=gmake CPPFLAGS="-isystem /usr/local/include" CFLAGS="-I/usr/local/include" CXXFLAGS="-I/usr/local/include" LDFLAGS="-L/usr/local/lib" ./configure --with-lo-path=/usr/local/lib/libreoffice/ --with-lokit-path=/usr/ports/editors/libreoffice/work/libreoffice-7.3.2.2/include --disable-seccomp --disable-setcap --enable-debug'
 # su -m cool -c 'env HOME=/tmp/coolhome gmake -j`sysctl -n hw.ncpu`'
 # chown root ./coolmount
 # chmod +s ./coolmount
