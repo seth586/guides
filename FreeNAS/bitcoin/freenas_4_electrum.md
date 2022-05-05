@@ -77,6 +77,7 @@ bitcoin 76206  4.4  2.2 4551716 1449288  -  SJ   Wed23   426:49.66 /usr/local/bi
 ...
 ```
 ### Create user, config
+See config notes [[here]](https://github.com/romanz/electrs/blob/master/doc/config_example.toml)
 ```
 # pw adduser electrs -d /nonexistent -s /usr/sbin/nologin
 # mkdir /var/db/electrs
@@ -90,6 +91,7 @@ auth = "electrs:2tm5NiN8wZVyjx_hgUL5O8it68WfoadHDEZ-v6w_RhQ="
 db_dir = "/var/db/electrs"
 network = "bitcoin"
 electrum_rpc_addr = "192.168.84.21:50001"
+log_filters = "INFO"
 ```
 Save (CTRL+O,ENTER) and exit (CTRL+X)
 
