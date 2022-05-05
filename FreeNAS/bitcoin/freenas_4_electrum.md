@@ -52,7 +52,7 @@ Download the rpcauth tool as documented [here](https://github.com/bitcoin/bitcoi
 ```
 # pkg install python38
 # fetch https://raw.githubusercontent.com/bitcoin/bitcoin/master/share/rpcauth/rpcauth.py
-# python38 ./rpcauth.py electrs
+# python3.8 ./rpcauth.py electrs
 String to be appended to bitcoin.conf:
 rpcauth=electrs:5d0d70936350d0a79b588a9bb2906ea1$82afc2d29dfcfd808acd98f855cf47989564d8f1cd55b515f23fb10ace0dd75a
 Your password:
@@ -102,7 +102,7 @@ Make sure to replace `electrum-rpc-addr=` with your bitcoin jail's IP to serve l
 # chown -R electrs:electrs /var/db/electrs
 # chown -R electrs:electrs /usr/local/etc/electrs
 # chmod -R 500 /usr/local/etc/electrs
-# su -m electrs -c 'electrs -vvv --conf=/usr/local/etc/electrs/config.toml'
+# su -m electrs -c 'electrs --conf=/usr/local/etc/electrs/config.toml'
 ```
 
 Electrs should begin to index the blockchain into its own database.  Stop the app with Ctrl+C.
