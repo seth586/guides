@@ -62,7 +62,7 @@ Your password:
 Add the `rpcauth=` string above to `bitcoin.conf` and configure rpc access. Make sure that the `rcpallowip=` coorelates to your local subnet address range.
 ```
 # nano /usr/local/etc/bitcoin.conf
-rpcauth=mempool:5d0d70936350d0a79b588a9bb2906ea1$82afc2d29dfcfd808acd98f855cf47989564d8f1cd55b515f23fb10ace0dd75a
+rpcauth=electrs:5d0d70936350d0a79b588a9bb2906ea1$82afc2d29dfcfd808acd98f855cf47989564d8f1cd55b515f23fb10ace0dd75a
 rpcallowip=192.168.84.0/24
 rpcbind=0.0.0.0
 ```
