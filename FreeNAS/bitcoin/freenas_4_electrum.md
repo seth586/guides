@@ -194,6 +194,7 @@ stream {
 }
 ### / ELECTRUM
 ```
+
 Change `192.168.84.21` with the jail hosting electrum. Then add `load_module /usr/local/libexec/nginx/ngx_stream_module.so;` to the very first line of `nginx.conf`. Save (CTRL+O, ENTER) and exit (CTRL+X), and refresh nginx with `service nginx restart`
 
 Next: [ [lnd](freenas_5_lnd.md) ]
