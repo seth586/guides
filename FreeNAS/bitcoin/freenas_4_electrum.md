@@ -159,10 +159,12 @@ Give it a whir:
 Electrs will begin to index the blockchain into its own database. This can take a few hours, depending on your CPU and disk IO. When its done indexing, it will start to serve connections.
 
 ### 7. Client Setup
-Right click on your windows electrum client, select properties, and modify the shortcut (use your *.onion address or bitcoin jail ip, if configured in step 4)
+Right click on your windows electrum client, select properties, and modify the shortcut (use your .onion address or bitcoin jail ip, if configured in step 4)
 ```
 "C:\Program Files (x86)\Electrum\electrum-3.3.4.exe" -1 -s myprivateonionaddressocyn4rixm632jid.onion:50001:t
 ```
+Start your tor browser to connect to the tor network. Start electrum, select /tools/network/proxy and enable `use tor proxy at port 9150`. You should connect!
+
 
 ### How to update electrs
 ```
