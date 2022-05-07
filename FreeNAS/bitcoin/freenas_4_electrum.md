@@ -161,7 +161,7 @@ Electrs will begin to index the blockchain into its own database. This can take 
 ### 7. Client Setup
 Right click on your windows electrum client, select properties, and modify the shortcut (use your *.onion address or bitcoin jail ip, if configured in step 4)
 ```
-"C:\Program Files (x86)\Electrum\electrum-3.3.4.exe" -1 -s 192.168.84.21:50001:t
+"C:\Program Files (x86)\Electrum\electrum-3.3.4.exe" -1 -s myprivateonionaddressocyn4rixm632jid.onion:50001:t
 ```
 
 ### How to update electrs
