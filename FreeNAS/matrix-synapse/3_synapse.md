@@ -32,6 +32,10 @@ Create `homeserver.yaml`, Replace `domain.tld` with the domain of your matrix-sy
 # /usr/local/bin/python3.8 -B -m synapse.app.homeserver -c /usr/local/etc/matrix-synapse/homeserver.yaml --generate-config -H domain.tld --report-stats no
 # nano /usr/local/etc/matrix-synapse/homeserver.yaml
 ```
+
+### Upgrade Synapse
+
+Make SURE to read upgrade instructions [here](https://github.com/matrix-org/synapse/blob/develop/docs/upgrade.md)
 ```
 
 ```
