@@ -47,7 +47,7 @@ Save and exit
 
 #### Test 
 ```
-# python -m matrix_registration_bot.bot
+# python3.9 -m matrix_registration_bot.bot --config=/usr/local/etc/matrix-registration-bot/config.yml
 ```
 It should work, try it out! Press Ctrl+C to stop when done testing
 
@@ -69,7 +69,7 @@ It should work, try it out! Press Ctrl+C to stop when done testing
 . /etc/rc.subr
 name="mrb"
 rcvar="mrb_enable"
-mrb_command="/usr/local/bin/python -m matrix_registration_bot.bot"
+mrb_command="/usr/local/bin/python3.9 -m matrix_registration_bot.bot"
 pidfile="/var/run/${name}.pid"
 mrb_chdir="/usr/local/etc/matrix-registration-bot"
 command="/usr/sbin/daemon"
