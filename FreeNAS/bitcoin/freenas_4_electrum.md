@@ -52,9 +52,9 @@ Install and cleanup:
 Download the rpcauth tool as documented [here](https://github.com/bitcoin/bitcoin/tree/master/share/rpcauth). Save this information.
 
 ```
-# pkg install python38
+# pkg install python39
 # fetch https://raw.githubusercontent.com/bitcoin/bitcoin/master/share/rpcauth/rpcauth.py
-# python3.8 ./rpcauth.py electrs
+# python3.9 ./rpcauth.py electrs
 String to be appended to bitcoin.conf:
 rpcauth=electrs:5d0d70936350d0a79b588a9bb2906ea1$82afc2d29dfcfd808acd98f855cf47989564d8f1cd55b515f23fb10ace0dd75a
 Your password:
