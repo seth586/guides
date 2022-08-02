@@ -108,7 +108,7 @@ Save (CTRL+O,ENTER) and exit (CTRL+X)
 # chown -R electrs:electrs /var/db/electrs
 # chown -R electrs:electrs /usr/local/etc/electrs
 # chmod -R 500 /usr/local/etc/electrs
-# su -m electrs -c 'electrs --conf=/usr/local/etc/electrs/config.toml'
+# su -m electrs -c 'electrs --conf=/usr/local/etc/electrs/config.toml --skip-default-conf-files'
 ```
 
 Electrs should begin to index the blockchain into its own database.  Stop the app with Ctrl+C.
