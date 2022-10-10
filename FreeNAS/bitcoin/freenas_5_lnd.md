@@ -15,7 +15,7 @@ Check [LND's github repo](https://github.com/lightningnetwork/lnd/releases) for 
 ```
 # pkg install wget ca_root_nss
 # cd ~
-# wget https://github.com/lightningnetwork/lnd/releases/download/v0.14.3-beta/lnd-freebsd-amd64-v0.14.3-beta.tar.gz
+# wget https://github.com/lightningnetwork/lnd/releases/download/v0.15.2-beta/lnd-freebsd-amd64-v0.15.2-beta.tar.gz
 # tar -xvf lnd-freebsd-amd64*
 # install -m 0755 -o root -g wheel ~/lnd-freebsd-amd64*/* /usr/local/bin
 # rm -r /lnd-freebsd-amd64* lnd-freebsd-amd64*
@@ -154,7 +154,7 @@ Read the release notes, if a lot changed, you may have to close channels or do s
 ```
 # service lnd stop
 # cd ~
-# wget https://github.com/lightningnetwork/lnd/releases/download/v0.13.0-beta/lnd-freebsd-amd64-v0.13.0-beta.tar.gz
+# wget https://github.com/lightningnetwork/lnd/releases/download/v0.15.2-beta/lnd-freebsd-amd64-v0.15.2-beta.tar.gz
 # tar -xvf lnd-freebsd-amd64*
 # install -m 0755 -o root -g wheel ~/lnd-freebsd-amd64*/* /usr/local/bin
 # rm -r /lnd-freebsd-amd64* lnd-freebsd-amd64*
