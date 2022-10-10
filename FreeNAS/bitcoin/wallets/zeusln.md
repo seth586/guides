@@ -2,13 +2,7 @@
 
 ## Zeus Lightning Wallet over Tor for Android
 
-Tor has numerous benefits for serving your mobile wallet. 
-* Securely, anonymously and remotely connect to your home server. 
-* Connections are encrypted end to end.
-* Onion address will remain static even if you are behind a dynamic IP address. No ddns required!
-* No port forwards required by your router! 
-* Tor v3 hidden services keep your `lnd` REST API a secret 
-* Tor prevents denial of service attacks!
+ZeusLN has tor built in, orbot isnt required!
 
 Download the Zeus app, APKs available here: https://github.com/ZeusLN/zeus/releases
 
@@ -18,9 +12,7 @@ View the private onion address of your tor hidden service [that you set up on th
 myprivateonionaddressocyn4rixm632jid.onion
 ```
 
-Download orbot for android. https://guardianproject.info/apps/orbot/
-
-Open orbot, and select the gear icon under `tor enabled apps`. Add `Zeus`, then press back. Click `stop` on the big onion logo. Exit orbot and reopen it. Turn on `VPN Mode`. Start your connection to the tor network by clicking on the big onion (if it has not automatically connected already)
+If you followed the guide, your port should be `8080`
 
 ### Convert macaroon to hex 
 ```
