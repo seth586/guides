@@ -63,4 +63,4 @@ phpinfo(); //display all info
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 
-Naigate to your.jail.ip.address/info.php
+Naigate to `your.jail.ip.address/info.php`
