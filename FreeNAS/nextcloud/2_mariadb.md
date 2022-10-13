@@ -54,5 +54,6 @@ extension=pdo_mysql.so
 [mysql]
 mysql.default_socket=/var/run/mysql/mysql.sock
 ```
+`service php-fpm restart`
 
 
