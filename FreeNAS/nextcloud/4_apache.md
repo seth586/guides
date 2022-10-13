@@ -8,8 +8,19 @@
 ```
 # pkg install nginx
 # sysrc nginx_enable=yes
-# rm /usr/local/etc/nginx.conf
+# cp /usr/local/etc/nginx-dist.conf /usr/local/etc/nginx.conf
+# nano /usr/local/etc/nginx.conf
 ```
 
+Uncomment the following section and replace `fastcgi_pass` with a unix socket:
+```
+location ~ \.php$ {
+            root           html;
+            fastcgi_pass   unix:/var/run/php-fpm/www.sock;
+            fastcgi_index  index.php;
+            fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+            include        fastcgi_params;
+        }
+```
 
 
