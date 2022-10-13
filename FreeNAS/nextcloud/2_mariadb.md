@@ -38,6 +38,7 @@ exit
 
 ### Required configuration parameters 
 See [here](https://docs.nextcloud.com/server/latest/admin_manual/configuration_database/linux_database_configuration.html) for official documentation required config paramters:
+
 `nano /usr/local/etc/mysql/conf.d/server.cnf`:
 ```
 [mysqld]
