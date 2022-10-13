@@ -27,6 +27,7 @@ Restart the service
 
 ### Test apache & set up test pages
 navigate to `your.jail.ip.address` in a browser, you should see the apache "It works!" message.
+
 `nano /usr/local/etc/apache24/Includes/test.conf`: Change server name to jail IP:
 ```
 <VirtualHost *:80>
