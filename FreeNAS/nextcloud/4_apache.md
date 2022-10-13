@@ -25,8 +25,24 @@ Restart the service
 # apachectl graceful
 ```
 
-### Test apache
-navigate to `your.jail.ip.address` in a browser, you should see the apache welcome page.
+### Test apache & set up test pages
+navigate to `your.jail.ip.address` in a browser, you should see the apache "It works!" message.
+`nano /usr/local/etc/apache24/Includes/test.conf`: Change server name to jail IP:
+```
+<VirtualHost *:80>
+    DocumentRoot "/usr/local/www/apache24/data"
+    ServerName 192.168.0.10
+    ProxyPassMatch ^/(.*.php(/.*)?)$ unix:/var/run/php-fpm.sock|fcgi://localhost/usr/local/www/apache24/data/$1
+    DirectoryIndex /index.php index.php
+</VirtualHost>
+```
+Save (CTRL+O, ENTER) and exit (CTRL+X)
+`nano /usr/local/www/apache24/data/info.php`:
+```
+<?php
+phpinfo(); //display all info
+?>
+```
 
 ### Configure redis
 `nano /usr/local/etc/redis.conf`:
