@@ -64,3 +64,4 @@ phpinfo(); //display all info
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 
 Naigate to `your.jail.ip.address/info.php`
+Remove once you confirmed it works `rm /usr/local/www/nginx/info.php`
