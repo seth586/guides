@@ -22,5 +22,10 @@ location ~ \.php$ {
             include        fastcgi_params;
         }
 ```
+Save (CTRL+O, ENTER) and exit (CTRL+X)
 
+Start the service
+```
+# service nginx start
+```
 
