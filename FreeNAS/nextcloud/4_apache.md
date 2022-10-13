@@ -6,8 +6,9 @@
 
 ### Install nginx
 ```
-# pkg install nginx
+# pkg install nginx redis
 # sysrc nginx_enable=yes
+# sysrc redis_enable=yes
 # nano /usr/local/etc/nginx.conf
 ```
 
