@@ -9,9 +9,20 @@
 ```
 # pkg install nano wget ca_root_nss mariadb106-server
 # sysrc mysql_enable=yes
+# service mysql-server start
 ```
 
 ### Configure
+
+`nano /usr/local/etc/mysql/my.cnf`:
+```
+
+```
+
+
+
+
+
 `nano /usr/local/etc/mysql/conf.d/server.cnf`:
 ```
 [mysqld]
