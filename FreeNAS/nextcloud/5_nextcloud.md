@@ -68,4 +68,5 @@ Save (CTRL+O, ENTER) and exit (CTRL+X)
     DirectoryIndex /index.php index.php
 </VirtualHost>
 ```
+Restart apache `service apache24 restart`
 
