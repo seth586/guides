@@ -40,3 +40,6 @@ Start the service
 # service nginx start
 ```
 
+### Test nginx
+navigate to `your.jail.ip.address` in a browser, you should see the nginx welcome page.
+
