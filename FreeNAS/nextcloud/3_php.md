@@ -3,3 +3,44 @@
 [ [Intro](README.md) ] - [ [Jail Creation](1_jail.md) ] - [ [mariadb](2_mariadb.md) ] - [ **PHP** ] - [ [apache](4_apache.md) ] - [ [nextcloud](5_nextcloud.md) ] - [ [reverseproxy ](6_reverseproxy.md)] - [ [collabora](7_collabora.md) ]
 
 ## Guide to Nextcloud server on TrueNAS
+
+### Install prerequisites:
+```
+# pkg install php82 php82-ctype php82-curl php82-dom php82-filter php82-gd php82-mbstring php82-posix php82-session php82-simplexml php82-xmlreader php82-xmlwriter php82-zip php82-zlib php82-pdo_mysql php82-fileinfo php82-bz2 php82-intl php82-bcmath php82-gmp php82-exif php82-pecl-redis php82-pecl-imagick php82-pcntl php82-phar
+
+```
+
+php81 php81-ctype php81-curl php81-dom php81-filter php81-gd php81-mbstring php81-posix php81-session php81-simplexml php81-xmlreader php81-xmlwriter php81-zip php81-zlib php81-pdo_mysql php81-fileinfo php82-bz2 php81-intl php81-bcmath php81-gmp php81-exif php81-pecl-redis php81-pecl-imagick php81-pcntl php81-phar
+
+### Configure `php.ini`
+```
+cd /usr/local/etc
+cp php.ini-production php.ini
+nano /usr/local/etc/php.ini
+```
+
+Uncomment and adjust the folllowing:
+```
+...
+cgi.fix_pathinfo=1
+date.timezone=Country/City
+
+post_max_size = 1999M
+upload_max_filesize = 1999M
+memory_limit = 512M
+
+opcache.enable=1
+opcache.enable_cli=1
+opcache.interned_strings_buffer=8
+opcache.max_accelerated_files=10000
+opcache.memory_consumption=128
+opcache.save_comments=1
+opcache.revalidate_freq=1
+...
+```
+Save (CTRL+O, ENTER) and Exit (CTRL+X)
+
+```
+# sysrc php_fpm_enable=yes
+# service php-fpm start
+```
