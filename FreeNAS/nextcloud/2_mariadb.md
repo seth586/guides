@@ -47,5 +47,12 @@ transaction_isolation = READ-COMMITTED
 binlog_format = ROW
 ...
 ```
+`nano /usr/local/etc/php/ext-30-pdo_mysql.ini`:
+```
+extension=pdo_mysql.so
+
+[mysql]
+mysql.default_socket=/var/run/mysql/mysql.sock
+```
 
 
