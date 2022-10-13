@@ -16,8 +16,7 @@
 `nano /usr/local/etc/nginx/nginx.conf`:
 ```
 upstream php-handler {
-    server 127.0.0.1:9000;
-    #server unix:/var/run/php-fpm/www.sock;
+    server unix:/var/run/php-fpm/www.sock;
 }
 
 # Set the `immutable` cache control options only for assets with a cache busting `v` argument
