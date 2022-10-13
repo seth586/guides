@@ -7,11 +7,13 @@
 ### Install nginx
 ```
 # pkg install nginx
+# sysrc nginx_enable=yes
+# rm /usr/local/etc/nginx/nginx.conf
 ```
 
 
 ### Configure
-
+`nano /usr/local/etc/nginx/nginx.conf`:
 ```
 upstream php-handler {
     server 127.0.0.1:9000;
