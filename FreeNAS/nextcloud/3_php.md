@@ -13,9 +13,8 @@
 
 ### Configure `php.ini`
 ```
-cd /usr/local/etc
-cp php.ini-production php.ini
-nano /usr/local/etc/php.ini
+# cp /usr/local/etc/php.ini-production /usr/local/etc/php.ini
+# nano /usr/local/etc/php.ini
 ```
 
 Uncomment and adjust the folllowing:
