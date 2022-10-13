@@ -12,7 +12,7 @@
 ```
 
 
-### Configure
+### Configure NGINX
 `nano /usr/local/etc/nginx/nginx.conf`:
 ```
 worker_processes  1;
