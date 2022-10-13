@@ -10,8 +10,6 @@
 
 ```
 
-php81 php81-ctype php81-curl php81-dom php81-filter php81-gd php81-mbstring php81-posix php81-session php81-simplexml php81-xmlreader php81-xmlwriter php81-zip php81-zlib php81-pdo_mysql php81-fileinfo php82-bz2 php81-intl php81-bcmath php81-gmp php81-exif php81-pecl-redis php81-pecl-imagick php81-pcntl php81-phar
-
 ### Configure `php.ini`
 ```
 cd /usr/local/etc
