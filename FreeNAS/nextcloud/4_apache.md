@@ -45,3 +45,13 @@ Start the service
 ### Test nginx
 navigate to `your.jail.ip.address` in a browser, you should see the nginx welcome page.
 
+### Configure redis
+`nano /usr/local/etc/redis.conf`:
+```
+port 0
+unixsocket /var/run/redis/redis.sock
+unixsocketperm 770
+bind 127.0.0.1
+```
+Save (CTRL+O, ENTER) and exit (CTRL+X)
+
