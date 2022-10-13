@@ -6,7 +6,10 @@
 
 ### Install Nextcloud
 ```
-
+# cd /tmp
+# wget https://download.nextcloud.com/server/releases/latest.tar.bz2
+# wget https://download.nextcloud.com/server/releases/latest.tar.bz2.sha512
+# shasum -a 512 -c latest.tar.bz2.sha512
 ```
 
 ### Configure NGINX
