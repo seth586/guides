@@ -63,7 +63,7 @@ Save (CTRL+O, ENTER) and exit (CTRL+X)
     DocumentRoot "/usr/local/www/nextcloud"
     ServerName cloud.mydomain.com
     <FilesMatch \.php$>
-        SetHandler "proxy:fcgi://127.0.0.1:9000/"
+        SetHandler "proxy:unix:/var/run/php-fpm.sock|fcgi://localhost/"
     </FilesMatch>
     DirectoryIndex /index.php index.php
 </VirtualHost>
