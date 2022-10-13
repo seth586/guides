@@ -25,19 +25,6 @@ map $arg_v $asset_immutable {
     default "immutable";
 }
 
-
-server {
-    
-    listen [::]:80;
-    server_name cloud.example.com;
-
-    # Prevent nginx HTTP Server Detection
-    server_tokens off;
-
-    # Enforce HTTPS
-    return 301 https://$server_name$request_uri;
-}
-
 server {
     listen 80;
     listen [::]:80;
