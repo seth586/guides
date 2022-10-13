@@ -57,3 +57,14 @@ Save (CTRL+O, ENTER) and Exit (CTRL+X)
 ```
 # service php-fpm start
 ```
+
+### Test your php installation
+`nano /usr/local/www/nginx/info.php`:
+```
+<?php
+phpinfo(); //display all info
+?>
+```
+Save (CTRL+O, ENTER) and exit (CTRL+X)
+
+Naigate to your.jail.ip.address/info.php
