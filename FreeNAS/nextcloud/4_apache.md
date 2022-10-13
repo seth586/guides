@@ -12,31 +12,14 @@
 ```
 
 ```
-user  www;
-worker_processes  1;
-
-events {
-    worker_connections  1024;
-}
-
-
+# TEST CONFIG ONLY, DO NOT USE IN PRODUCTION
+events{}
 http {
-    include       mime.types;
-    default_type  application/octet-stream;
-
-    sendfile        on;
-    client_max_body_size 8M;
-    keepalive_timeout  65;
 
     server {
         listen       80;
-        server_name  localhost;
         root   /usr/local/www/nginx;
         index  index.php index.html index.htm;
-        error_page   500 502 503 504  /50x.html;
-        location = /50x.html {
-            root   /usr/local/www/nginx-dist;
-        }
 
         location ~ \.php$ {
             try_files $uri =404;
@@ -48,6 +31,7 @@ http {
         }
     }
 }
+
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 
