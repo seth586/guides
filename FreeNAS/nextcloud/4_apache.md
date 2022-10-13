@@ -20,7 +20,7 @@ LoadModule rewrite_module libexec/apache24/mod_rewrite.so
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 
-Start the service
+Restart the service
 ```
 # apachectl graceful
 ```
