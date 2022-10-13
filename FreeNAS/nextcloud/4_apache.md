@@ -17,7 +17,7 @@
 ```
 upstream php-handler {
     server 127.0.0.1:9000;
-    #server unix:/var/run/php/php7.4-fpm.sock;
+    #server unix:/var/run/php-fpm/www.sock;
 }
 
 # Set the `immutable` cache control options only for assets with a cache busting `v` argument
