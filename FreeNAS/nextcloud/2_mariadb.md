@@ -12,24 +12,39 @@
 # service mysql-server start
 ```
 
-### Configure
-
-`nano /usr/local/etc/mysql/my.cnf`:
+### Setup
+```
+# mysql_secure_installation
+Enter current password for root (enter for none):
+Switch to unix_socket authentication [Y/n] y
+Set root password? [Y/n] y
+New password: 
+Re-enter new password: 
+Remove anonymous users? [Y/n] y
+Disallow root login remotely? [Y/n] y
+Remove test database and access to it? [Y/n] y
+Reload privilege tables now? [Y/n] y
 ```
 
+### Create Database
+```
+# mysql -u root -p
+CREATE DATABASE nextcloud;
+CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'your-password-here';
+GRANT ALL ON nextcloud.* TO 'nextcloud'@'localhost';
+FLUSH PRIVILEGES;
+exit
 ```
 
-
-
-
-
+### Required configuration parameters 
+See [here](https://docs.nextcloud.com/server/latest/admin_manual/configuration_database/linux_database_configuration.html) for official documentation required config paramters:
 `nano /usr/local/etc/mysql/conf.d/server.cnf`:
 ```
 [mysqld]
-innodb_file_per_table           = 1
+...
 transaction_isolation = READ-COMMITTED
 binlog_format = ROW
+...
 ```
 
-### Database Configuration
-Official documentation on database configuration exists [here](https://docs.nextcloud.com/server/latest/admin_manual/configuration_database/index.html)
+
