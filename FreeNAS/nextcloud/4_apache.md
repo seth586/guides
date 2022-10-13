@@ -1,49 +1,32 @@
 [ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/README.md) ]
 
-[ [Intro](README.md) ] - [ [Jail Creation](1_jail.md) ]  - [ **nginx** ] - [ [PHP](3_php.md) ] - [ [mariadb](2_mariadb.md) ] - [ [nextcloud](5_nextcloud.md) ] - [ [reverseproxy ](6_reverseproxy.md)] - [ [collabora](7_collabora.md) ]
+[ [Intro](README.md) ] - [ [Jail Creation](1_jail.md) ]  - [ **apache** ] - [ [PHP](3_php.md) ] - [ [mariadb](2_mariadb.md) ] - [ [nextcloud](5_nextcloud.md) ] - [ [reverseproxy ](6_reverseproxy.md)] - [ [collabora](7_collabora.md) ]
 
 ## Guide to Nextcloud server on TrueNAS
 
-### Install nginx
+### Install apache
 ```
-# pkg install nginx redis nano wget ca_root_nss
-# sysrc nginx_enable=yes
-# sysrc redis_enable=yes
-# rm /usr/local/etc/nginx/nginx.conf
-# nano /usr/local/etc/nginx/nginx.conf
+# pkg install apache24 redis nano wget ca_root_nss
+# sysrc apache24_enable=yes
+# service apache24 start
+# sysrc redis_enable=yes 
+# nano /usr/local/etc/apache24/httpd.conf
 ```
-
+Search for and uncomment the following lines (CTRL+W, paste, ENTER)
 ```
-# TEST CONFIG ONLY, DO NOT USE IN PRODUCTION
-events{}
-http {
-
-    server {
-        listen       80;
-        root   /usr/local/www/nginx;
-        index  index.php index.html index.htm;
-
-        location ~ \.php$ {
-            try_files $uri =404;
-            fastcgi_split_path_info ^(.+\.php)(/.+)$;
-            fastcgi_pass   unix:/var/run/php-fpm.sock;
-            fastcgi_index  index.php;
-            fastcgi_param  SCRIPT_FILENAME $request_filename;
-            include        fastcgi_params;
-        }
-    }
-}
-
+LoadModule proxy_module libexec/apache24/mod_proxy.so
+LoadModule proxy_fcgi_module libexec/apache24/mod_proxy_fcgi.so
+LoadModule rewrite_module libexec/apache24/mod_rewrite.so
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 
 Start the service
 ```
-# service nginx start
+# apachectl graceful
 ```
 
-### Test nginx
-navigate to `your.jail.ip.address` in a browser, you should see the nginx welcome page.
+### Test apache
+navigate to `your.jail.ip.address` in a browser, you should see the apache welcome page.
 
 ### Configure redis
 `nano /usr/local/etc/redis.conf`:
