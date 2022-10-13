@@ -41,6 +41,15 @@ opcache.save_comments=1
 ```
 Save (CTRL+O, ENTER) and Exit (CTRL+X)
 
+### Change TCP listener to unix socket
+`nano /usr/local/etc/php-fpm.d/www.conf`:
+```
+listen = 
+listen.owner = www
+listen.group = www
+listen.mode = 0660
+```
+
 ```
 # service php-fpm start
 ```
