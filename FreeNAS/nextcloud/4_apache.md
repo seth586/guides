@@ -37,6 +37,7 @@ navigate to `your.jail.ip.address` in a browser, you should see the apache "It w
 </VirtualHost>
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
+
 `nano /usr/local/www/apache24/data/info.php`:
 ```
 <?php
