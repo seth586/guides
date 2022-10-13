@@ -53,4 +53,13 @@ unixsocketperm 770
 bind 127.0.0.1
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
+```
+# pw usermod www -G redis
+# service redis start
+# su -m www -c 'php /usr/local/www/nextcloud/occ config:system:set redis host --value="/var/run/redis/redis.sock"'
+# su -m www -c 'php /usr/local/www/nextcloud/occ config:system:set redis port --value=0 --type=integer'
+# su -m www -c 'php /usr/local/www/nextcloud/occ config:system:set memcache.local --value="\OC\Memcache\Redis"'
+# su -m www -c 'php /usr/local/www/nextcloud/occ config:system:set memcache.locking --value="\OC\Memcache\Redis"'
+# service nginx restart
+```
 
