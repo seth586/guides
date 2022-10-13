@@ -31,7 +31,7 @@ server {
     server_name cloud.example.com;
 
     # Path to the root of your installation
-    root /var/www/nextcloud;
+    root /usr/local/www/nextcloud;
 
     # Prevent nginx HTTP Server Detection
     server_tokens off;
