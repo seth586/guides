@@ -15,6 +15,13 @@
 ### Configure
 `nano /usr/local/etc/nginx/nginx.conf`:
 ```
+worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+
+http {
 # Set the `immutable` cache control options only for assets with a cache busting `v` argument
 map $arg_v $asset_immutable {
     "" "";
@@ -161,5 +168,6 @@ server {
     location / {
         try_files $uri $uri/ /index.php$request_uri;
     }
+}
 }
 ```
