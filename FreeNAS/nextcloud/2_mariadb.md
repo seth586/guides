@@ -7,7 +7,7 @@
 ### Install 
 
 ```
-# pkg install nano wget ca_root_nss mariadb106-server
+# pkg install mariadb106-server
 # sysrc mysql_enable=yes
 # service mysql-server start
 ```
