@@ -15,10 +15,6 @@
 ### Configure
 `nano /usr/local/etc/nginx/nginx.conf`:
 ```
-upstream php-handler {
-    server unix:/var/run/php-fpm/www.sock;
-}
-
 # Set the `immutable` cache control options only for assets with a cache busting `v` argument
 map $arg_v $asset_immutable {
     "" "";
@@ -133,7 +129,7 @@ server {
 
         fastcgi_param modHeadersAvailable true;         # Avoid sending the security headers twice
         fastcgi_param front_controller_active true;     # Enable pretty urls
-        fastcgi_pass php-handler;
+        fastcgi_pass unix:/var/run/php-fpm/www.sock;
 
         fastcgi_intercept_errors on;
         fastcgi_request_buffering off;
