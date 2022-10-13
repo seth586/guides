@@ -4,7 +4,10 @@
 
 ## Guide to Nextcloud server on TrueNAS
 
-### nginx
+### Install nginx
+```
+# pkg install nginx
+```
 
 
 ### Configure
