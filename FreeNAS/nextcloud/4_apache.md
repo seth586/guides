@@ -9,7 +9,6 @@
 # pkg install nginx redis
 # sysrc nginx_enable=yes
 # sysrc redis_enable=yes
-# service redis start
 # nano /usr/local/etc/nginx.conf
 ```
 
