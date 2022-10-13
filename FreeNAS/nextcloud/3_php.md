@@ -18,6 +18,8 @@ nano /usr/local/etc/php.ini
 ```
 
 Uncomment and adjust the folllowing:
+
+Note: http://php.net/manual/en/timezones.php for the timezone relevant to you. An example would be Australia/Sydney
 ```
 ...
 cgi.fix_pathinfo=1
