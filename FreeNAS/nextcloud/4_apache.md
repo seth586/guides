@@ -8,7 +8,7 @@
 ```
 # pkg install nginx
 # sysrc nginx_enable=yes
-# service nginx start
+# rm /usr/local/etc/nginx.conf
 ```
 
 
