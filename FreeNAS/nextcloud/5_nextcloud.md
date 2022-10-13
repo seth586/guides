@@ -14,6 +14,11 @@
 # chown -R www:www /usr/local/www/nextcloud
 ```
 
+### Configure Nextcloud
+```
+
+```
+
 ### Configure NGINX
 `nano /usr/local/etc/nginx/nginx.conf`:
 ```
@@ -173,3 +178,7 @@ server {
 }
 }
 ```
+Save (CTRL+O, ENTER) and exit (CTRL+X)
+
+Restart nginx `service nginx restart`
+
