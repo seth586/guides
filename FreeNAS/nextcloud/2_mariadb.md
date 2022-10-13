@@ -4,6 +4,14 @@
 
 ## Guide to Nextcloud server on TrueNAS
 
+### Install 
+
+```
+# pkg install nano wget ca_root_nss mariadb106-server
+# sysrc mysql_enable=yes
+```
+
+### Configure
 `nano /usr/local/etc/mysql/conf.d/server.cnf`:
 ```
 [mysqld]
