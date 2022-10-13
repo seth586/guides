@@ -42,13 +42,9 @@ opcache.save_comments=1
 Save (CTRL+O, ENTER) and Exit (CTRL+X)
 
 ### Change TCP listener to unix socket
+`nano /usr/local/etc/php-fpm.d/www.conf`
 ```
-# mkdir /var/run/php-fpm
-# chown www:www /var/run/php-fpm
-# nano /usr/local/etc/php-fpm.d/www.conf
-```
-```
-listen = /var/run/php-fpm/www.sock
+listen = /var/run/php-fpm.sock
 listen.owner = www
 listen.group = www
 listen.mode = 0660
