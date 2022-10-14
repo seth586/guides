@@ -8,7 +8,7 @@ Create your reverse proxy jail as outlined in the wordpress guide [here](https:/
 
 Enter your `reverseproxy` jail and add the following file, replace `mydomain` with yours and `proxy_pass` IP with `nextcloud` jail IP:
 ```
-# nano /usr/local/etc/nginx/vdomains/domain.tld.conf
+# nano /usr/local/etc/nginx/vdomains/cloud.mydomain.com.conf
 ```
 ```
 server {
