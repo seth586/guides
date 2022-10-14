@@ -78,7 +78,7 @@ Group: www
 ```
 
 ### Create Jail
-Log into TrueNAS. Click `Jails > Add`. Create a jail with `VNET`, `allow_raw_sockets`, set `name`. `release`, and `IPv4 address`. Click `autostart` and click `SAVE`.
+Log into TrueNAS. Click `Jails > Add`. Create a jail with `VNET`, `allow_raw_sockets`, set `name` to `nextcloud`. `release`, and `IPv4 address`. Click `autostart` and click `SAVE`.
 
 ### Mount datasets to jail
 ssh into TrueNAS. 
