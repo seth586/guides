@@ -62,7 +62,7 @@ Enable atime: On
 ```
 
 ### Assign dataset permissions
-Click the `three-dot icon` next to each dataset you created, click `permissions` and assign the following permissions, clicking `apply user checkmark` and `apply group checkmark`, type in the user/group, then click `save`:
+In TrueNAS' web-ui, click the `three-dot icon` next to each dataset you created, click `permissions` and assign the following permissions, clicking `apply user checkmark` and `apply group checkmark`, type in the user/group, then click `save`:
 ```
 db
 User: mysql
@@ -78,7 +78,7 @@ Group: www
 ```
 
 ### Create Jail
-Log into TrueNAS. Click `Jails > Add`. Create a jail with `VNET`, `allow_raw_sockets`, set `name` to `nextcloud`, `release`, and `IPv4 address`. Click `autostart` and click `SAVE`.
+In TrueNAS' web-ui, click `Jails > Add`. Create a jail with `VNET`, `allow_raw_sockets`, set `name` to `nextcloud`, `release`, and `IPv4 address`. Click `autostart` and click `SAVE`.
 
 ### Mount datasets to jail
 ssh into TrueNAS. 
