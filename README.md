@@ -13,6 +13,7 @@ Join the chatroom on the matrix chat protocol: [#truenasnode:nym.im](https://mat
 | ![BSDBTC60.png](FreeNAS/tor_relay/images/tor60.png)  | [TOR Relay](FreeNAS/tor_relay/README.md) |
 | ![mumble60.png](FreeNAS/mumble/images/mumble60.png) | [Mumble Server](FreeNAS/mumble/README.md)  | 
 | ![wordpress60.png](FreeNAS/webserver/images/wordpress60.png) | [Wordpress Website with Reverse Proxy](FreeNAS/webserver/README.md) |
+| ![nc60.png](FreeNAS/nextcloud/images/nc60.png) | [Nextcloud Server](FreeNAS/nextcloud/README.md) |
 
 | **OpenWRT Guides:** |  | 
 | --------------- | --------------- | 
