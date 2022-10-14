@@ -45,7 +45,7 @@ Reload privilege tables now? [Y/n] y
 ### Create Database
 ```
 # mysql -u root -p
-CREATE DATABASE nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+CREATE DATABASE IF NOT EXISTS nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'your_database_password';
 GRANT ALL ON nextcloud.* TO 'nextcloud'@'localhost';
 FLUSH PRIVILEGES;
