@@ -26,11 +26,12 @@ server {
                 proxy_pass http://192.168.84.73;
                 client_max_body_size 2G;
         }
-        location = /.well-known/carddav {
-        return 301 https://cloud.mydomain.com/remote.php/dav;
+        location /.well-known/carddav {
+                return 301 $scheme://$host/remote.php/dav;
         }
-        location = /.well-known/caldav {
-        return 301 https://cloud.mydomain.com/remote.php/dav;
+
+        location /.well-known/caldav {
+                return 301 $scheme://$host/remote.php/dav;
         }
 }
 
