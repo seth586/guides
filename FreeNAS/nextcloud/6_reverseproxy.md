@@ -43,14 +43,14 @@ Restart nginx `service nginx restart`
 ### nextcloud jail configuration
 
 Exit the `reverseproxy` jail and ssh into your `nextcloud` jail. Set the jail ip of your `reverseproxy`:
-```
-su -m www -c 'php /usr/local/www/nextcloud/occ config:system:set trusted_proxies --value="192.168.84.8"'
-```
-Change the trusted domain to your `cloud.mydomain.com`:
 
+`nano /usr/local/www/nextcloud/config/config.php`:
+```
+'trusted_proxies' => ['192.168.84.8'],
+```
+Save (CTRL+O, ENTER) and exit (CTRL+X)
 ```
 su -m www -c 'php /usr/local/www/nextcloud/occ config:system:set trusted_domains 1 --value="localhost"'
 su -m www -c 'php /usr/local/www/nextcloud/occ config:system:set trusted_domains 2 --value="cloud.mydomain.com"'
-su -m www -c 'php /usr/local/www/nextcloud/occ config:system:set overwritehost --value="192.168.84.8"'
 su -m www -c 'php /usr/local/www/nextcloud/occ config:system:set overwriteprotocol --value="https"'
 ```
