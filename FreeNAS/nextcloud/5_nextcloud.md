@@ -73,6 +73,10 @@ Database user = `nextcloud`
 
 Database password = `your_database_password`
 
+Database name = `nextcloud`
+
+Database host = `localhost:/var/run/mysql/mysql.sock`
+
 ### Nextcloud: enable redis cacheing
 ```
 # su -m www -c 'php /usr/local/www/nextcloud/occ config:system:set redis host --value="/var/run/redis/redis.sock"'
