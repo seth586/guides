@@ -30,7 +30,7 @@ Reload privilege tables now? [Y/n] y
 ```
 # mysql -u root -p
 CREATE DATABASE nextcloud;
-CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'your-password-here';
+CREATE USER 'nextcloud'@'localhost' IDENTIFIED BY 'your_database_password';
 GRANT ALL ON nextcloud.* TO 'nextcloud'@'localhost';
 FLUSH PRIVILEGES;
 exit
