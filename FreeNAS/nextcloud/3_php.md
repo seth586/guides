@@ -51,6 +51,7 @@ listen.mode = 0660
 Save (CTRL+O, ENTER) and Exit (CTRL+X)
 ```
 # service php-fpm start
+# apachectl graceful
 ```
 
 ### Test your php installation
