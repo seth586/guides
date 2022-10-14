@@ -5,6 +5,6 @@
 ## Guide to Nextcloud server on TrueNAS
 
 ### Official Documentation
-This guide may be out of date, refer to the official documentation at [https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html](https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html)
+Refer to the official documentation at [https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html](https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html)
 
 
