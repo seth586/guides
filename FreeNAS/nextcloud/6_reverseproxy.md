@@ -47,4 +47,6 @@ su -m www -c 'php /usr/local/www/nextcloud/occ config:system:set trusted_proxies
 ```
 Change the trusted domain to your `cloud.mydomain.com`:
 
-` su -m www -c 'php /usr/local/www/nextcloud/occ config:system:set trusted_domains --value="cloud.mydomain.com"'`
+```
+su -m www -c 'php /usr/local/www/nextcloud/occ config:system:set trusted_domains --value="cloud.mydomain.com"'
+```
