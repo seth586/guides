@@ -65,6 +65,14 @@ Restart apache `service apache24 restart`
 
 Navigate to your jail IP and configure nextcloud.
 
+Create an admin `username` and `password`. 
+
+datafolder = `/mnt/data`
+
+Database user = `nextcloud`
+
+Database password = `your_database_password`
+
 ### Nextcloud: enable redis cacheing
 ```
 # su -m www -c 'php /usr/local/www/nextcloud/occ config:system:set redis host --value="/var/run/redis/redis.sock"'
