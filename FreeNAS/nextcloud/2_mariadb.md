@@ -45,6 +45,7 @@ See [here](https://docs.nextcloud.com/server/latest/admin_manual/configuration_d
 ...
 transaction_isolation = READ-COMMITTED
 binlog_format = ROW
+innodb_file_per_table=1
 ...
 ```
 `nano /usr/local/etc/php/ext-30-pdo_mysql.ini`:
