@@ -11,6 +11,8 @@
 # wget https://download.nextcloud.com/server/releases/latest.tar.bz2.sha512
 # shasum -a 512 -c latest.tar.bz2.sha512
 # tar -xf latest.tar.bz2 -C /usr/local/www
+# rm latest.tar.bz2
+# rm latest.tar.bz2.sha512
 # chown -R www:www /usr/local/www/nextcloud
 ```
 
