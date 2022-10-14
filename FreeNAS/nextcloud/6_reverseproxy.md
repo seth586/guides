@@ -27,10 +27,10 @@ server {
                 client_max_body_size 2G;
         }
         location = /.well-known/carddav {
-        return 301 https://cloud.campnaturecalls.com/remote.php/dav;
+        return 301 https://cloud.mydomain.com/remote.php/dav;
         }
         location = /.well-known/caldav {
-        return 301 https://cloud.campnaturecalls.com/remote.php/dav;
+        return 301 https://cloud.mydomain.com/remote.php/dav;
         }
 }
 
@@ -45,3 +45,5 @@ Exit the `reverseproxy` jail and ssh into your `nextcloud` jail. Set the jail ip
 ```
 su -m www -c 'php /usr/local/www/nextcloud/occ config:system:set trusted_proxies --value="192.168.84.8"'
 ```
+Change the trusted domain to your `cloud.mydomain.com`:
+` su -m www -c 'php /usr/local/www/nextcloud/occ config:system:set trusted_domains --value="cloud.mydomain.com"'`
