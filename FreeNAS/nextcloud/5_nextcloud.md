@@ -17,7 +17,7 @@
 ```
 
 ### Configure apache
-Find the directory block below and edit `nano /usr/local/etc/apache24/httpd.conf`:
+`nano /usr/local/etc/apache24/httpd.conf` and edit the directory block below:
 ```
 DocumentRoot "/usr/local/www/nextcloud"
 <Directory "/usr/local/www/nextcloud">
