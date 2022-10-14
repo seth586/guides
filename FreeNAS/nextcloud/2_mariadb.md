@@ -19,8 +19,12 @@ See [here](https://docs.nextcloud.com/server/latest/admin_manual/configuration_d
 ```
 [mysqld]
 ...
+character_set_server = utf8mb4
+collation_server = utf8mb4_general_ci
 transaction_isolation = READ-COMMITTED
 binlog_format = ROW
+innodb_large_prefix=on
+innodb_file_format=barracuda
 innodb_file_per_table=1
 ...
 ```
