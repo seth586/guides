@@ -38,3 +38,10 @@ server {
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 
 Restart nginx `service nginx restart`
+
+### nextcloud jail configuration
+
+Exit the `reverseproxy` jail and ssh into your `nextcloud` jail. Set the jail ip of your `reverseproxy`:
+```
+su -m www -c 'php /usr/local/www/nextcloud/occ config:system:set trusted_proxies --value="192.168.84.8"'
+```
