@@ -8,6 +8,7 @@ https://github.com/CollaboraOnline/online/blob/master/.cirrus.yml
 
 https://collaboraonline.github.io/post/build-code/ Has instructions how to build CODE
 
+🚧🚧🚧 WORK IN PROGRESS - Collabora is unable to run natively on FreeBSD....yet. For now, run a virturalized ubuntu for collabora.
 
 ### 1. Set up environment
 
