@@ -4,6 +4,8 @@
 
 ## TrueNASnode - full bitcoin stack deployment guide ![BSDBTC60.png](images/BSDBTC60.png)
 
+Join the chatroom on the matrix chat protocol: [#truenasnode:nym.im](https://matrix.to/#/#truenasnode:nym.im)
+
 ### Intro
 
 I have been running a TrueNAS server for a few years now, and have come to appreciate what it offers as a personal home server. It is infamous for media streaming & aggregation, and file hosting.
