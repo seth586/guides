@@ -4,6 +4,8 @@
 
 ## TrueNASnode - full bitcoin stack deployment guide ![BSDBTC60.png](images/BSDBTC60.png)
 
+Join the chatroom on the matrix chat protocol: [#truenasnode:nym.im](https://matrix.to/#/#truenasnode:nym.im)
+
 ### My Extras
 
 #### [Run LND on clearnet](https://github.com/seth586/guides/blob/master/OpenWRT/upnp_natpmp.md)
