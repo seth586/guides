@@ -3,20 +3,18 @@ Seth586😈guides
 I am not a professional programmer or unix adminsitrator, use at your own risk!
 Contributions are welcome!
 
-Contact me on the matrix chat protocol: [@seth586:nym.im](https://matrix.to/#/@seth586:nym.im)
+Join the chatroom on the matrix chat protocol: [#truenasnode:nym.im](https://matrix.to/#/#truenasnode:nym.im)
 
-Guides:
 
-**FreeNAS / TrueNAS Guides:**
 
-[₿itcoin & Lightning️](https://github.com/seth586/guides/blob/master/FreeNAS/bitcoin/README.md)
+| **FreeNAS / TrueNAS Guides:** | | 
+| --------------- | --------------- |
+| ![BSDBTC60.png](FreeNAS/bitcoin/images/BSDBTC60.png) | [TrueNASnode](FreeNAS/bitcoin/README.md) - Full bitcoin stack deployment guide |
+| ![BSDBTC60.png](FreeNAS/tor_relay/images/tor60.png)  | [TOR Relay](FreeNAS/tor_relay/README.md) |
+| ![mumble60.png](FreeNAS/mumble/images/mumble60.png) | [Mumble Server](FreeNAS/mumble/README.md)  | 
+| ![wordpress60.png](FreeNAS/webserver/images/wordpress60.png) | [Wordpress Website with Reverse Proxy](FreeNAS/webserver/README.md) |
+| ![nc60.png](FreeNAS/nextcloud/images/nc60.png) | [Nextcloud Server](FreeNAS/nextcloud/README.md) |
 
-[TOR Relay](https://github.com/seth586/guides/tree/master/FreeNAS/tor_relay)
-
-[Mumble Server](https://github.com/seth586/guides/blob/master/FreeNAS/mumble/README.md)
-
-[Wordpress Website and Reverse Proxy](https://github.com/seth586/guides/tree/master/FreeNAS/webserver)
-
-**OpenWRT Guides:**
-
-[SSH PublicKey Authentication thru Bastion](https://github.com/seth586/guides/blob/master/OpenWRT/security/README.md)
+| **OpenWRT Guides:** |  | 
+| --------------- | --------------- | 
+| ![ssh60.png](OpenWRT/security/images/ssh60.png) | [SSH PublicKey Authentication thru Bastion](OpenWRT/security/README.md) | 
