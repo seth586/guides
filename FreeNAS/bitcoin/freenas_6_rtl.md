@@ -4,7 +4,7 @@
 
 ## TrueNASnode - full bitcoin stack deployment guide ![BSDBTC60.png](images/BSDBTC60.png)
 
-Running `lnd' from the command line is exhausting, lets get a pretty user interface going!
+Join the chatroom on the matrix chat protocol: [#truenasnode:nym.im](https://matrix.to/#/#truenasnode:nym.im)
 
 ### Install RTL
 Read up on RTL [here](https://github.com/ShahanaFarooqui/RTL). Find the latest RTL release [here](https://github.com/ShahanaFarooqui/RTL/releases)
