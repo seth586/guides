@@ -19,7 +19,7 @@ FreeBSD: {
 Save (CTRL+o, ENTER) and exit (CTRL+x)
 
 ```
-# pkg install -y py38-matrix-synapse
+# pkg install -y py39-matrix-synapse
 # sysrc synapse_enable="YES"
 ```
 
