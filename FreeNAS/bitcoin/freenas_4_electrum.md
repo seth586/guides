@@ -4,6 +4,8 @@
 
 ## TrueNASnode - full bitcoin stack deployment guide ![BSDBTC60.png](images/BSDBTC60.png)
 
+Join the chatroom on the matrix chat protocol: [#truenasnode:nym.im](https://matrix.to/#/#truenasnode:nym.im)
+
 ### Electrs: Electrum In Rust
 
 Read up more on electrs at its github page [here](https://github.com/romanz/electrs)
