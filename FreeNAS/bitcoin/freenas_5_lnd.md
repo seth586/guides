@@ -74,7 +74,9 @@ Save (CTRL+O), then exit (CTRL+X)
 ### LND Startup and initialization
 Start `lnd`:
 ```
-# lnd --configfile=/usr/local/etc/lnd.conf
+# pw adduser lnd -d /nonexistent -s /usr/sbin/nologin
+# mkdir /var/db/lnd && chown lnd:lnd /var/db/lnd && chmod -R 700 /var/db/lnd
+# su -m lnd -c 'lnd --configfile=/usr/local/etc/lnd.conf'
 ```
 If it works, you should see the following message:
 ```
@@ -113,7 +115,7 @@ Lets make the [rc.d script](https://www.freebsd.org/doc/en/articles/rc-scripting
 
 name="lnd"
 rcvar="lnd_enable"
-lnd_user="root"
+lnd_user="lnd"
 
 start_cmd="lnd_start"
 status_cmd="lnd_status"
