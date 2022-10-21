@@ -241,6 +241,9 @@ Read the release notes, if a lot changed, you may have to close channels or do s
 # service lnd start && tail -f /var/db/lnd/logs/bitcoin/mainnet/lnd.log
 ```
 
-Unlock lnd with RTL. Watch the logs to make sure that the database migration is sucessful.
+Unlock lnd with RTL. Watch the logs to make sure that the database migration is sucessful with the following command:
+```
+tail -f /var/db/lnd/logs/bitcoin/mainnet/lnd.log
+```
 
 Next: { [Install Lightning Lab's Loop client](freenas_5a_loopd.md) ]
