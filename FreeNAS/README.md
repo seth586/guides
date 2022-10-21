@@ -17,4 +17,4 @@ Join the chatroom on the matrix chat protocol: [#truenasnode:nym.im](https://mat
 
 | **OpenWRT Guides:** |  | 
 | --------------- | --------------- | 
-| ![ssh60.png](OpenWRT/security/images/ssh60.png) | [SSH PublicKey Authentication thru Bastion](OpenWRT/security/README.md) | 
+| ![ssh60.png](OpenWRT/security/images/ssh60.png) | [SSH PublicKey Authentication thru Bastion](https://github.com/seth586/guides/blob/master/OpenWRT/security/README.md) | 
