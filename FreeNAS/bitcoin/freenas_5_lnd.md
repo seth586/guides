@@ -107,20 +107,96 @@ Lets make the [rc.d script](https://www.freebsd.org/doc/en/articles/rc-scripting
 #
 # PROVIDE: lnd
 # REQUIRE: bitcoind tor
-# KEYWORD:
+# KEYWORD: shutdown
 
 . /etc/rc.subr
 
 name="lnd"
 rcvar="lnd_enable"
+lnd_user="root"
 
-lnd_command="/usr/local/bin/lnd --configfile=/usr/local/etc/lnd.conf"
+start_cmd="lnd_start"
+status_cmd="lnd_status"
+stop_cmd="lnd_stop"
+stop_postcmd="lnd_wait"
+command="/usr/local/bin/lnd"
+daemon_command="/usr/sbin/daemon"
 pidfile="/var/run/${name}.pid"
-command="/usr/sbin/daemon"
-command_args="-P ${pidfile} -r -f ${lnd_command}"
 
 load_rc_config $name
 : ${lnd_enable:=no}
+
+: ${lnd_config_file:="/usr/local/etc/lnd.conf"}
+
+# set up dependant variables
+procname="${command}"
+required_files="${lnd_config_file}"
+
+lnd_status()
+{
+  local pid
+  pid=$(check_pidfile "${pidfile}" "${procname}")
+  if [ -z "${pid}" ]
+  then
+    echo "LND is not running"
+    return 1
+  else
+    echo "LND running, pid: ${pid}"
+  fi
+}
+
+lnd_start()
+{
+  echo "Starting lnd:"
+  ${daemon_command} -u "${lnd_user}" -p "${pidfile}" -f \
+    ${command} \
+    --configfile="${lnd_config_file}"
+}
+
+lnd_stop()
+{
+  echo "Stopping LND:"
+  pid=$(check_pidfile "${pidfile}" "${procname}")
+  if [ -z "${pid}" ]
+  then
+    echo "LND is not running"
+    return 1
+  else
+    kill ${pid}
+  fi
+}
+
+lnd_wait()
+{
+  local n=60
+  echo "Waiting for LND shutdown:"
+  while :
+  do
+    printf '.'
+    pid=$(check_pidfile "${pidfile}" "${procname}")
+    if [ -z "${pid}" ]
+    then
+      printf '\n'
+      break
+    fi
+    sleep 1
+    n=$((${n} - 1))
+    if [ ${n} -eq 0 -a -f "${pidfile}" ]
+    then
+      printf "\nForce shutdown"
+      kill -9 $(cat "${pidfile}")
+      for n in 1 2 3
+      do
+        printf '.'
+        sleep 1
+      done
+      printf '\n'
+      break
+    fi
+  done
+  rm -f "${pidfile}"
+  echo "Shutdown complete"
+}
 
 run_rc_command "$1"
 ```
