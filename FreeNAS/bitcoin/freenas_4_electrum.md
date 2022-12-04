@@ -179,7 +179,7 @@ Start your tor browser to connect to the tor network. Start electrum, select /to
 # cargo build --release
 # install -m 0755 -o root -g wheel /root/electrs/target/release/electrs /usr/local/bin
 # rm -r ~/electrs
-# service electrs start
+# service electrs start && tail -f /var/db/electrs/bitcoin/LOG
 ```
 
 ### Bonus: Reverse proxy configuration for domain & SSL certificate access
