@@ -26,13 +26,13 @@ At this point you should have sucessfully registered a domain on Amazon's Route 
 Under "Service" select "Route 53"
 Under "Actions" select the following permissions required by [documentation for certbot's route 53 plugin](https://certbot-dns-route53.readthedocs.io/en/stable/):  
 
-route53:ListHostedZones route53:GetChange route53:ChangeResourceRecordSets
+route53:ListHostedZones route53:GetChange route53:ChangeResourceRecordSets route53:ListResourceRecordSets
 
 Under Resources select "All resources". Click "Review Policy". Give the policy a name, I used `certbot`. Write a description to remind you what its for: "Policy so my ddns can update my webservers IP address and my reverse proxy can request and renew SSL and TLS certificates". Click "Create policy". You should now have the "certbot" policy in your "Policies" list.
 
 Now lets create a user with this policy. Click "Users" on the left menu. Click "Add user". Lets call it `reverseproxy`. Under "access type*" select "Programmatic access". Click "Next: Permissions". Click "Attach existing policies directly" and search for your "certbot" policy. Click the checkmark to the left of "certbot". Click "Next: Tags". Click "Next: Review". Click "Create User". Write down the Access key ID and Secret access key, and store this information in a safe place. Click "close". You should now see the user "reverse proxy" listed in your user list.
 
-## 4. Set up Dynamic DNS on OpenWRT with domain provider AWS Route 53
+## 4(a). Option 1: Set up Dynamic DNS on OpenWRT with domain provider AWS Route 53
 
 The Domain Name System converts "domains" to IP addresses. If your internet service provides a static IP address, you can skip this step. Just make sure you create a "type A record set" with your domain pointing to your static home IP address. However, most ISPs dynamically assign IP addresses. So lets install some software that will automatically update your "type A record set" for your domain as your home IP address changes.
 
