@@ -32,7 +32,7 @@ Under Resources select "All resources". Click "Review Policy". Give the policy a
 
 Now lets create a user with this policy. Click "Users" on the left menu. Click "Add user". Lets call it `reverseproxy`. Under "access type*" select "Programmatic access". Click "Next: Permissions". Click "Attach existing policies directly" and search for your "certbot" policy. Click the checkmark to the left of "certbot". Click "Next: Tags". Click "Next: Review". Click "Create User". Write down the Access key ID and Secret access key, and store this information in a safe place. Click "close". You should now see the user "reverse proxy" listed in your user list.
 
-## 4(a). Option 1: Set up Dynamic DNS on OpenWRT with domain provider AWS Route 53
+## 4. Set up Dynamic DNS on OpenWRT with domain provider AWS Route 53
 
 The Domain Name System converts "domains" to IP addresses. If your internet service provides a static IP address, you can skip this step. Just make sure you create a "type A record set" with your domain pointing to your static home IP address. However, most ISPs dynamically assign IP addresses. So lets install some software that will automatically update your "type A record set" for your domain as your home IP address changes.
 
@@ -295,6 +295,77 @@ Create an entry for every domain and subdomain you want to access from inside yo
 ![RouterHostname](images/routerhostname.png)
 
 Remember in step 4 when we set the `dns_server` to a DNS outside our LAN? If we didn't set it, our ddns script will correctly identify the domain resolved by our routers Hostnames, which is reachable at our reverse proxy jail, and will hillariously update amazon's "A record set" to our reverse-proxy jail of 192.168.84.44 ! Onbiously we need the domain to resolve to our home IP address so our firewall can correctly port forward to our reverse-proxy jail! 
+
+## 8. Optional: ddns on TrueNAS
+If your router doesnt support ddns, you can have your truenas reverseproxy jail do the updates with aws-cli:
+```
+# pkg install curl bash
+cd /
+nano update_dns.sh
+```
+Paste the script:
+```
+HOSTED_ZONE_ID="Z1234567890ABC"
+NAME="example.com."
+TYPE="A"
+TTL=60
+
+#get current IP address
+IP=$(curl http://checkip.amazonaws.com/)
+
+#validate IP address (makes sure Route 53 doesn't get updated with a malformed payload)
+if [[ ! $IP =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]; then
+        exit 1
+fi
+
+#get current
+aws route53 list-resource-record-sets --hosted-zone-id $HOSTED_ZONE_ID | grep -m1 -E -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' > /tmp/current_route53_value
+
+cat /tmp/current_route53_value
+
+#check if IP is different from Route 53
+if grep -Fxq "$IP" /tmp/current_route53_value; then
+        echo "IP Has Not Changed, Exiting"
+        exit 1
+fi
+
+
+echo "IP Changed, Updating Records"
+
+#prepare route 53 payload
+cat > /tmp/route53_changes.json << EOF
+    {
+      "Comment":"Updated From DDNS Shell Script",
+      "Changes":[
+        {
+          "Action":"UPSERT",
+          "ResourceRecordSet":{
+            "ResourceRecords":[
+              {
+                "Value":"$IP"
+              }
+            ],
+            "Name":"$NAME",
+            "Type":"$TYPE",
+            "TTL":$TTL
+          }
+        }
+      ]
+    }
+EOF
+
+#update records
+aws route53 change-resource-record-sets --hosted-zone-id $HOSTED_ZONE_ID --change-batch file:///tmp/route53_changes.json >> /dev/null
+```
+Save (CTRL+O, ENTER) and Exit (CTRL+X). Make executable, do a test run, then set up cron job:
+```
+# chmod +x update_dns.sh
+# bash update_dns.sh
+# crontab -e
+```
+```
+*/30 * * * * /usr/local/bin/bash /update_dns.sh
+```
 
 ### Credits
 The samueldowling.com blog!
