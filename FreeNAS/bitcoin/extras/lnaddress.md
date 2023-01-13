@@ -115,7 +115,7 @@ Restart nginx `service nginx restart` and attempt over TLS connection:
 https://example.com/.well-known/lnurlp/seth586
 ```
 
-Try it out, send a tip to: seth586@nym.im
+Try it out, send a tip to: `seth586@nym.im`
 
-Note: if you want to receive, you need a publicly broadcasted channel. As of right now, ligess doesnt support adding private routing hints.
+Note: if you want to receive, inbound liquidity on a private channel will not work. As of right now, ligess does [not support](https://github.com/Dolu89/ligess/issues/7) adding private routing hints.
 
