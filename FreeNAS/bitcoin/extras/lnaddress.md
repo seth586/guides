@@ -87,7 +87,7 @@ run_rc_command "$1"
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 ```
 # chmod +x /usr/local/etc/rc.d/ligess
-# sysrc nginx_enable=yes
+# sysrc ligess_enable=yes
 # service ligess start
 ```
 Test again. Should work!
