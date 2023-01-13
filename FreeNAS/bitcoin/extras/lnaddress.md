@@ -12,7 +12,9 @@ Lets get started!
 # hexdump -ve '1/1 "%.2x"' /var/db/lnd/data/chain/bitcoin/mainnet/invoice.macaroon
 ```
 
-## 3. Create `lnaddress` jail, ssh in
+## 3. Create `lnaddress` jail
+
+In this example I used static address `192.168.84.22` for my jail. SSH in: 
 ```
 # pkg install nginx yarn-node18 git nano
 # git clone https://github.com/dolu89/ligess
@@ -53,7 +55,7 @@ Start nginx ` service nginx start`
 ```
 Open a web browser, and goto your jail `lnaddress` IP address:
 ```
-http://192.168.84.20/.well-known/lnurlp/seth586
+http://192.168.84.22/.well-known/lnurlp/seth586
 ```
 You should see a JSON response with the following details:
 ```
@@ -92,3 +94,26 @@ Save (CTRL+O, ENTER) and exit (CTRL+X)
 # service ligess start
 ```
 Test again. Should work!
+
+## 7. DNS resolve & TLS terminate
+Lets make this reachable to the public internet and secure it with TLS to prevent man-in-the-middle attacks. 
+
+SSH into your `reverseproxy` jail, create the following entry if you followed the [reverseproxy](https://github.com/seth586/guides/blob/master/FreeNAS/webserver/6_reverse_proxy.md) guide
+
+`nano /usr/local/etc/nginx/vdomains/example.com.conf`:
+
+Add the following to your server{} block:
+```
+location /.well-known/lnurlp/seth586 {
+        proxy_pass http://192.168.84.22:80;
+}
+```
+Save (CTRL+O, ENTER) and Exit (CTRL+X)
+
+Restart nginx `service nginx restart` and attempt over TLS connection:
+```
+https://example.com/.well-known/lnurlp/seth586
+```
+
+Try it out, send a tip to: seth586@nym.im
+
