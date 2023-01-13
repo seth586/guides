@@ -37,7 +37,7 @@ Save (CTRL+O, ENTER) and Exit (CTRL+X)
 # sysrc nginx_enable=yes
 # nano /usr/local/etc/nginx/nginx.conf
 ```
-Add the following location block to your server{} block:
+Add the following location block to your server{} block and remove any other location {} blocks:
 ```
 location /.well-known/lnurlp/seth586 {
         proxy_pass http://127.0.0.1:3000;
@@ -64,5 +64,30 @@ Press Ctrl+C to terminate the process
 ## 6. rc.d script
 `nano /usr/local/etc/rc.d/ligess`:
 ```
+#!/bin/sh
+#
+# PROVIDE: ligess
+# REQUIRE: 
+# KEYWORD:
 
+. /etc/rc.subr
+
+name="ligess"
+rcvar="ligess_enable"
+ligess_command="/usr/local/bin/node /root/ligess/index.js"
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -r -f ${ligess_command}"
+
+load_rc_config $name
+: ${ligess_enable:=no}
+
+run_rc_command "$1"
 ```
+Save (CTRL+O, ENTER) and exit (CTRL+X)
+```
+# chmod +x /usr/local/etc/rc.d/ligess
+# sysrc nginx_enable=yes
+# service ligess start
+```
+Test again. Should work!
