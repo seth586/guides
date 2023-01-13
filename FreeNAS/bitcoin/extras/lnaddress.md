@@ -1,3 +1,8 @@
+[ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/README.md) ]
+
+[ [Intro](README.md) ] - [ [Jail Creation](freenas_1_jail_creation.md) ] - [ [Bitcoin](freenas_2_bitcoin.md) ] - [ [Tor & i2p](freenas_3_tor.md) ] - [ [Electrum](freenas_4_electrum.md) ] - [ [lnd](freenas_5_lnd.md) ] - [ [loopd ](freenas_5a_loopd.md)] - [ [RTL](freenas_6_rtl.md) ] - [ [mempool](freenas_8_mempool.md) ] - **[Extras]** 
+
+
 
 [Lightning Address](https://lightningaddress.com/), part of the LNURL spec [LUD16](https://github.com/lnurl/luds/blob/luds/16.md), allows you to receive payments to a static internet identifier ex: `you@domain.com`. While this is outside the LN spec & relies on traditional webserver infastructure (TLS, DNS, webserver, etc), [BOLT12](https://bolt12.org/) offers a potential native solution for static identifiers. We will use [ligess](https://github.com/Dolu89/ligess/) as our personal lightningaddress server.
 
@@ -119,3 +124,4 @@ Try it out, send a tip to: `seth586@nym.im`
 
 Note: if you want to receive, inbound liquidity on a private channel will not work. As of right now, ligess does [not support](https://github.com/Dolu89/ligess/issues/7) adding private routing hints.
 
+[ [<< Back to Main Menu](https://github.com/seth586/guides/blob/master/README.md) ]
