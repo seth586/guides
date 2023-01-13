@@ -1,5 +1,5 @@
 
-[Lightning Address](https://lightningaddress.com/), part of the LNURL spec [LUD16](https://github.com/lnurl/luds/blob/luds/16.md), allows you to receive payments to a static internet identifier ex: `you@domain.com`. While this is outside the LN spec & relies on traditional webserver infastructure (TLS, DNS, webserver, etc), [BOLT12](https://bolt12.org/) offers a potential native solution for static identifiers.
+[Lightning Address](https://lightningaddress.com/), part of the LNURL spec [LUD16](https://github.com/lnurl/luds/blob/luds/16.md), allows you to receive payments to a static internet identifier ex: `you@domain.com`. While this is outside the LN spec & relies on traditional webserver infastructure (TLS, DNS, webserver, etc), [BOLT12](https://bolt12.org/) offers a potential native solution for static identifiers. We will use [ligess](https://github.com/Dolu89/ligess/) as our personal lightningaddress server.
 
 ## 1. Requirements:
 
@@ -116,4 +116,6 @@ https://example.com/.well-known/lnurlp/seth586
 ```
 
 Try it out, send a tip to: seth586@nym.im
+
+Note: if you want to receive, you need a publicly broadcasted channel. As of right now, ligess doesnt support adding private routing hints.
 
