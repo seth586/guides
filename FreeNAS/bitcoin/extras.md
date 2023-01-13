@@ -8,6 +8,9 @@ Join the chatroom on the matrix chat protocol: [#truenasnode:nym.im](https://mat
 
 ### My Extras
 
+#### [Lightning Address](extras/lnaddress.md)
+Receive lightning payments to a static internet identifier `you@example.com` powered by LN-URL 
+
 #### [Run LND on clearnet](https://github.com/seth586/guides/blob/master/OpenWRT/upnp_natpmp.md)
 Don't have a static IP address? `lnd` will loose peer connections unless you configure `nat=true` and have a working UPnP implementation. This is a process to ensure your UPnP implementation is secure.
 
