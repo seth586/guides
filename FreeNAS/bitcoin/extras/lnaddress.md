@@ -74,6 +74,7 @@ Press Ctrl+C to terminate the process
 
 name="ligess"
 rcvar="ligess_enable"
+ligess_chdir="/root/ligess"
 ligess_command="/usr/local/bin/node /root/ligess/index.js"
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
