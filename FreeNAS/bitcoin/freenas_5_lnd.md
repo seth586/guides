@@ -75,6 +75,7 @@ Save (CTRL+O), then exit (CTRL+X)
 Start `lnd`:
 ```
 # pw adduser lnd -d /nonexistent -s /usr/sbin/nologin
+# pw usermod lnd -G lnd,_tor,bitcoin
 # mkdir /var/db/lnd && chown lnd:lnd /var/db/lnd && chmod -R 700 /var/db/lnd
 # su -m lnd -c 'lnd --configfile=/usr/local/etc/lnd.conf'
 ```
