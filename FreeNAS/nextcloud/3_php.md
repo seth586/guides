@@ -6,7 +6,7 @@
 
 ### Install prerequisites:
 ```
-# pkg install php80 php80-ctype php80-curl php80-dom php80-filter php80-gd php80-mbstring php80-opcache php80-posix php80-session php80-xml php80-simplexml php80-xmlreader php80-xmlwriter php80-zip php80-zlib php80-pdo_mysql php80-fileinfo php80-bz2 php80-intl php80-bcmath php80-gmp php80-exif php80-pecl-redis php80-pecl-imagick php80-pcntl php80-phar php80-pecl-redis
+# pkg install php81 php81-ctype php81-curl php81-dom php81-filter php81-gd php81-mbstring php81-opcache php81-posix php81-session php81-simplexml php81-xmlreader php81-xmlwriter php81-zip php81-zlib php81-pdo_mysql php81-fileinfo php81-bz2 php81-intl php81-bcmath php81-gmp php81-exif php81-pecl-redis php81-pecl-imagick php81-pcntl php81-phar php81-pecl-redis php81-xml
 # sysrc php_fpm_enable=yes
 
 ```
