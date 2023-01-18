@@ -57,4 +57,7 @@ Save (CTRL+O, ENTER) and Exit (CTRL+X)
 ### Test your php installation
 Naigate to `your.jail.ip.address/info.php`
 
+### Upgrade PHP
+Make sure to upgrade to Nextcloud 24 before upgrading to PHP 8.1!
+
 Remove once you confirmed it works `rm /usr/local/www/apache24/data/info.php`
