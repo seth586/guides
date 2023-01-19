@@ -8,7 +8,7 @@ MySQL is a database structure for storing and recalling information. When you us
 ## Install MariaDB
 ```
 # pkg search mariadb
-# pkg install -y mariadb105-server
+# pkg install -y mariadb106-server
 # sysrc mysql_enable=yes
 # service mysql-server start
 # ps aux
