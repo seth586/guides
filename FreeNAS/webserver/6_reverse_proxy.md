@@ -3,7 +3,9 @@
 ## Guide to a self hosted wordpress website on FreeNAS/TrueNAS ![wordpress60.png](images/wordpress60.png)
 [ [Intro](README.md) ] - [ [Jail Creation](1_jail_creation.md) ] - [ [nginx](2_nginx.md) ] - [ [mysql](3_mysql.md) ] - [ [PHP](4_php.md) ] - [ [wordpress](5_wordpress.md) ] - **[reverse proxy]**
 
-A reverse proxy allows you to host multiple websites from the same IP address. Our reverse proxy will also offer SSL/TLS termination, such as wildcard.sampledomain.com or sampledomain.com.
+A reverse proxy / load balancer stands between the client and your servers. It allows you to host multiple websites from the same IP address and even same port! Our reverse proxy will also offer SSL/TLS termination, such as wildcard.sampledomain.com or sampledomain.com.
+
+Good video of a different solution using cloudflare [here](https://www.youtube.com/watch?v=LlbTSfc4biw)
 
 ## 1. Create a new jail
 Login to the TrueNAS web-ui. Create a new jail with a static IP address outside the range of your routers DHCP IP range. The default DHCP range on openwrt is 192.168.0.100 thru 192.168.0.254, I will use 192.168.84.44 as an example.
