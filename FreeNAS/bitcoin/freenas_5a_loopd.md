@@ -60,11 +60,7 @@ Make the startup script executable:
 # chmod +x /usr/local/etc/rc.d/loopd
 ```
 
-Enable our service in `/etc/rc.conf`
-```
-# nano /etc/rc.conf
-```
-Append the following line
+Enable our service with `nano /etc/rc.conf` and appent the following line:
 ```
 loopd_enable="YES"
 ```
