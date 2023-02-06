@@ -86,8 +86,8 @@ Database host = `localhost:/var/run/mysql/mysql.sock`
 # service apache24 restart
 ```
 
-### Optional: shell alias for occ
-typing in `su -m www -c 'php /usr/local/www/nextcloud/occ command'` sucks, lets make a shell alias so we can run occ globally:
+### Optional: shell alias for `occ`
+`occ` is a powerful tool you should get familiar with to administer your nextcloud server. Typing in `su -m www -c 'php /usr/local/www/nextcloud/occ command'` sucks, lets make a shell alias so we can run occ globally:
 ```
 nano /root/.cshrc
 ```
