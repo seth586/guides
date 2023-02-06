@@ -84,9 +84,9 @@ Tip jar: https://strike.me/seth
 
 Nostr NIP05: seth586@nym.im
 
-Nostr NIP19 pubkey: npub15cptpcp2lkeen636dq7my3sfpmv6xqnze5g95c2ftp5j28zfuszsypnzs4
+Nostr NIP19 pubkey: npub1seth586kfq48s004fa2uudm03kxssx9cjjnrk8alxlv379ct9f5qgsqe0t
 
-Nostr hex pubkey: a602b0e02afdb399ea3a683db246090ed9a30262cd105a61495869251c49e405
+Nostr hex pubkey: 86577a1f56482a783df54f55ce376f8d8d0818b894a63b1fbf37d91f170b2a68
 
 ### Shout outs
 Special thanks to the Stadicus Raspberry pi guide for inspiring this freebsd guide, check it out here:
