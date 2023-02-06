@@ -43,6 +43,7 @@ Edit the following lines, make sure to set `rtlPass=`:
       "lnImplementation": "LND",
       "Authentication": {
         "macaroonPath": "/var/db/lnd/data/chain/bitcoin/mainnet",
+        "swapMacaroonPath": "/var/db/loopd/mainnet",
         "configPath": "/usr/local/etc/lnd.conf"
       },
       "Settings": {
