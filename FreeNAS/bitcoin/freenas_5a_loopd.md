@@ -69,10 +69,10 @@ Paste the following service script into nano:
 name="loopd"
 rcvar="loopd_enable"
 
-loopd_command="/usr/local/bin/loopd --lnd.macaroonpath=/var/db/lnd/data/chain/bitcoin/mainnet/admin.macaroon --lnd.tlspath=/var/db/lnd/tls.cert --server.proxy=localhost:9050"
+loopd_command="/usr/local/bin/loopd --configfile=/usr/local/etc/loopd.conf"
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
-command_args="-P ${pidfile} -r -f ${loopd_command}"
+command_args="-P ${pidfile} -u lnd -r -f ${loopd_command}"
 
 load_rc_config $name
 : ${loopd_enable:=no}
@@ -95,6 +95,17 @@ Append the following line
 loopd_enable="YES"
 ```
 Save, (CTRL+O,ENTER) then exit (CTRL+X)
+
+Create config file and set permissions:
+
+```
+mkdir /var/db/loopd && chown lnd:lnd /var/db/loopd
+cd /usr/local/etc
+touch loopd.conf && chown lnd:lnd loopd.conf && chmod 600 loopd.conf && nano loopd.conf
+```
+```
+
+```
 
 Now start the service:
 ```
