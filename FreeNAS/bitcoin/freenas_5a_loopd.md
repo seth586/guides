@@ -22,32 +22,6 @@ Check [lightning lab's loop github repo](https://github.com/lightninglabs/loop/r
 # rm -r /loop-freebsd-amd64* loop-freebsd-amd64*
 ```
 
-### loopd Startup and initialization
-Start `loopd`:
-```
-# loopd --lnd.macaroonpath=/var/db/lnd/data/chain/bitcoin/mainnet/admin.macaroon --lnd.tlspath=/var/db/lnd/tls.cert --server.proxy=localhost:9050
-```
-If it works, you should see the following message:
-```
-2020-06-09 21:56:54.119 [INF] LOOPD: Version: 0.6.3-beta commit=
-2020-06-09 21:56:54.119 [INF] LNDC: Creating lnd connection to localhost:10009
-2020-06-09 21:56:54.119 [INF] LNDC: Connected to lnd
-2020-06-09 21:56:54.170 [INF] LNDC: Using network mainnet
-2020-06-09 21:56:54.170 [INF] LOOPD: Swap server address: swap.lightning.today:11010
-2020-06-09 21:56:54.207 [INF] STORE: Checking for schema update: latest_version=3, db_version=3
-2020-06-09 21:56:54.207 [INF] LOOP: Proxying connection to swap.lightning.today:11010 over Tor SOCKS proxy localhost:9050
-2020-06-09 21:56:54.208 [INF] LOOPD: Starting swap client
-2020-06-09 21:56:54.208 [INF] LOOP: Connected to lnd node 'seth586😈guides' with pubkey 023ec3d1fa35f7fb8996374cf1848c1a40788df013551c5510c75617222bd2dd2d (version v0.10.1-beta, build tags 'autopilotrpc,signrpc,walletrpc,chainrpc,invoicesrpc,watchtowerrpc')
-2020-06-09 21:56:54.208 [INF] LOOPD: Waiting for updates
-2020-06-09 21:56:54.208 [INF] LOOPD: Starting gRPC listener
-2020-06-09 21:56:54.208 [INF] LOOPD: Starting REST proxy listener
-2020-06-09 21:56:54.208 [INF] LOOPD: REST proxy listening on 127.0.0.1:8081
-2020-06-09 21:56:54.208 [INF] LOOPD: RPC server listening on 127.0.0.1:11010
-2020-06-09 21:56:54.209 [INF] LOOP: Wait for first block ntfn
-2020-06-09 21:56:54.209 [INF] LOOP: Starting event loop at height 633975
-```
-Press Ctrl+C to stop the program.
-
 ### Configure start on boot & restart
 
 We will again use [daemon](https://www.freebsd.org/cgi/man.cgi?query=daemon) to run our `loopd` process at bootup, and restart the process should it fail.
