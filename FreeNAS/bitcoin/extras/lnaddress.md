@@ -111,6 +111,7 @@ Add the following to your server{} block:
 ```
 location /.well-known/lnurlp/seth586 {
         proxy_pass http://192.168.84.22:80;
+        add_header "Access-Control-Allow-Origin" *;
 }
 ```
 Save (CTRL+O, ENTER) and Exit (CTRL+X)
