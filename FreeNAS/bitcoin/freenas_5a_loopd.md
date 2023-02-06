@@ -96,21 +96,32 @@ loopd_enable="YES"
 ```
 Save, (CTRL+O,ENTER) then exit (CTRL+X)
 
-Create config file and set permissions:
-
+Set permissions and create config file:
 ```
 mkdir /var/db/loopd && chown lnd:lnd /var/db/loopd
 cd /usr/local/etc
 touch loopd.conf && chown lnd:lnd loopd.conf && chmod 600 loopd.conf && nano loopd.conf
 ```
 ```
+[Application Options]
+loopdir=/var/db/loopd
+configfile=/usr/local/etc/loopd.conf
 
+[lnd]
+lnd.macaroonpath=/var/db/lnd/data/chain/bitcoin/mainnet/admin.macaroon
+lnd.tlspath=/var/db/lnd/tls.cert
+
+[server]
+server.proxy=localhost:9050
 ```
+Save (CTRL+O, ENTER) and Exit (CTRL+X)
 
 Now start the service:
 ```
-# service loopd start
+# service loopd start && tail -f /var/db/loopd/logs/mainnet/loopd.log
 ```
+Logs should appear normal, press CTRL+C to stop following the logs
+
 ### loopd liquidity
 loopd uses a liquidity provider that you send off-chain funds to receive an on-chain transaction (loop out). Make sure you have an adequate liquidity path (or open a channel directly) with their node:
 ```
