@@ -14,12 +14,12 @@ If not already there, SSH into your freenas box and switch to your bitcoin jail.
 ```
 # pkg install node npm python cairo
 # cd ~
-# wget https://github.com/Ride-The-Lightning/RTL/archive/refs/tags/v0.13.1.tar.gz
-# tar -xvf v0.13.1.tar.gz
-# rm v0.13.1.tar.gz
-# mv ~/RTL-0.13.1 ~/rtl
+# wget https://github.com/Ride-The-Lightning/RTL/archive/refs/tags/v0.13.4.tar.gz
+# tar -xvf v0.13.4.tar.gz
+# rm v0.13.4.tar.gz
+# mv ~/RTL-0.13.4 ~/rtl
 # cd rtl
-# npm install --omit=dev
+# npm install --omit=dev --legacy-peer-deps
 ```
 Once the install is complete, create RTL-Config.json [configuration options](https://github.com/Ride-The-Lightning/RTL/blob/master/docs/Application_configurations):
 ```
