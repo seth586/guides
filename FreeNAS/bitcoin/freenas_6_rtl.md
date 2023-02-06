@@ -133,7 +133,7 @@ Click Update
 # mv ~/RTL-0.13.4 ~/rtl
 # rm v0.13.4.tar.gz
 # cd rtl
-# npm install --only=production
+# npm install --omit=dev --legacy-peer-deps
 # service rtl start
 ```
 
