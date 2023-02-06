@@ -86,3 +86,20 @@ Database host = `localhost:/var/run/mysql/mysql.sock`
 # service apache24 restart
 ```
 
+### Optional: shell alias for occ
+typing in `su -m www -c 'php /usr/local/www/nextcloud/occ command'` sucks, lets make a shell alias so we can run occ globally:
+```
+nano /root/.cshrc
+```
+Add the alias:
+```
+alias occ       'su -m www -c '\''php /usr/local/www/nextcloud/occ "$1"'\'''
+```
+Save (CTRL+O, ENTER) and Exit (CTRL+X)
+
+Refresh your shell and try it out:
+```
+source ~/.cshrc
+occ status
+```
+
