@@ -16,7 +16,7 @@ root@freenas[~] # iocage console bitcoin
 Check [lightning lab's loop github repo](https://github.com/lightninglabs/loop/releases) for the latest release, make sure you select the correct binaries for your processor and operating system. (amd64 is for amd and intel processors)
 ```
 # cd ~
-# wget https://github.com/lightninglabs/loop/releases/download/v0.20.1-beta/loop-freebsd-amd64-v0.20.1-beta.tar.gz
+# wget https://github.com/lightninglabs/loop/releases/download/v0.21.0-beta/loop-freebsd-amd64-v0.21.0-beta.tar.gz
 # tar -xvf loop-freebsd-amd64*
 # install -m 0755 -o root -g wheel loop-freebsd-amd64*/* /usr/local/bin
 # rm -r /loop-freebsd-amd64* loop-freebsd-amd64*
