@@ -36,10 +36,6 @@ opcache.interned_strings_buffer=8
 opcache.max_accelerated_files=10000
 opcache.revalidate_freq=1
 opcache.save_comments=1
-
-redis.session.locking_enabled=1
-redis.session.lock_retries=-1
-redis.session.lock_wait_time=10000
 ...
 ```
 Save (CTRL+O, ENTER) and Exit (CTRL+X)
