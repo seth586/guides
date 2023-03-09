@@ -5,65 +5,57 @@
 
 PHP is a programming language designed for interactive web content. Numerous PHP modules exist to increase the capability of this language. These PHP modules can be individually installed depending on what your plugins and themes require and isntalled with seperate packages. To see what modules are activated, type `php -m`.
 
-Numerous modern wordpress themes rely on an import and export wordpress plugin that has not been updated in several years ([here](https://github.com/humanmade/WordPress-Importer) and [here](https://github.com/awesomemotive/one-click-demo-import)). The import / export plugin expects its required PHP modules to be compiled in, not added as seperately loaded so we are going to compile a few required modules directly into the PHP executable. 
+As of writing the latest branch of PHP is version 8.2. Check out this website to see what the latest version is: https://www.php.net/supported-versions.php 
 
-As of writing the latest branch of PHP is version 7.4. Check out this website to see what the latest version is: https://www.php.net/supported-versions.php 
+### Install prerequisites:
+```
+# pkg install php81 php81-mysqli php81-mbstring php81-zlib php81-curl php81-gd php81-exif php81-fileinfo php81-pecl-imagick php81-zip php81-filter php81-iconv php81-xmlwriter php81-opcache php81-simplexml php81-session php81-dom
+# sysrc php_fpm_enable=yes
 
-## Configure ports Makefile
 ```
-# portsnap fetch update
-# portsnap extract
-# cd /usr/ports/lang/php74
-# nano Makefile
-```
-Add the following lines to `configure_args+=`
-```
---enable-dom \
---enable-xmlreader \
-```
-Save (CTRL+O,ENTER) and exit (CTRL+X)
 
-## Compile PHP with xmlreader and dom modules built in
+### Configure `php.ini`
 ```
-# make install clean BATCH=yes
-```
-This will take some time. 
-
-## Configure PHP
-```
-# cp /usr/local/etc/php.ini{-production,}
+# cp /usr/local/etc/php.ini-production /usr/local/etc/php.ini
 # nano /usr/local/etc/php.ini
 ```
 
-Search (CTRL+W) for `cgi.fix_pathinfo=` and uncomment and change the value to `cgi.fix_pathinfo=0`
+Uncomment and adjust the folllowing:
 
-Search (CTRL+W) for `upload_max_filesize` and change the value to something bigger. I use `upload_max_filesize = 8M`. This will be the maximum file upload size to your web server. Wordpress themes and plugins that have to be maually uploaded can be several magabytes in size, so this value may have to change. When you create blog posts, or allow users to upload data, this is useful to restricting bandwidth and storage use.
+Note: http://php.net/manual/en/timezones.php for the timezone relevant to you. An example would be Australia/Sydney
+```
+...
+cgi.fix_pathinfo=1
+date.timezone=Country/City
 
-Save (CTRL+O, ENTER) and exit (CTRL+X)
+post_max_size = 512M
+upload_max_filesize = 512M
+memory_limit = 512M
 
+opcache.enable=1
+opcache.enable_cli=1
+opcache.memory_consumption=128
+opcache.interned_strings_buffer=8
+opcache.max_accelerated_files=10000
+opcache.revalidate_freq=1
+opcache.save_comments=1
+...
 ```
-# nano /usr/local/etc/php-fpm.d/www.conf
+Save (CTRL+O, ENTER) and Exit (CTRL+X)
+
+### Change TCP listener to unix socket
+`nano /usr/local/etc/php-fpm.d/www.conf`
 ```
-We are going to configure PHP to communicate on a unix socket, which is more performant than communicating locally over the TCP protocol. comment out `listen = 127.0.0.1:9000` with a `;` and uncomment the following lines as so:
-```
-;listen = 127.0.0.1:9000
-listen = /var/run/php-fpm.sock;
+listen = /var/run/php-fpm.sock
 listen.owner = www
 listen.group = www
 listen.mode = 0660
 ```
-Save (CTRL+O, ENTER) and exit (CTRL+X)
-
-## Start the PHP service, install and view modules
-Your wordpress theme and/or plugins may require more modules, if so run a `pkg search module_name` and `pkg install` the `php74*` variant.
+Save (CTRL+O, ENTER) and Exit (CTRL+X)
 ```
-$ sysrc php_fpm_enable=YES
-$ service php-fpm start
-$ pkg install -y php74-mysqli php74-mbstring php74-zlib php74-curl php74-gd php74-json php74-exif php74-fileinfo php74-openssl php74-pecl-imagick php74-zip php74-filter php74-iconv php74-xmlwriter
-# php -m
+# service php-fpm start
+# apachectl graceful
 ```
-Notice that the `dom` and `xmlreader` modules are active, even tho the `php74-dom` and `php74-xmlreader` packages are not installed. Somce PHP modules require these packages, which will cause a PHP conflict since `dom` and `xmlreader` would be installed twice. To remove these conflicts, navigate to `/usr/local/etc/php/` and delete the `dom.ini` and/or `xmlreader.ini` files since they are already directly compiled into PHP.
-
 ## Test PHP installation
 ```
 # nano /usr/local/www/nginx/test.php
@@ -73,7 +65,8 @@ Add the following line:
 <?php phpinfo(); ?>
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
- Navigate to your jail IP on a web browser: ( example `http://192.168.84.80/test.php` ), you should see a website summary of your PHP installation. PHP and nginx are communicating, congradulations! Now lets delete this test file, since leaking your php info can expose you to hackers that may become aware of specific php version vulnerabilities in the future:
+
+Navigate to your jail IP on a web browser: ( example `http://192.168.84.80/test.php` ), you should see a website summary of your PHP installation. PHP and nginx are communicating, congradulations! Now lets delete this test file, since leaking your php info can expose you to hackers that may become aware of specific php version vulnerabilities in the future:
  ```
  # rm /usr/local/www/nginx/test.php
  ```
