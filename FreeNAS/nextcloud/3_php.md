@@ -65,8 +65,8 @@ Make sure to upgrade to Nextcloud 26 before upgrading to PHP 8.2!
 ```
 # service apache24 stop
 # service php-fpm stop
-# pkg remove php80
-# pkg install php81 php81-ctype php81-curl php81-dom php81-filter php81-gd php81-mbstring php81-opcache php81-posix php81-session php81-simplexml php81-xmlreader php81-xmlwriter php81-zip php81-zlib php81-pdo_mysql php81-fileinfo php81-bz2 php81-intl php81-bcmath php81-gmp php81-exif php81-pecl-redis php81-pecl-imagick php81-pcntl php81-phar php81-pecl-redis php81-xml php81-sysvsem
+# pkg remove php81
+# pkg install php82 php82-ctype php82-curl php82-dom php82-filter php82-gd php82-mbstring php82-opcache php82-posix php82-session php82-simplexml php82-xmlreader php82-xmlwriter php82-zip php82-zlib php82-pdo_mysql php82-fileinfo php82-bz2 php82-intl php82-bcmath php82-gmp php82-exif php82-pecl-redis php82-pecl-imagick php82-pcntl php82-phar php82-pecl-redis php82-xml php82-sysvsem
 # service php-fpm start
 # service apache24 start
 ```
