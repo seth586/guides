@@ -62,4 +62,16 @@ mysql.default_socket=/var/run/mysql/mysql.sock
 ```
 `service php-fpm restart`
 
-
+### Upgrade MariaDB
+Make sure to read the [backup](https://docs.nextcloud.com/server/latest/admin_manual/maintenance/backup.html#mysql-mariadb) and [restoration](https://docs.nextcloud.com/server/latest/admin_manual/maintenance/restore.html) procedure before attempting an upgrade!
+```
+# service apache24 stop
+# cd ~
+# mysqldump --single-transaction --default-character-set=utf8mb4 -u nextcloud -pinsert_password_here nextcloud > nextcloud-sqlbkp_`date +"%Y%m%d"`.bak
+# service mysql-server stop
+# pkg remove mariadb105-server
+# pkg install mariadb106-server
+# service mysql-server start
+# mariadb-upgrade
+# service apache24 start
+```
