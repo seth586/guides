@@ -6,6 +6,19 @@
 ## Configure & Install Wordpress
 Now that we have our FEMP stack up and running, lets install wordpress!
 ```
+# pkg install redis
+# sysrc redis_enable=yes
+```
+`nano /usr/local/etc/redis.conf`:
+```
+port 0
+unixsocket /var/run/redis/redis.sock
+unixsocketperm 770
+```
+Save (CTRL+O, ENTER) and exit (CTRL+X)
+```
+# pw usermod www -G redis
+# service redis start
 # cd ~
 # fetch https://wordpress.org/latest.tar.gz
 # tar -zxvf latest.tar.gz
@@ -18,6 +31,12 @@ Add the first three commented out `//` lines right above the `// ** MySQL settin
 // if (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
 //        $_SERVER['HTTPS'] = 'on';
 //}
+/** REDIS SOCKET */
+define( 'WP_REDIS_SCHEME', 'unix' );
+
+/** REDIS PATH TO SOCKET */
+define( 'WP_REDIS_PATH', '/var/run/redis/redis.sock' );
+
 define( 'WP_HOME', 'http://192.168.84.80' );
 define( 'WP_SITEURL', 'http://192.168.84.80' );
 define( 'DB_NAME', 'database_name_here' );
