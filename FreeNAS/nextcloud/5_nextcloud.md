@@ -83,6 +83,7 @@ Database host = `localhost:/var/run/mysql/mysql.sock`
 # su -m www -c 'php /usr/local/www/nextcloud/occ config:system:set redis port --value=0 --type=integer'
 # su -m www -c 'php /usr/local/www/nextcloud/occ config:system:set memcache.local --value="\OC\Memcache\Redis"'
 # su -m www -c 'php /usr/local/www/nextcloud/occ config:system:set memcache.locking --value="\OC\Memcache\Redis"'
+# su -m www -c 'php /usr/local/www/nextcloud/occ config:system:set filelocking.enabled --value="true"'
 # service apache24 restart
 ```
 
