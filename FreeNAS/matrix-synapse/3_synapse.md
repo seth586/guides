@@ -29,7 +29,7 @@ Familiarize yourself with the [documentation](https://matrix-org.github.io/synap
 
 Create `homeserver.yaml`, Replace `domain.tld` with the domain of your matrix-synapse server:
 ```
-# /usr/local/bin/python3.8 -B -m synapse.app.homeserver -c /usr/local/etc/matrix-synapse/homeserver.yaml --generate-config -H domain.tld --report-stats no
+# /usr/local/bin/python3.9 -B -m synapse.app.homeserver -c /usr/local/etc/matrix-synapse/homeserver.yaml --generate-config -H domain.tld --report-stats no
 # nano /usr/local/etc/matrix-synapse/homeserver.yaml
 ```
 
