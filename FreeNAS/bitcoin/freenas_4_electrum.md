@@ -47,7 +47,6 @@ Install and cleanup:
 ```
 # install -m 0755 -o root -g wheel /root/electrs/target/release/electrs /usr/local/bin
 # rm -r ~/electrs
-# mkdir /var/db/electrs
 ```
 ### 3. Create RPC credentials for Bitcoin Core
 
