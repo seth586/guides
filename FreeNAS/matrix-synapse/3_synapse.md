@@ -37,5 +37,6 @@ Create `homeserver.yaml`, Replace `domain.tld` with the domain of your matrix-sy
 
 Make SURE to read upgrade instructions [here](https://github.com/matrix-org/synapse/blob/develop/docs/upgrade.md)
 ```
-
+# service synapse stop
+# pkg update && pkg upgrade
 ```
