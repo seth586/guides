@@ -35,7 +35,7 @@ python3.9 -m synapse.app.homeserver \
 ```
 pid_file: /var/run/matrix-synapse/homeserver.pid
 
-    bind_addresses: ['::1', '192.168.84.71']
+    bind_addresses: ['::1', '192.168.84.79']
 
 database:
   name: psycopg2
