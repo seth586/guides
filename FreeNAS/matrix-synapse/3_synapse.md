@@ -21,6 +21,7 @@ pip index versions matrix-synapse
 pip install matrix-synapse==1.95.0
 ```
 ### Create config
+Full config instructions are maintained [here](https://matrix-org.github.io/synapse/latest/usage/configuration/config_documentation.html)
 ```
 cd ~/synapse
 python3.9 -m synapse.app.homeserver \
