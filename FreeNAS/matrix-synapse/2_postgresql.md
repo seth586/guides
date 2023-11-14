@@ -48,7 +48,7 @@ $ exit
 
 ### Set database access permission
 ```
-# nano /var/db/postgres/data13/pg_hba.conf
+# nano /var/db/postgres/data16/pg_hba.conf
 ```
 ```
 host    synapse         synapse         192.168.84.79/32        md5
