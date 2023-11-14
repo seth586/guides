@@ -69,3 +69,26 @@ port = 5432
 ```
 # su -m postgres -c 'pg_ctl reload -D /var/db/postgres/data13'
 ```
+
+### Upgrade to a minor version
+Example: Upgrading postgresql14-server-14.7 to postgresql14-server-14.9
+
+In your synapse jail:
+```
+# service service synapse stop 
+```
+
+In your database jail:
+```
+# service postgresql stop
+# pkg update && pkg upgrade
+# service postgresql start
+```
+
+In your synapse jail:
+```
+# service synapse start
+```
+
+### Upgrade to a major version
+Example: Upgrading postgresql14-server-14.9 to postgresql14-server-16.1
