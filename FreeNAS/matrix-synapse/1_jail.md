@@ -35,9 +35,9 @@ I highly recommend the following dataset folder structure, as it will make sense
 
 Create two jails:
 
-database host - synapsedb - 192.168.84.78
+database jail - synapsedb - 192.168.84.78
 
-synapse server - synapse - 192.168.84.79
+synapse jail - synapse - 192.168.84.79
 
 ### Mount datasets to jail
 ```
