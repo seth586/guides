@@ -55,7 +55,7 @@ host    synapse         synapse         192.168.84.79/32        md5
 ```
 ### Allow remote connections
 ```
-# nano /var/db/postgres/data13/postgresql.conf
+# nano /var/db/postgres/data16/postgresql.conf
 ```
 ```
 ...
