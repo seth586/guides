@@ -29,11 +29,7 @@ FreeBSD: {
 # pkg update && pkg upgrade
 # pkg install postgresql16-server sudo
 # sysrc postgresql_enable="YES"
-```
-### Set permissions and start
-```
-# chown postgres:postgres /var/db/postgres/data16
-# service postgresql start
+# chown -R postgres:postgres /var/db/postgres
 ```
 
 ### Initialize database
