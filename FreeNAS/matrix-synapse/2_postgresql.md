@@ -65,7 +65,7 @@ port = 5432
 ```
 ### Reload configuration changes
 ```
-# su -m postgres -c 'pg_ctl reload -D /var/db/postgres/data13'
+# su -m postgres -c 'pg_ctl reload -D /var/db/postgres/data16'
 ```
 
 ### Upgrade to a minor version
