@@ -33,7 +33,20 @@ python3.9 -m synapse.app.homeserver \
 `nano /usr/local/etc/matrix-synapse/homeserver.yaml`:
 ```
 pid_file: /var/run/matrix-synapse/homeserver.pid
+
     bind_addresses: ['::1', '192.168.84.71']
+
+database:
+  name: psycopg2
+  txn_limit: 10000
+  args:
+    user: synapse
+    password: password
+    database: synapse
+    host: 192.168.84.78
+    port: 5432
+    cp_min: 5
+    cp_max: 10
 ```
 
 
