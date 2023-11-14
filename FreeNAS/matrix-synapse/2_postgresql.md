@@ -10,7 +10,7 @@ pkg dependancies between [py39-matrix-synapse](https://www.freshports.org/net-im
 
 This will allow you to snapshot & backup the database, and keep the data safe if you nuke the jail.
 ```
-/mnt/volume1/apps/synapse/db -> /mnt/volume1/iocage/jails/synapse/root/var/db/postgres/data13
+/mnt/volume1/apps/synapse/db -> /mnt/volume1/iocage/jails/synapse/root/var/db/postgres/data16
 ```
 Then start the jail
 
@@ -26,12 +26,13 @@ FreeBSD: {
 }
 ```
 ```
-# pkg install postgresql13-server sudo
+# pkg update && pkg upgrade
+# pkg install postgresql16-server sudo
 # sysrc postgresql_enable="YES"
 ```
 ### Set permissions and start
 ```
-# chown postgres:postgres /var/db/postgres/data13
+# chown postgres:postgres /var/db/postgres/data16
 # service postgresql start
 ```
 
