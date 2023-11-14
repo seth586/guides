@@ -24,8 +24,8 @@ exit
 ### Create config
 Full config instructions are maintained [here](https://matrix-org.github.io/synapse/latest/usage/configuration/config_documentation.html)
 ```
-cd ~/synapse
-python3.9 -m synapse.app.homeserver \
+# cd ~/synapse
+# python3.9 -m synapse.app.homeserver \
     --server-name mydomain.com \
     --config-path /usr/local/etc/matrix-synapse/homeserver.yaml \
     --generate-config \
@@ -60,8 +60,8 @@ database:
 
 ### Autostart
 ```
-pw adduser synapse -d /nonexistent -s /usr/sbin/nologin
-mkdir /usr/local/etc/rc.d && touch /usr/local/etc/rc.d/synapse && chmod +x /usr/local/etc/rc.d/synapse && nano /usr/local/etc/rc.d/synapse
+# pw adduser synapse -d /nonexistent -s /usr/sbin/nologin
+# mkdir /usr/local/etc/rc.d && touch /usr/local/etc/rc.d/synapse && chmod +x /usr/local/etc/rc.d/synapse && nano /usr/local/etc/rc.d/synapse
 ```
 
 ```
@@ -123,13 +123,13 @@ sysrc synapse_enable="YES"
 
 ### start the service 
 ```
-service synapse start && tail -f /var/log/matrix-synapse/homeserver.log
+# service synapse start && tail -f /var/log/matrix-synapse/homeserver.log
 ```
 ### To Upgrade:
 ```
-service synapse stop
-source ~/synapse/env/bin/activate
-pip install -U matrix-synapse==1.95.1
-exit
-service synapse start
+# service synapse stop
+# source ~/synapse/env/bin/activate
+# pip install -U matrix-synapse==1.95.1
+# exit
+# service synapse start
 ```    
