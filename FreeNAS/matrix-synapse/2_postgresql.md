@@ -33,6 +33,7 @@ FreeBSD: {
 ```
 
 ### Initialize database
+Official documentation [here](https://matrix-org.github.io/synapse/latest/postgres.html)
 ```
 # /usr/local/etc/rc.d/postgresql initdb
 # service postgresql start
