@@ -3,40 +3,118 @@
 
 ## Synapse
 
+Official & up to date install instructions are maintained [here](https://matrix-org.github.io/synapse/latest/setup/installation.html)
+
 ### Switch jails and Install
 ```
 # exit
 root@truenas[~]# iocage console synapse
-# pkg install -y nano
-# mkdir -p /usr/local/etc/pkg/repos/
-# nano /usr/local/etc/pkg/repos/FreeBSD.conf
+pkg install rust nano py39-virtualenv py39-pip py39-pillow
+
+
+mkdir -p ~/synapse
+virtualenv -p python3 ~/synapse/env
+source ~/synapse/env/bin/activate.csh
+pip install --upgrade pip
+pip install --upgrade setuptools
+pip index versions matrix-synapse
+pip install matrix-synapse==1.95.0
 ```
+### Create config
 ```
-FreeBSD: {
-  url: "pkg+http://pkg.FreeBSD.org/${ABI}/latest"
+cd ~/synapse
+python3.9 -m synapse.app.homeserver \
+    --server-name mydomain.com \
+    --config-path /usr/local/etc/matrix-synapse/homeserver.yaml \
+    --generate-config \
+    --data-directory /var/db/matrix-synapse \
+    --report-stats=no
+```
+`nano /usr/local/etc/matrix-synapse/homeserver.yaml`:
+```
+pid_file: /var/run/matrix-synapse/homeserver.pid
+    bind_addresses: ['::1', '192.168.84.71']
+```
+
+
+`nano /usr/local/etc/matrix-synapse/mydomain.com.log.config`:
+```
+        filename: /var/log/matrix-synapse/homeserver.log
+```
+
+
+### Autostart
+```
+pw adduser synapse -d /nonexistent -s /usr/sbin/nologin
+mkdir /usr/local/etc/rc.d && touch /usr/local/etc/rc.d/synapse && chmod +x /usr/local/etc/rc.d/synapse && nano /usr/local/etc/rc.d/synapse
+```
+
+```
+#!/bin/sh
+#
+# Created by: Mark Felder <feld@FreeBSD.org>
+
+# PROVIDE: synapse
+# REQUIRE: LOGIN postgresql
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable `synapse':
+#
+# synapse_enable="YES"
+
+. /etc/rc.subr
+name=synapse
+
+rcvar=synapse_enable
+load_rc_config ${name}
+
+: ${synapse_enable:=NO}
+: ${synapse_user:=synapse}
+: ${synapse_conf:=/usr/local/etc/matrix-synapse/homeserver.yaml}
+: ${synapse_dbdir:=/var/db/matrix-synapse}
+: ${synapse_logdir:=/var/log/matrix-synapse}
+: ${synapse_pidfile:=/var/run/matrix-synapse/homeserver.pid}
+
+pidfile="${synapse_pidfile}"
+procname=/usr/local/bin/python3.9
+command=/usr/local/bin/python3.9
+command_args="-m synapse.app.homeserver --daemonize -c ${synapse_conf}"
+start_precmd=start_precmd
+
+start_precmd()
+{
+        if [ ! -d ${synapse_pidfile%/*} ] ; then
+                install -d -o ${synapse_user} -g wheel ${synapse_pidfile%/*};
+        fi
+
+        if [ ! -d ${synapse_dbdir} ] ; then
+                install -d -o ${synapse_user} -g wheel ${synapse_dbdir};
+        fi
+
+        if [ ! -d ${synapse_logdir} ] ; then
+                install -d -o ${synapse_user} -g wheel ${synapse_logdir};
+        fi
 }
-```
-Save (CTRL+o, ENTER) and exit (CTRL+x)
 
+run_rc_command "$1"
 ```
-# pkg install -y py39-matrix-synapse
-# sysrc synapse_enable="YES"
 ```
-
-### Configuration
-
-Familiarize yourself with the [documentation](https://matrix-org.github.io/synapse/latest/setup/installation.html) as everyone must configure to their individual needs.
-
-Create `homeserver.yaml`, Replace `domain.tld` with the domain of your matrix-synapse server:
-```
-# /usr/local/bin/python3.9 -B -m synapse.app.homeserver -c /usr/local/etc/matrix-synapse/homeserver.yaml --generate-config -H domain.tld --report-stats no
-# nano /usr/local/etc/matrix-synapse/homeserver.yaml
+sysrc synapse_enable="YES"
 ```
 
-### Upgrade Synapse
 
-Make SURE to read upgrade instructions [here](https://github.com/matrix-org/synapse/blob/develop/docs/upgrade.md)
+
+
+### start the service 
 ```
-# service synapse stop
-# pkg update && pkg upgrade
+service synapse start && tail -f /var/log/matrix-synapse/homeserver.log
 ```
+### To Upgrade:
+```
+service synapse stop
+source ~/synapse/env/bin/activate
+pip install -U matrix-synapse==1.95.1
+exit
+service synapse start
+```    
