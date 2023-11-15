@@ -133,6 +133,8 @@ sysrc synapse_enable="YES"
 ```
 # service synapse start && tail -f /var/log/matrix-synapse/homeserver.log
 ```
+CTRL+C to end tail
+
 ### To Upgrade:
 ```
 # service synapse stop
