@@ -146,7 +146,7 @@ Use this account to log in to synapse with your client for the first time. We wi
 ### To Upgrade:
 ```
 # service synapse stop
-# source ~/synapse/env/bin/activate
+# source ~/synapse/env/bin/activate.csh
 pip install --upgrade pip
 pip install --upgrade setuptools 
 pip install -U "matrix-synapse[postgres]"==1.95.1
