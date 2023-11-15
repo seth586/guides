@@ -17,12 +17,10 @@ root@truenas[~]# iocage console synapse
 
 ### Install
 ```
-pkg install rust nano py39-virtualenv py39-pip py39-pillow postgresql16-client
-
-
-mkdir -p ~/synapse
-virtualenv -p python3 ~/synapse/env
-source ~/synapse/env/bin/activate.csh
+# pkg install rust nano py39-virtualenv py39-pip py39-pillow postgresql16-client
+# mkdir -p ~/synapse
+# virtualenv -p python3 ~/synapse/env
+# source ~/synapse/env/bin/activate.csh
 pip install --upgrade pip
 pip install --upgrade setuptools
 pip index versions matrix-synapse
@@ -31,14 +29,14 @@ pip install "matrix-synapse[postgres]"==1.95.0
 ### Create config
 Full config instructions are maintained [here](https://matrix-org.github.io/synapse/latest/usage/configuration/config_documentation.html)
 ```
-# cd ~/synapse
-# python3.9 -m synapse.app.homeserver \
+cd ~/synapse
+python3.9 -m synapse.app.homeserver \
     --server-name mydomain.com \
     --config-path /usr/local/etc/matrix-synapse/homeserver.yaml \
     --generate-config \
     --data-directory /var/db/matrix-synapse \
     --report-stats=no
-# deactivate
+deactivate
 ```
 `nano /usr/local/etc/matrix-synapse/homeserver.yaml`:
 ```
@@ -136,9 +134,9 @@ sysrc synapse_enable="YES"
 ```
 # service synapse stop
 # source ~/synapse/env/bin/activate
-# pip install --upgrade pip
-# pip install --upgrade setuptools 
-# pip install -U "matrix-synapse[postgres]"==1.95.1
-# exit
+pip install --upgrade pip
+pip install --upgrade setuptools 
+pip install -U "matrix-synapse[postgres]"==1.95.1
+deactivate
 # service synapse start
 ```    
