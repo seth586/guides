@@ -55,6 +55,9 @@ database:
     port: 5432
     cp_min: 5
     cp_max: 10
+
+enable_registration: true
+registration_requires_token: true
 ```
 
 
