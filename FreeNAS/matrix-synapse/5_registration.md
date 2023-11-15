@@ -23,7 +23,7 @@ Password: (enter a strong password here)
 Make admin [no]: no
 
 # pkg install gmake
-# pip install matrix-registration-bot
+# pip install db-sqlite3 matrix-registration-bot
 # pip install simplematrixbotlib
 # mkdir /usr/local/etc/matrix-registration-bot
 ```
