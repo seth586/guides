@@ -3,7 +3,7 @@
 
 ## Reverse Proxy
 
-Enter your `reverseproxy` jail and add the following file:
+Official reverse proxy dpcumentation [here](https://matrix-org.github.io/synapse/latest/reverse_proxy.html). Enter your `reverseproxy` jail and add the following file:
 ```
 # nano /usr/local/etc/nginx/vdomains/domain.tld.conf
 ```
