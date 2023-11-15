@@ -5,10 +5,17 @@
 
 Official & up to date install instructions are maintained [here](https://matrix-org.github.io/synapse/latest/setup/installation.html)
 
-### Switch jails and Install
+### Switch jails and set permissions for mount points:
 ```
 # exit
 root@truenas[~]# iocage console synapse
+# pw adduser synapse -d /nonexistent -s /usr/sbin/nologin
+# pw usermod synapse -G wheel
+# chown -R synapse /usr/local/etc/matrix-synapse
+```
+
+
+```
 pkg install rust nano py39-virtualenv py39-pip py39-pillow
 
 
@@ -60,8 +67,6 @@ database:
 
 ### Autostart
 ```
-# pw adduser synapse -d /nonexistent -s /usr/sbin/nologin
-# pf usermod synapse -G wheel
 # mkdir /usr/local/etc/rc.d && touch /usr/local/etc/rc.d/synapse && chmod +x /usr/local/etc/rc.d/synapse && nano /usr/local/etc/rc.d/synapse
 ```
 
