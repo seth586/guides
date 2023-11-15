@@ -14,7 +14,7 @@ root@truenas[~]# iocage console synapse
 # chown -R synapse /usr/local/etc/matrix-synapse
 ```
 
-
+### Install
 ```
 pkg install rust nano py39-virtualenv py39-pip py39-pillow
 
