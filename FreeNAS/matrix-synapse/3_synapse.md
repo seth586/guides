@@ -38,6 +38,7 @@ Full config instructions are maintained [here](https://matrix-org.github.io/syna
     --generate-config \
     --data-directory /var/db/matrix-synapse \
     --report-stats=no
+# deactivate
 ```
 `nano /usr/local/etc/matrix-synapse/homeserver.yaml`:
 ```
