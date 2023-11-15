@@ -33,9 +33,9 @@ Make admin [no]: no
 bot:
   server: "https://synapse.example.com"
   username: "registration-bot"
-  access_token: "verysecret"
+  # access_token: "verysecret"
   # It is also possible to use a password based login by commenting out the access token line and adjusting the line below
-  # password: "secretpassword" 
+  password: "secretpassword" 
 api:
   # API endpoint of the registration tokens
   base_url: 'https://synapse.example.com'
