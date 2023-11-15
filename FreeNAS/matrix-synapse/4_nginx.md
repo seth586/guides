@@ -27,6 +27,7 @@ server {
         # Nginx by default only allows file uploads up to 1M in size
         # Increase client_max_body_size to match max_upload_size defined in homeserver.yaml
         client_max_body_size 50M;
+        proxy_http_version 1.1;
     }
 
     location /.well-known/matrix/server {
