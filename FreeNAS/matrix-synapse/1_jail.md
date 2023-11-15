@@ -63,7 +63,7 @@ How to verify locations:
 ```
 #### 2. Database folder: 
 ```
-/var/db/postgres/data13
+/var/db/postgres/data16
 ```
 How to verify database location:
 ```
