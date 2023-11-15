@@ -136,7 +136,7 @@ sysrc synapse_enable="YES"
 CTRL+C to end tail
 
 ### Create Admin account
-Use this account to log in to synapse with your client for the first time. We will use the registration bot in the next step to create normal users.
+Use this account to log in to synapse with your client for the first time. We will use the registration bot in the "token registration" step to create normal users.
 ```
 /root/synapse/env/bin/register_new_matrix_user -c /usr/local/etc/matrix-synapse/homeserver.yaml http://localhost:8008
 ```
