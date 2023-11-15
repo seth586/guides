@@ -27,6 +27,12 @@ Make admin [no]: no
 # pip install simplematrixbotlib
 # mkdir /usr/local/etc/matrix-registration-bot
 ```
+#### Create access token
+get an admin token from your admin account
+```
+# curl -X POST --header 'Content-Type: application/json' -d '{"identifier": { "type": "m.id.user", "user": "admin" },"password": "mypassword","type": "m.login.password"}' 'https://mydomain.com/_matrix/client/r0/login'
+```
+
 #### Configure
 `nano /usr/local/etc/matrix-registration-bot/config.yml`:
 ```
