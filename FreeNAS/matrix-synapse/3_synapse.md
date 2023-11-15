@@ -92,8 +92,8 @@ load_rc_config ${name}
 : ${synapse_pidfile:=/var/run/matrix-synapse/homeserver.pid}
 
 pidfile="${synapse_pidfile}"
-procname=/usr/local/bin/python3.9
-command=/usr/local/bin/python3.9
+procname=/root/synapse/env/bin/python3.9
+command=/root/synapse/env/bin/python3.9
 command_args="-m synapse.app.homeserver --daemonize -c ${synapse_conf}"
 start_precmd=start_precmd
 
