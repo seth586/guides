@@ -26,7 +26,7 @@ source ~/synapse/env/bin/activate.csh
 pip install --upgrade pip
 pip install --upgrade setuptools psycopg2-binary
 pip index versions matrix-synapse
-pip install matrix-synapse==1.95.0
+pip install "matrix-synapse[postgres]"==1.95.0
 ```
 ### Create config
 Full config instructions are maintained [here](https://matrix-org.github.io/synapse/latest/usage/configuration/config_documentation.html)
