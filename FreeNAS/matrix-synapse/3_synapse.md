@@ -136,7 +136,7 @@ sysrc synapse_enable="YES"
 # service synapse stop
 # source ~/synapse/env/bin/activate
 # pip install --upgrade pip
-# pip install --upgrade setuptools
+# pip install --upgrade setuptools psycopg2-binary
 # pip install -U matrix-synapse==1.95.1
 # exit
 # service synapse start
