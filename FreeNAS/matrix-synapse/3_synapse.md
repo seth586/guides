@@ -17,6 +17,7 @@ virtualenv -p python3 ~/synapse/env
 source ~/synapse/env/bin/activate.csh
 pip install --upgrade pip
 pip install --upgrade setuptools
+pip install psycopg2-binary
 pip index versions matrix-synapse
 pip install matrix-synapse==1.95.0
 ```
