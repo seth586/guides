@@ -22,7 +22,7 @@ New user localpart [root]: registration-bot
 Password: (enter a strong password here)
 Make admin [no]: no
 
-# pkg install gmake
+# pkg install gmake py39-sqlite3
 # pip install db-sqlite3 matrix-registration-bot
 # pip install simplematrixbotlib
 # mkdir /usr/local/etc/matrix-registration-bot
