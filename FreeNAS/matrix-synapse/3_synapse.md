@@ -61,6 +61,7 @@ database:
 ### Autostart
 ```
 # pw adduser synapse -d /nonexistent -s /usr/sbin/nologin
+# pf usermod synapse -G wheel
 # mkdir /usr/local/etc/rc.d && touch /usr/local/etc/rc.d/synapse && chmod +x /usr/local/etc/rc.d/synapse && nano /usr/local/etc/rc.d/synapse
 ```
 
