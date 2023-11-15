@@ -44,9 +44,9 @@ bot:
   password: "secretpassword" 
 api:
   # API endpoint of the registration tokens
-  base_url: 'https://synapse.example.com'
+  base_url: 'http://192.168.84.79:8008'
   # Access token of an administrator on the server
-  token: "supersecret"
+  token: "syt_GyVtmQblahblahblahsupersecretchangethis"
 logging:
   level: DEBUG|INFO|ERROR
 ```
