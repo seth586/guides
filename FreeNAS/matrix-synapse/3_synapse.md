@@ -12,6 +12,7 @@ root@truenas[~]# iocage console synapse
 # pw adduser synapse -d /nonexistent -s /usr/sbin/nologin
 # pw usermod synapse -G wheel
 # chown -R synapse /usr/local/etc/matrix-synapse
+# chown -R synapse /var/db/matrix-synapse
 ```
 
 ### Install
