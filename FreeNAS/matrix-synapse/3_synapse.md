@@ -40,6 +40,8 @@ deactivate
 ```
 `nano /usr/local/etc/matrix-synapse/homeserver.yaml`:
 ```
+server_name: "mydomain.com"
+public_baseurl: "https://mydomain.com>"
 pid_file: /var/run/matrix-synapse/homeserver.pid
 
     bind_addresses: ['::1', '192.168.84.79']
