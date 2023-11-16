@@ -94,9 +94,6 @@ bitcoin-25.1.tar.gz: OK
 # gpg --keyserver hkps://keys.openpgp.org --refresh-keys
 # gpg --verify SHA256SUMS.asc
 # rm SHA256SUMS*
-```
-* extract the downloaded file and remove the .tar.gz
-```
 # tar xvf bitcoin-25.1.tar.gz
 # rm bitcoin-25.1.tar.gz
 ```
