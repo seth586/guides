@@ -111,9 +111,10 @@ To see what is in the current directory, type `ls`
 # ./configure --without-wallet --with-gui=no MAKE=gmake
 # gmake check
 ```
-This process may take a while. Once its done and installed, we need to add a rc.d script to automatically start the bitcoin daemon on start. Read more about FreeBSD rc.d scripting [here](https://www.freebsd.org/doc/en_US.ISO8859-1/articles/rc-scripting/index.html). Again, if you previously installed `bitcoin-daemon` package, you can skip this step since it already exists.
+This process may take a while. Once its done, install the binary we compiled. We need to add a rc.d script to automatically start the bitcoin daemon on start. Read more about FreeBSD rc.d scripting [here](https://www.freebsd.org/doc/en_US.ISO8859-1/articles/rc-scripting/index.html). Again, if you previously installed `bitcoin-daemon` package, you can skip this step since it already exists.
 
 ```
+# gmake install
 # nano /usr/local/etc/rc.d/bitcoind
 ```
 
