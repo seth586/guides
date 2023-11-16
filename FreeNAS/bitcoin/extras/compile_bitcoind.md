@@ -58,15 +58,8 @@ Lets start installing stuff! (answer proceed questions with `y`)
 # pkg install autoconf automake boost-libs git gmake libevent libtool libzmq4 pkgconf wget nano
 ```
 
-### Download Bitcoin Core
-Go to https://github.com/bitcoin/bitcoin/releases, find the tar.gz release we want to install. The latest release is 0.21.1 at https://bitcoincore.org/bin/bitcoin-core-0.21.1/bitcoin-0.21.1.tar.gz . Copy the link. PuTTY will let you paste by right clicking.
-
-```
-# cd ~
-# wget https://bitcoincore.org/bin/bitcoin-core-0.21.1/bitcoin-0.21.1.tar.gz
-```
-### Verify Bitcoin Core
-* Install pgp
+### Set Up PGP
+Do this the first time you set up GnuPG. Skip this step if you build from source again in the future.
 ```
 # pkg install gnupg
 ```
@@ -87,55 +80,36 @@ uid                      Wladimir J. van der Laan (Bitcoin Core binary release s
 ```
 # gpg --import laanwj-releases.asc
 ```
-* Download the hashes
+
+### Download & Verify release
+Go to https://github.com/bitcoin/bitcoin/releases, find the tar.gz release we want to install. Copy the link. PuTTY will let you paste by right clicking.
+
 ```
-# wget https://bitcoincore.org/bin/bitcoin-core-0.21.1/SHA256SUMS.asc -O SHA256SUMS.asc
-```
-* Verify
-```
-# gpg --verify SHA256SUMS.asc 
-```
-* Look for `Good signature` in the output
-```
-gpg: Warning: using insecure memory!
-gpg: Signature made Sat May  1 12:33:58 2021 PDT
-gpg:                using RSA key 90C8019E36C2E964
-gpg: Good signature from "Wladimir J. van der Laan (Bitcoin Core binary release signing key) <laanwj@gmail.com>" [unknown]
-gpg: WARNING: This key is not certified with a trusted signature!
-gpg:          There is no indication that the signature belongs to the owner.
-Primary key fingerprint: 01EA 5486 DE18 A882 D4C2  6845 90C8 019E 36C2 E964
-```
-* Compare to the hashes to the hash of the downloaded file
-```
-# shasum -c --ignore-missing SHA256SUMS.asc bitcoin-0.21.1.tar.gz
-```
-* Look for `OK` in the output
-```
-bitcoin-0.21.1.tar.gz: OK
-shasum: WARNING: 20 lines are improperly formatted
-shasum: bitcoin-0.21.1.tar.gz: no properly formatted SHA checksum lines found
+# cd ~
+# wget https://bitcoincore.org/bin/bitcoin-core-25.1/bitcoin-25.1.tar.gz
+# wget https://bitcoincore.org/bin/bitcoin-core-25.1/SHA256SUMS -O SHA256SUMS
+# wget https://bitcoincore.org/bin/bitcoin-core-25.1/SHA256SUMS.asc -O SHA256SUMS.asc
+# shasum -c --ignore-missing SHA256SUMS
+bitcoin-25.1.tar.gz: OK
+# gpg --keyserver hkps://keys.openpgp.org --refresh-keys
+# gpg --verify SHA256SUMS.asc
+# rm SHA256SUMS*
 ```
 * extract the downloaded file and remove the .tar.gz
 ```
-# tar xvf bitcoin-0.21.1.tar.gz
-# rm bitcoin-0.21.1.tar.gz
+# tar xvf bitcoin-25.1.tar.gz
+# rm bitcoin-25.1.tar.gz
 ```
 
 To see what is in the current directory, type `ls`
 
 ### Configure and compile:
 ```
-# cd bitcoin-0.21.1
+# cd bitcoin-25.1
 # sh 
-# ./contrib/install_db4.sh `pwd`
-# export BDB_PREFIX="$PWD/db4"
 # ./autogen.sh
-# ./configure MAKE=gmake --with-gui=no --without-miniupnpc --enable-util-cli BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include"
+# ./configure --without-wallet --with-gui=no MAKE=gmake
 # gmake check
-# gmake install
-# csh
-# cd ~
-# rm -r bitcoin-0.21.1
 ```
 This process may take a while. Once its done and installed, we need to add a rc.d script to automatically start the bitcoin daemon on start. Read more about FreeBSD rc.d scripting [here](https://www.freebsd.org/doc/en_US.ISO8859-1/articles/rc-scripting/index.html). Again, if you previously installed `bitcoin-daemon` package, you can skip this step since it already exists.
 
