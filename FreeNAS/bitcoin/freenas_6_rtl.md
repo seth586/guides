@@ -21,7 +21,7 @@ If not already there, SSH into your freenas box and switch to your bitcoin jail.
 # cd rtl
 # npm install --omit=dev --legacy-peer-deps
 ```
-Once the install is complete, create RTL-Config.json [configuration options](https://github.com/Ride-The-Lightning/RTL/blob/master/docs/Application_configurations):
+Once the install is complete, create RTL-Config.json [configuration options](https://github.com/Ride-The-Lightning/RTL/tree/master?tab=readme-ov-file#prep):
 ```
 # nano ~/rtl/RTL-Config.json
 ```
