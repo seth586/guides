@@ -25,7 +25,7 @@ Once the install is complete, create RTL-Config.json [configuration options](htt
 ```
 # nano ~/rtl/RTL-Config.json
 ```
-Edit the following lines, make sure to set `rtlPass=`:
+Edit the following lines, make sure to set `multiPass`:
 ```
 {
   "multiPass": "enteryourownpasswordhere",
