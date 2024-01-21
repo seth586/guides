@@ -6,7 +6,7 @@
 
 ### Intro
 
-[Matrix](https://matrix.org/) is a protocol for secure, decentralised, real-time communication. [Synapse](https://github.com/matrix-org/synapse) is the reference server implementation of the matrix protocol and [Element](https://element.io/) is the reference client implementation of the matrix protocol. Other servers and clients exist, but are usually forks of the main projects.
+[Matrix](https://matrix.org/) is a protocol for secure, decentralised, real-time communication. [Synapse](https://github.com/element-hq/synapse) is the reference server implementation of the matrix protocol and [Element](https://element.io/) is the reference client implementation of the matrix protocol. Other servers and clients exist, but are usually forks of the main projects.
 
 ### What makes the Matrix protocol so special?
 
@@ -47,6 +47,6 @@ Optionally, you can set up [bridges](https://matrix.org/bridges/), to communicat
 
 ### Target Versions
 
-This guide was written and tested to work with FreeBSD 12.2 and Synapse 1.40. If installing a newer version (likely) catch up on the [upgrade notes](https://matrix-org.github.io/synapse/latest/upgrade) to ensure these instructions and configurations are still accurate. 
+This guide was written and tested to work with FreeBSD 12.2 and Synapse 1.40. If installing a newer version (likely) catch up on the [upgrade notes](https://element-hq.github.io/synapse/develop/upgrade.html) to ensure these instructions and configurations are still accurate. 
 
 Next: [ [Jail Creation](1_jail.md) ]
