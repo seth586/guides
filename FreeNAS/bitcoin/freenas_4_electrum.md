@@ -11,33 +11,17 @@ Join the chatroom on the matrix chat protocol: [#truenasnode:nym.im](https://mat
 Read up more on electrs at its github page [here](https://github.com/romanz/electrs)
 
 ### 1. Set up environment
-TrueNAS 12's base compiler is llvm10, however we need to downgrade to version 9 for a sucessful compile. Download prerequisites and compile:
 ```
-# c++ --version
-FreeBSD clang version 10.0.1
-# pkg install rust git llvm90 nano
-# ln /usr/local/llvm90/bin/clang++ /usr/local/llvm90/bin/c++
-# nano ~/.cshrc
+# pkg install rust llvm14 nano
 ```
-Add the `/usr/local/llvm90/bin` directory to a priority position in the shell's path:
-```
-...
-set path = (/usr/local/llvm90/bin /sbin /bin /usr/sbin /usr/bin /usr/local/sbin /usr/local/bin $HOME/bin)
-...
-```
-Save (CTRL+O, ENTER) and exit (CTRL+X). Refresh your shell:
-```
-# source ~/.cshrc
-# c++ --version
-clang version 9.0.1
-```
-Success! 
 
 ### 2. Compile & Install
+Check for the latest releases [here](https://github.com/romanz/electrs/releases)
 ```
 # cd ~
-# git clone https://github.com/romanz/electrs
-# cd electrs
+# fetch https://github.com/romanz/electrs/archive/refs/tags/v0.10.2.tar.gz
+# tar -xvf v0.10.2.tar.gz
+# cd electrs*
 # cargo build --release
 ```
 
