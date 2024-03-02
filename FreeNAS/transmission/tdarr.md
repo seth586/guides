@@ -8,6 +8,7 @@ Set up a NFS share of your media folder, and limit access to your ubuntu server 
 $ sudo apt install nfs-common
 $ showmount --exports 192.168.84.85 # <-- your NFS server IP address
 $ sudo mkdir /mnt/nfs/media
+$ sudo mount 192.168.84.85:/mnt/volume/media /mnt/nfs/media
 $ sudo ls -lh /mnt/nfs/media # <-- permission should be denied, this is good! Lets create a user with access
 $ sudo ls -lh /mnt/nfs       # <-- note the UID and GID of the media folder, these need to match our new user and group, example 810 810
 $ sudo groupadd -g 810 mediausers
@@ -17,6 +18,8 @@ $ sudo nano /etc/pam.d/su    # <-- allow your default admin user to access media
 auth sufficient pam_rootok.so
 auth  [success=ignore default=1] pam_succeed_if.so user = mediauser
 auth  sufficient                 pam_succeed_if.so use_uid user = seth
+$ sudo nano /etc/fstab       # <-- lets make the mount persist on reboots
+192.168.84.85:/mnt/volume/media /mnt/nfs/media  nfs      defaults    0       0
 ```
 
 create docker compose yaml:
