@@ -28,7 +28,9 @@ Create your media dataset, and apply `jellyfin:jellyfin` as `user:group` recursi
 SSH into your `jellyfin` jail:
 ```
 iocage console jellyfin
+pw group add jellyfin -g 710
 pw user add jellyfin -c jellyfin -u 710 -d /nonexistent -s /usr/bin/nologin
+pw group mod jellyfin -m jellyfin
 cat /etc/passwd
 cat /etc/group
 ```
