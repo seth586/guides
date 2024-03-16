@@ -2,7 +2,7 @@
 
 Setup instructions for the [LZW31 Black Series](https://help.inovelli.com/en/collections/5651190-black-series-dimmer-switch) Z-wave dimmer switch
 
-THe beauty of Z-Wave is that it creates its own 900Mhz mesh network. Each device is a "node" that can use other "nodes" for range extension and determine the best signal quality path for routing data. The "hub controller", which in this setup is a [USB stick](https://www.getzooz.com/zooz-zst39-z-wave-long-range-usb-stick/) attached to home assistant, is only required to initialize the network. Once your z-wave system is set up, your z-wave nodes can talk directly to each other without the need for the "hub controller". 
+The beauty of Z-Wave is that it creates its own 900Mhz mesh network. Each device is a "node" that can use other "nodes" for range extension and determine the best signal quality path for routing data. The "hub controller", which in this setup is a [USB stick](https://www.getzooz.com/zooz-zst39-z-wave-long-range-usb-stick/) attached to home assistant, is only required to initialize the network. Once your z-wave system is set up, your z-wave nodes can talk directly to each other without the need for the "hub controller". 
 
 ### Initialize Z-Wave and Pair first switch
 ```
