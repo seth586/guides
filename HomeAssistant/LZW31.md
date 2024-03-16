@@ -36,3 +36,10 @@ The beauty of Z-Wave is that it creates its own 900Mhz mesh network. Each device
 9.  Triple click the switch config button
 10.  You should now be able to start the sync process again and sync securely.
 ```
+
+### 4. Sync Dimming with Smart Bulb Mode + Adaptive Lighting
+
+The biggest selling point for smart bulbs is to change color temperature with time of day. Bright cool lihgt during the day (600k temperature), dimmed warm light (1500k temperature) at night.
+```
+ENABLE detect_non_ha_changes: Detects and halts adaptations for non-light.turn_on state changes. Needs take_over_control enabled. Caution: Some lights might falsely indicate an ‘on’ state, which could result in lights turning on unexpectedly. Disable this feature if you encounter such issues.
+```
