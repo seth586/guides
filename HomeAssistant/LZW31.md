@@ -25,11 +25,13 @@ The beauty of Z-Wave is that it creates its own 900Mhz mesh network. Each device
 ```
 
 ### 3. Install and update firmware
+
+[wiring documentation](https://help.inovelli.com/en/articles/8478836-black-series-dimmer-switch-wiring-schematics) [firmware notes](https://help.inovelli.com/en/articles/8506118-black-series-dimmer-switch-firmware-changelog)
 ```
-4.  Wire-in LZW31 according to official [wiring documentation](https://help.inovelli.com/en/articles/8478836-black-series-dimmer-switch-wiring-schematics)
+4.  Wire-in LZW31 according to official wiring documentation.
 5.  Load Z-Wave JS UI / hamburger menu ☰ / manage nodes ∞ / Inclusion
 6.  Triple click the switch config button
-7.  The device will sync, but not securely. Update firmware to 1.52 (most feature rich, 3 scene controls), check [here](https://help.inovelli.com/en/articles/8506118-black-series-dimmer-switch-firmware-changelog) if you dont need latest (and last) version 1.57)
+7.  The device will sync, but not securely. Update firmware to 1.52 (most feature rich, 3 scene controls), check if you need version 1.57)
 8.  Load Z-Wave JS UI / hamburger menu ☰ / manage nodes ∞ / Exclusion
 9.  Triple click the switch config button
 10.  You should now be able to start the sync process again and sync securely.
