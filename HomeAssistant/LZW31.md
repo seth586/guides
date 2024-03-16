@@ -11,9 +11,9 @@ The beauty of Z-Wave is that it creates its own 900Mhz mesh network. Each device
 
 
 ### 1. Remove Z-Wave JS add-on & Z-Wave Integration
-```
-1. If you previously installed Z-Wave JS, we can not simply uninstall it, because Z-Wave Integration will see it missing and automatically re-install it when it goes missing.
-```
+
+1. If you previously installed Z-Wave JS, we can not simply uninstall it, because Z-Wave Integration will see it missing and automatically re-install it when it goes missing. Uninstall Z-Wave integration, then uninstall Z-Wave JS add-on.
+
 
 
 ### 2. Initialize Z-Wave on home assistant
