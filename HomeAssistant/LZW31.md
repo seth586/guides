@@ -4,11 +4,28 @@ Setup instructions for the [LZW31 Black Series](https://help.inovelli.com/en/col
 
 The beauty of Z-Wave is that it creates its own 900Mhz mesh network. Each device is a "node" that can use other "nodes" for range extension and determine the best signal quality path for routing data. The "hub controller", which in this setup is a [USB stick](https://www.getzooz.com/zooz-zst39-z-wave-long-range-usb-stick/) attached to home assistant, is only required to initialize the network. Once your z-wave system is set up, your z-wave nodes can talk directly to each other without the need for the "hub controller". 
 
-### Initialize Z-Wave and Pair first switch
+### Defintions:
+`Z-Wave JS` and `Z-Wave JS UI` are two seperate add-ons, we want to use the latter! They will conflict with each other if both are installed!
+
+`Z-Wave Integration` is an integration that acts as a communication bridge between Home Assistant and `Z-Wave JS` OR `Z-Wave JS UI`. Its defaults will install `Z-Wave JS`. We do not want this!
+
+
+### 1. Remove Z-Wave JS add-on & Z-Wave Integration
 ```
-1. Install add-on "Z-Wave JS UI"
-2. Allow it to install Z-Wave Integration
-3. Do NOT allow Z-Wave integration to install Z-Wave JS add-on (not the same as Z-wave JS UI), these will conflict with each other
+1. If you previously installed Z-Wave JS, we can not simply uninstall it, because Z-Wave Integration will see it missing and automatically re-install it when it goes missing.
+```
+
+
+### 2. Initialize Z-Wave on home assistant
+```
+1. Install add-on "Z-Wave JS UI" and start it
+2. Install integration "Z-Wave"
+3. A dialog box will show, asking to use the add-on: UNCHECK that box!
+4. In the next dialog it will ask for the server. Enter: ws://a0d7b954-zwavejs2mqtt:3000
+```
+
+### 3. Install and update firmware
+```
 4.  Wire-in LZW31 according to official [wiring documentation](https://help.inovelli.com/en/articles/8478836-black-series-dimmer-switch-wiring-schematics)
 5.  Load Z-Wave JS UI / hamburger menu ☰ / manage nodes ∞ / Inclusion
 6.  Triple click the switch config button
