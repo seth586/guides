@@ -27,6 +27,7 @@ The beauty of Z-Wave is that it creates its own 900Mhz mesh network. Each device
 ### 3. Install and update firmware
 
 [wiring documentation](https://help.inovelli.com/en/articles/8478836-black-series-dimmer-switch-wiring-schematics) [firmware notes](https://help.inovelli.com/en/articles/8506118-black-series-dimmer-switch-firmware-changelog)
+Use Firmware 1.52 for scene controls, use firmware 1.57 for your slave 3 way dimming switch
 ```
 4.  Wire-in LZW31 according to official wiring documentation.
 5.  Load Z-Wave JS UI / hamburger menu ☰ / manage nodes ∞ / Inclusion
