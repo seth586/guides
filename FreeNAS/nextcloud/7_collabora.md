@@ -7,3 +7,4 @@
 Spin up ubuntu VM
 
 https://docs.nextcloud.com/server/latest/admin_manual/office/example-ubuntu.html
+https://www.collaboraoffice.com/code/linux-packages/
