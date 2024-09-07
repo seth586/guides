@@ -144,6 +144,7 @@ Use this account to log in to synapse with your client for the first time. We wi
 ```
 
 ### To Upgrade:
+Read release notes [here](https://element-hq.github.io/synapse/develop/upgrade.html)
 ```
 # service synapse stop
 # source ~/synapse/env/bin/activate.csh
