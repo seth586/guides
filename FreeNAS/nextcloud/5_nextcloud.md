@@ -104,3 +104,8 @@ source ~/.cshrc
 occ status
 ```
 
+### Upgrade Nextcloud
+```
+su -m www -c 'php /usr/local/www/nextcloud/updater/updater.phar'
+```
+
