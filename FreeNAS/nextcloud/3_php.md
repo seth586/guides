@@ -50,7 +50,7 @@ listen.mode = 0660
 ```
 Save (CTRL+O, ENTER) and Exit (CTRL+X)
 ```
-# service php-fpm start
+# service php_fpm start
 # apachectl graceful
 ```
 
@@ -67,7 +67,7 @@ Make sure to upgrade to Nextcloud 26 before upgrading to PHP 8.2!
 # service php-fpm stop
 # pkg remove php81
 # pkg install php82 php82-ctype php82-curl php82-dom php82-filter php82-gd php82-mbstring php82-opcache php82-posix php82-session php82-simplexml php82-xmlreader php82-xmlwriter php82-zip php82-zlib php82-pdo_mysql php82-fileinfo php82-bz2 php82-intl php82-bcmath php82-gmp php82-exif php82-pecl-redis php82-pecl-imagick php82-pcntl php82-phar php82-pecl-redis php82-xml php82-sysvsem
-# service php-fpm start
+# service php_fpm start
 # service apache24 start
 ```
 
