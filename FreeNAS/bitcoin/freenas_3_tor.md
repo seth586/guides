@@ -10,7 +10,7 @@ Join the chatroom on the matrix chat protocol: [#truenasnode:nym.im](https://mat
 
 Tor is a communications protocol that encrypts and anonymizes communications by bouncing encrypted data between relays. It's like using several different VPNs between client and server. TOR also allows you to securely and privately remote connect to your home server with a static address and zero router configuration! Hidden Service Version 3 is not discoverable, so you don't have to worry about exposing ports to the public, as long as you don't share your hidden service onion address!
 
-i2p is similar to tor, however runs as a distributed systyem instead of a curated one. i2p was recently [supported](https://i2pd.readthedocs.io/en/latest/user-guide/FAQ/#how-is-i2p-different-from-tor) by bitcoin core 0.22. We will use the c++ version, [i2pd](https://www.freshports.org/security/i2pd/)
+i2p is similar to tor, however runs as a distributed system instead of a curated one. i2p was recently [supported](https://i2pd.readthedocs.io/en/latest/user-guide/FAQ/#how-is-i2p-different-from-tor) by bitcoin core 0.22. We will use the c++ version, [i2pd](https://www.freshports.org/security/i2pd/)
 
 ## Install & Configure Tor
 ```
