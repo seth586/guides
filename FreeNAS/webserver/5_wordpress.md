@@ -55,6 +55,14 @@ Save (CTRL+O, ENTER) and exit (CTRL+X)
 # service nginx restart
 ```
 
+Install wp-cli (optional)
+```
+# cd /tmp
+# curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+# chmod +x wp-cli.phar
+# mv wp-cli.phar /usr/local/bin/wp
+```
+
 Navigate to your jail IP, you should be greeted with the wordpress installation! If you ever lose the login URL, its `http://192.168.84.58/wp-login.php`
 
 Next: [ [reverse proxy](6_reverse_proxy.md) ] >>
