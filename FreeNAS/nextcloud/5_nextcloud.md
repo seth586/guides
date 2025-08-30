@@ -94,7 +94,7 @@ nano /root/.cshrc
 ```
 Add the alias:
 ```
-alias occ       'su -m www -c '\''php /usr/local/www/nextcloud/occ "$1"'\'''
+alias occ       'su -m www -c '\''php /usr/local/www/nextcloud/occ $*'\'''
 ```
 Save (CTRL+O, ENTER) and Exit (CTRL+X)
 
