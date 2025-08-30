@@ -6,6 +6,12 @@
 
 Join the chatroom on the matrix chat protocol: [#truenasnode:nym.im](https://matrix.to/#/#truenasnode:nym.im)
 
+### END OF LIFE
+
+iXsystems has announced that TrueNAS CORE has entered sustaining engineering phase. This means that they have no plans to further develop the BSD distro beyond security patches. This effectively locks TrueNAS CORE into FreeBSD version 13.3 with no plans for upgrading. You can continue to upgrade jails in the 13.x train, but FreeBSD 13 will reach end of life on January 31, 2026. 
+
+I may update this guide in the future to a FreeBSD guide, but for now there are plenty of linux guides available so I will not be making a TrueNAS SCALE guide.
+
 ### Intro
 
 I have been running a TrueNAS server for a few years now, and have come to appreciate what it offers as a personal home server. It is infamous for media streaming & aggregation, and file hosting.
