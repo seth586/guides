@@ -53,7 +53,7 @@ listen.mode = 0660
 ```
 Save (CTRL+O, ENTER) and Exit (CTRL+X)
 ```
-# service php-fpm start
+# service php_fpm start
 ```
 ## Test PHP installation
 ```
