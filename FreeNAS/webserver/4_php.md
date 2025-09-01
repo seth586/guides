@@ -9,7 +9,7 @@ As of writing the latest branch of PHP is version 8.2. Check out this website to
 
 ### Install prerequisites:
 ```
-# pkg install php81 php81-mysqli php81-mbstring php81-zlib php81-curl php81-gd php81-exif php81-fileinfo php81-pecl-imagick php81-zip php81-filter php81-iconv php81-xmlwriter php81-opcache php81-simplexml php81-session php81-dom php81-phar
+# pkg install php84 php84-mysqli php84-mbstring php84-zlib php84-curl php84-gd php84-exif php84-fileinfo php84-pecl-imagick php84-zip php84-filter php84-iconv php84-xmlwriter php84-opcache php84-simplexml php84-session php84-dom php84-phar
 # sysrc php_fpm_enable=yes
 
 ```
