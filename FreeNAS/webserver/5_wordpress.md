@@ -64,6 +64,10 @@ Install wp-cli (optional)
 # curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 # chmod +x wp-cli.phar
 # mv wp-cli.phar /usr/local/bin/wp
+# wp plugin install redis-cache --activate
+# wp plugin list
+# wp redis enable
+# wp redis status
 ```
 
 Navigate to your jail IP, you should be greeted with the wordpress installation! If you ever lose the login URL, its `http://192.168.84.58/wp-login.php`
