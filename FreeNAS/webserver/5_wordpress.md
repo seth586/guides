@@ -6,7 +6,7 @@
 ## Configure & Install Wordpress
 Now that we have our FEMP stack up and running, lets install wordpress!
 ```
-# pkg install redis
+# pkg install redis php84-pecl-redis
 # sysrc redis_enable=yes
 ```
 `nano /usr/local/etc/redis.conf`:
@@ -14,6 +14,8 @@ Now that we have our FEMP stack up and running, lets install wordpress!
 port 0
 unixsocket /var/run/redis/redis.sock
 unixsocketperm 770
+maxmemory 256mb
+maxmemory-policy allkeys-lru
 ```
 Save (CTRL+O, ENTER) and exit (CTRL+X)
 ```
@@ -36,6 +38,7 @@ define( 'WP_REDIS_SCHEME', 'unix' );
 
 /** REDIS PATH TO SOCKET */
 define( 'WP_REDIS_PATH', '/var/run/redis/redis.sock' );
+define( 'WP_REDIS_SCHEME', 'unix' );
 
 define( 'WP_HOME', 'http://192.168.84.80' );
 define( 'WP_SITEURL', 'http://192.168.84.80' );
