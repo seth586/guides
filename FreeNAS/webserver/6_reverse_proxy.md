@@ -172,9 +172,9 @@ ssl_prefer_server_ciphers off;
 # HSTS (ngx_http_headers_module is required) (63072000 seconds)
 add_header Strict-Transport-Security "max-age=63072000" always;
 
-# OCSP stapling
-ssl_stapling on;
-ssl_stapling_verify on;
+# OCSP stapling - as of as of May 7, 2025, Let's Encrypt has removed OCSP responder URLs from their certificates
+#ssl_stapling on;
+#ssl_stapling_verify on;
 
 # replace with the IP address of your resolver
 resolver 192.168.0.1;
