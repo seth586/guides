@@ -224,7 +224,8 @@ Lets create a proxy for "https://blog.example.com"
 Paste the following:
 ```
 server {
-        listen 443 ssl http2;
+        listen 443 ssl;
+		http2 on;
 
         server_name blog.example.com;
         access_log /var/log/nginx/blog.access.log;
