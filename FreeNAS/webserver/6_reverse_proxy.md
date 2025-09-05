@@ -61,7 +61,7 @@ Log into your OpenWRT web-ui and Click "Services ▼", "Dynamic DNS". You should
 At this point your domain should sucessfully resolve to your home IP address. You can check with [this tool](https://www.whatismyip.com/dns-lookup/).
 
 ```
-# pkg install python py39-certbot openssl py39-certbot-dns-route53 awscli
+# pkg install python py311-certbot openssl py311-certbot-dns-route53 py311-awscli
 # aws configure
 ```
 Answer the 4 questions:
